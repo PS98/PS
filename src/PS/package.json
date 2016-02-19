@@ -1,0 +1,16 @@
+{
+  "name": "PS",
+  "version": "0.0.0",
+  "devDependencies": {
+    "gulp": "3.8.11",
+    "gulp-concat": "2.5.2",
+    "gulp-cssmin": "0.1.7",
+    "gulp-uglify": "1.2.0",
+    "rimraf": "2.2.8",
+    "gulp-bower": "~0.0.11",
+    "gulp-config": "~0.3.0",
+    "gulp-less": "~3.0.5",
+    "gulp-plumber": "~1.0.1",
+    "gulp-ng-annotate": "~1.1.0"
+  }
+}

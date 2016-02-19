@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Message";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+@section Scripts{
+    <environment names="Development">
+        <script src="~/js/app.js"></script>
+        <script src="~/js/appDirective.js"></script>
+        <script src="~/js/appService.js"></script>
+        <script src="~/js/appController.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/js/completeJs.min.js"></script>
+    </environment>
+}
+
+<div ng-view=""></div>

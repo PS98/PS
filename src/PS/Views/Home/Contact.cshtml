@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<div class="row">
+    <div class="col-lg-6">
+        <address>
+            A-11, 1202, Sunway Society<br />
+            Megapolis Towers, Hinjewadi Phase 3, 411057<br />
+            <abbr title="Phone">P:</abbr>
+            8380911266
+        </address>
+
+        <address>
+            <strong>Support:</strong> <a href="mailto:varshneyshobhit98@yahoo.com">varshneyshobhit98@yahoo.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:varshneyshobhit98@hotmail.com">varshneyshobhit98@hotmail.com</a>
+        </address>
+    </div>
+
+    <div class="col-md-6">
+        <div class="padd">
+            <div class="co-form">
+                <form class="form-horizontal col-md-11" method="post">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Name</label>
+                        <div class="controls col-md-8">
+                            <input type="text" class="form-control" id="name" name="name" data-val="true" data-val-required="*"/>
+                            <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Email</label>
+                        <div class="controls col-md-8">
+                            <input type="text" class="form-control form-inline" id="email" name="email" data-val="true" data-val-required="*" data-val-email="Not valid" style="display: inline;" />
+                            <span class="" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Website</label>
+                        <div class="controls col-md-8">
+                            <input type="text" class="form-control" id="website" name="website" data-val="true" data-val-required="*" style="display: inline;" />
+                            <span class="" data-valmsg-for="website" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Message</label>
+                        <div class="controls col-md-8">
+                            <textarea type="text" rows="3" class="form-control" id="comment" name="comment" data-val="true" data-val-required="*" style="display: inline;"></textarea>
+                            <span class="" data-valmsg-for="comment" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-8">
+                            <button type="submit" class="btn btn-default">Send</button>
+                        </div>
+                    </div>
+                    @if (ViewBag.MailSent != null && ViewBag.MailSent)
+                    {
+                        <div>Mail Sent!</div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
