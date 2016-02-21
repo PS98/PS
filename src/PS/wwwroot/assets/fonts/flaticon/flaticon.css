@@ -1,0 +1,47 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+	font-family: Flaticon;
+font-style: normal;
+}.flaticon-automobile5:before {
+	content: "\e000";
+}
+.flaticon-automobile8:before {
+	content: "\e001";
+}
+.flaticon-bus6:before {
+	content: "\e002";
+}
+.flaticon-car33:before {
+	content: "\e003";
+}
+.flaticon-car36:before {
+	content: "\e004";
+}
+.flaticon-repairing4:before {
+	content: "\e005";
+}
+.flaticon-speakers17:before {
+	content: "\e006";
+}
+.flaticon-transport320:before {
+	content: "\e007";
+}
+.flaticon-transport327:before {
+	content: "\e008";
+}
+.flaticon-transport391:before {
+	content: "\e009";
+}
+.flaticon-wheels10:before {
+	content: "\e00a";
+}

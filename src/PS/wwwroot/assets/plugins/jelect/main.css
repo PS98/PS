@@ -1,0 +1,137 @@
+.jelect {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #888;
+}
+
+.jelect_state_active {
+}
+
+.jelect:focus,
+.jelect *:focus {
+    outline: none;
+}
+
+.jelect-input {
+    display: none;
+}
+
+.jelect-current {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 11px 36px 11px 24px;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    clip-path: polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%);
+    background-color: #f5f5f5;
+    font-size: 12px;
+    color: #999999;
+    -webkit-clip-path: polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%);
+}
+
+.jelect-current:focus {
+    outline: none;
+}
+
+.jelect-current:before {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    content: '';
+}
+
+.jelect-current:after {
+    position: absolute;
+    top: 0;
+    right: 18px;
+    bottom: 1px;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #555;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    content: '';
+}
+
+.jelect-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    margin-top: 1px;
+    display: none;
+    max-height: 194px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 0;
+    background: #fff;
+    box-shadow: 1px 1px 4px 1px #eee;
+}
+
+.jelect-options_state_active {
+    display: block;
+}
+
+.jelect-option {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1px;
+    padding: 8px 16px 8px 16px;
+    display: block;
+    height: 38px;
+    font-size: 13px;
+    line-height: 22px;
+    color: #222;
+    box-shadow: 0 1px 0 #ccc;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-transition: 0.125s ease-out;
+    -o-transition: 0.125s ease-out;
+    transition: 0.125s ease-out;
+}
+
+.jelect-option:last-child {
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+.jelect-option:hover,
+.jelect-option_state_active {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.jelect-option:before {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    content: '';
+}
+
