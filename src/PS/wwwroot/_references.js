@@ -33,3 +33,6 @@
 /// <reference path="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
 /// <reference path="lib/twilio/twilio.min.js" />
 /// <reference path="lib/underscore/underscore.js" />
+/// <reference path="psapp/psappconfig.js" />
+/// <reference path="psapp/psappmodule.js" />
+/// <reference path="psapp/psapprouteconfig.js" />
