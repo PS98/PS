@@ -1,0 +1,162 @@
+/*!
+ * Yamm!3 - Yet another megamenu for Bootstrap 3
+ * http://geedmo.github.com/yamm3
+ *
+ * @geedmo - Licensed under the MIT license
+ */
+
+
+.header.sticky {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom-width: 0;
+    border-bottom-style: solid;
+    z-index: 1111;
+    padding-bottom: 10px;
+}
+
+
+.header.sticky  .logo {
+    display: inline-block;
+    margin-top: 22px;
+	
+}
+
+.header.sticky   .yamm .nav > li > a {
+    padding: 35px 13px 23px;	
+}
+
+
+
+.header.sticky .navbar .yamm {
+	margin-top: 0;
+}
+.header.sticky .top-cart,
+.header.sticky #search-global-menu,.header.sticky  .top-header  {
+	display: none !important;
+}
+.header.sticky .navbar .dropdown-menu {
+	background-color: #222;
+}
+
+
+.yamm {
+	position: relative;
+	margin-bottom: 0;
+	min-height: auto;
+	border: 0 none;
+	z-index: 777;
+	vertical-align: middle;
+	float: right;
+}
+.yamm .navbar-collapse {
+	padding-left: 0;
+	padding-right: 0;
+}
+.yamm .navbar-brand {
+	color: #fff;
+	float: left;
+	font-size: 24px;
+	font-weight: 700;
+	height: 50px;
+	line-height: 21px;
+	padding: 14.5px 15px;
+	text-transform: uppercase;
+}
+.yamm .nav {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: -13px;
+}
+.yamm .nav > li {
+	display: inline-block;
+}
+.yamm .nav > li > a {
+	position: relative;
+	display: block;
+	padding: 50px 13px 23px;
+	font: 700 12px Raleway;
+	color: #FFF;
+	text-transform: uppercase;
+	transition: all .3s ease-out;
+}
+.yamm .dropdown.yamm-fw .dropdown-menu {
+	left: 0;
+	right: 0;
+}
+.yamm-fw {
+	position: inherit;
+}
+.yamm .navbar-toggle {
+}
+.yamm .navbar-toggle .icon-bar {
+	background: #fff;
+}
+.yamm .nav, .yamm .collapse, .yamm .dropup, .yamm .dropdown {
+	position: static;
+}
+.yamm .container {
+	position: relative;
+}
+.yamm .dropdown-menu {
+    padding: 0;
+    left: auto;
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 0;
+}
+
+.yamm .dropdown-menu a{
+	    padding: 10px 20px;
+    font: 700 12px Raleway;
+    color: #FFF;
+	border-bottom:1px dotted rgba(255, 255, 255, 0.4);
+}
+
+
+
+.yamm .yamm-fw .dropdown-menu {
+	left: 0;
+}
+.yamm .yamm-content {
+	padding: 20px 30px;
+}
+.yamm .dropdown.yamm-fw .dropdown-menu {
+	left: 0;
+	right: 0;
+}
+.yamm .dropdown-menu > li > a {
+	font-size:12px;
+	text-transform:uppercase;
+
+}
+
+
+
+@media (max-width:767px) {
+
+	html .yamm .dropdown-menu {
+		position: relative;
+		top: 0;
+		float: none;
+		background-color: #7B7B7B;
+	}
+	.yamm {
+		display: block;
+		margin-top: 0;
+		float: none;
+	}
+	.yamm .nav {
+		display: block;
+		background-color: #222;
+	}
+	.yamm .nav > li {
+		display: block;
+	}
+	.yamm .nav > li > a:hover {
+		background-color: #7B7B7B;
+	}
+}

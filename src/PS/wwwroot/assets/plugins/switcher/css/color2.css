@@ -1,0 +1,95 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+/* COLOR CSS 2*/
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+a,
+.color_primary,
+.ui-title-inner .icon:before,
+.link-img__link:hover .link-img__title,
+.main-block__title strong,
+.decor-3,
+.list-services:hover .list-services__title,
+.list-progress .icon,
+.footer-title__inner,
+.card__price-number,
+.list-categories__link:before,
+.list-categories__link:hover,
+.list-descriptions dt:before,
+.widget-post1__price,
+.nav-tabs > li.active > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li.active > a:focus,
+.social-blog__item:before,
+blockquote:before,
+.comments-list .comment-datetime {color: #38abf4;}
+
+
+.bg-color_primary,
+.main-slider__link,
+.decor-2:before,
+.decor-2:after,
+.section-bg_primary,
+.border-section-top_mod-b:before,
+.border-section-top_mod-b:after,
+.slider-grid__price,
+.btn-default:after,
+.owl-theme_mod-c .owl-controls .owl-page.active span,
+.owl-theme_mod-c .owl-controls.clickable .owl-page:hover span,
+.owl-theme_mod-d .owl-controls .owl-page.active span,
+.owl-theme_mod-d .owl-controls.clickable .owl-page:hover span,
+.list-type__link:hover,
+.list-staff__item:hover .list-staff__info,
+.progress-bar,
+.post .entry-date,
+.post:hover .entry-main__inner_mod-a:after,
+.btn-effect:after,
+.yamm .navbar-toggle,
+.ui-btn_mod-a,
+.jelect-option:hover,
+.jelect-option_state_active,
+.car-details__price,
+.noUi-origin,
+.btn-skew-r,
+.list-tags__link:hover,
+.about-autor {background-color: #38abf4;}
+
+.link-img__link,
+.owl-theme_mod-c .owl-controls .owl-page.active span,
+.owl-theme_mod-c .owl-controls.clickable .owl-page:hover span,
+.owl-theme_mod-d .owl-controls .owl-page.active span,
+.owl-theme_mod-d .owl-controls.clickable .owl-page:hover span,
+.list-type__link:hover {border-color: #38abf4;}
+
+#iview div.iview-directionNav a.iview-nextNav:hover:before,
+.list-staff__item:nth-child(even):hover .list-staff__info:after,
+.reviews:hover .reviews__title {border-left-color: #38abf4;}
+
+#iview div.iview-directionNav a.iview-prevNav:hover:before,
+.list-staff__item:nth-child(odd):hover .list-staff__info:after {border-right-color: #38abf4;}
+
+.header.sticky .navbar,
+.form-control:focus {border-bottom-color: #38abf4;}
+
+.btn-default,
+.btn-success {box-shadow: 5px 0 0 0 #38abf4;}
+
+.yamm .nav > li > a:hover {box-shadow: 0 -5px 0 0 #38abf4;}
+
+.link,
+.list-type__link,
+.main-slider__btn,
+.car-details__title {box-shadow: -4px 0 0 0 #38abf4;}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus,
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+	box-shadow: 0 3px 0 0 #38abf4;
+}

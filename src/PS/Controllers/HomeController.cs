@@ -26,6 +26,26 @@ namespace PS.Controllers
             return View();
         }
 
+        public IActionResult CarDetails()
+        {
+            return View();
+        }
+
+        public IActionResult VehicleListings()
+        {
+            return View();
+        }
+
+        public IActionResult NewsGrid()
+        {
+            return View();
+        }
+
+        public IActionResult NewsDetails()
+        {
+            return View();
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Application description page.";
