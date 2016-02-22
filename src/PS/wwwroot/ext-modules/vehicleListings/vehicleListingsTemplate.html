@@ -1,5 +1,5 @@
 ﻿   <!-- Loader -->
-<div id="page-preloader"><span class="spinner"></span></div>
+<!--<div id="page-preloader"><span class="spinner"></span></div>-->
 <!-- Loader end -->
 
 <div id="this-top" class="layout-theme animated-css" data-header="sticky" data-header-top="200">
@@ -24,9 +24,9 @@
                 </div>
             </div>
         </div>
-        <script src="~/assets/plugins/switcher/js/bootstrap-select.js"></script>
-        <script src="~/assets/plugins/switcher/js/evol.colorpicker.min.js"></script>
-        <script src="~/assets/plugins/switcher/js/dmss.js"></script>
+        <script src="assets/plugins/switcher/js/bootstrap-select.js"></script>
+        <script src="assets/plugins/switcher/js/evol.colorpicker.min.js"></script>
+        <script src="assets/plugins/switcher/js/dmss.js"></script>
     </div>
     <!-- End Switcher -->
     <div id="wrapper">
@@ -56,7 +56,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
-                            <a href="index-2.html" class="logo"> <img class="logo__img img-responsive" src="~/assets/img/logo.png" height="50" width="111" alt="Logo"> </a>
+                            <a href="index-2.html" class="logo"> <img class="logo__img img-responsive" src="assets/img/logo.png" height="50" width="111" alt="Logo"> </a>
                             <div class="navbar yamm">
                                 <div class="navbar-header hidden-md hidden-lg hidden-sm">
                                     <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
@@ -64,19 +64,19 @@
                                 </div>
                                 <div id="navbar-collapse-1" class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav">
-                                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                        <li><a asp-controller="Home" asp-action="VehicleListings">VEHICLE LISTINGS</a></li>
-                                        <li><a asp-controller="Home" asp-action="CarDetails">CAR DETAILS</a></li>
+                                        <li><a href="#/">Home</a></li>
+                                        <li><a href="#/VehicleListings">VEHICLE LISTINGS</a></li>
+                                        <li><a href="#/CarDetails">CAR DETAILS</a></li>
                                         <li class="dropdown">
-                                            <a href="news.html">NEWS</a>
+                                            <a>NEWS</a>
                                             <ul role="menu" class="dropdown-menu">
-                                                <li><a asp-controller="Home" asp-action="NewsGrid">NEWS GRID</a></li>
-                                                <li><a asp-controller="Home" asp-action="NewsDetails">NEWS DETAILS</a></li>
+                                                <li><a href="#/NewsGrid">NEWS GRID</a></li>
+                                                <li><a href="#/NewsDetails">NEWS DETAILS</a></li>
                                             </ul>
                                         </li>
-                                        <li><a asp-controller="Home" asp-action="NewsGrid">NEWS GRID</a></li>
-                                        <li><a asp-controller="Home" asp-action="NewsDetails">NEWS DETAILS</a></li>
-                                        @await Html.PartialAsync("_LoginPartial")
+                                        <li><a href="#/NewsGrid">NEWS GRID</a></li>
+                                        <li><a href="#/NewsDetails">NEWS DETAILS</a></li>
+                                        <!--@await Html.PartialAsync("_LoginPartial")-->
                                     </ul>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                     <h1 class="ui-title-page">vehicle listings</h1>
                     <div class="decor-1 center-block"></div>
                     <ol class="breadcrumb">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a href="#/">Home</a></li>
                         <li class="active">listings</li>
                     </ol>
                 </div><!-- end bg-inner -->
@@ -134,7 +134,7 @@
                         </div><!-- end sorting -->
                         <article class="card clearfix">
                             <div class="card__img">
-                                <img class="img-responsive" src="~/assets/media/cards/1.jpg" height="196" width="235" alt="foto">
+                                <img class="img-responsive" src="assets/media/cards/1.jpg" height="196" width="235" alt="foto">
                             </div>
                             <div class="card__inner">
                                 <h2 class="card__title ui-title-inner">MERCEDES-BENZ SLR MCLAREN</h2>
@@ -173,7 +173,7 @@
                         </article>
                         <article class="card clearfix">
                             <div class="card__img">
-                                <img class="img-responsive" src="~/assets/media/cards/2.jpg" height="196" width="235" alt="foto">
+                                <img class="img-responsive" src="assets/media/cards/2.jpg" height="196" width="235" alt="foto">
                                 <span class="card__wrap-label"><span class="card__label">FEATURED</span></span>
                             </div>
                             <div class="card__inner">
@@ -213,7 +213,7 @@
                         </article>
                         <article class="card clearfix">
                             <div class="card__img">
-                                <img class="img-responsive" src="~/assets/media/cards/3.jpg" height="196" width="235" alt="foto">
+                                <img class="img-responsive" src="assets/media/cards/3.jpg" height="196" width="235" alt="foto">
                             </div>
                             <div class="card__inner">
                                 <h2 class="card__title ui-title-inner">2015 Ferrari FXX</h2>
@@ -252,7 +252,7 @@
                         </article>
                         <article class="card clearfix">
                             <div class="card__img">
-                                <img class="img-responsive" src="~/assets/media/cards/4.jpg" height="196" width="235" alt="foto">
+                                <img class="img-responsive" src="assets/media/cards/4.jpg" height="196" width="235" alt="foto">
                             </div>
                             <div class="card__inner">
                                 <h2 class="card__title ui-title-inner">DODGE VIPER 2015</h2>
@@ -291,7 +291,7 @@
                         </article>
                         <article class="card clearfix">
                             <div class="card__img">
-                                <img class="img-responsive" src="~/assets/media/cards/5.jpg" height="196" width="235" alt="foto">
+                                <img class="img-responsive" src="assets/media/cards/5.jpg" height="196" width="235" alt="foto">
                             </div>
                             <div class="card__inner">
                                 <h2 class="card__title ui-title-inner">LAND ROVER RANGE ROVER HSE</h2>
@@ -330,7 +330,7 @@
                         </article>
                         <article class="card clearfix">
                             <div class="card__img">
-                                <img class="img-responsive" src="~/assets/media/cards/6.jpg" height="196" width="235" alt="foto">
+                                <img class="img-responsive" src="assets/media/cards/6.jpg" height="196" width="235" alt="foto">
                             </div>
                             <div class="card__inner">
                                 <h2 class="card__title ui-title-inner">2014 LEXUS GX 470 PREMIUM</h2>

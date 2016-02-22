@@ -26,58 +26,6 @@ namespace PS.Controllers
             return View();
         }
 
-        public IActionResult CarDetails()
-        {
-            return View();
-        }
-
-        public IActionResult VehicleListings()
-        {
-            return View();
-        }
-
-        public IActionResult NewsGrid()
-        {
-            return View();
-        }
-
-        public IActionResult NewsDetails()
-        {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Contact page.";
-
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Contact(ContactModel model)
-        {
-            ViewData["Message"] = "Your contact page.";
-            var msg = $"Name:{model.Name}, Email: {model.Email}, Website: {model.Website}, Comment: {model.Comment}";
-            if(_mail.SendSimpleMessage("dummy", "Feedback", msg).StatusCode.ToString() == "OK")
-            {
-                ViewBag.MailSent = true;
-            }
-            return View();
-        }
-
-        [Authorize]
-        public IActionResult Messages()
-        {
-            return View();
-        }
-
         public IActionResult Error()
         {
             return View();

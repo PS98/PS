@@ -3,23 +3,35 @@
 angular.module("psApp").config(["$routeProvider", function ($routeProvider) {
 
     var routes = [
+         {
+             url: "/",
+             config: {
+                 template: "<ps-index></ps-index>"
+             }
+         },
         {
-            //url: "/dashboard",
-            //config: {
-            //    template: "<wwa-dashboard></wwa-dashboard>"
-            //}
+            url: "/CarDetails",
+            config: {
+                template: "<ps-car-details></ps-car-details>"
+            }
+        },
+        {
+            url: "/NewsDetails",
+            config: {
+                template: "<ps-news-details></ps-news-details>"
+            }
         },
          {
-             //url: "/locations",
-             //config: {
-             //    template: "<wwa-locations></wwa-locations>"
-             //}
+             url: "/NewsGrid",
+             config: {
+                 template: "<ps-news-grid></ps-news-grid>"
+             }
          },
           {
-              //url: "/guides",
-              //config: {
-              //    template: "<wwa-guides></wwa-guides>"
-              //}
+              url: "/VehicleListings",
+              config: {
+                  template: "<ps-vehicle-listings></ps-vehicle-listings>"
+              }
           }
     ];
 
@@ -28,7 +40,7 @@ angular.module("psApp").config(["$routeProvider", function ($routeProvider) {
     });
 
     $routeProvider.otherwise({
-        //redirectTo: "/dashboard"
+        redirectTo: "/"
     });
 
 }]);
