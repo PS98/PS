@@ -11,10 +11,16 @@
     <environment names="Staging,Production">
         <script src="~/js/completeJs.min.js"></script>
     </environment>
+<script src="~/lib/angular-route/angular-route.js"></script>
+
+<script src="~/psapp/psappmodule.js"></script>
+<script src="~/psapp/psapprouteconfig.js"></script>
+<script src="~/psapp/psappconfig.js"></script>
+<script src="~/psapp/pscardetails/pscardetailsdirective.js"></script>
 }
 
 <!-- start layout-theme -->
-<div id="this-top" class="layout-theme animated-css" data-header="sticky" data-header-top="200">
+<div id="this-top" class="layout-theme animated-css" data-header="sticky" data-header-top="200" ng-app="psApp">
     <!-- Loader -->
     <div id="page-preloader"><span class="spinner"></span></div>
     <!-- Loader end -->
@@ -80,7 +86,7 @@
                                     <ul class="nav navbar-nav">
                                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                                         <li><a asp-controller="Home" asp-action="VehicleListings">VEHICLE LISTINGS</a></li>
-                                        <li><a asp-controller="Home" asp-action="CarDetails">CAR DETAILS</a></li>
+                                        <li><a href="/carDetails">CAR DETAILS</a></li>
                                         <li class="dropdown">
                                             <a href="news.html">NEWS</a>
                                             <ul role="menu" class="dropdown-menu">

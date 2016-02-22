@@ -2,33 +2,18 @@
 
 angular.module("psApp").config(["$routeProvider", function ($routeProvider) {
 
-    var routes = [
-        {
-            //url: "/dashboard",
-            //config: {
-            //    template: "<wwa-dashboard></wwa-dashboard>"
-            //}
-        },
-         {
-             //url: "/locations",
-             //config: {
-             //    template: "<wwa-locations></wwa-locations>"
-             //}
-         },
-          {
-              //url: "/guides",
-              //config: {
-              //    template: "<wwa-guides></wwa-guides>"
-              //}
-          }
-    ];
+    $routeProvider.
 
-    routes.forEach(function (route) {
-        $routeProvider.when(route.url, route.config);
-    });
+  when('/carDetails', {
+      template: "<ps-car> </ps-car>"
+  }).
 
-    $routeProvider.otherwise({
-        //redirectTo: "/dashboard"
-    });
+  when('/viewStudents', {
+      templateUrl: 'viewStudents.htm', controller: 'ViewStudentsController'
+  }).
+
+  otherwise({
+      redirectTo: ''
+  });
 
 }]);

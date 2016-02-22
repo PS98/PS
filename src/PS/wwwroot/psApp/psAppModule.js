@@ -1,3 +1,3 @@
 ﻿"use strict";
 
-angular.module("psApp", ["ngRoute", "ngStorage"]);
+angular.module("psApp", ["ngRoute"]);
