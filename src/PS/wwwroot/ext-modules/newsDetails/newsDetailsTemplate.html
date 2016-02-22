@@ -1,5 +1,5 @@
 ﻿   <!-- Loader -->
-<div id="page-preloader"><span class="spinner"></span></div>
+<!--<div id="page-preloader"><span class="spinner"></span></div>-->
 <!-- Loader end -->
 
 <div id="this-top" class="layout-theme animated-css" data-header="sticky" data-header-top="200">
@@ -24,9 +24,9 @@
                 </div>
             </div>
         </div>
-        <script src="~/assets/plugins/switcher/js/bootstrap-select.js"></script>
-        <script src="~/assets/plugins/switcher/js/evol.colorpicker.min.js"></script>
-        <script src="~/assets/plugins/switcher/js/dmss.js"></script>
+        <script src="assets/plugins/switcher/js/bootstrap-select.js"></script>
+        <script src="assets/plugins/switcher/js/evol.colorpicker.min.js"></script>
+        <script src="assets/plugins/switcher/js/dmss.js"></script>
     </div>
     <!-- End Switcher -->
     <div id="wrapper">
@@ -56,7 +56,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
-                            <a href="index-2.html" class="logo"> <img class="logo__img img-responsive" src="~/assets/img/logo.png" height="50" width="111" alt="Logo"> </a>
+                            <a href="index-2.html" class="logo"> <img class="logo__img img-responsive" src="assets/img/logo.png" height="50" width="111" alt="Logo"> </a>
                             <div class="navbar yamm">
                                 <div class="navbar-header hidden-md hidden-lg hidden-sm">
                                     <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
@@ -64,19 +64,19 @@
                                 </div>
                                 <div id="navbar-collapse-1" class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav">
-                                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                        <li><a asp-controller="Home" asp-action="VehicleListings">VEHICLE LISTINGS</a></li>
-                                        <li><a asp-controller="Home" asp-action="CarDetails">CAR DETAILS</a></li>
+                                        <li><a href="#/">Home</a></li>
+                                        <li><a href="#/VehicleListings">VEHICLE LISTINGS</a></li>
+                                        <li><a href="#/CarDetails">CAR DETAILS</a></li>
                                         <li class="dropdown">
-                                            <a href="news.html">NEWS</a>
+                                            <a>NEWS</a>
                                             <ul role="menu" class="dropdown-menu">
-                                                <li><a asp-controller="Home" asp-action="NewsGrid">NEWS GRID</a></li>
-                                                <li><a asp-controller="Home" asp-action="NewsDetails">NEWS DETAILS</a></li>
+                                                <li><a href="#/NewsGrid">NEWS GRID</a></li>
+                                                <li><a href="#/NewsDetails">NEWS DETAILS</a></li>
                                             </ul>
                                         </li>
-                                        <li><a asp-controller="Home" asp-action="NewsGrid">NEWS GRID</a></li>
-                                        <li><a asp-controller="Home" asp-action="NewsDetails">NEWS DETAILS</a></li>
-                                        @await Html.PartialAsync("_LoginPartial")
+                                        <li><a href="#/NewsGrid">NEWS GRID</a></li>
+                                        <li><a href="#/NewsDetails">NEWS DETAILS</a></li>
+                                        <!--@await Html.PartialAsync("_LoginPartial")-->
                                     </ul>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                     <h1 class="ui-title-page">latest news</h1>
                     <div class="decor-1 center-block"></div>
                     <ol class="breadcrumb">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a href="#/">Home</a></li>
                         <li class="active">news details</li>
                     </ol>
                 </div><!-- end bg-inner -->
@@ -104,7 +104,7 @@
                     <main class="main-content">
                         <article class="post post_mod-b clearfix">
                             <div class="entry-media">
-                                <img class="img-responsive" src="~/assets/media/posts/770x430/1.jpg" width="770" height="430" alt="Foto" />
+                                <img class="img-responsive" src="assets/media/posts/770x430/1.jpg" width="770" height="430" alt="Foto" />
                             </div>
                             <div class="entry-main">
                                 <div class="entry-main__inner">
@@ -145,7 +145,7 @@
                             </div>
                         </article><!-- end post -->
                         <article class="about-autor">
-                            <div class="about-autor__img"><img class="img-responsive" src="~/assets/media/about-autor/1.jpg" height="123" width="123" alt="foto"></div>
+                            <div class="about-autor__img"><img class="img-responsive" src="assets/media/about-autor/1.jpg" height="123" width="123" alt="foto"></div>
                             <div class="about-autor__inner">
                                 <h3 class="about-autor__name">william henry</h3>
                                 <div class="about-autor__categorie">author</div>
@@ -161,14 +161,14 @@
                         </article>
                         <div class="post-nav">
                             <div class="post-nav__item">
-                                <div class="post-nav__img"><img class="img-responsive" src="~/assets/media/75x75/1.jpg" height="75" width="75" alt="foto"></div>
+                                <div class="post-nav__img"><img class="img-responsive" src="assets/media/75x75/1.jpg" height="75" width="75" alt="foto"></div>
                                 <div class="post-nav__inner">
                                     <div class="post-nav__title">Tempor incididunt labore dolore magna aliqua</div>
                                     <a class="post-nav__link" href="javascript:void(0);"><i class="decor-3 fa fa-caret-right"></i>previous POST</a>
                                 </div>
                             </div>
                             <div class="post-nav__item">
-                                <div class="post-nav__img"><img class="img-responsive" src="~/assets/media/75x75/2.jpg" height="75" width="75" alt="foto"></div>
+                                <div class="post-nav__img"><img class="img-responsive" src="assets/media/75x75/2.jpg" height="75" width="75" alt="foto"></div>
                                 <div class="post-nav__inner">
                                     <div class="post-nav__title">Dolor sit media ei nullam sed ipsum dui</div>
                                     <a class="post-nav__link" href="javascript:void(0);">NEXT POST<i class="decor-3 fa fa-caret-right"></i></a>
@@ -182,7 +182,7 @@
                             <ul class="comments-list clearfix">
                                 <li>
                                     <article class="comment">
-                                        <div class="avatar-placeholder"> <img src="~/assets/media/avatar_comments/1.jpg" height="65" width="65" alt="avatar"></div>
+                                        <div class="avatar-placeholder"> <img src="assets/media/avatar_comments/1.jpg" height="65" width="65" alt="avatar"></div>
                                         <div class="comment-inner">
                                             <header class="comment-header">
                                                 <cite class="comment-author">ANDREW <span class="comment-author__inner">says</span></cite>
@@ -197,7 +197,7 @@
                                     <ul class="children clearfix">
                                         <li>
                                             <article class="comment">
-                                                <div class="avatar-placeholder"> <img src="~/assets/media/avatar_comments/2.jpg" height="65" width="65" alt="avatar"></div>
+                                                <div class="avatar-placeholder"> <img src="assets/media/avatar_comments/2.jpg" height="65" width="65" alt="avatar"></div>
                                                 <div class="comment-inner">
                                                     <header class="comment-header">
                                                         <cite class="comment-author">MARK <span class="comment-author__inner">says</span></cite>
@@ -288,7 +288,7 @@
                             <div class="widget-content">
                                 <div class="widget-post1 clearfix">
                                     <div class="widget-post1__img">
-                                        <img class="img-responsive" src="~/assets/media/widget-post/3.jpg" height="75" width="75" alt="foto">
+                                        <img class="img-responsive" src="assets/media/widget-post/3.jpg" height="75" width="75" alt="foto">
                                     </div>
                                     <div class="widget-post1__inner">
                                         <div class="widget-post1__info">Lorem ipsum dolor sit amet adipisicing sed ipsum</div>
@@ -297,7 +297,7 @@
                                 </div>
                                 <div class="widget-post1 clearfix">
                                     <div class="widget-post1__img">
-                                        <img class="img-responsive" src="~/assets/media/widget-post/1.jpg" height="75" width="75" alt="foto">
+                                        <img class="img-responsive" src="assets/media/widget-post/1.jpg" height="75" width="75" alt="foto">
                                     </div>
                                     <div class="widget-post1__inner">
                                         <div class="widget-post1__info">Tempor incididunt ut labore et dolore magna aliqua</div>
@@ -306,7 +306,7 @@
                                 </div>
                                 <div class="widget-post1 clearfix">
                                     <div class="widget-post1__img">
-                                        <img class="img-responsive" src="~/assets/media/widget-post/2.jpg" height="75" width="75" alt="foto">
+                                        <img class="img-responsive" src="assets/media/widget-post/2.jpg" height="75" width="75" alt="foto">
                                     </div>
                                     <div class="widget-post1__inner">
                                         <div class="widget-post1__info">Enim ad minim veniam quis nostrud exercitation</div>
@@ -329,10 +329,10 @@
                                      data-after-init-delay="3000"
                                      data-after-move-delay="1000"
                                      data-stop-on-hover="true">
-                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=DIGfO2Dgc9Y" rel="prettyPhoto"><img class="img-responsive" src="~/assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
-                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=DIGfO2Dgc9Y" rel="prettyPhoto"><img class="img-responsive" src="~/assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
-                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=DIGfO2Dgc9Y" rel="prettyPhoto"><img class="img-responsive" src="~/assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
-                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=DIGfO2Dgc9Y" rel="prettyPhoto"><img class="img-responsive" src="~/assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
+                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=DIGfO2Dgc9Y" rel="prettyPhoto"><img class="img-responsive" src="assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
+                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=DIGfO2Dgc9Y" rel="prettyPhoto"><img class="img-responsive" src="assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
+                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=DIGfO2Dgc9Y" rel="prettyPhoto"><img class="img-responsive" src="assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
+                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=DIGfO2Dgc9Y" rel="prettyPhoto"><img class="img-responsive" src="assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
                                 </div>
                             </div>
                         </section><!-- end widget -->

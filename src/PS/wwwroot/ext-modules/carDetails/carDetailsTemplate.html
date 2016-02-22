@@ -20,9 +20,9 @@
                 </div>
             </div>
         </div>
-        <script src="~/assets/plugins/switcher/js/bootstrap-select.js"></script>
-        <script src="~/assets/plugins/switcher/js/evol.colorpicker.min.js"></script>
-        <script src="~/assets/plugins/switcher/js/dmss.js"></script>
+        <script src="assets/plugins/switcher/js/bootstrap-select.js"></script>
+        <script src="assets/plugins/switcher/js/evol.colorpicker.min.js"></script>
+        <script src="assets/plugins/switcher/js/dmss.js"></script>
     </div>
     <!-- End Switcher -->
     <div id="wrapper">
@@ -52,7 +52,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
-                            <a href="index-2.html" class="logo"> <img class="logo__img img-responsive" src="~/assets/img/logo.png" height="50" width="111" alt="Logo"> </a>
+                            <a href="index-2.html" class="logo"> <img class="logo__img img-responsive" src="assets/img/logo.png" height="50" width="111" alt="Logo"> </a>
                             <div class="navbar yamm">
                                 <div class="navbar-header hidden-md hidden-lg hidden-sm">
                                     <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
@@ -60,19 +60,19 @@
                                 </div>
                                 <div id="navbar-collapse-1" class="navbar-collapse collapse">
                                     <ul class="nav navbar-nav">
-                                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                        <li><a asp-controller="Home" asp-action="VehicleListings">VEHICLE LISTINGS</a></li>
-                                        <li><a asp-controller="Home" asp-action="CarDetails">CAR DETAILS</a></li>
+                                        <li><a href="#/">Home</a></li>
+                                        <li><a href="#/VehicleListings">VEHICLE LISTINGS</a></li>
+                                        <li><a href="#/CarDetails">CAR DETAILS</a></li>
                                         <li class="dropdown">
-                                            <a href="news.html">NEWS</a>
+                                            <a>NEWS</a>
                                             <ul role="menu" class="dropdown-menu">
-                                                <li><a asp-controller="Home" asp-action="NewsGrid">NEWS GRID</a></li>
-                                                <li><a asp-controller="Home" asp-action="NewsDetails">NEWS DETAILS</a></li>
+                                                <li><a href="#/NewsGrid">NEWS GRID</a></li>
+                                                <li><a href="#/NewsDetails">NEWS DETAILS</a></li>
                                             </ul>
                                         </li>
-                                        <li><a asp-controller="Home" asp-action="NewsGrid">NEWS GRID</a></li>
-                                        <li><a asp-controller="Home" asp-action="NewsDetails">NEWS DETAILS</a></li>
-                                        @await Html.PartialAsync("_LoginPartial")
+                                        <li><a href="#/NewsGrid">NEWS GRID</a></li>
+                                        <li><a href="#/NewsDetails">NEWS DETAILS</a></li>
+                                        <!--@await Html.PartialAsync("_LoginPartial")-->
                                     </ul>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                     <h1 class="ui-title-page">car details</h1>
                     <div class="decor-1 center-block"></div>
                     <ol class="breadcrumb">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a href="#/">Home</a></li>
                         <li class="active">car details</li>
                     </ol>
                 </div><!-- end bg-inner -->
@@ -106,33 +106,33 @@
                             <div id="slider-product" class="flexslider slider-product">
                                 <ul class="slides">
                                     <li>
-                                        <a href="~/assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="~/assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
+                                        <a href="assets/media/slider_product/large/1.jpg">
+                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="~/assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="~/assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
+                                        <a href="assets/media/slider_product/large/1.jpg">
+                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="~/assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="~/assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
+                                        <a href="assets/media/slider_product/large/1.jpg">
+                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="~/assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="~/assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
+                                        <a href="assets/media/slider_product/large/1.jpg">
+                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="~/assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="~/assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
+                                        <a href="assets/media/slider_product/large/1.jpg">
+                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="~/assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="~/assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
+                                        <a href="assets/media/slider_product/large/1.jpg">
+                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
                                         </a>
                                     </li>
                                 </ul>
@@ -140,22 +140,22 @@
                             <div id="carousel-product" class="flexslider carousel-product">
                                 <ul class="slides">
                                     <li>
-                                        <img src="~/assets/media/slider_product/small/1.jpg" height="75" width="95" alt="foto">
+                                        <img src="assets/media/slider_product/small/1.jpg" height="75" width="95" alt="foto">
                                     </li>
                                     <li>
-                                        <img src="~/assets/media/slider_product/small/2.jpg" height="75" width="95" alt="foto">
+                                        <img src="assets/media/slider_product/small/2.jpg" height="75" width="95" alt="foto">
                                     </li>
                                     <li>
-                                        <img src="~/assets/media/slider_product/small/3.jpg" height="75" width="95" alt="foto">
+                                        <img src="assets/media/slider_product/small/3.jpg" height="75" width="95" alt="foto">
                                     </li>
                                     <li>
-                                        <img src="~/assets/media/slider_product/small/4.jpg" height="75" width="95" alt="foto">
+                                        <img src="assets/media/slider_product/small/4.jpg" height="75" width="95" alt="foto">
                                     </li>
                                     <li>
-                                        <img src="~/assets/media/slider_product/small/5.jpg" height="75" width="95" alt="foto">
+                                        <img src="assets/media/slider_product/small/5.jpg" height="75" width="95" alt="foto">
                                     </li>
                                     <li>
-                                        <img src="~/assets/media/slider_product/small/6.jpg" height="75" width="95" alt="foto">
+                                        <img src="assets/media/slider_product/small/6.jpg" height="75" width="95" alt="foto">
                                     </li>
                                 </ul>
                             </div>
@@ -290,10 +290,10 @@
                                      data-after-init-delay="3000"
                                      data-after-move-delay="1000"
                                      data-stop-on-hover="true">
-                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=neS5h_VSvb8" rel="prettyPhoto"><img class="img-responsive" src="~/assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
-                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=neS5h_VSvb8" rel="prettyPhoto"><img class="img-responsive" src="~/assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
-                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=neS5h_VSvb8" rel="prettyPhoto"><img class="img-responsive" src="~/assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
-                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=neS5h_VSvb8" rel="prettyPhoto"><img class="img-responsive" src="~/assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
+                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=neS5h_VSvb8" rel="prettyPhoto"><img class="img-responsive" src="assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
+                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=neS5h_VSvb8" rel="prettyPhoto"><img class="img-responsive" src="assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
+                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=neS5h_VSvb8" rel="prettyPhoto"><img class="img-responsive" src="assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
+                                    <div class="widget-slider__item"><a href="https://www.youtube.com/watch?v=neS5h_VSvb8" rel="prettyPhoto"><img class="img-responsive" src="assets/media/banners/1.jpg" height="250" width="306" alt="banner"></a></div>
                                 </div>
                             </div>
                         </section>
@@ -303,7 +303,7 @@
                             <div class="widget-content">
                                 <section class="widget-post1 clearfix">
                                     <div class="widget-post1__img">
-                                        <img class="img-responsive" src="~/assets/media/widget-post/1.jpg" height="75" width="75" alt="foto">
+                                        <img class="img-responsive" src="assets/media/widget-post/1.jpg" height="75" width="75" alt="foto">
                                     </div>
                                     <div class="widget-post1__inner">
                                         <h3 class="widget-post1__title">Toyota Avalon</h3>
@@ -313,7 +313,7 @@
                                 </section>
                                 <section class="widget-post1 clearfix">
                                     <div class="widget-post1__img">
-                                        <img class="img-responsive" src="~/assets/media/widget-post/2.jpg" height="75" width="75" alt="foto">
+                                        <img class="img-responsive" src="assets/media/widget-post/2.jpg" height="75" width="75" alt="foto">
                                     </div>
                                     <div class="widget-post1__inner">
                                         <h3 class="widget-post1__title">Nissan Maxima</h3>
