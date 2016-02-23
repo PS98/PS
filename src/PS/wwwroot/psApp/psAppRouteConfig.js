@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-angular.module("psApp").config(["$routeProvider", function ($routeProvider) {
+angular.module("psApp").config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
 
     var routes = [
          {
@@ -43,4 +43,6 @@ angular.module("psApp").config(["$routeProvider", function ($routeProvider) {
         redirectTo: "/"
     });
 
+    //TODO: don't forget to configure iis settings for html5 mode angular when deploying the code
+    $locationProvider.html5Mode(true);
 }]);
