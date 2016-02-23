@@ -7,7 +7,7 @@
  **/
 (function($){
 	$(document).ready(function() {
-		$('.styleswitch').click(function(){
+	    $('body').delegate('.styleswitch', 'click', function () {
 			switchStylestyle(this.getAttribute("data-switchcolor"));
 			return false;
 		});
@@ -46,7 +46,7 @@ function eraseCookie(name){
 }
 
 // DEMO Swticher Base
-jQuery('.demo_changer .demo-icon').click(function(){
+jQuery('body').delegate('.demo_changer .demo-icon', 'click', function () {
 	if(jQuery('.demo_changer').hasClass("active")){
 		jQuery('.demo_changer').animate({"left":"-70px"},function(){
 			jQuery('.demo_changer').toggleClass("active");
@@ -66,7 +66,7 @@ $(window).on('load', function () {
 });
 
 // Selector (MODULE #2)
-jQuery('.demo_changer .PatternChanger a').click(function(){
+jQuery('body').delegate('.demo_changer .PatternChanger a','click',function () {
 	var bgBgCol = jQuery(this).attr('href');
 	jQuery('.demo_changer .PatternChanger a').removeClass('current');
 	jQuery('body').css({backgroundColor:'#ffffff'});
