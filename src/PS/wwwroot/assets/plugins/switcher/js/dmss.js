@@ -46,7 +46,7 @@ function eraseCookie(name){
 }
 
 // DEMO Swticher Base
-jQuery('body').delegate('.demo_changer .demo-icon', 'click', function () {
+jQuery('body').delegate('.demo_changer .demo-icon', 'click', function (event) {
 	if(jQuery('.demo_changer').hasClass("active")){
 		jQuery('.demo_changer').animate({"left":"-70px"},function(){
 			jQuery('.demo_changer').toggleClass("active");
@@ -55,7 +55,8 @@ jQuery('body').delegate('.demo_changer .demo-icon', 'click', function () {
 		jQuery('.demo_changer').animate({"left":"0px"},function(){
 			jQuery('.demo_changer').toggleClass("active");
 		});			
-	} 
+	}
+	event.preventDefault();
 });
 
 // Selector (MODULE #4)
@@ -63,6 +64,12 @@ $(window).on('load', function () {
 	$('.selectpicker').selectpicker({
 		'selectedText': 'cat'
 	});
+	$(document).click(function(){
+	    if(jQuery('.demo_changer').hasClass("active")){
+	        jQuery('.demo_changer').animate({"left":"-70px"},function(){
+	            jQuery('.demo_changer').toggleClass("active");
+	        });
+	    }});
 });
 
 // Selector (MODULE #2)
