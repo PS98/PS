@@ -76,6 +76,10 @@
                                         </li>
                                         <li><a href="/NewsGrid">NEWS GRID</a></li>
                                         <li><a href="/NewsDetails">NEWS DETAILS</a></li>
+                                        <li ng-controller="indexController">
+                                            <a ng-show="!isLoggedIn" ng-click="login()">LOGIN</a>
+                                            <a ng-show="isLoggedIn" ng-click="logout()">LOGOUT</a>
+                                        </li>
                                         <!--@await Html.PartialAsync("_LoginPartial")-->
                                     </ul>
                                 </div>
