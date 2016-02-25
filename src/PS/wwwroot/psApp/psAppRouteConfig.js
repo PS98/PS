@@ -54,18 +54,6 @@ angular.module("psApp").config(["$routeProvider", "$locationProvider", "authProv
         loginUrl: "/"
     });
 }])
-.run(["$rootScope", "auth", "$location", "jwtHelper", function ($rootScope, auth, store, jwtHelper, $location) {
-    $rootScope.$on("$locationChangeStart", function () {
-        if (!auth.isAuthenticated) {
-            var token = store.get("token");
-            if (token) {
-                if (!jwtHelper.isTokenExpired(token)) {
-                    auth.authenticate(store.get("profile"), token);
-                } else {
-                    $location.path("/")
-                }
-            }
-        }
-    });
+.run(["$rootScope", "auth", "$location", "jwtHelper", function ($rootScope, auth, store, jwtHelper, $location) {   
     auth.hookEvents();
 }]);
