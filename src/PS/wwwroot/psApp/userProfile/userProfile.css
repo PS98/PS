@@ -1,0 +1,31 @@
+﻿.ps-user-profile-small{
+    color:#333;
+    padding-top:38px;
+}
+
+.ps-user-profile-small span{
+   font-size:18px;
+   margin-top:10px;
+   margin-right:10px;
+   color:white;
+}
+
+.ps-user-profile-small img{
+    width:40px;
+    height:40px;
+}
+
+.ps-dashboard-controls{
+    float: right;
+}
+
+.circular {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    background: no-repeat;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    background-size:cover;
+}

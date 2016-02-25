@@ -1,6 +1,7 @@
 ﻿"use strict";
 
-angular.module("psApp").config(["$routeProvider", "$locationProvider", "authProvider", function ($routeProvider, $locationProvider, authProvider, store) {
+angular.module("psApp").config(["$routeProvider", "$locationProvider", "authProvider",
+    function ($routeProvider, $locationProvider, authProvider, jwtInterceptorProvider, $httpProvider) {
 
     var routes = [
          {
@@ -14,7 +15,7 @@ angular.module("psApp").config(["$routeProvider", "$locationProvider", "authProv
             url: "/CarDetails",
             config: {
                 template: "<ps-car-details></ps-car-details>",
-                requiresLogin: true
+               // requiresLogin: true
             }
         },
         {
@@ -53,7 +54,24 @@ angular.module("psApp").config(["$routeProvider", "$locationProvider", "authProv
         clientID: "r8FgGpKk3LJyOqbm2bz7P4WrggALznLh",
         loginUrl: "/"
     });
+
+    //jwtInterceptorProvider.tokenGetter = function ($localStorage) {
+    //    debugger;
+    //    return $localStorage.token;
+    //}
 }])
-.run(["$rootScope", "auth", "$location", "jwtHelper", function ($rootScope, auth, store, jwtHelper, $location) {   
+.run(["$localStorage", "$rootScope", "auth", "$location", function ($localStorage, $rootScope, auth, $location) {
+    $rootScope.$on("$locationChangeStart", function () {
+        if (!auth.isAuthenticated) {
+            var token = $localStorage.token;
+            if (token) {
+               // if (!jwtHelper.isTokenExpired(token)) {
+                auth.authenticate($localStorage.profile, $localStorage.token);
+                } else {
+                    $location.path("/")
+                }
+           // }
+        }
+    });
     auth.hookEvents();
 }]);
