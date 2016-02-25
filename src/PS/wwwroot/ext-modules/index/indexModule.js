@@ -1,15 +1,17 @@
 ﻿"use strict";
 
-angular.module("index", ["auth0", "angular-storage", "angular-jwt"])
+angular.module("index", ["auth0", "ngStorage"])
     .controller("indexController",
-    ["$scope", "auth", "$location",
-        function indexController($scope, auth, $location) {
+    ["$localStorage", "$location", "$scope", "auth",
+        function indexController($localStorage, $location, $scope, auth) {
     $scope.auth = auth;
     $scope.isLoggedIn = false;
 
     $scope.login = function () {
         auth.signin({}, function (profile, token) {
             $scope.isLoggedIn = true;
+            $localStorage.profile = profile;
+            $localStorage.token = token;
             $location.path("/");
         }, function (error) {
             $scope.isLoggedIn = false;
@@ -20,6 +22,7 @@ angular.module("index", ["auth0", "angular-storage", "angular-jwt"])
     $scope.logout = function () {
         auth.signout();
         $scope.isLoggedIn = false;
+        $localStorage.$reset();
         $location.path("/");
     };
 }]);

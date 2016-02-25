@@ -63,4 +63,4 @@
 /// <reference path="psapp/psappconfig.js" />
 /// <reference path="psapp/psappmodule.js" />
 /// <reference path="psapp/psapprouteconfig.js" />
-/// <reference path="psapp/pscardetails/PSCarDetailsDirective.js" />
+/// <reference path="psapp/userprofile/userProfileDirective.js" />

@@ -23,11 +23,14 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/Site.css" />
 
+    <link href="~/psapp/userprofile/userprofile.css" rel="stylesheet" />
+
     <script src="~/lib/underscore/underscore-min.js"></script>
     <script src="~/assets/plugins/jquery/jquery-1.11.1.min.js"></script>
     <script src="~/lib/angular/angular.min.js"></script>
     <script src="~/lib/angular-route/angular-route.min.js"></script>
     <script src="//code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
+    <script src="~/lib/ngStorage.min.js"></script>
 
     <!-- Auth0 Lock script and AngularJS module -->
     <script src="//cdn.auth0.com/js/lock-8.2.min.js"></script>
@@ -133,9 +136,13 @@
                                         </li>
                                         <li><a href="/NewsGrid">NEWS GRID</a></li>
                                         <li><a href="/NewsDetails">NEWS DETAILS</a></li>
+                                        <li ng-controller="indexController">
+                                            <a ng-click="login()" ng-show="!auth.isAuthenticated">LOGIN</a>
+                                            <ps-user-profile ng-show="auth.isAuthenticated"></ps-user-profile>
+                                        </li>
                                         <!--@await Html.PartialAsync("_LoginPartial")-->
                                     </ul>
-                                                </div>
+                                 </div>
                                 </div>
                             </div>
                         </div>
