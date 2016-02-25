@@ -102,6 +102,10 @@
                                     </li>
                                     <li><a href="/NewsGrid">NEWS GRID</a></li>
                                     <li><a href="/NewsDetails">NEWS DETAILS</a></li>
+                                    <li ng-controller="indexController">
+                                        <a ng-click="login()" ng-show="!auth.isAuthenticated">LOGIN</a>
+                                        <ps-user-profile ng-show="auth.isAuthenticated"></ps-user-profile>
+                                    </li>
                                     <!--@await Html.PartialAsync("_LoginPartial")-->
                                 </ul>
                             </div>
