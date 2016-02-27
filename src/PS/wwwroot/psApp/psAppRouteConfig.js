@@ -1,18 +1,21 @@
 ﻿"use strict";
 
-angular.module("psApp").config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
+angular.module("psApp").config(["$routeProvider", "$locationProvider", "authProvider",
+    function ($routeProvider, $locationProvider, authProvider, jwtInterceptorProvider, $httpProvider) {
 
     var routes = [
          {
              url: "/",
              config: {
+                 controller: "indexController",
                  template: "<ps-index></ps-index>"
              }
          },
         {
             url: "/CarDetails",
             config: {
-                template: "<ps-car-details></ps-car-details>"
+                template: "<ps-car-details></ps-car-details>",
+               // requiresLogin: true
             }
         },
         {
@@ -45,4 +48,31 @@ angular.module("psApp").config(["$routeProvider", "$locationProvider", function 
 
     //TODO: don't forget to configure iis settings for html5 mode angular when deploying the code
     $locationProvider.html5Mode(true);
+
+    authProvider.init({
+        domain: "ps98.eu.auth0.com",
+        clientID: "r8FgGpKk3LJyOqbm2bz7P4WrggALznLh",
+        loginUrl: "/"
+    });
+
+    //jwtInterceptorProvider.tokenGetter = function ($localStorage) {
+    //    debugger;
+    //    return $localStorage.token;
+    //}
+}])
+.run(["$localStorage", "$rootScope", "auth", "$location", function ($localStorage, $rootScope, auth, $location) {
+    $rootScope.$on("$locationChangeStart", function () {
+        if (!auth.isAuthenticated) {
+            var token = $localStorage.token;
+            if (token) {
+               // if (!jwtHelper.isTokenExpired(token)) {
+                auth.authenticate($localStorage.profile, $localStorage.token);
+            }
+            //else {
+            //        $location.path("/")
+            //    }
+           // }
+        }
+    });
+    auth.hookEvents();
 }]);

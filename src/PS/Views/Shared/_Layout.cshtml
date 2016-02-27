@@ -12,7 +12,8 @@
     <link href="~/assets/css/master.css" rel="stylesheet">
     <link href="~/assets/plugins/iview/css/iview.css" rel="stylesheet">
     <link href="~/assets/plugins/iview/css/skin/style.css" rel="stylesheet">
-    <!-- SWITCHER -->
+   
+     <!-- SWITCHER -->
     <link href="~/assets/plugins/switcher/css/switcher.css" rel="stylesheet" id="switcher-css" media="all">
     <link href="~/assets/plugins/switcher/css/color1.css" rel="alternate stylesheet" title="color1" media="all">
     <link href="~/assets/plugins/switcher/css/color2.css" rel="alternate stylesheet" title="color2" media="all">
@@ -21,16 +22,30 @@
     <link href="~/assets/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5" media="all">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/Site.css" />
-</head>
 
-<body>
-    
-    @RenderBody()
+    <link href="~/psapp/userprofile/userprofile.css" rel="stylesheet" />
 
     <script src="~/lib/underscore/underscore-min.js"></script>
     <script src="~/assets/plugins/jquery/jquery-1.11.1.min.js"></script>
     <script src="~/lib/angular/angular.min.js"></script>
     <script src="~/lib/angular-route/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
+    <script src="~/lib/ngStorage.min.js"></script>
+
+    <!-- Auth0 Lock script and AngularJS module -->
+    <script src="//cdn.auth0.com/js/lock-8.2.min.js"></script>
+    <!-- angular-jwt and angular-storage -->
+    <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+    <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+
+    <script src="//cdn.auth0.com/w2/auth0-angular-4.js"> </script>
+   
+</head>
+
+<body>
+    @RenderSection("scripts", required: false)
+  
+    
     <!-- SCRIPTS -->
     <script src="~/assets/js/jquery-migrate-1.2.1.js"></script>
     <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -48,11 +63,14 @@
     <script src="~/assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
     <!--HOME SLIDER-->
     <script src="~/assets/plugins/sliderpro/js/jquery.sliderPro.min.js"></script>
-    <!--THEME-->
     <script src="~/assets/js/cssua.min.js"></script>
-    <script src="~/assets/js/wow.min.js"></script>
-    <script src="~/assets/js/custom.js"></script>
+    <!--THEME-->
+  
 
-    @RenderSection("scripts", required: false)
+    @RenderBody()
+
+
+
+
 </body>
 </html>
