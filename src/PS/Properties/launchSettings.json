@@ -14,7 +14,8 @@
       "launchUrl": "https://localhost:44328/",
       "environmentVariables": {
         "Hosting:Environment": "Development"
-      }
+      },
+      "sdkVersion": "dnx-clr-win-x64.1.0.0-rc1-update1"
     },
     "web": {
       "commandName": "web",
