@@ -320,7 +320,7 @@ namespace MessageBoard
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-           // seeder.EnsureSeedData();
+            seeder.EnsureSeedData();
         }
 
         // Entry point for the application.
