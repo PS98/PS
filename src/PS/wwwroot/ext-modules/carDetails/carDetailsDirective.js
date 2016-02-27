@@ -10,6 +10,10 @@ angular.module("carDetails").directive("carDetails", function () {
             //    var newWidget = angular.copy(widget.settings);
             //    scope.widgets.push(newWidget);
             //}
+            /////////////////////////////////////////////////////////////////
+            // Animated WOW
+            /////////////////////////////////////////////////////////////////
+            new WOW().init();
         }
     };
 });

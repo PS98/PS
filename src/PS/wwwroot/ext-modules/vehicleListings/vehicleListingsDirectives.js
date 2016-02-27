@@ -10,6 +10,10 @@ angular.module("vehicleListings").directive("vehicleListings", function () {
             //    var newWidget = angular.copy(widget.settings);
             //    scope.widgets.push(newWidget);
             //}
+            /////////////////////////////////////////////////////////////////
+            // Animated WOW
+            /////////////////////////////////////////////////////////////////
+            new WOW().init();
         }
     };
 });
