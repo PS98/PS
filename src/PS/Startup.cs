@@ -316,8 +316,9 @@ namespace MessageBoard
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    name: "Application",
+                    template: "{*template}",
+                    defaults: new { controller = "Home", action = "Index" });
             });
 
            // seeder.EnsureSeedData();

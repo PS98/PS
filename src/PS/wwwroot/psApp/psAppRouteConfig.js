@@ -67,9 +67,10 @@ angular.module("psApp").config(["$routeProvider", "$locationProvider", "authProv
             if (token) {
                // if (!jwtHelper.isTokenExpired(token)) {
                 auth.authenticate($localStorage.profile, $localStorage.token);
-                } else {
-                    $location.path("/")
-                }
+            }
+            //else {
+            //        $location.path("/")
+            //    }
            // }
         }
     });

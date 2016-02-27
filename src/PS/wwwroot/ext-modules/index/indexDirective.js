@@ -12,17 +12,6 @@ angular.module("index").directive("index", function () {
     };
 });
 
-angular.module("index").directive('script', function () {
-    return {
-        restrict: 'E',
-        scope: false,
-        link: function (scope, elem, attr) {
-           
-        }
-    }
-});
-    
-
 
 function load () {
 

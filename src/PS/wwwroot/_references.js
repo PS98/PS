@@ -31,6 +31,7 @@
 /// <reference path="assets/plugins/switcher/js/evol.colorpicker.min.js" />
 /// <reference path="ext-modules/carDetails/carDetailsDirective.js" />
 /// <reference path="ext-modules/carDetails/carDetailsModule.js" />
+/// <reference path="ext-modules/index/indexcontroller.js" />
 /// <reference path="ext-modules/index/indexDirective.js" />
 /// <reference path="ext-modules/index/indexModule.js" />
 /// <reference path="ext-modules/newsDetails/newsDetailsDirective.js" />
