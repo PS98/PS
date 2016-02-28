@@ -29,3 +29,16 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, .8);
     background-size:cover;
 }
+.drpDownVisible
+{
+    display:block;
+}
+.drpDownInvisible{
+    display:none;
+}
+.dropdown-menu1{
+    background-color: #222;
+    padding:0;
+    left:auto;
+    border:none;
+}

@@ -36,7 +36,10 @@
     "twilio": "4.4.0",
     "Sendgrid": "6.3.4",
     "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final",
-    "System.IdentityModel.Tokens.Jwt": "4.0.2.206221351"
+    "System.IdentityModel.Tokens.Jwt": "4.0.2.206221351",
+    "MongoDB.Driver": "2.0.0-rc0",
+    "MongoDB.Driver.Core": "2.0.0-rc0",
+    "MongoDB.Bson": "2.0.0-rc0"
   },
 
   "commands": {
