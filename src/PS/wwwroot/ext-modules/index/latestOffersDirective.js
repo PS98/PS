@@ -8,6 +8,11 @@ angular.module("index").directive("latestOffers", function () {
         //controller: "indexController",
         link: function (scope, el, attrs) {
             new WOW().init();
+            Core.initialize();
+            $(".slider-product a").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
+
+
+            $("a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
         }
     };
 });

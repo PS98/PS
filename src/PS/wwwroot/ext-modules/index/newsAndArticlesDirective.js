@@ -7,7 +7,7 @@ angular.module("index").directive("newsAndArticles", function () {
         templateUrl: "ext-modules/index/newsAndArticlesTemplate.html",
      //   controller: "indexController",
         link: function (scope, el, attrs) {
-           
+            $(".slider-product a").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
         }
     };
 });

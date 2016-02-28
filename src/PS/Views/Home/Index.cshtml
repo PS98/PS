@@ -5,191 +5,197 @@
 @section Scripts{
 
 
-<script src="~/psApp/psAppModule.js"></script>
-<script src="~/psApp/psAppConfig.js"></script>
-<script src="~/psApp/psAppRouteConfig.js"></script>
+    <script src="~/psApp/psAppModule.js"></script>
+    <script src="~/psApp/psAppConfig.js"></script>
+    <script src="~/psApp/psAppRouteConfig.js"></script>
 
-<script src="~/psapp/directives/psindexdirective.js"></script>
-<script src="~/psApp/directives/psCarDetailsDirective.js"></script>
-<script src="~/psapp/directives/psnewsdetailsdirective.js"></script>
-<script src="~/psapp/directives/psnewsgriddirective.js"></script>
-<script src="~/psapp/directives/psvehiclelistingsdirective.js"></script>
+    <script src="~/psapp/directives/psindexdirective.js"></script>
+    <script src="~/psApp/directives/psCarDetailsDirective.js"></script>
+    <script src="~/psapp/directives/psnewsdetailsdirective.js"></script>
+    <script src="~/psapp/directives/psnewsgriddirective.js"></script>
+    <script src="~/psapp/directives/psvehiclelistingsdirective.js"></script>
 
-<script src="~/psapp/userprofile/userprofiledirective.js"></script>
+    <script src="~/psapp/common/commonmodule.js"></script>
+    <script src="~/psapp/common/commondirective.js"></script>
+    <script src="~/psapp/switcher/switchermodule.js"></script>
+    <script src="~/psapp/switcher/switcherdirective.js"></script>
+    <script src="~/psapp/header/headermodule.js"></script>
+    <script src="~/psapp/header/headerdirective.js"></script>
+    <script src="~/psapp/footer/footermodule.js"></script>
+    <script src="~/psapp/footer/footerdirective.js"></script>
 
-<script src="~/ext-modules/index/indexModule.js"></script>
-<script src="~/ext-modules/index/indexDirective.js"></script>
-<script src="~/ext-modules/index/indexcontroller.js"></script>
-<script src="~/ext-modules/index/carouseldirective.js"></script>
-<script src="~/ext-modules/index/servicesdirective.js"></script>
-<script src="~/ext-modules/index/latestoffersdirective.js"></script>
-<script src="~/ext-modules/index/realfactsdirective.js"></script>
-<script src="~/ext-modules/index/aboutusdirective.js"></script>
-<script src="~/ext-modules/index/contactusdirective.js"></script>
-<script src="~/ext-modules/index/customerfeedbackdirective.js"></script>
-<script src="~/ext-modules/index/latestgallerydirective.js"></script>
-<script src="~/ext-modules/index/newsandarticlesdirective.js"></script>
-<script src="~/ext-modules/index/ourbrandsdirective.js"></script>
-<script src="~/ext-modules/index/ourteamdirective.js"></script>
-<script src="~/ext-modules/index/typesofvehiclesdirective.js"></script>
-<script src="~/ext-modules/carDetails/carDetailsModule.js"></script>
-<script src="~/ext-modules/carDetails/carDetailsDirective.js"></script>
-<script src="~/ext-modules/newsdetails/newsdetailsmodule.js"></script>
-<script src="~/ext-modules/newsdetails/newsdetailsdirective.js"></script>
-<script src="~/ext-modules/newsgrid/newsgridmodule.js"></script>
-<script src="~/ext-modules/newsgrid/newsgriddirective.js"></script>
-<script src="~/ext-modules/vehiclelistings/vehiclelistingsmodule.js"></script>
-<script src="~/ext-modules/vehiclelistings/vehiclelistingsdirectives.js"></script>
-   
+
+    <script src="~/psapp/userprofile/userprofiledirective.js"></script>
+
+    <script src="~/ext-modules/index/indexModule.js"></script>
+    <script src="~/ext-modules/index/indexDirective.js"></script>
+    <script src="~/ext-modules/index/indexcontroller.js"></script>
+    <script src="~/ext-modules/index/carouseldirective.js"></script>
+    <script src="~/ext-modules/index/servicesdirective.js"></script>
+    <script src="~/ext-modules/index/latestoffersdirective.js"></script>
+    <script src="~/ext-modules/index/realfactsdirective.js"></script>
+    <script src="~/ext-modules/index/aboutusdirective.js"></script>
+    <script src="~/ext-modules/index/contactusdirective.js"></script>
+    <script src="~/ext-modules/index/customerfeedbackdirective.js"></script>
+    <script src="~/ext-modules/index/latestgallerydirective.js"></script>
+    <script src="~/ext-modules/index/newsandarticlesdirective.js"></script>
+    <script src="~/ext-modules/index/ourbrandsdirective.js"></script>
+    <script src="~/ext-modules/index/ourteamdirective.js"></script>
+    <script src="~/ext-modules/index/typesofvehiclesdirective.js"></script>
+    <script src="~/ext-modules/carDetails/carDetailsModule.js"></script>
+    <script src="~/ext-modules/carDetails/carDetailsDirective.js"></script>
+    <script src="~/ext-modules/newsdetails/newsdetailsmodule.js"></script>
+    <script src="~/ext-modules/newsdetails/newsdetailsdirective.js"></script>
+    <script src="~/ext-modules/newsgrid/newsgridmodule.js"></script>
+    <script src="~/ext-modules/newsgrid/newsgriddirective.js"></script>
+    <script src="~/ext-modules/vehiclelistings/vehiclelistingsmodule.js"></script>
+    <script src="~/ext-modules/vehiclelistings/vehiclelistingsdirectives.js"></script>
+
 }
-  <!-- Loader -->
+<!-- Loader -->
 <div id="page-preloader"><span class="spinner"></span></div>
-<!-- Loader end -->
-<div id="this-top" class="layout-theme animated-css" data-header="sticky" data-header-top="200">
-    <!-- Start Switcher -->
-    <div class="switcher-wrapper">
-        <div class="demo_changer">
-            <div class="demo-icon customBgColor"><i class="fa fa-cog fa-spin fa-2x"></i></div>
-            <div class="form_holder">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="predefined_styles">
-                            <div class="skin-theme-switcher">
-                                <h4>Color</h4>
-                                <a href="javascript:void(0);" data-switchcolor="color1" class="styleswitch" style="background-color:#fe5656;"> </a>
-                                <a href="javascript:void(0);" data-switchcolor="color2" class="styleswitch" style="background-color:#4fb0fd;"> </a>
-                                <a href="javascript:void(0);" data-switchcolor="color3" class="styleswitch" style="background-color:#ffc73c;"> </a>
-                                <a href="javascript:void(0);" data-switchcolor="color4" class="styleswitch" style="background-color:#ff8300;"> </a>
-                                <a href="javascript:void(0);" data-switchcolor="color5" class="styleswitch" style="background-color:#02cc8b;"> </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Switcher -->
-    <!-- HEADER -->
-    <div class="header">
-        <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="header-contacts"> <span class="header-contacts__item"><i class="icon fa fa-phone"></i>+ 987 654 3210</span> <a class="header-contacts__item" href="mailto:autoz@zone.com"><i class="icon fa fa-envelope"></i>autoz (at) zone.com</a> </div>
-                        <ul class="social-links list-inline">
-                            <li><a class="icon fa fa-facebook" href="javascript:void(0);"></a></li>
-                            <li><a class="icon fa fa-twitter" href="javascript:void(0);"></a></li>
-                            <li><a class="icon fa fa-youtube-play" href="javascript:void(0);"></a></li>
-                            <li><a class="icon fa fa-instagram" href="javascript:void(0);"></a></li>
-                            <li><a class="icon fa fa-google-plus" href="javascript:void(0);"></a></li>
-                        </ul>
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end top-header -->
 
-        <div class="header__inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-xs-12">
-                        <a href="index-2.html" class="logo"> <img class="logo__img img-responsive" src="assets/img/logo.png" height="50" width="111" alt="Logo"> </a>
-                        <div class="navbar yamm">
-                            <div class="navbar-header hidden-md hidden-lg hidden-sm">
-                                <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                                <a href="javascript:void(0);" class="navbar-brand"></a>
-                            </div>
-                            <div id="navbar-collapse-1" class="navbar-collapse collapse">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/VehicleListings">VEHICLE LISTINGS</a></li>
-                                    <li><a href="/CarDetails">CAR DETAILS</a></li>
-                                    <li class="dropdown">
-                                        <a>NEWS</a>
-                                        <ul role="menu" class="dropdown-menu">
-                                            <li><a href="/NewsGrid">NEWS GRID</a></li>
-                                            <li><a href="/NewsDetails">NEWS DETAILS</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="/NewsGrid">NEWS GRID</a></li>
-                                    <li><a href="/NewsDetails">NEWS DETAILS</a></li>
-                                    <li ng-controller="indexController">
-                                        <a ng-click="login()" ng-show="!auth.isAuthenticated">LOGIN</a>
-                                        <ps-user-profile ng-show="auth.isAuthenticated"></ps-user-profile>
-                                    </li>
-                                    <!--@await Html.PartialAsync("_LoginPartial")-->
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end container -->
-    </div>
-    <!-- end header__inner -->
-    <!-- end header -->
 
+<common>
+    <switcher></switcher>
+    <header></header>
     <div id="wrapper" ng-view></div>
+    @*<footer></footer>*@
+</common>
 
-    <footer class="footer">
-        <div class="wrap-section-border">
-            <section class="section_mod-h section-bg section-bg_second">
-                <div class="bg-inner border-section-top border-section-top_mod-b">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h2 class="footer-title">auto <span class="footer-title__inner">ZONE</span></h2>
-                                <div class="decor-1 decor-1_mod-b"></div>
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="footer__name">: SHOWROOM LOCATION :</div>
-                                <div class="footer__text">32 Market St.128, Deeja Town, Florida, CA 12345</div>
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="footer__item">
-                                    <span class="footer__name">Phone:</span>
-                                    <span class="footer__text">+1 (234) 567 8900</span>
-                                </div>
-                                <div class="footer__item">
-                                    <span class="footer__name">Fax:</span>
-                                    <span class="footer__text">+1 (234) 567 8998</span>
-                                </div>
-                                <div class="footer__item">
-                                    <span class="footer__name">email:</span>
-                                    <span class="footer__text">info@autozone.com</span>
-                                </div>
-                                <div class="footer__item">
-                                    <span class="footer__name">Hours:</span>
-                                    <span class="footer__text">Mon - Fri :: 9am - 6pm</span>
-                                </div>
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <ul class="social-links list-inline">
-                                    <li><a class="icon fa fa-facebook" href="javascript:void(0);"></a></li>
-                                    <li><a class="icon fa fa-twitter" href="javascript:void(0);"></a></li>
-                                    <li><a class="icon fa fa-youtube-play" href="javascript:void(0);"></a></li>
-                                    <li><a class="icon fa fa-instagram" href="javascript:void(0);"></a></li>
-                                    <li><a class="icon fa fa-google-plus" href="javascript:void(0);"></a></li>
-                                </ul>
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                    </div><!-- end container -->
-                </div><!-- end bg-inner -->
-            </section><!-- end section_mod-b -->
-        </div><!-- end wrap-section-border -->
-        <div class="footer__wrap-btn"> <a class="footer__btn scroll" href="#this-top">top</a> </div>
-        <div class="copyright">Copyrights 2015 <a class="copyright__link" href="#">AutoZONE</a> : : All rights reserved</div>
-    </footer>
-@*</div>*@<!-- end #wrapper -->
-</div><!-- end layout-theme -->
+
+
 <span class="scroll-top"> <i class="fa fa-angle-up"> </i></span>
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+
+        var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
+
+
+        var tabletWidth = 767;
+        var mobileWidth = 640;
+
+
+        /////////////////////////////////////
+        //  LOADER
+        /////////////////////////////////////
+
+        var $preloader = $('#page-preloader'),
+        $spinner = $preloader.find('.spinner-loader');
+        $spinner.fadeOut();
+        $preloader.delay(50).fadeOut('slow');
+
+
+        $(function () {
+            $('.scroll[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+
+
+        /////////////////////////////////////
+        //  Sticky Header
+        /////////////////////////////////////
+
+
+        if (windowWidth > tabletWidth) {
+
+            var headerSticky = $(".layout-theme").data("header");
+            var headerTop = $(".layout-theme").data("header-top");
+
+            if (headerSticky && headerSticky.length) {
+                $(window).on('scroll', function () {
+                    var winH = $(window).scrollTop();
+                    var $pageHeader = $('.header');
+                    if (winH > headerTop) {
+
+                        $('.header').addClass("animated");
+                        $('header').addClass("animation-done");
+                        $('.header').addClass("bounce");
+                        $pageHeader.addClass('sticky');
+
+                    } else {
+
+                        $('.header').removeClass("bounce");
+                        $('.header').removeClass("animated");
+                        $('.header').removeClass("animation-done");
+                        $pageHeader.removeClass('sticky');
+                    }
+                });
+            }
+        }
+
+
+        /////////////////////////////////////
+        //  Disable Mobile Animated
+        /////////////////////////////////////
+
+        if (windowWidth < mobileWidth) {
+
+            $("body").removeClass("animated-css");
+
+        }
+
+
+        $('.animated-css .animated:not(.animation-done)').waypoint(function () {
+
+            var animation = $(this).data('animation');
+
+            $(this).addClass('animation-done').addClass(animation);
+
+        }, {
+            triggerOnce: true,
+            offset: '90%'
+        });
+
+
+
+
+        //////////////////////////////
+        // Animated Entrances
+        //////////////////////////////
+
+
+
+        if (windowWidth > 1200) {
+
+            $(window).scroll(function () {
+                $('.animatedEntrance').each(function () {
+                    var imagePos = $(this).offset().top;
+
+                    var topOfWindow = $(window).scrollTop();
+                    if (imagePos < topOfWindow + 400) {
+                        $(this).addClass("slideUp"); // slideUp, slideDown, slideLeft, slideRight, slideExpandUp, expandUp, fadeIn, expandOpen, bigEntrance, hatch
+                    }
+                });
+            });
+
+        }
+
+        /////////////////////////////////////
+        //  Zoom Images
+        /////////////////////////////////////
+
+
+
+
+
+        $(".slider-product a").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
+
+
+        $("a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
+    });
+</script>
