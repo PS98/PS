@@ -10,6 +10,8 @@ angular.module("newsDetails").directive("newsDetails", function () {
             //    var newWidget = angular.copy(widget.settings);
             //    scope.widgets.push(newWidget);
             //}
+            
+          Core.initialize();
         }
     };
 });

@@ -7,7 +7,7 @@ angular.module("index").directive("customerFeedback", function () {
         templateUrl: "ext-modules/index/customerFeedbackTemplate.html",
        // controller: "indexController",
         link: function (scope, el, attrs) {
-          
+            Core.initialize();
         }
     };
 });

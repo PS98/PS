@@ -7,7 +7,10 @@ angular.module("index").directive("services", function () {
         templateUrl: "ext-modules/index/servicesTemplate.html",
         controller: "indexController",
         link: function (scope, el, attrs) {
-          
+            new WOW().init();
+            Core.initialize();
+
+
         }
     };
 });
