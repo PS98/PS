@@ -27,7 +27,6 @@ angular.module("index").controller("indexController",
 
             (function ($) {
 
-                debugger;
                 $(document).ready(function () {
 
                     /////////////////////////////////////

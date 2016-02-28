@@ -1,13 +1,19 @@
 ﻿"use strict";
 
-angular.module("psApp").directive("psUserProfile", [function () {
+angular.module("psApp").directive("psUserProfile", ["$document", function ($document) {
     return {
         controller: "sho",
         templateUrl: "psApp/userProfile/userProfileTemplate.html",
         link: function (scope, el, ctrl, attr) {            
             
-            scope.shobhit = function () {
-                scope.isVisible = true;
+            scope.shobhit = function ($event) {                 
+                
+                if (!scope.showMenu) {
+                   
+                    scope.showMenu = true;
+                } else {
+                    scope.showMenu = false;
+                }
             };
     }
     };

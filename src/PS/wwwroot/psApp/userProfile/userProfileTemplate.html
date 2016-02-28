@@ -4,14 +4,14 @@
     <span>{{auth.profile.nickname}}</span>
     <div class="ps-dashboard-controls">
         <div class="dropdown1">
-            <button class="btn btn-default dropdown-toggle" type="button" id="drpdownLogout" ng-click="shobhit()" data-toggle="dropdown1" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle jelect" type="button" id="drpdownLogout" ng-click="shobhit($event)" data-toggle="dropdown1" aria-expanded="true">
                 <i class="fa fa-chevron-down"></i>
             </button>
-            <ul class="dropdown-menu1" ng-class="isVisible ? 'drpDownVisible': 'drpDownInvisible'" role="menu" aria-labelledby="drpdownLogout">
+            <ul class="dropdown-menu1 jelect-options formatDrpDown" ng-class="showMenu ? 'drpDownVisible': 'drpDownInvisible'" role="menu" aria-labelledby="drpdownLogout">
                 <li>
                     <a role="menuitem" ng-click="logout()">Logout</a>
                 </li>
             </ul>
-        </div>
+        </div>      
     </div>
 </div>
