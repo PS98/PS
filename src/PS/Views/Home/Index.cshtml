@@ -14,19 +14,10 @@
     <script src="~/psapp/directives/psnewsdetailsdirective.js"></script>
     <script src="~/psapp/directives/psnewsgriddirective.js"></script>
     <script src="~/psapp/directives/psvehiclelistingsdirective.js"></script>
-
-    <script src="~/psapp/common/commonmodule.js"></script>
-    <script src="~/psapp/common/commondirective.js"></script>
-    <script src="~/psapp/switcher/switchermodule.js"></script>
-    <script src="~/psapp/switcher/switcherdirective.js"></script>
-    <script src="~/psapp/header/headermodule.js"></script>
-    <script src="~/psapp/header/headerdirective.js"></script>
-    <script src="~/psapp/footer/footermodule.js"></script>
-    <script src="~/psapp/footer/footerdirective.js"></script>
-
-
+    <script src="~/psApp/headerContent/headerContentDirective.js"></script>
+    <script src="~/psapp/footerContent/footerContentdirective.js"></script>
+    <script src="~/psapp/switcherContent/switcherContentdirective.js"></script>
     <script src="~/psapp/userprofile/userprofiledirective.js"></script>
-
     <script src="~/ext-modules/index/indexModule.js"></script>
     <script src="~/ext-modules/index/indexDirective.js"></script>
     <script src="~/ext-modules/index/indexcontroller.js"></script>
@@ -52,20 +43,14 @@
     <script src="~/ext-modules/vehiclelistings/vehiclelistingsdirectives.js"></script>
 
 }
-<!-- Loader -->
-<div id="page-preloader"><span class="spinner"></span></div>
 
-
-<common>
-    <switcher></switcher>
-    <header></header>
-    <div id="wrapper" ng-view></div>
-    @*<footer></footer>*@
-</common>
-
-
-
-<span class="scroll-top"> <i class="fa fa-angle-up"> </i></span>
+    <!-- Loader -->
+    <div id="page-preloader"><span class="spinner"></span></div>
+    <switcher-content></switcher-content>
+    <header-content></header-content>
+    <div class="wrapper" ng-view></div>
+    <footer-content></footer-content>
+    <span class="scroll-top"> <i class="fa fa-angle-up"> </i></span>
 
 <script type="text/javascript">
 
