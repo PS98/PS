@@ -7,8 +7,7 @@ angular.module("index").directive("latestGallery", function () {
         templateUrl: "ext-modules/index/latestGalleryTemplate.html",
        // controller: "indexController",
         link: function (scope, el, attrs) {
-           
-
+            window.prettyPrint && prettyPrint();
             $("a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
 
             Core.initialize();
