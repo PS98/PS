@@ -6,11 +6,7 @@ angular.module("newsDetails").directive("newsDetails", function () {
         //instead of isolated scope
         templateUrl: "ext-modules/newsDetails/newsDetailsTemplate.html",
         link: function (scope, el, attrs) {
-            //scope.addNewWidget = function (widget) {
-            //    var newWidget = angular.copy(widget.settings);
-            //    scope.widgets.push(newWidget);
-            //}
-            
+            $("a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
           Core.initialize();
         }
     };
