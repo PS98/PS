@@ -1,17 +1,15 @@
-﻿<script type="text/javascript-lazy" src="../assets/js/custom.js"></script>    
-<div id="wrapper">
-               <div class="block-title">
-            <div class="block-title__inner section-bg section-bg_second">
-                <div class="bg-inner">
-                    <h1 class="ui-title-page">latest news</h1>
-                    <div class="decor-1 center-block"></div>
-                    <ol class="breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li class="active">news GRID</li>
-                    </ol>
-                </div><!-- end bg-inner -->
-            </div><!-- end block-title__inner -->
-        </div><!-- end block-title -->
+﻿<div class="block-title">
+<div class="block-title__inner section-bg section-bg_second">
+<div class="bg-inner">
+    <h1 class="ui-title-page">latest news</h1>
+    <div class="decor-1 center-block"></div>
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">news GRID</li>
+    </ol>
+</div><!-- end bg-inner -->
+</div><!-- end block-title__inner -->
+</div><!-- end block-title -->
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -19,21 +17,21 @@
                         <div class="wrap-post">
                             <article class="post post_mod-c clearfix">
                                 <div class="entry-media">
-                                    <img class="img-responsive" src="assets/media/posts/370x250/1.jpg" width="370" height="250" alt="Foto" />
+                                    <img class="img-responsive" ng-src={{imageSrc}} width="370" height="250" alt="Foto" />
                                     <div class="post-hover"></div>
                                 </div>
                                 <div class="entry-main entry-main_mod-a">
                                     <div class="entry-main__inner">
-                                        <h3 class="entry-title"><a href="javascript:void(0);">sed rt enim ad minim veniam quis</a></h3>
+                                        <h3 class="entry-title"><a href="javascript:void(0);">{{title}}</a></h3>
                                         <div class="entry-meta">
-                                            <span class="entry-meta__item">By:: <a class="entry-meta__link" href="javascript:void(0);"> ALEX LEEMAN</a></span>
-                                            <span class="entry-meta__item">COMMENTS :: <a class="entry-meta__link" href="javascript:void(0);">15</a></span>
+                                           <span class="entry-meta__item">By:: <a class="entry-meta__link" href="javascript:void(0);">{{by}}</a></span>
+                                           <span class="entry-meta__item">COMMENTS :: <a class="entry-meta__link" href="javascript:void(0);">{{commentCount}}</a></span>
                                         </div>
                                     </div>
                                     <div class="decor-1"></div>
-                                    <div class="entry-date"><span class="entry-date__inner"><span class="entry-date__number">01</span><br>oct</span></div>
+                                    <div class="entry-date"><span class="entry-date__inner"><span class="entry-date__number">{{date.day}}</span><br>{{date.month}}</span></div>
                                     <div class="entry-content">
-                                        <p>Wliquam sit amet urna sed vel nullam semper aib vestiblum fringilla orem ipsum dolor sit amet con tetur adipiscing elit sed eiusmod.</p>
+                                        <p>{{content}}</p>
                                     </div>
                                     <a class="post-link" href="javascript:void(0);">read more</a>
                                 </div>
