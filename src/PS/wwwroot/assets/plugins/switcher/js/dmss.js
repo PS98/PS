@@ -81,7 +81,7 @@ jQuery('body').delegate('.demo_changer .demo-icon', 'click', function (event) {
 			jQuery('.demo_changer').toggleClass("active");
 		});			
 	}
-	event.preventDefault();
+	event.stopImmediatePropagation();
 });
 
 // Selector (MODULE #4)
