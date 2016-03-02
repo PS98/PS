@@ -16,14 +16,14 @@
                     <main class="main-content">
                         <article class="car-details">
                             <div class="car-details__wrap-title clearfix">
-                                <h2 class="car-details__title">Chevrolet Impala</h2>
+                                <h2 class="car-details__title">{{ carDetails.carName }}</h2>
                                 <div class="car-details__wrap-price"><span class="car-details__price"><span class="car-details__price-inner">$27,920</span></span></div>
                             </div>
                             <div id="slider-product" class="flexslider slider-product">
                                 <ul class="slides">
-                                    <li>
-                                        <a href="assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
+                                    <li ng-repeat="img in carDetails.carImages.largeImages">
+                                        <a ng-href="{{ img.url }}">
+                                            <img class="img-responsive" ng-src="{{ img.url }}" height="430" width="770" alt="Foto">
                                         </a>
                                     </li>
                                     <li>
@@ -31,48 +31,14 @@
                                             <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="assets/media/slider_product/large/1.jpg">
-                                            <img class="img-responsive" src="assets/media/slider_product/large/1.jpg" height="430" width="770" alt="Foto">
-                                        </a>
-                                    </li>
-                                </ul>
+                                                                </ul>
                             </div>
                             <div id="carousel-product" class="flexslider carousel-product">
                                 <ul class="slides">
-                                    <li>
-                                        <img src="assets/media/slider_product/small/1.jpg" height="75" width="95" alt="foto">
+                                    <li ng-repeat="img in carDetails.carImages.smallImages">
+                                        <img src="img.url" height="75" width="95" alt="foto">
                                     </li>
-                                    <li>
-                                        <img src="assets/media/slider_product/small/2.jpg" height="75" width="95" alt="foto">
-                                    </li>
-                                    <li>
-                                        <img src="assets/media/slider_product/small/3.jpg" height="75" width="95" alt="foto">
-                                    </li>
-                                    <li>
-                                        <img src="assets/media/slider_product/small/4.jpg" height="75" width="95" alt="foto">
-                                    </li>
-                                    <li>
-                                        <img src="assets/media/slider_product/small/5.jpg" height="75" width="95" alt="foto">
-                                    </li>
-                                    <li>
-                                        <img src="assets/media/slider_product/small/6.jpg" height="75" width="95" alt="foto">
-                                    </li>
+                                 
                                 </ul>
                             </div>
                             <!-- Nav tabs -->
@@ -85,26 +51,12 @@
                             </div>
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div class="tab-pane active" id="tab1">
-                                    <h3 class="ui-title-inner">Lorem ipsum dolor sit amet consectetur</h3>
+                                <div class="tab-pane active" id="tab1" ng-repeat="tab in carDetails.navPanel">
+                                    <h3 class="ui-title-inner">{{ tab.tilte }}</h3>
                                     <div class="decor-1"></div>
-                                    <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                                    <p>Wliquam sit amet urna sed vel nullam semper aiber vestiblum fringilla orem ipsum dolor sit amet consectetur adipisc ing elit sed don eiusmod tempor incididunt ut labore et dolore magna aliquaa enimd ads minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor. Lorem ipsum dolor sit amet consec tetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <p>Aiber vestiblum fringilla orem ipsum dolor sit amet consectetur adipisc ing elit sed don eiusmod tempor incididunt ut labore et dolore magna aliquaa enimd ads minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipis cing elit sed do eiusmod tempor. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                    <p>Elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostru dare exercitation ullamco laboris nisi aliquip ex ea commodo consequat. Duis aute irue dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                   {{ tab.details }}
                                 </div>
-                                <div class="tab-pane" id="tab2">
-                                    <h3 class="ui-title-inner">Lorem ipsum dolor</h3>
-                                    <div class="decor-1"></div>
-                                    <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                                </div>
-                                <div class="tab-pane" id="tab3">
-                                    <h3 class="ui-title-inner">Sit amet consectetur</h3>
-                                    <div class="decor-1"></div>
-                                    <p>Aiber vestiblum fringilla orem ipsum dolor sit amet consectetur adipisc ing elit sed don eiusmod tempor incididunt ut labore et dolore magna aliquaa enimd ads minim veniam quis nostrud Lorem ipsum dolor sit amet consectetur adipis cing elit sed do eiusmod tempor. Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                                    <p>Elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostru dare exercitation ullamco laboris nisi aliquip ex ea commodo consequat. Duis aute irue dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                </div>
+                           
                             </div>
                             <div class="panel-group accordion" id="accordion-1">
                                 <div class="panel panel-default">

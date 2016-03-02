@@ -2,8 +2,8 @@
 
 angular.module("carDetails").directive("carDetails", function () {
     return {
-        //Not defining the scope because now we want the inherited scope(default scope for angular) for psDashboard 
-        //instead of isolated scope
+        scope:{},
+        controller: "carDetailsController",
         templateUrl: "ext-modules/carDetails/carDetailsTemplate.html",
         link: function (scope, el, attrs) {
             setCraouselAndAnimations();
