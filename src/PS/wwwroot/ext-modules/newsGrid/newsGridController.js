@@ -10,6 +10,7 @@ function newsGridController($scope, $http, dataService) {
         dataService.getNewsGrid()
          .then(function (result) {
              //Success
+             $scope.gridDataList = result;
              console.log(result);
          }, function () {
              //Error
