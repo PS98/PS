@@ -47,6 +47,7 @@
 /// <reference path="ext-modules/index/realfactsdirective.js" />
 /// <reference path="ext-modules/index/servicesdirective.js" />
 /// <reference path="ext-modules/index/typesofvehiclesdirective.js" />
+/// <reference path="ext-modules/newsdetails/newsDetailsController.js" />
 /// <reference path="ext-modules/newsDetails/newsDetailsDirective.js" />
 /// <reference path="ext-modules/newsDetails/newsDetailsModule.js" />
 /// <reference path="ext-modules/newsgrid/newsgridcontroller.js" />
