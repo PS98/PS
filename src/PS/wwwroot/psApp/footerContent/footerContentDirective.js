@@ -5,21 +5,21 @@ angular.module("psApp").directive("footerContent", function () {
         templateUrl: "psApp/footerContent/footerContentTemplate.html",
         link: function (scope, element, attrs) {
 
-            //$(function () {
-            //    $('.scroll[href*=#]:not([href=#])').click(function () {
-            //        debugger;
-            //      //  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            //            var target = $(this.hash);
-            //            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            //            if (target.length) {
-            //                $('html,body').animate({
-            //                    scrollTop: target.offset().top
-            //                }, 1000);
-            //                return false;
-            //            }
-            //       // }
-            //    });
-            //});
+            $(function () {
+                $('.scroll[href*=#]:not([href=#])').click(function () {
+                    debugger;
+                  //  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        if (target.length) {
+                            $('html,body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                   // }
+                });
+            });
 
             //////////////////////////////
             // Animated Entrances
