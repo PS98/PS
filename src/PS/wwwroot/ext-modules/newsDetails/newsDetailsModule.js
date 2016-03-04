@@ -1,9 +1,7 @@
 ﻿"use strict";
 
-angular.module("newsDetails", []).factory("dataService"
-    ["$timeout",
-    function ($timeOut) {
-        var newsDetails = [
+angular.module("newsDetails", []).factory("newsDetailsService", ["$timeout", function ($timeout) {
+        var newsDetails = 
             {
                 id: 100,
                 imgSrc: "assets/media/posts/770x430/1.jpg",
@@ -133,8 +131,8 @@ angular.module("newsDetails", []).factory("dataService"
                     tagLatestModel : "latest models"
                 },
 
-            },
-        ]
+            }
+        
 
         var _getNewsDetails = function () {
             return $timeout(function () {

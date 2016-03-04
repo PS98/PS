@@ -1,13 +1,13 @@
 ﻿"use strict";
 
-var module = angular.module("newsDetails").controller("newsDetailsController", ["$scope", "$http", "dataService", newsDetailsController]);
+var module = angular.module("newsDetails").controller("newsDetailsController", ["$scope", "$http", "newsDetailsService", newsDetailsController]);
 
-function newsDetailsController($scope, $http, dataService) {
+function newsDetailsController($scope, $http, newsDetailsService) {
     // $scope.data = dataService;
     // $scope.isBusy = true;
-    if (dataService) {
+    if (newsDetailsService) {
         //      $scope.isBusy = true;
-        dataService.getNewsDetails()
+        newsDetailsService.getNewsDetails()
          .then(function (result) {
              //Success
              $scope.detailsData = result;
