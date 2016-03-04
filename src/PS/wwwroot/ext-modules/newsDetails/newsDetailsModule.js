@@ -45,14 +45,14 @@ angular.module("newsDetails", []).factory("newsDetailsService", ["$timeout", fun
                 
                 commentsData: {
                     uiTitleInnerComment: "comments :: 2",   
-                    commentAuthor1 : {
+                    commentsAuthor1 : {
                         commentAuthorName: "ANDREW",
                         commentAuthorImgSrc : "assets/media/avatar_comments/1.jpg",
                         commentDateTime: "23 SEP 2015 :: 6:10 PM",
                         commentBody: "Wliquam sit amet urna sed vel nullam semper aiber vestiblum fringilla orem ipsum dolor sit amet consectetur adipisc ing elit sed don eiusmod.",
                     },
 
-                    commentAuthor2 : {
+                    commentsAuthor2 : {
                         commentAuthorName: "MARK",
                         commentAuthorImgSrc : "assets/media/avatar_comments/2.jpg",
                         commentDateTime: "13 SEP 2015 :: 6:10 PM",

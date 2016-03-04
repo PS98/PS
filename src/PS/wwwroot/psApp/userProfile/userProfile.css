@@ -3,6 +3,10 @@
     padding-top:38px;
 }
 
+.fontChngRaleway{
+    font: 700 14px Raleway;
+}
+
 .ps-user-profile-small span{
    font-size:18px;
    margin-top:10px;
@@ -17,6 +21,10 @@
 
 .ps-dashboard-controls{
     float: right;
+}
+
+.ps-user-profile-nickname{
+    padding-left: 10px;
 }
 
 .circular {
