@@ -48,11 +48,8 @@ angular.module("carDetails", []).factory("carDetailsService", ["$timeout", funct
                     { heading: 'fuel economy', value: 'EPA city/highway: 21/31 mpg' },
                     { heading: 'Passenger Capacity', value: '5 Seats' }
                 ],
-                vedios: [{ link: 'http://www.youtube.com/watch?v=neS5h_VSvb8', imageUrl: 'assets/media/banners/1.jpg' },
-                    { link: 'http://www.youtube.com/watch?v=neS5h_VSvb8', imageUrl: 'assets/media/banners/1.jpg' },
-                    { link: 'http://www.youtube.com/watch?v=neS5h_VSvb8', imageUrl: 'assets/media/banners/1.jpg' },
-                    { link: 'http://www.youtube.com/watch?v=neS5h_VSvb8', imageUrl: 'assets/media/banners/1.jpg' }
-                ],
+                vedios: [{ link: 'http://www.youtube.com/watch?v=neS5h_VSvb8', imageUrl: 'assets/media/banners/1.jpg' }
+                                   ],
                 relatedCars: [{ Name: 'Toyota Avalon', Price: '40,685', Desc: 'Cullam semper aibe vestibulum', imgUrl: 'assets/media/widget-post/2.jpg' }, { Name: 'Toyota Avalon', Price: '33,120', Desc: 'Cullam semper aibe vestibulum', imgUrl: 'assets/media/widget-post/1.jpg' }]
 
             }

@@ -1,7 +1,7 @@
 ﻿var module = angular.module("carDetails").controller("carDetailsController", ["$scope", "$http", "carDetailsService", carDetailsController]);
 
 function carDetailsController($scope, $http, carDetailsService) {
-   
+
     if (carDetailsService) {
   //      $scope.isBusy = true;
         carDetailsService.getCarDetails()
