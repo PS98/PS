@@ -1,0 +1,315 @@
+﻿{
+  "car": {
+    "Maruti Suzuki": {
+
+    },
+    "Hyundai": {
+
+    },
+    "Honda": {
+
+    },
+    "Toyota": {
+
+    },
+    "Mahindra": {
+
+    },
+    "Tata": {
+
+    },
+    "Ford": {
+
+    },
+    "Chevrolet": {
+
+    },
+    "Renault": {
+
+    },
+    "Volkswagen": {
+
+    },
+    "DC": {
+
+    },
+    "Volvo": {
+
+    },
+    "Force": {
+
+    },
+    "Porsche": {
+
+    },
+    "Maserati": {
+
+    },
+    "Lamborghini": {
+
+    },
+    "Aston Martin": {
+
+    },
+    "Mercedes-Benz": {
+
+    },
+    "Isuzu": {
+
+    },
+    "Bentley": {
+
+    },
+    "Premier": {
+
+    },
+    "Ferrari": {
+
+    },
+    "Mini": {
+
+    },
+    "Audi": {
+
+    },
+    "Land Rover": {
+
+    },
+    "Jaguar": {
+
+    },
+    "ICML": {
+
+    },
+    "Nissan": {
+
+    },
+    "Datsun": {
+      "GO A": {
+        "Type": "Hatchback"
+      },
+      "GO D": {
+        "Type": "Hatchback"
+      },
+      "GO T": {
+        "Type": "Hatchback"
+      },
+      "Go+MPV D": {
+        "Type": "Minivan/MUV"
+      },
+      "Go+MPV A": {
+        "Type": "Minivan/MUV"
+      },
+      "Go+MPV T": {
+        "Type": "Minivan/MUV"
+      },
+      "GO T (O)": {
+        "Type": "Hatchback"
+      },
+      "GO NXT": {
+        "Type": "Hatchback"
+      },
+      "Go+MPV T (O)": {
+        "Type": "Minivan/MUV"
+      },
+      "GO A EPS": {
+        "Type": "Hatchback"
+      },
+      "Go+MPV A EPS": {
+        "Type": "Minivan/MUV"
+      }
+    },
+    "Rolls-Royce": {
+      "Ghost 6.5": {
+        "Type": "Sedan, Luxury"
+      },
+      "Ghost Extended Wheelbase": {
+        "Type": "Sedan, Luxury"
+      },
+      "Phantom Sedan": {
+        "Type": "Sedan, Luxury"
+      },
+      "Phantom EWB": {
+        "Type": "Sedan, Luxury"
+      },
+      "Phantom Coupe 6.8 L": {
+        "Type": "Coupe, Luxury"
+      },
+      "Drophead Coupe Convertible": {
+        "Type": "Convertible, Luxury"
+      },
+      "Ghost Series II 6.6": {
+        "Type": "Sedan, Luxury"
+      },
+      "Wraith Coupe": {
+        "Type": "Coupe, Luxury"
+      }
+    },
+    "Fiat": {
+      "Linea Active Fire": {
+        "Type": "Sedan"
+      },
+      "Linea Active Multijet": {
+        "Type": "Sedan, Diesel"
+      },
+      "Linea T-Jet Active": {
+        "Type": "Sedan"
+      },
+      "Linea Dynamic Multijet": {
+        "Type": "Sedan, Diesel"
+      },
+      "Linea T-Jet Dynamic": {
+        "Type": "Sedan"
+      },
+      "Linea Emotion Multijet": {
+        "Type": "Sedan, Diesel"
+      },
+      "Linea T-Jet Emotion": {
+        "Type": "Sedan"
+      },
+      "Linea Classic 1.3 Multijet": {
+        "Type": "Sedan, Diesel"
+      },
+      "Linea Classic Plus 1.3 Multijet": {
+        "Type": "Sedan, Diesel"
+      },
+      "Linea Classic 1.4": {
+        "Type": "Sedan"
+      },
+      "Punto Evo Active 1.2": {
+        "Type": "Hatchback"
+      },
+      "Punto Evo Dynamic 1.2": {
+        "Type": "Hatchback"
+      },
+      "Punto Evo Emotion 1.4": {
+        
+      },
+      "Punto Evo Active Multijet 1.3": {
+        "Type": "Hatchback, Diesel"
+      },
+      "Punto Evo Dynamic Multijet 1.3": {
+        "Type": "Hatchback, Diesel"
+      },
+      "Punto Evo Emotion Multijet 1.3": {
+        "Type": "Diesel"
+      },
+      "Punto Evo Multijet 1.3 90 hp": {
+        "Type": "Diesel"
+      },
+      "Avventura FIRE Active": {
+        
+      },
+      "Avventura FIRE Dynamic": {
+        
+      },
+      "Avventura Multijet Dynamic": {
+        "Type": "Diesel"
+      },
+      "Avventura Multijet Active": {
+        "Type": "Diesel"
+      },
+      "Avventura Multijet Emotion": {
+        "Type": "Diesel"
+      },
+      "Linea Elegante": {
+        "Type": "Sedan, Diesel"
+      },
+      "Abarth 595 Competizione": {
+        "Type": "Hatchback"
+      },
+      "Abarthe Punto 1.4 T-Jet": {
+        "Type": "Hatchback"
+      },
+      "Abarthe Avventura 1.4 T-Jet": {
+
+      },
+      "Punto Evo Sportivo 1.3": {
+        "Type": "Hatchback, Diesel"
+      },
+      "Punto Pure Active Advanced Multijet": {
+        "Type": "Hatchback, Diesel"
+      },
+      "Punto Pure Active Petrol": {
+        "Type": "Hatchback"
+      }
+    },
+    "Mitsubishi": {
+      "Pazero Sport": {
+        "Type": "SUV"
+      }
+    },
+    "Mahindra SsangYong": {
+      "SsangYong": {
+        "Type": "SUV"
+      }
+    },
+    "BMW": {
+      "X1": {
+        "Type": "Diesel"
+      },
+      "3-Series": {
+        "Type": "Sedan, Diesel"
+      },
+      "X3": {
+        "Type": "SUV, Luxury, Diesel"
+      },
+      "5-Series": {
+        "Type": "Sedan, Luxury, Diesel"
+      },
+      "Z4": {
+        "Type": "Convertible, Luxury"
+      },
+      "X5": {
+        "Type": "SUV, Luxury, Diesel"
+      },
+      "M3": {
+        "Type": "Sedan, Luxury"
+      },
+      "X6": {
+        "Type": "SUV, Luxury, Diesel"
+      },
+      "6-Series": {
+        "Type": "Coupe, Luxury, Diesel"
+      },
+      "M5": {
+        "Type": "Sedan, Luxury"
+      },
+      "1 Series": {
+        "Type": "Hatchback, Diesel"
+      },
+      "M6 Gran Coupe": {
+        "Type": "Sedan, Luxury"
+      },
+      "M4": {
+        "Type": "Sedan, Coupe, Luxury"
+      },
+      "i8": {
+        "Type": "Coupe, Hybrid/Electric, Luxury"
+      },
+      "7-Series": {
+        "Type": "Sedan, Luxury, Diesel"
+      },
+      "X5 M": {
+        "Type": "SUV, Luxury"
+      },
+      "X6 M": {
+        "Type": "SUV, Luxury"
+      }
+    },
+    "Skoda": {
+      "Rapid": {
+        "Type": "Sedan, Diesel"
+      },
+      "Octavia": {
+        "Type": "Sedan, Diesel"
+      },
+      "Superb": {
+        "Type": "Sedan, Diesel"
+      },
+      "Yeti": {
+        "Type": "SUV, Diesel"
+      }
+    }
+  }
+}
