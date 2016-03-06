@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver.Linq;
+using MongoDB.Driver.Builders;
 
 namespace PS.Services
 {
@@ -17,66 +19,60 @@ namespace PS.Services
         public MongoRepository()
         {
             _client = new MongoClient(conString);
-            _database = _client.GetDatabase("test");
+            _database = _client.GetDatabase("car");
         }
 
-        public List<Restaurants> getAll()
+        public List<Car> getAll()
         {
-
-
-            var collections = _database.GetCollection<Restaurants>("restaurants");
-            var resutantList = collections.Find(new BsonDocument()).ToListAsync().Result;
-            return resutantList;
+            var collection = _database.GetCollection<Car>("Skoda");
+            var modelList = collection.Find(new BsonDocument()).ToListAsync().Result;
+            return modelList;
         }
-        public List<Restaurants> getSelected(string id)
+        public List<Car> getSelected(string id)
         {
-            var collections = _database.GetCollection<Restaurants>("restaurants");
-            // id = new ObjectId(id);
+            var collection = _database.GetCollection<Car>("Skoda");
             if (!string.IsNullOrEmpty(id))
             {
-                var resutantList = collections.Find(b => b._id == new ObjectId(id)).ToListAsync().Result;
-                return resutantList;
+                var modelList = collection.Find(b => b._id == new ObjectId(id)).ToListAsync().Result;
+                return modelList;
             }
-            return new List<Restaurants>();
+            return new List<Car>();
         }
 
-        public bool insert(Restaurants rs)
+        //public IQueryable<List<Car>> select()
+        //{
+        //    var collection = _database.GetCollection<Car>("Skoda");
+        //    var query = from c in collection.AsQueryable<Car>()
+        //                where c.Type.Contains("Sedan")
+        //                select c;
+
+        //    //delete code
+        //    var query1 = Query<Car>.EQ(e => e.name, "Rapid");
+        //    collection.DeleteOneAsync(query1);
+        //    //delete code end
+
+        //    return query;
+        //}
+        
+
+        public bool insert()
         {
-            var collections = _database.GetCollection<Restaurants>("restaurants");
-          //  collections.InsertOneAsync();
+            var collection = _database.GetCollection<Car>("Skoda");
+            Car c = new Car();
+            c.name = "Test";
+            c.Type = "SUV";
+            collection.InsertOneAsync(c);
             return true;
         }
 
-        public class Restaurants
+        public class Car
         {
             public ObjectId _id { get; set; }
-            public Address address { get; set; }
-            public string borough { get; set; }
-            public string cuisine { get; set; }
-            public List<Grade> grades { get; set; }
             public string name { get; set; }
-            public string restaurant_id { get; set; }
+            public string Type { get; set; }
         }
 
-        public class Address
-        {
-            public string building { get; set; }
-            [BsonRepresentation(BsonType.Double)]
-            public double[] coord { get; set; }
-            public string street { get; set; }
-            public string zipcode { get; set; }
-        }
-
-        public class Grade
-        {
-            [BsonRepresentation(BsonType.DateTime)]
-            public DateTime date { get; set; }
-            public string grade { get; set; }
-            [BsonIgnoreIfNull]
-            public int score { get; set; }
-        }
-
-    }
+     }
 
 
 
