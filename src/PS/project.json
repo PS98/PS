@@ -39,7 +39,9 @@
     "System.IdentityModel.Tokens.Jwt": "4.0.2.206221351",
     "MongoDB.Driver": "2.0.0-rc0",
     "MongoDB.Driver.Core": "2.0.0-rc0",
-    "MongoDB.Bson": "2.0.0-rc0"
+    "MongoDB.Bson": "2.0.0-rc0",
+    "mongocsharpdriver": "2.2.3",
+    "Microsoft.AspNet.Mvc.ViewFeatures": "6.0.0-rc1-final"
   },
 
   "commands": {
