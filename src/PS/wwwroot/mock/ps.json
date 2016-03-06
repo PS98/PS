@@ -600,16 +600,20 @@
       }
     },
     "Skoda": {
-      "Rapid": {
+      {
+      "name": "Rapid",
+      "Type": "Sedan, Diesel"
+      },
+      {
+        "name": "Octavia",
         "Type": "Sedan, Diesel"
       },
-      "Octavia": {
+      {
+        "name": "Superb",
         "Type": "Sedan, Diesel"
       },
-      "Superb": {
-        "Type": "Sedan, Diesel"
-      },
-      "Yeti": {
+      {
+      "name": "Yeti",
         "Type": "SUV, Diesel"
       }
     }
