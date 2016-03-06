@@ -13,16 +13,21 @@ namespace PS.Controllers
         private IMessageBoardRepository _repo;
         private IEmailSender _mail;
         private ILoggerFactory _logger;
+        private IMongoRepository _mongoDb;
 
-        public HomeController(IEmailSender mail, IMessageBoardRepository repo, ILoggerFactory logger)
+        public HomeController(IEmailSender mail, IMessageBoardRepository repo, ILoggerFactory logger, IMongoRepository mongo)
         {
             _mail = mail;
             _repo = repo;
             _logger = logger;
+            _mongoDb = mongo;
         }
 
         public IActionResult Index()
+            
         {
+           // _mongoDb.getAll();
+           // _mongoDb.getSelected("56dc1f6548099944c774a0fb");
             return View();
         }
 
