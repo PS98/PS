@@ -24,6 +24,7 @@ namespace PS.Services
 
         public List<Car> getAll()
         {
+            var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;
             var collection = _database.GetCollection<Car>("Skoda");
             var modelList = collection.Find(new BsonDocument()).ToListAsync().Result;
             return modelList;
