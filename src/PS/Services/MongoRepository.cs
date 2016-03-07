@@ -22,10 +22,10 @@ namespace PS.Services
             _database = _client.GetDatabase("car");
         }
 
-        public List<Car> getAll()
+        public List<Car> getAll(string colletionName)
         {
             var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;
-            var collection = _database.GetCollection<Car>("Skoda");
+            var collection = _database.GetCollection<Car>(colletionName);
             var modelList = collection.Find(new BsonDocument()).ToListAsync().Result;
             return modelList;
         }
@@ -39,22 +39,38 @@ namespace PS.Services
             }
             return new List<Car>();
         }
+        public List<string> getTypeFromCollection(string colletionName)
+        {
+            List<string> typeArray = new List<string>();
+            if (!string.IsNullOrEmpty(colletionName))
+            {
+                var modelList = getAll(colletionName);
+                foreach (var m in modelList)
+                {
+                    typeArray.Add(m.Type);
+                }
+                var query = from c in modelList
+                            where c.Type.Contains("Sedan")
+                            select c;
+            }
+            return typeArray;
 
+        }
         //public IQueryable<List<Car>> select()
         //{
-        //    var collection = _database.GetCollection<Car>("Skoda");
-        //    var query = from c in collection.AsQueryable<Car>()
-        //                where c.Type.Contains("Sedan")
-        //                select c;
+        //    var collection = _database.GetCollection<Car>("Skoda").Find(new BsonDocument());
+        //   var query = from c in collection
+        //    //            where c.Type.Contains("Sedan")
+        //    //            select c;
 
-        //    //delete code
-        //    var query1 = Query<Car>.EQ(e => e.name, "Rapid");
-        //    collection.DeleteOneAsync(query1);
-        //    //delete code end
+        //    ////delete code
+        //    //var query1 = Query<Car>.EQ(e => e.name, "Rapid");
+        //    //collection.DeleteOneAsync(query1);
+        //    ////delete code end
 
-        //    return query;
+        //    //return query;
         //}
-        
+
 
         public bool insert()
         {

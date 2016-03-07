@@ -35,6 +35,12 @@ angular.module("psApp").config(["$routeProvider", "$locationProvider", "authProv
               config: {
                   template: "<ps-vehicle-listings></ps-vehicle-listings>"
               }
+          },
+           {
+               url: "/Service",
+              config: {
+                  template: "<car-service></car-service>"
+              }
           }
     ];
 

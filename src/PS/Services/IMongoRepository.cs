@@ -6,10 +6,11 @@ namespace PS.Services
 {
     public  interface IMongoRepository
     {
-        List<MongoRepository.Car> getAll();
+        List<MongoRepository.Car> getAll(string colletionName);
         List<MongoRepository.Car> getSelected(string id);
         bool insert();
-      //  IQueryable<List<MongoRepository.Car>> select();
+        //  IQueryable<List<MongoRepository.Car>> select();
+        List<string> getTypeFromCollection(string type);
     }
    
 }

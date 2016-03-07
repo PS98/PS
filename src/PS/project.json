@@ -40,7 +40,7 @@
     "MongoDB.Driver": "2.0.0-rc0",
     "MongoDB.Driver.Core": "2.0.0-rc0",
     "MongoDB.Bson": "2.0.0-rc0",
-    "mongocsharpdriver":"2.2.0-rc0"
+    "mongocsharpdriver":"2.2.0"
   },
 
   "commands": {

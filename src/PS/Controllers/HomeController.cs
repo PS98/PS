@@ -26,9 +26,10 @@ namespace PS.Controllers
         public IActionResult Index()
             
         {
-            // _mongoDb.getAll();
+            // _mongoDb.getAll("Skoda");
             // _mongoDb.getSelected("56dc1f6548099944c774a0fb");
-           // _mongoDb.insert();
+            // _mongoDb.insert();
+           // _mongoDb.getTypeFromCollection("Skoda");
             return View();
         }
 
