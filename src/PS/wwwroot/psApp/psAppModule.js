@@ -15,5 +15,16 @@ angular.module("psApp").directive('script', function () {
                 }
             }
         };
-    });
+});
+angular.module("psApp").controller('psController', function ($rootScope) {
+    $rootScope.$on("$routeChangeStart",
+                 function (event, current, previous, rejection) {
+                     var $preloader = $('#page-preloader'),
+                        $spinner = $preloader.find('.spinner-loader');
+                     $preloader.show();
+                     $spinner.fadeOut();
+                     $preloader.delay(50).fadeOut('slow');
+
+                 });
+});
 

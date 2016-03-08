@@ -6,8 +6,6 @@ angular.module("psApp").directive("carService", function () {
         templateUrl: "psApp/carService/carServiceTemplate.html",
         // controller: "indexController",
         link: function (scope, el, attrs) {
-         //   new WOW().init();
-            preLoader.initialize();
 
         }
     };
