@@ -648,7 +648,8 @@
             "name": "T01",
             "Price": "5.96 Lac"
           },
-
+        ]
+      },
           {
             "name": "TUV300",
             "varient": [
@@ -680,7 +681,7 @@
                 "name": "T8 AMT",
                 "Price": "9.34 Lac"
               }
-            ],
+            ]
 
           },
 
@@ -783,7 +784,7 @@
                 "name": "K8 D 6STR",
                 "Price": "6.84 Lac"
               }
-            ],
+            ]
           },
       },
 
