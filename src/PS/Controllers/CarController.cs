@@ -35,9 +35,15 @@ namespace PS.Controllers
             var list = _mongoDb.getAll(collectionName);
             return list.Select(m => m.name).ToList();
         }
+        [HttpGet("{collectionName}/{carName}")]
+        public IEnumerable<string> GetVariant(string collectionName,string carName)
+        {
+            var list = _mongoDb.getAll(collectionName);
+            var varientList = list.Where(m => m.name == carName).SelectMany(y =>y.varient);
+            return varientList.Select(y =>y.name).ToList();
+        }
 
 
-                
 
         // POST api/car
         [HttpPost]

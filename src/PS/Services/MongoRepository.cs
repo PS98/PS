@@ -24,7 +24,7 @@ namespace PS.Services
         public List<string> getAll()
         {
             var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;
-           // List<MongoCollection> collections = _database.GetCollection();
+            // List<MongoCollection> collections = _database.GetCollection();
 
             return new List<string>();
         }
@@ -53,10 +53,10 @@ namespace PS.Services
                 var modelList = getAll(colletionName);
                 foreach (var m in modelList)
                 {
-                    typeArray.Add(m.Type);
+                    //  typeArray.Add(m.Type);
                 }
                 var query = from c in modelList
-                            where c.Type.Contains("Sedan")
+                                //  where c.Type.Contains("Sedan")
                             select c;
             }
             return typeArray;
@@ -83,7 +83,7 @@ namespace PS.Services
             var collection = _database.GetCollection<Car>("Skoda");
             Car c = new Car();
             c.name = "Test";
-            c.Type = "SUV";
+            //  c.Type = "SUV";
             collection.InsertOneAsync(c);
             return true;
         }
@@ -92,10 +92,28 @@ namespace PS.Services
         {
             public ObjectId _id { get; set; }
             public string name { get; set; }
-            public string Type { get; set; }
+            public List<Varient> varient { get; set; }
+        }
+        //public class varient
+        //{
+        //    public double Price { get; set; }
+        //    public string name { get; set; }
+        //}
+
+        //public class Rootobject
+        //{
+        //    public string _id { get; set; }
+        //    public string name { get; set; }
+        //    public Varient varient { get; set; }
+        //}
+
+        public class Varient
+        {
+            public string name { get; set; }
+            public string Price { get; set; }
         }
 
-     }
+    }
 
 
 
