@@ -1,16 +1,7 @@
 ﻿{
   "car": {
     "Maruti Suzuki": {
-      "name": "Alto",
-      "varient" :
-        [
-          {
-            "name ": "800 STD",
-            "Price" : ""
-          }
-
-        ],
-      
+      "Alto 800 STD": { },
       "Alto 800 LX": { },
       "Alto 800 LXI": { },
       "Alto LXI CNG": { },
@@ -237,7 +228,7 @@
       "Grand i10 Magna CNG": { },
       "Grand i10 Sportz CNG": { },
       "Grand i10 Asta CNG": { },
-      "Grand i10 Asta Option CNG": { }
+      "Grand i10 Asta Option CNG" : {}
     },
     "Honda": {
       "Brio E MT": { },
@@ -357,930 +348,1476 @@
       "Etios Xclusive Petrol": { },
       "Etios Xclusive Diesel": { },
       "Etios Liva V Limited Edition": { },
-      "Etios Liva VD Limited Edition": { }
+      "Etios Liva VD Limited Edition": { }      
     },
     "Mahindra": {
       {
-        "name": "Verito 1.5 D2",
-        "Price": "6.85 Lac"
-      },
-      {
-        "name": "Verito 1.5 D4 BS-IV",
-        "Price": "7.08 Lac"
-      },
-      {
-        "name": "Verito 1.5 D6 BS-IV",
-        "Price": "7.78 Lac"
-      },
-      {
-        "name": "Bolero DI BS III",
-        "Price": "6.47 Lac"
-      },
-      {
-        "name": "Bolero ZLX",
-        "Price": "8.14 Lac"
-      },
-      {
-        "name": "Quanto C2",
-        "Price": "6.78 Lac"
-      },
-      {
+        "name": "Verito",
+        "varient": [
+          {
+            "name": "1.5 D2",
+            "Price": "6.85 Lac"
+          },
+          {
+            "name": "1.5 D4 BS-IV",
+            "Price": "7.08 Lac"
+          },
+          {
+            "name": "1.5 D6 BS-IV",
+            "Price": "7.78 Lac"
+          },
+          {
+            "name": "Vibe D2",
+            "Price": "6.09 Lac"
+          },
+          {
+            "name": "Vibe D4",
+            "Price": "6.37 Lac"
+          },
+          {
+            "name": "Vibe D6",
+            "Price": "6.99 Lac"
+          }
 
-        "name": "XUV500 W6",
-        "Price": "12.87Lac"
+        ]
+      },
+      {
+        "name": "Bolero",
+        "varient": [
+          {
+            "name": "DI BS III",
+            "Price": "6.47 Lac"
+          },
+          {
+            "name": "ZLX",
+            "Price": "8.14 Lac"
+          },
+          {
+            "name": "SLX",
+            "Price": "7.98 Lac"
+          },
+          {
+            "name": "SLE",
+            "Price": "7.45 Lac"
+          },
+          {
+            "name": "EX",
+            "Price": "7.05 Lac"
+          },
+          {
+            "name": "Plus Non AC BS III",
+            "Price": "6.73 Lac"
+          },
+          {
+            "name": "BS4",
+            "Price": "7.42 Lac"
+          },
+          {
+            "name": "Special Edition (ABS)",
+            "Price": "8.25 Lac"
+          },
+          {
+            "name": "EX NON AC",
+            "Price": "6.64 Lac"
+          },
+          {
+            "name": "DI 4WD BS III",
+            "Price": "6.91 Lac"
+          },
+          {
+            "name": "SLE BS III",
+            "Price": "7.3 Lac"
+          },
+          {
+            "name": "SLX BS III",
+            "Price": "7.83 Lac"
+          },
+          {
+            "name": "ZLX BS III",
+            "Price": "7.99 Lac"
+          },
+          {
+            "name": "Plus AC BS III",
+            "Price": "7.12 Lac"
+          },
+          {
+            "name": "Plus Non AC BS4",
+            "Price": "7.02 Lac"
+          }
+        ]
+      },
+      {
+        "name": "Quanto",
+        "varient": [
+          {
+            "name": "C2",
+            "Price": "6.78 Lac"
+          },
+          {
+            "name": "C4",
+            "Price": "7.33 Lac"
+          },
+          {
+            "name": "C6",
+            "Price": "7.8 Lac"
+          },
+          {
+            "name": "C8",
+            "Price": "8.31 Lac"
+          }
+        ]
+      },
+      {
+        "name": "XUV500",
+        "varient": [
+          {
+            "name": "W6",
+            "Price": "12.87Lac"
+          },
+          {
+            "name": "W4",
+            "Price": "11.58 Lac"
+          },
+          {
+            "name": "W8",
+            "Price": "14.62 Lac"
+          },
+          {
+            "name": "W8 AWD",
+            "Price": "15.45 Lac"
+          },
+          {
+            "name": "W10",
+            "Price": "15.52 Lac"
+          },
+          {
+            "name": "W10 AWD",
+            "Price": "16.53 Lac"
+          },
+          {
+            "name": "W10 AWD AT",
+            "Price": "17.37Lac"
+          },
+          {
+            "name": "W8 AT",
+            "Price": "15.53 Lac"
+          },
+          {
+            "name": "W10 AT",
+            "Price": "16.37 Lac"
+          }
+        ]
       },
-      {
-        "name": "Xylo D2 BS III",
-        "Price": "8.28 Lac"
-      },
-      {
-        "name": "Scorpia Getaway",
-        "Price": "8.41 Lac"
-      },
-      {
-        "name": "Scorpia Getaway 4WD",
-        "Price": "9.38 Lac"
-      },
-      {
-        "name": "Bolero SLX",
-        "Price": "7.98 Lac"
-      },
-      {
-        "name": "Bolero SLE",
-        "Price": "7.45 Lac"
-      },
-      {
-        "name": "Bolero EX",
-        "Price": "7.05 Lac"
-      },
-      {
-        "name": "Bolero Plus Non AC BS III",
-        "Price": "6.73 Lac"
-      },
-      {
-        "name": "Bolero BS4",
-        "Price": "7.42 Lac"
-      },
-      {
-        "name": "Quanto C4",
-        "Price": "7.33 Lac"
-      },
-      {
-        "name": "Quanto C6",
-        "Price": "7.8 Lac"
-      },
-      {
-        "name": "Quanto C8",
-        "Price": "8.31 Lac"
-      },
-      {
-        "name": "Thar 4WD PS",
-        "Price": "6.05 Lac"
-      },
-      {
-        "name": "Thar CRDe",
-        "Price": "8.38 Lac"
-      },
-      {
-        "name": "Xylo D2 BS-IV",
-        "Price": "8.42 Lac"
-      },
-      {
-        "name": "Xylo D2 MAXX BS-III",
-        "Price": "7.99 Lac"
-      },
-      {
-        "name": "Xylo D2 MAXX BS-IV",
-        "Price": "8.14 Lac"
-      },
-      {
-        "name": "Xylo D4 BS-III",
-        "Price": "8.71 Lac"
-      },
-      {
-        "name": "Xylo D4 BS-IV",
-        "Price": "8.85 Lac"
-      },
-      {
-        "name": "Xylo H4 BS-IV",
-        "Price": "9.08 Lac"
-      },
-      {
-        "name": "Xylo H4 ABS BS-IV",
-        "Price": "9.36 Lac"
-      },
-      {
-        "name": "Xylo H8 ABS BS-IV",
-        "Price": "10.39 Lac"
-      },
-      {
-        "name": "Xylo H8 ABS Airbags BS-IV",
-        "Price": "10.89 Lac"
-      },
-      {
-        "name": "Xylo H9 BS-IV",
-        "Price": "11.73 Lac"
-      },
-      {
-        "name": "Verito Vibe D2",
-        "Price": "6.09 Lac"
-      },
-      {
-        "name": "Verito Vibe D4",
-        "Price": "6.37 Lac"
-      },
-      {
-        "name": "Verito Vibe D6",
-        "Price": "6.99 Lac"
-      },
-      {
-        "name": "e2o T2",
-        "Price": "7.19 Lac"
-      },
-      {
-        "name": "e2o T01",
-        "Price": "5.96 Lac"
-      },
-      {
-        "name": "Bolero Special Edition (ABS)",
-        "Price": "8.25 Lac"
-      },
-      {
-        "name": "Bolero EX NON AC",
-        "Price": "6.64 Lac"
-      },
-      {
-        "name": "Bolero DI 4WD BS III",
-        "Price": "6.91 Lac"
-      },
-      {
-        "name": "Bolero SLE BS III",
-        "Price": "7.3 Lac"
-      },
-      {
-        "name": "Bolero SLX BS III",
-        "Price": "7.83 Lac"
-      },
-      {
-        "name": "Bolero ZLX BS III",
-        "Price": "7.99 Lac"
-      },
-      {
-        "name": "Bolero Plus AC BS III",
-        "Price": "7.12 Lac"
-      },
-      {
-        "name": "Scorpio S2",
-        "Price": "9.06 Lac"
-      },
-      {
-        "name": "Scorpio S4",
-        "Price": "9.67 Lac"
-      },
-      {
-        "name": "Scorpio S6 Plus",
-        "Price": "11.09 Lac"
-      },
-      {
-        "name": "Scorpio S8",
-        "Price": "12.1 Lac"
-      },
-      {
-        "name": "Scorpio S10",
-        "Price": "12.75 Lac"
-      },
-      {
-        "name": "Scorpio S4 Plus 4WD",
-        "Price": "11.32 Lac"
-      },
-      {
-        "name": "Scorpio S10 4WD",
-        "Price": "13.9 Lac"
-      },
-      {
-        "name": "Scorpio S4 Plus",
-        "Price": "10.09 Lac"
-      },
-      {
-        "name": "XUV500 W4",
-        "Price": "11.58 Lac"
-      },
-      {
-        "name": "XUV500 W8",
-        "Price": "14.62 Lac"
-      },
-      {
-        "name": "XUV500 W8 AWD",
-        "Price": "15.45 Lac"
-      },
-      {
-        "name": "XUV500 W10",
-        "Price": "15.52 Lac"
-      },
-      {
-        "name": "XUV500 W10 AWD",
-        "Price": "16.53 Lac"
-      },
-      {
-        "name": "Scorpio S10 2WD AT",
-        "Price": "13.41 Lac"
-      },
-      {
-        "name": "Scorpio S10 4WD AT",
-        "Price": "14.61 Lac"
-      },
-      {
-        "name": "Thar 2WD PS",
-        "Price": "5.54 Lac"
-      },
-      {
-        "name": "TUV300 T4",
-        "Price": "7.11 Lac"
-      },
-      {
-        "name": "TUV300 T6",
-        "Price": "7.77 Lac"
-      },
-      {
-        "name": "TUV300 T8",
-        "Price": "8.62 Lac"
-      },
-      {
-        "name": "TUV300 T4 Plus",
-        "Price": "7.47 Lac"
-      },
-      {
-        "name": "TUV300 T6 Plus",
-        "Price": "8.02 Lac"
-      },
-      {
-        "name": "TUV300 T6 Plus AMT",
-        "Price": "8.74 Lac"
-      },
-      {
-        "name": "TUV300 T8 AMT",
-        "Price": "9.34 Lac"
-      },
-      {
-        "name": "XUV500 W10 AWD AT",
-        "Price": "17.37Lac"
-      },
-      {
-        "name": "XUV500 W8 AT",
-        "Price": "15.53 Lac"
-      },
-      {
-        "name": "XUV500 W10 AT",
-        "Price": "16.37 Lac"
-      },
-      {
-        "name": "KUV100 K2 6STR",
-        "Price": "4.45 Lac"
-      },
-      {
-        "name": "KUV100 K2+ 6STR",
-        "Price": "4.67 Lac"
-      },
-      {
-        "name": "KUV100 K4 5STR",
-        "Price": "4.8 Lac"
-      },
-      {
-        "name": "KUV100 K4+ 5STR",
-        "Price": "5.02 Lac"
-      },
-      {
-        "name": "KUV100 K6 5STR",
-        "Price": "5.39 Lac"
-      },
-      {
-        "name": "KUV100 K6+ 5STR",
-        "Price": "5.61 Lac"
-      },
-      {
-        "name": "KUV100 K8 5STR",
-        "Price": "5.94 Lac"
-      },
-      {
-        "name": "KUV100 K2 D 6STR",
-        "Price": "5.25 Lac"
-      },
-      {
-        "name": "KUV100 K2+ D 6STR",
-        "Price": "5.47 Lac"
-      },
-      {
-        "name": "KUV100 K4 D 5STR",
-        "Price": "5.6 Lac"
-      },
-      {
-        "name": "KUV100 K4+ D 5STR",
-        "Price": "5.82 Lac"
-      },
-      {
-        "name": "KUV100 K6 D 5STR",
-        "Price": "6.24 Lac"
-      },
-      {
-        "name": "KUV100 K6+ D 5STR",
-        "Price": "6.46 Lac"
-      },
-      {
-        "name": "KUV100 K8 D 5STR",
-        "Price": "6.79 Lac"
-      },
-      {
-        "name": "KUV100 K4+ D 6STR",
-        "Price": "5.87 Lac"
-      },
-      {
-        "name": "KUV100 K4+ 6STR",
-        "Price": "5.07 Lac"
-      },
-      {
-        "name": "KUV100 K4 D 6STR",
-        "Price": "5.65 Lac"
-      },
-      {
-        "name": "KUV100 K4 6STR",
-        "Price": "4.85 Lac"
-      },
-      {
-        "name": "KUV100 K6 6STR",
-        "Price": "5.44 Lac"
-      },
-      {
-        "name": "KUV100 K6 D 6STR",
-        "Price": "6.29 Lac"
-      },
-      {
-        "name": "KUV100 K6+ 6STR",
-        "Price": "5.66 Lac"
-      },
-      {
-        "name": "KUV100 K6+ D 6STR",
-        "Price": "6.51 Lac"
-      },
-      {
-        "name": "KUV100 K8 6STR",
-        "Price": "5.99 Lac"
-      },
-      {
-        "name": "KUV100 K8 D 6STR",
-        "Price": "6.84 Lac"
-      },
-      {
-        "name": "Bolero Plus Non AC BS4",
-        "Price": "7.02 Lac"
-      },
-    },
 
-    "Tata": {
       {
-        "name": "Venture LX",
-        "Price": "4.77 Lac"
+        "name": "Xylo",
+        "varient": [
+          {
+            "name": " D2 BS III",
+            "Price": "8.28 Lac"
+          },
+          {
+            "name": "D2 BS-IV",
+            "Price": "8.42 Lac"
+          },
+          {
+            "name": "D2 MAXX BS-III",
+            "Price": "7.99 Lac"
+          },
+          {
+            "name": "D2 MAXX BS-IV",
+            "Price": "8.14 Lac"
+          },
+          {
+            "name": "D4 BS-III",
+            "Price": "8.71 Lac"
+          },
+          {
+            "name": "D4 BS-IV",
+            "Price": "8.85 Lac"
+          },
+          {
+            "name": "H4 BS-IV",
+            "Price": "9.08 Lac"
+          },
+          {
+            "name": "H4 ABS BS-IV",
+            "Price": "9.36 Lac"
+          },
+          {
+            "name": "H8 ABS BS-IV",
+            "Price": "10.39 Lac"
+          },
+          {
+            "name": "H8 ABS Airbags BS-IV",
+            "Price": "10.89 Lac"
+          },
+          {
+            "name": "H9 BS-IV",
+            "Price": "11.73 Lac"
+          }
+        ]
       },
-      {
-        "name": "Venture EX",
-        "Price": "5.03 Lac"
-      },
-      {
-        "name": "Venture GX",
-        "Price": "5.54 Lac"
-      },
-      {
-        "name": "Indica eV2 LS",
-        "Price": "4.39 Lac"
-      },
-      {
-        "name": "Indica eV2 LX",
-        "Price": "4.75 Lac"
-      },
-      {
-        "name": "Indigo eCS LS (TDI) BS III",
-        "Price": "5.33 Lac"
-      },
-      {
-        "name": "Indigo eCS CS-LS",
-        "Price": "5.7 Lac"
-      },
-      {
-        "name": "Indigo eCS CS-LX",
-        "Price": "5.87 Lac"
-      },
-      {
-        "name": "Indigo eCS GVX",
-        "Price": "5.4 Lac"
-      },
-      {
-        "name": "Indigo eCS VX",
-        "Price": "6.25 Lac"
-      },
-      {
-        "name": "Vista LS TDI BS-III",
-        "Price": "5.01 Lac"
-      },
-      {
-        "name": "Vista LX TDI BS-III",
-        "Price": "5.47 Lac"
-      },
-      {
-        "name": "Vista LS Quadrajet",
-        "Price": "5.47 Lac"
-      },
-      {
-        "name": "Sumo Gold CX BS III",
-        "Price": "6.31 Lac"
-      },
-      {
-        "name": "Sumo Gold CX BS IV",
-        "Price": "6.65 Lac"
-      },
-      {
-        "name": "Sumo Gold EX BS III",
-        "Price": "7.21 Lac"
-      },
-      {
-        "name": "Sumo Gold EX BS IV",
-        "Price": "7.37 Lac"
-      },
-      {
-        "name": "Sumo Gold GX BS IV",
-        "Price": "8.03 Lac"
-      },
-      {
-        "name": "Xenon XT EX 4x2",
-        "Price": "9.95 Lac"
-      },
-      {
-        "name": "Xenon XT EX 4x4",
-        "Price": "10.98 Lac"
-      },
-      {
-        "name": "Safari 4x2 LX DICOR BS-IV",
-        "Price": "8.99 Lac"
-      },
-      {
-        "name": "Safari 4x2 EX DICOR BS-IV",
-        "Price": "10.29 Lac"
-      },
-      {
-        "name": "Safari Storme 2.2 LX 4x2",
-        "Price": "9.99 Lac"
-      },
-      {
-        "name": "Safari Storme 2.2 EX 4x2",
-        "Price": "11.68 Lac"
-      },
-      {
-        "name": "Safari Storme 2.2 VX 4x2",
-        "Price": "13.02 Lac"
-      },
-      {
-        "name": "Safari Storme 2.2 VX 4x4",
-        "Price": "14.32 Lac"
-      },
-      {
-        "name": "Winger Platinum BS-III",
-        "Price": "7.2 Lac"
-      },
-      {
-        "name": "Winger Platinum BS-IV",
-        "Price": "7.56 Lac"
-      },
-      {
-        "name": "Zest XE Petrol",
-        "Price": "4.88 Lac"
-      },
-      {
-        "name": "Zest XE 75 PS Diesel",
-        "Price": "5.94 Lac"
-      },
-      {
-        "name": "Nano GenX XT",
-        "Price": "2.54 Lac"
-      },
-      {
-        "name": "Vista VX Tech",
-        "Price": "6.19 Lac"
-      },
-      {
-        "name": "Aria Pure LX 4x2",
-        "Price": "10.49 Lac"
-      },
-      {
-        "name": "Aria Pleasure 4x2",
-        "Price": "12.65 Lac"
-      },
-      {
-        "name": "Aria Pride 4x4",
-        "Price": "15.51 Lac"
-      },
-      {
-        "name": "Indigo eCS GLS CNG",
-        "Price": "5.06 Lac"
-      },
-      {
-        "name": "Indigo eCS GLX CNG",
-        "Price": "5.34 Lac"
-      },
-      {
-        "name": "Zest XM Petrol",
-        "Price": "5.56 Lac"
-      },
-      {
-        "name": "Zest XMS Petrol",
-        "Price": "5.77 Lac"
-      },
-      {
-        "name": "Zest XT Petrol",
-        "Price": " 6.35 Lac"
-      },
-      {
-        "name": "Zest XM Diesel",
-        "Price": "6.62 Lac"
-      },
-      {
-        "name": "Zest XMS Diesel",
-        "Price": "6.83 Lac"
-      },
-      {
-        "name": "Zest XT Diesel",
-        "Price": "7.39 Lac"
-      },
-      {
-        "name": "Zest XMA Diesel",
-        "Price": "7.33 Lac"
-      },
-      {
-        "name": "Nano GenX XE",
-        "Price": "2 Lac"
-      },
-      {
-        "name": "Nano GenX XM CNG",
-        "Price": "2.56 Lac"
-      },
-      {
-        "name": "Bolt XT Diesel",
-        "Price": "7 Lac"
-      },
-      {
-        "name": "Bolt XE Diesel",
-        "Price": "5.5 Lac"
-      },
-      {
-        "name": "Bolt XM Diesel",
-        "Price": "6 Lac"
-      },
-      {
-        "name": "Bolt XMS Diesel",
-        "Price": "6.35 Lac"
-      },
-      {
-        "name": "Bolt XT Petrol",
-        "Price": "6 Lac"
-      },
-      {
-        "name": "Bolt XE Petrol",
-        "Price": "4.45 Lac"
-      },
-      {
-        "name": "Bolt XM Petrol",
-        "Price": "5.16 Lac"
-      },
-      {
-        "name": "Bolt XMS Petrol",
-        "Price": "5.41 Lac"
-      },
-      {
-        "name": "Zest XTA Diesel",
-        "Price": "8.15 Lac"
-      },
-      {
-        "name": "Nano GenX XTA AMT",
-        "Price": "2.94 Lac"
-      },
-      {
-        "name": "Nano GenX XM",
-        "Price": "2.34 Lac"
-      },
-      {
-        "name": "Nano GenX XMA AMT",
-        "Price": "2.74 Lac"
-      },
-      {
-        "name": "Safari Storme VX 4x2 Varicor 400",
-        "Price": "13.26 Lac"
-      },
-      {
-        "name": "Safari Storme VX 4x4 Varicor 400",
-        "Price": "14.6 Lac"
-      },
-      {
-        "name": "Sumo Gold CX PS BS III",
-        "Price": "6.57 Lac"
-      },
-      {
-        "name": "Sumo Gold CX PS BS IV",
-        "Price": "6.91 Lac"
-      }
-    },
-    "Ford": {
 
-    },
-    "Chevrolet": {
 
-    },
-    "Renault": {
-
-    },
-    "Volkswagen": {
-
-    },
-    "DC": {
-
-    },
-    "Volvo": {
-
-    },
-    "Force": {
-
-    },
-    "Porsche": {
-
-    },
-    "Maserati": {
-
-    },
-    "Lamborghini": {
-
-    },
-    "Aston Martin": {
-
-    },
-    "Mercedes-Benz": {
-
-    },
-    "Isuzu": {
-
-    },
-    "Bentley": {
-
-    },
-    "Premier": {
-
-    },
-    "Ferrari": {
-
-    },
-    "Mini": {
-
-    },
-    "Audi": {
-
-    },
-    "Land Rover": {
-
-    },
-    "Jaguar": {
-
-    },
-    "ICML": {
-
-    },
-    "Nissan": {
-
-    },
-    "Datsun": {
-      "GO A": {
-        "Type": "Hatchback"
-      },
-      "GO D": {
-        "Type": "Hatchback"
-      },
-      "GO T": {
-        "Type": "Hatchback"
-      },
-      "Go+MPV D": {
-        "Type": "Minivan/MUV"
-      },
-      "Go+MPV A": {
-        "Type": "Minivan/MUV"
-      },
-      "Go+MPV T": {
-        "Type": "Minivan/MUV"
-      },
-      "GO T (O)": {
-        "Type": "Hatchback"
-      },
-      "GO NXT": {
-        "Type": "Hatchback"
-      },
-      "Go+MPV T (O)": {
-        "Type": "Minivan/MUV"
-      },
-      "GO A EPS": {
-        "Type": "Hatchback"
-      },
-      "Go+MPV A EPS": {
-        "Type": "Minivan/MUV"
-      }
-    },
-    "Rolls-Royce": {
-      "Ghost 6.5": {
-        "Type": "Sedan, Luxury"
-      },
-      "Ghost Extended Wheelbase": {
-        "Type": "Sedan, Luxury"
-      },
-      "Phantom Sedan": {
-        "Type": "Sedan, Luxury"
-      },
-      "Phantom EWB": {
-        "Type": "Sedan, Luxury"
-      },
-      "Phantom Coupe 6.8 L": {
-        "Type": "Coupe, Luxury"
-      },
-      "Drophead Coupe Convertible": {
-        "Type": "Convertible, Luxury"
-      },
-      "Ghost Series II 6.6": {
-        "Type": "Sedan, Luxury"
-      },
-      "Wraith Coupe": {
-        "Type": "Coupe, Luxury"
-      }
-    },
-    "Fiat": {
-      "Linea Active Fire": {
-        "Type": "Sedan"
-      },
-      "Linea Active Multijet": {
-        "Type": "Sedan, Diesel"
-      },
-      "Linea T-Jet Active": {
-        "Type": "Sedan"
-      },
-      "Linea Dynamic Multijet": {
-        "Type": "Sedan, Diesel"
-      },
-      "Linea T-Jet Dynamic": {
-        "Type": "Sedan"
-      },
-      "Linea Emotion Multijet": {
-        "Type": "Sedan, Diesel"
-      },
-      "Linea T-Jet Emotion": {
-        "Type": "Sedan"
-      },
-      "Linea Classic 1.3 Multijet": {
-        "Type": "Sedan, Diesel"
-      },
-      "Linea Classic Plus 1.3 Multijet": {
-        "Type": "Sedan, Diesel"
-      },
-      "Linea Classic 1.4": {
-        "Type": "Sedan"
-      },
-      "Punto Evo Active 1.2": {
-        "Type": "Hatchback"
-      },
-      "Punto Evo Dynamic 1.2": {
-        "Type": "Hatchback"
-      },
-      "Punto Evo Emotion 1.4": {
-
-      },
-      "Punto Evo Active Multijet 1.3": {
-        "Type": [ "Hatchback, Diesel" ]
-      },
-      "Punto Evo Dynamic Multijet 1.3": {
-        "Type": "Hatchback, Diesel"
-      },
-      "Punto Evo Emotion Multijet 1.3": {
-        "Type": "Diesel"
-      },
-      "Punto Evo Multijet 1.3 90 hp": {
-        "Type": "Diesel"
-      },
-      "Avventura FIRE Active": {
-
-      },
-      "Avventura FIRE Dynamic": {
-
-      },
-      "Avventura Multijet Dynamic": {
-        "Type": "Diesel"
-      },
-      "Avventura Multijet Active": {
-        "Type": "Diesel"
-      },
-      "Avventura Multijet Emotion": {
-        "Type": "Diesel"
-      },
-      "Linea Elegante": {
-        "Type": "Sedan, Diesel"
-      },
-      "Abarth 595 Competizione": {
-        "Type": "Hatchback"
-      },
-      "Abarthe Punto 1.4 T-Jet": {
-        "Type": "Hatchback"
-      },
-      "Abarthe Avventura 1.4 T-Jet": {
-
-      },
-      "Punto Evo Sportivo 1.3": {
-        "Type": "Hatchback, Diesel"
-      },
-      "Punto Pure Active Advanced Multijet": {
-        "Type": "Hatchback, Diesel"
-      },
-      "Punto Pure Active Petrol": {
-        "Type": "Hatchback"
-      }
-    },
-    "Mitsubishi": {
-      "Pazero Sport": {
-        "Type": "SUV"
-      }
-    },
-    "Mahindra SsangYong": {
-      "SsangYong": {
-        "Type": "SUV"
-      }
-    },
-    "BMW": {
-      "X1": {
-        "Type": "Diesel"
-      },
-      "3-Series": {
-        "Type": "Sedan, Diesel"
-      },
-      "X3": {
-        "Type": "SUV, Luxury, Diesel"
-      },
-      "5-Series": {
-        "Type": "Sedan, Luxury, Diesel"
-      },
-      "Z4": {
-        "Type": "Convertible, Luxury"
-      },
-      "X5": {
-        "Type": "SUV, Luxury, Diesel"
-      },
-      "M3": {
-        "Type": "Sedan, Luxury"
-      },
-      "X6": {
-        "Type": "SUV, Luxury, Diesel"
-      },
-      "6-Series": {
-        "Type": "Coupe, Luxury, Diesel"
-      },
-      "M5": {
-        "Type": "Sedan, Luxury"
-      },
-      "1 Series": {
-        "Type": "Hatchback, Diesel"
-      },
-      "M6 Gran Coupe": {
-        "Type": "Sedan, Luxury"
-      },
-      "M4": {
-        "Type": "Sedan, Coupe, Luxury"
-      },
-      "i8": {
-        "Type": "Coupe, Hybrid/Electric, Luxury"
-      },
-      "7-Series": {
-        "Type": "Sedan, Luxury, Diesel"
-      },
-      "X5 M": {
-        "Type": "SUV, Luxury"
-      },
-      "X6 M": {
-        "Type": "SUV, Luxury"
-      }
-    },
-    "Skoda": {
       {
-        "name": "Rapid",
-        "Type": "Sedan, Diesel"
+        "name": "Scorpio",
+        "varient": [
+          {
+            "name": "Getaway",
+            "Price": "8.41 Lac"
+          },
+          {
+            "name": "Getaway 4WD",
+            "Price": "9.38 Lac"
+          },
+          {
+            "name": "S2",
+            "Price": "9.06 Lac"
+          },
+          {
+            "name": "S4",
+            "Price": "9.67 Lac"
+          },
+          {
+            "name": "S6 Plus",
+            "Price": "11.09 Lac"
+          },
+          {
+            "name": "S8",
+            "Price": "12.1 Lac"
+          },
+          {
+            "name": "S10",
+            "Price": "12.75 Lac"
+          },
+          {
+            "name": "S4 Plus 4WD",
+            "Price": "11.32 Lac"
+          },
+          {
+            "name": "S10 4WD",
+            "Price": "13.9 Lac"
+          },
+          {
+            "name": "S4 Plus",
+            "Price": "10.09 Lac"
+          },
+          {
+            "name": "S10 2WD AT",
+            "Price": "13.41 Lac"
+          },
+          {
+            "name": "S10 4WD AT",
+            "Price": "14.61 Lac"
+          },
+
+        ]
       },
+
+
       {
-        "name": "Octavia",
-        "Type": "Sedan, Diesel"
+        "name": "Thar",
+        "varient": [
+          {
+            "name": "4WD PS",
+            "Price": "6.05 Lac"
+          },
+          {
+            "name": "CRDe",
+            "Price": "8.38 Lac"
+          },
+          {
+            "name": "2WD PS",
+            "Price": "5.54 Lac"
+          },
+        ]
       },
+
+
+
+
       {
-        "name": "Superb",
-        "Type": "Sedan, Diesel"
+        "name": "e2o",
+        "varient": [
+          {
+            "name": "T2",
+            "Price": "7.19 Lac"
+          },
+          {
+            "name": "T01",
+            "Price": "5.96 Lac"
+          },
+
+          {
+            "name": "TUV300",
+            "varient": [
+              {
+                "name": "T4",
+                "Price": "7.11 Lac"
+              },
+              {
+                "name": "T6",
+                "Price": "7.77 Lac"
+              },
+              {
+                "name": "T8",
+                "Price": "8.62 Lac"
+              },
+              {
+                "name": "T4 Plus",
+                "Price": "7.47 Lac"
+              },
+              {
+                "name": "T6 Plus",
+                "Price": "8.02 Lac"
+              },
+              {
+                "name": "T6 Plus AMT",
+                "Price": "8.74 Lac"
+              },
+              {
+                "name": "T8 AMT",
+                "Price": "9.34 Lac"
+              }
+            ],
+
+          },
+
+          {
+            "name": "KUV100",
+            "varient": [
+              {
+                "name": "K2 6STR",
+                "Price": "4.45 Lac"
+              },
+              {
+                "name": "K2+ 6STR",
+                "Price": "4.67 Lac"
+              },
+              {
+                "name": "K4 5STR",
+                "Price": "4.8 Lac"
+              },
+              {
+                "name": "K4+ 5STR",
+                "Price": "5.02 Lac"
+              },
+              {
+                "name": "K6 5STR",
+                "Price": "5.39 Lac"
+              },
+              {
+                "name": "K6+ 5STR",
+                "Price": "5.61 Lac"
+              },
+              {
+                "name": "K8 5STR",
+                "Price": "5.94 Lac"
+              },
+              {
+                "name": "K2 D 6STR",
+                "Price": "5.25 Lac"
+              },
+              {
+                "name": "K2+ D 6STR",
+                "Price": "5.47 Lac"
+              },
+              {
+                "name": "K4 D 5STR",
+                "Price": "5.6 Lac"
+              },
+              {
+                "name": "K4+ D 5STR",
+                "Price": "5.82 Lac"
+              },
+              {
+                "name": "K6 D 5STR",
+                "Price": "6.24 Lac"
+              },
+              {
+                "name": "K6+ D 5STR",
+                "Price": "6.46 Lac"
+              },
+              {
+                "name": "K8 D 5STR",
+                "Price": "6.79 Lac"
+              },
+              {
+                "name": "K4+ D 6STR",
+                "Price": "5.87 Lac"
+              },
+              {
+                "name": "K4+ 6STR",
+                "Price": "5.07 Lac"
+              },
+              {
+                "name": "K4 D 6STR",
+                "Price": "5.65 Lac"
+              },
+              {
+                "name": "K4 6STR",
+                "Price": "4.85 Lac"
+              },
+              {
+                "name": "K6 6STR",
+                "Price": "5.44 Lac"
+              },
+              {
+                "name": "K6 D 6STR",
+                "Price": "6.29 Lac"
+              },
+              {
+                "name": "K6+ 6STR",
+                "Price": "5.66 Lac"
+              },
+              {
+                "name": "K6+ D 6STR",
+                "Price": "6.51 Lac"
+              },
+              {
+                "name": "K8 6STR",
+                "Price": "5.99 Lac"
+              },
+              {
+                "name": "K8 D 6STR",
+                "Price": "6.84 Lac"
+              }
+            ],
+          },
       },
-      {
-        "name": "Yeti",
-        "Type": "SUV, Diesel"
+
+                  "Tata" :
+                  {
+                  {
+                    "name": "Venture",
+                    "varient": [
+                      {
+                        "name": "LX",
+                        "Price": "4.77 Lac"
+                      },
+                      {
+                        "name": "EX",
+                        "Price": "5.03 Lac"
+                      },
+                      {
+                        "name": "GX",
+                        "Price": "5.54 Lac"
+
+                      }
+                    ]
+                  },
+            {
+              "name": "Indica eV2 LS",
+              "Price": "4.39 Lac"
+            },
+            {
+              "name": "Indica eV2 LX",
+              "Price": "4.75 Lac"
+            },
+            {
+              "name": "Indigo eCS LS (TDI) BS III",
+              "Price": "5.33 Lac"
+            },
+            {
+              "name": "Indigo eCS CS-LS",
+              "Price": "5.7 Lac"
+            },
+            {
+              "name": "Indigo eCS CS-LX",
+              "Price": "5.87 Lac"
+            },
+            {
+              "name": "Indigo eCS GVX",
+              "Price": "5.4 Lac"
+            },
+            {
+              "name": "Indigo eCS VX",
+              "Price": "6.25 Lac"
+            },
+            {
+              "name": "Vista LS TDI BS-III",
+              "Price": "5.01 Lac"
+            },
+            {
+              "name": "Vista LX TDI BS-III",
+              "Price": "5.47 Lac"
+            },
+            {
+              "name": "Vista LS Quadrajet",
+              "Price": "5.47 Lac"
+            },
+            {
+              "name": "Sumo Gold CX BS III",
+              "Price": "6.31 Lac"
+            },
+            {
+              "name": "Sumo Gold CX BS IV",
+              "Price": "6.65 Lac"
+            },
+            {
+              "name": "Sumo Gold EX BS III",
+              "Price": "7.21 Lac"
+            },
+            {
+              "name": "Sumo Gold EX BS IV",
+              "Price": "7.37 Lac"
+            },
+            {
+              "name": "Sumo Gold GX BS IV",
+              "Price": "8.03 Lac"
+            },
+            {
+              "name": "Xenon XT EX 4x2",
+              "Price": "9.95 Lac"
+            },
+            {
+              "name": "Xenon XT EX 4x4",
+              "Price": "10.98 Lac"
+            },
+            {
+              "name": "Safari 4x2 LX DICOR BS-IV",
+              "Price": "8.99 Lac"
+            },
+            {
+              "name": "Safari 4x2 EX DICOR BS-IV",
+              "Price": "10.29 Lac"
+            },
+            {
+              "name": "Safari Storme 2.2 LX 4x2",
+              "Price": "9.99 Lac"
+            },
+            {
+              "name": "Safari Storme 2.2 EX 4x2",
+              "Price": "11.68 Lac"
+            },
+            {
+              "name": "Safari Storme 2.2 VX 4x2",
+              "Price": "13.02 Lac"
+            },
+            {
+              "name": "Safari Storme 2.2 VX 4x4",
+              "Price": "14.32 Lac"
+            },
+            {
+              "name": "Winger Platinum BS-III",
+              "Price": "7.2 Lac"
+            },
+            {
+              "name": "Winger Platinum BS-IV",
+              "Price": "7.56 Lac"
+            },
+            {
+              "name": "Zest XE Petrol",
+              "Price": "4.88 Lac"
+            },
+            {
+              "name": "Zest XE 75 PS Diesel",
+              "Price": "5.94 Lac"
+            },
+            {
+              "name": "Nano GenX XT",
+              "Price": "2.54 Lac"
+            },
+            {
+              "name": "Vista VX Tech",
+              "Price": "6.19 Lac"
+            },
+            {
+              "name": "Aria Pure LX 4x2",
+              "Price": "10.49 Lac"
+            },
+            {
+              "name": "Aria Pleasure 4x2",
+              "Price": "12.65 Lac"
+            },
+            {
+              "name": "Aria Pride 4x4",
+              "Price": "15.51 Lac"
+            },
+            {
+              "name": "Indigo eCS GLS CNG",
+              "Price": "5.06 Lac"
+            },
+            {
+              "name": "Indigo eCS GLX CNG",
+              "Price": "5.34 Lac"
+            },
+            {
+              "name": "Zest XM Petrol",
+              "Price": "5.56 Lac"
+            },
+            {
+              "name": "Zest XMS Petrol",
+              "Price": "5.77 Lac"
+            },
+            {
+              "name": "Zest XT Petrol",
+              "Price": " 6.35 Lac"
+            },
+            {
+              "name": "Zest XM Diesel",
+              "Price": "6.62 Lac"
+            },
+            {
+              "name": "Zest XMS Diesel",
+              "Price": "6.83 Lac"
+            },
+            {
+              "name": "Zest XT Diesel",
+              "Price": "7.39 Lac"
+            },
+            {
+              "name": "Zest XMA Diesel",
+              "Price": "7.33 Lac"
+            },
+            {
+              "name": "Nano GenX XE",
+              "Price": "2 Lac"
+            },
+            {
+              "name": "Nano GenX XM CNG",
+              "Price": "2.56 Lac"
+            },
+            {
+              "name": "Bolt XT Diesel",
+              "Price": "7 Lac"
+            },
+            {
+              "name": "Bolt XE Diesel",
+              "Price": "5.5 Lac"
+            },
+            {
+              "name": "Bolt XM Diesel",
+              "Price": "6 Lac"
+            },
+            {
+              "name": "Bolt XMS Diesel",
+              "Price": "6.35 Lac"
+            },
+            {
+              "name": "Bolt XT Petrol",
+              "Price": "6 Lac"
+            },
+            {
+              "name": "Bolt XE Petrol",
+              "Price": "4.45 Lac"
+            },
+            {
+              "name": "Bolt XM Petrol",
+              "Price": "5.16 Lac"
+            },
+            {
+              "name": "Bolt XMS Petrol",
+              "Price": "5.41 Lac"
+            },
+            {
+              "name": "Zest XTA Diesel",
+              "Price": "8.15 Lac"
+            },
+            {
+              "name": "Nano GenX XTA AMT",
+              "Price": "2.94 Lac"
+            },
+            {
+              "name": "Nano GenX XM",
+              "Price": "2.34 Lac"
+            },
+            {
+              "name": "Nano GenX XMA AMT",
+              "Price": "2.74 Lac"
+            },
+            {
+              "name": "Safari Storme VX 4x2 Varicor 400",
+              "Price": "13.26 Lac"
+            },
+            {
+              "name": "Safari Storme VX 4x4 Varicor 400",
+              "Price": "14.6 Lac"
+            },
+            {
+              "name": "Sumo Gold CX PS BS III",
+              "Price": "6.57 Lac"
+            },
+            {
+              "name": "Sumo Gold CX PS BS IV",
+              "Price": "6.91 Lac"
+            }
+          },
+          "Ford",
+      : {
+        {
+          "name": "Fiesta Ambiente",
+          "Price": "8.5 Lac"
+        },
+        {
+          "name": "Fiesta Trend",
+          "Price": "9.4 Lac"
+
+        },
+        {
+          "name": "Fiesta Titanium",
+          "Price": "10.19 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.2 Ti-VCT Ambiente",
+          "Price": "5.16 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.2 Ti-VCT Titanium Plus",
+          "Price": "7.33 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.2 Ti-VCT Trend",
+          "Price": "5.89 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.2 Ti-VCT Titanium",
+          "Price": "6.78 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.5 Ti-VCT AT Titanium",
+          "Price": "7.88 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.5 TDCi Ambiente",
+          "Price": "6.16 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.5 TDCi Trend",
+          "Price": "6.89 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.5 TDCi Titanium",
+          "Price": "7.78 Lac"
+        },
+        {
+          "name": "Figo Aspire 1.5 TDCi Titanium Plus",
+          "Price": "8.33 Lac"
+        },
+        {
+          "name": "Figo Ambiente 1.2 Ti-VCT",
+          "Price": "4.71 Lac"
+        },
+        {
+          "name": "Figo Titanium Plus 1.2 Ti-VCT",
+          "Price": "6.47 Lac"
+        },
+        {
+          "name": "Figo Trend Plus 1.2 Ti-VCT",
+          "Price": "5.26 Lac"
+        },
+        {
+          "name": "Figo Trend 1.2 Ti-VCT",
+          "Price": "5.12 Lac"
+        },
+        {
+          "name": "Ford Ambiente 1.5 TDCi",
+          "Price": "5.71 Lac"
+        },
+        {
+          "name": "Figo Titanium 1.2 Ti-VCT",
+          "Price": "5.83 Lac"
+        },
+        {
+          "name": "Figo Trend Plus 1.5 TDCi",
+          "Price": "6.23 Lac"
+        },
+        {
+          "name": "Figo Trend 1.5 TDCi",
+          "Price": "6.12 Lac"
+        },
+        {
+          "name": "Figo Base 1.5 TDCi",
+          "Price": "5.42 Lac"
+        },
+        {
+          "name": "Figo Titanium 1.5 TDCi",
+          "Price": "6.83 Lac"
+        },
+        {
+          "name": "Figo base 1.2 Ti-VCT",
+          "Price": "4.42 Lac"
+        },
+        {
+          "name": "Figo Titanium 1.5 Ti-VCT AT",
+          "Price": "6.98 Lac"
+        },
+        {
+          "name": "Figo Titanium Plus 1.5 TDCi",
+          "Price": "7.47 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L Ti-VCT Ambiente",
+          "Price": "7 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L Ti-VCT Trend",
+          "Price": "7.96 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L Ti-VCT Titanium",
+          "Price": "9.12 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L Ti-VCT Titanium(AT)",
+          "Price": "9.99 Lac"
+        },
+        {
+          "name": "EcoSport 1.0L EcoBoost Trend+",
+          "Price": "8.74 Lac"
+        },
+        {
+          "name": "EcoSport 1.0L EcoBoost Titanium+",
+          "Price": "10.1 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L EcoBoost Ambiente",
+          "Price": "8.19 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L TDCi Trend",
+          "Price": "8.91 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L TDCi Titanium",
+          "Price": "9.99 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L TDCi Trend Plus",
+          "Price": "9.39 Lac"
+        },
+        {
+          "name": "EcoSport 1.5L TDCi Titanium Plus",
+          "Price": "10.65 Lac"
+        },
+        {
+          "name": "Endeavour 2.2L 4x2 AT Trend",
+          "Price": "24.39 Lac"
+        },
+        {
+          "name": "Endeavour 2.2L 4x4 MT Trend",
+          "Price": "25.49 Lac"
+        },
+        {
+          "name": "Endeavour 2.2L 4x2 AT Titanium",
+          "Price": "26.14 Lac"
+        },
+        {
+          "name": "Endeavour 3.2L 4x4 AT Trend",
+          "Price": "26.54 Lac"
+        },
+        {
+          "name": "Endeavour 3.2L 4x4 AT Titanium",
+          "Price": "28.15 Lac"
+        },
+        {
+          "name": "Endeavour 2.2L 4x2 MT Trend",
+          "Price": "23.64 Lac"
+        },
+      },
+
+
+          "Chevrolet",
+      : {
+        {
+          "name": "Spark 1.0",
+          "Price": "3.61 Lac"
+        },
+        {
+          "name": "Spark LS 1.0",
+          "Price": "3.89 Lac"
+        },
+        {
+          "name": "Spark LT 1.0",
+          "Price": "4.18 Lac"
+        },
+        {
+          "name": "Sail HatchBack Base Petrol",
+          "Price": "4.75 Lac"
+        },
+        {
+          "name": "Sail HatchBack LS Petrol",
+          "Price": "5.26 Lac"
+        },
+        {
+          "name": "Sail HatchBack LS ABS Petrol",
+          "Price": "5.49 Lac"
+        },
+        {
+          "name": "Sail HatchBack LT ABS Petrol",
+          "Price": "6 Lac"
+        },
+        {
+          "name": "Sail HatchBack LS Diesel",
+          "Price": "6.32 Lac"
+        },
+        {
+          "name": "Sail HatchBack LS ABS Diesel",
+          "Price": "6.48 Lac"
+        },
+        {
+          "name": "Sail HatchBack LT ABS Diesel",
+          "Price": "7.31 Lac"
+        },
+        {
+          "name": "Cruze LT",
+          "Price": "13.95 Lac"
+        },
+        {
+          "name": "Cruze LTZ",
+          "Price": "15.95 Lac"
+        },
+        {
+          "name": "Cruze LTZ AT",
+          "Price": "16.95 Lac"
+        },
+        {
+          "name": "Tavera Neo 3-10 STR BS-III",
+          "Price": "7.73 Lac"
+        },
+        {
+          "name": "Tavera Neo 3 Max-10 STR BS-III",
+          "Price": "8.62 Lac"
+        },
+        {
+          "name": "Tavera Neo 3 Max-7 STR BS-III",
+          "Price": "8.96 Lac"
+        },
+        {
+          "name": "Tavera Neo 3 LS-10 STR BS-III",
+          "Price": "9.42 Lac"
+        },
+        {
+          "name": "Tavera Neo 3 LS-7 STR BS-III",
+          "Price": "9.69 Lac"
+        },
+        {
+          "name": "Tavera Neo 3 LS-7(C) STR BS-III",
+          "Price": "9.8 Lac"
+        },
+        {
+          "name": "Tavera Neo 3 LT-9 STR BS-III",
+          "Price": "10.77 Lac"
+        },
+        {
+          "name": "Tavera Neo 3 LT-8 STR BS-III",
+          "Price": "11.24 Lac"
+        },
+        {
+          "name": "Tavera Neo 3 LT-7(C) STR BS-III",
+          "Price": "11.5 Lac"
+        },
+        {
+          "name": "Enjoy 1.4 LS 8 STR",
+          "Price": "6.33 Lac"
+        },
+        {
+          "name": "Sail PS Diesel",
+          "Price": "6.87 Lac"
+        },
+        {
+          "name": "Sail LS Diesel",
+          "Price": "7.28 Lac"
+        },
+        {
+          "name": "Sail LS ABS Diesel",
+          "Price": "7.59 Lac"
+        },
+        {
+          "name": "Sail LT ABS Diesel",
+          "Price": "8.2 Lac"
+        },
+        {
+          "name": "Sail LS ABS Petrol",
+          "Price": "6.47 Lac"
+        },
+        {
+          "name": "Sail LS Petrol",
+          "Price": "6 Lac"
+        },
+        {
+          "name": "Sail LT ABS Petrol",
+          "Price": "6.97 Lac"
+        },
+        {
+          "name": "Sail PS Petrol",
+          "Price": "5.6 Lac"
+        },
+        {
+          "name": "Beat LS Diesel",
+          "Price": "5.5 Lac"
+        },
+        {
+          "name": "Beat PS Diesel",
+          "Price": "5.16 Lac"
+        },
+        {
+          "name": "Beat LT Diesel",
+          "Price": "5.92 Lac"
+        },
+        {
+          "name": "Beat LT(O) Diesel",
+          "Price": "6.44 Lac"
+        },
+        {
+          "name": "Beat PS Petrol",
+          "Price": "4.29 Lac"
+        },
+        {
+          "name": "Beat LS Petrol",
+          "Price": "4.62 Lac"
+        },
+        {
+          "name": "Beat LT Petrol",
+          "Price": "5.08 Lac"
+        },
+        {
+          "name": "Beat LT(O) Petrol",
+          "Price": "5.55 Lac"
+        },
+        {
+          "name": "Enjoy 1.4 LS 7 STR",
+          "Price": "6.35 Lac"
+        },
+        {
+          "name": "Enjoy 1.4 LT 7 STR",
+          "Price": "6.96 Lac"
+        },
+        {
+          "name": "Enjoy 1.4 LTZ 7 STR",
+          "Price": "7.81Lac"
+        },
+        {
+          "name": "Enjoy 1.3 LS 8 STR",
+          "Price": "7.65 Lac"
+        },
+        {
+          "name": "Enjoy 1.3 LS 7 STR",
+          "Price": "7.68 Lac"
+        },
+        {
+          "name": "Enjoy 1.3 LT 7 STR",
+          "Price": "8.16 Lac"
+        },
+        {
+          "name": "Enjoy 1.3 LTZ 7 STR",
+          "Price": "8.91 Lac"
+        },
+        {
+          "name": "Sail Hatchback Base Diesel",
+          "Price": "5.79 Lac"
+        },
+        {
+          "name": "Captiva MT",
+          "Price": "25.14 Lac"
+        },
+        {
+          "name": "Captiva AT",
+          "Price": "27.36 Lac"
+        },
+        {
+          "name": "Trailbalzer LTZ AT",
+          "Price": "26.99 Lac"
+        },
+        {
+          "name": "Enjoy 1.3 TCDi LT8 STR",
+          "Price": "8.14 Lac"
+        },
+        {
+          "name": "Enjoy 1.3 TCDi LTZ 8 STR",
+          "Price": "8.88 Lac"
+        },
+        {
+          "name": "Enjoy 1.4 LT 8 STR",
+          "Price": "6.93 Lac"
+        },
+        {
+          "name": "Enjoy 1.4 LTZ 8 STR",
+          "Price": "7.78 Lac"
+        },
+        {
+          "name": "Beat LTZ Petrol",
+          "Price": "5.55 Lac"
+        },
+        {
+          "name": "Beat LTZ Diesel",
+          "Price": "6.44 Lac"
+        }
+
+      },
+
+
+          "Renault",
+      : {
+        {
+          "name": "Pulse RxL",
+          "Price": "5.04 Lac"
+        },
+        {
+          "name": "Pulse RxL Airbags",
+          "Price": "6 Lac"
+        },
+        {
+          "name": "Pulse RxZ",
+          "Price": "6.81 Lac"
+        },
+        {
+          "name": "Scala RxL",
+          "Price": "7.7 Lac"
+        },
+        {
+          "name": "Scala RxL",
+          "Price": "8.72 Lac"
+        },
+        {
+          "name": "Scala RxZ",
+          "Price": "9.11 Lac"
+        },
+        {
+          "name": "Duster RxE",
+          "Price": "7.7 Lac"
+        }
+      },
+          "Volkswagen",
+          :
+          {
+
+          },
+          "DC",
+          :
+          {
+
+          },
+          "Volvo",
+          :
+          {
+
+          },
+          "Force",
+          :
+          {
+
+          },
+          "Porsche",
+          :
+          {
+
+          },
+          "Maserati",
+          :
+          {
+
+          },
+          "Lamborghini",
+          :
+          {
+
+          },
+          "Aston Martin",
+          :
+          {
+
+          },
+          "Mercedes-Benz",
+          :
+          {
+
+          },
+          "Isuzu",
+          :
+          {
+
+          },
+          "Bentley",
+          :
+          {
+
+          },
+          "Premier",
+          :
+          {
+
+          },
+          "Ferrari",
+          :
+          {
+
+          },
+          "Mini",
+          :
+          {
+
+          },
+          "Audi",
+          :
+          {
+
+          },
+          "Land Rover",
+          :
+          {
+
+          },
+          "Jaguar",
+          :
+          {
+
+          },
+          "ICML",
+          :
+          {
+
+          },
+          "Nissan",
+          :
+          {
+
+          },
+          "Datsun",
+          :
+          {
+            "GO A": {
+              "Type": "Hatchback"
+            },
+            "GO D": {
+              "Type": "Hatchback"
+            },
+            "GO T": {
+              "Type": "Hatchback"
+            },
+            "Go+MPV D": {
+              "Type": "Minivan/MUV"
+            },
+            "Go+MPV A": {
+              "Type": "Minivan/MUV"
+            },
+            "Go+MPV T": {
+              "Type": "Minivan/MUV"
+            },
+            "GO T (O)": {
+              "Type": "Hatchback"
+            },
+            "GO NXT": {
+              "Type": "Hatchback"
+            },
+            "Go+MPV T (O)": {
+              "Type": "Minivan/MUV"
+            },
+            "GO A EPS": {
+              "Type": "Hatchback"
+            },
+            "Go+MPV A EPS": {
+              "Type": "Minivan/MUV"
+            }
+          },
+          "Rolls-Royce",
+          :
+          {
+            "Ghost 6.5": {
+              "Type": "Sedan, Luxury"
+            },
+            "Ghost Extended Wheelbase": {
+              "Type": "Sedan, Luxury"
+            },
+            "Phantom Sedan": {
+              "Type": "Sedan, Luxury"
+            },
+            "Phantom EWB": {
+              "Type": "Sedan, Luxury"
+            },
+            "Phantom Coupe 6.8 L": {
+              "Type": "Coupe, Luxury"
+            },
+            "Drophead Coupe Convertible": {
+              "Type": "Convertible, Luxury"
+            },
+            "Ghost Series II 6.6": {
+              "Type": "Sedan, Luxury"
+            },
+            "Wraith Coupe": {
+              "Type": "Coupe, Luxury"
+            }
+          },
+          "Fiat",
+          :
+          {
+            "Linea Active Fire": {
+              "Type": "Sedan"
+            },
+            "Linea Active Multijet": {
+              "Type": "Sedan, Diesel"
+            },
+            "Linea T-Jet Active": {
+              "Type": "Sedan"
+            },
+            "Linea Dynamic Multijet": {
+              "Type": "Sedan, Diesel"
+            },
+            "Linea T-Jet Dynamic": {
+              "Type": "Sedan"
+            },
+            "Linea Emotion Multijet": {
+              "Type": "Sedan, Diesel"
+            },
+            "Linea T-Jet Emotion": {
+              "Type": "Sedan"
+            },
+            "Linea Classic 1.3 Multijet": {
+              "Type": "Sedan, Diesel"
+            },
+            "Linea Classic Plus 1.3 Multijet": {
+              "Type": "Sedan, Diesel"
+            },
+            "Linea Classic 1.4": {
+              "Type": "Sedan"
+            },
+            "Punto Evo Active 1.2": {
+              "Type": "Hatchback"
+            },
+            "Punto Evo Dynamic 1.2": {
+              "Type": "Hatchback"
+            },
+            "Punto Evo Emotion 1.4": {
+
+            },
+            "Punto Evo Active Multijet 1.3": {
+              "Type": [ "Hatchback, Diesel" ]
+            },
+            "Punto Evo Dynamic Multijet 1.3": {
+              "Type": "Hatchback, Diesel"
+            },
+            "Punto Evo Emotion Multijet 1.3": {
+              "Type": "Diesel"
+            },
+            "Punto Evo Multijet 1.3 90 hp": {
+              "Type": "Diesel"
+            },
+            "Avventura FIRE Active": {
+
+            },
+            "Avventura FIRE Dynamic": {
+
+            },
+            "Avventura Multijet Dynamic": {
+              "Type": "Diesel"
+            },
+            "Avventura Multijet Active": {
+              "Type": "Diesel"
+            },
+            "Avventura Multijet Emotion": {
+              "Type": "Diesel"
+            },
+            "Linea Elegante": {
+              "Type": "Sedan, Diesel"
+            },
+            "Abarth 595 Competizione": {
+              "Type": "Hatchback"
+            },
+            "Abarthe Punto 1.4 T-Jet": {
+              "Type": "Hatchback"
+            },
+            "Abarthe Avventura 1.4 T-Jet": {
+
+            },
+            "Punto Evo Sportivo 1.3": {
+              "Type": "Hatchback, Diesel"
+            },
+            "Punto Pure Active Advanced Multijet": {
+              "Type": "Hatchback, Diesel"
+            },
+            "Punto Pure Active Petrol": {
+              "Type": "Hatchback"
+            }
+          },
+          "Mitsubishi",
+          :
+          {
+            "Pazero Sport": {
+              "Type": "SUV"
+            }
+          },
+          "Mahindra SsangYong",
+          :
+          {
+            "SsangYong": {
+              "Type": "SUV"
+            }
+          },
+          "BMW",
+          :
+          {
+            "X1": {
+              "Type": "Diesel"
+            },
+            "3-Series": {
+              "Type": "Sedan, Diesel"
+            },
+            "X3": {
+              "Type": "SUV, Luxury, Diesel"
+            },
+            "5-Series": {
+              "Type": "Sedan, Luxury, Diesel"
+            },
+            "Z4": {
+              "Type": "Convertible, Luxury"
+            },
+            "X5": {
+              "Type": "SUV, Luxury, Diesel"
+            },
+            "M3": {
+              "Type": "Sedan, Luxury"
+            },
+            "X6": {
+              "Type": "SUV, Luxury, Diesel"
+            },
+            "6-Series": {
+              "Type": "Coupe, Luxury, Diesel"
+            },
+            "M5": {
+              "Type": "Sedan, Luxury"
+            },
+            "1 Series": {
+              "Type": "Hatchback, Diesel"
+            },
+            "M6 Gran Coupe": {
+              "Type": "Sedan, Luxury"
+            },
+            "M4": {
+              "Type": "Sedan, Coupe, Luxury"
+            },
+            "i8": {
+              "Type": "Coupe, Hybrid/Electric, Luxury"
+            },
+            "7-Series": {
+              "Type": "Sedan, Luxury, Diesel"
+            },
+            "X5 M": {
+              "Type": "SUV, Luxury"
+            },
+            "X6 M": {
+              "Type": "SUV, Luxury"
+            }
+          },
+          "Skoda",
+          :
+          {
+            {
+              "name": "Rapid",
+              "Type": "Sedan, Diesel"
+            },
+            {
+              "name": "Octavia",
+              "Type": "Sedan, Diesel"
+            },
+            {
+              "name": "Superb",
+              "Type": "Sedan, Diesel"
+            },
+            {
+              "name": "Yeti",
+              "Type": "SUV, Diesel"
+            }
+          }
       }
     }
-  }
-}
