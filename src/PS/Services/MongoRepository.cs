@@ -21,10 +21,16 @@ namespace PS.Services
             _client = new MongoClient(conString);
             _database = _client.GetDatabase("car");
         }
+        public List<string> getAll()
+        {
+            var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;
+           // List<MongoCollection> collections = _database.GetCollection();
+
+            return new List<string>();
+        }
 
         public List<Car> getAll(string colletionName)
         {
-            var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;
             var collection = _database.GetCollection<Car>(colletionName);
             var modelList = collection.Find(new BsonDocument()).ToListAsync().Result;
             return modelList;

@@ -7,6 +7,7 @@ angular.module("psApp").directive("carService", function () {
         // controller: "indexController",
         link: function (scope, el, attrs) {
 
-        }
+        },
+        controller: "carServiceController"
     };
 });

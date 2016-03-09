@@ -7,6 +7,7 @@ namespace PS.Services
     public  interface IMongoRepository
     {
         List<MongoRepository.Car> getAll(string colletionName);
+        List<string> getAll();
         List<MongoRepository.Car> getSelected(string id);
         bool insert();
         //  IQueryable<List<MongoRepository.Car>> select();
