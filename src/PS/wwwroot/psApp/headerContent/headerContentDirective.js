@@ -3,6 +3,7 @@
 angular.module("psApp").directive("headerContent", function () {
     return {
         templateUrl: "psApp/headerContent/headerContentTemplate.html",
+        controller:"headerContentController",
         link: function (scope, element, attrs) {
 
             makeSyickyHeader();
