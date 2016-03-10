@@ -2,7 +2,7 @@
     <div class="block-title">
         <div class="block-title__inner section-bg section-bg_second">
             <div class="bg-inner">
-                <h1 class="ui-title-page">vehicle listings</h1>
+                <h1 class="ui-title-page">Service</h1>
                 <div class="decor-1 center-block"></div>
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
@@ -13,5 +13,39 @@
     </div><!-- end block-title -->
     <div class="container">
         <div class="row">
+            <div class="col-md-9">
+                <main class="main-content">
+                    <div class="sorting">
+                        <div class="sorting__inner">
+                            <div class="sorting__item">
+                                <span class="sorting__title">select Car</span>
+                            </div>
+                            <div class="sorting__item">
+                                <span class="sorting__title">select Model</span>
+                                <div class="select jelect">
+                                    <input id="page" name="page" value="0" data-text="imagemin" type="text" class="jelect-input">
+                                    <div tabindex="0" role="button" class="jelect-current">Select</div>
+                                    <ul class="jelect-options">
+                                        <li class="jelect-option jelect-option_state_active">Select</li>
+                                        <li class="jelect-option" ng-repeat="car in carTypes" ng-bind="car"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sorting__item">
+                                <span class="sorting__title">Select Varient</span>
+                                <div class="select jelect">
+                                    <input id="sort" name="sort" value="0" data-text="imagemin" type="text" class="jelect-input">
+                                    <div tabindex="0" role="button" class="jelect-current">Select</div>
+                                    <ul class="jelect-options">
+                                        <li class="jelect-option jelect-option_state_active">Select</li>
+                                        <li class="jelect-option" ng-repeat="varient in carVarient" ng-bind="varient"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
             </div>
-</div>
+        </div>
+    </div>

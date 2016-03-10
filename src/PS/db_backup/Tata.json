@@ -1,0 +1,18 @@
+{ 
+    "_id" : ObjectId("56e057bfbccb21477edd1d71"), 
+    "name" : "Venture", 
+    "varient" : [
+        {
+            "name" : "LX", 
+            "Price" : "4.77 Lac"
+        }, 
+        {
+            "name" : "EX", 
+            "Price" : "5.03 Lac"
+        }, 
+        {
+            "name" : "GX", 
+            "Price" : "5.54 Lac"
+        }
+    ]
+}

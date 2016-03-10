@@ -7,6 +7,24 @@ angular.module("psApp").directive("carService", function () {
         // controller: "indexController",
         link: function (scope, el, attrs) {
 
+            /////////////////////////////////////////////////////////////////
+            // Filter accordion
+            /////////////////////////////////////////////////////////////////
+
+
+            $('body').delegate('.js-filter', 'click', function () {
+                $(this).prev('.wrap-filter').slideToggle('slow')
+            });
+
+            $('body').delegate('.js-filter','click', function () {
+                $(this).toggleClass('filter-up filter-down')
+            });
+
+            /////////////////////////////////////////////////////////////////
+            // Сustomization select
+            /////////////////////////////////////////////////////////////////
+
+            $('.jelect').jelect();
         },
         controller: "carServiceController"
     };
