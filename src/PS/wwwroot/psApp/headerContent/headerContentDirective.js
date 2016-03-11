@@ -3,6 +3,7 @@
 angular.module("psApp").directive("headerContent", function () {
     return {
         templateUrl: "psApp/headerContent/headerContentTemplate.html",
+        controller:"headerContentController",
         link: function (scope, element, attrs) {
 
             makeSyickyHeader();
@@ -129,5 +130,21 @@ function makeSyickyHeader() {
         $(document).on('click', '.yamm .dropdown-menu', function (e) {
             e.stopPropagation();
         });
+
+        $(document).on('click','.signup-tab',function(e){
+            e.preventDefault();
+            $('#signup-taba').tab('show');
+        });	
+	
+        $(document).on('click','.signin-tab',function(e){
+            e.preventDefault();
+            $('#signin-taba').tab('show');
+        });
+	    	
+        $(document).on('click','.forgetpass-tab',function(e){
+            e.preventDefault();
+            $('#forgetpass-taba').tab('show');
+        });
+
     });
 }
