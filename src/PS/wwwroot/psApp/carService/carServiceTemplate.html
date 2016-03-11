@@ -19,6 +19,14 @@
                         <div class="sorting__inner">
                             <div class="sorting__item">
                                 <span class="sorting__title">select Car</span>
+                                <div class="select jelect">
+                                    <input id="page" name="page" value="0" data-text="imagemin" type="text" class="jelect-input">
+                                    <div tabindex="0" role="button" class="jelect-current">Select</div>
+                                    <ul class="jelect-options">
+                                        <li class="jelect-option jelect-option_state_active">Select</li>
+                                        <li class="jelect-option" ng-repeat="car in carCollections" ng-bind="car"></li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="sorting__item">
                                 <span class="sorting__title">select Model</span>
@@ -46,6 +54,221 @@
                     </div>
                 </main>
 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="car-header">
+                    <h3 class="header-text">
+                        Select your car
+                        <div class="b-step">
+                            1
+                        </div>
+                    </h3>
+                    <div>
+                        <div>
+                            <div class="row margin-top10" car="quote.car" ng-if="true" on-change="newCarChanged()" on-finish="getMaintenanceSchedule()">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="car-selection-car-container" ng-show="true">
+
+                                                <div class="car-option" ng-class="car-option-active" ng-click="editMake()" ng-if="true" ng-show="true">
+                                                    Honda
+                                                </div>
+                                                <div class="car-option" ng-class="car-option-active" ng-click="editYear()" ng-if="true" ng-show="true">
+                                                    2009
+                                                </div>
+                                                <div class="car-option" ng-class="" ng-click="editModel()" ng-if="true" ng-show="true">
+                                                    CR-V
+                                                </div>
+
+                                                <div class="car-option" ng-class="" ng-click="editTrim()" ng-if="true" ng-show="car.trim">
+                                                    L4-2.4L
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" ng-if="true">
+                                        <div class="col-xs-12">
+                                            <div class="car-selection-container" error-message="Please select your car's make." require-info="car.make" data-original-title="" title="">
+                                                <span class="car-selection-step-name">
+                                                    YOUR MAKE
+                                                </span>
+                                                <div class="car-selection-flex-container">
+                                                    <ul class="car-selection-flex-column">
+                                                        <li class="car-selection-filter">
+                                                            A-G
+                                                        </li>
+                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carCollections" ng-bind="car"></li>
+                                                    </ul>
+                                                    <ul class="car-selection-flex-column" >
+                                                        <li class="car-selection-filter">
+                                                            H-L
+                                                        </li>
+                                                        <!-- ngRepeat: make in bucket.content -->
+                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carCollections" ng-bind="car"></li>
+                                                    </ul>
+                                                    <ul class="car-selection-flex-column">
+                                                        <li class="car-selection-filter">
+                                                            M-P
+                                                        </li>
+                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carCollections" ng-bind="car"></li>
+                                                    </ul>
+                                                    <ul class="car-selection-flex-column">
+                                                        <li class="car-selection-filter">
+                                                            R-Z
+                                                        </li>
+                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carCollections" ng-bind="car"></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ngIf: showYear -->
+                                    <div class="row" ng-if="showYear">
+                                        <div class="col-xs-12">
+                                            <div class="car-selection-container" error-message="Please select your car's year." require-info="car.year" data-original-title="" title="">
+                                                <span class="car-selection-step-name">
+                                                    YOUR CAR'S YEAR
+                                                </span>
+                                                <div class="car-selection-flex-container">
+                                                    <div class="btn-idk" ng-click="selectYearIDK()">
+                                                        I don't know
+                                                    </div>
+                                                    <ul class="car-selection-flex-column" ng-repeat="bucket in yearBuckets">
+                                                        <li class="car-selection-filter">
+                                                            2010-2016
+                                                        </li>
+                                                        <!-- ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2016</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2015</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2014</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2013</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2012</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2011</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2010</li><!-- end ngRepeat: year in bucket.content -->
+                                                    </ul><!-- end ngRepeat: bucket in yearBuckets --><ul class="car-selection-flex-column" ng-repeat="bucket in yearBuckets">
+                                                        <li class="car-selection-filter">
+                                                            2000-2009
+                                                        </li>
+                                                        <!-- ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2009</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2008</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2007</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2006</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2005</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2004</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2003</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2002</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2001</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">2000</li><!-- end ngRepeat: year in bucket.content -->
+                                                    </ul><!-- end ngRepeat: bucket in yearBuckets --><ul class="car-selection-flex-column" ng-repeat="bucket in yearBuckets">
+                                                        <li class="car-selection-filter">
+                                                            1990-1999
+                                                        </li>
+                                                        <!-- ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1999</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1998</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1997</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1996</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1995</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1994</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1993</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1992</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1991</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1990</li><!-- end ngRepeat: year in bucket.content -->
+                                                    </ul><!-- end ngRepeat: bucket in yearBuckets --><ul class="car-selection-flex-column" ng-repeat="bucket in yearBuckets">
+                                                        <li class="car-selection-filter">
+                                                            1980-1989
+                                                        </li>
+                                                        <!-- ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1989</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1988</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1987</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1986</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1985</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1984</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1983</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1982</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1981</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1980</li><!-- end ngRepeat: year in bucket.content -->
+                                                    </ul><!-- end ngRepeat: bucket in yearBuckets --><ul class="car-selection-flex-column" ng-repeat="bucket in yearBuckets">
+                                                        <li class="car-selection-filter">
+                                                            1970-1979
+                                                        </li>
+                                                        <!-- ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1979</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1978</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1977</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1976</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1975</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1974</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1973</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1972</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1971</li><!-- end ngRepeat: year in bucket.content -->
+                                                        <li ng-click="selectYear(year)" ng-model="car.year" ng-repeat="year in bucket.content" class="ng-pristine ng-untouched ng-valid">1970</li><!-- end ngRepeat: year in bucket.content -->
+                                                    </ul><!-- end ngRepeat: bucket in yearBuckets -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ngIf: showModel -->
+                                    <div class="row" ng-if="true">
+                                        <div class="col-xs-12">
+                                            <div class="car-selection-container" error-message="Please select your car's model." require-info="car.model" data-original-title="" title="">
+                                                <span class="car-selection-step-name">
+                                                    YOUR MODEL
+                                                </span>
+                                                <div class="car-selection-flex-container">
+                                                    <div class="btn-idk" ng-click="selectModelIDK()">
+                                                        I don't know
+                                                    </div>
+                                                    <ul class="car-selection-flex-column">
+                                                        <li class="car-selection-filter"></li>
+                                                        <li ng-click="selectModel(model)" ng-model="car.model" ng-repeat="type in carTypes">{{type}}</li>
+                                                      </ul>
+                                                    
+                                                    <ul class="car-selection-flex-column">
+                                                        <li class="car-selection-filter"></li>
+                                                        <li ng-click="selectModel(model)" ng-model="car.model" ng-repeat="type in carTypes">{{type}}</li>
+                                                    </ul>
+                                                    <ul class="car-selection-flex-column">
+                                                        <li class="car-selection-filter"></li>
+                                                        <li ng-click="selectModel(model)" ng-model="car.model" ng-repeat="type in carTypes">{{type}}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ngIf: showTrim -->
+                                    <div class="row" ng-if="showTrim">
+                                        <div class="col-xs-12">
+                                            <div class="car-selection-container" error-message="Please select your car's engine type." require-info="car.trim" data-original-title="" title="">
+                                                <span class="car-selection-step-name">
+                                                    ENGINE TYPE
+                                                </span>
+                                                <div class="car-selection-flex-container">
+                                                    <div class="btn-idk" ng-click="selectTrimIDK()">
+                                                        I don't know
+                                                    </div>
+                                                    <ul class="car-selection-flex-column">
+                                                        <li class="car-selection-filter"></li>
+                                                        <!-- ngRepeat: trim in trims --><!-- ngIf: (trim.value!='*') -->
+                                                        <li ng-click="selectTrim(trim)" ng-if="(trim.value!='*')" ng-model="car.trim" ng-repeat="trim in trims" class="ng-pristine ng-untouched ng-valid">L4-2.4L</li><!-- end ngIf: (trim.value!='*') --><!-- end ngRepeat: trim in trims -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end ngIf: showTrim -->
+                                </div>
+                            </div><!-- end ngIf: showNewCarSelection() -->
+                        </div>
+                        <!-- %ym-my-car-select{'ng-if' => "opts.user", 'car-models' => 'opts.user.cars', 'car' => 'quote.car', 'init-car' => 'opts.-#ser.selectedCar', 'on-finish' => 'existingCarSelected()'} -->
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

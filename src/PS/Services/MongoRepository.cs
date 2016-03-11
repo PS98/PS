@@ -6,6 +6,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver.Linq;
+using Newtonsoft.Json;
 //using MongoDB.Driver.Builders;
 
 namespace PS.Services
@@ -24,9 +25,16 @@ namespace PS.Services
         public List<string> getAll()
         {
             var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;
-            // List<MongoCollection> collections = _database.GetCollection();
+            List<string> carCollectionName = new List<string>();
+            var bson = (BsonExtensionMethods.ToJson(list));
+            var bsonDictionary = JsonConvert.DeserializeObject<List<Dictionary<string, dynamic>>>(bson);
 
-            return new List<string>();
+            foreach (var i in bsonDictionary)
+            {
+                carCollectionName.Add(i.Values.First());
+            }
+
+            return carCollectionName;
         }
 
         public List<Car> getAll(string colletionName)
