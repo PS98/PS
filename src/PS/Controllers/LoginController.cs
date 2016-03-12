@@ -11,17 +11,25 @@ namespace PS.Controllers
     [Route("api/[controller]")]
     public class LoginController : Controller
     {
-        private IMongoRepository _mongoDb;
-        public LoginController(IMongoRepository mongo)
+        private IAuthService _mongoDb;
+        public LoginController(IAuthService mongo)
         {
             _mongoDb = mongo;
         }
 
         // POST api/login
         [HttpPost]
-        public void Login(LoginViewModel model)
+        public string Login(LoginViewModel model)
         {
-
+            if (ModelState.IsValid)
+            {
+                var result = _mongoDb.login(model.Email, model.Password);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    return result;
+                }
+            }
+            return null;
         }
 
     }
