@@ -7,6 +7,7 @@ using MongoDB.Driver;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver.Linq;
 using Newtonsoft.Json;
+using System.Reflection;
 //using MongoDB.Driver.Builders;
 
 namespace PS.Services
@@ -116,30 +117,57 @@ namespace PS.Services
             return listAll;
         }
 
+
+        public List<IEnumerable<int>> getYears()
+        {
+            var yearsList = new List<int>();
+            int take, skip, divisor;
+            var currYear = DateTime.Now.Year;
+           for(int i = 1990; i<= currYear; i++)
+            {
+                yearsList.Add(i);
+            }
+
+            yearsList.Sort();
+            List<IEnumerable<int>> listAll = new List<IEnumerable<int>>();
+
+            divisor = yearsList.Count < 10 ? 3 : 4;
+
+            take = (yearsList.Count + divisor - 1) / divisor;
+
+            for (int i = 0; i < divisor; i++)
+            {
+                skip = i * take;
+                listAll.Add(yearsList.Skip(skip).Take(take).ToList());
+
+            }
+
+            return listAll;
+        }
         public class Car
         {
             public ObjectId _id { get; set; }
             public string name { get; set; }
             public List<Varient> varient { get; set; }
         }
-        //public class varient
-        //{
-        //    public double Price { get; set; }
-        //    public string name { get; set; }
-        //}
-
-        //public class Rootobject
-        //{
-        //    public string _id { get; set; }
-        //    public string name { get; set; }
-        //    public Varient varient { get; set; }
-        //}
-
         public class Varient
         {
             public string name { get; set; }
             public string Price { get; set; }
         }
+       
+        public class CarYearList
+        {
+            public IEnumerable<IEnumerable<string>> carList { get; set; }
+
+            public List<IEnumerable<int>> yearsList { get; set; }
+        }
+
+
+
+
+
+
 
     }
 

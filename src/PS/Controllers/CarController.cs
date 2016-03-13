@@ -23,11 +23,16 @@ namespace PS.Controllers
 
         // GET: api/car
         [HttpGet]
-        public IEnumerable<IEnumerable<string>> Get()
+        public MongoRepository.CarYearList Get()
         {
             var collectionList = _mongoDb.getAll();
-            var list = repo.convertToPresentationList(collectionList);
+            var carlist = repo.convertToPresentationList(collectionList);
+            var yearsList = repo.getYears();
 
+            MongoRepository.CarYearList list
+                = new MongoRepository.CarYearList();
+            list.carList = carlist;
+            list.yearsList = yearsList;
             return list;
         }
 
@@ -43,11 +48,11 @@ namespace PS.Controllers
 
         }
         [HttpGet("{collectionName}/{carName}")]
-        public IEnumerable<string> GetVariant(string collectionName, string carName)
+        public IEnumerable<IEnumerable<string>> GetVariant(string collectionName, string carName)
         {
             var list = _mongoDb.getAll(collectionName);
             var varientList = list.Where(m => m.name == carName).SelectMany(y => y.varient);
-            return varientList.Select(y => y.name).ToList();
+            return repo.convertToPresentationList(varientList.Select(y => y.name).ToList());
         }
 
 
