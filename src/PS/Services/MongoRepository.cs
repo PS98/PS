@@ -95,6 +95,26 @@ namespace PS.Services
             collection.InsertOneAsync(c);
             return true;
         }
+        public IEnumerable<IEnumerable<string>> convertToPresentationList(List<string> collectionList)
+
+        {
+            int take, skip, divisor;
+            List<IEnumerable<string>> listAll = new List<IEnumerable<string>>();
+            collectionList.Sort();
+
+            divisor = collectionList.Count < 10 ? 3 : 4;
+
+            take = (collectionList.Count + divisor - 1) / divisor;
+
+            for (int i = 0; i < divisor; i++)
+            {
+                skip = i * take;
+                listAll.Add(collectionList.Skip(skip).Take(take).ToList());
+
+            }
+
+            return listAll;
+        }
 
         public class Car
         {

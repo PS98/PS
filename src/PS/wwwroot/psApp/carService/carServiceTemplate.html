@@ -97,30 +97,8 @@
                                                     YOUR MAKE
                                                 </span>
                                                 <div class="car-selection-flex-container">
-                                                    <ul class="car-selection-flex-column">
-                                                        <li class="car-selection-filter">
-                                                            A-G
-                                                        </li>
-                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carCollections" ng-bind="car"></li>
-                                                    </ul>
-                                                    <ul class="car-selection-flex-column" >
-                                                        <li class="car-selection-filter">
-                                                            H-L
-                                                        </li>
-                                                        <!-- ngRepeat: make in bucket.content -->
-                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carCollections" ng-bind="car"></li>
-                                                    </ul>
-                                                    <ul class="car-selection-flex-column">
-                                                        <li class="car-selection-filter">
-                                                            M-P
-                                                        </li>
-                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carCollections" ng-bind="car"></li>
-                                                    </ul>
-                                                    <ul class="car-selection-flex-column">
-                                                        <li class="car-selection-filter">
-                                                            R-Z
-                                                        </li>
-                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carCollections" ng-bind="car"></li>
+                                                    <ul class="car-selection-flex-column" ng-repeat="carList in carCollections">
+                                                        <li ng-click="selectMake(make)" ng-model="car.make" ng-repeat="car in carList" ng-bind="car"></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -225,19 +203,10 @@
                                                     <div class="btn-idk" ng-click="selectModelIDK()">
                                                         I don't know
                                                     </div>
-                                                    <ul class="car-selection-flex-column">
-                                                        <li class="car-selection-filter"></li>
-                                                        <li ng-click="selectModel(model)" ng-model="car.model" ng-repeat="type in carTypes">{{type}}</li>
-                                                      </ul>
-                                                    
-                                                    <ul class="car-selection-flex-column">
-                                                        <li class="car-selection-filter"></li>
-                                                        <li ng-click="selectModel(model)" ng-model="car.model" ng-repeat="type in carTypes">{{type}}</li>
+                                                    <ul class="car-selection-flex-column" ng-repeat="typeList in carTypes">
+                                                        <li ng-click="selectModel(model)" ng-model="car.model" ng-repeat="type in typeList">{{type}}</li>
                                                     </ul>
-                                                    <ul class="car-selection-flex-column">
-                                                        <li class="car-selection-filter"></li>
-                                                        <li ng-click="selectModel(model)" ng-model="car.model" ng-repeat="type in carTypes">{{type}}</li>
-                                                    </ul>
+                                                                                                       
                                                 </div>
                                             </div>
                                         </div>

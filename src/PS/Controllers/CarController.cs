@@ -10,10 +10,11 @@ using PS.Services;
 namespace PS.Controllers
 {
     [Route("api/[controller]")]
-     public class CarController : Controller
+    public class CarController : Controller
     {
         private IMongoRepository _mongoDb;
-         public CarController(IMongoRepository mongo)
+        private MongoRepository repo = new MongoRepository();
+        public CarController(IMongoRepository mongo)
         {
             _mongoDb = mongo;
         }
@@ -22,25 +23,31 @@ namespace PS.Controllers
 
         // GET: api/car
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<IEnumerable<string>> Get()
         {
-          var collectionList =   _mongoDb.getAll();
-          return collectionList;
+            var collectionList = _mongoDb.getAll();
+            var list = repo.convertToPresentationList(collectionList);
+
+            return list;
         }
 
         // GET api/car/5
         [HttpGet("{collectionName}")]
-        public List<string> Get(string collectionName)
+        public IEnumerable<IEnumerable<string>> Get(string collectionName)
         {
             var list = _mongoDb.getAll(collectionName);
-            return list.Select(m => m.name).ToList();
+            var collectionList = list.Select(m => m.name).ToList();
+            
+
+            return repo.convertToPresentationList(collectionList);
+
         }
         [HttpGet("{collectionName}/{carName}")]
-        public IEnumerable<string> GetVariant(string collectionName,string carName)
+        public IEnumerable<string> GetVariant(string collectionName, string carName)
         {
             var list = _mongoDb.getAll(collectionName);
-            var varientList = list.Where(m => m.name == carName).SelectMany(y =>y.varient);
-            return varientList.Select(y =>y.name).ToList();
+            var varientList = list.Where(m => m.name == carName).SelectMany(y => y.varient);
+            return varientList.Select(y => y.name).ToList();
         }
 
 
