@@ -88,24 +88,25 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active text-center" id="home">
                                 &nbsp;&nbsp;
-                                <span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
+                                <p class="text-danger" style="float: left;" ng-show="loginError">{{message}}</p>
                                 <div class="clearfix"></div>
-                                <form>
+                                <form name="loginForm">
                                     <div class="form-group">
-                                        <div class="input-group">
+                                        <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                            <input type="text" class="form-control" id="login_username" ng-model="Email" placeholder="Username">
+                                            <input type="email" class="form-control" name="email" id="email" ng-model="Email" placeholder="Email" required>
                                         </div>
-                                        <span class="help-block has-error" id="email-error"></span>
+                                        <p class="text-danger" style="float: left;" ng-show="loginForm.email.$error.required && loginForm.email.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!loginForm.email.$error.required && loginForm.email.$error.email && loginForm.email.$dirty">Enter a valid email address</p>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group">
+                                        <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                            <input type="password" class="form-control" id="password" ng-model="Password" placeholder="Password">
+                                            <input type="password" class="form-control" name="password" id="password" ng-model="Password" placeholder="Password" required>
                                         </div>
-                                        <span class="help-block has-error" id="password-error"></span>
+                                        <p class="text-danger" style="float: left;" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">Required</p>
                                     </div>
-                                    <button ng-controller="indexController" type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In...." ng-click="loginSubmit()">Login</button>
+                                    <button type="button" id="login_btn" class="btn btn-block bt-login" ng-disabled="loginForm.$invalid" ng-click="loginSubmit()" data-loading-text="Signing In....">Login</button>
                                     <div class="clearfix"></div>
                                     <div class="login-modal-footer">
                                         <div class="row">
@@ -125,38 +126,45 @@
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
                                 &nbsp;&nbsp;
-                                <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
+                                <p class="text-success" style="float: left;" ng-show="regSuccess && !regError">{{successMessage}}</p>
+                                <p class="text-danger" style="float: left;" ng-show="regError && !regSuccess">{{errorMessage}}</p>
                                 <div class="clearfix"></div>
-                                <form>
+                                <form name="regForm">
                                     <div class="form-group">
-                                        <div class="input-group">
+                                        <div class="input-group"  style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                            <input type="text" class="form-control" id="username" placeholder="Username" ng-model="regUsername">
+                                            <input type="text" class="form-control" id="rusername" name="rusername" placeholder="Username" ng-model="regUsername" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required>
                                         </div>
-                                        <span class="help-block has-error" data-error='0' id="username-error"></span>
+                                        <p class="text-danger" style="float: left;" ng-show="regForm.rusername.$error.required && regForm.rusername.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rusername.$error.minLength && !regForm.rusername.$error.maxLength && regForm.rusername.$error.pattern && regForm.rusername.$dirty">Must start with a letter, and contain letters &amp; numbers only.</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rusername.$error.required && (regForm.rusername.$error.minlength || regForm.rusername.$error.maxlength) && regForm.rusername.$dirty">Username ust be between 5 and 20 characters.</p>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group">
+                                        <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-at"></i></div>
-                                            <input type="text" class="form-control" id="remail" placeholder="Email" ng-model="regEmail">
+                                            <input type="email" class="form-control" id="remail" name="remail" placeholder="Email" ng-model="regEmail" required>
                                         </div>
-                                        <span class="help-block has-error" data-error='0' id="remail-error"></span>
+                                        <p class="text-danger" style="float: left;" ng-show="regForm.remail.$error.required && regForm.remail.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.remail.$error.required && regForm.remail.$error.email && regForm.remail.$dirty">Enter a valid email address</p>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group">
+                                        <div class="input-group"  style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                            <input type="password" class="form-control" id="rpassword" ng-model="regPassword" placeholder="Password">
+                                            <input type="password" class="form-control" id="rpassword" name="rpassword" ng-model="regPassword" placeholder="Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
                                         </div>
-                                        <span class="help-block has-error" id="password-error"></span>
+                                        <p class="text-danger" style="float: left;" ng-show="regForm.rpassword.$error.required && regForm.rpassword.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rpassword.$error.required && (regForm.rpassword.$error.minlength || regForm.rpassword.$error.maxlength) && regForm.rpassword.$dirty">Passwords must be between 8 and 20 characters.</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rpassword.$error.required && !regForm.rpassword.$error.minlength && !regForm.rpassword.$error.maxlength && regForm.rpassword.$error.pattern && regForm.rpassword.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</p>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group">
+                                        <div class="input-group"  style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                            <input type="password" class="form-control" id="rcnfpassword" ng-model="cnfPassword" placeholder="Password Again!!!">
+                                            <input type="password" class="form-control" id="rcnfpassword" name="rcnfpassword" ng-model="cnfPassword" placeholder="Password Again!!!" required>
                                         </div>
-                                        <span class="help-block has-error" id="password-error"></span>
+                                        <p class="text-danger" style="float: left;" ng-show="regForm.rcnfpassword.$error.required && regForm.rcnfpassword.$dirty">Please confirm your password.</p>
+                                        <p class="text-danger" style="float: left;" ng-show="regPassword != cnfPassword && !regForm.rcnfpassword.$error.required && regForm.rcnfpassword.$error.noMatch && regForm.rcnfpassword.$dirty">Passwords do not match.</p>
                                     </div>
-                                    <button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." ng-click="registerSubmit()">Register</button>
+                                    <button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." ng-disabled="regForm.$invalid" ng-click="registerSubmit()">Register</button>
                                     <div class="clearfix"></div>
                                     <div class="login-modal-footer">
                                         <div class="row">

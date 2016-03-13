@@ -24,5 +24,6 @@ namespace PS.ViewModels.Account
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        public DateTime Created { get; set; }
     }
 }
