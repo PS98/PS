@@ -45,10 +45,10 @@
                                 </li>
                                 <li><a href="/NewsGrid">NEWS GRID</a></li>
                                 <li><a href="/NewsDetails">NEWS DETAILS</a></li>
-                                <li ng-controller="indexController">
+                                <li>
                                     <!--<a ng-click="login()" ng-show="!auth.isAuthenticated">LOGIN</a>-->
-                                    <a class="btn btn-launch" data-toggle="modal" data-target="#loginModal">Login</a>
-                                    <!--<ps-user-profile ng-show="auth.isAuthenticated"></ps-user-profile>-->
+                                    <a class="btn btn-launch" data-toggle="modal" data-target="#loginModal" ng-show="!scope.isLoggedIn">Login</a>
+                                    <ps-user-profile ng-show="scope.isLoggedIn"></ps-user-profile>
                                 </li>
                                 <li>
                                     <a href="/Service">Service</a>
@@ -105,7 +105,7 @@
                                         </div>
                                         <span class="help-block has-error" id="password-error"></span>
                                     </div>
-                                    <button type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In...." ng-click="loginSubmit()">Login</button>
+                                    <button ng-controller="indexController" type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In...." ng-click="loginSubmit()">Login</button>
                                     <div class="clearfix"></div>
                                     <div class="login-modal-footer">
                                         <div class="row">
@@ -131,18 +131,32 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                            <input type="text" class="form-control" id="username" placeholder="Username">
+                                            <input type="text" class="form-control" id="username" placeholder="Username" ng-model="regUsername">
                                         </div>
                                         <span class="help-block has-error" data-error='0' id="username-error"></span>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-at"></i></div>
-                                            <input type="text" class="form-control" id="remail" placeholder="Email">
+                                            <input type="text" class="form-control" id="remail" placeholder="Email" ng-model="regEmail">
                                         </div>
                                         <span class="help-block has-error" data-error='0' id="remail-error"></span>
                                     </div>
-                                    <button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering....">Register</button>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                            <input type="password" class="form-control" id="rpassword" ng-model="regPassword" placeholder="Password">
+                                        </div>
+                                        <span class="help-block has-error" id="password-error"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                            <input type="password" class="form-control" id="rcnfpassword" ng-model="cnfPassword" placeholder="Password Again!!!">
+                                        </div>
+                                        <span class="help-block has-error" id="password-error"></span>
+                                    </div>
+                                    <button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." ng-click="registerSubmit()">Register</button>
                                     <div class="clearfix"></div>
                                     <div class="login-modal-footer">
                                         <div class="row">

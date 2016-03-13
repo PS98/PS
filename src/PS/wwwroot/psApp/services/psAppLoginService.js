@@ -2,8 +2,7 @@
    
    var _login = function (Email, Password) {
         var deferred = $q.defer();
-        debugger;
-       $http.post("/api/Login?Email=" + Email + "&Password=" + Password)
+       $http.post("/api/Auth/Login?Email=" + Email + "&Password=" + Password)
         .then(function (result) {
             //Success
             var res = result.data;
@@ -14,11 +13,27 @@
         });
 
         return deferred.promise;
-    };
+   };
 
-        return { 
-            login: _login,
-        }
+   var _register = function (Username, Email, Password) {
+       var deferred = $q.defer();
+       $http.post("/api/Auth/Register?Username=" + Username + "&Email=" + Email + "&Password=" + Password)
+        .then(function (result) {
+            //Success
+            var res = result.data;
+            deferred.resolve(res);
+        }, function () {
+            //Error
+            deferred.reject();
+        });
+
+       return deferred.promise;
+   };
+
+   return {
+       login: _login,
+       register: _register,
+   };
           
     
 }])
