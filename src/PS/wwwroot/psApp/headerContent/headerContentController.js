@@ -24,12 +24,29 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
             }).finally(function () {
                // $scope.isBusy = false;
             });
-
-        $scope.logout = function () {
-          //  auth.signout();
-            $scope.isLoggedIn = false;
-            $localStorage.$reset();
-           // $modalInstance.close();
-        };
     }
+
+    $scope.registerSubmit = function () {
+        if ($scope.regPassword == $scope.cnfPassword) {
+            psLoginService.register($scope.regUsername, $scope.regEmail, $scope.regPassword)
+                .then(function (result) {
+                    //Success
+                    // $modalInstance.close();
+                }, function (error) {
+                    //Error
+
+                    console.log("Error", error);
+                }).finally(function () {
+                });
+        } else {
+            console.log("Password doesn't match!")
+        }
+    }
+
+    $scope.logout = function () {
+        //  auth.signout();
+        $scope.isLoggedIn = false;
+        $localStorage.$reset();
+        // $modalInstance.close();
+    };
 }]);

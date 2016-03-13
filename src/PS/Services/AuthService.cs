@@ -30,17 +30,40 @@ namespace PS.Services
         {
             if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
             {
-                List<string> typeArray = new List<string>();
-                    var modelList = getAll("customer");
-                    foreach (var m in modelList)
+                var modelList = getAll("customer");
+                foreach (var m in modelList)
+                {
+                    if(m.Email.ToLower() == email.ToLower() && m.Password == password)
                     {
-                        if(m.Email.ToLower() == email.ToLower() && m.Password == password)
-                        {
-                            return m.Username;
-                        }
+                        return m.Username;
                     }
+                }
             }
             return null;
+        }
+
+        public string register(string username, string email, string password)
+        {
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
+            {
+                var modelList = getAll("customer");
+                foreach (var m in modelList)
+                {
+                    if (m.Email.ToLower() == email.ToLower())
+                    {
+                        return "Registered";
+                    }
+                }
+                var collection = _database.GetCollection<Customer>("customer");
+                Customer c = new Customer();
+                c.Username = username;
+                c.Email = email;
+                c.Password = password;
+                collection.InsertOneAsync(c);
+                return "Success";
+
+            }
+            return "Error";
         }
 
         public class Customer

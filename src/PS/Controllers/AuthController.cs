@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace PS.Controllers
 {
-    [Route("api/[controller]")]
-    public class LoginController : Controller
+    [Route("api/[controller]/[action]")]
+    public class AuthController : Controller
     {
         private IAuthService _mongoDb;
-        public LoginController(IAuthService mongo)
+        public AuthController(IAuthService mongo)
         {
             _mongoDb = mongo;
         }
@@ -28,6 +28,18 @@ namespace PS.Controllers
                 {
                     return result;
                 }
+            }
+            return null;
+        }
+
+        // POST api/register
+        [HttpPost]
+        public string Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = _mongoDb.register(model.Username, model.Email, model.Password);
+                return result;
             }
             return null;
         }
