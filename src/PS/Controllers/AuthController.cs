@@ -4,6 +4,7 @@ using PS.ViewModels.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace PS.Controllers
@@ -11,37 +12,85 @@ namespace PS.Controllers
     [Route("api/[controller]/[action]")]
     public class AuthController : Controller
     {
-        private IAuthService _mongoDb;
-        public AuthController(IAuthService mongo)
+        private IAuthService _auth;
+        public AuthController(IAuthService auth)
         {
-            _mongoDb = mongo;
+            _auth = auth;
         }
 
-        // POST api/login
+        // POST api/auth/login
         [HttpPost]
-        public string Login(LoginViewModel model)
+        public JsonResult Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var result = _mongoDb.login(model.Email, model.Password);
-                if (!string.IsNullOrEmpty(result))
+                if (ModelState.IsValid)
                 {
-                    return result;
+                    var result = _auth.login(model);
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        if(result == "Incorrect Password")
+                        {
+                            Response.StatusCode = (int)HttpStatusCode.OK;
+                            return Json(new { Message = "You Entered Incorrect Password." });
+                        }
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Result = result });
+                    }
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Message = "Email address Not Registered." });
                 }
             }
-            return null;
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            return Json(new { Message = "Failed", ModelState = ModelState });
         }
 
-        // POST api/register
+        // POST api/auth/register
+        // result = 0 : Success
+        // result = 1 : Already Registered
+        // result = 2 : Error
         [HttpPost]
-        public string Register(RegisterViewModel model)
+        public JsonResult Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var result = _mongoDb.register(model.Username, model.Email, model.Password);
-                return result;
+                if (ModelState.IsValid)
+                {
+                    if (model.Created == default(DateTime))
+                    {
+                        model.Created = DateTime.UtcNow;
+                    }
+                    int result = _auth.register(model);
+                    if(result == 0)
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.Created;
+                        return Json(new { Message = "User registered Successfully.", Status = result });
+                    }
+                    else if(result == 1)
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "User already registered.", Status = result });
+                    }
+                    else
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "Error while processing request.", Status = result });
+                    }
+                    
+                }
             }
-            return null;
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            return Json(new { Message = "Failed", ModelState = ModelState });
         }
 
     }

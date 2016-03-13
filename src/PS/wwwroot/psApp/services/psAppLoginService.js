@@ -5,11 +5,10 @@
        $http.post("/api/Auth/Login?Email=" + Email + "&Password=" + Password)
         .then(function (result) {
             //Success
-            var res = result.data;
-            deferred.resolve(res);
-        }, function () {
+            deferred.resolve(result.data);
+        }, function (error) {
             //Error
-            deferred.reject();
+            deferred.reject(error);
         });
 
         return deferred.promise;
@@ -20,11 +19,10 @@
        $http.post("/api/Auth/Register?Username=" + Username + "&Email=" + Email + "&Password=" + Password)
         .then(function (result) {
             //Success
-            var res = result.data;
-            deferred.resolve(res);
-        }, function () {
+            deferred.resolve(result.data);
+        }, function (error) {
             //Error
-            deferred.reject();
+            deferred.reject(error);
         });
 
        return deferred.promise;
@@ -33,7 +31,5 @@
    return {
        login: _login,
        register: _register,
-   };
-          
-    
+   };   
 }])
