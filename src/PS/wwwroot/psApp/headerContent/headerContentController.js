@@ -63,6 +63,18 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
         }
     }
 
+    $scope.forgotSubmit = function () {
+        psLoginService.forgotPassword($scope.fgtEmail)
+                .then(function (result) {
+                    //Success
+                    alert(result.message);
+                }, function (error) {
+                    //Error
+                }).finally(function () {
+                    $scope.isBusy = false;
+                });
+    };
+
     $scope.logout = function () {
         //  auth.signout();
         $scope.isLoggedIn = false;
