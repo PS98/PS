@@ -32,19 +32,31 @@
         $scope.selectedCar.varient = varient;
     }
     $scope.editBrand = function () {
-        $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
-
+        $scope.showBrandName = !$scope.showBrandName; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
+        displayIncompleteModule();
     }
     $scope.editYear = function () {
-        $scope.showBrandName = false; $scope.showMakeYears = true; $scope.showModel = false; $scope.showVarient = false;
+        $scope.showBrandName = false; $scope.showMakeYears = !$scope.showMakeYears; $scope.showModel = false; $scope.showVarient = false;
+        if (!$scope.showMakeYears) displayIncompleteModule();
 
     }
     $scope.editModel = function () {
-        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = true; $scope.showVarient = false;
+        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = !$scope.showModel; $scope.showVarient = false;
+        if(!$scope.showModel) displayIncompleteModule();
 
     }
     $scope.editVarient = function () {
-        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = true;
+        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = !$scope.showVarient;
+    }
+
+    function displayIncompleteModule() {
+        if (!$scope.showBrandName) {
+            $scope.showMakeYears = $scope.selectedCar.year == undefined ? true : false;
+            if (!$scope.showMakeYears)
+                $scope.showModel = $scope.selectedCar.model == undefined ? true : false;
+            if (!$scope.showModel)
+                $scope.showVarient = $scope.selectedCar.varient == undefined ? true : false;
+        }
 
     }
      psDataServices.getAllCarColletion().
