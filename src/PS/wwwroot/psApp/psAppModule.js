@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-angular.module("psApp", ["index", "carDetails", "newsDetails", "newsGrid", "vehicleListings", "ngRoute", "auth0", "angular-storage", "angular-jwt", "ngStorage"]);
+angular.module("psApp", ["index", "carDetails", "newsDetails", "newsGrid", "vehicleListings", "ui.router", "auth0", "angular-storage", "angular-jwt", "ngStorage"]);
 
 
 angular.module("psApp").directive('script', function () {

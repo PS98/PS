@@ -1,4 +1,9 @@
-﻿.car-header{
+﻿a{
+        color: #218be7;
+    text-decoration
+}
+
+.car-header{
         background: #fff;
     border: 1px solid #e7ebeb;
     border-radius: 3px 3px 0 0;
@@ -32,6 +37,7 @@
     color: #4A5155;
 }
 .margin-top10{ margin-top:10px;}
+.margin-bottom10{ margin-bottom: 10px}
 .car-option {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -122,4 +128,217 @@
     color: #454545;
     box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.15);
     font-weight: 600;
+}
+.white-container:hover {
+    box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.1);
+}
+
+.white-container {
+    background: #fff;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    width: 100%;
+    padding: 15px 20px;
+    -webkit-transition: box-shadow,0.6s;
+    -moz-transition: box-shadow,0.6s;
+    transition: box-shadow,0.6s;
+}
+
+.services-options p {
+    color: #218be7;
+    font-size: 12px;
+    font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+.clickable {
+    cursor: pointer;
+}
+.pull-left {
+    float: left !important;
+}
+.add_notes {
+    padding: 8px 15px 5px 15px;
+    border: 1px solid #2196F3;
+    border-radius: 3px;
+}
+.pull-right {
+    float: right !important;
+}
+.cssSlideUp {
+    transition: 0.25s linear all;
+    max-height: 900px;
+    overflow: hidden;
+}
+.cd-form .search {
+    background: url("/assets/icons/cd-icon-search.svg") no-repeat 16px center;
+}
+.cd-form input, .cd-form textarea, .cd-form select, .cd-form label {
+    font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #4A5155;
+}
+.spacet-20 {
+    margin-top: 20px;
+}
+.b-categories {
+    list-style: none;
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    display: flexbox;
+    display: -ms-flexbox;
+    -ms-flex-pack: justify;
+    -ms-flex-align: stretch;
+}
+.b-categories a {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+}
+.b-categories a .content-first {
+    margin-left: 0;
+}
+
+.b-categories a .content, .b-categories a .content-first {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    cursor: pointer;
+    min-height: 130px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #E2E2E2;
+    text-align: center;
+    color: #6d7579;
+    transition: 0.3;
+}
+.b-categories a .content-active {
+    border: 1px solid #218be7;
+    color: #218be7;
+    background-color: #ecf5fd !important;
+}
+
+.icon-common-services, .icon-diagnostics, .icon-repair, .icon-maintenance, .icon-describe, .icon-common-services-selected, .icon-diagnostics-selected, .icon-repair-selected, .icon-maintenance-selected, .icon-describe-selected {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background-image: url("../carService/icons/icon-common-services.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 28px;
+}
+.icon-common-services-selected {
+    background-image: url("../carService/icons/icon-common-services-blue.svg");
+}
+.icon-common-services-selected:hover {
+    background-image: url("../carService/icons/icon-common-services-blue.svg");
+}
+.icon-repair {
+    background-image: url("../carService/icons/icon-repair.svg");
+}
+.icon-repair-selected {
+    background-image: url("../carService/icons/icon-repair-blue.svg");
+}
+.icon-diagnostics {
+    background-image: url("../carService/icons/icon-diagnostics.svg");
+}
+.icon-diagnostics-selected {
+    background-image: url("../carService/icons/icon-diagnostics-blue.svg");
+}
+.icon-maintenance {
+    background-image: url("../carService/icons/icon-maintenance.svg");
+}
+.icon-maintenance-selected {
+    background-image: url("../carService/icons/icon-maintenance-blue.svg");
+}
+.icon-describe {
+    background-image: url("../carService/icons/icon-describe.svg");
+}
+.select-service-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    color: #4A5155;
+}
+.select-service-box ul li {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 12px 15px;
+    border-bottom: 1px solid #E2E2E2;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+}
+.search {
+    width: 100%;
+    -webkit-appearance: none;
+    padding: 10px;
+    border: 1px solid #dedede;
+    background-color: #fff;
+    border-radius: .25em;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.08);
+}
+.select-service-box ul li .service-details {
+    font-size: 10px;
+    margin-top: 4px;
+    text-transform: uppercase;
+    color: #6d7579;
+    letter-spacing: 0.09em;
+}
+.select-service-box ul li .icon-service-plus {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-image: url("../carService/icons/icon-service-plus.svg");
+    background-repeat: no-repeat;
+    margin-right: 13px;
+}
+
+@media only screen and (max-device-width: 480px)  {
+    .car-selection-flex-column img{
+        display:none;
+    }
 }
