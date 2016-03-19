@@ -26,6 +26,7 @@ angular.module("psApp").directive("carService", function () {
 
             $('.jelect').jelect();
         },
-        controller: "carServiceController"
+        controller: "carServiceController",
+       // controllerAs: "vm"
     };
 });

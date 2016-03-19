@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-common-services-blue</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="V1.5-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="02b" sketch:type="MSArtboardGroup" transform="translate(-482.000000, -567.000000)">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(432.000000, 490.000000)">
+                <g id="icon-common-services-blue" transform="translate(50.000000, 78.000000)" sketch:type="MSShapeGroup">
+                    <path d="M0.857142857,0 L40.8571429,0 L40.8571429,40 L0.857142857,40 L0.857142857,0 Z" id="Stroke-246" stroke="#1E7BE2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M10.4633498,6.89655172 L11.3005911,8.59310345 L13.1730049,8.86482759 L11.8185222,10.1855172 L12.1378325,12.0503448 L10.4633498,11.1703448 L8.788867,12.0503448 L9.10817734,10.1855172 L7.75369458,8.86482759 L9.62610837,8.59310345 L10.4633498,6.89655172" id="Fill-247" fill="#1E7BE2"></path>
+                    <path d="M10.4633498,17.2986207 L11.3005911,18.9951724 L13.1730049,19.2668966 L11.8185222,20.5875862 L12.1378325,22.4524138 L10.4633498,21.5724138 L8.788867,22.4524138 L9.10817734,20.5875862 L7.75369458,19.2668966 L9.62610837,18.9951724 L10.4633498,17.2986207" id="Fill-248" fill="#1E7BE2"></path>
+                    <path d="M10.4633498,27.9489655 L11.3005911,29.6462069 L13.1730049,29.917931 L11.8185222,31.2386207 L12.1378325,33.1034483 L10.4633498,32.2227586 L8.788867,33.1034483 L9.10817734,31.2386207 L7.75369458,29.917931 L9.62610837,29.6462069 L10.4633498,27.9489655" id="Fill-249" fill="#1E7BE2"></path>
+                    <path d="M16.3254187,10.3448276 L32.5812808,10.3448276 M16.3254187,20.6896552 L32.5812808,20.6896552 M16.3254187,31.0344828 L32.5812808,31.0344828" id="Stroke-474" stroke="#1E7BE2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

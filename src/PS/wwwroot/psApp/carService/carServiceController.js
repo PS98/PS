@@ -1,7 +1,7 @@
 ﻿angular.module("psApp").controller("carServiceController",["$scope","psDataServices", function ($scope,psDataServices) {
   
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
-
+    $scope.car = {}; $scope.serviceOpts = {};
     $scope.selectBrand = function (brandName) {
         $scope.showBrandName = false; $scope.showMakeYears = true; $scope.showModel = false; $scope.showVarient = false;
         if ($scope.selectedCar.brand != brandName) {
@@ -29,7 +29,8 @@
     }
     $scope.selectVarient = function (varient) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
-        $scope.selectedCar.varient = varient;
+        $scope.selectedCar.varient = varient; $scope.car.choose_a_service = true; $scope.car.chooseNewService = true; $scope.car.showServiceType = true;
+        $scope.serviceOpts.viewMode = 'common';
     }
     $scope.editBrand = function () {
         $scope.showBrandName = !$scope.showBrandName; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
@@ -47,6 +48,7 @@
     }
     $scope.editVarient = function () {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = !$scope.showVarient;
+      
     }
 
     function displayIncompleteModule() {
@@ -67,4 +69,11 @@
         });
      
      
+}]);
+angular.module("psApp").controller("serviceTypeController", ["$scope", "psDataServices", function ($scope, psDataServices) {
+
+    $scope.commonServices = ["Change Oil And Filter", "Breake Pad Replacement"]
+   
+
+
 }]);
