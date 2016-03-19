@@ -42,9 +42,23 @@
        return deferred.promise;
    };
 
+   var _socialLogin = function (type) {
+       var deferred = $q.defer();
+       $http.post("/api/Auth/SocialLogin?Id=" + type)
+        .then(function (result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
+
+       return deferred.promise;
+   };
    return {
        login: _login,
        register: _register,
        forgotPassword: _forgotPassword,
+       socialLogin: _socialLogin,
    };   
 }])

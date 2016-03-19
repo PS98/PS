@@ -10,6 +10,7 @@
     "EntityFramework.Commands": "7.0.0-rc1-final",
     "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
     "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Session": "1.0.0-rc1-final",
     "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-rc1-final",
     "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
@@ -40,7 +41,7 @@
     "MongoDB.Driver": "2.0.0-rc0",
     "MongoDB.Driver.Core": "2.0.0-rc0",
     "MongoDB.Bson": "2.0.0-rc0",
-    "mongocsharpdriver":"2.2.0"
+    "mongocsharpdriver": "2.2.0"
   },
 
   "commands": {
@@ -55,6 +56,7 @@
         "System.Net.Http": "4.0.0.0"
       },
       "dependencies": {
+        "Api": "1.0.0-*",
         "RestSharp": "105.2.3"
       }
     }

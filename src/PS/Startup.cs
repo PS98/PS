@@ -61,6 +61,9 @@ namespace MessageBoard
                 .AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
+            services.AddCaching(); // Adds a default in-memory implementation of IDistributedCache
+            services.AddSession();
+
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
                 config.User.RequireUniqueEmail = true;
@@ -85,6 +88,7 @@ namespace MessageBoard
                 .AddDefaultTokenProviders();
 
             services.Configure<AuthMessageSenderOptions>(Configuration);
+            services.Configure<AuthSocialLoginOptions>(Configuration);
 
             services.AddMvc(config => {
                 config.Filters.Add(new RequireHttpsAttribute());
@@ -120,7 +124,9 @@ namespace MessageBoard
             //app.Map("/Home/Index", (app1) => this.Configure(app1, env, loggerFactory));
             
             app.UseIdentity();
-            
+
+            app.UseSession();
+
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AutomaticAuthenticate = true,
