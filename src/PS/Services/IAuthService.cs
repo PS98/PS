@@ -11,5 +11,6 @@ namespace PS.Services
     {
         string login(LoginViewModel data);
         int register(RegisterViewModel data);
+        bool forgotPassword(ForgotPasswordViewModel data);
     }
 }

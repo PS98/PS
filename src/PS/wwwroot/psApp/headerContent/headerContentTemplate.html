@@ -186,16 +186,18 @@
                                 &nbsp;&nbsp;
                                 <span id="reset_fail" class="response_error" style="display: none;"></span>
                                 <div class="clearfix"></div>
-                                <form>
+                                <form name="fgtForm">
                                     <div class="form-group">
-                                        <div class="input-group">
+                                        <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                            <input type="text" class="form-control" id="femail" placeholder="Email">
+                                            <input type="email" class="form-control" id="femail" name="femail" placeholder="Email" ng-model="fgtEmail" required>
                                         </div>
-                                        <span class="help-block has-error" data-error='0' id="femail-error"></span>
+                                        <p class="text-danger" style="float: left;" ng-show="fgtForm.femail.$error.required && fgtForm.femail.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!fgtForm.femail.$error.required && fgtForm.femail.$error.email && fgtForm.femail.$dirty">Enter a valid email address</p>
+
                                     </div>
 
-                                    <button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Forget Password</button>
+                                    <button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait...." ng-disabled="fgtForm.$invalid" ng-click="forgotSubmit()">Forget Password</button>
                                     <div class="clearfix"></div>
                                     <div class="login-modal-footer">
                                         <div class="row">

@@ -82,5 +82,28 @@ namespace PS.Services
                 throw;
             }
         }
+
+        public bool forgotPassword(ForgotPasswordViewModel data)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(data.Email))
+                {
+                    var modelList = getAll("customer");
+                    foreach (var m in modelList)
+                    {
+                        if (m.Email.ToLower() == data.Email.ToLower())
+                        {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

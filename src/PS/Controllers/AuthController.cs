@@ -12,10 +12,13 @@ namespace PS.Controllers
     [Route("api/[controller]/[action]")]
     public class AuthController : Controller
     {
-        private IAuthService _auth;
-        public AuthController(IAuthService auth)
+        private readonly IAuthService _auth;
+        private readonly IEmailSender _emailSender;
+
+        public AuthController(IAuthService auth, IEmailSender emailSender)
         {
             _auth = auth;
+            _emailSender = emailSender;
         }
 
         // POST api/auth/login
@@ -93,5 +96,45 @@ namespace PS.Controllers
             return Json(new { Message = "Failed", ModelState = ModelState });
         }
 
+        // POST api/auth/ForgotPassword
+        [HttpPost]
+        public JsonResult ForgotPassword(ForgotPasswordViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (_auth.forgotPassword(model))
+                    {
+                        var pass = RandomString(8);
+                        //var callbackUrl = Url.Action("ForgotPassword", "Auth", new { userId = model.Email, code = pass }, protocol: HttpContext.Request.Scheme);
+                        _emailSender.SendSimpleMessage(model.Email, "Reset Password",
+                           "Your New Password is: " + pass);
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "Mail sent successfully." });
+                    }
+                    else
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "Email address not registered with us." });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            return Json(new { Message = "Failed", ModelState = ModelState });
+        }
+
+        private static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
     }
 }
