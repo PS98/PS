@@ -73,12 +73,36 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
                 }).finally(function () {
                     $scope.isBusy = false;
                 });
-    };
+    }
+
+    $scope.socialSubmit = function (name) {
+        var fbHeight = /facebook/ig.test(name) ? 340 : 520;
+        fbHeight = /paypal/ig.test(name) ? 550 : fbHeight;
+        var w = /paypal/ig.test(name) ? 400 : 680;
+        if (name) {
+            psLoginService.socialLogin(name)
+               .then(function (result) {
+                   //Success
+                   if (result && result.url) {
+                       $scope.openwindow(result.url, "", w, fbHeight);
+                   }
+               }, function (error) {
+                   //Error
+               }).finally(function () {
+                   $scope.isBusy = false;
+               });
+        } 
+    }
+    $scope.openwindow = function(url, name, iWidth, iHeight) {
+        var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+        var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+        window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizeable=no,location=no,status=no');
+    }
 
     $scope.logout = function () {
         //  auth.signout();
         $scope.isLoggedIn = false;
         $localStorage.$reset();
         // $modalInstance.close();
-    };
+    }
 }]);

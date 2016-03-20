@@ -1,8 +1,13 @@
-﻿using Microsoft.AspNet.Mvc;
+﻿using Api;
+using Api.Client;
+using Microsoft.AspNet.Mvc;
+using Microsoft.Extensions.OptionsModel;
 using PS.Services;
 using PS.ViewModels.Account;
+using RestSharp.Extensions.MonoHttp;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -14,11 +19,14 @@ namespace PS.Controllers
     {
         private readonly IAuthService _auth;
         private readonly IEmailSender _emailSender;
+        private static Oauth2LoginContext _context;
+        public AuthSocialLoginOptions Options { get; }
 
-        public AuthController(IAuthService auth, IEmailSender emailSender)
+        public AuthController(IAuthService auth, IEmailSender emailSender, IOptions<AuthSocialLoginOptions> optionsAccessor)
         {
             _auth = auth;
             _emailSender = emailSender;
+            Options = optionsAccessor.Value;
         }
 
         // POST api/auth/login
@@ -136,5 +144,91 @@ namespace PS.Controllers
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        #region Social Login
+        public ActionResult SocialLogin(string id = "", string bindpage = "")
+        {
+            string url = "";
+            AbstractClientProvider client = null;
+            try
+            {
+                switch (id.ToLower())
+                {
+                    case "google":
+                        client = Oauth2LoginFactory.CreateClient<GoogleClinet>(Options.google.ClientId, Options.google.ClientSecret, Options.google.CallbackUrl, Options.google.Scope, Options.AcceptedRedirectUrl, Options.FailedRedirectUrl, Options.google.Proxy);
+                        break;
+                    case "facebook":
+                        client = Oauth2LoginFactory.CreateClient<FacebookClient>(Options.facebook.AppId, Options.facebook.AppSecret, Options.facebook.CallbackUrl, Options.facebook.Scope, Options.AcceptedRedirectUrl, Options.FailedRedirectUrl, Options.facebook.Proxy);
+                        break;
+                    default:
+                        return RedirectToAction("index");
+                }
+                if (client != null)
+                {
+                    if (bindpage.Equals("1"))
+                        client.CallBackUrl += "?bindpage=1";
+                    _context = Oauth2LoginContext.Create(client);
+                    url = _context.BeginAuth();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return Json(new { Url = url });
+        }
+
+        public ActionResult Success(string code)
+        {
+            try
+            {
+                var token = _context.RequestToken(code);
+                var result = _context.RequestProfile(code);
+                var strResult = _context.Client.ProfileJsonString;
+                //if (email != "")
+                //    result.Add("email", email);
+
+                return Content("<script type=\"text/javascript\">window.opener.abc('');self.close();</script>");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                //RedirectToAction("Error");
+            }
+        }
+
+        public ActionResult Error()
+        {
+            return View();
+        }
+
+        #region twitter
+        //public ActionResult Twitter(FormCollection from)
+        //{
+        //    if (string.IsNullOrEmpty(from["useremail"]))
+        //    {
+        //        return View();
+        //    }
+
+        //    string url = "";
+
+        //    try
+        //    {
+
+        //        var client = MultiOAuthFactroy.CreateClient<TwitterClient>("Twitter");
+        //        client.CallBackUrl += "?email=" + from["useremail"];
+        //        _context = MultiOAuthContext.Create(client);
+        //        url = _context.BeginAuth();
+
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    return Redirect(url);
+        //}
+        #endregion
+        #endregion
     }
 }

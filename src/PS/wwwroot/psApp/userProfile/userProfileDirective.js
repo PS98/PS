@@ -17,9 +17,21 @@ angular.module("psApp").directive("psUserProfile", ["$rootScope", function ($roo
             };
     }
     };
-}]).controller("sho", ["$scope", "$timeout", function sho($scope, $timeout) {
+}]).controller("sho", ["$scope", "$timeout", "$location", "psLoginService", function sho($scope, $timeout, $location, psLoginService) {
     $scope.isVisible = false;
-    
+    var loc = $location.search();
+    if (loc.code != null && loc.code != undefined) {
+        psLoginService.socialCallback($location.search())
+         .then(function (result) {
+            //Success
+             alert(result);
+        }, function (error) {
+            //Error
+        }).finally(function () {
+             $scope.isBusy = false;
+        });
+    }
+
                 $timeout(function () {
                     $scope.$on("ps-user-profile-show", function (evt, data) {
                         $scope.isLoggedIn = data.isLoggedIn;

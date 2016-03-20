@@ -47,7 +47,15 @@ angular.module("psApp").config(["$stateProvider","$urlRouterProvider", "$locatio
                    url: "/Service",
                   template: "<car-service></car-service>"
               }
-          }
+           },
+           {
+               state: "socialCallback",
+               config: {
+                   url: "/Auth/Success",
+                   template: "",
+                   controller: "sho"
+               }
+           }
     ];
 
     routes.forEach(function (route) {
