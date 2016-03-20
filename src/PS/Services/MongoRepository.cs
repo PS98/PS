@@ -9,6 +9,7 @@ using MongoDB.Driver.Linq;
 using Newtonsoft.Json;
 using System.Reflection;
 //using MongoDB.Driver.Builders;
+using PS.Models;
 
 namespace PS.Services
 {
@@ -123,7 +124,7 @@ namespace PS.Services
             var yearsList = new List<int>();
             int take, skip, divisor;
             var currYear = DateTime.Now.Year;
-           for(int i = 1990; i<= currYear; i++)
+            for(int i = 1990; i<= currYear; i++)
             {
                 yearsList.Add(i);
             }
@@ -144,33 +145,5 @@ namespace PS.Services
 
             return listAll;
         }
-        public class Car
-        {
-            public ObjectId _id { get; set; }
-            public string name { get; set; }
-            public List<Varient> varient { get; set; }
-        }
-        public class Varient
-        {
-            public string name { get; set; }
-            public string Price { get; set; }
-        }
-       
-        public class CarYearList
-        {
-            public IEnumerable<IEnumerable<string>> carList { get; set; }
-
-            public List<IEnumerable<int>> yearsList { get; set; }
-        }
-
-
-
-
-
-
-
     }
-
-
-
 }
