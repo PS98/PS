@@ -3897,19 +3897,23 @@
                             "varient": [
                               {
                                 "name": "SX",
-                                "Price": "12.78 Lac"
+                                "Price": "12.78 Lac",
+                                "Type": ""
                               },
                               {
                                 "name": "SX 7 Seater",
-                                "Price": "12.7 Lac"
+                                "Price": "12.7 Lac",
+                                "Type": ""
                               },
                               {
                                 "name": "LX",
-                                "Price": "9.59 Lac"
+                                "Price": "9.59 Lac",
+                                "Type": ""
                               },
                               {
                                 "name": "LX 4x4",
-                                "Price": "14.34 Lac"
+                                "Price": "14.34 Lac",
+                                "Type": ""
                               }
                             ]
                           },
@@ -3918,15 +3922,18 @@
                             "varient": [
                               {
                                 "name": "Soft Top 4x2",
-                                "Price": "6.42 Lac"
+                                "Price": "6.42 Lac",
+                                "Type": ""
                               },
                               {
                                 "name": "Soft Top 4x4",
-                                "Price": "8.56 Lac"
+                                "Price": "8.56 Lac",
+                                "Type": ""
                               },
                               {
                                 "name": "Hard Top 4x4",
-                                "Price": "8.71 Lac"
+                                "Price": "8.71 Lac",
+                                "Type": ""
                               }
                             ]
                           },
@@ -3939,11 +3946,13 @@
                             "varient": [
                               {
                                 "name": "Base Tiptronic",
-                                "Price": "78.38 Lac"
+                                "Price": "78.38 Lac",
+                                "Type": ""
                               },
                               {
                                 "name": "GTS",
-                                "Price": "1.15 Cr"
+                                "Price": "1.15 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -3952,7 +3961,8 @@
                             "varient": [
                               {
                                 "name": "Tiptronic",
-                                "Price": "1.02 Cr"
+                                "Price": "1.02 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -3961,11 +3971,13 @@
                             "varient": [
                               {
                                 "name": "S Tiptronic",
-                                "Price": "1.04 Cr"
+                                "Price": "1.04 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Cayman GTS",
-                                "Price": "1.18 Cr"
+                                "Price": "1.18 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -3974,19 +3986,23 @@
                             "varient": [
                               {
                                 "name": " Diesel",
-                                "Price": "1.04 Cr"
+                                "Price": "1.04 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Cayenne S",
-                                "Price": "1.18 Cr"
+                                "Price": "1.18 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Cayenne S",
-                                "Price": "1.21 Cr"
+                                "Price": "1.21 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Cayenne Turbo",
-                                "Price": "1.78 Cr"
+                                "Price": "1.78 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -3995,51 +4011,63 @@
                             "varient": [
                               {
                                 "name": "Carrera",
-                                "Price": "1.38 Cr"
+                                "Price": "1.38 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Carrera 4",
-                                "Price": "1.48 Cr"
+                                "Price": "1.48 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Carrera Cabriolet",
-                                "Price": "1.51 Cr"
+                                "Price": "1.51 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Carrera S",
-                                "Price": "1.58 Cr"
+                                "Price": "1.58 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Targa 4",
-                                "Price": "1.59 Cr"
+                                "Price": "1.59 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Carrera 4 Cabriolet",
-                                "Price": "1.61 Cr"
+                                "Price": "1.61 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Carrera 4S",
-                                "Price": "1.68 Cr"
+                                "Price": "1.68 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Carrera S Cabriolet",
-                                "Price": "1.71 Cr"
+                                "Price": "1.71 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Targa 4S",
-                                "Price": "1.78 Cr"
+                                "Price": "1.78 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Carrera 4 Cabriolet",
-                                "Price": "1.81 Cr"
+                                "Price": "1.81 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Turbo",
-                                "Price": "2.14 Cr"
+                                "Price": "2.14 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Turbo Cabriolet",
-                                "Price": "2.57 Cr"
+                                "Price": "2.57 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4048,19 +4076,23 @@
                             "varient": [
                               {
                                 "name": "S",
-                                "Price": "1.2 Cr"
+                                "Price": "1.2 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "4S",
-                                "Price": "1.23 Cr"
+                                "Price": "1.23 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Turbo",
-                                "Price": "2.01 Cr"
+                                "Price": "2.01 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Diesel Edition",
-                                "Price": "1.15 Cr"
+                                "Price": "1.15 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4071,10 +4103,12 @@
                               {
                                 "name": "Turbo",
                                 "Price": "1.11 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "S",
-                                "Price": "1 Cr"
+                                "Price": "1 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4088,11 +4122,13 @@
                             "varient": [
                               {
                                 "name": "Sport",
-                                "Price": "1.82 Cr"
+                                "Price": "1.82 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Standard",
-                                "Price": "2.1 Cr"
+                                "Price": "2.1 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4101,11 +4137,13 @@
                             "varient": [
                               {
                                 "name": " GTS",
-                                "Price": "2.22 Cr"
+                                "Price": "2.22 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Quattroporte Diesel",
-                                "Price": "1.52 Cr"
+                                "Price": "1.52 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4114,7 +4152,8 @@
                             "varient": [
                               {
                                 "name": "Diesel",
-                                "Price": "1.14 Cr"
+                                "Price": "1.14 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4128,11 +4167,13 @@
                             "varient": [
                               {
                                 "name": "LP 700-4",
-                                "Price": "5.05 Cr"
+                                "Price": "5.05 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "LP 700-4 Roadster",
-                                "Price": "5.62 Cr"
+                                "Price": "5.62 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4141,11 +4182,13 @@
                             "varient": [
                               {
                                 "name": "LP 610-4",
-                                "Price": "3.43 Cr"
+                                "Price": "3.43 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "LP 580-2",
-                                "Price": "2.99 Cr"
+                                "Price": "2.99 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4160,11 +4203,13 @@
                             "varient": [
                               {
                                 "name": "Coupe",
-                                "Price": "2.9 Cr"
+                                "Price": "2.9 Cr",
+                                "Type": ""
                               },
                               {
                                 "name": "Volante",
-                                "Price": "3 Cr"
+                                "Price": "3 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4173,7 +4218,8 @@
                             "varient": [
                               {
                                 "name": "V12",
-                                "Price": "3.85 Cr"
+                                "Price": "3.85 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4182,7 +4228,8 @@
                             "varient": [
                               {
                                 "name": "S LUXE",
-                                "Price": "3.85 Cr"
+                                "Price": "3.85 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4191,7 +4238,8 @@
                             "varient": [
                               {
                                 "name": "Vantage Coupe",
-                                "Price": "3.85 Cr"
+                                "Price": "3.85 Cr",
+                                "Type": ""
                               }
                             ]
                           },
@@ -4206,11 +4254,13 @@
                             "varient": [
                               {
                                 "name": "B 180 Sport",
-                                "Price": "29.45 Lac"
+                                "Price": "29.45 Lac",
+                                "Type": ""
                               },
                               {
                                 "name": "B 200 CDI Sport",
-                                "Price": "30.45 Lac"
+                                "Price": "30.45 Lac",
+                                "Type": ""
                               },
 
 
@@ -4221,7 +4271,8 @@
                                 "varient": [
                                   {
                                     "name": "350",
-                                    "Price": "75 Lac"
+                                    "Price": "75 Lac",
+                                    "Type": ""
                                   }
                                 ]
                               },
@@ -4230,39 +4281,48 @@
                                 "varient": [
                                   {
                                     "name": "CLS 250 CDI",
-                                    "Price": "76.5 Lac"
+                                    "Price": "76.5 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "250 CDI Avantgrade",
-                                    "Price": "50.7 Lac"
+                                    "Price": "50.7 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "250 Edition E",
-                                    "Price": "48.5 Lac"
+                                    "Price": "48.5 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "E350 CDI",
-                                    "Price": "59.9 Lac"
+                                    "Price": "59.9 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "63 AMG",
-                                    "Price": "1.29 Cr"
+                                    "Price": "1.29 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "E400 Cabriolet",
-                                    "Price": "78.5 Lac"
+                                    "Price": "78.5 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "E-250 D",
-                                    "Price": "48.5 Lac"
+                                    "Price": "48.5 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "E 250 CDI Edition E",
-                                    "Price": "50.7 Lac"
+                                    "Price": "50.7 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "E 350 CDI Edition E",
-                                    "Price": "49.49 Lac"
+                                    "Price": "49.49 Lac",
+                                    "Type": ""
                                   }
                                 ]
                               },
@@ -4273,11 +4333,13 @@
                                 "varient": [
                                   {
                                     "name": "350 CDI",
-                                    "Price": "77.5 Lac"
+                                    "Price": "77.5 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "63 AMG",
-                                    "Price": "1.75 Cr"
+                                    "Price": "1.75 Cr",
+                                    "Type": ""
                                   }
                                 ]
                               },
@@ -4286,32 +4348,39 @@
                                 "varient": [
                                   {
                                     "name": "S 500",
-                                    "Price": "1.44 Cr"
+                                    "Price": "1.44 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "S 350 CDI",
-                                    "Price": "1.14 Cr"
+                                    "Price": "1.14 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "S 500 Coupe",
-                                    "Price": "2.06 Cr"
+                                    "Price": "2.06 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "S 63 AMG Coupe",
-                                    "Price": "2.63 Cr"
+                                    "Price": "2.63 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "S 63 AMG Sedan",
-                                    "Price": "2.63 Cr"
+                                    "Price": "2.63 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "S 63 AMG Sedan",
-                                    "Price": "2.63 Cr"
+                                    "Price": "2.63 Cr",
+                                    "Type": ""
                                   },
 
                                   {
                                     "name": "S Gaurd",
-                                    "Price": "8.9 Cr"
+                                    "Price": "8.9 Cr",
+                                    "Type": ""
                                   }
                                 ]
                               },
@@ -4322,23 +4391,28 @@
                                 "varient": [
                                   {
                                     "name": "C 63 S AMG",
-                                    "Price": "1.3 Cr"
+                                    "Price": "1.3 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "C 63 S AMG",
-                                    "Price": "1.3 Cr"
+                                    "Price": "1.3 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "C200 Avantgrade",
-                                    "Price": "38.9 Lac"
+                                    "Price": "38.9 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "C220 CDI Style",
-                                    "Price": "37.9 Lac"
+                                    "Price": "37.9 Lac",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "C220 CDI Avantgrade",
-                                    "Price": "39.9 Lac"
+                                    "Price": "39.9 Lac",
+                                    "Type": ""
                                   }
                                 ]
                               },
@@ -4347,11 +4421,13 @@
                                 "varient": [
                                   {
                                     "name": "G 63 AMG",
-                                    "Price": "1.91 Cr"
+                                    "Price": "1.91 Cr",
+                                    "Type": ""
                                   },
                                   {
                                     "name": "G63 AMG Crazy Colour",
-                                    "Price": "2.18 Cr"
+                                    "Price": "2.18 Cr",
+                                    "Type": ""
                                   },
                                 ]
                               },
@@ -4360,7 +4436,8 @@
                                 "name": "SLK-Class"
                                 {
                                   "name": "55 AMG",
-                                  "Price": "1.26 Cr"
+                                  "Price": "1.26 Cr",
+                                  "Type": ""
                                 },
                                 ]
                               },
@@ -4370,19 +4447,23 @@
                                   "varient": [
                                     {
                                       "name": "45 AMG",
-                                      "Price": "69.5 Lac"
+                                      "Price": "69.5 Lac",
+                                      "Type": ""
                                     },
                                     {
                                       "name": "200 Sport",
-                                      "Price": "35 Lac"
+                                      "Price": "35 Lac",
+                                      "Type": ""
                                     },
                                     {
                                       "name": "200 CDI Style",
-                                      "Price": "31.5 Lac"
+                                      "Price": "31.5 Lac",
+                                      "Type": ""
                                     },
                                     {
                                       "name": "200 CDI Sport",
-                                      "Price": "35.9 Lac"
+                                      "Price": "35.9 Lac",
+                                      "Type": ""
                                     }
 
                                   ]
@@ -4394,27 +4475,33 @@
                                   [
                                     {
                                       "name": "200 Sport",
-                                      "Price": "36 Lac"
+                                      "Price": "36 Lac",
+                                      "Type": ""
                                     },
                                     {
                                       "name": "200 CDI",
-                                      "Price": "59.9 Lac"
+                                      "Price": "59.9 Lac",
+                                      "Type": ""
                                     },
                                     {
                                       "name": "200 Sport",
-                                      "Price": "36 Lac"
+                                      "Price": "36 Lac",
+                                      "Type": ""
                                     },
                                     {
                                       "name": "200 CDI Style",
-                                      "Price": "31.9 Lac"
+                                      "Price": "31.9 Lac",
+                                      "Type": ""
                                     },
                                     {
                                       "name": "200 CDI Sport",
-                                      "Price": "34.9 Lac"
+                                      "Price": "34.9 Lac",
+                                      "Type": ""
                                     },
                                     {
                                       "name": "45 AMG",
-                                      "Price": "71.9 Lac"
+                                      "Price": "71.9 Lac",
+                                      "Type": ""
                                     },
 
 
@@ -4424,15 +4511,18 @@
                                       "varient": [
                                         {
                                           "name": "S500",
-                                          "Price": "1.7 Cr"
+                                          "Price": "1.7 Cr",
+                                          "Type": ""
                                         },
                                         {
                                           "name": "S600",
-                                          "Price": "2.65 Cr"
+                                          "Price": "2.65 Cr",
+                                          "Type": ""
                                         },
                                         {
                                           "name": "Maybach S600 Gaurd",
-                                          "Price": "10.5 Cr"
+                                          "Price": "10.5 Cr",
+                                          "Type": ""
                                         },
                                       ]
                                     },
@@ -4441,11 +4531,13 @@
                                       "varient": [
                                         {
                                           "name": "250 D 4 MATIC",
-                                          "Price": "58.9 Lac"
+                                          "Price": "58.9 Lac",
+                                          "Type": ""
                                         },
                                         {
                                           "name": "350 D 4 MATIC",
-                                          "Price": "69.9 Lac"
+                                          "Price": "69.9 Lac",
+                                          "Type": ""
                                         },
                                       ]
                                     },
@@ -4455,7 +4547,8 @@
                                       "varient": [
                                         {
                                           "name": "S",
-                                          "Price": "2.39 Cr"
+                                          "Price": "2.39 Cr",
+                                          "Type": ""
                                         },
                                       ]
                                     },
@@ -4464,11 +4557,13 @@
                                       "varient": [
                                         {
                                           "name": "180",
-                                          "Price": "27.45 Lac"
+                                          "Price": "27.45 Lac",
+                                          "Type": ""
                                         },
                                         {
                                           "name": "200 D",
-                                          "Price": "28.45 Lac"
+                                          "Price": "28.45 Lac",
+                                          "Type": ""
                                         }
                                       ]
 
@@ -4476,943 +4571,1522 @@
                               },
 
                                 "Isuzu",
-                                : {
-                                  {
-                                    "name": "MU-7 High BS4 4x2 MT",
-                                    "Price": "20.14 Lac"
-                                  },
-                                  {
-                                    "name": "D-MAX Single Cab Flat Deck with A/c",
-                                    "Price": "6.84 Lac"
-                                  },
-                                  {
-                                    "name": "D-MAX SPACE CAB Flat deck",
-                                    "Price": "6.67 Lac"
-                                  },
-                                  {
-                                    "name": "D-MAX SPACE CAB Arched deck",
-                                    "Price": "7.64 Lac"
-                                  },
-                                  {
-                                    "name": "MU-7 Premium BS4 4x2 AT",
-                                    "Price": "23.9 Lac"
-                                  }
+                              :
+                              {
+                                {
+                                  "name": "MU-7",
+                                  "varient": [
+                                    {
+                                      "name": "High BS4 4x2 MT",
+                                      "Price": "20.14 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "Premium BS4 4x2 AT",
+                                      "Price": "23.9 Lac",
+                                      "Type": ""
+                                    }
+                                  ]
                                 },
+                                {
+                                  "name": "D-MAX",
+                                  "varient": [
+                                    {
+                                      "name": "Single Cab Flat Deck with A/c",
+                                      "Price": "6.84 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "SPACE CAB Flat deck",
+                                      "Price": "6.67 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "SPACE CAB Arched deck",
+                                      "Price": "7.64 Lac",
+                                      "Type": ""
+                                    }
+                                  ]
+                                },
+
+                              },
+
+
                                 "Bentley",
-                                : {
-                                  {
-                                    "name": "Continental GT Coupe",
-                                    "Price": "3.57 Cr"
-                                  },
-                                  {
-                                    "name": "Continental Flying Spur V8",
-                                    "Price": "3.21 Cr"
-                                  },
-                                  {
-                                    "name": "Continental GTC Convertible",
-                                    "Price": "4.03 Cr"
-                                  },
-                                  {
-                                    "name": "Mulsanne Sedan",
-                                    "Price": "5.55 Cr"
-                                  },
-                                  {
-                                    "name": "Continental Flying Spur W12",
-                                    "Price": "3.4 Cr"
-                                  }
+                              :
+                              {
+
+                                {
+                                  "name": "Continental",
+                                  "varient": [
+                                    {
+                                      "name": "GT Coupe",
+                                      "Price": "3.57 Cr",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "Flying Spur V8",
+                                      "Price": "3.21 Cr",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "GTC Convertible",
+                                      "Price": "4.03 Cr",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "Flying Spur W12",
+                                      "Price": "3.4 Cr",
+                                      "Type": ""
+                                    }
+                                  ]
                                 },
+                                {
+                                  "name": "Mulsanne",
+                                  "varient": [
+                                    {
+                                      "name": "Sedan",
+                                      "Price": "5.55 Cr",
+                                      "Type": ""
+                                    },
+                                  ]
+                                }
+                              }
+
                                 "Premier",
-                                : {
-                                  {
-                                    "name": "Rio GX",
-                                    "Price": "4.71 Lac"
-                                  },
-                                  {
-                                    "name": "Rio EX",
-                                    "Price": "5.44 Lac"
-                                  },
-                                  {
-                                    "name": "Rio GLX",
-                                    "Price": "5.16 Lac"
-                                  },
-                                  {
-                                    "name": "Rio DX",
-                                    "Price": "5.64 Lac"
-                                  },
-                                  {
-                                    "name": "Rio LX",
-                                    "Price": "6.1 Lac"
-                                  },
-                                  {
-                                    "name": "Rio CRDi4",
-                                    "Price": "6.7 Lac"
-                                  }
+                              :
+                              {
+                                {
+                                  "name": "Rio",
+                                  "varient": [
+                                    {
+                                      "name": "GX",
+                                      "Price": "4.71 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "EX",
+                                      "Price": "5.44 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "GLX",
+                                      "Price": "5.16 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "DX",
+                                      "Price": "5.64 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "LX",
+                                      "Price": "6.1 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "CRDi4",
+                                      "Price": "6.7 Lac",
+                                      "Type": ""
+                                    }
+                                  ]
+                                }
+                              },
+
+                                "Ferrari" 
+                              :
+                              {
+                                {
+                                  "name": "California",
+                                  "varient": [
+                                    {
+                                      "name": "T Convertible",
+                                      "Price": "3.3 Cr",
+                                      "Type": ""
+                                    }
+                                  ]
                                 },
-                                "Ferrari",
-                                : {
-                                  {
-                                    "name": "California T Convertible",
-                                    "Price": "3.3 Cr"
-                                  },
-                                  {
-                                    "name": "458 Speciale Coupe",
-                                    "Price": "4.07 Cr"
-                                  },
-                                  {
-                                    "name": "458 Spider V8",
-                                    "Price": "2.8 Cr"
-                                  },
-                                  {
-                                    "name": "F12 Berlinetta V12",
-                                    "Price": "4.72 Cr"
-                                  },
-                                  {
-                                    "name": "488 GTB STD",
-                                    "Price": "3.88 Cr"
-                                  }
+                                {
+                                  "name": "458",
+                                  "varient": [
+                                    {
+                                      "name": "Speciale Coupe",
+                                      "Price": "4.07 Cr",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "Spider V8",
+                                      "Price": "2.8 Cr",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "GTB STD",
+                                      "Price": "3.88 Cr",
+                                      "Type": ""
+                                    }
+                                  ]
                                 },
-                                "Mini",
-                                : {
-                                  {
-                                    "name": "Cooper D1.6",
-                                    "Price": "33.2 Lac"
-                                  },
-                                  {
-                                    "name": "Convertible 1.6",
-                                    "Price": "33.9 Lac"
-                                  },
-                                  {
-                                    "name": "Countryman One Countryman",
-                                    "Price": "36.5 Lac"
-                                  },
-                                  {
-                                    "name": "Countryman Cooper D Countryman",
-                                    "Price": "36.5 Lac"
-                                  },
-                                  {
-                                    "name": "Countryman Cooper D Countryman Hightrim",
-                                    "Price": "25.9 Lac"
-                                  },
-                                  {
-                                    "name": "Countryman Cooper S Countryman",
-                                    "Price": "36.5 Lac"
-                                  },
-                                  {
-                                    "name": "Cooper D 5 Door",
-                                    "Price": "31.9 Lac"
-                                  },
-                                  {
-                                    "name": "Cooper D 3 Door",
-                                    "Price": "28.5 Lac"
-                                  },
-                                  {
-                                    "name": "Cooper S 2.0",
-                                    "Price": "31.5 Lac"
-                                  }
+                                {
+                                  "name": "F12",
+                                  "varient": [
+                                    {
+                                      "name": "Berlinetta V12",
+                                      "Price": "4.72 Cr",
+                                      "Type": ""
+                                    }
+                                  ]
+                                }
+                                },
+
+                                "Mini"
+                              :
+                              {
+                                {
+                                  "name": "Cooper",
+                                  "varient": [
+                                    {
+                                      "name": "D1.6",
+                                      "Price": "33.2 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "D 5 Door",
+                                      "Price": "31.9 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "D 3 Door",
+                                      "Price": "28.5 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "S 2.0",
+                                      "Price": "31.5 Lac",
+                                      "Type": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Convertible",
+                                  "varient": [
+                                    {
+                                      "name": "1.6",
+                                      "Price": "33.9 Lac",
+                                      "Type": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "Countryman",
+                                  "varient": [
+                                    {
+                                      "name": "One Countryman",
+                                      "Price": "36.5 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "Cooper D Countryman",
+                                      "Price": "36.5 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "Cooper D Countryman Hightrim",
+                                      "Price": "25.9 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "Cooper S Countryman",
+                                      "Price": "36.5 Lac",
+                                      "Type": ""
+                                    }
+                                  ]
+                                },
+
                                 },
 
                                 "Audi",
+                              :
+                              {
+                                {
+                                  "name": "A4",
+                                  "varient": [
+                                    {
+                                      "name": "35 TDI Premium",
+                                      "Price": "35.39 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "35 TDI TECHNOLOGY",
+                                      "Price": "40.79 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "35 TFSI PREMIUM + SUNROOF",
+                                      "Price": "34.9 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "35 TDI PREMIUM SPORT",
+                                      "Price": "38.93 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "35 TDI Premium + Sunroof",
+                                      "Price": "36.42 Lac",
+                                      "Type": ""
+                                    },
+                                    {
+                                      "name": "35 TDI Premium Sport+ Sunroof",
+                                      "Price": "38.93 Lac",
+                                      "Type": ""
+                                    },
+                                  ]
+                                },
+                                {
+                                  "name": "Q5",
+                                  "varient": [
+                                    {
+                                      {
+                                        "name": "30 TDI Premium Plus",
+                                        "Price": "51.42 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "30 TDI Premium",
+                                        "Price": "49.46 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "30 TDI Technology",
+                                        "Price": "56.02 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "45 TDI Techonology S Line",
+                                        "Price": "62.95 Lac",
+                                        "Type": ""
+                                      },
+                                      ]
+                                    },
+                                    {
+                                      "name": "RSS",
+                                      "varient": [
+                                        {
+                                          "name": "Coupe",
+                                          "Price": "1.09 Cr",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "RS7",
+                                      "varient": [
+
+                                        {
+                                          "name": "Sportback",
+                                          "Price": "1.4 Cr",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "A3",
+                                      "varient": [
+                                        {
+                                          "name": "35 TDI Attraction",
+                                          "Price": "24.56 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "35 TDI Premium",
+                                          "Price": "27.42 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "35 TDI Premium",
+                                          "Price": "31.09 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "35 TDI Techonology",
+                                          "Price": "32.93 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "40 TFSI Premium Plus",
+                                          "Price": "30.27 Lac",
+                                          "Type": ""
+                                        },
+
+                                        {
+                                          "name": "Cabriolet",
+                                          "Price": "44.75 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "TT",
+                                      "varient": [
+                                        {
+                                          "name": "45 TFSI",
+                                          "Price": "60.34 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "RS6",
+                                      "varient": [
+                                        {
+                                          "name": "Avant",
+                                          "Price": "1.35 Cr",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Q3",
+                                      "varient": [
+                                        {
+                                          "name": "Q3 S",
+                                          "Price": "28.99 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "Q3 Premium",
+                                          "Price": "33.5 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "Q3 Premium Plus",
+                                          "Price": "37.9 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "A3",
+                                      "varient": [
+                                        {
+                                          "name": "40 TFSI Premium Plus",
+                                          "Price": "25.5 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "35 TDI Premium+ Sunroof",
+                                          "Price": "28.55 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "35 TDI Premium Plus+ Sunroof",
+                                          "Price": "32.22 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "40 TFSI Premium Plus+ Sunroof",
+                                          "Price": "31.4 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "35 TDI Technology+ Sunroof",
+                                          "Price": "34.06 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "S5",
+                                      "varient ": [
+                                        {
+                                          "name": "Sportback 3.0 TFSI Quattro",
+                                          "Price": "62.95 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Q7",
+                                      "varient": [
+                                        {
+                                          "name": "Premium Plus",
+                                          "Price": "72 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "45TDI",
+                                      "varient": [
+                                        {
+                                          "name": "Technology",
+                                          "Price": "77.5 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "R8",
+                                      "varient": [
+                                        {
+                                          "name": "V10 Plus",
+                                          "Price": "30.27 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+
+
+                                    {
+                                      "name": "A8L",
+                                      "varient": [
+                                        {
+                                          "name": "60 TFSI quattro",
+                                          "Price": "1.38 Cr",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "50 TDI quattro",
+                                          "Price": "1.17 Cr",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "60 TFSI quattro",
+                                          "Price": "1.38 Cr",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "W12 quattro",
+                                          "Price": "1.87 Cr",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "Security",
+                                          "Price": "9.15 Cr",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    }
+                                },
+
+                                  "Land Rover",
                                 : {
                                   {
-                                    "name": "A4 35 TDI Premium",
-                                    "Price": "35.39 Lac"
+                                    "name": "Freelander",
+                                    "varient": [
+                                      {
+                                        "name": "2 SE",
+                                        "Price": "46.23 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "2 HSE",
+                                        "Price": "51.92 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "2 S BE",
+                                        "Price": "42.34 Lac",
+                                        "Type": ""
+                                      },
+                                    ]
                                   },
                                   {
-                                    "name": "A4 35 TDI TECHNOLOGY",
-                                    "Price": "40.79 Lac"
+                                    "name": "Range Rover",
+                                    "varient": [
+                                      {
+                                        "name": "Sport HSE",
+                                        "Price": "1.51 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "4.4 Vogue SE",
+                                        "Price": "2.48 Cr",
+                                        "Type": ""
+                                      },
+
+                                      {
+                                        "name": "Sport S",
+                                        "Price": "1.16 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Sport SE",
+                                        "Price": "1.32 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Sport Autobiography",
+                                        "Price": "1.75 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "4.4 Autobiography",
+                                        "Price": "2.55 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "5.0 Autobiography",
+                                        "Price": "2.62 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "3.0 HSE",
+                                        "Price": "1.83 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "3.0 Vogue",
+                                        "Price": "2.08 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "3.0 TDV6 Diesel Vogue LWB",
+                                        "Price": "2.2 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "4.4 SDV8 Diesel Vogue SE LWB",
+                                        "Price": "2.57 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "4.4 SDV8 Diesel Autobiography",
+                                        "Price": "2.68 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "5.0 V8 SC Autobiography",
+                                        "Price": "2.76 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "4.4 SDV8 Autobiography LWB",
+                                        "Price": "3.75 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "5.0 SDV8 Autobiography LWB",
+                                        "Price": "3.85 Cr",
+                                        "Type": ""
+                                      }
+                                    ]
                                   },
                                   {
-                                    "name": "Q5 30 TDI Premium Plus",
-                                    "Price": "51.42 Lac"
+                                    "name": "Discovery",
+                                    "varient": [
+                                      {
+                                        "name": "Sport S",
+                                        "Price": "46.1 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Sport SE",
+                                        "Price": "51.01 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Sport HSE",
+                                        "Price": "53.54 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Sport HSE Luxury",
+                                        "Price": "60.7 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Sport HSE 7-Seater",
+                                        "Price": "55.03 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Sport HSE Luxury 7-seater",
+                                        "Price": "62.18 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Sport SE 7-Seater",
+                                        "Price": "52.5 Lac",
+                                        "Type": ""
+                                      }
+                                    ]
                                   },
                                   {
-                                    "name": "Q5 30 TDI Premium",
-                                    "Price": "49.46 Lac"
-                                  },
-                                  {
-                                    "name": "Q5 30 TDI Technology",
-                                    "Price": "56.02 Lac"
-                                  },
-                                  {
-                                    "name": "RS5 Coupe",
-                                    "Price": "1.09 Cr"
-                                  },
-                                  {
-                                    "name": "A4 35 TFSI PREMIUM + SUNROOF",
-                                    "Price": "34.9 Lac"
-                                  },
-                                  {
-                                    "name": "RS7 Sportback",
-                                    "Price": "1.4 Cr"
-                                  },
-                                  {
-                                    "name": "A3 35 TDI Attraction",
-                                    "Price": "24.56 Lac"
-                                  },
-                                  {
-                                    "name": "A3 35 TDI Premium",
-                                    "Price": "27.42 Lac"
-                                  },
-                                  {
-                                    "name": "A3 35 TDI Premium",
-                                    "Price": "31.09 Lac"
-                                  },
-                                  {
-                                    "name": "A3 35 TDI Techonology",
-                                    "Price": "32.93 Lac"
-                                  },
-                                  {
-                                    "name": "A3 40 TFSI Premium Plus",
-                                    "Price": "30.27 Lac"
-                                  },
-                                  {
-                                    "name": "A4 35 TDI PREMIUM SPORT",
-                                    "Price": "38.93 Lac"
-                                  },
-                                  {
-                                    "name": "A3 Cabriolet",
-                                    "Price": "44.75 Lac"
-                                  },
-                                  {
-                                    "name": "TT 45 TFSI",
-                                    "Price": "60.34 Lac"
-                                  },
-                                  {
-                                    "name": "RS6 Avant",
-                                    "Price": "1.35 Cr"
-                                  },
-                                  {
-                                    "name": "Q3 Q3 S",
-                                    "Price": "28.99 Lac"
-                                  },
-                                  {
-                                    "name": "Q3 Q3 Premium",
-                                    "Price": "33.5 Lac"
-                                  },
-                                  {
-                                    "name": "Q3 Q3 Premium Plus",
-                                    "Price": "37.9 Lac"
-                                  },
-                                  {
-                                    "name": "A3 40 TFSI Premium Plus",
-                                    "Price": "25.5 Lac"
-                                  },
-                                  {
-                                    "name": "S5 Sportback 3.0 TFSI Quattro",
-                                    "Price": "62.95 Lac"
-                                  },
-                                  {
-                                    "name": "Q7 Premium Plus",
-                                    "Price": "72 Lac"
-                                  },
-                                  {
-                                    "name": "Q7 45TDI Technology",
-                                    "Price": "77.5 Lac"
-                                  },
-                                  {
-                                    "name": "R8 V10 Plus",
-                                    "Price": "30.27 Lac"
-                                  },
-                                  {
-                                    "name": "Q5 45 TDI Techonology S Line",
-                                    "Price": "62.95 Lac"
-                                  },
-                                  {
-                                    "name": "A4 35 TDI Premium + Sunroof",
-                                    "Price": "36.42 Lac"
-                                  },
-                                  {
-                                    "name": "A4 35 TDI Premium Sport+ Sunroof",
-                                    "Price": "38.93 Lac"
-                                  },
-                                  {
-                                    "name": "A3 35 TDI Premium+ Sunroof",
-                                    "Price": "28.55 Lac"
-                                  },
-                                  {
-                                    "name": "A3 35 TDI Premium Plus+ Sunroof",
-                                    "Price": "32.22 Lac"
-                                  },
-                                  {
-                                    "name": "A3 40 TFSI Premium Plus+ Sunroof",
-                                    "Price": "31.4 Lac"
-                                  },
-                                  {
-                                    "name": "A3 35 TDI Technology+ Sunroof",
-                                    "Price": "34.06 Lac"
-                                  },
-                                  {
-                                    "name": "A8L 60 TFSI quattro",
-                                    "Price": "1.38 Cr"
-                                  },
-                                  {
-                                    "name": "A8L 50 TDI quattro",
-                                    "Price": "1.17 Cr"
-                                  },
-                                  {
-                                    "name": "A8L 60 TFSI quattro",
-                                    "Price": "1.38 Cr"
-                                  },
-                                  {
-                                    "name": "A8L W12 quattro",
-                                    "Price": "1.87 Cr"
-                                  },
-                                  {
-                                    "name": "A8L Security",
-                                    "Price": "9.15 Cr"
+                                    "name": "Range Rover",
+                                    "varient": [
+                                      {
+                                        "name": "Evoque Pure",
+                                        "Price": "47.1 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Evoque SE",
+                                        "Price": "52.9 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Evoque HSE",
+                                        "Price": "57.7 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Evoque HSE Dynamic",
+                                        "Price": "63.2 Lac",
+                                        "Type": ""
+                                      }
+                                    ]
                                   }
-                                },
-                                "Land Rover",
+                                  },
+                                  "Jaguar",
                                 : {
                                   {
-                                    "name": "Freelander 2 SE",
-                                    "Price": "46.23 Lac"
+                                    "name": "XF",
+                                    "varient": [
+                                      {
+                                        "name": "R 5.0 V8",
+                                        "Price": "74.21 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Aero-Sport 2.2",
+                                        "Price": "52.52 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "Executive Edition 2.2",
+                                        "Price": "47.67 Lac",
+                                        "Type": ""
+                                      }
+                                    ]
                                   },
+
                                   {
-                                    "name": "Freelander 2 HSE",
-                                    "Price": "51.92 Lac"
-                                  },
-                                  {
-                                    "name": "Range Rover Sport HSE",
-                                    "Price": "1.51 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 4.4 Vogue SE",
-                                    "Price": "2.48 Cr"
-                                  },
-                                  {
-                                    "name": "Freelander 2 S BE",
-                                    "Price": "42.34 Lac"
-                                  },
-                                  {
-                                    "name": "Range Rover Sport S",
-                                    "Price": "1.16 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover Sport SE",
-                                    "Price": "1.32 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover Sport Autobiography",
-                                    "Price": "1.75 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 4.4 Autobiography",
-                                    "Price": "2.55 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 5.0 Autobiography",
-                                    "Price": "2.62 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 3.0 HSE",
-                                    "Price": "1.83 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 3.0 Vogue",
-                                    "Price": "2.08 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 3.0 TDV6 Diesel Vogue LWB",
-                                    "Price": "2.2 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 4.4 SDV8 Diesel Vogue SE LWB",
-                                    "Price": "2.57 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 4.4 SDV8 Diesel Autobiography",
-                                    "Price": "2.68 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 5.0 V8 SC Autobiography",
-                                    "Price": "2.76 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 4.4 SDV8 Autobiography LWB",
-                                    "Price": "3.75 Cr"
-                                  },
-                                  {
-                                    "name": "Range Rover 5.0 SDV8 Autobiography LWB",
-                                    "Price": "3.85 Cr"
-                                  },
-                                  {
-                                    "name": "Discovery Sport S",
-                                    "Price": "46.1 Lac"
-                                  },
-                                  {
-                                    "name": "Discovery Sport SE",
-                                    "Price": "51.01 Lac"
-                                  },
-                                  {
-                                    "name": "Discovery Sport HSE",
-                                    "Price": "53.54 Lac"
-                                  },
-                                  {
-                                    "name": "Discovery Sport HSE Luxury",
-                                    "Price": "60.7 Lac"
-                                  },
-                                  {
-                                    "name": "Discovery Sport HSE 7-Seater",
-                                    "Price": "55.03 Lac"
-                                  },
-                                  {
-                                    "name": "Discovery Sport HSE Luxury 7-seater",
-                                    "Price": "62.18 Lac"
-                                  },
-                                  {
-                                    "name": "Discovery Sport SE 7-Seater",
-                                    "Price": "52.5 Lac"
-                                  },
-                                  {
-                                    "name": "Range Rover Evoque Pure",
-                                    "Price": "47.1 Lac"
-                                  },
-                                  {
-                                    "name": "Range Rover Evoque SE",
-                                    "Price": "52.9 Lac"
-                                  },
-                                  {
-                                    "name": "Range Rover Evoque HSE",
-                                    "Price": "57.7 Lac"
-                                  },
-                                  {
-                                    "name": "Range Rover Evoque HSE Dynamic",
-                                    "Price": "63.2 Lac"
+                                    "name": "XJ",
+                                    "varient": [
+                                      {
+                                        "name": "L 3.0",
+                                        "Price": "1.05 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "L 5.0",
+                                        "Price": "2.08 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "L 3.0 V6 Portfolio",
+                                        "Price": "1.4 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "L 2.0 L Portfolio",
+                                        "Price": "99.23 Lac",
+                                        "Type": ""
+                                      },
+
+                                      {
+                                        "name": "2.0L",
+                                        "Price": "99.23 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "3.0L",
+                                        "Price": "98.03 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "3.0L Portfolio",
+                                        "Price": "1.05 Cr",
+                                        "Type": ""
+                                      }
+                                    ]
                                   }
-                                },
-                                "Jaguar",
-                                : {
                                   {
-                                    "name": "XF R 5.0 V8",
-                                    "Price": "74.21 Lac"
-                                  },
-                                  {
-                                    "name": "XJ L 3.0",
-                                    "Price": "1.05 Cr"
-                                  },
-                                  {
-                                    "name": "XJ L 5.0",
-                                    "Price": "2.08 Cr"
-                                  },
-                                  {
-                                    "name": "F-Type S 3.0 V6",
-                                    "Price": "1.54 Cr"
-                                  },
-                                  {
-                                    "name": "F-Type S 5.0 V8",
-                                    "Price": "1.81 Cr"
-                                  },
-                                  {
-                                    "name": "F-Type 3.0 S/C Coupe(ST1 340 PS)",
-                                    "Price": "1.26 Cr"
-                                  },
-                                  {
-                                    "name": "F-Type 3.0 S/C Coupe(ST2 380 PS)",
-                                    "Price": "1.38 Cr"
-                                  },
-                                  {
-                                    "name": "F-Type 5.0 S/C Coupe(ST4 550 PS)",
-                                    "Price": "1.88 Cr"
-                                  },
-                                  {
-                                    "name": "XF 2.2 Luxury",
-                                    "Price": "51.52 Lac"
-                                  },
-                                  {
-                                    "name": "XF 2.0 Luxury",
-                                    "Price": "51.19 Lac"
-                                  },
-                                  {
-                                    "name": "XF Premium Luxury",
-                                    "Price": "59.97 Lac"
-                                  },
-                                  {
-                                    "name": "XJ L 3.0 V6 Premium Luxury",
-                                    "Price": "98.03 Lac"
-                                  },
-                                  {
-                                    "name": "XJ L 3.0 V6 Portfolio",
-                                    "Price": "1.4 Cr"
-                                  },
-                                  {
-                                    "name": "XJ L 2.0 L Portfolio",
-                                    "Price": "99.23 Lac"
-                                  },
-                                  {
-                                    "name": "XF Aero-Sport 2.2",
-                                    "Price": "52.52 Lac"
-                                  },
-                                  {
-                                    "name": "XF Executive Edition 2.2",
-                                    "Price": "47.67 Lac"
-                                  },
-                                  {
-                                    "name": "XJ 2.0L",
-                                    "Price": "99.23 Lac"
-                                  },
-                                  {
-                                    "name": "XJ 3.0L",
-                                    "Price": "98.03 Lac"
-                                  },
-                                  {
-                                    "name": "XJ 3.0L Portfolio",
-                                    "Price": "1.05 Cr"
-                                  },
-                                  {
-                                    "name": "XE 2.0L Petrol Pure",
-                                    "Price": "39.9 Lac"
-                                  },
-                                  {
-                                    "name": "XE 2.0L Petrol Portfolio",
-                                    "Price": "46.5 Lac"
-                                  }
-                                },
-                                "ICML",
-                                : {
-                                  {
-                                    "name": "Extreme LD DI Non Ac 9 Seater BSIII",
-                                    "Price": "6.66 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme LD CRDFi Non AC 9 Seater BSIV",
-                                    "Price": "7.47 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme LD DI PS Ac 9 Seater BSIII",
-                                    "Price": "8.2 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme LD CRDFi PS AC9 Seater BSIII",
-                                    "Price": "7.71 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme SD DI 9 Seater BSIII",
-                                    "Price": "8.35 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme LD CRDFi PS Ac 9 Seater BSIV",
-                                    "Price": "8.51 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme VD CRDFi 7 Seater BSIII",
-                                    "Price": "9.5 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme VD DI 7 Seater BSIII",
-                                    "Price": "8.93 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme SD CRDFi 9 Seater BSIV",
-                                    "Price": "9.12 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme VD CRDFi 7 Seater BSIV",
-                                    "Price": "9.79 Lac"
-                                  },
-                                  {
-                                    "name": "Extreme SD CRDFi 9 Seater BSIII",
-                                    "Price": "8.81 Lac"
-                                  }
-                                },
-                                "Nissan",
-                                : {
-                                  {
-                                    "name": "Micra XL",
-                                    "Price": "5.33 Lac"
-                                  },
-                                  {
-                                    "name": "Micra XV Diesel",
-                                    "Price": "7.18 Lac"
-                                  },
-                                  {
-                                    "name": "Micra XV Premium",
-                                    "Price": "7.5 Lac"
-                                  },
-                                  {
-                                    "name": "Sunny XE PEtrol",
-                                    "Price": "7.51 Lac"
-                                  },
-                                  {
-                                    "name": "Sunny XL Petrol",
-                                    "Price": "7.89 Lac"
-                                  },
-                                  {
-                                    "name": "Sunny XL Diesel",
-                                    "Price": "8.89 Lac"
-                                  },
-                                  {
-                                    "name": "Sunny XV Diesel",
-                                    "Price": "9.73 Lac"
-                                  },
-                                  {
-                                    "name": "Evalia XE",
-                                    "Price": "9.14 Lac"
-                                  },
-                                  {
-                                    "name": "Evalia XE+",
-                                    "Price": "9.68 Lac"
-                                  },
-                                  {
-                                    "name": "Evalia XL",
-                                    "Price": "10.51 Lac"
-                                  },
-                                  {
-                                    "name": "Evalia XV (O)",
-                                    "Price": "11.48 Lac"
-                                  },
-                                  {
-                                    "name": "Micra Active XL",
-                                    "Price": "4.48 Lac"
-                                  },
-                                  {
-                                    "name": "Micra Active XV",
-                                    "Price": "4.86 Lac"
-                                  },
-                                  {
-                                    "name": "Micra Active XV S",
-                                    "Price": "5.13 Lac"
-                                  },
-                                  {
-                                    "name": "Terrano XE D",
-                                    "Price": "9.99 Lac"
-                                  },
-                                  {
-                                    "name": "Terrano XL P",
-                                    "Price": "9.99 Lac"
-                                  },
-                                  {
-                                    "name": "Terrano XL D",
-                                    "Price": "11.17 Lac"
-                                  },
-                                  {
-                                    "name": "Terrano XL D Plus",
-                                    "Price": "11.45 Lac"
-                                  },
-                                  {
-                                    "name": "Terrano XL D THP",
-                                    "Price": "11.64 Lac"
-                                  },
-                                  {
-                                    "name": "Terrano XV D THP",
-                                    "Price": "12.61 Lac"
-                                  },
-                                  {
-                                    "name": "Terrano XV D THP Premium",
-                                    "Price": "12.92 Lac"
-                                  },
-                                  {
-                                    "name": "Micra XL Diesel",
-                                    "Price": "6.16 Lac"
-                                  },
-                                  {
-                                    "name": "Micra XL(O)",
-                                    "Price": "5.86 Lac"
-                                  },
-                                  {
-                                    "name": "Micra XL(O) Diesel",
-                                    "Price": "6.66 Lac"
-                                  },
-                                  {
-                                    "name": "Evalia XL(O)",
-                                    "Price": "10.78 Lac"
-                                  },
-                                  {
-                                    "name": "Evalia XV",
-                                    "Price": "11.22 Lac"
-                                  },
-                                  {
-                                    "name": "Sunny XL CVT AT Petrol",
-                                    "Price": "9.16 Lac"
-                                  },
-                                  {
-                                    "name": "Micra XV CVT",
-                                    "Price": "7.05 Lac"
-                                  },
-                                  {
-                                    "name": "Sunny XV Premium Pack(Safety)",
-                                    "Price": "9.99 Lac"
-                                  },
-                                  {
-                                    "name": "Sunny XV Premium Pack(Leather)",
-                                    "Price": "10.38 Lac"
-                                  },
-                                  {
-                                    "name": "Sunny XE Diesel",
-                                    "Price": "8.29 Lac"
-                                  },
-                                  {
-                                    "name": "Evalia SV",
-                                    "Price": "12.22 Lac"
-                                  },
-                                  {
-                                    "name": "Micra X-Shift",
-                                    "Price": "6.4 Lac"
-                                  },
-                                  {
-                                    "name": "Micra XL CVT",
-                                    "Price": "6.4 Lac"
-                                  },
-                                  {
-                                    "name": "Micra Active ICC WT20 EDITION",
-                                    "Price": "Not Specified"
-                                  },
-                                  {
-                                    "name": "Terrano ICC T20 Edition",
-                                    "Price": "Not Specified"
-                                  }
-                                },
-                                "Datsun",
-                                : {
-                                  "name": "GO A",
-                                  "Price": "3.49 Lac",
-                                  "Type": "Hatchback"
-                                },
-                                "name",
-                                : "GO D",
-                                "Price",
-                                : "3.23 Lac",
-                                "Type",
-                                : "Hatchback"
-                              },
-                  "GO T",
-                  : {
-                    "Type": "Hatchback"
-                  },
-                  "Go+MPV D",
-                  : {
-                    "Type": "Minivan/MUV"
-                  },
-                  "Go+MPV A",
-                  : {
-                    "Type": "Minivan/MUV"
-                  },
-                  "Go+MPV T",
-                  : {
-                    "Type": "Minivan/MUV"
-                  },
-                  "GO T (O)",
-                  : {
-                    "Type": "Hatchback"
-                  },
-                  "GO NXT",
-                  : {
-                    "Type": "Hatchback"
-                  },
-                  "Go+MPV T (O)",
-                  : {
-                    "Type": "Minivan/MUV"
-                  },
-                  "GO A EPS",
-                  : {
-                    "Type": "Hatchback"
-                  },
-                  "Go+MPV A EPS",
-                  : {
-                    "Type": "Minivan/MUV"
-                  }
-                },
+                                    "name": "F-Type",
+                                    "varient": [
+                                      {
+                                        "name": "S 3.0 V6",
+                                        "Price": "1.54 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "S 5.0 V8",
+                                        "Price": "1.81 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "3.0 S/C Coupe(ST1 340 PS)",
+                                        "Price": "1.26 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "3.0 S/C Coupe(ST2 380 PS)",
+                                        "Price": "1.38 Cr",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "5.0 S/C Coupe(ST4 550 PS)",
+                                        "Price": "1.88 Cr",
+                                        "Type": ""
+                                      },
+
+                                      {
+                                        "name": "L 3.0 V6 Premium Luxury",
+                                        "Price": "98.03 Lac",
+                                        "Type": ""
+                                      },
+                                      {
+                                        "name": "XE",
+                                        "varient": [
+                                          {
+                                            "name": "2.0L Petrol Pure",
+                                            "Price": "39.9 Lac",
+                                            "Type": ""
+                                          },
+                                          {
+                                            "name": "2.0L Petrol Portfolio",
+                                            "Price": "46.5 Lac",
+                                            "Type": ""
+                                          }
+                                        ]
+                                      }
+                                  },
+                                  "ICML",
+                                  : {
+                                    {
+                                      "name": "Extreme LD",
+                                      "varient": [
+                                        {
+                                          "name": "DI Non Ac 9 Seater BSIII",
+                                          "Price": "6.66 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "CRDFi Non AC 9 Seater BSIV",
+                                          "Price": "7.47 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "DI PS Ac 9 Seater BSIII",
+                                          "Price": "8.2 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "CRDFi PS AC9 Seater BSIII",
+                                          "Price": "7.71 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "CRDFi PS Ac 9 Seater BSIV",
+                                          "Price": "8.51 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Extreme SD",
+                                      "varient": [
+                                        {
+                                          "name": "DI 9 Seater BSIII",
+                                          "Price": "8.35 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "CRDFi 9 Seater BSIV",
+                                          "Price": "9.12 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "CRDFi 9 Seater BSIII",
+                                          "Price": "8.81 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+
+                                    {
+                                      "name": "Extreme VD",
+                                      "varient": [
+                                        {
+                                          "name": "CRDFi 7 Seater BSIII",
+                                          "Price": "9.5 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "DI 7 Seater BSIII",
+                                          "Price": "8.93 Lac",
+                                          "Type": ""
+                                        },
+
+                                        {
+                                          "name": "CRDFi 7 Seater BSIV",
+                                          "Price": "9.79 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    }
+                                  },
+                                    
+                                    
+                                        "Nissan",
+                                  : {
+                                    {
+                                      "name": "Micra",
+                                      "varient": [
+                                        {
+                                          "name": "XL",
+                                          "Price": "5.33 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV Diesel",
+                                          "Price": "7.18 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV Premium",
+                                          "Price": "7.5 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "Active XL",
+                                          "Price": "4.48 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "Active XV",
+                                          "Price": "4.86 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "Active XV S",
+                                          "Price": "5.13 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV CVT",
+                                          "Price": "7.05 Lac"
+                                        },
+                                        {
+                                          "name": "X-Shift",
+                                          "Price": "6.4 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XL CVT",
+                                          "Price": "6.4 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "Active ICC WT20 EDITION",
+                                          "Price": "Not Specified",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Sunny",
+                                      "varient": [
+
+                                        {
+                                          "name": "XE PEtrol",
+                                          "Price": "7.51 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XL Petrol",
+                                          "Price": "7.89 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XL Diesel",
+                                          "Price": "8.89 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV Diesel",
+                                          "Price": "9.73 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Evalia",
+                                      "varient": [
+                                        {
+                                          "name": "XE",
+                                          "Price": "9.14 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XE+",
+                                          "Price": "9.68 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XL",
+                                          "Price": "10.51 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV (O)",
+                                          "Price": "11.48 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Terrano",
+                                      "varient": [
+                                        {
+                                          "name": "XE D",
+                                          "Price": "9.99 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XL P",
+                                          "Price": "9.99 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XL D",
+                                          "Price": "11.17 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XL D Plus",
+                                          "Price": "11.45 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XL D THP",
+                                          "Price": "11.64 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV D THP",
+                                          "Price": "12.61 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV D THP Premium",
+                                          "Price": "12.92 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "ICC T20 Edition",
+                                          "Price": "Not Specified",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Evalia",
+                                      "varient": [
+
+                                        {
+                                          "name": "XL(O)",
+                                          "Price": "10.78 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV",
+                                          "Price": "11.22 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "SV",
+                                          "Price": "12.22 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Sunny",
+                                      "varient": [
+                                        {
+                                          "name": "XL CVT AT Petrol",
+                                          "Price": "9.16 Lac",
+                                          "Type": ""
+                                        },
+
+                                        {
+                                          "name": "XV Premium Pack(Safety)",
+                                          "Price": "9.99 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XV Premium Pack(Leather)",
+                                          "Price": "10.38 Lac",
+                                          "Type": ""
+                                        },
+                                        {
+                                          "name": "XE Diesel",
+                                          "Price": "8.29 Lac",
+                                          "Type": ""
+                                        }
+                                      ]
+                                    }
+                                  },
+                                     
+                                  
+                                                                     
+                                        "Datsun",
+                                  : {
+                                    {
+
+                                      "name": "GO",
+                                      "varient": [
+                                        {
+                                          "name": "A",
+                                          "Price": "3.49 Lac",
+                                          "Type": "Hatchback"
+                                        },
+                                        {
+                                          "name": "D",
+                                          "Price": "3.23 Lac",
+                                          "Type": "Hatchback"
+                                        },
+                                        {
+                                          "name": "T",
+                                          "Price": "",
+                                          "Type": "Hatchback"
+                                        },
+                                        {
+                                          "name": "T (O)",
+                                          "Price": "",
+                                          "Type": "Hatchback"
+                                        },
+                                        {
+                                          "name": "NXT",
+                                          "Price": "",
+                                          "Type": "Hatchback"
+                                        },
+                                        {
+                                          "name": "A EPS",
+                                          "Price": "",
+                                          "Type": "Hatchback"
+                                        }
+                                      ]
+                                    },
+
+                                    {
+                                      "name": "Go+MPV",
+                                      "varient": [
+                                        {
+                                          "name": "D",
+                                          "Price": "",
+                                          "Type": "Minivan/MUV"
+                                        },
+                                        {
+                                          "name": "A",
+                                          "Price": "",
+                                          "Type": "Minivan/MUV"
+                                        },
+                                        {
+                                          "name": "T",
+                                          "Price": "",
+                                          "Type": "Minivan/MUV"
+                                        },
+                                        {
+                                          "name": "T (O)",
+                                          "Price": "",
+                                          "Type": "Minivan/MUV"
+                                        },
+                                        {
+                                          "name": "A EPS",
+                                          "Price": "",
+                                          "Type": "Minivan/MUV"
+                                        }
+                                      ]
+                                    }
+                                   
+                                    
+                                    },
+
+
+
       "Rolls-Royce",
-      : {
-        "Ghost 6.5": {
-          "Type": "Sedan, Luxury"
-        },
-        "Ghost Extended Wheelbase": {
-          "Type": "Sedan, Luxury"
-        },
-        "Phantom Sedan": {
-          "Type": "Sedan, Luxury"
-        },
-        "Phantom EWB": {
-          "Type": "Sedan, Luxury"
-        },
-        "Phantom Coupe 6.8 L": {
-          "Type": "Coupe, Luxury"
-        },
-        "Drophead Coupe Convertible": {
-          "Type": "Convertible, Luxury"
-        },
-        "Ghost Series II 6.6": {
-          "Type": "Sedan, Luxury"
-        },
-        "Wraith Coupe": {
-          "Type": "Coupe, Luxury"
-        }
-      },
-      "Fiat",
-      : {
-        "Linea Active Fire": {
-          "Type": "Sedan"
-        },
-        "Linea Active Multijet": {
-          "Type": "Sedan, Diesel"
-        },
-        "Linea T-Jet Active": {
-          "Type": "Sedan"
-        },
-        "Linea Dynamic Multijet": {
-          "Type": "Sedan, Diesel"
-        },
-        "Linea T-Jet Dynamic": {
-          "Type": "Sedan"
-        },
-        "Linea Emotion Multijet": {
-          "Type": "Sedan, Diesel"
-        },
-        "Linea T-Jet Emotion": {
-          "Type": "Sedan"
-        },
-        "Linea Classic 1.3 Multijet": {
-          "Type": "Sedan, Diesel"
-        },
-        "Linea Classic Plus 1.3 Multijet": {
-          "Type": "Sedan, Diesel"
-        },
-        "Linea Classic 1.4": {
-          "Type": "Sedan"
-        },
-        "Punto Evo Active 1.2": {
-          "Type": "Hatchback"
-        },
-        "Punto Evo Dynamic 1.2": {
-          "Type": "Hatchback"
-        },
-        "Punto Evo Emotion 1.4": {
+                                  : {
+                                    {
+                                      "name": "Ghost",
+                                      "varient": [
+                                        {
+                                          "name": "6.5",
+                                          "Price": "",
+                                          "Type": "Sedan, Luxury"
+                                        },
+                                        {
+                                          "name": "Extended Wheelbase",
+                                          "Price": "",
+                                          "Type": "Sedan, Luxury"
+                                        },
+                                        {
+                                          "name": "Series II 6.6",
+                                          "Price": "",
+                                          "Type": "Sedan, Luxury"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Phantom",
+                                      "varient": [
+                                        {
+                                          "name": "Sedan",
+                                          "Price": "",
+                                          "Type": "Sedan, Luxury"
+                                        },
+                                        {
+                                          "name": "EWB",
+                                          "Price": "",
+                                          "Type": "Sedan, Luxury"
+                                        },
+                                        {
+                                          "name": "Coupe 6.8 L",
+                                          "Price": "",
+                                          "Type": "Sedan, Luxury"
+                                        },
+                                        {
+                                          "name": "Drophead",
+                                          "varient": [
+                                            {
+                                              "name": "Coupe Convertible",
+                                              "Price": "",
+                                              "Type": "Convertible, Luxury"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Wraith",
+                                          "varient": [
+                                            {
+                                              "name": "Coupe",
+                                              "Price": "",
+                                              "Type": "Coupe, Luxury"
+                                            }
+                                          ]
+                                        }
+                                    },
 
-        },
-        "Punto Evo Active Multijet 1.3": {
-          "Type": [ "Hatchback, Diesel" ]
-        },
-        "Punto Evo Dynamic Multijet 1.3": {
-          "Type": "Hatchback, Diesel"
-        },
-        "Punto Evo Emotion Multijet 1.3": {
-          "Type": "Diesel"
-        },
-        "Punto Evo Multijet 1.3 90 hp": {
-          "Type": "Diesel"
-        },
-        "Avventura FIRE Active": {
 
-        },
-        "Avventura FIRE Dynamic": {
 
-        },
-        "Avventura Multijet Dynamic": {
-          "Type": "Diesel"
-        },
-        "Avventura Multijet Active": {
-          "Type": "Diesel"
-        },
-        "Avventura Multijet Emotion": {
-          "Type": "Diesel"
-        },
-        "Linea Elegante": {
-          "Type": "Sedan, Diesel"
-        },
-        "Abarth 595 Competizione": {
-          "Type": "Hatchback"
-        },
-        "Abarthe Punto 1.4 T-Jet": {
-          "Type": "Hatchback"
-        },
-        "Abarthe Avventura 1.4 T-Jet": {
+                                        "Fiat",
+                                    : {
+                                      {
 
-        },
-        "Punto Evo Sportivo 1.3": {
-          "Type": "Hatchback, Diesel"
-        },
-        "Punto Pure Active Advanced Multijet": {
-          "Type": "Hatchback, Diesel"
-        },
-        "Punto Pure Active Petrol": {
-          "Type": "Hatchback"
-        }
-      },
-      "Mitsubishi",
-      : {
-        "Pazero Sport": {
-          "Type": "SUV"
-        }
-      },
-      "Mahindra SsangYong",
-      : {
-        "SsangYong": {
-          "Type": "SUV"
-        }
-      },
-      "BMW",
-      : {
-        "X1": {
-          "Type": "Diesel"
-        },
-        "3-Series": {
-          "Type": "Sedan, Diesel"
-        },
-        "X3": {
-          "Type": "SUV, Luxury, Diesel"
-        },
-        "5-Series": {
-          "Type": "Sedan, Luxury, Diesel"
-        },
-        "Z4": {
-          "Type": "Convertible, Luxury"
-        },
-        "X5": {
-          "Type": "SUV, Luxury, Diesel"
-        },
-        "M3": {
-          "Type": "Sedan, Luxury"
-        },
-        "X6": {
-          "Type": "SUV, Luxury, Diesel"
-        },
-        "6-Series": {
-          "Type": "Coupe, Luxury, Diesel"
-        },
-        "M5": {
-          "Type": "Sedan, Luxury"
-        },
-        "1 Series": {
-          "Type": "Hatchback, Diesel"
-        },
-        "M6 Gran Coupe": {
-          "Type": "Sedan, Luxury"
-        },
-        "M4": {
-          "Type": "Sedan, Coupe, Luxury"
-        },
-        "i8": {
-          "Type": "Coupe, Hybrid/Electric, Luxury"
-        },
-        "7-Series": {
-          "Type": "Sedan, Luxury, Diesel"
-        },
-        "X5 M": {
-          "Type": "SUV, Luxury"
-        },
-        "X6 M": {
-          "Type": "SUV, Luxury"
-        }
-      },
-      "Skoda",
-      : {
-        {
-          "name": "Rapid",
-          "Type": "Sedan, Diesel"
-        },
-        {
-          "name": "Octavia",
-          "Type": "Sedan, Diesel"
-        },
-        {
-          "name": "Superb",
-          "Type": "Sedan, Diesel"
-        },
-        {
-          "name": "Yeti",
-          "Type": "SUV, Diesel"
-        }
-      }
+                                        "name": "Linea",
+                                        "varient": [
+                                          {
+                                            "name": "Active Fire",
+                                            "Price": "",
+                                            "Type": "Sedan"
+                                          },
+                                          {
+                                            "name": "Active Multijet",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },
+                                          {
+                                            "name": "T-Jet Activ",
+                                            "Price": "",
+                                            "Type": "Sedan"
+                                          },
+                                          {
+                                            "name": "Dynamic Multijet",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },
+                                          {
+                                            "name": "T-Jet Dynamic",
+                                            "Price": "",
+                                            "Type": "Sedan"
+                                          },
+                                          {
+                                            "name": "Emotion Multijet",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },
+                                          {
+                                            "name": "T-Jet Emotion",
+                                            "Price": "",
+                                            "Type": "Sedan"
+                                          },
+                                          {
+                                            "name": "Classic 1.3 Multijet",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },
+                                          {
+                                            "name": "Classic Plus 1.3 Multijet",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },
+                                          {
+                                            "name": "Classic 1.4",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },
+                                          {
+                                            "name": "Elegante",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },                                          
+                                        ]
+                                      },
+
+                                      {
+                                        "name": "Punto",
+                                        "varient": [
+                                          {
+                                            "name": "Evo Active 1.2",
+                                            "Price": "",
+                                            "Type": "HatchBack"
+                                          },
+                                          {
+                                            "name": "Evo Dynamic 1.2",
+                                            "Price": "",
+                                            "Type": "HatchBack"
+                                          },
+                                          {
+                                            "name": "Evo Emotion 1.4",
+                                            "Price": "",
+                                            "Type": "HatchBack"
+                                          },
+                                          {
+                                            "name": "Evo Active Multijet 1.3",
+                                            "Price": "",
+                                            "Type": "HatchBack, Diesel"
+                                          },
+                                          {
+                                            "name": "Evo Dynamic Multijet 1.3",
+                                            "Price": "",
+                                            "Type": "HatchBack, Diesel"
+                                          },
+                                          {
+                                            "name": "Evo Emotion Multijet 1.3",
+                                            "Price": "",
+                                            "Type": "Diesel"
+                                          },
+                                          {
+                                            "name": "Evo Multijet 1.3 90 hp",
+                                            "Price": "",
+                                            "Type": "Diesel"
+                                          },
+                                          {
+                                            "name": "Evo Sportivo 1.3",
+                                            "Price": "",
+                                            "Type": "Hatchback, Diesel"
+                                          },
+                                          {
+                                            "name": "Pure Active Advanced Multijet",
+                                            "Price": "",
+                                            "Type": "Hatchback, Diesel"
+                                          },
+                                          {
+                                            "name": "Pure Active Petrol",
+                                            "Price": "",
+                                            "Type": "Hatchback"
+                                          },                                         
+                                        ]
+                                      },
+
+
+                                      {
+                                        "name": "Avventura",
+                                        "varient": [
+                                          {
+                                            "name": "FIRE Active",
+                                            "Price": "",
+                                            "Type": ""
+                                          },
+                                          {
+                                            "name": "FIRE Dynamic",
+                                            "Price": "",
+                                            "Type": "Diesel"
+                                          },
+                                          {
+                                            "name": "Multijet Dynamic",
+                                            "Price": "",
+                                            "Type": "Diesel"
+                                          },
+                                          {
+                                            "name": "Multijet Active",
+                                            "Price": "",
+                                            "Type": "Diesel"
+                                          },
+                                          {
+                                            "name": "Multijet Emotion",
+                                            "Price": "",
+                                            "Type": "Diesel"
+                                          },
+                                          {
+                                            "name": "Multijet Dynamic",
+                                            "Price": "",
+                                            "Type": "Diesel"
+                                          },
+
+                                          {
+                                            "name": "Abarth",
+                                            "varient": [
+                                              {
+                                                "name": "595 Competizione",
+                                                "Price": "",
+                                                "Type": "Hatchback"
+                                              },
+                                              {
+                                                "name": "Punto 1.4 T-Jet",
+                                                "Price": "",
+                                                "Type": "Hatchback"
+                                              },
+                                              {
+                                                "name": "Avventura 1.4 T-Jet",
+                                                "Price": "",
+                                                "Type": "Hatchback"
+                                              },
+                                            ]
+                                          }
+
+                                      },
+
+
+
+                                        "Mitsubishi",
+                                      : {
+                                        {
+                                          "name": "Mahindra",
+                                          "varient": [
+                                            {
+                                              "name": "Sport",
+                                              "Price ": "",
+                                              "Type": "SUV"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "name": "Pazero",
+                                          "varient": [
+                                            {
+                                              "name": "SsangYong",
+                                              "Price ": "",
+                                              "Type": "SUV"
+                                            }
+                                          ]
+                                        },
+                                      
+                                      },
+
+
+
+                                        "BMW",
+                                      : {
+                                        {
+                                          "name": "",
+                                          "varient": [
+                                            {
+                                              "name": "X1",
+                                              "Price": "",
+                                              "Type": "Diesel"
+                                            },
+                                            {
+                                              "name": "3-Series",
+                                              "Price": "",
+                                              "Type": "Sedan, Diesel"
+                                            },
+                                            {
+                                              "name": "X3",
+                                              "Price": "",
+                                              "Type": "SUV, Luxury, Diesel"
+                                            },
+                                            {
+                                              "name": "5-Series",
+                                              "Price": "",
+                                              "Type": "Sedan, Luxury, Diesel"
+                                            },
+                                            {
+                                              "name": "Z4",
+                                              "Price": "",
+                                              "Type": "Convertible, Luxury"
+                                            },
+                                            {
+                                              "name": "X5",
+                                              "Price": "",
+                                              "Type": "Sedan, Luxury"
+                                            },
+                                            {
+                                              "name": "M3",
+                                              "Price": "",
+                                              "Type": "Convertible, Luxury"
+                                            },
+                                            {
+                                              "name": "X6",
+                                              "Price": "",
+                                              "Type": "SUV, Luxury, Diesel"
+                                            },
+                                            {
+                                              "name": "1-Series",
+                                              "Price": "",
+                                              "Type": "Coupe, Luxury, Diesel"
+                                            },
+                                            {
+                                              "name": "M5",
+                                              "Price": "",
+                                              "Type": "Sedan, Luxury"
+                                            },
+                                            {
+                                              "name": "M4",
+                                              "Price": "",
+                                              "Type": "Sedan, Coupe, Luxury"
+                                            },
+                                            {
+                                              "name": "i8",
+                                              "Price": "",
+                                              "Type": "Coupe, Hybrid/Electric, Luxury"
+                                            },
+                                            {
+                                              "name": "7-Series",
+                                              "Price": "",
+                                              "Type": "Sedan, Luxury, Diesel"
+                                            },
+
+                                            {
+                                              "name": "X5 M",
+                                              "Price": "",
+                                              "Type": "SUV, Luxury"
+                                            },
+                                            {
+                                              "name": "X6 M",
+                                              "Price": "",
+                                              "Type": "SUV, Luxury"
+                                            }
+                                          ]
+                                        }
+                                      },
+
+                                        "Skoda",
+                                      : {
+                                        "name": "",
+                                        "varient"  :[
+                                        {
+                                          "name": "Rapid",
+                                          "Price" :  "",
+                                          "Type": "Sedan, Diesel"
+                                        },
+                                          {
+                                            "name": "Octavia",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },
+                                          {
+                                            "name": "Superb",
+                                            "Price": "",
+                                            "Type": "Sedan, Diesel"
+                                          },
+                                          {
+                                            "name": "Yeti",
+                                            "Price": "",
+                                            "Type": "SUV, Diesel"
+                                          }
+                                      }
     }
     }
