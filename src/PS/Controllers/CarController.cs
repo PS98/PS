@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using PS.Services;
+using PS.Models;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,14 +24,14 @@ namespace PS.Controllers
 
         // GET: api/car
         [HttpGet]
-        public MongoRepository.CarYearList Get()
+        public CarYearList Get()
         {
             var collectionList = _mongoDb.getAll();
             var carlist = repo.convertToPresentationList(collectionList);
             var yearsList = repo.getYears();
 
-            MongoRepository.CarYearList list
-                = new MongoRepository.CarYearList();
+            CarYearList list
+                = new CarYearList();
             list.carList = carlist;
             list.yearsList = yearsList;
             return list;

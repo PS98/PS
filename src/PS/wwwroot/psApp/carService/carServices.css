@@ -1,8 +1,11 @@
-﻿a{
-        color: #218be7;
-    text-decoration
+﻿.service a{
+        color: #0026ff;
+        text-decoration:none;
 }
-
+h1, h2, h3, h4,h5,h6{
+    margin-bottom:0;
+    margin-top:0;
+}
 .car-header{
         background: #fff;
     border: 1px solid #e7ebeb;
@@ -36,7 +39,7 @@
     padding-top: 10px;
     color: #4A5155;
 }
-.margin-top10{ margin-top:10px;}
+.spacet-10, .margin-top10{ margin-top:10px;}
 .margin-bottom10{ margin-bottom: 10px}
 .car-option {
     margin-top: 10px;
@@ -221,10 +224,6 @@
     -ms-flex: 1;
     -webkit-flex: 1;
 }
-.b-categories a .content-first {
-    margin-left: 0;
-}
-
 .b-categories a .content, .b-categories a .content-first {
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
@@ -253,7 +252,9 @@
     color: #218be7;
     background-color: #ecf5fd !important;
 }
-
+.b-categories a .content-first {
+    margin-left: 0;
+}
 .icon-common-services, .icon-diagnostics, .icon-repair, .icon-maintenance, .icon-describe, .icon-common-services-selected, .icon-diagnostics-selected, .icon-repair-selected, .icon-maintenance-selected, .icon-describe-selected {
     display: block;
     width: 42px;
@@ -302,6 +303,7 @@
     overflow: scroll;
     overflow-x: hidden;
     color: #4A5155;
+    margin:10px 0;
 }
 .select-service-box ul li {
     cursor: pointer;
@@ -321,6 +323,17 @@
     border-radius: .25em;
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.08);
 }
+.searchContainer input{
+    padding-left:30px;
+}
+.searchContainer .fa-search{
+    position:absolute;
+    padding:14px;
+}
+.remove-icon{
+    color: red; font-size:12px; top: -10px; cursor:pointer;
+}
+
 .select-service-box ul li .service-details {
     font-size: 10px;
     margin-top: 4px;
@@ -335,6 +348,86 @@
     background-image: url("../carService/icons/icon-service-plus.svg");
     background-repeat: no-repeat;
     margin-right: 13px;
+}
+.select-service-box ul .category {
+    color: #6d7579;
+    font-size: 12px;
+    padding: 6px 15px;
+    background-color: #F7F7F7;
+}
+.b-service-adds .b-service {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.b-service {
+    padding: 12px 16px;
+    width: 100%;
+    height: 46px;
+    background: #fff;
+    border: 1px solid #E2E2E2;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    vertical-align: sub;
+}
+.b-service-option{
+    display:inline-flex;
+}
+.b-service-adds .b-adds {
+    padding: 20px;
+    display: block;
+    width: 100%;
+    background: #F8F8F8;
+    border: 1px solid #E2E2E2;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
+    border-radius: 0 0 4px 4px;
+    margin-top: -1px;
+}
+
+.b-service .details {
+    cursor: pointer;
+    text-transform: uppercase;
+    vertical-align: super;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #6d7579;
+    letter-spacing: 0.09em;
+}
+.b-service  p{
+    display:inline-block;
+}
+.b-service .icon-remove-service {
+    cursor: pointer;
+    margin-left: 15px;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background-image: url("../booking/icons/icon-remove-service.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.b-service-textarea textarea {
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: -1px;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+    background: #F8F8F8;
+    border: 1px solid #E2E2E2;
+}
+.b-service-textarea .b-service {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.b-service {
+    padding: 12px 16px;
+    width: 100%;
+    height: 46px;
+    background: #fff;
+    border: 1px solid #E2E2E2;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    vertical-align: sub;
 }
 
 @media only screen and (max-device-width: 480px)  {
