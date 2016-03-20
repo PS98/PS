@@ -71,7 +71,7 @@
             "Type": ""
           },
           {
-            "name": "MPI CARGO BSIV",            
+            "name": "MPI CARGO BSIV",
             "Price": "",
             "Type": ""
           },
@@ -758,6 +758,7 @@
         ]
       },
     },
+  
     {
       "Hyundai": {
         "name": "Eon",
@@ -1100,26 +1101,6 @@
             }
           ]
         },
-        {
-          "name": "Santa Fe",
-          "varient": [
-            {
-              "name": "2 WD MT",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "2 WD AT",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "4 WD AT",
-              "Price": "",
-              "Type": ""
-            }
-          ]
-        },
 
         {
           "name": "Xcent",
@@ -1168,7 +1149,7 @@
               "name": "Base ABS 1.1 CRDi",
               "Price": "",
               "Type": ""
-            },           
+            },
           ]
         },
 
@@ -1269,8 +1250,9 @@
           ]
         },
 
-       
+
       },
+      }
           "Honda",
       : {
 
@@ -1606,66 +1588,62 @@
         "Toyota",
         : {
           {
-            "name": "Etios",
+            "name": "Etios ",
             "varient": [
               {
-                "name": "Liva J PS",
+                "name": "JPS",
                 "Price": "",
-                "Type": ""
+                "Type": "Sedan"
               },
               {
-                "name": "Liva Gl",
+                "name": "G",
                 "Price": "",
-                "Type": ""
+                "Type": "Sedan"
               },
               {
-                "name": "Liva V",
+                "name": "V",
                 "Price": "",
-                "Type": ""
+                "Type": "Sedan"
               },
               {
-                "name": "Liva GD",
+                "name": "GD",
                 "Price": "",
-                "Type": ""
+                "Type": "Sedan"
+              },
+              {
+                "name": "VD",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "VXD",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "VX",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "JD",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "Xclusive Petrol",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "Xclusive Diesel",
+                "Price": "",
+                "Type": "Sedan"
               }
             ]
           },
           {
-            "name": "Liva VX",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "JPS",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "G",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "V",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "GD",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "VD",
-            "Price": "",
-            "Type": ""
-          }
-          ]
-        },
-        "Innova",
-        : {
-          {
-            "name": "Etios",
+            "name": "Innova",
             "varient": [
               {
                 "name": "2.5 G 7 STR BS-III",
@@ -1688,286 +1666,268 @@
                 "name": "2.5 G 8 STR BS-IV",
                 "Price": "",
                 "Type": ""
+              },
+              {
+                "name": "2.5 GX 7 STR BS-III",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 GX 8 STR BS-III",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 GX 7 STR BS-IV",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 GX 8 STR BS-IV",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 VX 7 STR BS-III",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 VX 8 STR BS-III",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 VX 7 STR BS-IV",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 VX 8 STR BS-IV",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 ZX 7 STR BS III",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "2.5 ZX 7 STR BS-IV",
+                "Price": "",
+                "Type": ""
               }
             ]
           },
           {
-            "name": "2.5 GX 7 STR BS-III",
-            "Price": "",
-            "Type": ""
+            "name": "Corolla Altis",
+            "varient": [
+              {
+                "name": "1.8 J(S)",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "D4-DJ",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "1.8 G",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "1.8 G (CVT)",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "1.8 GL",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "1.8 VL AT",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "D4-DG",
+                "Price": "",
+                "Type": "Sedan"
+              },
+              {
+                "name": "D4-DJ+",
+                "Price": "",
+                "Type": "Sedan"
+              }
+            ]
           },
           {
-            "name": "2.5 GX 8 STR BS-III",
-            "Price": "",
-            "Type": ""
+            "name": "Fortuner",
+            "varient": [
+              {
+                "name": "Sportivo 4x2 MT",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "4x2 AT",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "4x2 MT",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "Sportivo 4x2 AT",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "4x4 MT",
+                "Price": "",
+                "Type": ""
+              },
+              {
+                "name": "4x4 AT",
+                "Price": "",
+                "Type": ""
+              }
+            ]
           },
           {
-            "name": "2.5 GX 7 STR BS-IV",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "2.5 GX 8 STR BS-IV",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "2.5 VX 7 STR BS-III",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "2.5 VX 8 STR BS-III",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "2.5 VX 7 STR BS-IV",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "2.5 VX 8 STR BS-IV",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "2.5 ZX 7 STR BS III",
-            "Price": "",
-            "Type": ""
-          },
-          {
-            "name": "2.5 ZX 7 STR BS-IV",
-            "Price": "",
-            "Type": ""
+            "name": "Etios Liva",
+            "varient": [
+              {
+                "name": "VXD",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+              {
+                "name": "J PS",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+              {
+                "name": "G",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+              {
+                "name": "V",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+              {
+                "name": "GD",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+              {
+                "name": "VX",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+
+              {
+                "name": "JD",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+              {
+                "name": "VD",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+              {
+                "name": "V Limited Edition",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+              {
+                "name": "VD Limited Edition",
+                "Price": "",
+                "Type": "Hatchback"
+              },
+
+              {
+                "name": "Etios Cross",
+                "varient": [
+                  {
+                    "name": "V",
+                    "Price": "",
+                    "Type": "Hatchback"
+                  },
+                  {
+                    "name": "G",
+                    "Price": "",
+                    "Type": "Hatchback"
+                  },
+                  {
+                    "name": "VD",
+                    "Price": "",
+                    "Type": "Hatchback"
+                  },
+                  {
+                    "name": "GD",
+                    "Price": "",
+                    "Type": "Hatchback"
+                  }
+                ]
+              },
+              {
+                "name": "Camry",
+                "varient": [
+                  {
+                    "name": "2.5L",
+                    "Price": "",
+                    "Type": ""
+                  },
+                  {
+                    "name": "Hybrid",
+                    "Price": "",
+                    "Type": ""
+                  }
+                ]
+              },
+              {
+                "name": "Prius",
+                "varient": [
+                  {
+                    "name": "Z5",
+                    "Price": "",
+                    "Type": ""
+                  },
+                  {
+                    "name": "Z6",
+                    "Price": "",
+                    "Type": ""
+                  }
+                ]
+              },
+              {
+                "name": "Land Cruiser",
+                "varient": [
+                  {
+                    "name": "Prado VX L",
+                    "Price": "",
+                    "Type": ""
+                  },
+                  {
+                    "name": "200 VX",
+                    "Price": "",
+                    "Type": ""
+                  }
+                ]
+              },
+
           }
           ]
-        },
-        {
-          "name": "Corolla Altis",
-          "varient": [
-            {
-              "name": "1.8 J(S)",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "D4-DJ",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "1.8 G",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "1.8 G (CVT)",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "1.8 GL",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "1.8 VL AT",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "D4-DG",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "D4-DJ+",
-              "Price": "",
-              "Type": ""
-            }
-          ]
-        },
-        {
-          "name": "Fortuner",
-          "varient": [
-            {
-              "name": "Sportivo 4x2 MT",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "4x2 AT",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "4x2 MT",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Sportivo 4x2 AT",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "4x4 MT",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "4x4 AT",
-              "Price": "",
-              "Type": ""
-            }
-          ]
-        },
-        {
-          "name": "Etios",
-          "varient": [
-            {
-              "name": "Liva VXD",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "JD",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Liva JD",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Liva VD",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "VXD",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "VX",
-              "Price": "",
-              "Type": ""
-            },
-            "Etios Cross V",
-            :
-            { },
-            "Etios Cross G",
-            :
-            { },
-            "Etios Cross VD",
-            :
-            { },
-            "Etios Cross GD",
-            :
-            { },
-            "Etios ",
-            :
-            { },
-            "Etios ",
-            :
-            { },
-            "Etios ",
-            :
-            { },
-            "Etios ",
-            :
-            { },
-            {
-              "name": "Cross V",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Cross G",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Cross VD",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Cross GD",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Xclusive Petrol",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Xclusive Diesel",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Liva V Limited Edition",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Liva VD Limited Edition",
-              "Price": "",
-              "Type": ""
-            }
-          ]
-        },
-        {
-          "name": "Camry",
-          "varient": [
-            {
-              "name": "2.5L",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Hybrid",
-              "Price": "",
-              "Type": ""
-            }
-          ]
-        },
-        {
-          "name": "Prius",
-          "varient": [
-            {
-              "name": "Z5",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "Z6",
-              "Price": "",
-              "Type": ""
-            }
-          ]
-        },
-        {
-          "name": "Land Cruiser",
-          "varient": [
-            {
-              "name": "Prado VX L",
-              "Price": "",
-              "Type": ""
-            },
-            {
-              "name": "200 VX",
-              "Price": "",
-              "Type": ""
-            }
-          ]
-        },
-
+        }
       },
 
         "Mahindra",
