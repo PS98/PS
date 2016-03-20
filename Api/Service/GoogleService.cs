@@ -47,9 +47,8 @@ namespace Api.Service
             throw new Exception("ERROR: [GoogleService] BeginAuth the cleint not found!");
         }
 
-        public string RequestToken()
+        public string RequestToken(string code)
         {
-            string code = HttpContext.Current.Request.Params["code"];
             if (code != null)
             {
                 string tokenUrl = "https://accounts.google.com/o/oauth2/token";
@@ -64,7 +63,7 @@ namespace Api.Service
             return "access_denied";
         }
 
-        public Dictionary<string, string> RequestUserProfile()
+        public Dictionary<string, string> RequestUserProfile(string code)
         {
             string profileUrl = string.Format("https://www.googleapis.com/oauth2/v1/userinfo?access_token={0}", _client.Token);
             NameValueCollection header = new NameValueCollection();

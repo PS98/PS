@@ -14,27 +14,6 @@ namespace Api
         public AbstractClientProvider Client { get; set; }
         public IClientService Service { get; set; }
 
-        public string Token
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(Client.Token))
-                    RequestToken();
-                return Client.Token;
-            }
-            set { Client.Token = value; }
-        }
-        public Dictionary<string, string> Profile
-        {
-            get
-            {
-                if (Client.Profile == null)
-                    RequestProfile();
-                return Client.Profile;
-            }
-            set { Client.Profile = value; }
-        }
-
         public Oauth2LoginContext()
         {
         }
@@ -66,23 +45,32 @@ namespace Api
             return Service.BeginAuthentication();
         }
 
-        private void RequestToken()
+        public dynamic RequestToken(string code)
         {
-            string result = Service.RequestToken();
+            string result = Service.RequestToken(code);
             if (result != "access_denied")
+            {
                 Client.Token = result;
-            else
+                return Client.Token;
+            }
+            else {
                 HttpContext.Current.Response.Redirect(Client.FailedRedirectUrl);
+                return false;
+            }
 
         }
 
-        private void RequestProfile()
+        public dynamic RequestProfile(string code)
         {
-            Dictionary<string, string> result = Service.RequestUserProfile();
+            Dictionary<string, string> result = Service.RequestUserProfile(code);
             if (result != null)
+            {
                 Client.Profile = result;
-            else
+                return Client.Profile;
+            }
+            else {
                 throw new Exception("ERROR: [Oauth2LoginContext] Profile is not found!");
+            }
         }
 
     }

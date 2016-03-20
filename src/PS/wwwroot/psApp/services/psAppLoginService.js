@@ -55,10 +55,26 @@
 
        return deferred.promise;
    };
+
+   var _socialCallback = function (data) {
+       debugger;
+       var deferred = $q.defer();
+       $http.post("/api/Auth/Success?Code=" + data.code)
+        .then(function (result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
+
+       return deferred.promise;
+   };
    return {
        login: _login,
        register: _register,
        forgotPassword: _forgotPassword,
        socialLogin: _socialLogin,
+       socialCallback: _socialCallback,
    };   
 }])

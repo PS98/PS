@@ -179,22 +179,21 @@ namespace PS.Controllers
             return Json(new { Url = url });
         }
 
-        public ActionResult Succes(/*string email = "", */string bindpage = "")
+        public ActionResult Success(string code)
         {
-            string param1 = Request.QueryString.Value;
             try
             {
-                var token = _context.Token;
-                var result = _context.Profile;
+                var token = _context.RequestToken(code);
+                var result = _context.RequestProfile(code);
                 var strResult = _context.Client.ProfileJsonString;
                 //if (email != "")
                 //    result.Add("email", email);
 
                 return Content("<script type=\"text/javascript\">window.opener.abc('');self.close();</script>");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
                 //RedirectToAction("Error");
             }
         }

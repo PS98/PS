@@ -48,9 +48,8 @@ namespace Api.Service
             throw new Exception("ERROR: BeginAuth the cleint not found!");
         }
 
-        public string RequestToken()
+        public string RequestToken(string code)
         {
-            string code = HttpContext.Current.Request.Params["code"];
             if (code != null)
             {
                 string tokenUrl = string.Format("https://graph.facebook.com/oauth/access_token?");
@@ -67,7 +66,7 @@ namespace Api.Service
             return "access_denied";
         }
 
-        public Dictionary<string, string> RequestUserProfile()
+        public Dictionary<string, string> RequestUserProfile(string code)
         {
             string profileUrl = string.Format("https://graph.facebook.com/me?access_token={0}", _client.Token);
             NameValueCollection header = new NameValueCollection();

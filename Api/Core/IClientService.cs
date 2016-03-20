@@ -9,7 +9,7 @@ namespace Api
         void CreateOAuthClient(AbstractClientProvider oClient);
         
         string BeginAuthentication();
-        string RequestToken();
-        Dictionary<string, string> RequestUserProfile();
+        string RequestToken(string code);
+        Dictionary<string, string> RequestUserProfile(string code);
     }
 }
