@@ -24,7 +24,7 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
                            isLoggedIn: $scope.isLoggedIn,
                            userName: $scope.userName
                        });
-                    // $modalInstance.close();
+                    $("#loginModal").modal('toggle');
                 }
             }, function (error) {
                 //Error

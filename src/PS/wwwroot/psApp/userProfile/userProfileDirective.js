@@ -35,9 +35,9 @@ angular.module("psApp").directive("psUserProfile", ["$rootScope", function ($roo
                 $timeout(function () {
                     $scope.$on("ps-user-profile-show", function (evt, data) {
                         $scope.isLoggedIn = data.isLoggedIn;
-                        $scope.userName = data.userName;
+                        $scope.userName = data.userName;                        
                     });
-                    $scope.$apply();
+                     $scope.$apply();                      
                 
      });
 }]);
