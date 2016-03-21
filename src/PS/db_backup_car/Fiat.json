@@ -1,0 +1,174 @@
+{ 
+    "_id" : ObjectId("56ef5d70ff8db2715e8ef148"), 
+    "name" : "Linea", 
+    "varient" : [
+        {
+            "name" : "Active Fire", 
+            "Price" : "", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Active Multijet", 
+            "Price" : "", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "T-Jet Activ", 
+            "Price" : "", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Dynamic Multijet", 
+            "Price" : "", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "T-Jet Dynamic", 
+            "Price" : "", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Emotion Multijet", 
+            "Price" : "", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "T-Jet Emotion", 
+            "Price" : "", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Classic 1.3 Multijet", 
+            "Price" : "", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Classic Plus 1.3 Multijet", 
+            "Price" : "", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Classic 1.4", 
+            "Price" : "", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Elegante", 
+            "Price" : "", 
+            "Type" : "Sedan, Diesel"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5d78ff8db2715e8ef14a"), 
+    "name" : "Punto", 
+    "varient" : [
+        {
+            "name" : "Evo Active 1.2", 
+            "Price" : "", 
+            "Type" : "HatchBack"
+        }, 
+        {
+            "name" : "Evo Dynamic 1.2", 
+            "Price" : "", 
+            "Type" : "HatchBack"
+        }, 
+        {
+            "name" : "Evo Emotion 1.4", 
+            "Price" : "", 
+            "Type" : "HatchBack"
+        }, 
+        {
+            "name" : "Evo Active Multijet 1.3", 
+            "Price" : "", 
+            "Type" : "HatchBack, Diesel"
+        }, 
+        {
+            "name" : "Evo Dynamic Multijet 1.3", 
+            "Price" : "", 
+            "Type" : "HatchBack, Diesel"
+        }, 
+        {
+            "name" : "Evo Emotion Multijet 1.3", 
+            "Price" : "", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "Evo Multijet 1.3 90 hp", 
+            "Price" : "", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "Evo Sportivo 1.3", 
+            "Price" : "", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "Pure Active Advanced Multijet", 
+            "Price" : "", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "Pure Active Petrol", 
+            "Price" : "", 
+            "Type" : "Hatchback"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5d81ff8db2715e8ef14c"), 
+    "name" : "Avventura", 
+    "varient" : [
+        {
+            "name" : "FIRE Active", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "FIRE Dynamic", 
+            "Price" : "", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "Multijet Dynamic", 
+            "Price" : "", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "Multijet Active", 
+            "Price" : "", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "Multijet Emotion", 
+            "Price" : "", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "Multijet Dynamic", 
+            "Price" : "", 
+            "Type" : "Diesel"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5d89ff8db2715e8ef14e"), 
+    "name" : "Abarth", 
+    "varient" : [
+        {
+            "name" : "595 Competizione", 
+            "Price" : "", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Punto 1.4 T-Jet", 
+            "Price" : "", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Avventura 1.4 T-Jet", 
+            "Price" : "", 
+            "Type" : "Hatchback"
+        }
+    ]
+}

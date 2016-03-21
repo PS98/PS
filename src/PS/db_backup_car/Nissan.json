@@ -1,0 +1,194 @@
+{ 
+    "_id" : ObjectId("56ef5c58ff8db2715e8ef132"), 
+    "name" : "Micra", 
+    "varient" : [
+        {
+            "name" : "XL", 
+            "Price" : "5.33 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV Diesel", 
+            "Price" : "7.18 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV Premium", 
+            "Price" : "7.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Active XL", 
+            "Price" : "4.48 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Active XV", 
+            "Price" : "4.86 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Active XV S", 
+            "Price" : "5.13 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV CVT", 
+            "Price" : "7.05 Lac"
+        }, 
+        {
+            "name" : "X-Shift", 
+            "Price" : "6.4 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL CVT", 
+            "Price" : "6.4 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Active ICC WT20 EDITION", 
+            "Price" : "Not Specified", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5c64ff8db2715e8ef134"), 
+    "name" : "Sunny", 
+    "varient" : [
+        {
+            "name" : "XE PEtrol", 
+            "Price" : "7.51 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL Petrol", 
+            "Price" : "7.89 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL Diesel", 
+            "Price" : "8.89 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV Diesel", 
+            "Price" : "9.73 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL CVT AT Petrol", 
+            "Price" : "9.16 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV Premium Pack(Safety)", 
+            "Price" : "9.99 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV Premium Pack(Leather)", 
+            "Price" : "10.38 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XE Diesel", 
+            "Price" : "8.29 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5c6dff8db2715e8ef136"), 
+    "name" : "Evalia", 
+    "varient" : [
+        {
+            "name" : "XE", 
+            "Price" : "9.14 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XE+", 
+            "Price" : "9.68 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL", 
+            "Price" : "10.51 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV (O)", 
+            "Price" : "11.48 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5c75ff8db2715e8ef138"), 
+    "name" : "Terrano", 
+    "varient" : [
+        {
+            "name" : "XE D", 
+            "Price" : "9.99 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL P", 
+            "Price" : "9.99 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL D", 
+            "Price" : "11.17 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL D Plus", 
+            "Price" : "11.45 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XL D THP", 
+            "Price" : "11.64 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV D THP", 
+            "Price" : "12.61 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV D THP Premium", 
+            "Price" : "12.92 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ICC T20 Edition", 
+            "Price" : "Not Specified", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5c80ff8db2715e8ef13a"), 
+    "name" : "Evalia", 
+    "varient" : [
+        {
+            "name" : "XL(O)", 
+            "Price" : "10.78 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XV", 
+            "Price" : "11.22 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SV", 
+            "Price" : "12.22 Lac", 
+            "Type" : ""
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{ 
+    "_id" : ObjectId("56ef5bcdff8db2715e8ef12c"), 
+    "name" : "Extreme LD", 
+    "varient" : [
+        {
+            "name" : "DI Non Ac 9 Seater BSIII", 
+            "Price" : "6.66 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "CRDFi Non AC 9 Seater BSIV", 
+            "Price" : "7.47 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DI PS Ac 9 Seater BSIII", 
+            "Price" : "8.2 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "CRDFi PS AC9 Seater BSIII", 
+            "Price" : "7.71 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "CRDFi PS Ac 9 Seater BSIV", 
+            "Price" : "8.51 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5bd5ff8db2715e8ef12e"), 
+    "name" : "Extreme SD", 
+    "varient" : [
+        {
+            "name" : "DI 9 Seater BSIII", 
+            "Price" : "8.35 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "CRDFi 9 Seater BSIV", 
+            "Price" : "9.12 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "CRDFi 9 Seater BSIII", 
+            "Price" : "8.81 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5bdeff8db2715e8ef130"), 
+    "name" : "Extreme VD", 
+    "varient" : [
+        {
+            "name" : "CRDFi 7 Seater BSIII", 
+            "Price" : "9.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DI 7 Seater BSIII", 
+            "Price" : "8.93 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "CRDFi 7 Seater BSIV", 
+            "Price" : "9.79 Lac", 
+            "Type" : ""
+        }
+    ]
+}

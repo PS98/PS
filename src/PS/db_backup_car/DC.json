@@ -1,0 +1,11 @@
+{ 
+    "_id" : ObjectId("56ef551bff8db2715e8ef09e"), 
+    "name" : "Avanti", 
+    "varient" : [
+        {
+            "name" : "Standard", 
+            "Price" : "36.81 Lac", 
+            "Type" : ""
+        }
+    ]
+}

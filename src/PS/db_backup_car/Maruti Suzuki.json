@@ -1,0 +1,763 @@
+{ 
+    "_id" : ObjectId("56eed351bc9bd93bf4faa334"), 
+    "name" : "Alto 800", 
+    "varient" : [
+        {
+            "name" : "STD", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vxi (Airbag)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LX", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI CNG", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "STD (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : " LX (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI CNG (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed362bc9bd93bf4faa336"), 
+    "name" : "Omni", 
+    "varient" : [
+        {
+            "name" : "5 STR BS-IV", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E 8 STR BS-IV", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "MPI CARGO BSIV", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "MPI AMBULANCE BSIV", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed36dbc9bd93bf4faa338"), 
+    "name" : "Eeco", 
+    "varient" : [
+        {
+            "name" : "5 STR", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "7 STR", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5 STR with A/c +HTR", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5 STR with HTR CNG", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Ambulance", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GREEN 5 SEATER W/O AC", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GREEN 5 Seater WITH AC", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed381bc9bd93bf4faa33a"), 
+    "name" : "Wagon R", 
+    "varient" : [
+        {
+            "name" : "LXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXi CNG", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Stingray VXI AMT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Stingray LXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXI AMT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Stingray VXI (O) AMT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXI (O) AMT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Stingray LXi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI CNG (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed38cbc9bd93bf4faa33c"), 
+    "name" : "Swift", 
+    "varient" : [
+        {
+            "name" : "LXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LDi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VDi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZDi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Glory special edition VXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Glory special edition VDI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi(O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LDi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VDi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DZire VXI (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Dzire LDi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DZire VDi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DZire VXI (O) AT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DZire ZDI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DZire LXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DZire VXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Swift DZire LDI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Dzire ZXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Dzire VDI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DZire ZDI AGS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DZire VXI AT", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed39bbc9bd93bf4faa33e"), 
+    "name" : "Ertiga", 
+    "varient" : [
+        {
+            "name" : "LXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi CNG", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LDI SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LDI (O) SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXI AT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VDI SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZXI Plus", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZDI SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZDI SHVS Plus", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3a7bc9bd93bf4faa340"), 
+    "name" : "Gyspy", 
+    "varient" : [
+        {
+            "name" : "Hard Top", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Soft Top", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3b1bc9bd93bf4faa342"), 
+    "name" : "Ritz", 
+    "varient" : [
+        {
+            "name" : "LXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vxi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vxi ABS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Zxi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Ldi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vdi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vdi ABS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Zdi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi AT", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3bcbc9bd93bf4faa344"), 
+    "name" : "Alto K10", 
+    "varient" : [
+        {
+            "name" : "LXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LX", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXI (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXI AGS Automatic", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI CNG", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI CNG (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXI AGS (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3cabc9bd93bf4faa346"), 
+    "name" : "Celerio", 
+    "varient" : [
+        {
+            "name" : "LXI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXI AT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi AT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZXi(OPT)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Green VXi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LDI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZXi AMT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VDI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZDI", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZDI (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LXi (O) AMT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi (O) MT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VXi (O) AMT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZXi (O) AMT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LDi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VDi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Green VXi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3d5bc9bd93bf4faa348"), 
+    "name" : "Ciaz", 
+    "varient" : [
+        {
+            "name" : "Vxi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vxi Plus", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Zxi", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Zxi Plus", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vxi Plus AT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Zxi AT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vdi (O) SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vdi Plus SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vdi SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Zdi Plus SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Zdi SHVS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Vxi (O)", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZXi+ RS", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "ZDi Plus SHVS RS", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3dfbc9bd93bf4faa34a"), 
+    "name" : "S-Cross", 
+    "varient" : [
+        {
+            "name" : "1.3L Sigma", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.6L Delta", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.3L Delta", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.6L Zeta", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.3L Zeta", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.6L Alpha", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.3L Alpha", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.3 Premia", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3edbc9bd93bf4faa34c"), 
+    "name" : "Baleno", 
+    "varient" : [
+        {
+            "name" : "1.3 Delta", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.3 Sigma", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.3 Zeta", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.3 Alpha", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.2 Sigma", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.2 Delta", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.2 CVT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.2 Zeta", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.2 Alpha", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}

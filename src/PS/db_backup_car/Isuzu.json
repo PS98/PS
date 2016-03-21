@@ -1,0 +1,37 @@
+{ 
+    "_id" : ObjectId("56ef58afff8db2715e8ef0e8"), 
+    "name" : "MU-7", 
+    "varient" : [
+        {
+            "name" : "High BS4 4x2 MT", 
+            "Price" : "20.14 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Premium BS4 4x2 AT", 
+            "Price" : "23.9 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef58b8ff8db2715e8ef0ea"), 
+    "name" : "D-MAX", 
+    "varient" : [
+        {
+            "name" : "Single Cab Flat Deck with A/c", 
+            "Price" : "6.84 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SPACE CAB Flat deck", 
+            "Price" : "6.67 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SPACE CAB Arched deck", 
+            "Price" : "7.64 Lac", 
+            "Type" : ""
+        }
+    ]
+}

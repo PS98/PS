@@ -1,0 +1,196 @@
+{ 
+    "_id" : ObjectId("56eede8cbc9bd93bf4faa38c"), 
+    "name" : "Fiesta", 
+    "varient" : [
+        {
+            "name" : "Ambiente", 
+            "Price" : "8.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Ambiente 1.5 TDCi", 
+            "Price" : "5.71 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Trend", 
+            "Price" : "9.4 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Fiesta Titanium", 
+            "Price" : "10.19 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eede94bc9bd93bf4faa38e"), 
+    "name" : "Figo", 
+    "varient" : [
+        {
+            "name" : "Aspire 1.2 Ti-VCT Ambiente", 
+            "Price" : "5.16 Lac"
+        }, 
+        {
+            "name" : "Aspire 1.2 Ti-VCT Titanium Plus", 
+            "Price" : "7.33 Lac"
+        }, 
+        {
+            "name" : "Aspire 1.2 Ti-VCT Trend", 
+            "Price" : "5.89 Lac"
+        }, 
+        {
+            "name" : "Aspire 1.2 Ti-VCT Titanium", 
+            "Price" : "6.78 Lac"
+        }, 
+        {
+            "name" : "Aspire 1.5 Ti-VCT AT Titanium", 
+            "Price" : "7.88 Lac"
+        }, 
+        {
+            "name" : "Aspire 1.5 TDCi Ambiente", 
+            "Price" : "6.16 Lac"
+        }, 
+        {
+            "name" : "Aspire 1.5 TDCi Trend", 
+            "Price" : "6.89 Lac"
+        }, 
+        {
+            "name" : "Aspire 1.5 TDCi Titanium", 
+            "Price" : "7.78 Lac"
+        }, 
+        {
+            "name" : "Aspire 1.5 TDCi Titanium Plus", 
+            "Price" : "8.33 Lac"
+        }, 
+        {
+            "name" : "Ambiente 1.2 Ti-VCT", 
+            "Price" : "4.71 Lac"
+        }, 
+        {
+            "name" : "Titanium Plus 1.2 Ti-VCT", 
+            "Price" : "6.47 Lac"
+        }, 
+        {
+            "name" : "Trend Plus 1.2 Ti-VCT", 
+            "Price" : "5.26 Lac"
+        }, 
+        {
+            "name" : "Trend 1.2 Ti-VCT", 
+            "Price" : "5.12 Lac"
+        }, 
+        {
+            "name" : "Titanium 1.2 Ti-VCT", 
+            "Price" : "5.83 Lac"
+        }, 
+        {
+            "name" : "Trend Plus 1.5 TDCi", 
+            "Price" : "6.23 Lac"
+        }, 
+        {
+            "name" : "Trend 1.5 TDCi", 
+            "Price" : "6.12 Lac"
+        }, 
+        {
+            "name" : "Base 1.5 TDCi", 
+            "Price" : "5.42 Lac"
+        }, 
+        {
+            "name" : "Titanium 1.5 TDCi", 
+            "Price" : "6.83 Lac"
+        }, 
+        {
+            "name" : "base 1.2 Ti-VCT", 
+            "Price" : "4.42 Lac"
+        }, 
+        {
+            "name" : "Titanium 1.5 Ti-VCT AT", 
+            "Price" : "6.98 Lac"
+        }, 
+        {
+            "name" : "Titanium Plus 1.5 TDCi", 
+            "Price" : "7.47 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eede9cbc9bd93bf4faa390"), 
+    "name" : "EcoSport", 
+    "varient" : [
+        {
+            "name" : "1.5L Ti-VCT Ambiente", 
+            "Price" : "7 Lac"
+        }, 
+        {
+            "name" : "1.5L Ti-VCT Trend", 
+            "Price" : "7.96 Lac"
+        }, 
+        {
+            "name" : "1.5L Ti-VCT Titanium", 
+            "Price" : "9.12 Lac"
+        }, 
+        {
+            "name" : "1.5L Ti-VCT Titanium(AT)", 
+            "Price" : "9.99 Lac"
+        }, 
+        {
+            "name" : "1.0L EcoBoost Trend+", 
+            "Price" : "8.74 Lac"
+        }, 
+        {
+            "name" : "1.0L EcoBoost Titanium+", 
+            "Price" : "10.1 Lac"
+        }, 
+        {
+            "name" : "1.5L EcoBoost Ambiente", 
+            "Price" : "8.19 Lac"
+        }, 
+        {
+            "name" : "1.5L TDCi Trend", 
+            "Price" : "8.91 Lac"
+        }, 
+        {
+            "name" : "1.5L TDCi Titanium", 
+            "Price" : "9.99 Lac"
+        }, 
+        {
+            "name" : "1.5L TDCi Trend Plus", 
+            "Price" : "9.39 Lac"
+        }, 
+        {
+            "name" : "1.5L TDCi Titanium Plus", 
+            "Price" : "10.65 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedea6bc9bd93bf4faa392"), 
+    "name" : "Endeavour", 
+    "varient" : [
+        {
+            "name" : "2.2L 4x2 AT Trend", 
+            "Price" : "24.39 Lac"
+        }, 
+        {
+            "name" : "2.2L 4x4 MT Trend", 
+            "Price" : "25.49 Lac"
+        }, 
+        {
+            "name" : "2.2L 4x2 AT Titanium", 
+            "Price" : "26.14 Lac"
+        }, 
+        {
+            "name" : "3.2L 4x4 AT Trend", 
+            "Price" : "26.54 Lac"
+        }, 
+        {
+            "name" : "3.2L 4x4 AT Titanium", 
+            "Price" : "28.15 Lac"
+        }, 
+        {
+            "name" : "2.2L 4x2 MT Trend", 
+            "Price" : "23.64 Lac"
+        }
+    ]
+}
