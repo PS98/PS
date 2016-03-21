@@ -4,17 +4,9 @@ angular.module("psApp").directive("psUserProfile", ["$rootScope", function ($roo
     return {
         controller: "sho",
         templateUrl: "psApp/userProfile/userProfileTemplate.html",
+        replace:true,
         link: function (scope, el, ctrl, attr) {            
            
-            scope.shobhit = function ($event) {                 
-                
-                if (!scope.showMenu) {
-                   
-                    scope.showMenu = true;
-                } else {
-                    scope.showMenu = false;
-                }
-            };
     }
     };
 }]).controller("sho", ["$scope", "$timeout", "$location", "psLoginService", function sho($scope, $timeout, $location, psLoginService) {
@@ -32,12 +24,4 @@ angular.module("psApp").directive("psUserProfile", ["$rootScope", function ($roo
         });
     }
 
-                $timeout(function () {
-                    $scope.$on("ps-user-profile-show", function (evt, data) {
-                        $scope.isLoggedIn = data.isLoggedIn;
-                        $scope.userName = data.userName;                        
-                    });
-                     $scope.$apply();                      
-                
-     });
 }]);

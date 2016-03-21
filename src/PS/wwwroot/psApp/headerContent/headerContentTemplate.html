@@ -46,10 +46,22 @@
                                 <li><a href="/NewsGrid">NEWS GRID</a></li>
                                 <li><a href="/NewsDetails">NEWS DETAILS</a></li>
                                 <li>
-                                    <!--<a ng-click="login()" ng-show="!auth.isAuthenticated">LOGIN</a>-->
-                                    <a class="btn btn-launch" data-toggle="modal" data-target="#loginModal" ng-show="!isLoggedIn">Login</a>
-                                    <ps-user-profile ng-show="isLoggedIn"></ps-user-profile>
+                                    <a ng-if="!isLoggedIn" class="btn btn-launch" data-toggle="modal" data-target="#loginModal" >Login</a>
+                                    <ps-user-profile ng-if="isLoggedIn"></ps-user-profile>
                                 </li>
+                                <!--<li ng-if="isLoggedIn">
+                                    <div>
+                                        <a>{{ userName }}</a>
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle jelect" type="button" id="drpdownLogout" ng-click="shobhit($event)" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="fa fa-chevron-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu jelect-options" ng-class="showMenu ? 'drpDownVisible': 'drpDownInvisible'" role="menu" aria-labelledby="drpdownLogout">
+                                                <li><a role="menuitem" ng-click="logout()">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>-->
                                 <li>
                                     <a href="/Service">Service</a>
                                 </li>
@@ -65,7 +77,6 @@
 </div>
 <!-- end header__inner -->
 <!-- end header -->
-
 <!-- -Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -134,7 +145,7 @@
                                 <div class="clearfix"></div>
                                 <form name="regForm">
                                     <div class="form-group">
-                                        <div class="input-group"  style="float: left;">
+                                        <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
                                             <input type="text" class="form-control" id="rusername" name="rusername" placeholder="Username" ng-model="regUsername" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required>
                                         </div>
@@ -151,7 +162,7 @@
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.remail.$error.required && regForm.remail.$error.email && regForm.remail.$dirty">Enter a valid email address</p>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group"  style="float: left;">
+                                        <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
                                             <input type="password" class="form-control" id="rpassword" name="rpassword" ng-model="regPassword" placeholder="Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
                                         </div>
@@ -160,7 +171,7 @@
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.rpassword.$error.required && !regForm.rpassword.$error.minlength && !regForm.rpassword.$error.maxlength && regForm.rpassword.$error.pattern && regForm.rpassword.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</p>
                                     </div>
                                     <div class="form-group">
-                                        <div class="input-group"  style="float: left;">
+                                        <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
                                             <input type="password" class="form-control" id="rcnfpassword" name="rcnfpassword" ng-model="cnfPassword" placeholder="Password Again!!!" required>
                                         </div>

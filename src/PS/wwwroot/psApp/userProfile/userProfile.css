@@ -1,6 +1,6 @@
 ﻿.ps-user-profile-small{
     color:#333;
-    padding-top:38px;
+    padding:47px 13px 0;
 }
 
 .fontChngRaleway{
@@ -16,7 +16,8 @@
 
 .ps-user-profile-small img{
     width:40px;
-    height:40px;
+    height:30px;
+   margin-right:10px;   
 }
 
 .ps-dashboard-controls{
@@ -37,20 +38,15 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, .8);
     background-size:cover;
 }
-.drpDownVisible
-{
-    display:block;
+.btn-default{
+    padding:4px;
 }
-.drpDownInvisible{
-    display:none;
+.yamm .nav > li > div {
+    display:inline-flex; padding :50px 13px 5px;
 }
-.dropdown-menu1{
-    background-color: #222;
-    padding:0;
-    left:auto;
-    border:none;
+.yamm .nav > li > div > a {
+    padding-right:15px; position:relative; font: 700 12px Raleway; color: #FFF; text-transform: uppercase;  transition: all .3s ease-out;
 }
-.formatDrpDown{
-    padding:5px;
-    background:white;
+.yamm  .dropdown-menu{
+    margin-right:10px;
 }
