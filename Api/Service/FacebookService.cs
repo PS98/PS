@@ -48,16 +48,16 @@ namespace Api.Service
             throw new Exception("ERROR: BeginAuth the cleint not found!");
         }
 
-        public string RequestToken(string code)
+        public string RequestToken(string token)
         {
-            if (code != null)
+            if (token != null)
             {
                 string tokenUrl = string.Format("https://graph.facebook.com/oauth/access_token?");
                 string post = string.Format("client_id={0}&redirect_uri={1}&client_secret={2}&code={3}",
                                             _client.ClientId,
                                             HttpUtility.HtmlEncode(_client.CallBackUrl),
                                             _client.ClientSecret,
-                                            code);
+                                            token);
                 string resonseJson = RestfullRequest.Request(tokenUrl, "POST", "application/x-www-form-urlencoded", 
                                                                                         null, post, _client.Proxy);
                 resonseJson = "{\"" + resonseJson.Replace("=", "\":\"").Replace("&", "\",\"") + "\"}";
