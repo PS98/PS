@@ -1,0 +1,168 @@
+{ 
+    "_id" : ObjectId("56ef54ceff8db2715e8ef094"), 
+    "name" : "Polo", 
+    "varient" : [
+        {
+            "name" : "Trendline 1.2L(P)", 
+            "Price" : "5.33 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Comfortline 1.2L(P)", 
+            "Price" : "6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Highline 1.2L(P)", 
+            "Price" : "6.87 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GT TDI", 
+            "Price" : "8.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GT TSI", 
+            "Price" : "8.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Trendline 1.5L (D)", 
+            "Price" : "6.68 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Highline 1.5L (D)", 
+            "Price" : "8.22 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Comfortline 1.5L(D)", 
+            "Price" : "7.55 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Polo 1.2L MPI Exquisite", 
+            "Price" : "6.7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Polo 1.5L TDI Exquisite", 
+            "Price" : "8.05 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef54d9ff8db2715e8ef096"), 
+    "name" : "Cross Polo", 
+    "varient" : [
+        {
+            "name" : "1.5 TDI", 
+            "Price" : "8.77 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.2 MPI", 
+            "Price" : "7.48 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef54e3ff8db2715e8ef098"), 
+    "name" : "Jetta", 
+    "varient" : [
+        {
+            "name" : "Trendline TSI", 
+            "Price" : "14.15 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Trendline TDI", 
+            "Price" : "15.32 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Comfortable TDI", 
+            "Price" : "17.24 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Highline TDI", 
+            "Price" : "19.15 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "hline TDI", 
+            "Price" : "20.18 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef54ebff8db2715e8ef09a"), 
+    "name" : "Vento", 
+    "varient" : [
+        {
+            "name" : "1.5 TDI TRENDLINE", 
+            "Price" : "9.1 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.5 TDI COMFORTLINE", 
+            "Price" : "10 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.5 TDI HIGHLINE", 
+            "Price" : "10.94 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.5 TDI COMFORTLINE AT", 
+            "Price" : "11.24 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.5 TDI HIGHLINE AT", 
+            "Price" : "12.13 Lac"
+        }, 
+        {
+            "name" : "1.6 MPI TRENDLINE", 
+            "Price" : "7.85 Lac"
+        }, 
+        {
+            "name" : "1.6 MPI COMFORTLINE", 
+            "Price" : "8.79 Lac"
+        }, 
+        {
+            "name" : "1.6 MPI HIGHLINE", 
+            "Price" : "9.68 Lac"
+        }, 
+        {
+            "name" : "1.2L TSI COMFORTLINE AT", 
+            "Price" : "9.87 Lac"
+        }, 
+        {
+            "name" : "1.2 TSI HIGHLINE AT", 
+            "Price" : "10.88 Lac"
+        }, 
+        {
+            "name" : "1.6L MPI Highline Plus", 
+            "Price" : "9.7 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef54f4ff8db2715e8ef09c"), 
+    "name" : "Bettle", 
+    "varient" : [
+        {
+            "name" : "1.4 TSI", 
+            "Price" : "30.25 Lac", 
+            "Type" : ""
+        }
+    ]
+}

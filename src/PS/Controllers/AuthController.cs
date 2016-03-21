@@ -2,6 +2,7 @@
 using Api.Client;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.OptionsModel;
+using Newtonsoft.Json;
 using PS.Services;
 using PS.ViewModels.Account;
 using RestSharp.Extensions.MonoHttp;
@@ -184,12 +185,12 @@ namespace PS.Controllers
             try
             {
                 var token = _context.RequestToken(code);
-                var result = _context.RequestProfile(code);
+                var result = _context.RequestProfile(token);
                 var strResult = _context.Client.ProfileJsonString;
                 //if (email != "")
                 //    result.Add("email", email);
 
-                return Content("<script type=\"text/javascript\">window.opener.abc('');self.close();</script>");
+                return Content("<script type=\"text/javascript\">window.opener.abc('" + JsonConvert.SerializeObject(strResult) + "');self.close();</script>");
             }
             catch (Exception ex)
             {

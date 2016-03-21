@@ -1,0 +1,232 @@
+{ 
+    "_id" : ObjectId("56ef53b7ff8db2715e8ef086"), 
+    "name" : "Pulse", 
+    "varient" : [
+        {
+            "name" : "RxL", 
+            "Price" : "5.04 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RxL Airbags", 
+            "Price" : "6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RxZ", 
+            "Price" : "6.81 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef53c1ff8db2715e8ef088"), 
+    "name" : "Scala", 
+    "varient" : [
+        {
+            "name" : "RxL", 
+            "Price" : "7.7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RxL", 
+            "Price" : "8.72 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RxZ", 
+            "Price" : "9.11 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef53ceff8db2715e8ef08a"), 
+    "name" : "Duster", 
+    "varient" : [
+        {
+            "name" : "RxE", 
+            "Price" : "8.47 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "85 PS RxE", 
+            "Price" : "9.47 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RxL Petrol", 
+            "Price" : "9.27 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "85 PS RxL", 
+            "Price" : "10.27 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "110 PS RxZ", 
+            "Price" : "12.27 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "STD", 
+            "Price" : "9.27 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "110 PS RXZ AMT", 
+            "Price" : "12.87 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "110 PS RXL AMT", 
+            "Price" : "11.67 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "110 PS RXZ 4x4 MT", 
+            "Price" : "13.57 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "85 PS RXZ", 
+            "Price" : "11.47 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Duster 110 PS RXL", 
+            "Price" : "11.07 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Duster 85 PS RXS", 
+            "Price" : "10.77 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef53d7ff8db2715e8ef08c"), 
+    "name" : "Fluence", 
+    "varient" : [
+        {
+            "name" : "Diesel E2", 
+            "Price" : "14.73 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Diesel E4", 
+            "Price" : "16.31 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef53e1ff8db2715e8ef08e"), 
+    "name" : "Koleos", 
+    "varient" : [
+        {
+            "name" : "4x4 MT", 
+            "Price" : "26.68 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "4x2 Mt", 
+            "Price" : "23.48 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "4x4 AT", 
+            "Price" : "27.75 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef53ebff8db2715e8ef090"), 
+    "name" : "Lodgy", 
+    "varient" : [
+        {
+            "name" : "85 PS Std", 
+            "Price" : "8.29 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "85 PS RXE", 
+            "Price" : "9.09 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "85 PS RXL", 
+            "Price" : "9.69 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "110 PS RxL", 
+            "Price" : "10.09 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "85 PS RXZ", 
+            "Price" : "10.99 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "110 PS RXZ 8 STR", 
+            "Price" : "11.59 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "110 PS RXZ 7 STR", 
+            "Price" : "11.89 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Stepway RxZ 110PS 8-Seater", 
+            "Price" : "11.99 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Stepway RxZ 110PS 7-Seater", 
+            "Price" : "12.29 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef53f4ff8db2715e8ef092"), 
+    "name" : "KWID", 
+    "varient" : [
+        {
+            "name" : "STD", 
+            "Price" : "2.6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RXE", 
+            "Price" : "2.96 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RXL", 
+            "Price" : "3.21 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RXT", 
+            "Price" : "3.54 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RXE (O)", 
+            "Price" : "3.03 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RXT (O)", 
+            "Price" : "3.64 Lac", 
+            "Type" : ""
+        }
+    ]
+}

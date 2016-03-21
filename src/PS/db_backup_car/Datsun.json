@@ -1,0 +1,67 @@
+{ 
+    "_id" : ObjectId("56ef5cbfff8db2715e8ef13c"), 
+    "name" : "GO", 
+    "varient" : [
+        {
+            "name" : "A", 
+            "Price" : "3.49 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "D", 
+            "Price" : "3.23 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "T", 
+            "Price" : "", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "T (O)", 
+            "Price" : "", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "NXT", 
+            "Price" : "", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "A EPS", 
+            "Price" : "", 
+            "Type" : "Hatchback"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5cc7ff8db2715e8ef13e"), 
+    "name" : "Go+MPV", 
+    "varient" : [
+        {
+            "name" : "D", 
+            "Price" : "", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "A", 
+            "Price" : "", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "T", 
+            "Price" : "", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "T (O)", 
+            "Price" : "", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "A EPS", 
+            "Price" : "", 
+            "Type" : "Minivan/MUV"
+        }
+    ]
+}

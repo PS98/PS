@@ -16,3 +16,343 @@
         }
     ]
 }
+{ 
+    "_id" : ObjectId("56eeda7bbc9bd93bf4faa378"), 
+    "name" : "Indica", 
+    "varient" : [
+        {
+            "name" : "eV2 LS", 
+            "Price" : "4.39 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "eV2 LX", 
+            "Price" : "4.75 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "eCS LS (TDI) BS III", 
+            "Price" : "5.33 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eeda84bc9bd93bf4faa37a"), 
+    "name" : "Indigo", 
+    "varient" : [
+        {
+            "name" : "eCS CS-LS", 
+            "Price" : "5.7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "eCS CS-LX", 
+            "Price" : "5.87 Lac"
+        }, 
+        {
+            "name" : "eCS GVX", 
+            "Price" : "5.4 Lac"
+        }, 
+        {
+            "name" : "eCS VX", 
+            "Price" : "6.25 Lac"
+        }, 
+        {
+            "name" : "Vista LS TDI BS-III", 
+            "Price" : "5.01 Lac"
+        }, 
+        {
+            "name" : "Vista LX TDI BS-III", 
+            "Price" : "5.47 Lac"
+        }, 
+        {
+            "name" : "Vista LS Quadrajet", 
+            "Price" : "5.47 Lac"
+        }, 
+        {
+            "name" : "Vista VX Tech", 
+            "Price" : "6.19 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "eCS GLS CNG", 
+            "Price" : "5.06 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "eCS GLX CNG", 
+            "Price" : "5.34 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedb1cbc9bd93bf4faa37c"), 
+    "name" : "Sumo Gold", 
+    "varient" : [
+        {
+            "name" : "CX BS III", 
+            "Price" : "6.31 Lac"
+        }, 
+        {
+            "name" : "CX BS IV", 
+            "Price" : "6.65 Lac"
+        }, 
+        {
+            "name" : "EX BS III", 
+            "Price" : "7.21 Lac"
+        }, 
+        {
+            "name" : "EX BS IV", 
+            "Price" : "7.37 Lac"
+        }, 
+        {
+            "name" : "GX BS IV", 
+            "Price" : "8.03 Lac"
+        }, 
+        {
+            "name" : "CX PS BS III", 
+            "Price" : "6.57 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "CX PS BS IV", 
+            "Price" : "6.91 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedb24bc9bd93bf4faa37e"), 
+    "name" : "Xenon", 
+    "varient" : [
+        {
+            "name" : "XT EX 4x2", 
+            "Price" : "9.95 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XT EX 4x4", 
+            "Price" : "10.98 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedb32bc9bd93bf4faa380"), 
+    "name" : "Safari", 
+    "varient" : [
+        {
+            "name" : "4x2 LX DICOR BS-IV", 
+            "Price" : "8.99 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "4x2 EX DICOR BS-IV", 
+            "Price" : "10.29 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Storme 2.2 LX 4x2", 
+            "Price" : "9.99 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Storme 2.2 EX 4x2", 
+            "Price" : "11.68 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Storme 2.2 VX 4x2", 
+            "Price" : "13.02 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Storme 2.2 VX 4x4", 
+            "Price" : "14.32 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Storme VX 4x2 Varicor 400", 
+            "Price" : "13.26 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Storme VX 4x4 Varicor 400", 
+            "Price" : "14.6 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedbcdbc9bd93bf4faa382"), 
+    "name" : "Winger", 
+    "varient" : [
+        {
+            "name" : "Platinum BS-III", 
+            "Price" : "7.2 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Platinum BS-IV", 
+            "Price" : "7.56 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedbd7bc9bd93bf4faa384"), 
+    "name" : "Zest", 
+    "varient" : [
+        {
+            "name" : "XE Petrol", 
+            "Price" : "4.88 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XE 75 PS Diesel", 
+            "Price" : "5.94 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XM Petrol", 
+            "Price" : "5.56 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XMS Petrol", 
+            "Price" : "5.77 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XT Petrol", 
+            "Price" : " 6.35 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XM Diesel", 
+            "Price" : "6.62 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XMS Diesel", 
+            "Price" : "6.83 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XT Diesel", 
+            "Price" : "7.39 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XMA Diesel", 
+            "Price" : "7.33 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XTA Diesel", 
+            "Price" : "8.15 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedbefbc9bd93bf4faa386"), 
+    "name" : "Nano", 
+    "varient" : [
+        {
+            "name" : "GenX XT", 
+            "Price" : "2.54 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GenX XE", 
+            "Price" : "2 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GenX XM CNG", 
+            "Price" : "2.56 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GenX XTA AMT", 
+            "Price" : "2.94 Lac"
+        }, 
+        {
+            "name" : "GenX XM", 
+            "Price" : "2.34 Lac"
+        }, 
+        {
+            "name" : "GenX XMA AMT", 
+            "Price" : "2.74 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedbf8bc9bd93bf4faa388"), 
+    "name" : "Aria", 
+    "varient" : [
+        {
+            "name" : "Aria Pure LX 4x2", 
+            "Price" : "10.49 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Aria Pleasure 4x2", 
+            "Price" : "12.65 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Aria Pride 4x4", 
+            "Price" : "15.51 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eedc03bc9bd93bf4faa38a"), 
+    "name" : "Bolt", 
+    "varient" : [
+        {
+            "name" : "XT Diesel", 
+            "Price" : "7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XE Diesel", 
+            "Price" : "5.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XM Diesel", 
+            "Price" : "6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XMS Diesel", 
+            "Price" : "6.35 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XT Petrol", 
+            "Price" : "6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XE Petrol", 
+            "Price" : "4.45 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Bolt XM Petrol", 
+            "Price" : "5.16 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "XMS Petrol", 
+            "Price" : "5.41 Lac", 
+            "Type" : ""
+        }
+    ]
+}
