@@ -1,3 +1,3 @@
 ﻿"use strict";
 
-angular.module("index", ["auth0", "ngStorage"]);
+angular.module("index", ["ngStorage"]);

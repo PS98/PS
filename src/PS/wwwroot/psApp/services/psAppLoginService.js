@@ -57,11 +57,12 @@
    };
 
    var _socialCallback = function (data) {
-       debugger;
+      
        var deferred = $q.defer();
        $http.post("/api/Auth/Success?Code=" + data.code)
         .then(function (result) {
             //Success
+           // window.close();
             deferred.resolve(result.data);
         }, function (error) {
             //Error
