@@ -46,7 +46,7 @@
                                 <li><a href="/NewsGrid">NEWS GRID</a></li>
                                 <li><a href="/NewsDetails">NEWS DETAILS</a></li>
                                 <li>
-                                    <a ng-if="!isLoggedIn" class="btn btn-launch" data-toggle="modal" data-target="#loginModal" >Login</a>
+                                    <a ng-if="!isLoggedIn" ng-controller="sho" class="btn btn-launch" data-toggle="modal" ng-click="openloginModal()" >Login</a>
                                     <ps-user-profile ng-if="isLoggedIn"></ps-user-profile>
                                 </li>
                                 <!--<li ng-if="isLoggedIn">
@@ -77,6 +77,7 @@
 </div>
 <!-- end header__inner -->
 <!-- end header -->
+
 <!-- -Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -117,10 +118,10 @@
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">Required</p>
                                     </div>
-                                    <button type="button" id="login_btn" class="btn btn-block bt-login" ng-disabled="loginForm.$invalid" ng-click="loginSubmit()" data-loading-text="Signing In....">Login</button>
+                                    <button type="button" id="login_btn" class="btn btn-block bt-login" style="margin-bottom:12px;" ng-disabled="loginForm.$invalid" ng-click="loginSubmit()" data-loading-text="Signing In....">Login</button>
                                     <div class="clearfix"></div>
-                                    <input type="button" name="Google" value="Google" ng-click="socialSubmit('Google')" /><br />
-                                    <input type="button" name="Facebook" value="Facebook" ng-click="socialSubmit('Facebook')" /><br />
+                                    <input type="button" name="Google" value="Google" style="float:left;" ng-click="socialSubmit('Google')" />
+                                    <input type="button" name="Facebook" value="Facebook" style="float:right;" ng-click="socialSubmit('Facebook')" /><br />
                                     <br />
                                     <div class="login-modal-footer">
                                         <div class="row">

@@ -36,6 +36,12 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
             });
     }
 
+    $scope.openloginModal = function () {
+        debugger;
+        $("#loginModal").modal('toggle');
+    }
+
+
     $scope.registerSubmit = function () {
         if ($scope.regPassword == $scope.cnfPassword) {
             psLoginService.register($scope.regUsername, $scope.regEmail, $scope.regPassword)
