@@ -2,14 +2,17 @@
   
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {};  $scope.selectedJob = [];
+    $scope.carList = {};
     $scope.selectBrand = function (brandName) {
         $scope.showBrandName = false; $scope.showMakeYears = true; $scope.showModel = false; $scope.showVarient = false;
         if ($scope.selectedCar.brand != brandName) {
             $scope.selectedCar = {};
+            $scope.carList.carTypes = {};
+            $scope.carList.carVarientList = {};
             $scope.selectedCar.brand = brandName;
             psDataServices.getCarType(brandName).
              success(function (data) {
-                 $scope.carTypes = data;
+                 $scope.carList.carTypes = data;
              }).error(function () {
              });
         }
@@ -20,10 +23,10 @@
     }
     $scope.selectModel = function (model) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = true;
-        $scope.selectedCar.model = model;
+        $scope.selectedCar.model = model; $scope.selectedCar.varient = '';
         psDataServices.getCarVarient($scope.selectedCar.brand, model).
           success(function (data) {
-              $scope.carVarientList = data;
+              $scope.carList.carVarientList = data;
           }).error(function () {
           });
     }
@@ -92,8 +95,8 @@
     }
      psDataServices.getAllCarColletion().
         success(function (data) {
-            $scope.carCollections = data.carList;
-            $scope.yearsList = data.yearsList;
+            $scope.carList.carCollections = data.carList;
+            $scope.carList.yearsList = data.yearsList;
         }).error(function(){
         });
      

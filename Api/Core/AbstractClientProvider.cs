@@ -14,8 +14,8 @@ namespace Api
         public string FailedRedirectUrl { get; set; }
         public string Proxy { get; set; }
         public string Token { get; set; }
-        public Dictionary<string, string> Profile { get; set; }
-        public string ProfileJsonString { get; set; }
+        //public Dictionary<string, string> Profile { get; set; }
+        //public string ProfileJsonString { get; set; }
 
         protected AbstractClientProvider() { }
 

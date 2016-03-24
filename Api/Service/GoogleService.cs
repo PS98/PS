@@ -5,6 +5,7 @@ using System.Web;
 using Newtonsoft.Json;
 using Api.Client;
 using Api.Core;
+using Api.Model;
 
 namespace Api.Service
 {
@@ -63,27 +64,14 @@ namespace Api.Service
             return "access_denied";
         }
 
-        public Dictionary<string, string> RequestUserProfile(string code)
+        public object RequestUserProfile(string code)
         {
-            string profileUrl = string.Format("https://www.googleapis.com/oauth2/v1/userinfo?access_token={0}", _client.Token);
-            NameValueCollection header = new NameValueCollection();
-            header.Add("Accept-Language", "en_US");
-            string result = RestfullRequest.Request(profileUrl, "GET", "application/x-www-form-urlencoded", header, null, _client.Proxy);
-            _client.ProfileJsonString = result;
-            GoogleClinet.UserProfile data = JsonConvert.DeserializeAnonymousType(result, new GoogleClinet.UserProfile());
+            var profileUrl = string.Format("https://www.googleapis.com/oauth2/v1/userinfo?access_token={0}", _client.Token);
+            var header = new NameValueCollection {{"Accept-Language", "en_US"}};
+            var result = RestfullRequest.Request(profileUrl, "GET", "application/x-www-form-urlencoded", header, null, _client.Proxy);
+            var data = JsonConvert.DeserializeAnonymousType(result, new GoogleUserProfile());
 
-            Dictionary<string, string> dictionary = new Dictionary<string, string>();
-            dictionary.Add("source", "Google");
-            dictionary.Add("id", data.Id);
-            dictionary.Add("email", data.Email);
-            dictionary.Add("verified_email", data.Verified_email);
-            dictionary.Add("name", data.Name);
-            dictionary.Add("given_name", data.Given_name);
-            dictionary.Add("family_name", data.Family_name);
-            dictionary.Add("link", data.Link);
-            dictionary.Add("picture", data.Picture);
-            dictionary.Add("gender", data.Gender);
-            return dictionary;
+            return data;
         }
     }
 }

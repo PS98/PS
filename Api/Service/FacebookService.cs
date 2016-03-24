@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Web;
 using Api.Client;
 using Api.Core;
+using Api.Model;
 using Newtonsoft.Json;
 
 namespace Api.Service
@@ -38,10 +40,9 @@ namespace Api.Service
             if (_client != null)
             {
                 _oauthUrl = string.Format("https://www.facebook.com/dialog/oauth?" +
-                                "client_id={0}&redirect_uri={1}&scope={2}&state={3}&display=popup",
+                                "client_id={0}&redirect_uri={1}&state={2}&display=popup",
                                 _client.ClientId,
                                 HttpUtility.HtmlEncode(_client.CallBackUrl),
-                                _client.Scope,
                                 "");
                 return _oauthUrl;
             }
@@ -66,26 +67,14 @@ namespace Api.Service
             return "access_denied";
         }
 
-        public Dictionary<string, string> RequestUserProfile(string code)
+        public object RequestUserProfile(string code)
         {
-            string profileUrl = string.Format("https://graph.facebook.com/me?access_token={0}", _client.Token);
-            NameValueCollection header = new NameValueCollection();
-            header.Add("Accept-Language", "en-US");
-            string result = RestfullRequest.Request(profileUrl, "GET", "application/x-www-form-urlencoded", header,null, _client.Proxy);
-            _client.ProfileJsonString = result;
-            FacebookClient.UserProfile data = JsonConvert.DeserializeAnonymousType(result, new FacebookClient.UserProfile());
+            var profileUrl = string.Format("https://graph.facebook.com/me?access_token={0}&fields={1}", _client.Token, _client.Scope);
+            var header = new NameValueCollection {{"Accept-Language", "en-US"}};
+            var result = RestfullRequest.Request(profileUrl, "GET", "application/x-www-form-urlencoded", header,null, _client.Proxy);
+            var data = JsonConvert.DeserializeAnonymousType(result, new FacebookUserProfile());
 
-            Dictionary<string, string> dictionary = new Dictionary<string, string>();
-            dictionary.Add("source", "Facebook");
-            dictionary.Add("id", data.Id);
-            dictionary.Add("name", data.Name);
-            dictionary.Add("first_name", data.First_name);
-            dictionary.Add("last_name", data.Last_name);
-            dictionary.Add("link", data.Link);
-            dictionary.Add("gender", data.Gender);
-            dictionary.Add("email", data.Email);
-            dictionary.Add("picture", data.Picture);
-            return dictionary;
+            return data;
         }
     }
-}
+} 

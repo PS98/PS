@@ -22,11 +22,15 @@ namespace PS.Controllers
         private readonly IEmailSender _emailSender;
         private static Oauth2LoginContext _context;
         public AuthSocialLoginOptions Options { get; }
+        private IMongoRepository _mongoDb;
+        private MongoRepository repo;
 
         public AuthController(IAuthService auth, IEmailSender emailSender, IOptions<AuthSocialLoginOptions> optionsAccessor)
         {
             _auth = auth;
             _emailSender = emailSender;
+        //    _mongoDb = mongoDb;
+          //  this.repo = repo;
             Options = optionsAccessor.Value;
         }
 
@@ -186,11 +190,13 @@ namespace PS.Controllers
             {
                 var token = _context.RequestToken(code);
                 var result = _context.RequestProfile(token);
-                var strResult = _context.Client.ProfileJsonString;
-                //if (email != "")
-                //    result.Add("email", email);
+               //var strResult = _context.Client.ProfileJsonString;
+               
 
-                return Content("<script type=\"text/javascript\">window.opener.abc('" + JsonConvert.SerializeObject(strResult) + "');self.close();</script>");
+                var operation = _auth.SocialLogin(result);
+
+
+                return Content("<script type=\"text/javascript\">window.opener.abc('" + operation + "');self.close();</script>");
             }
             catch (Exception ex)
             {

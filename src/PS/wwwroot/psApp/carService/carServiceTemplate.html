@@ -11,6 +11,7 @@
             </div><!-- end bg-inner -->
         </div><!-- end block-title__inner -->
     </div><!-- end block-title -->
+    <div id="mapholder" style="margin:100px;"></div>
     <div class="container service">
         <div class="row">
             <div class="col-xs-12">
@@ -53,7 +54,7 @@
                                                     YOUR MAKE
                                                 </span>
                                                 <div class="car-selection-flex-container">
-                                                    <ul class="car-selection-flex-column" ng-repeat="carList in carCollections">
+                                                    <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections">
                                                         <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
                                                             <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" width="24" height="24">
                                                             <span ng-bind="carBrand" style="padding-left:10px"></span>
@@ -73,7 +74,7 @@
                                                     <div class="btn-idk" ng-click="selectYearIDK()">
                                                         I don't know
                                                     </div>
-                                                    <ul class="car-selection-flex-column" ng-repeat="years in yearsList">
+                                                    <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList">
                                                         <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
                                                     </ul>
                                                 </div>
@@ -90,7 +91,7 @@
                                                     <div class="btn-idk" ng-click="selectModelIDK()">
                                                         I don't know
                                                     </div>
-                                                    <ul class="car-selection-flex-column" ng-repeat="typeList in carTypes">
+                                                    <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes">
                                                         <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
                                                     </ul>
 
@@ -108,7 +109,7 @@
                                                     <div class="btn-idk" ng-click="selectTrimIDK()">
                                                         I don't know
                                                     </div>
-                                                    <ul class="car-selection-flex-column" ng-repeat="carVarient in carVarientList">
+                                                    <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList">
                                                         <li ng-click="selectVarient(varient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-repeat="varient in carVarient" ng-bind="varient"></li>
                                                     </ul>
                                                 </div>

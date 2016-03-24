@@ -5,7 +5,9 @@ using PS.ViewModels.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Threading.Tasks;
+using Api.Model;
 
 namespace PS.Services
 {
@@ -24,7 +26,7 @@ namespace PS.Services
         public List<Customer> getAll(string colletionName)
         {
             var collection = _database.GetCollection<Customer>(colletionName);
-            var modelList = collection.Find(new BsonDocument()).ToListAsync().Result;
+            var modelList = collection.Find(new BsonDocument()).ToListAsync().Result;   
             return modelList;
         }
 
@@ -105,5 +107,44 @@ namespace PS.Services
                 throw;
             }
         }
+
+        public string SocialLogin(dynamic T)
+        {
+            var rep = new MongoRepository();
+            if (T is GoogleUserProfile)
+            {
+                var collection = rep.GetCollection<GoogleUserProfile>("googleCustomer", "customer");
+
+                //  var filter = Builders<BsonDocument>.Filter.Eq("Email", "");
+                var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
+                if (customerList?.Where(e => e.Email == T.Email).ToList().Count == 0)
+                {
+                    collection.InsertOneAsync(T);
+
+                    return "Success";
+                }
+
+                return "Already Exist";
+
+            }
+             if (T is FacebookUserProfile)
+            {
+                var collection = rep.GetCollection<FacebookUserProfile>("facebookCustomer", "customer");
+
+                var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
+                if (customerList?.Where(e => e.Email == T.Email).ToList().Count == 0)
+                {
+                    collection.InsertOneAsync(T);
+
+                    return "Success";
+                }
+
+                return "Already Exist";
+            }
+            return "unkown Customer";
+        }
+
+
     }
 }
+

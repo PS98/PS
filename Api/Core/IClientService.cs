@@ -10,6 +10,6 @@ namespace Api
         
         string BeginAuthentication();
         string RequestToken(string code);
-        Dictionary<string, string> RequestUserProfile(string code);
+        object RequestUserProfile(string code);
     }
 }
