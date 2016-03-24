@@ -14,6 +14,17 @@ namespace Api.Model
         public string Link { get; set; }
         public string Gender { get; set; }
         public string Email { get; set; }
-        public string Picture { get; set; }
+        public Picture Picture { get; set; }
+    }
+
+    public class Picture
+    {
+        public Data Data { get; set; }
+    }
+
+    public class Data
+    {
+        public bool Is_Silhouette { get; set; }
+        public string Url { get; set; }
     }
 }
