@@ -8,9 +8,7 @@
     "angular": "*",
     "angular-route": "~1.4.8",
     "underscore": "~1.8.3",
-    "angular-storage": "~0.5.0",
-    "angular-jwt": "~0.0.9",
-    "angular-ui-router": "~0.2.18"       
+    "angular-ui-router": "~0.2.18"
   },
   "resolutions": {
     "angular": "1.4.8"
