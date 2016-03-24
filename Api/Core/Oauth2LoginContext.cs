@@ -62,11 +62,11 @@ namespace Api
 
         public dynamic RequestProfile(string code)
         {
-            Dictionary<string, string> result = Service.RequestUserProfile(code);
+           var result = Service.RequestUserProfile(code);
+
             if (result != null)
             {
-                Client.Profile = result;
-                return Client.Profile;
+                return result;
             }
             else {
                 throw new Exception("ERROR: [Oauth2LoginContext] Profile is not found!");

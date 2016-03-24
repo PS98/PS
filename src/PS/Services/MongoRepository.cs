@@ -24,6 +24,14 @@ namespace PS.Services
             _client = new MongoClient(conString);
             _database = _client.GetDatabase("car");
         }
+
+        public IMongoCollection<T> GetCollection<T>(string collectionName, string database)
+        {
+        var dataBase = _client.GetDatabase(database);
+            var collection = dataBase.GetCollection<T>(collectionName);
+            return collection;
+        }
+
         public List<string> getAll()
         {
             var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;

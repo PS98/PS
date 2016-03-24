@@ -185,6 +185,8 @@
     <Compile Include="Core\Oauth2LoginContext.cs" />
     <Compile Include="Core\Oauth2LoginFactory.cs" />
     <Compile Include="Core\RestfullRequest.cs" />
+    <Compile Include="Model\FacebookUserProfile.cs" />
+    <Compile Include="Model\GoogleUserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\FacebookService.cs" />
     <Compile Include="Service\GoogleService.cs" />
