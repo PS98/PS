@@ -6,8 +6,12 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta name="description" content="Google Address Autocomplete API, google search autocomplete api, google jquery autocomplete, google places autocomplete jquery, google maps autocomplete tutorial, google autofill api">
+    <meta name="keywords" content="Google Address Autocomplete API, google search autocomplete api, google jquery autocomplete, google places autocomplete jquery, google maps autocomplete tutorial, google autofill api">
+    <meta name="author" content="https://plus.google.com/+ShobhitVarshney98/">
     <title>Autozone, Home-1</title>
     <base href="/">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200' rel='stylesheet' type='text/css'>
     <link href="~/favicon.png" type="image/x-icon" rel="shortcut icon">
     <link href="~/assets/css/master.css" rel="stylesheet">
     <link href="~/assets/plugins/iview/css/iview.css" rel="stylesheet">
@@ -23,6 +27,7 @@
     <link rel="stylesheet" href="~/css/Site.css" />
     <link href="~/psapp/userprofile/userprofile.css" rel="stylesheet" />
     <link href="~/psapp/headerContent/header.css" rel="stylesheet" />
+    <link href="~/psapp/carservice/carservices.css" rel="stylesheet" />
     <link href="~/ext-modules/logindetails/logindetails.css" rel="stylesheet" />
 
     <script src="~/lib/underscore/underscore-min.js"></script>
@@ -32,14 +37,14 @@
     <script src="//code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
     <script src="~/lib/ngStorage.min.js"></script>
 
-    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
    
 </head>
 
-<body>
+<body onload="initialize()">
     @RenderSection("scripts", required: false)
-  
     
+
     <!-- SCRIPTS -->
     <script src="~/assets/js/jquery-migrate-1.2.1.js"></script>
     <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
