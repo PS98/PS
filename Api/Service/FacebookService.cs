@@ -40,10 +40,9 @@ namespace Api.Service
             if (_client != null)
             {
                 _oauthUrl = string.Format("https://www.facebook.com/dialog/oauth?" +
-                                "client_id={0}&redirect_uri={1}&scope={2}&state={3}&display=popup",
+                                "client_id={0}&redirect_uri={1}&state={2}&display=popup",
                                 _client.ClientId,
                                 HttpUtility.HtmlEncode(_client.CallBackUrl),
-                                _client.Scope,
                                 "");
                 return _oauthUrl;
             }
@@ -70,7 +69,7 @@ namespace Api.Service
 
         public object RequestUserProfile(string code)
         {
-            var profileUrl = string.Format("https://graph.facebook.com/me?access_token={0}", _client.Token);
+            var profileUrl = string.Format("https://graph.facebook.com/me?access_token={0}&fields={1}", _client.Token, _client.Scope);
             var header = new NameValueCollection {{"Accept-Language", "en-US"}};
             var result = RestfullRequest.Request(profileUrl, "GET", "application/x-www-form-urlencoded", header,null, _client.Proxy);
             var data = JsonConvert.DeserializeAnonymousType(result, new FacebookUserProfile());

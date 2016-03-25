@@ -196,7 +196,7 @@ namespace PS.Controllers
                 var operation = _auth.SocialLogin(result);
 
 
-                return Content("<script type=\"text/javascript\">window.opener.abc('" + operation + "');self.close();</script>");
+                return operation;
             }
             catch (Exception ex)
             {

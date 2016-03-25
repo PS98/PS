@@ -1,0 +1,164 @@
+﻿
+
+<!-- -Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content login-modal">
+            <div class="modal-header login-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" id="loginModalLabel">USER AUTHENTICATION</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <div role="tabpanel" class="login-tab">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a id="signin-taba" href="#home" aria-controls="home" role="tab" data-toggle="tab">Sign In</a></li>
+                            <li role="presentation"><a id="signup-taba" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
+                            <li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Forget Password</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="content">
+                            <div role="tabpanel" class="tab-pan active text-center" id="home">
+                                &nbsp;&nbsp;
+                                <p class="text-danger" style="float: left;" ng-show="loginError">{{message}}</p>
+                                <div class="clearfix"></div>
+                                <form name="loginForm">
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                            <input type="email" class="form-control" name="email" id="email" ng-model="Email" placeholder="Email" required>
+                                        </div>
+                                        <p class="text-danger" style="float: left;" ng-show="loginForm.email.$error.required && loginForm.email.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!loginForm.email.$error.required && loginForm.email.$error.email && loginForm.email.$dirty">Enter a valid email address</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                            <input type="password" class="form-control" name="password" id="password" ng-model="Password" placeholder="Password" required>
+                                        </div>
+                                        <p class="text-danger" style="float: left;" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">Required</p>
+                                    </div>
+                                    <button type="button" id="login_btn" class="btn btn-block bt-login" style="margin-bottom:12px;" ng-disabled="loginForm.$invalid" ng-click="loginSubmit()" data-loading-text="Signing In....">Login</button>
+                                    <div id="center-line" class="clearfix"></div>
+                                    <input type="button" name="Google" value="Google" class="google" ng-click="socialSubmit('Google')" />
+                                    <input type="button" name="Facebook" value="Facebook" class="facebook" ng-click="socialSubmit('Facebook')" /><br />
+                                    <br />
+                                    <div class="login-modal-footer">
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8">
+                                                <i class="fa fa-lock"></i>
+                                                <a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+
+                                            </div>
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                                <i class="fa fa-check"></i>
+                                                <a href="javascript:;" class="signup-tab"> Sign Up </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div role="tabpanel" class="tab-pan" id="profile">
+                                &nbsp;&nbsp;
+                                <p class="text-success" style="float: left;" ng-show="regSuccess && !regError">{{successMessage}}</p>
+                                <p class="text-danger" style="float: left;" ng-show="regError && !regSuccess">{{errorMessage}}</p>
+                                <div class="clearfix"></div>
+                                <form name="regForm">
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                            <input type="text" class="form-control" id="rusername" name="rusername" placeholder="Username" ng-model="regUsername" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required>
+                                        </div>
+                                        <p class="text-danger" style="float: left;" ng-show="regForm.rusername.$error.required && regForm.rusername.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rusername.$error.minLength && !regForm.rusername.$error.maxLength && regForm.rusername.$error.pattern && regForm.rusername.$dirty">Must start with a letter, and contain letters &amp; numbers only.</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rusername.$error.required && (regForm.rusername.$error.minlength || regForm.rusername.$error.maxlength) && regForm.rusername.$dirty">Username ust be between 5 and 20 characters.</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div class="input-group-addon"><i class="fa fa-at"></i></div>
+                                            <input type="email" class="form-control" id="remail" name="remail" placeholder="Email" ng-model="regEmail" required>
+                                        </div>
+                                        <p class="text-danger" style="float: left;" ng-show="regForm.remail.$error.required && regForm.remail.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.remail.$error.required && regForm.remail.$error.email && regForm.remail.$dirty">Enter a valid email address</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                            <input type="password" class="form-control" id="rpassword" name="rpassword" ng-model="regPassword" placeholder="Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
+                                        </div>
+                                        <p class="text-danger" style="float: left;" ng-show="regForm.rpassword.$error.required && regForm.rpassword.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rpassword.$error.required && (regForm.rpassword.$error.minlength || regForm.rpassword.$error.maxlength) && regForm.rpassword.$dirty">Passwords must be between 8 and 20 characters.</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rpassword.$error.required && !regForm.rpassword.$error.minlength && !regForm.rpassword.$error.maxlength && regForm.rpassword.$error.pattern && regForm.rpassword.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                                            <input type="password" class="form-control" id="rcnfpassword" name="rcnfpassword" ng-model="cnfPassword" placeholder="Password Again!!!" required>
+                                        </div>
+                                        <p class="text-danger" style="float: left;" ng-show="regForm.rcnfpassword.$error.required && regForm.rcnfpassword.$dirty">Please confirm your password.</p>
+                                        <p class="text-danger" style="float: left;" ng-show="regPassword != cnfPassword && !regForm.rcnfpassword.$error.required && regForm.rcnfpassword.$error.noMatch && regForm.rcnfpassword.$dirty">Passwords do not match.</p>
+                                    </div>
+                                    <button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." ng-disabled="regForm.$invalid" ng-click="registerSubmit()">Register</button>
+                                    <div class="clearfix"></div>
+                                    <div class="login-modal-footer">
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8">
+                                                <i class="fa fa-lock"></i>
+                                                <a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+
+                                            </div>
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                                <i class="fa fa-check"></i>
+                                                <a href="javascript:;" class="signin-tab"> Sign In </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div role="tabpanel" class="tab-pan text-center" id="forget_password">
+                                &nbsp;&nbsp;
+                                <span id="reset_fail" class="response_error" style="display: none;"></span>
+                                <div class="clearfix"></div>
+                                <form name="fgtForm">
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                            <input type="email" class="form-control" id="femail" name="femail" placeholder="Email" ng-model="fgtEmail" required>
+                                        </div>
+                                        <p class="text-danger" style="float: left;" ng-show="fgtForm.femail.$error.required && fgtForm.femail.$dirty">Required</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!fgtForm.femail.$error.required && fgtForm.femail.$error.email && fgtForm.femail.$dirty">Enter a valid email address</p>
+
+                                    </div>
+
+                                    <button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait...." ng-disabled="fgtForm.$invalid" ng-click="forgotSubmit()">Forget Password</button>
+                                    <div class="clearfix"></div>
+                                    <div class="login-modal-footer">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <i class="fa fa-lock"></i>
+                                                <a href="javascript:;" class="signin-tab"> Sign In </a>
+
+                                            </div>
+
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <i class="fa fa-check"></i>
+                                                <a href="javascript:;" class="signup-tab"> Sign Up </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- - Login Model Ends Here -->
