@@ -1,31 +1,52 @@
-﻿body{
-    color: #888888;
-    font-family: 'Bree Serif',serif;
-    font-size: 16px;
-    min-height: 2000px;
+﻿
+/*/* Login related CSS Classes*/
+.bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
+    background-color: #ff8627;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
 }
 
-.login_modal_footer{margin-top:5px;}
-.login_modal_header .modal-title {text-align: center;font-family:'Philosopher',sans-serif; }
-.form-group{position: relative;}
-.form-group .login-field-icon {
-    font-size: 20px;
-    position: absolute;
-    right: 15px;
-    top: 3px;
-    transition: all 0.25s ease 0s;
-    padding-top: 2%;
+
+.login-tab {
+	margin: 0 auto;
+	max-width: 380px;
 }
-.login-modal{
-    width:100%;
-    padding-bottom:20px;
+
+.login-modal-header {
+	background: #27ae60;
+	color: #fff;
 }
-.login_modal_header, .login_modal_footer {background: #00BB64 !important;color:#fff;}
-.modal-register-btn{margin: 4% 33% 2% 33% ;width:100%;}
-.login-modal input{height:40px; box-shadow: none; border:1px solid #ddd;}
-.modal-body-left{float:left; width:50%; padding-right:4%; border-right:4px solid #ddd;}
-.modal-body-right{float:right; width:47%;}
-.login-link{padding:0 20%;}
+
+.login-modal-header .modal-title {
+	color: #fff;
+}
+
+.login-modal-header .close {
+	color: #fff;
+}
+
+.login-modal i {
+	color: #000;
+}
+
+.login-modal form {
+	max-width: 340px;
+}
+
+.tab-pane form {
+	margin: 0 auto;
+}
+.content > .tab-pan {
+  display: none;
+  background-color: #fff;
+  padding: 0 15px 0;
+}
+.content > .active {
+  display: block;
+}
+
 .modal-social-icons{padding:0 10%;}
 .facebook, .twitter, .google, .linkedin {width:100%;height:40px; padding-top:2%; margin-top:2%;}
 .modal-icons{margin-left: -10px; margin-right: 20px;}
@@ -34,9 +55,4 @@
 .facebook, .facebook:hover{background-color: #3b5999; border:2px solid #3b5999;color:#fff;}
 .linkedin, .linkedin:hover{background-color: #007bb6; border: 2px solid #007bb6; color:#fff;}
 #social-icons-conatainer{position: relative;}
-#center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
-.modal-login-btn{width:100%;height:40px; margin-bottom:10px;}
-#modal-launcher{margin: 30% 0 0 30%; }
-h1{border-bottom:5px solid #00BB64;}
-
-
+#center-line{right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
