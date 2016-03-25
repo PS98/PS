@@ -18,7 +18,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                 }
                 else if (result.result) {
                     $scope.userDetails.userName = result.result;
-                    $scope.userDetails.imageUrl = "/psApp/carService/car_logos/bmw_img.png";
+                    $scope.userDetails.imageUrl = "/assets/img/icon-user-default.png";
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
                     $localStorage.userDetails = $scope.userDetails;
@@ -109,7 +109,6 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
     if (loc.code != null && loc.code != undefined) {
         psLoginService.socialCallback($location.search())
          .then(function (result) {
-             debugger;
                 window.close();
                 $scope.userDetails.userName = result.result[0];
                 $scope.userDetails.imageUrl = result.result[1];

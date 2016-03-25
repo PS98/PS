@@ -1,7 +1,6 @@
 ﻿angular.module("psApp").controller("headerContentController", ["$scope", "$localStorage", "$location", "$rootScope", "psLoginService",
 function ($scope, $localStorage, $location,$rootScope, psLoginService) {
-   
-    $scope.displayPopUp = false;
+
     $scope.isLoggedIn = $localStorage.userDetails ? true : false ;
     $scope.userDetails = $localStorage.userDetails ? $localStorage.userDetails : "";
 
@@ -11,7 +10,6 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
     });
 
     $scope.openloginModal = function () {
-        $scope.displayPopUp = true;
         $("#loginModal").modal('toggle');
     }
 
