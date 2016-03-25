@@ -90,6 +90,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                .then(function (result) {
                    //Success
                    if (result && result.url) {
+                       $("#loginModal").modal('toggle');
                        $scope.openwindow(result.url, "", w, fbHeight);
                    }
                }, function (error) {
