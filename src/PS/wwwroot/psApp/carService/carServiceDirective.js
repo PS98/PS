@@ -99,9 +99,18 @@ angular.module("psApp").directive("carServiceCategory", function () {
                     ' <li ng-click="addSelectedJob(job)" ng-repeat="job in commonServices">' +
                     '<div class="icon-service-plus pull-left"></div>' +
                     ' {{ job.type }}' +
-                    '<div class="service-details pull-right" ng-click="showDetails(job); $event.stopPropagation();" ng-if="job.details">Details</div>' +
+                    '<div class="service-details pull-right" ng-click="showDetails(job.details); $event.stopPropagation();" ng-if="(job.details || []).length > 0">Details</div>' +
                                                       '  </li> </ul> </div> </div> </div>',
         //controller: controller
     };
+
+});
+
+angular.module("psApp").directive("selectACar", function () {
+    return {
+        scope: true,
+        templateUrl: "~/psApp/carServices/selectACar.html"
+    
+}
 
 });
