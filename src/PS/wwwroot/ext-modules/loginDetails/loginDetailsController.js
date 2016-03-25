@@ -1,7 +1,7 @@
-﻿angular.module("loginDetails").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope", "psLoginService",
+﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope", "psLoginService",
 function ($scope, $localStorage, $location,$rootScope, psLoginService) {
     $scope.isBusy = true;
-    $scope.isLoggedIn = false;
+  //  $scope.isLoggedIn = false;
     $scope.loginError = false;
     $scope.regError = false;
     $scope.regSuccess = false;
@@ -17,14 +17,14 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
                     $scope.message = result.message;
                 }
                 else if (result.result) {
-                    $scope.userName = result.result;
+                    $scope.userDetails = result;
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
-                    $localStorage.userName = result;
+                    $localStorage.userDetails = result;
                     $rootScope.$broadcast("ps-user-profile-show",
                        {
                            isLoggedIn: $scope.isLoggedIn,
-                           userName: $scope.userName
+                           userDetails: result
                        });
                     $("#loginModal").modal('toggle');
                 }
@@ -104,10 +104,17 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
         window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizeable=no,location=no,status=no');
     }
 
-    $scope.logout = function () {
-        //  auth.signout();
-        $scope.isLoggedIn = false;
-        $localStorage.$reset();
-        // $modalInstance.close();
+    var loc = $location.search();
+    if (loc.code != null && loc.code != undefined) {
+        psLoginService.socialCallback($location.search())
+         .then(function (result) {
+             //Success
+             alert(result);
+         }, function (error) {
+             //Error
+         }).finally(function () {
+             $scope.isBusy = false;
+         });
     }
+   
 }]);

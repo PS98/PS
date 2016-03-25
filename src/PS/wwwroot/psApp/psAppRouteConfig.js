@@ -53,7 +53,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    config: {
                        url: "/Auth/Success",
                        template: "",
-                       controller: "sho"
+                       controller: "loginDetailsController"
                    }
                }
         ];

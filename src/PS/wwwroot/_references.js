@@ -49,7 +49,6 @@
 /// <reference path="ext-modules/index/typesofvehiclesdirective.js" />
 /// <reference path="ext-modules/logindetails/loginDetailsController.js" />
 /// <reference path="ext-modules/logindetails/loginDetailsDirective.js" />
-/// <reference path="ext-modules/logindetails/loginDetailsModule.js" />
 /// <reference path="ext-modules/newsdetails/newsdetailscontroller.js" />
 /// <reference path="ext-modules/newsDetails/newsDetailsDirective.js" />
 /// <reference path="ext-modules/newsDetails/newsDetailsModule.js" />
