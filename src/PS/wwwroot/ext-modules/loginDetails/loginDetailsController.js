@@ -1,11 +1,11 @@
-﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope", "psLoginService",
-function ($scope, $localStorage, $location,$rootScope, psLoginService) {
+﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService",
+function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) {
     $scope.isBusy = true;
   //  $scope.isLoggedIn = false;
     $scope.loginError = false;
     $scope.regError = false;
     $scope.regSuccess = false;
-    
+    $scope.userDetails = {};
 
     $scope.loginSubmit = function () {
        
@@ -17,14 +17,15 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
                     $scope.message = result.message;
                 }
                 else if (result.result) {
-                    $scope.userDetails = result;
+                    $scope.userDetails.userName = result.result;
+                    $scope.userDetails.imageUrl = "/psApp/carService/car_logos/bmw_img.png";
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
-                    $localStorage.userDetails = result;
+                    $localStorage.userDetails = $scope.userDetails;
                     $rootScope.$broadcast("ps-user-profile-show",
                        {
                            isLoggedIn: $scope.isLoggedIn,
-                           userDetails: result
+                           userDetails: $scope.userDetails
                        });
                     $("#loginModal").modal('toggle');
                 }
@@ -108,9 +109,21 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
     if (loc.code != null && loc.code != undefined) {
         psLoginService.socialCallback($location.search())
          .then(function (result) {
-             //Success
-             alert(result);
-         }, function (error) {
+             debugger;
+                window.close();
+                $scope.userDetails.userName = result.result[0];
+                $scope.userDetails.imageUrl = result.result[1];
+
+                $localStorage.userDetails = $scope.userDetails;
+                $rootScope.$broadcast("ps-user-profile-show",
+                         {
+                             isLoggedIn: $scope.isLoggedIn,
+                             userDetails: $scope.userDetails
+                         });
+                opener.location.reload(); 
+                window.close();
+
+            }, function (error) {
              //Error
          }).finally(function () {
              $scope.isBusy = false;
