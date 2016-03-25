@@ -184,7 +184,7 @@ namespace PS.Controllers
             return Json(new { Url = url });
         }
 
-        public ActionResult Success(string code)
+        public JsonResult Success(string code)
         {
             try
             {
@@ -196,7 +196,7 @@ namespace PS.Controllers
                 var operation = _auth.SocialLogin(result);
 
 
-                return operation;
+                return Json(new { Result = operation });
             }
             catch (Exception ex)
             {
