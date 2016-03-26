@@ -52,7 +52,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    state: "socialCallback",
                    config: {
                        url: "/Auth/Success",
-                       template: "",
+                       template: "<div id='page-preloader'><span class='spinner'></span></div>",
                        controller: "loginDetailsController"
                    }
                }
