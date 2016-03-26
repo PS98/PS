@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Remoting;
 using System.Threading.Tasks;
 using Api.Model;
+using Newtonsoft.Json;
 
 namespace PS.Services
 {
@@ -108,9 +109,10 @@ namespace PS.Services
             }
         }
 
-        public string SocialLogin(dynamic T)
+        public List<string> SocialLogin(dynamic T)
         {
             var rep = new MongoRepository();
+            List<string> data = new List<string>();
             if (T is GoogleUserProfile)
             {
                 var collection = rep.GetCollection<GoogleUserProfile>("googleCustomer", "customer");
@@ -121,27 +123,37 @@ namespace PS.Services
                 {
                     collection.InsertOneAsync(T);
 
-                    return "Success";
+                    return T.ToJson();
                 }
-
-                return "Already Exist";
-
+                else {
+                    foreach (var i in customerList?.Where(e => e.Email == T.Email).ToList())
+                    {
+                        data.Add(i.Given_Name);
+                        data.Add(i.Picture);
+                        return data;
+                    }
+                }
             }
              if (T is FacebookUserProfile)
             {
                 var collection = rep.GetCollection<FacebookUserProfile>("facebookCustomer", "customer");
-
                 var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
                 if (customerList?.Where(e => e.Email == T.Email).ToList().Count == 0)
                 {
                     collection.InsertOneAsync(T);
 
-                    return "Success";
+                    return T.ToJson();
                 }
-
-                return "Already Exist";
+                else {
+                    foreach(var i in customerList?.Where(e => e.Email == T.Email).ToList())
+                    {
+                        data.Add(i.First_Name);
+                        data.Add(i.Picture.Data.Url);
+                        return data;
+                    } 
+                }
             }
-            return "unkown Customer";
+            return null;
         }
 
 

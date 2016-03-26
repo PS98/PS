@@ -62,7 +62,6 @@
        $http.post("/api/Auth/Success?Code=" + data.code)
         .then(function (result) {
             //Success
-           // window.close();
             deferred.resolve(result.data);
         }, function (error) {
             //Error

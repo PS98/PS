@@ -16,8 +16,12 @@
 
 .ps-user-profile-small img{
     width:40px;
-    height:30px;
-   margin-right:10px;   
+    height:40px;
+   margin-right:10px; 
+   background: no-repeat;
+   background-size:cover;  
+   border-radius: 150px;
+   margin-top: -15px;
 }
 
 .ps-dashboard-controls{
@@ -28,16 +32,6 @@
     padding-left: 10px;
 }
 
-.circular {
-    width: 300px;
-    height: 300px;
-    border-radius: 150px;
-    background: no-repeat;
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    background-size:cover;
-}
 .btn-default{
     padding:4px;
 }

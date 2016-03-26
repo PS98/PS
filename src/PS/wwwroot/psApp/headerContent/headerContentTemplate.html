@@ -46,11 +46,12 @@
                                 <li><a href="/NewsGrid">NEWS GRID</a></li>
                                 <li><a href="/NewsDetails">NEWS DETAILS</a></li>
                                 <li>
-                                    <a href="" ng-click="openloginModal()" >LOGIN</a>
-                                </li>                                
+                                    <a href="/Service/Car">Service</a>
+                                </li> 
                                 <li>
-                                    <a href="/Service">Service</a>
-                                </li>                                
+                                    <a href="" ng-if="!isLoggedIn" ng-click="openloginModal()">LOGIN</a>
+                                    <ps-user-profile ng-if="isLoggedIn"></ps-user-profile>
+                                </li>                                                               
                             </ul>
                         </div>
                     </div>
@@ -62,4 +63,4 @@
 </div>
 <!-- end header__inner -->
 <!-- end header -->
-<login-details ng-if="displayPopUp" ng-controller="loginDetailsController"></login-details>
+<login-details ng-controller="loginDetailsController"></login-details>

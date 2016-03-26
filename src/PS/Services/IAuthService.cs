@@ -13,6 +13,6 @@ namespace PS.Services
         int register(RegisterViewModel data);
         bool forgotPassword(ForgotPasswordViewModel data);
 
-        string SocialLogin(dynamic type);
+        List<string> SocialLogin(dynamic type);
     }
 }
