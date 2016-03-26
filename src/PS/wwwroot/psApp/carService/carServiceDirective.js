@@ -30,26 +30,3 @@ angular.module("psApp").directive("carService", function () {
         // controllerAs: "vm"
     };
 });
-
-angular.module("psApp").directive("carServiceCategory", function () {
-
-       return {
-           scope:true,
-           //restrict: 'E',
-           //scope:{
-           //    serviceType: '='
-           //},
-
-           template: '<div class="row spacet-10">' +
-                   '<div class="col-sm-12">' +
-                    '  <div class="select-service-box">' +
-                    ' <ul>' +
-                    ' <li ng-click="addSelectedJob(job)" ng-repeat="job in commonServices">' +
-                    '<div class="icon-service-plus pull-left"></div>' +
-                    ' {{ job.type }}' +
-                    '<div class="service-details pull-right" ng-click="showDetails(job.details); $event.stopPropagation();" ng-if="(job.details || []).length > 0">Details</div>' +
-                                                      '  </li> </ul> </div> </div> </div>',
-        //controller: controller
-    };
-
-});
