@@ -459,7 +459,7 @@ pre                             { margin-bottom:20px; }
 
 /* ANIMATION STYLINGS
 ============================================================================= */
-#signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
+#service-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
 
 /* basic styling for entering and leaving */
 /* left and right added to ensure full width */
