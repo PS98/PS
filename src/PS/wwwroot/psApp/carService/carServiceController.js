@@ -1,6 +1,6 @@
 ﻿angular.module("psApp").controller("carServiceController", ["$scope", "psDataServices", function ($scope, psDataServices) {
     
-
+    $scope.center = {};
    
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {};  $scope.selectedJob = [];
@@ -103,9 +103,11 @@
         success(function (data) {
             $scope.carList.carCollections = data.carList;
             $scope.carList.yearsList = data.yearsList;
-        }).error(function(){
+            // $scope.center.services = data.carList;
+         }).error(function(){
         });
-     
-     
+   
+   $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
+   
 }]);
 

@@ -1,0 +1,16 @@
+﻿<div class="centre-list-item well">
+    <div class="centre-list-item_heading">{{ center.Name }} </div>
+    <div class="centre-list-item_body">
+        <div class="row">
+            <div class="col-lg-8">
+                <div> {{ center.addressline1 }},</div>
+                <div> {{ center.addressline2 }}</div>
+                <i class="fa fa-phone"></i> <span>{{ center.phoneNo }}</span>
+            </div>
+            <div class="col-lg-4">
+                <button class="btn btn-kf btn-sm btn-primary btn-show-on-map btn-block" data-ng-if="!activeCenter">Show On Map <i class="fa fa-chevron-right"></i></button>
+                <button class="btn btn-kf btn-sm btn-primary btn-show-on-map btn-block" data-ng-if="activeCenter" data-carscentrecode="101985">Show On Map <i class="fa fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
