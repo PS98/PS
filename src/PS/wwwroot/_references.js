@@ -74,6 +74,7 @@
 /// <reference path="psapp/carservice/carservicecontroller.js" />
 /// <reference path="psapp/carservice/carservicedirective.js" />
 /// <reference path="psapp/carservice/script.js" />
+/// <reference path="psapp/carservice/selectcentredirective.js" />
 /// <reference path="psapp/directives/psCarDetailsDirective.js" />
 /// <reference path="psapp/directives/psIndexDirective.js" />
 /// <reference path="psapp/directives/psNewsDetailsDirective.js" />
