@@ -1,5 +1,5 @@
-﻿using Api;
-using Api.Client;
+﻿using PS.Api;
+using PS.Api.Client;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.OptionsModel;
 using Newtonsoft.Json;
