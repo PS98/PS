@@ -62,6 +62,20 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                          template: "<select-centre></select-centre>"
                      }
                  },
+                 {
+                     state: "service.appointment",
+                     config: {
+                         url: "/book",
+                         template: "<book-appointment></book-appointment>"
+                     }
+                 },
+                  {
+                      state: "service.address",
+                      config: {
+                          url: "/address",
+                          template: "<select-address></select-address>"
+                      }
+                  },
                {
                    state: "socialCallback",
                    config: {
