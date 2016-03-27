@@ -1,9 +1,9 @@
 ﻿
 <div class="container" style="margin-top: 60px;">
-    <div class="row">
+    <div class="row centre-list">
         <div class="col-md-6">
             <div class="car-header">
-                <centre-details></centre-details>
+                <centre-details centre="selectedCentre" isActive="{}" add ="selectCentre(dirCentre)" class="active"></centre-details>
 
                 <h4 class="header-text">Working Hours</h4>
                 <table class="table table-bordered table-condensed table-striped table-hover">
@@ -66,22 +66,22 @@
         <div class="col-md-6">
             <div class="car-header">
                 <div id="mapholder"></div>
-                <div class="centre-list" style="">
+                <div>
                     <hr>
                     <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
                     <div class="centre-list_first">
-                        <centre-details></centre-details>
+                        <centre-details  centre="recommendedCentre" add ="selectCentre(dirCentre)"  ng-class="recommendedCentre.Name == selectedCentre.Name ?'active' :''"></centre-details>
                     </div>
                     <hr>
                     <h4 class="centre-list_other-title">Other centres nearby</h4>
                     <div class="centre-list_other">
+                        <centre-details centre ="centre" ng-repeat="centre in centreList" add="selectCentre(dirCentre)" ng-class="centre.Name == selectedCentre.Name ?'active' :''"></centre-details>
+                        <!--<centre-details></centre-details>
                         <centre-details></centre-details>
                         <centre-details></centre-details>
                         <centre-details></centre-details>
                         <centre-details></centre-details>
-                        <centre-details></centre-details>
-                        <centre-details></centre-details>
-                        <centre-details></centre-details>
+                        <centre-details></centre-details>-->
                     </div>
                 </div>
             </div>

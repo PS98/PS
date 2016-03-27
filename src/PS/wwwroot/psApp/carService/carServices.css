@@ -105,6 +105,11 @@ h1, h2, h3, h4,h5,h6{
     border: 1px solid #e7ebeb;
     padding: 20px 20px 50px 20px;
 }
+.centre-list .active {
+    /*background: #2196f3;*/
+    background: rgba(33, 150, 243, 0.22);
+}
+
 .list-flex-container {
     display: -webkit-box;
     display: -ms-flexbox;
