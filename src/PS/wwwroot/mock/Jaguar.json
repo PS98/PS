@@ -1,0 +1,114 @@
+{ 
+    "_id" : ObjectId("56ef5b8fff8db2715e8ef124"), 
+    "name" : "XF", 
+    "varient" : [
+        {
+            "name" : "R 5.0 V8", 
+            "Price" : "74.21 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Aero-Sport 2.2", 
+            "Price" : "52.52 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Executive Edition 2.2", 
+            "Price" : "47.67 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5b97ff8db2715e8ef126"), 
+    "name" : "XJ", 
+    "varient" : [
+        {
+            "name" : "L 3.0", 
+            "Price" : "1.05 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "L 5.0", 
+            "Price" : "2.08 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "L 3.0 V6 Portfolio", 
+            "Price" : "1.4 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "L 2.0 L Portfolio", 
+            "Price" : "99.23 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "2.0L", 
+            "Price" : "99.23 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "3.0L", 
+            "Price" : "98.03 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "3.0L Portfolio", 
+            "Price" : "1.05 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5ba0ff8db2715e8ef128"), 
+    "name" : "F-Type", 
+    "varient" : [
+        {
+            "name" : "S 3.0 V6", 
+            "Price" : "1.54 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S 5.0 V8", 
+            "Price" : "1.81 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "3.0 S/C Coupe(ST1 340 PS)", 
+            "Price" : "1.26 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "3.0 S/C Coupe(ST2 380 PS)", 
+            "Price" : "1.38 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5.0 S/C Coupe(ST4 550 PS)", 
+            "Price" : "1.88 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "L 3.0 V6 Premium Luxury", 
+            "Price" : "98.03 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5ba8ff8db2715e8ef12a"), 
+    "name" : "XE", 
+    "varient" : [
+        {
+            "name" : "2.0L Petrol Pure", 
+            "Price" : "39.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "2.0L Petrol Portfolio", 
+            "Price" : "46.5 Lac", 
+            "Type" : ""
+        }
+    ]
+}

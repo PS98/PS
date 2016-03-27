@@ -1,0 +1,269 @@
+{ 
+    "_id" : ObjectId("56ef59aeff8db2715e8ef0fe"), 
+    "name" : "A4", 
+    "varient" : [
+        {
+            "name" : "35 TDI Premium", 
+            "Price" : "35.39 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI TECHNOLOGY", 
+            "Price" : "40.79 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TFSI PREMIUM + SUNROOF", 
+            "Price" : "34.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI PREMIUM SPORT", 
+            "Price" : "38.93 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI Premium + Sunroof", 
+            "Price" : "36.42 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI Premium Sport+ Sunroof", 
+            "Price" : "38.93 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef59deff8db2715e8ef102"), 
+    "name" : "Q5", 
+    "varient" : [
+        {
+            "name" : "30 TDI Premium Plus", 
+            "Price" : "51.42 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "30 TDI Premium", 
+            "Price" : "49.46 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "30 TDI Technology", 
+            "Price" : "56.02 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "45 TDI Techonology S Line", 
+            "Price" : "62.95 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5a4eff8db2715e8ef104"), 
+    "name" : "RSS", 
+    "varient" : [
+        {
+            "name" : "Coupe", 
+            "Price" : "1.09 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5a56ff8db2715e8ef106"), 
+    "name" : "RS7", 
+    "varient" : [
+        {
+            "name" : "Sportback", 
+            "Price" : "1.4 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5a5fff8db2715e8ef108"), 
+    "name" : "A3", 
+    "varient" : [
+        {
+            "name" : "35 TDI Attraction", 
+            "Price" : "24.56 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI Premium", 
+            "Price" : "27.42 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI Premium", 
+            "Price" : "31.09 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI Techonology", 
+            "Price" : "32.93 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "40 TFSI Premium Plus", 
+            "Price" : "30.27 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Cabriolet", 
+            "Price" : "44.75 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5a69ff8db2715e8ef10a"), 
+    "name" : "TT", 
+    "varient" : [
+        {
+            "name" : "45 TFSI", 
+            "Price" : "60.34 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5a72ff8db2715e8ef10c"), 
+    "name" : "RS6", 
+    "varient" : [
+        {
+            "name" : "Avant", 
+            "Price" : "1.35 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5a83ff8db2715e8ef10e"), 
+    "name" : "Q3", 
+    "varient" : [
+        {
+            "name" : "Q3 S", 
+            "Price" : "28.99 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Q3 Premium", 
+            "Price" : "33.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Q3 Premium Plus", 
+            "Price" : "37.9 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5a8cff8db2715e8ef110"), 
+    "name" : "A3", 
+    "varient" : [
+        {
+            "name" : "40 TFSI Premium Plus", 
+            "Price" : "25.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI Premium+ Sunroof", 
+            "Price" : "28.55 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI Premium Plus+ Sunroof", 
+            "Price" : "32.22 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "40 TFSI Premium Plus+ Sunroof", 
+            "Price" : "31.4 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "35 TDI Technology+ Sunroof", 
+            "Price" : "34.06 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5a96ff8db2715e8ef112"), 
+    "name" : "S5", 
+    "varient " : [
+        {
+            "name" : "Sportback 3.0 TFSI Quattro", 
+            "Price" : "62.95 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5aa0ff8db2715e8ef114"), 
+    "name" : "Q7", 
+    "varient" : [
+        {
+            "name" : "Premium Plus", 
+            "Price" : "72 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5aa9ff8db2715e8ef116"), 
+    "name" : "45TDI", 
+    "varient" : [
+        {
+            "name" : "Technology", 
+            "Price" : "77.5 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5ab2ff8db2715e8ef118"), 
+    "name" : "R8", 
+    "varient" : [
+        {
+            "name" : "V10 Plus", 
+            "Price" : "30.27 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5abbff8db2715e8ef11a"), 
+    "name" : "A8L", 
+    "varient" : [
+        {
+            "name" : "60 TFSI quattro", 
+            "Price" : "1.38 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "50 TDI quattro", 
+            "Price" : "1.17 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "60 TFSI quattro", 
+            "Price" : "1.38 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "W12 quattro", 
+            "Price" : "1.87 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Security", 
+            "Price" : "9.15 Cr", 
+            "Type" : ""
+        }
+    ]
+}

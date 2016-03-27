@@ -1,0 +1,320 @@
+{ 
+    "_id" : ObjectId("56eed460bc9bd93bf4faa34e"), 
+    "name" : "Brio", 
+    "varient" : [
+        {
+            "name" : "E MT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "EX MT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S MT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "V MT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX AT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX (O) MT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX (O) AT", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed46abc9bd93bf4faa350"), 
+    "name" : "City", 
+    "varient" : [
+        {
+            "name" : "E MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SV MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "V MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SV CVT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX CVT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SV MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "V MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX (O) Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX (O) Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX(O) BL Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX(O) BL Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed474bc9bd93bf4faa352"), 
+    "name" : "Jazz", 
+    "varient" : [
+        {
+            "name" : "S Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SV Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SV Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "V Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "V Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S CVT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "V CVT", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed47ebc9bd93bf4faa354"), 
+    "name" : "CR-V", 
+    "varient" : [
+        {
+            "name" : "2L MT", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "2.4L AT AVN", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "2L AT", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed510bc9bd93bf4faa35a"), 
+    "name" : "Amaze", 
+    "varient" : [
+        {
+            "name" : "E MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S AT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX AT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "VX MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SX MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SX MT Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E MT Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed546bc9bd93bf4faa35e"), 
+    "name" : "Mobilio MPV", 
+    "varient" : [
+        {
+            "name" : "MPV E Petrol", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "MPV S Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "MPV V Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "MPV E Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "MPV S Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "MPV V Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "MPV RS Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "V Option Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "V Option Petrol", 
+            "Price" : "", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "RS Option Diesel", 
+            "Price" : "", 
+            "Type" : ""
+        }
+    ]
+}

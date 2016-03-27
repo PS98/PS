@@ -1,0 +1,313 @@
+{ 
+    "_id" : ObjectId("56ef57feff8db2715e8ef0ce"), 
+    "name" : "B-class", 
+    "varient" : [
+        {
+            "name" : "B 180 Sport", 
+            "Price" : "29.45 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "B 200 CDI Sport", 
+            "Price" : "30.45 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5808ff8db2715e8ef0d0"), 
+    "name" : "SLK-Class", 
+    "varient" : [
+        {
+            "name" : "350", 
+            "Price" : "75 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "55 AMG", 
+            "Price" : "1.26 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5811ff8db2715e8ef0d2"), 
+    "name" : "E-Class", 
+    "varient" : [
+        {
+            "name" : "CLS 250 CDI", 
+            "Price" : "76.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "250 CDI Avantgrade", 
+            "Price" : "50.7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "250 Edition E", 
+            "Price" : "48.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E350 CDI", 
+            "Price" : "59.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "63 AMG", 
+            "Price" : "1.29 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E400 Cabriolet", 
+            "Price" : "78.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E-250 D", 
+            "Price" : "48.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E 250 CDI Edition E", 
+            "Price" : "50.7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "E 350 CDI Edition E", 
+            "Price" : "49.49 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef581bff8db2715e8ef0d4"), 
+    "name" : "GL", 
+    "varient" : [
+        {
+            "name" : "350 CDI", 
+            "Price" : "77.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "63 AMG", 
+            "Price" : "1.75 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5825ff8db2715e8ef0d6"), 
+    "name" : "S-Class", 
+    "varient" : [
+        {
+            "name" : "S 500", 
+            "Price" : "1.44 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S 350 CDI", 
+            "Price" : "1.14 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S 500 Coupe", 
+            "Price" : "2.06 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S 63 AMG Coupe", 
+            "Price" : "2.63 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S 63 AMG Sedan", 
+            "Price" : "2.63 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S 63 AMG Sedan", 
+            "Price" : "2.63 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S Gaurd", 
+            "Price" : "8.9 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5830ff8db2715e8ef0d8"), 
+    "name" : "C-Class", 
+    "varient" : [
+        {
+            "name" : "C 63 S AMG", 
+            "Price" : "1.3 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "C 63 S AMG", 
+            "Price" : "1.3 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "C200 Avantgrade", 
+            "Price" : "38.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "C220 CDI Style", 
+            "Price" : "37.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "C220 CDI Avantgrade", 
+            "Price" : "39.9 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5840ff8db2715e8ef0da"), 
+    "name" : "G-Class", 
+    "varient" : [
+        {
+            "name" : "G 63 AMG", 
+            "Price" : "1.91 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "G63 AMG Crazy Colour", 
+            "Price" : "2.18 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5849ff8db2715e8ef0dc"), 
+    "name" : "CLA-Class", 
+    "varient" : [
+        {
+            "name" : "45 AMG", 
+            "Price" : "69.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "200 Sport", 
+            "Price" : "35 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "200 CDI Style", 
+            "Price" : "31.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "200 CDI Sport", 
+            "Price" : "35.9 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5852ff8db2715e8ef0de"), 
+    "name" : "GLA Class", 
+    "varient" : [
+        {
+            "name" : "200 Sport", 
+            "Price" : "36 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "200 CDI", 
+            "Price" : "59.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "200 Sport", 
+            "Price" : "36 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "200 CDI Style", 
+            "Price" : "31.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "200 CDI Sport", 
+            "Price" : "34.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "45 AMG", 
+            "Price" : "71.9 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef585dff8db2715e8ef0e0"), 
+    "name" : "Maybach", 
+    "varient" : [
+        {
+            "name" : "S500", 
+            "Price" : "1.7 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S600", 
+            "Price" : "2.65 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Maybach S600 Gaurd", 
+            "Price" : "10.5 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5866ff8db2715e8ef0e2"), 
+    "name" : "GLE-Class", 
+    "varient" : [
+        {
+            "name" : "250 D 4 MATIC", 
+            "Price" : "58.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "350 D 4 MATIC", 
+            "Price" : "69.9 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5873ff8db2715e8ef0e4"), 
+    "name" : "AMG-GT", 
+    "varient" : [
+        {
+            "name" : "S", 
+            "Price" : "2.39 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef587cff8db2715e8ef0e6"), 
+    "name" : "A-Class", 
+    "varient" : [
+        {
+            "name" : "180", 
+            "Price" : "27.45 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "200 D", 
+            "Price" : "28.45 Lac", 
+            "Type" : ""
+        }
+    ]
+}

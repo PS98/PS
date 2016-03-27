@@ -56,7 +56,6 @@
         "System.Net.Http": "4.0.0.0"
       },
       "dependencies": {
-        "Api": "1.0.0-*",
         "RestSharp": "105.2.3"
       }
     }

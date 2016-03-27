@@ -1,0 +1,316 @@
+{ 
+    "_id" : ObjectId("56ef52feff8db2715e8ef07a"), 
+    "name" : "Spark", 
+    "varient" : [
+        {
+            "name" : "1.0", 
+            "Price" : "3.61 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LS 1.0", 
+            "Price" : "3.89 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LT 1.0", 
+            "Price" : "4.18 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5308ff8db2715e8ef07c"), 
+    "name" : "Sail", 
+    "varient" : [
+        {
+            "name" : "HatchBack Base Petrol", 
+            "Price" : "4.75 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "HatchBack LS Petrol", 
+            "Price" : "5.26 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "HatchBack LS ABS Petrol", 
+            "Price" : "5.49 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "HatchBack LT ABS Petrol", 
+            "Price" : "6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "HatchBack LS Diesel", 
+            "Price" : "6.32 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "HatchBack LS ABS Diesel", 
+            "Price" : "6.48 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "HatchBack LT ABS Diesel", 
+            "Price" : "7.31 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "PS Diesel", 
+            "Price" : "6.87 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LS Diesel", 
+            "Price" : "7.28 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LS ABS Diesel", 
+            "Price" : "7.59 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LT ABS Diesel", 
+            "Price" : "8.2 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LS ABS Petrol", 
+            "Price" : "6.47 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LS Petrol", 
+            "Price" : "6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LT ABS Petrol", 
+            "Price" : "6.97 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "PS Petrol", 
+            "Price" : "5.6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Hatchback Base Diesel", 
+            "Price" : "5.79 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Captiva MT", 
+            "Price" : "25.14 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Captiva AT", 
+            "Price" : "27.36 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Trailbalzer LTZ AT", 
+            "Price" : "26.99 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5312ff8db2715e8ef07e"), 
+    "name" : "Cruze", 
+    "varient" : [
+        {
+            "name" : "LT", 
+            "Price" : "13.95 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LTZ", 
+            "Price" : "15.95 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LTZ AT", 
+            "Price" : "16.95 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5323ff8db2715e8ef080"), 
+    "name" : "Tavera", 
+    "varient" : [
+        {
+            "name" : "Neo 3-10 STR BS-III", 
+            "Price" : "7.73 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Neo 3 Max-10 STR BS-III", 
+            "Price" : "8.62 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Neo 3 Max-7 STR BS-III", 
+            "Price" : "8.96 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Neo 3 LS-10 STR BS-III", 
+            "Price" : "9.42 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Neo 3 LS-7 STR BS-III", 
+            "Price" : "9.69 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Neo 3 LS-7(C) STR BS-III", 
+            "Price" : "9.8 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Neo 3 LT-9 STR BS-III", 
+            "Price" : "10.77 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Neo 3 LT-8 STR BS-III", 
+            "Price" : "11.24 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Neo 3 LT-7(C) STR BS-III", 
+            "Price" : "11.5 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef532eff8db2715e8ef082"), 
+    "name" : "Enjoy", 
+    "varient" : [
+        {
+            "name" : "1.4 LS 8 STR", 
+            "Price" : "6.33 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "1.4 LS 7 STR", 
+            "Price" : "6.35 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.4 LT 7 STR", 
+            "Price" : "6.96 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.4 LTZ 7 STR", 
+            "Price" : "7.81Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.3 LS 8 STR", 
+            "Price" : "7.65 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.3 LS 7 STR", 
+            "Price" : "7.68 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.3 LT 7 STR", 
+            "Price" : "8.16 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.3 LTZ 7 STR", 
+            "Price" : "8.91 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.3 TCDi LT8 STR", 
+            "Price" : "8.14 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.3 TCDi LTZ 8 STR", 
+            "Price" : "8.88 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.4 LT 8 STR", 
+            "Price" : "6.93 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Enjoy 1.4 LTZ 8 STR", 
+            "Price" : "7.78 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5337ff8db2715e8ef084"), 
+    "name" : "Beat", 
+    "varient" : [
+        {
+            "name" : "Beat LS Diesel", 
+            "Price" : "5.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat PS Diesel", 
+            "Price" : "5.16 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat LT Diesel", 
+            "Price" : "5.92 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat LT(O) Diesel", 
+            "Price" : "6.44 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat PS Petrol", 
+            "Price" : "4.29 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat LS Petrol", 
+            "Price" : "4.62 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat LT Petrol", 
+            "Price" : "5.08 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat LT(O) Petrol", 
+            "Price" : "5.55 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat LTZ Petrol", 
+            "Price" : "5.55 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Beat LTZ Diesel", 
+            "Price" : "6.44 Lac", 
+            "Type" : ""
+        }
+    ]
+}

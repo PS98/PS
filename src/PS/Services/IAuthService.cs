@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PS.Models;
-using PS.ViewModels.Account;
+using PS.Models;
 
 namespace PS.Services
 {
