@@ -1,0 +1,63 @@
+{ 
+    "_id" : ObjectId("56ef5969ff8db2715e8ef0f8"), 
+    "name" : "Cooper", 
+    "varient" : [
+        {
+            "name" : "D1.6", 
+            "Price" : "33.2 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "D 5 Door", 
+            "Price" : "31.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "D 3 Door", 
+            "Price" : "28.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "S 2.0", 
+            "Price" : "31.5 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5971ff8db2715e8ef0fa"), 
+    "name" : "Convertible", 
+    "varient" : [
+        {
+            "name" : "1.6", 
+            "Price" : "33.9 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef597aff8db2715e8ef0fc"), 
+    "name" : "Countryman", 
+    "varient" : [
+        {
+            "name" : "One Countryman", 
+            "Price" : "36.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Cooper D Countryman", 
+            "Price" : "36.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Cooper D Countryman Hightrim", 
+            "Price" : "25.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Cooper S Countryman", 
+            "Price" : "36.5 Lac", 
+            "Type" : ""
+        }
+    ]
+}

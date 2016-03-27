@@ -1,0 +1,788 @@
+{ 
+    "_id" : ObjectId("56eed351bc9bd93bf4faa334"), 
+    "name" : "Alto 800", 
+    "varient" : [
+        {
+            "name" : "STD", 
+            "Price" : "2.57 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Vxi (Airbag)", 
+            "Price" : "3.48 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LX", 
+            "Price" : "2.93 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI", 
+            "Price" : "3.16 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI CNG", 
+            "Price" : "3.74 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXI", 
+            "Price" : "3.3 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "STD (O)", 
+            "Price" : "2.62 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : " LX (O)", 
+            "Price" : "2.99 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI (O)", 
+            "Price" : "3.21 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI CNG (O)", 
+            "Price" : "3.78 Lac", 
+            "Type" : "Hatchback"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed362bc9bd93bf4faa336"), 
+    "name" : "Omni", 
+    "varient" : [
+        {
+            "name" : "5 STR BS-IV", 
+            "Price" : "2.58 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "E 8 STR BS-IV", 
+            "Price" : "2.6 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "MPI CARGO BSIV", 
+            "Price" : "2.34 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "MPI AMBULANCE BSIV", 
+            "Price" : "2.94 Lac", 
+            "Type" : "Minivan/MUV"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed36dbc9bd93bf4faa338"), 
+    "name" : "Eeco", 
+    "varient" : [
+        {
+            "name" : "5 STR", 
+            "Price" : "3.19 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "7 STR", 
+            "Price" : "3.36 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5 STR with A/c +HTR", 
+            "Price" : "3.49 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5 STR with HTR CNG", 
+            "Price" : "3.86 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Ambulance", 
+            "Price" : "3.86 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GREEN 5 SEATER W/O AC", 
+            "Price" : "3.86 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GREEN 5 Seater WITH AC", 
+            "Price" : "4.22 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5 STR with A/C +HTR CNG", 
+            "Price" : "4.22 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed381bc9bd93bf4faa33a"), 
+    "name" : "Wagon R", 
+    "varient" : [
+        {
+            "name" : "LXi", 
+            "Price" : "4.05 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "4.3 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXi CNG", 
+            "Price" : "4.59 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Stingray VXI AMT", 
+            "Price" : "4.98 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Stingray LXI", 
+            "Price" : "4.23 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Stingray VXI", 
+            "Price" : "4.51 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Stingray VXI Optional", 
+            "Price" : "4.84 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXI AMT", 
+            "Price" : "4.77 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Stingray VXI (O) AMT", 
+            "Price" : "5.31 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXI (O) AMT", 
+            "Price" : "5.1 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXi (O)", 
+            "Price" : "4.37 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Stingray LXi (O)", 
+            "Price" : "4.55 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI CNG (O)", 
+            "Price" : "4.78 Lac", 
+            "Type" : "Hatchback"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed38cbc9bd93bf4faa33c"), 
+    "name" : "Swift", 
+    "varient" : [
+        {
+            "name" : "LXi", 
+            "Price" : "4.68 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "5.43 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LDi", 
+            "Price" : "5.84 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "VDi", 
+            "Price" : "6.31 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "ZXi", 
+            "Price" : "6.27 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "ZDi", 
+            "Price" : "7.29 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "LXi (O)", 
+            "Price" : "4.73 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Glory special edition VXI", 
+            "Price" : "5.32 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "Glory special edition VDI", 
+            "Price" : "6.2 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "VXi(O)", 
+            "Price" : "5.63 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LDi (O)", 
+            "Price" : "6.04 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VDi (O)", 
+            "Price" : "6.43 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "DZire VXI (O)", 
+            "Price" : "6.18 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Dzire LDi (O)", 
+            "Price" : "6.19 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "DZire VDi (O)", 
+            "Price" : "7.07 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "DZire VXI (O) AT", 
+            "Price" : "6.97 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "DZire ZDI", 
+            "Price" : "7.91 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "DZire LXI", 
+            "Price" : "5.19 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "DZire VXI", 
+            "Price" : "5.98 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "DZire LDI", 
+            "Price" : "5.99 Lac", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Dzire ZXI", 
+            "Price" : "6.93 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Dzire VDI", 
+            "Price" : "6.95 Lac", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "DZire ZDI AGS", 
+            "Price" : "8.4 Lac", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "DZire VXI AT", 
+            "Price" : "6.77 Lac", 
+            "Type" : "Sedan"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed39bbc9bd93bf4faa33e"), 
+    "name" : "Ertiga", 
+    "varient" : [
+        {
+            "name" : "LXi", 
+            "Price" : "6 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "LXi(O)", 
+            "Price" : "6.38 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "ZXi", 
+            "Price" : "7.89 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "VXi CNG", 
+            "Price" : "7.89 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "7.29 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "LDI SHVS", 
+            "Price" : "7.59 Lac", 
+            "Type" : "Minivan/MUV, Diesel"
+        }, 
+        {
+            "name" : "LDI (O) SHVS", 
+            "Price" : "7.66 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "VXI AT", 
+            "Price" : "8.29 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "VDI SHVS", 
+            "Price" : "8.29 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "ZXI Plus", 
+            "Price" : "8.46 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "ZDI SHVS", 
+            "Price" : "8.86 Lac", 
+            "Type" : "Minivan/MUV"
+        }, 
+        {
+            "name" : "ZDI SHVS Plus", 
+            "Price" : "9.28 Lac", 
+            "Type" : "Minivan/MUV"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3a7bc9bd93bf4faa340"), 
+    "name" : "Gyspy", 
+    "varient" : [
+        {
+            "name" : "Hard Top", 
+            "Price" : "6.19 Lac", 
+            "Type" : "SUV"
+        }, 
+        {
+            "name" : "Soft Top", 
+            "Price" : "6.04 Lac", 
+            "Type" : "SUV"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3b1bc9bd93bf4faa342"), 
+    "name" : "Ritz", 
+    "varient" : [
+        {
+            "name" : "LXi", 
+            "Price" : "4.45 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Vxi", 
+            "Price" : "4.85 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Vxi ABS", 
+            "Price" : "5.1 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Zxi", 
+            "Price" : "5.45 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Ldi", 
+            "Price" : "5.53 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "Vdi", 
+            "Price" : "5.86 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "Vdi ABS", 
+            "Price" : "6.04 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "Zdi", 
+            "Price" : "6.45 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "VXi AT", 
+            "Price" : "6.09 Lac", 
+            "Type" : "Hatchback"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3bcbc9bd93bf4faa344"), 
+    "name" : "Alto K10", 
+    "varient" : [
+        {
+            "name" : "LXI", 
+            "Price" : "3.39 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXI", 
+            "Price" : "3.56 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LX", 
+            "Price" : "3.23 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXI (O)", 
+            "Price" : "3.75 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXI AGS Automatic", 
+            "Price" : "4.02 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI CNG", 
+            "Price" : "4.01 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI CNG (O)", 
+            "Price" : "4.08 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI (O)", 
+            "Price" : "3.46 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXI AGS (O)", 
+            "Price" : "4.12 Lac", 
+            "Type" : "Hatchback"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3cabc9bd93bf4faa346"), 
+    "name" : "Celerio", 
+    "varient" : [
+        {
+            "name" : "LXI", 
+            "Price" : "4 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXI AT", 
+            "Price" : "4.47 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXi", 
+            "Price" : "4.3 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXi AT", 
+            "Price" : "4.77 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "ZXi", 
+            "Price" : "4.6 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "ZXi(OPT)", 
+            "Price" : "5.06 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "Green VXi", 
+            "Price" : "4.95 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LDI", 
+            "Price" : "4.72 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "ZXi AMT", 
+            "Price" : "5.06 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VDI", 
+            "Price" : "5.02 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "ZDI", 
+            "Price" : "5.32 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "ZDI (O)", 
+            "Price" : "5.78 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "LXi MT (O)", 
+            "Price" : "4.2 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LXi (O) AMT", 
+            "Price" : "4.67 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXi (O) MT", 
+            "Price" : "4.5 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "VXi (O) AMT", 
+            "Price" : "4.95 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "ZXi (O) AMT", 
+            "Price" : "5.19 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "LDi (O)", 
+            "Price" : "4.92 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "VDi (O)", 
+            "Price" : "5.22 Lac", 
+            "Type" : "Hatchback, Diesel"
+        }, 
+        {
+            "name" : "Green VXi (O)", 
+            "Price" : "5.07 Lac", 
+            "Type" : "Hatchback"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3d5bc9bd93bf4faa348"), 
+    "name" : "Ciaz", 
+    "varient" : [
+        {
+            "name" : "Vxi", 
+            "Price" : "7.31 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Vxi Plus", 
+            "Price" : "7.89 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Zxi", 
+            "Price" : "8.52 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Zxi Plus", 
+            "Price" : "9.07 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Vxi Plus AT", 
+            "Price" : "9.02 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Zxi AT", 
+            "Price" : "9.65 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "Vdi (O) SHVS", 
+            "Price" : "8.38 Lac", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Vdi Plus SHVS", 
+            "Price" : "8.82 Lac", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Vdi SHVS", 
+            "Price" : "8.23 Lac", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Zdi Plus SHVS", 
+            "Price" : "10.18 Lac", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Zdi SHVS", 
+            "Price" : "9.53 Lac", 
+            "Type" : "Sedan, Diesel"
+        }, 
+        {
+            "name" : "Vxi (O)", 
+            "Price" : "7.48 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "ZXi+ RS", 
+            "Price" : "9.2 Lac", 
+            "Type" : "Sedan"
+        }, 
+        {
+            "name" : "ZDi Plus SHVS RS", 
+            "Price" : "10.28 Lac", 
+            "Type" : "Sedan"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3dfbc9bd93bf4faa34a"), 
+    "name" : "S-Cross", 
+    "varient" : [
+        {
+            "name" : "1.3L Sigma", 
+            "Price" : "8.03 Lac", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "1.6L Delta", 
+            "Price" : "10.23 Lac", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "1.3L Delta", 
+            "Price" : "8.75 Lac", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "1.6L Zeta", 
+            "Price" : "11.26 Lac", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "1.3L Zeta", 
+            "Price" : "9.88 Lac", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "1.6L Alpha", 
+            "Price" : "12.03 Lac", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "1.3L Alpha", 
+            "Price" : "10.6 Lac", 
+            "Type" : "Diesel"
+        }, 
+        {
+            "name" : "1.3 Premia", 
+            "Price" : "9.55 Lac", 
+            "Type" : "Diesel"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56eed3edbc9bd93bf4faa34c"), 
+    "name" : "Baleno", 
+    "varient" : [
+        {
+            "name" : "1.3 Delta", 
+            "Price" : "7 Lac", 
+            "Type" : "Diesel, Hatchback"
+        }, 
+        {
+            "name" : "1.3 Sigma", 
+            "Price" : "6.34 Lac", 
+            "Type" : "Diesel, Hatchback"
+        }, 
+        {
+            "name" : "1.3 Zeta", 
+            "Price" : "7.61 Lac", 
+            "Type" : "Diesel, Hatchback"
+        }, 
+        {
+            "name" : "1.3 Alpha", 
+            "Price" : "8.33 Lac", 
+            "Type" : "Diesel, Hatchback"
+        }, 
+        {
+            "name" : "1.2 Sigma", 
+            "Price" : "5.15 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "1.2 Delta", 
+            "Price" : "5.81 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "1.2 CVT", 
+            "Price" : "6.87 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "1.2 Zeta", 
+            "Price" : "6.41 Lac", 
+            "Type" : "Hatchback"
+        }, 
+        {
+            "name" : "1.2 Alpha", 
+            "Price" : "7.12 Lac", 
+            "Type" : "Hatchback"
+        }
+    ]
+}

@@ -1,0 +1,432 @@
+{ 
+    "_id" : ObjectId("56e05603bccb21477edd1d5d"), 
+    "name" : "Verito", 
+    "varient" : [
+        {
+            "name" : "1.5 D2", 
+            "Price" : "6.85 Lac"
+        }, 
+        {
+            "name" : "1.5 D4 BS-IV", 
+            "Price" : "7.08 Lac"
+        }, 
+        {
+            "name" : "1.5 D6 BS-IV", 
+            "Price" : "7.78 Lac"
+        }, 
+        {
+            "name" : "Vibe D2", 
+            "Price" : "6.09 Lac"
+        }, 
+        {
+            "name" : "Vibe D4", 
+            "Price" : "6.37 Lac"
+        }, 
+        {
+            "name" : "Vibe D6", 
+            "Price" : "6.99 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e05672bccb21477edd1d5f"), 
+    "name" : "Bolero", 
+    "varient" : [
+        {
+            "name" : "DI BS III", 
+            "Price" : "6.47 Lac"
+        }, 
+        {
+            "name" : "ZLX", 
+            "Price" : "8.14 Lac"
+        }, 
+        {
+            "name" : "SLX", 
+            "Price" : "7.98 Lac"
+        }, 
+        {
+            "name" : "SLE", 
+            "Price" : "7.45 Lac"
+        }, 
+        {
+            "name" : "EX", 
+            "Price" : "7.05 Lac"
+        }, 
+        {
+            "name" : "Plus Non AC BS III", 
+            "Price" : "6.73 Lac"
+        }, 
+        {
+            "name" : "BS4", 
+            "Price" : "7.42 Lac"
+        }, 
+        {
+            "name" : "Special Edition (ABS)", 
+            "Price" : "8.25 Lac"
+        }, 
+        {
+            "name" : "EX NON AC", 
+            "Price" : "6.64 Lac"
+        }, 
+        {
+            "name" : "DI 4WD BS III", 
+            "Price" : "6.91 Lac"
+        }, 
+        {
+            "name" : "SLE BS III", 
+            "Price" : "7.3 Lac"
+        }, 
+        {
+            "name" : "SLX BS III", 
+            "Price" : "7.83 Lac"
+        }, 
+        {
+            "name" : "ZLX BS III", 
+            "Price" : "7.99 Lac"
+        }, 
+        {
+            "name" : "Plus AC BS III", 
+            "Price" : "7.12 Lac"
+        }, 
+        {
+            "name" : "Plus Non AC BS4", 
+            "Price" : "7.02 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e05689bccb21477edd1d61"), 
+    "name" : "Quanto", 
+    "varient" : [
+        {
+            "name" : "C2", 
+            "Price" : "6.78 Lac"
+        }, 
+        {
+            "name" : "C4", 
+            "Price" : "7.33 Lac"
+        }, 
+        {
+            "name" : "C6", 
+            "Price" : "7.8 Lac"
+        }, 
+        {
+            "name" : "C8", 
+            "Price" : "8.31 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e05699bccb21477edd1d63"), 
+    "name" : "XUV500", 
+    "varient" : [
+        {
+            "name" : "W6", 
+            "Price" : "12.87Lac"
+        }, 
+        {
+            "name" : "W4", 
+            "Price" : "11.58 Lac"
+        }, 
+        {
+            "name" : "W8", 
+            "Price" : "14.62 Lac"
+        }, 
+        {
+            "name" : "W8 AWD", 
+            "Price" : "15.45 Lac"
+        }, 
+        {
+            "name" : "W10", 
+            "Price" : "15.52 Lac"
+        }, 
+        {
+            "name" : "W10 AWD", 
+            "Price" : "16.53 Lac"
+        }, 
+        {
+            "name" : "W10 AWD AT", 
+            "Price" : "17.37Lac"
+        }, 
+        {
+            "name" : "W8 AT", 
+            "Price" : "15.53 Lac"
+        }, 
+        {
+            "name" : "W10 AT", 
+            "Price" : "16.37 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e056acbccb21477edd1d65"), 
+    "name" : "Xylo", 
+    "varient" : [
+        {
+            "name" : " D2 BS III", 
+            "Price" : "8.28 Lac"
+        }, 
+        {
+            "name" : "D2 BS-IV", 
+            "Price" : "8.42 Lac"
+        }, 
+        {
+            "name" : "D2 MAXX BS-III", 
+            "Price" : "7.99 Lac"
+        }, 
+        {
+            "name" : "D2 MAXX BS-IV", 
+            "Price" : "8.14 Lac"
+        }, 
+        {
+            "name" : "D4 BS-III", 
+            "Price" : "8.71 Lac"
+        }, 
+        {
+            "name" : "D4 BS-IV", 
+            "Price" : "8.85 Lac"
+        }, 
+        {
+            "name" : "H4 BS-IV", 
+            "Price" : "9.08 Lac"
+        }, 
+        {
+            "name" : "H4 ABS BS-IV", 
+            "Price" : "9.36 Lac"
+        }, 
+        {
+            "name" : "H8 ABS BS-IV", 
+            "Price" : "10.39 Lac"
+        }, 
+        {
+            "name" : "H8 ABS Airbags BS-IV", 
+            "Price" : "10.89 Lac"
+        }, 
+        {
+            "name" : "H9 BS-IV", 
+            "Price" : "11.73 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e056bcbccb21477edd1d67"), 
+    "name" : "Scorpio", 
+    "varient" : [
+        {
+            "name" : "Getaway", 
+            "Price" : "8.41 Lac"
+        }, 
+        {
+            "name" : "Getaway 4WD", 
+            "Price" : "9.38 Lac"
+        }, 
+        {
+            "name" : "S2", 
+            "Price" : "9.06 Lac"
+        }, 
+        {
+            "name" : "S4", 
+            "Price" : "9.67 Lac"
+        }, 
+        {
+            "name" : "S6 Plus", 
+            "Price" : "11.09 Lac"
+        }, 
+        {
+            "name" : "S8", 
+            "Price" : "12.1 Lac"
+        }, 
+        {
+            "name" : "S10", 
+            "Price" : "12.75 Lac"
+        }, 
+        {
+            "name" : "S4 Plus 4WD", 
+            "Price" : "11.32 Lac"
+        }, 
+        {
+            "name" : "S10 4WD", 
+            "Price" : "13.9 Lac"
+        }, 
+        {
+            "name" : "S4 Plus", 
+            "Price" : "10.09 Lac"
+        }, 
+        {
+            "name" : "S10 2WD AT", 
+            "Price" : "13.41 Lac"
+        }, 
+        {
+            "name" : "S10 4WD AT", 
+            "Price" : "14.61 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e056c8bccb21477edd1d69"), 
+    "name" : "Thar", 
+    "varient" : [
+        {
+            "name" : "4WD PS", 
+            "Price" : "6.05 Lac"
+        }, 
+        {
+            "name" : "CRDe", 
+            "Price" : "8.38 Lac"
+        }, 
+        {
+            "name" : "2WD PS", 
+            "Price" : "5.54 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e056ffbccb21477edd1d6b"), 
+    "name" : "e2o", 
+    "varient" : [
+        {
+            "name" : "T2", 
+            "Price" : "7.19 Lac"
+        }, 
+        {
+            "name" : "T01", 
+            "Price" : "5.96 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e05722bccb21477edd1d6d"), 
+    "name" : "TUV300", 
+    "varient" : [
+        {
+            "name" : "T4", 
+            "Price" : "7.11 Lac"
+        }, 
+        {
+            "name" : "T6", 
+            "Price" : "7.77 Lac"
+        }, 
+        {
+            "name" : "T8", 
+            "Price" : "8.62 Lac"
+        }, 
+        {
+            "name" : "T4 Plus", 
+            "Price" : "7.47 Lac"
+        }, 
+        {
+            "name" : "T6 Plus", 
+            "Price" : "8.02 Lac"
+        }, 
+        {
+            "name" : "T6 Plus AMT", 
+            "Price" : "8.74 Lac"
+        }, 
+        {
+            "name" : "T8 AMT", 
+            "Price" : "9.34 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56e0575ebccb21477edd1d6f"), 
+    "name" : "KUV100", 
+    "varient" : [
+        {
+            "name" : "K2 6STR", 
+            "Price" : "4.45 Lac"
+        }, 
+        {
+            "name" : "K2+ 6STR", 
+            "Price" : "4.67 Lac"
+        }, 
+        {
+            "name" : "K4 5STR", 
+            "Price" : "4.8 Lac"
+        }, 
+        {
+            "name" : "K4+ 5STR", 
+            "Price" : "5.02 Lac"
+        }, 
+        {
+            "name" : "K6 5STR", 
+            "Price" : "5.39 Lac"
+        }, 
+        {
+            "name" : "K6+ 5STR", 
+            "Price" : "5.61 Lac"
+        }, 
+        {
+            "name" : "K8 5STR", 
+            "Price" : "5.94 Lac"
+        }, 
+        {
+            "name" : "K2 D 6STR", 
+            "Price" : "5.25 Lac"
+        }, 
+        {
+            "name" : "K2+ D 6STR", 
+            "Price" : "5.47 Lac"
+        }, 
+        {
+            "name" : "K4 D 5STR", 
+            "Price" : "5.6 Lac"
+        }, 
+        {
+            "name" : "K4+ D 5STR", 
+            "Price" : "5.82 Lac"
+        }, 
+        {
+            "name" : "K6 D 5STR", 
+            "Price" : "6.24 Lac"
+        }, 
+        {
+            "name" : "K6+ D 5STR", 
+            "Price" : "6.46 Lac"
+        }, 
+        {
+            "name" : "K8 D 5STR", 
+            "Price" : "6.79 Lac"
+        }, 
+        {
+            "name" : "K4+ D 6STR", 
+            "Price" : "5.87 Lac"
+        }, 
+        {
+            "name" : "K4+ 6STR", 
+            "Price" : "5.07 Lac"
+        }, 
+        {
+            "name" : "K4 D 6STR", 
+            "Price" : "5.65 Lac"
+        }, 
+        {
+            "name" : "K4 6STR", 
+            "Price" : "4.85 Lac"
+        }, 
+        {
+            "name" : "K6 6STR", 
+            "Price" : "5.44 Lac"
+        }, 
+        {
+            "name" : "K6 D 6STR", 
+            "Price" : "6.29 Lac"
+        }, 
+        {
+            "name" : "K6+ 6STR", 
+            "Price" : "5.66 Lac"
+        }, 
+        {
+            "name" : "K6+ D 6STR", 
+            "Price" : "6.51 Lac"
+        }, 
+        {
+            "name" : "K8 6STR", 
+            "Price" : "5.99 Lac"
+        }, 
+        {
+            "name" : "K8 D 6STR", 
+            "Price" : "6.84 Lac"
+        }
+    ]
+}

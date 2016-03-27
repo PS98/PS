@@ -1,0 +1,43 @@
+{ 
+    "_id" : ObjectId("56ef565bff8db2715e8ef0bc"), 
+    "name" : "GranTurismo", 
+    "varient" : [
+        {
+            "name" : "Sport", 
+            "Price" : "1.82 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Standard", 
+            "Price" : "2.1 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5666ff8db2715e8ef0be"), 
+    "name" : "Quattroporte", 
+    "varient" : [
+        {
+            "name" : " GTS", 
+            "Price" : "2.22 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Quattroporte Diesel", 
+            "Price" : "1.52 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5674ff8db2715e8ef0c0"), 
+    "name" : "Ghibli", 
+    "varient" : [
+        {
+            "name" : "Diesel", 
+            "Price" : "1.14 Cr", 
+            "Type" : ""
+        }
+    ]
+}

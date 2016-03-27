@@ -1,0 +1,32 @@
+{ 
+    "_id" : ObjectId("56ef569dff8db2715e8ef0c2"), 
+    "name" : "Avnetador", 
+    "varient" : [
+        {
+            "name" : "LP 700-4", 
+            "Price" : "5.05 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LP 700-4 Roadster", 
+            "Price" : "5.62 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef56a9ff8db2715e8ef0c4"), 
+    "name" : "Huracan", 
+    "varient" : [
+        {
+            "name" : "LP 610-4", 
+            "Price" : "3.43 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LP 580-2", 
+            "Price" : "2.99 Cr", 
+            "Type" : ""
+        }
+    ]
+}
