@@ -1,6 +1,6 @@
 ﻿angular.module("psApp").controller("carServiceController", ["$scope", "psDataServices", function ($scope, psDataServices) {
     
-
+    $scope.center = {};
    
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {};  $scope.selectedJob = [];
@@ -103,9 +103,24 @@
         success(function (data) {
             $scope.carList.carCollections = data.carList;
             $scope.carList.yearsList = data.yearsList;
-        }).error(function(){
+            // $scope.center.services = data.carList;
+         }).error(function(){
         });
-     
-     
+   
+   $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
+   $scope.centreList = [{ id:'1',Name: "Kwik Fits - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
+   { Name: "Kwiks Fit - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
+   { Name: "Kwik Fit1 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
+   { Name: "Kwik Fit2 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
+   { Name: "Kwik Fit3 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
+   { Name: "Kwik Fit4 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" }];
+   $scope.selectedCentre = $scope.centreList[0];
+   $scope.recommendedCentre = $scope.centreList[0];
+   $scope.centreList = $scope.centreList.slice(1);
+   
+   $scope.selectCentre = function (centre) {
+       $scope.selectedCentre = centre;
+   }
+
 }]);
 

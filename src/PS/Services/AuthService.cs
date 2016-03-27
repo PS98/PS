@@ -1,13 +1,13 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using PS.Models;
-using PS.ViewModels.Account;
+using PS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting;
 using System.Threading.Tasks;
-using Api.Model;
+using PS.Api.Model;
 using Newtonsoft.Json;
 
 namespace PS.Services

@@ -1,0 +1,103 @@
+{ 
+    "_id" : ObjectId("56ef555bff8db2715e8ef0a0"), 
+    "name" : "S60", 
+    "varient" : [
+        {
+            "name" : "Summum D5", 
+            "Price" : "40.85 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "T6", 
+            "Price" : "42 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Kinetic D4", 
+            "Price" : "34.4 Lac"
+        }, 
+        {
+            "name" : "Summum D4", 
+            "Price" : "37.25 Lac"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5564ff8db2715e8ef0a2"), 
+    "name" : "XC60", 
+    "varient " : [
+        {
+            "name" : "Kinetic D4", 
+            "Price" : "45.5 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Summum D4", 
+            "Price" : "48.6 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Summum D5", 
+            "Price" : "53.72 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef556dff8db2715e8ef0a4"), 
+    "name" : "S80", 
+    "varient" : [
+        {
+            "name" : "D5 Summum", 
+            "Price" : "48.2 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Summum D4", 
+            "Price" : "44.58 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5576ff8db2715e8ef0a6"), 
+    "name" : "V40", 
+    "varient" : [
+        {
+            "name" : "Cross Country D3", 
+            "Price" : "34 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Cross Country T4", 
+            "Price" : "27 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Hatchback Kinetic", 
+            "Price" : "24.75 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Hatchback R Design", 
+            "Price" : "27.7 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef557fff8db2715e8ef0a8"), 
+    "name" : "XC90", 
+    "varient" : [
+        {
+            "name" : "D5 Inscription", 
+            "Price" : "77.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "D5 Momentum", 
+            "Price" : "64.9 Lac", 
+            "Type" : ""
+        }
+    ]
+}

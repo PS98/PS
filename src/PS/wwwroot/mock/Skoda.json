@@ -1,0 +1,24 @@
+{ 
+    "_id" : ObjectId("56dc55f8911aa820f98c254b"), 
+    "name" : "Rapid", 
+    "Type" : "Sedan, Diesel", 
+    "Price" : ""
+}
+{ 
+    "_id" : ObjectId("56dc5622911aa820f98c254c"), 
+    "name" : "Octavia", 
+    "Type" : "Sedan, Diesel", 
+    "Price" : ""
+}
+{ 
+    "_id" : ObjectId("56dc564a911aa820f98c254d"), 
+    "name" : "Superb", 
+    "Type" : "Sedan, Diesel", 
+    "Price" : ""
+}
+{ 
+    "_id" : ObjectId("56dc566c911aa820f98c254e"), 
+    "name" : "Yeti", 
+    "Type" : "SUV, Diesel", 
+    "Price" : ""
+}

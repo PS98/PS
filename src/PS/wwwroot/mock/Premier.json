@@ -1,0 +1,36 @@
+{ 
+    "_id" : ObjectId("56ef5911ff8db2715e8ef0f0"), 
+    "name" : "Rio", 
+    "varient" : [
+        {
+            "name" : "GX", 
+            "Price" : "4.71 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "EX", 
+            "Price" : "5.44 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GLX", 
+            "Price" : "5.16 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "DX", 
+            "Price" : "5.64 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LX", 
+            "Price" : "6.1 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "CRDi4", 
+            "Price" : "6.7 Lac", 
+            "Type" : ""
+        }
+    ]
+}

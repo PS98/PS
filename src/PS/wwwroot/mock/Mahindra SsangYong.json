@@ -1,0 +1,21 @@
+{ 
+    "_id" : ObjectId("56f027512bf58a8fb66fb0f9"), 
+    "name" : "Rexton", 
+    "varient" : [
+        {
+            "name" : "RX5 MT", 
+            "Price " : "20.14 Lac", 
+            "Type" : "SUV"
+        }, 
+        {
+            "name" : "RX7 AT", 
+            "Price " : "23.8 Lac", 
+            "Type" : "SUV"
+        }, 
+        {
+            "name" : "RX6", 
+            "Price " : "22.47 Lac", 
+            "Type" : "SUV"
+        }
+    ]
+}

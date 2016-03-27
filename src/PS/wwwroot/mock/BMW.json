@@ -1,0 +1,90 @@
+{ 
+    "_id" : ObjectId("56f018f02bf58a8fb66fb0c9"), 
+    "name" : "X1", 
+    "Price" : "", 
+    "Type" : "Diesel"
+}
+{ 
+    "_id" : ObjectId("56f018fa2bf58a8fb66fb0cb"), 
+    "name" : "3-Series", 
+    "Price" : "", 
+    "Type" : "Sedan, Diesel"
+}
+{ 
+    "_id" : ObjectId("56f019042bf58a8fb66fb0cd"), 
+    "name" : "X3", 
+    "Price" : "", 
+    "Type" : "SUV, Luxury, Diesel"
+}
+{ 
+    "_id" : ObjectId("56f0190d2bf58a8fb66fb0cf"), 
+    "name" : "5-Series", 
+    "Price" : "", 
+    "Type" : "Sedan, Luxury, Diesel"
+}
+{ 
+    "_id" : ObjectId("56f019182bf58a8fb66fb0d1"), 
+    "name" : "Z4", 
+    "Price" : "", 
+    "Type" : "Convertible, Luxury"
+}
+{ 
+    "_id" : ObjectId("56f019212bf58a8fb66fb0d3"), 
+    "name" : "X5", 
+    "Price" : "", 
+    "Type" : "Sedan, Luxury"
+}
+{ 
+    "_id" : ObjectId("56f019292bf58a8fb66fb0d5"), 
+    "name" : "M3", 
+    "Price" : "", 
+    "Type" : "Convertible, Luxury"
+}
+{ 
+    "_id" : ObjectId("56f019312bf58a8fb66fb0d7"), 
+    "name" : "X6", 
+    "Price" : "", 
+    "Type" : "SUV, Luxury, Diesel"
+}
+{ 
+    "_id" : ObjectId("56f0193b2bf58a8fb66fb0d9"), 
+    "name" : "1-Series", 
+    "Price" : "", 
+    "Type" : "Coupe, Luxury, Diesel"
+}
+{ 
+    "_id" : ObjectId("56f019462bf58a8fb66fb0db"), 
+    "name" : "M5", 
+    "Price" : "", 
+    "Type" : "Sedan, Luxury"
+}
+{ 
+    "_id" : ObjectId("56f0194f2bf58a8fb66fb0dd"), 
+    "name" : "M4", 
+    "Price" : "", 
+    "Type" : "Sedan, Coupe, Luxury"
+}
+{ 
+    "_id" : ObjectId("56f019582bf58a8fb66fb0df"), 
+    "name" : "i8", 
+    "Price" : "", 
+    "Type" : "Coupe, Hybrid/Electric, Luxury"
+}
+{ 
+    "_id" : ObjectId("56f019602bf58a8fb66fb0e1"), 
+    "name" : "7-Series", 
+    "Price" : "", 
+    "Type" : "Sedan, Luxury, Diesel"
+}
+{ 
+    "_id" : ObjectId("56f019692bf58a8fb66fb0e3"), 
+    "name" : "X5 M", 
+    "Price" : "", 
+    "Type" : "SUV, Luxury"
+}
+{ 
+    "_id" : ObjectId("56f019732bf58a8fb66fb0e5"), 
+    "name" : "X6 M", 
+    "Price" : "", 
+    "Type" : "SUV, Luxury"
+}

@@ -1,0 +1,47 @@
+{ 
+    "_id" : ObjectId("56ef55a6ff8db2715e8ef0aa"), 
+    "name" : "One", 
+    "varient" : [
+        {
+            "name" : "SX", 
+            "Price" : "12.78 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "SX 7 Seater", 
+            "Price" : "12.7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LX", 
+            "Price" : "9.59 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "LX 4x4", 
+            "Price" : "14.34 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef55b0ff8db2715e8ef0ac"), 
+    "name" : "Gurkha", 
+    "varient" : [
+        {
+            "name" : "Soft Top 4x2", 
+            "Price" : "6.42 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Soft Top 4x4", 
+            "Price" : "8.56 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Hard Top 4x4", 
+            "Price" : "8.71 Lac", 
+            "Type" : ""
+        }
+    ]
+}

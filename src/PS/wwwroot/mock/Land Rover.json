@@ -1,0 +1,169 @@
+{ 
+    "_id" : ObjectId("56ef5b16ff8db2715e8ef11c"), 
+    "name" : "Freelander", 
+    "varient" : [
+        {
+            "name" : "2 SE", 
+            "Price" : "46.23 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "2 HSE", 
+            "Price" : "51.92 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "2 S BE", 
+            "Price" : "42.34 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5b20ff8db2715e8ef11e"), 
+    "name" : "Range Rover", 
+    "varient" : [
+        {
+            "name" : "Sport HSE", 
+            "Price" : "1.51 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "4.4 Vogue SE", 
+            "Price" : "2.48 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport S", 
+            "Price" : "1.16 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport SE", 
+            "Price" : "1.32 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport Autobiography", 
+            "Price" : "1.75 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "4.4 Autobiography", 
+            "Price" : "2.55 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5.0 Autobiography", 
+            "Price" : "2.62 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "3.0 HSE", 
+            "Price" : "1.83 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "3.0 Vogue", 
+            "Price" : "2.08 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "3.0 TDV6 Diesel Vogue LWB", 
+            "Price" : "2.2 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "4.4 SDV8 Diesel Vogue SE LWB", 
+            "Price" : "2.57 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "4.4 SDV8 Diesel Autobiography", 
+            "Price" : "2.68 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5.0 V8 SC Autobiography", 
+            "Price" : "2.76 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "4.4 SDV8 Autobiography LWB", 
+            "Price" : "3.75 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "5.0 SDV8 Autobiography LWB", 
+            "Price" : "3.85 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5b29ff8db2715e8ef120"), 
+    "name" : "Discovery", 
+    "varient" : [
+        {
+            "name" : "Sport S", 
+            "Price" : "46.1 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport SE", 
+            "Price" : "51.01 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport HSE", 
+            "Price" : "53.54 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport HSE Luxury", 
+            "Price" : "60.7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport HSE 7-Seater", 
+            "Price" : "55.03 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport HSE Luxury 7-seater", 
+            "Price" : "62.18 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Sport SE 7-Seater", 
+            "Price" : "52.5 Lac", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5b31ff8db2715e8ef122"), 
+    "name" : "Range Rover", 
+    "varient" : [
+        {
+            "name" : "Evoque Pure", 
+            "Price" : "47.1 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Evoque SE", 
+            "Price" : "52.9 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Evoque HSE", 
+            "Price" : "57.7 Lac", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Evoque HSE Dynamic", 
+            "Price" : "63.2 Lac", 
+            "Type" : ""
+        }
+    ]
+}

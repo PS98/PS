@@ -1,0 +1,43 @@
+{ 
+    "_id" : ObjectId("56ef592dff8db2715e8ef0f2"), 
+    "name" : "California", 
+    "varient" : [
+        {
+            "name" : "T Convertible", 
+            "Price" : "3.3 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef5936ff8db2715e8ef0f4"), 
+    "name" : "458", 
+    "varient" : [
+        {
+            "name" : "Speciale Coupe", 
+            "Price" : "4.07 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "Spider V8", 
+            "Price" : "2.8 Cr", 
+            "Type" : ""
+        }, 
+        {
+            "name" : "GTB STD", 
+            "Price" : "3.88 Cr", 
+            "Type" : ""
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("56ef593eff8db2715e8ef0f6"), 
+    "name" : "F12", 
+    "varient" : [
+        {
+            "name" : "Berlinetta V12", 
+            "Price" : "4.72 Cr", 
+            "Type" : ""
+        }
+    ]
+}

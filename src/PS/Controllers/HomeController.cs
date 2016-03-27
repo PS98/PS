@@ -10,15 +10,13 @@ namespace PS.Controllers
     [RequireHttps]
     public class HomeController : Controller
     {
-        private IMessageBoardRepository _repo;
         private IEmailSender _mail;
         private ILoggerFactory _logger;
        
 
-        public HomeController(IEmailSender mail, IMessageBoardRepository repo, ILoggerFactory logger, IMongoRepository mongo)
+        public HomeController(IEmailSender mail, ILoggerFactory logger, IMongoRepository mongo)
         {
             _mail = mail;
-            _repo = repo;
             _logger = logger;
             
         }

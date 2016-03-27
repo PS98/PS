@@ -458,7 +458,7 @@
       },
       {
         "name": "Alto K10",
-        [
+        "varient": [
           {
             "name": "LXI",
             "Price": "3.39 Lac",
@@ -613,7 +613,7 @@
       },
       {
         "name": "Ciaz",
-        [
+        "varient":[
           {
             "name": "Vxi",
             "Price": "7.31 Lac",
