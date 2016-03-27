@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using PS.Models;
-using PS.ViewModels.Account;
+using PS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

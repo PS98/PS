@@ -4,7 +4,7 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.OptionsModel;
 using Newtonsoft.Json;
 using PS.Services;
-using PS.ViewModels.Account;
+using PS.Models;
 using RestSharp.Extensions.MonoHttp;
 using System;
 using System.Collections.Generic;
