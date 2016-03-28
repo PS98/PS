@@ -5,17 +5,52 @@
         {
             "name" : "Trendline 1.2L(P)", 
             "Price" : "5.33 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"14.12 kmpl",
+			"Mileage-Highway" : "16.47 kmpl",
+			"Available Colors": "candy white,Reflsilver,Night blue,Copper orenge,carban steel,Flash Red",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1198",
+			"Service Cost"7,356/yr",
+			}
         }, 
         {
             "name" : "Comfortline 1.2L(P)", 
             "Price" : "6 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City": "14.12 kmpl",
+			"Mileage-Highway" :"16.47 kmpl",
+			"Available Colors" :"Candy white, silver",Night blue,Copper orenge,carban steel,Flash Red",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity":"5",
+			"Transmission Type": "Manual",
+			"Engine Displacement (cc)": "1498",
+			"Service Cost": "7,840/yr",
+			}
+			
+			
         }, 
         {
             "name" : "Highline 1.2L(P)", 
             "Price" : "6.87 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"14.12 kmpl",
+			"Mileage-Highway":"16.47 kmpl",
+			"Available Colors" :"cady white,silver,blue,Copper orenge,carban steel,FlashRed",
+			"Fuel Tank Capacity" :"45 (Liters)",
+			"Seating Capacity":"5",
+			"Transmission Type" :"Manual",
+			"Engine Displacement (cc)" :"1198",
+			"Service Cost": "7,840/yr",
+			}
         }, 
         {
             "name" : "GT TDI", 
@@ -251,22 +286,66 @@
         {
             "name" : "GT TSI", 
             "Price" : "8.9 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type" :"Petrol"'
+			"Mileage-City" :"14.8  kmpl",
+			"Mileage-Highway":"17.21kmpl",
+			"Available Colors": "Candy white,silver,blue,Copper orenge,carban steel,Flash Red",
+			"Fuel Tank Capacity": "45 (Liters)",
+			"Seating Capacity":"5",
+			"Transmission Type" :"Automatic",
+			"Engine Displacement (cc)" :"1197",
+			"Service Cost": "7,840/yr",
+			}
         }, 
         {
             "name" : "Trendline 1.5L (D)", 
             "Price" : "6.68 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"16.02 kmpl",
+			"Mileage-Highway":"20.14 kmpl",
+			"Available Colors" :"cady white,silver,blue,Copper orenge,carban steel,FlashRed",
+			"Fuel Tank Capacity" :"45 (Liters)",
+			"Seating Capacity":"5",
+			"Transmission Type" :"Manual",
+			"Engine Displacement (cc)" :"1498",
+			"Service Cost": "8,821/yr",
+			}
         }, 
         {
             "name" : "Highline 1.5L (D)", 
             "Price" : "8.22 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"16.02 kmpl",
+			"Mileage-Highway":"20.14 kmpl",
+			"Available Colors" :"cady white,silver,blue,Copper orenge,carban steel,FlashRed",
+			"Fuel Tank Capacity" :"45 (Liters)",
+			"Seating Capacity":"5",
+			"Transmission Type" :"Manual",
+			"Engine Displacement (cc)" :"1498",
+			"Service Cost": "8,821/yr",
+			}
         }, 
         {
             "name" : "Comfortline 1.5L(D)", 
             "Price" : "7.55 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City": "16.02  kmpl ",
+			"Mileage-Highway" :"20.14 kmpl",
+			"Available Colors" :"Candy white, silver",Night blue,Copper orenge,carban steel,Flash Red",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity":"5",
+			"Transmission Type": "Manual",
+			"Engine Displacement (cc)": "1498",
+			"Service Cost": "8,821/yr/",
+			}
         }, 
         {
             "name" : "Polo 1.2L MPI Exquisite", 
