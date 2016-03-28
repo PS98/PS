@@ -4,7 +4,7 @@ angular.module("psApp").directive("selectCentre", function () {
     return {
         templateUrl: "psApp/carService/selectCentre.html",
         link: function (scope, element, attrs) {
-
+            var placeSearch, autocomplete, autocomplete_textarea;
          function showMap(position) {
                 var lat = position.coords.latitude;
                 var lon = position.coords.longitude;
@@ -51,7 +51,19 @@ angular.module("psApp").directive("selectCentre", function () {
             } else {
                 error('not supported');
             }
+            function initialize() {
+                autocomplete = new google.maps.places.Autocomplete(
+                   (document.getElementById('autocomplete')),
+                    { types: ['geocode'] });
+                google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                  fillInAddress();
+                });
+            }
+
+            initialize();
+
         }
+
 
     };
 });

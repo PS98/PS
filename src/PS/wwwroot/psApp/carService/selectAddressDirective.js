@@ -55,7 +55,7 @@ angular.module("psApp").directive("selectAddress", function () {
 
 
            function setAutocomplete() {
-             autocomplete = new google.maps.places.Autocomplete((element.find('#autocompleteTextBox')), { types: ['geocode'] });
+               autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocompleteTextBox')), { types: ['geocode'] });
              google.maps.event.addListener(autocomplete, 'place_changed', function () {
                  var place = autocomplete.getPlace();
                  var lat = place.geometry.location.lat();
@@ -74,9 +74,9 @@ angular.module("psApp").directive("selectAddress", function () {
              }
 
              var map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
-             var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
+             var marker = new google.maps.Marker({ position: latlon, map: map, title: place.name });
              var infowindow = new google.maps.InfoWindow({
-                 content: "You are here!"
+                 content: place.name
              });
 
              infowindow.open(map, marker);
