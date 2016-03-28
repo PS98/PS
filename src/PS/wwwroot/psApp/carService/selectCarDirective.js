@@ -24,12 +24,12 @@ angular.module("psApp").directive("centreDetails", function () {
         replace:true,
         scope: {
             centre: '=',
-            add: '&',
-            isActive:'='
+            add: '&'
+          
         },
         controller: function ($scope) {
             // $scope.isActive = $scope.$parent.selectedCentre.Name == $scope.centre.Name;
-            $scope.isDisplaySelected = $scope.isActive == 'true';
+            $scope.isDisplaySelected = $scope.centre.activeCentre;
             $scope.displaySelectedCentre = function () {
                 $scope.add({ dirCentre: $scope.centre });
                

@@ -108,13 +108,14 @@
         });
    
    $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
-   $scope.centreList = [{ id:'1',Name: "Kwik Fits - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
+   $scope.centreList = [{ Name: "Kwik Fits - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
    { Name: "Kwiks Fit - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
    { Name: "Kwik Fit1 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
    { Name: "Kwik Fit2 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
    { Name: "Kwik Fit3 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" },
    { Name: "Kwik Fit4 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586" }];
    $scope.selectedCentre = $scope.centreList[0];
+    $scope.selectedCentre.activeCentre = true;
    $scope.recommendedCentre = $scope.centreList[0];
    $scope.centreList = $scope.centreList.slice(1);
    

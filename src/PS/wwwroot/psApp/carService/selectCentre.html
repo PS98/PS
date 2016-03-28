@@ -3,65 +3,81 @@
     <div class="row centre-list">
         <div class="col-md-6">
             <div class="car-header">
-                <centre-details centre="selectedCentre" isActive="{}" add ="selectCentre(dirCentre)" class="active"></centre-details>
 
-                <h4 class="header-text">Working Hours</h4>
-                <table class="table table-bordered table-condensed table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th class="text-right">Opening</th>
-                            <th class="text-right">Closing</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Monday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Thursday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Friday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Saturday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">5:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Sunday</td>
-                            <td class="text-right">10:00am</td>
-                            <td class="text-right">4:00pm</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p><small>Opening hours may vary due to public holidays.</small></p>
-                <div class="list-container ">
-                    <h4 class="header-text">Services</h4>
-                    <div class="list-flex-container">
-                        <ul class="list-flex-column" ng-repeat="serviceList in center.services">
-                            <li ng-repeat="service in serviceList">{{ service }}</li>
-                        </ul>
+                <form class="form-horizontal">
+
+                    <h2 class="header-text underline">How Can We Reach You</h2>
+
+
+                    <div class="form-group">
+                        <!--<div class="col-sm-10">-->
+                            <input class="form-control" id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"/>
+                        <!--</div>-->
                     </div>
-                </div>
-            </div>
+
+
+                </form>
+                    <centre-details centre="selectedCentre" add="selectCentre(dirCentre)" class="active"></centre-details>
+
+                    <h4 class="header-text">Working Hours</h4>
+                    <table class="table table-bordered table-condensed table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th class="text-right">Opening</th>
+                                <th class="text-right">Closing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">5:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td class="text-right">10:00am</td>
+                                <td class="text-right">4:00pm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <small>Opening hours may vary due to public holidays.</small>
+                    </p>
+                    <div class="list-container ">
+                        <h4 class="header-text">Services</h4>
+                        <div class="list-flex-container">
+                            <ul class="list-flex-column" ng-repeat="serviceList in center.services">
+                                <li ng-repeat="service in serviceList">{{ service }}</li>
+                            </ul>
+                        </div>
+                    </div>
+</div>
         </div>
         <div class="col-md-6">
             <div class="car-header">
@@ -76,12 +92,6 @@
                     <h4 class="centre-list_other-title">Other centres nearby</h4>
                     <div class="centre-list_other">
                         <centre-details centre ="centre" ng-repeat="centre in centreList" add="selectCentre(dirCentre)" ng-class="centre.Name == selectedCentre.Name ?'active' :''"></centre-details>
-                        <!--<centre-details></centre-details>
-                        <centre-details></centre-details>
-                        <centre-details></centre-details>
-                        <centre-details></centre-details>
-                        <centre-details></centre-details>
-                        <centre-details></centre-details>-->
                     </div>
                 </div>
             </div>
