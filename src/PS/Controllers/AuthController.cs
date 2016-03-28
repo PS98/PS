@@ -43,9 +43,9 @@ namespace PS.Controllers
                 if (ModelState.IsValid)
                 {
                     var result = _auth.login(model);
-                    if (!string.IsNullOrEmpty(result))
+                    if (!string.IsNullOrEmpty(result.Username))
                     {
-                        if(result == "Incorrect Password")
+                        if(result == null)
                         {
                             Response.StatusCode = (int)HttpStatusCode.OK;
                             return Json(new { Message = "You Entered Incorrect Password." });

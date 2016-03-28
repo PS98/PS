@@ -45,5 +45,28 @@
     margin-right:10px;
 }
 
+.userDetailsDropdown
+{
+    width : 300px;
+    height :150px;
 
+}
+
+.dropdown-menu :hover 
+{
+   background-color:white !important ;
+
+}
+
+.modal-left-half
+{
+    width:38%;
+    float:left !important;
+}
+
+.modal-right-half
+{
+    width:40%;
+    float:right !important;
+}
 

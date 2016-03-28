@@ -7,8 +7,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
     $scope.regSuccess = false;
     $scope.userDetails = {};
 
-    $scope.loginSubmit = function () {
-       
+    $scope.loginSubmit = function () {     
         psLoginService.login($scope.Email, $scope.Password)
             .then(function (result) {
                 //Success
@@ -17,8 +16,9 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                     $scope.message = result.message;
                 }
                 else if (result.result) {
-                    $scope.userDetails.userName = result.result;
+                    $scope.userDetails.userName = result.result.username;
                     $scope.userDetails.imageUrl = "/assets/img/icon-user-default.png";
+                    $scope.userDetails.Email = result.result.email;
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
                     $localStorage.userDetails = $scope.userDetails;
