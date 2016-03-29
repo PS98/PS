@@ -5,52 +5,172 @@
         {
             "name" : "STD", 
             "Price" : "2.57 Lac", 
-            "Type" : "Hatchback"
-        }, 
+            "Type" : "Hatchback",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"17.0 kmpl",
+			"Mileage-Highway" : "22.74 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,blue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,635/yr",
+	
+            }
+
+},
+         
         {
             "name" : "Vxi (Airbag)", 
             "Price" : "3.48 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback",
+		"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"17.0 kmpl ",
+			"Mileage-Highway" : "22.74 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,635/yr
+			
+			}
         }, 
         {
             "name" : "LX", 
             "Price" : "2.93 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"17.0 kmpl ",
+			"Mileage-Highway" : "22.74 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,635/yr",
+	
+            }
         }, 
         {
             "name" : "LXI", 
             "Price" : "3.16 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"17.0 kmpl ",
+			"Mileage-Highway" : "22.74 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,635/yr",
+	
+            }
         }, 
         {
             "name" : "LXI CNG", 
             "Price" : "3.74 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback","Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"28.29 km/kg ",
+			"Mileage-Highway" : "30.46 km/kg",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"4 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"3,577/yr",
+
+			}
         }, 
         {
             "name" : "VXI", 
             "Price" : "3.3 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"17.0 kmpl ",
+			"Mileage-Highway" : "22.74 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,635/yr",
+            }
         }, 
         {
             "name" : "STD (O)", 
             "Price" : "2.62 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"17.0 Kmpl",
+			"Mileage-Highway" : "22.74 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,635/yr",
+	
+            }
         }, 
         {
             "name" : " LX (O)", 
             "Price" : "2.99 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"17.0 kmpl ",
+			"Mileage-Highway" : "22.74 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,635/yr",
+	
+            }
         }, 
         {
             "name" : "LXI (O)", 
             "Price" : "3.21 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback",
+			"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"17.0 kmpl ",
+			"Mileage-Highway" : "22.74 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"3,577/yr",
+           
+            }
         }, 
         {
             "name" : "LXI CNG (O)", 
             "Price" : "3.78 Lac", 
-            "Type" : "Hatchback"
+            "Type" : "Hatchback",
+			"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"28.29 km/kg ",
+			"Mileage-Highway" : "30.46 km/kg",
+			"Available Colors": "Superior Whit,Silky Silver,New grenita grey,Torqueblue,blenzingred,forst blue",
+			"Fuel Tank Capacity":"4 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"3,577/yr",
+
+			}	
         }
     ]
 }
@@ -87,42 +207,136 @@
         {
             "name" : "5 STR", 
             "Price" : "3.19 Lac", 
-            "Type" : ""
+            "Type" : "",
+				"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"11.8 kmpl",
+			"Mileage-Highway" : "15.1 kmpl",
+			"Available Colors": "Black , White,Red, silver,blue,Grey",
+			"Fuel Tank Capacity":"40 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1196",
+			"Service Cost"3,248/yr",
+	
+            }
         }, 
         {
             "name" : "7 STR", 
             "Price" : "3.36 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"11.8 kmpl",
+			"Mileage-Highway" : "15.1 kmpl",
+			"Available Colors": "Black , White,Red, silver,blue,Grey",
+			"Fuel Tank Capacity":"40 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1196",
+			"Service Cost"3,248/yr",
+	
+            }
         }, 
         {
             "name" : "5 STR with A/c +HTR", 
             "Price" : "3.49 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"11.8 kmpl",
+			"Mileage-Highway" : "15.1 kmpl",
+			"Available Colors": "Black , White,Red, silver,blue,Grey",
+			"Fuel Tank Capacity":"40 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1196",
+			"Service Cost"3,248/yr",
+	
+            }
         }, 
         {
             "name" : "5 STR with HTR CNG", 
             "Price" : "3.86 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"16.0 km/kg",
+			"Mileage-Highway" : "20.0 km/kg",
+			"Available Colors": "Black , White,Red, silver,blue,Grey",
+			"Fuel Tank Capacity":"5 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1196",
+			"Service Cost"4,023/yr",
+	
+            }
         }, 
         {
             "name" : "Ambulance", 
             "Price" : "3.86 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"11.1 kmpl",
+			"Mileage-Highway" : "15.1 kmpl",
+			"Available Colors": "Black , White,Red, silver,blue,Grey",
+			"Fuel Tank Capacity":"40 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1196",
+			"Service Cost"3,248/yr",
+	
+            }
         }, 
         {
             "name" : "GREEN 5 SEATER W/O AC", 
             "Price" : "3.86 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"16.0 km/kg",
+			"Mileage-Highway" : "20.0 km/kg",
+			"Available Colors": "Black , White,Red, silver,blue,Grey",
+			"Fuel Tank Capacity":"5 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1196",
+			"Service Cost"4,023/yr",
+	            }
         }, 
         {
             "name" : "GREEN 5 Seater WITH AC", 
             "Price" : "4.22 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"16.0 km/kg",
+			"Mileage-Highway" : "20.0 km/kg",
+			"Available Colors": "Black , White,Red, silver,blue,Grey",
+			"Fuel Tank Capacity":"5 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1196",
+			"Service Cost"4,023/yr",
+	            }
         }, 
         {
             "name" : "5 STR with A/C +HTR CNG", 
             "Price" : "4.22 Lac", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"16.0 km/kg",
+			"Mileage-Highway" : "20.0 km/kg",
+			"Available Colors": "Black , White,Red, silver,blue,Grey",
+			"Fuel Tank Capacity":"5 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1196",
+			"Service Cost"4,023/yr",
+	
+            }
         }
     ]
 }
@@ -355,7 +569,19 @@
         {
             "name" : "LDI SHVS", 
             "Price" : "7.59 Lac", 
-            "Type" : "Minivan/MUV, Diesel"
+            "Type" : "Minivan/MUV, Diesel",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"20.8 kmpl",
+			"Mileage-Highway" : "24.52 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1284",
+			"Service Cost"3,911/yr",
+	
+            }
         }, 
         {
             "name" : "LDI (O) SHVS", 
@@ -489,12 +715,12 @@
             "name" : "LXI CNG", 
             "Price" : "4.01 Lac", 
             "Type" : "Hatchback"
-        }, 
-        {
-            "name" : "LXI CNG (O)", 
-            "Price" : "4.08 Lac", 
-            "Type" : "Hatchback"
-        }, 
+        },
+      {
+        "name": "LXI CNG (O)",
+        "Price": "4.08 Lac",
+        "Type": "Hatchback"
+      }, 
         {
             "name" : "LXI (O)", 
             "Price" : "3.46 Lac", 
