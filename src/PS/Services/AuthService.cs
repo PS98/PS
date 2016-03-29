@@ -131,7 +131,9 @@ namespace PS.Services
                     foreach (var i in customerList?.Where(e => e.Email == T.Email).ToList())
                     {
                         data.Add(i.Given_Name);
+                        data.Add(i.Name);
                         data.Add(i.Picture);
+                        data.Add(i.Email);
                         return data;
                     }
                 }
@@ -150,7 +152,9 @@ namespace PS.Services
                     foreach(var i in customerList?.Where(e => e.Email == T.Email).ToList())
                     {
                         data.Add(i.First_Name);
+                        data.Add(i.Name);
                         data.Add(i.Picture.Data.Url);
+                        data.Add(i.Email);
                         return data;
                     } 
                 }
