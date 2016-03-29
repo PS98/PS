@@ -1,5 +1,5 @@
 
-var placeSearch, autocomplete, autocomplete_textarea;
+var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, markers;
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
@@ -9,16 +9,80 @@ var componentForm = {
   postal_code: 'short_name'
 };
 
-function initialize() {
-  //autocomplete = new google.maps.places.Autocomplete(
-  //   (document.getElementById('autocomplete')),
-  //    { types: ['geocode'] });
-  //google.maps.event.addListener(autocomplete, 'place_changed', function() {
-  //  fillInAddress();
-  //});
+function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, locations) {
+    googleMapHolder = "";
+    googleMapHolder = mapHolderId;
+
+    autocomplete = new google.maps.places.Autocomplete(
+       (document.getElementById(textBoxId)),
+        { types: ['geocode'] });
+    if (autocompleteCallback !="")
+    google.maps.event.addListener(autocomplete, 'place_changed',function() {
+        autocompleteCallback(autocomplete);
+    });
+
+   if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showMap, handleError);
+    } else {
+        error('Google Map is not supported');
+   }
+    markers = locations;
 }
 
-function fillInAddress() {
+function showMap(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var latlon = new google.maps.LatLng(lat, lon);
+    var mapholder = document.getElementById(googleMapHolder);
+    mapholder.style.height = "200px";
+    mapholder.style.width = "500px";
+
+
+    var myOptions = {
+        center: latlon, zoom: 14,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false,
+        navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+    }
+
+    map = new google.maps.Map(document.getElementById(googleMapHolder), myOptions);
+    var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
+    var infowindow = new google.maps.InfoWindow({
+        content: "You are here!"
+    });
+
+    infowindow.open(map, marker);
+
+    if (markers)
+        setMarkers(map, markers);
+
+}
+function handleError(err) {
+    switch (err.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable.";
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out.";
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred.";
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+
+function fillInAddress(autocomplete) {
   var place = autocomplete.getPlace();
   console.log(place.geometry.location.lng());
   for (var component in componentForm) {
@@ -47,4 +111,35 @@ function geolocate() {
       autocomplete.setBounds(circle.getBounds());
     });
   }
+}
+
+function setMarkers(map, locations) {
+
+    var latlngset;
+
+    $.each(locations, function(index, val) {
+
+        var lat = val.lat;
+        var long = val.lng;
+
+        latlngset = new google.maps.LatLng(lat, long);
+
+        var marker = new google.maps.Marker({
+            map: map,
+            position: latlngset
+        });
+        map.setCenter(marker.getPosition());
+
+
+        var content = val.name;
+
+        var infowindow = new google.maps.InfoWindow();
+
+        google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+            return function () {
+                infowindow.setContent(content);
+                infowindow.open(map, marker);
+            };
+        })(marker, content, infowindow));
+    });
 }

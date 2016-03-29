@@ -5,62 +5,35 @@ angular.module("psApp").directive("selectCentre", function () {
         templateUrl: "psApp/carService/selectCentre.html",
         link: function (scope, element, attrs) {
             var placeSearch, autocomplete, autocomplete_textarea;
-         function showMap(position) {
-                var lat = position.coords.latitude;
-                var lon = position.coords.longitude;
-             var latlon = new google.maps.LatLng(lat, lon);
-             var mapholder = document.getElementById('mapholder');
-                mapholder.style.height = '250px';
-                mapholder.style.width = '500px';
 
-                var myOptions = {
-                    center: latlon, zoom: 14,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: false,
-                    navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
-                }
+            var locations = [
+                { name: "address one", lat: "18.600534069047335", lng: "73.80731105804443" },
+                { name: "address two", lat: "18.610864870248303", lng: "73.80636692047119" },
+                { name: "address three", lat: "18.6134678078517", lng: "73.82181644439697" },
+                { name: "address four", lat: "18.604438697544907", lng: "73.82130146026611" },
+                { name: "address five", lat: "18.610376815014273", lng: "73.79589557647705" },
+                { name: "address six", lat: "18.601754275073823", lng: "73.82387638092041" },
+                { name: "address seven", lat: "18.60313716466401", lng: "73.83203029632568" },
+            ];
+      
+            initializeGoogleMap('autocomplete', 'mapholder', "", locations);
 
-                var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
-                var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
+
+
+            // function to get lat and lng on click of googlemap
+            function placeMarker(location, map) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                });
                 var infowindow = new google.maps.InfoWindow({
-                    content: "You are here!"
+                    content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
                 });
-
+                console.log(location.lng());
+                console.log(location.lat());
                 infowindow.open(map, marker);
-
             }
-            function handleError(err) {
-                switch (err.code) {
-                    case error.PERMISSION_DENIED:
-                        x.innerHTML = "User denied the request for Geolocation.";
-                        break;
-                    case error.POSITION_UNAVAILABLE:
-                        x.innerHTML = "Location information is unavailable.";
-                        break;
-                    case error.TIMEOUT:
-                        x.innerHTML = "The request to get user location timed out.";
-                        break;
-                    case error.UNKNOWN_ERROR:
-                        x.innerHTML = "An unknown error occurred.";
-                        break;
-                }
-            }
-
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showMap, handleError);
-            } else {
-                error('not supported');
-            }
-            function initialize() {
-                autocomplete = new google.maps.places.Autocomplete(
-                   (document.getElementById('autocomplete')),
-                    { types: ['geocode'] });
-                google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                  fillInAddress();
-                });
-            }
-
-            initialize();
+           // initialize();
 
         }
 
