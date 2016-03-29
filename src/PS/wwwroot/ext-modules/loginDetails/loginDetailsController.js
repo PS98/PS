@@ -111,8 +111,10 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
         psLoginService.socialCallback($location.search())
          .then(function (result) {
                 window.close();
-                $scope.userDetails.userName = result.result[0];
-                $scope.userDetails.imageUrl = result.result[1];
+                $scope.userDetails.firstName = result.result[0];
+                $scope.userDetails.userName = result.result[1];
+                $scope.userDetails.imageUrl = result.result[2];
+                $scope.userDetails.email = result.result[3];
 
                 $localStorage.userDetails = $scope.userDetails;
                 $rootScope.$broadcast("ps-user-profile-show",

@@ -2,23 +2,30 @@
 
 <div class="ps-user-profile-small pull-right fontChngRaleway">
     <img ng-src="{{ userDetails.imageUrl }}" />
-    <a>{{userDetails.userName}}</a>
+    <a>{{userDetails.firstName}}</a>
     <div class="dropdown">
         <button class="btn btn-default dropdown-toggle jelect" type="button" id="drpdownLogout" ng-click="shobhit($event)" data-toggle="dropdown" aria-expanded="true">
             <i class="fa fa-chevron-down"></i>
         </button>
         <ul class="dropdown-menu jelect-options drpdwnLogin" role="menu" aria-labelledby="drpdownLogout">
             <li class="userDetailsDropdown">
-                <a role="menuitem" class="modal-left-half">
-                    <img ng-src="{{userDetails.imageUrl}}" style="width:75px; height: 75px; margin-top:30px;" />
-                    <br/>
-                   <span class="" style="color:darkslateblue">Change</span>
-                </a>
-            <a class="modal-right-half">
-                <span style="font-size:12px;color:darkslateblue"> {{userDetails.userName}}</span><br/>
-                <span style="font-size:12px;color:darkslateblue"> {{userDetails.Email}}</span>
-                </a>
-            <a role="menuitem" ng-click="logout()" style="color:darkslateblue;">Logout</a></li>
+                <div style="position:absolute;">
+                    <a role="menuitem" class="modal-left-half">
+                        <img ng-src="{{userDetails.imageUrl}}" style="width:75px; height: 75px; margin-top:30px;" />
+                        <br />
+                        <span class="" style="color:darkslateblue">Change</span>
+                    </a>
+                    <a class="modal-right-half">
+                        <div style="font-size:15px;color:darkslateblue; margin: 5px 0 5px 0;"> {{userDetails.userName}}</div>
+                        <div style="font-size:12px;color:darkslateblue">{{userDetails.email}}</div>
+                    </a>
+                </div>
+                <div style="position:absolute; top: 80%; border-top: 2px solid lightgray; width: 100%;">
+                    <a role="menuitem" ng-click="logout()" style="color:darkslateblue; float: left;">Edit Profile</a>
+                    <a role="menuitem" ng-click="logout()" style="color:darkslateblue; float: right;">Logout</a>
+                </div>
+            </li>
         </ul>
+        
     </div>
 </div>

@@ -24,6 +24,11 @@
    margin-top: -15px;
 }
 
+.drpdwnLogin {
+    background-color: white !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
 .ps-dashboard-controls{
     float: right;
 }
@@ -48,7 +53,7 @@
 .userDetailsDropdown
 {
     width : 300px;
-    height :150px;
+    height :180px;
 
 }
 
@@ -60,13 +65,13 @@
 
 .modal-left-half
 {
-    width:38%;
+    width:30%;
     float:left !important;
 }
 
 .modal-right-half
 {
-    width:40%;
+    width:70%;
     float:right !important;
 }
 
