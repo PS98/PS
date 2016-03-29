@@ -1,17 +1,24 @@
 ﻿.ps-user-profile-small{
     color:#333;
     padding:47px 13px 0;
+    cursor: pointer;
 }
 
 .fontChngRaleway{
     font: 700 14px Raleway;
 }
 
-.ps-user-profile-small span{
-   font-size:18px;
-   margin-top:10px;
-   margin-right:10px;
-   color:white;
+.ps-user-profile-small span {
+    margin-right: 10px;
+    color: white;
+    padding-right: 15px;
+    position: relative;
+    font: 700 12px Raleway;
+    text-transform: uppercase;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
 }
 
 .ps-user-profile-small img{
@@ -28,6 +35,19 @@
     background-color: white !important;
     overflow-x: hidden !important;
     overflow-y: hidden !important;
+    cursor:default;
+}
+.drpdwnLogin span{
+    margin-right: 0;
+    color: white;
+    padding: 10px 0 0 10px;
+    position: relative;
+    font: normal;
+    text-transform: none;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
 }
 .ps-dashboard-controls{
     float: right;
@@ -53,7 +73,7 @@
 .userDetailsDropdown
 {
     width : 300px;
-    height :180px;
+    height :150px;
 
 }
 
