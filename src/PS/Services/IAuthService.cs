@@ -9,7 +9,7 @@ namespace PS.Services
 {
     public interface IAuthService
     {
-        string login(LoginViewModel data);
+        Customer login(LoginViewModel data);
         int register(RegisterViewModel data);
         bool forgotPassword(ForgotPasswordViewModel data);
 

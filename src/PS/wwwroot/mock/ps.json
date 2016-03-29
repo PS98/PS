@@ -2875,87 +2875,108 @@
                   "name": "Figo",
                   {
                     "name": "Aspire 1.2 Ti-VCT Ambiente",
-                    "Price": "5.16 Lac"
+                    "Price": "5.16 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Aspire 1.2 Ti-VCT Titanium Plus",
-                    "Price": "7.33 Lac"
+                    "Price": "7.33 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Aspire 1.2 Ti-VCT Trend",
-                    "Price": "5.89 Lac"
+                    "Price": "5.89 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Aspire 1.2 Ti-VCT Titanium",
-                    "Price": "6.78 Lac"
+                    "Price": "6.78 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Aspire 1.5 Ti-VCT AT Titanium",
-                    "Price": "7.88 Lac"
+                    "Price": "7.88 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Aspire 1.5 TDCi Ambiente",
-                    "Price": "6.16 Lac"
+                    "Price": "6.16 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Aspire 1.5 TDCi Trend",
-                    "Price": "6.89 Lac"
+                    "Price": "6.89 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Aspire 1.5 TDCi Titanium",
-                    "Price": "7.78 Lac"
+                    "Price": "7.78 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Aspire 1.5 TDCi Titanium Plus",
-                    "Price": "8.33 Lac"
+                    "Price": "8.33 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Ambiente 1.2 Ti-VCT",
-                    "Price": "4.71 Lac"
+                    "Price": "4.71 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Titanium Plus 1.2 Ti-VCT",
-                    "Price": "6.47 Lac"
+                    "Price": "6.47 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Trend Plus 1.2 Ti-VCT",
-                    "Price": "5.26 Lac"
+                    "Price": "5.26 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Trend 1.2 Ti-VCT",
-                    "Price": "5.12 Lac"
+                    "Price": "5.12 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Titanium 1.2 Ti-VCT",
-                    "Price": "5.83 Lac"
+                    "Price": "5.83 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Trend Plus 1.5 TDCi",
-                    "Price": "6.23 Lac"
+                    "Price": "6.23 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Trend 1.5 TDCi",
-                    "Price": "6.12 Lac"
+                    "Price": "6.12 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Base 1.5 TDCi",
-                    "Price": "5.42 Lac"
+                    "Price": "5.42 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Titanium 1.5 TDCi",
-                    "Price": "6.83 Lac"
+                    "Price": "6.83 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "base 1.2 Ti-VCT",
-                    "Price": "4.42 Lac"
+                    "Price": "4.42 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Titanium 1.5 Ti-VCT AT",
-                    "Price": "6.98 Lac"
+                    "Price": "6.98 Lac",
+                    "Type": ""
                   },
                   {
                     "name": "Titanium Plus 1.5 TDCi",
-                    "Price": "7.47 Lac"
+                    "Price": "7.47 Lac",
+                    "Type": ""
                   }
                   ]
                 },
@@ -2965,47 +2986,58 @@
                   "varient": [
                     {
                       "name": "1.5L Ti-VCT Ambiente",
-                      "Price": "7 Lac"
+                      "Price": "7 Lac",
+                      "Type" : ""
                     },
                     {
                       "name": "1.5L Ti-VCT Trend",
-                      "Price": "7.96 Lac"
+                      "Price": "7.96 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.5L Ti-VCT Titanium",
-                      "Price": "9.12 Lac"
+                      "Price": "9.12 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.5L Ti-VCT Titanium(AT)",
-                      "Price": "9.99 Lac"
+                      "Price": "9.99 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.0L EcoBoost Trend+",
-                      "Price": "8.74 Lac"
+                      "Price": "8.74 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.0L EcoBoost Titanium+",
-                      "Price": "10.1 Lac"
+                      "Price": "10.1 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.5L EcoBoost Ambiente",
-                      "Price": "8.19 Lac"
+                      "Price": "8.19 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.5L TDCi Trend",
-                      "Price": "8.91 Lac"
+                      "Price": "8.91 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.5L TDCi Titanium",
-                      "Price": "9.99 Lac"
+                      "Price": "9.99 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.5L TDCi Trend Plus",
-                      "Price": "9.39 Lac"
+                      "Price": "9.39 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "1.5L TDCi Titanium Plus",
-                      "Price": "10.65 Lac"
+                      "Price": "10.65 Lac",
+                      "Type": ""
                     },
                   ]
                 },
@@ -3014,27 +3046,33 @@
                   "varient": [
                     {
                       "name": "2.2L 4x2 AT Trend",
-                      "Price": "24.39 Lac"
+                      "Price": "24.39 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "2.2L 4x4 MT Trend",
-                      "Price": "25.49 Lac"
+                      "Price": "25.49 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "2.2L 4x2 AT Titanium",
-                      "Price": "26.14 Lac"
+                      "Price": "26.14 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "3.2L 4x4 AT Trend",
-                      "Price": "26.54 Lac"
+                      "Price": "26.54 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "3.2L 4x4 AT Titanium",
-                      "Price": "28.15 Lac"
+                      "Price": "28.15 Lac",
+                      "Type": ""
                     },
                     {
                       "name": "2.2L 4x2 MT Trend",
-                      "Price": "23.64 Lac"
+                      "Price": "23.64 Lac",
+                      "Type": ""
                     }
                 },
 
@@ -3337,8 +3375,8 @@
                     ]
                   },
                   {
-                    "name": "Sail"
-
+                    "name": "Sail",
+                    "varient" :[
                     {
                       "name": "Captiva MT",
                       "Price": "25.14 Lac",
@@ -3355,7 +3393,7 @@
                       "Type": ""
                     }
                     ]
-                  },
+                  }
                 },
 
 
@@ -3618,7 +3656,14 @@
                             "Overview": {
                               "Mileage-City": "16.02 kmpl",
                               "Mileage-Highway": "19.91 kmpl",
-                              "Available Colors": "",
+                              "Available Colors": {
+                                "Color1": "Candy White",
+                                "Color2": "Reflex Silver",
+                                "Color3": "Night Blue",
+                                "Color4": "Copper Orange",
+                                "Color5": "Carbon Steel",
+                                "Color6": "Flash Red - Volkswagen Polo"
+                              },
                               "Fuel Tank Capacity": "45 (Liters)",
                               "Seating Capacity": "5",
                               "Transmission Type": "Manual",
@@ -3943,31 +3988,38 @@
                             },
                             {
                               "name": "1.5 TDI HIGHLINE AT",
-                              "Price": "12.13 Lac"
+                              "Price": "12.13 Lac",
+                              "Type": ""
                             },
                             {
                               "name": "1.6 MPI TRENDLINE",
-                              "Price": "7.85 Lac"
+                              "Price": "7.85 Lac",
+                              "Type": ""
                             },
                             {
                               "name": "1.6 MPI COMFORTLINE",
-                              "Price": "8.79 Lac"
+                              "Price": "8.79 Lac",
+                              "Type": ""
                             },
                             {
                               "name": "1.6 MPI HIGHLINE",
-                              "Price": "9.68 Lac"
+                              "Price": "9.68 Lac",
+                              "Type": ""
                             },
                             {
                               "name": "1.2L TSI COMFORTLINE AT",
-                              "Price": "9.87 Lac"
+                              "Price": "9.87 Lac",
+                              "Type": ""
                             },
                             {
                               "name": "1.2 TSI HIGHLINE AT",
-                              "Price": "10.88 Lac"
+                              "Price": "10.88 Lac",
+                              "Type": ""
                             },
                             {
                               "name": "1.6L MPI Highline Plus",
-                              "Price": "9.7 Lac"
+                              "Price": "9.7 Lac",
+                              "Type": ""
                             }
                           ]
                         },

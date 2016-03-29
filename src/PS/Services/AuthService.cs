@@ -31,7 +31,7 @@ namespace PS.Services
             return modelList;
         }
 
-        public string login(LoginViewModel data)
+        public Customer login(LoginViewModel data)
         {
             try
             {
@@ -42,10 +42,12 @@ namespace PS.Services
                     {
                         if (m.Email.ToLower() == data.Email.ToLower())
                         {
-                            if(m.Password == data.Password)
-                                return m.Username;
+                            if (m.Password == data.Password)
+                            {
+                                return m;
+                            }
                             else
-                                return "Incorrect Password";
+                                return null;
                         }
                     }
                 }
