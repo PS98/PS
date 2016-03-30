@@ -16,9 +16,9 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                     $scope.message = result.message;
                 }
                 else if (result.result) {
-                    $scope.userDetails.userName = result.result.username;
+                    $scope.userDetails.userName = result.result[1];
                     $scope.userDetails.imageUrl = "/assets/img/icon-user-default.png";
-                    $scope.userDetails.Email = result.result.email;
+                    $scope.userDetails.email = result.result[0];
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
                     $localStorage.userDetails = $scope.userDetails;
