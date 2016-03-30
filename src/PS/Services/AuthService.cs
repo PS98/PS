@@ -31,8 +31,9 @@ namespace PS.Services
             return modelList;
         }
 
-        public Customer login(LoginViewModel data)
+        public List<string> login(LoginViewModel data)
         {
+            List<string> res = new List<string>();
             try
             {
                 if (!string.IsNullOrEmpty(data.Email) && !string.IsNullOrEmpty(data.Password))
@@ -44,10 +45,14 @@ namespace PS.Services
                         {
                             if (m.Password == data.Password)
                             {
-                                return m;
+                                res.Add(m.Email);
+                                res.Add(m.Username);
+                                return res;
                             }
                             else
-                                return null;
+                                res.Add(m.Email);
+                                res.Add("");
+                                return res;
                         }
                     }
                 }
@@ -88,27 +93,41 @@ namespace PS.Services
             }
         }
 
-        public bool forgotPassword(ForgotPasswordViewModel data)
+        public string forgotPassword(ForgotPasswordViewModel data)
         {
             try
             {
+                List<string> res = new List<string>();
                 if (!string.IsNullOrEmpty(data.Email))
                 {
-                    var modelList = getAll("customer");
-                    foreach (var m in modelList)
+                    var modelList = _database.GetCollection<Customer>("customer");
+                    foreach (var m in modelList.Find(new BsonDocument()).ToListAsync().Result)
                     {
                         if (m.Email.ToLower() == data.Email.ToLower())
                         {
-                            return true;
+                            var pass = RandomString(8);
+                            var filter = Builders<Customer>.Filter.Eq("Email", m.Email);
+                            var update = Builders<Customer>.Update
+                                .Set("Password", pass);
+                            var result = modelList.UpdateOneAsync(filter, update);
+                            return pass;
                         }
                     }
                 }
-                return false;
+                return null;
             }
             catch (Exception)
             {
                 throw;
             }
+        }
+
+        private static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         public List<string> SocialLogin(dynamic T)

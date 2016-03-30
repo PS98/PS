@@ -43,27 +43,27 @@ namespace PS.Controllers
                 if (ModelState.IsValid)
                 {
                     var result = _auth.login(model);
-                    if (!string.IsNullOrEmpty(result.Username))
+                    if (result != null)
                     {
-                        if(result == null)
+                        if(string.IsNullOrEmpty(result[1]))
                         {
                             Response.StatusCode = (int)HttpStatusCode.OK;
-                            return Json(new { Message = "You Entered Incorrect Password." });
+                            return Json(new { Message = "You Entered Incorrect Password.", Status = 1 });
                         }
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Result = result });
+                        return Json(new { Result = result, Status = 0 });
                     }
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Message = "Email address Not Registered." });
+                    return Json(new { Message = "Email address Not Registered.", Status = 1 });
                 }
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message });
+                return Json(new { Message = ex.Message, Status = 2 });
             }
-            Response.StatusCode = (int)HttpStatusCode.BadRequest;
-            return Json(new { Message = "Failed", ModelState = ModelState });
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "System doesn't support entered data format", ModelState = ModelState, Status = 2 });
         }
 
         // POST api/auth/register
@@ -105,8 +105,8 @@ namespace PS.Controllers
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(new { Message = ex.Message });
             }
-            Response.StatusCode = (int)HttpStatusCode.BadRequest;
-            return Json(new { Message = "Failed", ModelState = ModelState });
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "System doesn't support entered data format", Status = 2 });
         }
 
         // POST api/auth/ForgotPassword
@@ -117,19 +117,19 @@ namespace PS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if (_auth.forgotPassword(model))
+                    var pass = _auth.forgotPassword(model);
+                    if (pass != null)
                     {
-                        var pass = RandomString(8);
                         //var callbackUrl = Url.Action("ForgotPassword", "Auth", new { userId = model.Email, code = pass }, protocol: HttpContext.Request.Scheme);
                         _emailSender.SendSimpleMessage(model.Email, "Reset Password",
                            "Your New Password is: " + pass);
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "Mail sent successfully." });
+                        return Json(new { Message = "Password has been sent to registered email address.", Status = 0 });
                     }
                     else
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "Email address not registered with us." });
+                        return Json(new { Message = "Your email address is not registered with us.", Status = 1 });
                     }
                 }
             }
@@ -138,16 +138,8 @@ namespace PS.Controllers
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(new { Message = ex.Message });
             }
-            Response.StatusCode = (int)HttpStatusCode.BadRequest;
-            return Json(new { Message = "Failed", ModelState = ModelState });
-        }
-
-        private static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var random = new Random();
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "System doesn't support entered data format", Status = 2 });
         }
 
         #region Social Login

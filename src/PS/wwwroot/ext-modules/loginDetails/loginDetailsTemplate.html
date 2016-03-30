@@ -22,7 +22,12 @@
                         <div class="content">
                             <div role="tabpanel" class="tab-pan active text-center" id="home">
                                 &nbsp;&nbsp;
-                                <p class="text-danger" style="float: left;" ng-show="loginError">{{message}}</p>
+                                <div class="alert alert-danger" role="alert" ng-show="loginError">
+                                    <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                                    <a href="#" class="close" ng-click="logReset()" aria-label="close">&times;</a>
+                                    <span class="sr-only">Error:</span>
+                                    {{message}}
+                                </div>
                                 <div class="clearfix"></div>
                                 <form name="loginForm">
                                     <div class="form-group">
@@ -65,8 +70,18 @@
                             </div>
                             <div role="tabpanel" class="tab-pan" id="profile">
                                 &nbsp;&nbsp;
-                                <p class="text-success" style="float: left;" ng-show="regSuccess && !regError">{{successMessage}}</p>
-                                <p class="text-danger" style="float: left;" ng-show="regError && !regSuccess">{{errorMessage}}</p>
+                                <div class="alert alert-danger" role="alert" ng-show="regError && !regSuccess">
+                                    <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                                    <a href="#" class="close" ng-click="regReset()" aria-label="close">&times;</a>
+                                    <span class="sr-only">Error:</span>
+                                    {{errorMessage}}
+                                </div>
+                                <div class="alert alert-success" role="alert" ng-show="regSuccess && !regError">
+                                    <span class="fa fa-check-circle-o" aria-hidden="true"></span>
+                                    <a href="#" class="close" ng-click="regReset()" aria-label="close">&times;</a>
+                                    <span class="sr-only">Success:</span>
+                                    {{successMessage}}
+                                </div>
                                 <div class="clearfix"></div>
                                 <form name="regForm">
                                     <div class="form-group">
@@ -123,7 +138,18 @@
                             </div>
                             <div role="tabpanel" class="tab-pan text-center" id="forget_password">
                                 &nbsp;&nbsp;
-                                <span id="reset_fail" class="response_error" style="display: none;"></span>
+                                <div class="alert alert-danger" role="alert" ng-show="frgError && !frgSuccess">
+                                    <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                                    <a href="#" class="close" ng-click="frgReset()" aria-label="close">&times;</a>
+                                    <span class="sr-only">Error:</span>
+                                    {{errorMessage}}
+                                </div>
+                                <div class="alert alert-success" role="alert" ng-show="frgSuccess && !frgError">
+                                    <span class="fa fa-check-circle-o" aria-hidden="true"></span>
+                                    <a href="#" class="close" ng-click="frgReset()" aria-label="close">&times;</a>
+                                    <span class="sr-only">Success:</span>
+                                    {{successMessage}}
+                                </div>
                                 <div class="clearfix"></div>
                                 <form name="fgtForm">
                                     <div class="form-group">
