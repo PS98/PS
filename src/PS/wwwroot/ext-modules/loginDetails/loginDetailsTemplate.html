@@ -28,24 +28,26 @@
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                            <input type="email" class="form-control" name="email" id="email" ng-model="Email" placeholder="Email" required>
+                                            <input type="text" class="form-control" name="email" id="email" ng-model="Email"  ng-class="{'bckgrnd-clr': (loginForm.email.$error.email || loginForm.email.$dirty || loginForm.email.$error.pattern), 'bckgrnd-color-default' : (!loginForm.email.$error.email && !loginForm.email.$error.required && !loginForm.email.$error.pattern)}" ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" placeholder="Email" required>
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="loginForm.email.$error.required && loginForm.email.$dirty">Required</p>
-                                        <p class="text-danger" style="float: left;" ng-show="!loginForm.email.$error.required && loginForm.email.$error.email && loginForm.email.$dirty">Enter a valid email address</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!loginForm.email.$error.required && loginForm.email.$error.email && loginForm.email.$dirty && loginForm.email.$error.pattern">Enter a valid email address</p>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                            <input type="password" class="form-control" name="password" id="password" ng-model="Password" placeholder="Password" required>
+                                            <input type="password" class="form-control"  name="password" id="password" ng-model="Password" ng-class="{'bckgrnd-clr': (loginForm.password.$error.required && loginForm.password.$dirty), 'bckgrnd-color-default' : (!loginForm.password.$error.required)} " placeholder="Password" required>
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">Required</p>
                                     </div>
-                                    <button type="button" id="login_btn" class="btn btn-block bt-login" style="margin-bottom:12px;" ng-disabled="loginForm.$invalid" ng-click="loginSubmit()" data-loading-text="Signing In....">Login</button>
-                                    <div id="center-line" class="clearfix"></div>
+                                    <button type="button" id="login_btn" class="btn btn-block bt-login" style="margin-bottom:25px;" ng-disabled="loginForm.$invalid" ng-click="loginSubmit()" data-loading-text="Signing In....">Login</button>
+                                    <div id="center-line" class="clearfix">
+
+                                        <div id="center-line-OR" class="clearfix">OR</div>
+                                    </div>
                                     <input type="button" name="Google" value="Google" class="google" ng-click="socialSubmit('Google')" />
-                                    <input type="button" name="Facebook" value="Facebook" class="facebook" ng-click="socialSubmit('Facebook')" /><br />
-                                    <br />
-                                    <div class="login-modal-footer">
+                                    <input type="button" name="Facebook" value="Facebook" class="facebook" ng-click="socialSubmit('Facebook')" />                                    
+                                    <div class="login-modal-footer footerPadding15px">
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8">
                                                 <i class="fa fa-lock"></i>
@@ -74,12 +76,12 @@
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="regForm.rusername.$error.required && regForm.rusername.$dirty">Required</p>
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.rusername.$error.minLength && !regForm.rusername.$error.maxLength && regForm.rusername.$error.pattern && regForm.rusername.$dirty">Must start with a letter, and contain letters &amp; numbers only.</p>
-                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rusername.$error.required && (regForm.rusername.$error.minlength || regForm.rusername.$error.maxlength) && regForm.rusername.$dirty">Username ust be between 5 and 20 characters.</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!regForm.rusername.$error.required && (regForm.rusername.$error.minlength || regForm.rusername.$error.maxlength) && regForm.rusername.$dirty">Username must be between 5 and 20 characters.</p>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-at"></i></div>
-                                            <input type="email" class="form-control" id="remail" name="remail" placeholder="Email" ng-model="regEmail" required>
+                                            <input type="text" class="form-control" id="remail" name="remail" placeholder="Email" ng-class="{'bckgrnd-clr': (regForm.remail.$dirty || regForm.remail.$error.pattern) ,'bckgrnd-color-default' : (!regForm.remail.$error.email && !regForm.remail.$error.required && !regForm.remail.$error.pattern)} " ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" ng-model="regEmail" required>
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="regForm.remail.$error.required && regForm.remail.$dirty">Required</p>
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.remail.$error.required && regForm.remail.$error.email && regForm.remail.$dirty">Enter a valid email address</p>
@@ -87,7 +89,7 @@
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-                                            <input type="password" class="form-control" id="rpassword" name="rpassword" ng-model="regPassword" placeholder="Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
+                                            <input type="password" class="form-control" id="rpassword" name="rpassword" ng-model="regPassword" ng-class="{'bckgrnd-clr': (regForm.rpassword.$error.pattern || regForm.rpassword.$dirty || regForm.rpassword.$error.minlength || regForm.rpassword.$error.maxlength),'bckgrnd-color-default' : (!regForm.rpassword.$error.pattern && !regForm.rpassword.$error.minlength && !regForm.rpassword.$error.maxlength)}" placeholder="Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="regForm.rpassword.$error.required && regForm.rpassword.$dirty">Required</p>
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.rpassword.$error.required && (regForm.rpassword.$error.minlength || regForm.rpassword.$error.maxlength) && regForm.rpassword.$dirty">Passwords must be between 8 and 20 characters.</p>
@@ -103,7 +105,7 @@
                                     </div>
                                     <button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." ng-disabled="regForm.$invalid" ng-click="registerSubmit()">Register</button>
                                     <div class="clearfix"></div>
-                                    <div class="login-modal-footer">
+                                    <div class="login-modal-footer footerPadding15px">
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8">
                                                 <i class="fa fa-lock"></i>
@@ -127,16 +129,16 @@
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                            <input type="email" class="form-control" id="femail" name="femail" placeholder="Email" ng-model="fgtEmail" required>
+                                            <input type="email" class="form-control" id="femail" name="femail" placeholder="Email" ng-model="fgtEmail"  ng-class="{'bckgrnd-clr': (fgtForm.femail.$error.email || fgtForm.femail.$dirty || fgtForm.femail.$error.pattern), 'bckgrnd-color-default' : (!fgtForm.femail.$error.email && !fgtForm.femail.$error.required && !fgtForm.femail.$error.pattern)}" ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i"  required>
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="fgtForm.femail.$error.required && fgtForm.femail.$dirty">Required</p>
-                                        <p class="text-danger" style="float: left;" ng-show="!fgtForm.femail.$error.required && fgtForm.femail.$error.email && fgtForm.femail.$dirty">Enter a valid email address</p>
+                                        <p class="text-danger" style="float: left;" ng-show="!fgtForm.femail.$error.required && fgtForm.femail.$error.email && fgtForm.femail.$dirty && fgtForm.femail.$error.pattern">Enter a valid email address</p>
 
                                     </div>
 
                                     <button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait...." ng-disabled="fgtForm.$invalid" ng-click="forgotSubmit()">Forget Password</button>
                                     <div class="clearfix"></div>
-                                    <div class="login-modal-footer">
+                                    <div class="login-modal-footer footerPadding15px">
                                         <div class="row">
                                             <div class="col-xs-6 col-sm-6 col-md-6">
                                                 <i class="fa fa-lock"></i>
