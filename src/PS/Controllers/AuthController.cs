@@ -43,7 +43,7 @@ namespace PS.Controllers
                 if (ModelState.IsValid)
                 {
                     var result = _auth.login(model);
-                    if (!string.IsNullOrEmpty(result.Username))
+                    if (!string.IsNullOrEmpty(result[1]))
                     {
                         if(result == null)
                         {
@@ -117,9 +117,9 @@ namespace PS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if (_auth.forgotPassword(model))
+                    var pass = _auth.forgotPassword(model);
+                    if (pass != null)
                     {
-                        var pass = RandomString(8);
                         //var callbackUrl = Url.Action("ForgotPassword", "Auth", new { userId = model.Email, code = pass }, protocol: HttpContext.Request.Scheme);
                         _emailSender.SendSimpleMessage(model.Email, "Reset Password",
                            "Your New Password is: " + pass);
@@ -140,14 +140,6 @@ namespace PS.Controllers
             }
             Response.StatusCode = (int)HttpStatusCode.BadRequest;
             return Json(new { Message = "Failed", ModelState = ModelState });
-        }
-
-        private static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var random = new Random();
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         #region Social Login
