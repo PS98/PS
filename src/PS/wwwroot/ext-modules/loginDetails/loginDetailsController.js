@@ -11,11 +11,11 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
         psLoginService.login($scope.Email, $scope.Password)
             .then(function (result) {
                 //Success
-                if (result.message) {
+                if (result.status == 1 || result.status == 2) {
                     $scope.loginError = true;
                     $scope.message = result.message;
                 }
-                else if (result.result) {
+                else if (result.status == 0) {
                     $scope.userDetails.userName = result.result[1];
                     $scope.userDetails.imageUrl = "/assets/img/icon-user-default.png";
                     $scope.userDetails.email = result.result[0];
@@ -39,7 +39,10 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
             });
     }
 
-  
+    $scope.logReset = function () {
+        $scope.loginError = false;
+    }
+
 
 
     $scope.registerSubmit = function () {
@@ -51,7 +54,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                         $scope.regSuccess = true;
                         $scope.regError = false;
                         $scope.successMessage = result.message;
-                    } else {
+                    } else if(result.status == 1 || result.status == 2) {
                         $scope.regError = true;
                         $scope.regSuccess = false;
                         $scope.errorMessage = result.message;
@@ -69,16 +72,37 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
         }
     }
 
+    $scope.regReset = function () {
+        $scope.regSuccess = false;
+        $scope.regError = false;
+    }
+
     $scope.forgotSubmit = function () {
         psLoginService.forgotPassword($scope.fgtEmail)
                 .then(function (result) {
                     //Success
-                    alert(result.message);
+                    if (result.status == 0) {
+                        $scope.frgSuccess = true;
+                        $scope.frgError = false;
+                        $scope.successMessage = result.message;
+                    } else if (result.status == 1 || result.status == 2) {
+                        $scope.frgError = true;
+                        $scope.frgSuccess = false;
+                        $scope.errorMessage = result.message;
+                    }
                 }, function (error) {
                     //Error
+                    $scope.frgError = true;
+                    $scope.frgSuccess = false;
+                    $scope.errorMessage = result.message;
                 }).finally(function () {
                     $scope.isBusy = false;
                 });
+    }
+
+    $scope.frgReset = function () {
+        $scope.frgSuccess = false;
+        $scope.frgError = false;
     }
 
     $scope.socialSubmit = function (name) {
