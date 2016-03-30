@@ -191,22 +191,77 @@
     {
       "name": "5 STR BS-IV",
       "Price": "2.58 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",,
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"12.6 kmpl",
+			"Mileage-Highway" : "16.8 kmpl",
+			"Available Colors": "Superior White,Metallic Silky silver,Metallic pearly blue blaze,Fantasy black",
+			tBeige",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,792/yr",
+	
+            }
+	  
     },
     {
       "name": "E 8 STR BS-IV",
       "Price": "2.6 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"12.6 kmpl",
+			"Mileage-Highway" : "16.8 kmpl",
+			"Available Colors": "Superior White,Metallic Silky silver,Metallic pearly blue blaze,Fantasy black",
+			tBeige",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"8",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,792/yr",
+	
+            }
+
     },
     {
       "name": "MPI CARGO BSIV",
       "Price": "2.34 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"12.6 kmpl",
+			"Mileage-Highway" : "16.8 kmpl",
+			"Available Colors": "Superior White,Ruby Red,Harvest Green,Dolphin Creen-Gypcy,Silky silver-Gypcy",
+			tBeige",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,792/yr",
+	
+            }
     },
     {
       "name": "MPI AMBULANCE BSIV",
       "Price": "2.94 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"12.6 kmpl",
+			"Mileage-Highway" : "16.8 kmpl",
+			"Available Colors": "Superior White,Metallic Silky silver,Metallic pearly blue blaze,Fantasy black",
+			tBeige",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"796",
+			"Service Cost"2,792/yr",
+	
+            }
+
     }
   ]
 } {
@@ -433,7 +488,7 @@
     {
       "name": "LXi",
       "Price": "4.68 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
     },
     {
       "name": "VXi",
@@ -493,17 +548,56 @@
     {
       "name": "DZire VXI (O)",
       "Price": "6.18 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.4 kmpl",
+			"Mileage-Highway" : "20.85 kmpl",
+			"Available Colors": "pearl Arctict White,Silky silver,pecific blue,Cave black,Magma Grey,SangriaRed,ALP blue",
+			tBeige",
+			"Fuel Tank Capacity":"42 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manualc",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,710/yr",
+	
+            }
     },
     {
       "name": "Dzire LDi (O)",
       "Price": "6.19 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	 "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.4 kmpl",
+			"Mileage-Highway" : "26.59 kmpl",
+			"Available Colors": "pearl Arctict White,Silky silver,pecific blue,Cave black,Magma Grey,SangriaRed,ALP blue",
+			tBeige",
+			"Fuel Tank Capacity":"42 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"5,814/yr",
+	
+            }
     },
     {
       "name": "DZire VDi (O)",
       "Price": "7.07 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.4 kmpl",
+			"Mileage-Highway" : "26.59 kmpl",
+			"Available Colors": "pearl Arctict White,Silky silver,pecific blue,Cave black,Magma Grey,SangriaRed,ALP blue",
+			tBeige",
+			"Fuel Tank Capacity":"42 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"5,814/yr",
+	
+            }
     },
     {
       "name": "DZire VXI (O) AT",
@@ -513,12 +607,41 @@
     {
       "name": "DZire ZDI",
       "Price": "7.91 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.4 kmpl",
+			"Mileage-Highway" : "26.59 kmpl",
+			"Available Colors": "pearl Arctict White,Silky silver,pecific blue,Cave black,Magma Grey,SangriaRed,ALP blue",
+			tBeige",
+			"Fuel Tank Capacity":"42 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"5,814/yr",
+	
+            }
+
     },
     {
       "name": "DZire LXI",
       "Price": "5.19 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",,
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.4 kmpl",
+			"Mileage-Highway" : "20.85 kmpl",
+			"Available Colors": "pearl Arctict White,Silky silver,pecific blue,Cave black,Magma Grey,SangriaRed,ALP blue",
+			tBeige",
+			"Fuel Tank Capacity":"42 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manualc",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,710/yr",
+	
+            }
+
+	  
     },
     {
       "name": "DZire VXI",
@@ -528,7 +651,20 @@
     {
       "name": "DZire LDI",
       "Price": "5.99 Lac",
-      "Type": "Sedan, Diesel"
+      "Type": "Sedan, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.4 kmpl",
+			"Mileage-Highway" : "26.59 kmpl",
+			"Available Colors": "pearl Arctict White,Silky silver,pecific blue,Cave black,Magma Grey,SangriaRed,ALP blue",
+			tBeige",
+			"Fuel Tank Capacity":"42 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"5,814/yr",
+	
+            }
     },
     {
       "name": "Dzire ZXI",
@@ -538,7 +674,20 @@
     {
       "name": "Dzire VDI",
       "Price": "6.95 Lac",
-      "Type": "Sedan, Diesel"
+      "Type": "Sedan, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.4 kmpl",
+			"Mileage-Highway" : "26.59 kmpl",
+			"Available Colors": "pearl Arctict White,Silky silver,pecific blue,Cave black,Magma Grey,SangriaRed,ALP blue",
+			tBeige",
+			"Fuel Tank Capacity":"42 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"5,814/yr",
+	
+            }
     },
     {
       "name": "DZire ZDI AGS",
@@ -549,7 +698,25 @@
       "name": "DZire VXI AT",
       "Price": "6.77 Lac",
       "Type": "Sedan"
-    }
+    },
+	{
+		"name" : "DZire LXI option (Petrol)", 
+		"Price" : "5.5 lakh", 
+		"Type" : ""
+		"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.4 kmpl",
+			"Mileage-Highway" : "20.85 kmpl",
+			"Available Colors": "pearl Arctict White,Silky silver,pecific blue,Cave black,Magma Grey,SangriaRed,ALP blue",
+			tBeige",
+			"Fuel Tank Capacity":"42 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manualc",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,710/yr",
+	
+            }
+			}
   ]
 } {
   "_id": ObjectId("56eed39bbc9bd93bf4faa33e"),
@@ -558,27 +725,88 @@
     {
       "name": "LXi",
       "Price": "6 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"13.3 kmpl",
+			"Mileage-Highway" : "17.5 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"3,210/yr",
+	
+            }
     },
     {
       "name": "LXi(O)",
       "Price": "6.38 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"13.3 kmpl",
+			"Mileage-Highway" : "17.5 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"3,911/yr",
+	
+            }
     },
     {
       "name": "ZXi",
       "Price": "7.89 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"13.3 kmpl",
+			"Mileage-Highway" : "17.5 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"3,210/yr",
+	
+            }
     },
     {
       "name": "VXi CNG",
       "Price": "7.89 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"13.3  km/kg",
+			"Mileage-Highway" : "17.5 km/kg",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 ((KGS)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"3,911/yr",
+	
+            }
+
     },
     {
       "name": "VXi",
       "Price": "7.29 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"13.3 kmpl",
+			"Mileage-Highway" : "17.5 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"3,210/yr",
+	
+            }
     },
     {
       "name": "LDI SHVS",
@@ -601,32 +829,105 @@
     {
       "name": "LDI (O) SHVS",
       "Price": "7.66 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"20.8 kmpl",
+			"Mileage-Highway" : "24.52 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"3,911/yr",
+	
+            }
     },
     {
       "name": "VXI AT",
       "Price": "8.29 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"13.3 kmpl",
+			"Mileage-Highway" : "17.3 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"3,911/yr",
+	
+            }
+
     },
     {
       "name": "VDI SHVS",
       "Price": "8.29 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"20.8 kmpl",
+			"Mileage-Highway" : "24.52 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"3,911/yr",
+	
+            }
     },
     {
       "name": "ZXI Plus",
       "Price": "8.46 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"13.3 kmpl",
+			"Mileage-Highway" : "17.5 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"3,911/yr",
+	
+            }
     },
     {
       "name": "ZDI SHVS",
       "Price": "8.86 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"20.8 kmpl",
+			"Mileage-Highway" : "24.52 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"3,911/yr",
+	
+            }
     },
     {
       "name": "ZDI SHVS Plus",
       "Price": "9.28 Lac",
-      "Type": "Minivan/MUV"
+      "Type": "Minivan/MUV",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"20.8 kmpl",
+			"Mileage-Highway" : "24.52 kmpl",
+			"Available Colors": "Superior White,Silky silver,Granite Grey,Serene blue,PearlBlue Blaze,RedientBeige",
+			"Fuel Tank Capacity":"45 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"3,911/yr",
+	
+            }	
     }
   ]
 } {
@@ -636,13 +937,58 @@
     {
       "name": "Hard Top",
       "Price": "6.19 Lac",
-      "Type": "SUV"
+      "Type": "SUV",
+	"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"8.45 kmpl",
+			"Mileage-Highway" : "11.96 kmpl",
+			"Available Colors": "Superior White,Ruby Red,Harvest Green,Dolphin Creen-Gypcy,Silky silver-Gypcy",
+			tBeige",
+			"Fuel Tank Capacity":"40 (Liters)",
+			"Seating Capacity" :"8",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1298",
+			"Service Cost"3,177/yr",
+	
+            }
     },
     {
       "name": "Soft Top",
       "Price": "6.04 Lac",
-      "Type": "SUV"
+      "Type": "SUV",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"8.45 kmpl",
+			"Mileage-Highway" : "11.96 kmpl",
+			"Available Colors": "Superior White,Ruby Red,Harvest Green,Dolphin Creen-Gypcy,Silky silver-Gypcy",
+			tBeige",
+			"Fuel Tank Capacity":"40 (Liters)",
+			"Seating Capacity" :"8",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1298",
+			"Service Cost"3,177/yr",
+	
+            }
     }
+	{
+		"name" : "King Hard Top Ambulance(petrol)", 
+		"Price" : "6.1 lakh", 
+		"Type" : ""
+		"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"8.45 kmpl",
+			"Mileage-Highway" : "11.96 kmpl",
+			"Available Colors": "Superior White,Ruby Red,Harvest Green,Dolphin Creen-Gypcy,Silky silver-Gypcy",
+			tBeige",
+			"Fuel Tank Capacity":"40 (Liters)",
+			"Seating Capacity" :"8",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1298",
+			"Service Cost"3,177/yr",
+	
+            }
+
+}
   ]
 } {
   "_id": ObjectId("56eed3b1bc9bd93bf4faa342"),
@@ -651,47 +997,167 @@
     {
       "name": "LXi",
       "Price": "4.45 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"14.7 kmpl",
+			"Mileage-Highway" : "18.5kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,147/yr",
+	
+            }
     },
     {
       "name": "Vxi",
       "Price": "4.85 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"14.7 kmpl",
+			"Mileage-Highway" : "18.5kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,147/yr",
+	
+            }
     },
     {
       "name": "Vxi ABS",
       "Price": "5.1 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"14.7 kmpl",
+			"Mileage-Highway" : "18.5kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,147/yr",
+	
+            }
     },
     {
       "name": "Zxi",
       "Price": "5.45 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"14.7 kmpl",
+			"Mileage-Highway" : "18.5kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,147/yr",
+	
+            }
+
+	  
     },
     {
       "name": "Ldi",
       "Price": "5.53 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.6 kmpl",
+			"Mileage-Highway" : "23.2 kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"4,406/yr",
+	
+            }
     },
     {
       "name": "Vdi",
       "Price": "5.86 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.6 kmpl",
+			"Mileage-Highway" : "23.2 kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"4,406/yr",
+	
+            }
     },
     {
       "name": "Vdi ABS",
       "Price": "6.04 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.6 kmpl",
+			"Mileage-Highway" : "23.2 kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"4,406/yr",
+	
+            }
     },
     {
       "name": "Zdi",
       "Price": "6.45 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.6 kmpl",
+			"Mileage-Highway" : "23.2 kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"4,406/yr",
+	
+            }
     },
     {
       "name": "VXi AT",
       "Price": "6.09 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"13.0 kmpl",
+			"Mileage-Highway" : "17.16 kmpl",
+			"Available Colors": "Superior White,Silky silver,Bakers chocolate,New Granite Grey,Mystique Red,New breeze blue",
+			tBeige",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"2,672/yr",
+	
+            }
+
     }
   ]
 } {
@@ -701,47 +1167,158 @@
     {
       "name": "LXI",
       "Price": "3.39 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"20.6 kmpl ",
+			"Mileage-Highway" : "24.07 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,747/yr",
+	
+            }
     },
     {
       "name": "VXI",
       "Price": "3.56 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"20.6 kmpl ",
+			"Mileage-Highway" : "24.07 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,747/yr",
+	
+            }
     },
     {
       "name": "LX",
       "Price": "3.23 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"20.6 kmpl ",
+			"Mileage-Highway" : "24.07 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,747/yr",
+	
+            }
     },
     {
       "name": "VXI (O)",
       "Price": "3.75 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"20.6 kmpl ",
+			"Mileage-Highway" : "24.07 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,747/yr",
+	
+            }
+				
     },
     {
       "name": "VXI AGS Automatic",
       "Price": "4.02 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"20.6 kmpl ",
+			"Mileage-Highway" : "24.07 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,747/yr",
+	
+            }
+				
     },
     {
       "name": "LXI CNG",
       "Price": "4.01 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"28.0 km/kg ",
+			"Mileage-Highway" : 32.26 km/kg",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"7 (KGS)",
+			"Seating Capacity" :"4",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"3,708/yr,
+	
+            }
     },
     {
       "name": "LXI CNG (O)",
       "Price": "4.08 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"28.0 km/kg ",
+			"Mileage-Highway" : 32.26 km/kg",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"7 (KGS)",
+			"Seating Capacity" :"4",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"3,708/yr,
+	
+            }
     },
     {
       "name": "LXI (O)",
       "Price": "3.46 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"20.6 kmpl ",
+			"Mileage-Highway" : "24.07 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,747/yr",
+	
+            }
+	  
     },
     {
       "name": "VXI AGS (O)",
       "Price": "4.12 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"20.6 kmpl ",
+			"Mileage-Highway" : "24.07 kmpl",
+			"Available Colors": "Superior Whit,Silky Silver, grenita grey,cerulean blue,fire brick red,Tango orange ",
+			"Fuel Tank Capacity":"35(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,747/yr",
+	
+            }
     }
   ]
 } {
@@ -751,62 +1328,207 @@
     {
       "name": "LXI",
       "Price": "4 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"20.0 kmpl",
+			"Mileage-Highway" : "23.1 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "LXI AT",
       "Price": "4.47 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"20.0 kmpl",
+			"Mileage-Highway" : "23.1 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "VXi",
       "Price": "4.3 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"20.0 kmpl",
+			"Mileage-Highway" : "23.1 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,554/yr",
+	
+            }
+	  
     },
     {
       "name": "VXi AT",
       "Price": "4.77 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"20.0 kmpl",
+			"Mileage-Highway" : "23.1 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "ZXi",
       "Price": "4.6 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"20.0 kmpl",
+			"Mileage-Highway" : "23.1 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "ZXi(OPT)",
       "Price": "5.06 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"20.0 kmpl",
+			"Mileage-Highway" : "23.1 kmpl",
+			"Available Colors":"Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "Green VXi",
       "Price": "4.95 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"26.02 km/kg",
+			"Mileage-Highway" :"31.79 km/kg",
+			"Available Colors":"Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"7 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"3,262/yr",
+	
+            }
     },
     {
       "name": "LDI",
       "Price": "4.72 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"23.8 kmpl",
+			"Mileage-Highway" : "27.62 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"793",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "ZXi AMT",
       "Price": "5.06 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"20.0 kmpl",
+			"Mileage-Highway" : "23.1 kmpl",
+			"Available Colors":"Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "VDI",
       "Price": "5.02 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"23.8 kmpl",
+			"Mileage-Highway" : "27.62 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"793",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "ZDI",
       "Price": "5.32 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"23.8 kmpl",
+			"Mileage-Highway" : "27.62 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"793",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "ZDI (O)",
       "Price": "5.78 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"23.8 kmpl",
+			"Mileage-Highway" : "27.62 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"793",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "LXi MT (O)",
@@ -831,22 +1553,59 @@
     {
       "name": "ZXi (O) AMT",
       "Price": "5.19 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+
     },
     {
       "name": "LDi (O)",
       "Price": "4.92 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"23.8 kmpl",
+			"Mileage-Highway" : "27.62 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"793",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "VDi (O)",
       "Price": "5.22 Lac",
-      "Type": "Hatchback, Diesel"
+      "Type": "Hatchback, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"23.8 kmpl",
+			"Mileage-Highway" : "27.62 kmpl",
+			"Available Colors": "Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"793",
+			"Service Cost"2,554/yr",
+	
+            }
     },
     {
       "name": "Green VXi (O)",
       "Price": "5.07 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"26.02 km/kg",
+			"Mileage-Highway" :"31.79 km/kg",
+			"Available Colors":"Glistening Grey,PearlArctictWhite,BlaziRRed,Silky silver,Cave black,Cerulean blue,SunshineRey",
+			"Fuel Tank Capacity":"7 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,554/yr",
+	
+            }
     }
   ]
 } {
@@ -856,72 +1615,240 @@
     {
       "name": "Vxi",
       "Price": "7.31 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"16.7 kmpl",
+			"Mileage-Highway" : "20.73 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Vxi Plus",
       "Price": "7.89 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"16.7 kmpl",
+			"Mileage-Highway" : "20.73 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Zxi",
       "Price": "8.52 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"16.7 kmpl",
+			"Mileage-Highway" : "20.73 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Zxi Plus",
       "Price": "9.07 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"16.7 kmpl",
+			"Mileage-Highway" : "20.73 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Vxi Plus AT",
       "Price": "9.02 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"16.7 kmpl",
+			"Mileage-Highway" : "20.73 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Zxi AT",
       "Price": "9.65 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"15.0 kmpl",
+			"Mileage-Highway" : "19.12 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Vdi (O) SHVS",
       "Price": "8.38 Lac",
-      "Type": "Sedan, Diesel"
+      "Type": "Sedan, Diesel","Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"25.09 kmpl",
+			"Mileage-Highway" : "28.09 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Vdi Plus SHVS",
       "Price": "8.82 Lac",
-      "Type": "Sedan, Diesel"
+      "Type": "Sedan, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"25.09 kmpl",
+			"Mileage-Highway" : "28.09 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Vdi SHVS",
       "Price": "8.23 Lac",
-      "Type": "Sedan, Diesel"
+      "Type": "Sedan, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"25.09 kmpl",
+			"Mileage-Highway" : "28.09 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Zdi Plus SHVS",
       "Price": "10.18 Lac",
-      "Type": "Sedan, Diesel"
+      "Type": "Sedan, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"25.09 kmpl",
+			"Mileage-Highway" : "28.09 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"2,973/yr",
+	
+            }
+
     },
     {
       "name": "Zdi SHVS",
       "Price": "9.53 Lac",
-      "Type": "Sedan, Diesel"
+      "Type": "Sedan, Diesel",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"25.09 kmpl",
+			"Mileage-Highway" : "28.09 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "Vxi (O)",
       "Price": "7.48 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"16.7 kmpl",
+			"Mileage-Highway" : "20.73 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "ZXi+ RS",
       "Price": "9.2 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"16.7 kmpl",
+			"Mileage-Highway" : "20.73 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1373",
+			"Service Cost"2,973/yr",
+	
+            }
     },
     {
       "name": "ZDi Plus SHVS RS",
       "Price": "10.28 Lac",
-      "Type": "Sedan"
+      "Type": "Sedan",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"25.09 kmpl",
+			"Mileage-Highway" : "28.09 kmpl",
+			"Available Colors": "Glistening Grey,Pearl Snom White,SangriaRed,MetallicSilky silver,Midnight black,Metallic Clear Beige,PearlmetallicDignity Brown",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"2,973/yr",
+	
+            }
     }
   ]
 } {
@@ -976,47 +1903,157 @@
     {
       "name": "1.3 Delta",
       "Price": "7 Lac",
-      "Type": "Diesel, Hatchback"
+      "Type": "Diesel, Hatchback",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.59 kmpl",
+			"Mileage-Highway" : "27.39 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"3,570/yr",
+	
+            }
     },
     {
       "name": "1.3 Sigma",
       "Price": "6.34 Lac",
-      "Type": "Diesel, Hatchback"
+      "Type": "Diesel, Hatchback",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.59 kmpl",
+			"Mileage-Highway" : "27.39 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"4,652/yr",
+	
+            }
     },
     {
       "name": "1.3 Zeta",
       "Price": "7.61 Lac",
-      "Type": "Diesel, Hatchback"
+      "Type": "Diesel, Hatchback",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.59 kmpl",
+			"Mileage-Highway" : "27.39 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"4,652/yr",
+	
+            }
+
     },
     {
       "name": "1.3 Alpha",
       "Price": "8.33 Lac",
-      "Type": "Diesel, Hatchback"
+      "Type": "Diesel, Hatchback",
+	  "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.59 kmpl",
+			"Mileage-Highway" : "27.39 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1248",
+			"Service Cost"4,652/yr",
+	
+            }
     },
     {
       "name": "1.2 Sigma",
       "Price": "5.15 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.8 kmpl",
+			"Mileage-Highway" : "21.4 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,570/yr",
+	
+            }
     },
     {
       "name": "1.2 Delta",
       "Price": "5.81 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.8 kmpl",
+			"Mileage-Highway" : "21.4 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,570/yr",
+	
+            }
+	  
     },
     {
       "name": "1.2 CVT",
       "Price": "6.87 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.8 kmpl",
+			"Mileage-Highway" : "21.4 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"4,652/yr",
+	
+            }
     },
     {
       "name": "1.2 Zeta",
       "Price": "6.41 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.8 kmpl",
+			"Mileage-Highway" : "21.4 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,570/yr",
+	
+            }
     },
     {
       "name": "1.2 Alpha",
       "Price": "7.12 Lac",
-      "Type": "Hatchback"
+      "Type": "Hatchback",
+	  "Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.8 kmpl",
+			"Mileage-Highway" : "21.4 kmpl",
+			"Available Colors": "Granite Grey,PearlArctictWhite,Fire Red,Premium silver,AutumnOrange,PremiumUrban blue,Rayblue",
+			"Fuel Tank Capacity":"37 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,570/yr",
+	
+            }
     }
   ]
 }
