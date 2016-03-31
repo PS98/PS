@@ -13,7 +13,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                 //Success
                 if (result.status == 1 || result.status == 2) {
                     $scope.loginError = true;
-                    $scope.message = result.message;d
+                    $scope.message = result.message;
                 }
                 else if (result.status == 0) {
                     $scope.userDetails.firstName = result.result[1];
