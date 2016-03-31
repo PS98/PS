@@ -50,7 +50,9 @@ namespace PS.Services
                                 return res;
                             }
                             else
-                                return null;
+                                res.Add(m.Email);
+                                res.Add("");
+                                return res;
                         }
                     }
                 }
