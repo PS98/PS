@@ -1,6 +1,7 @@
 
 var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, markersLocations, googleMapMarkers = [];
 var infowindow = new google.maps.InfoWindow();
+
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
@@ -114,7 +115,7 @@ function geolocate() {
 function setMarkers(map, locations) {
 
     var latlngset,markers =[];
-
+    var bounds = new google.maps.LatLngBounds();
     $.each(locations, function(index, val) {
 
         var lat = val.lat;
@@ -131,7 +132,7 @@ function setMarkers(map, locations) {
 
         var content = val.name;
 
-        
+        bounds.extend(marker.position);
 
         google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
             return function () {
@@ -144,7 +145,7 @@ function setMarkers(map, locations) {
 
     });
     
-    
+    map.fitBounds(bounds);
 }
 function myClick(id) {
     google.maps.event.trigger(googleMapMarkers[id], 'click');
