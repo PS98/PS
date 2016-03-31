@@ -109,11 +109,11 @@
    
    $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
    $scope.centreList = [{id:1, Name: "Kwik Fits - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.600534069047335", lng: "73.80731105804443" },
-   { id: 2, Name: "Kwiks Fit - Broxburn", addressline2: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.610864870248303", lng: "73.80636692047119"  },
-   { id: 3, Name: "Kwik Fit1 - Broxburn", addressline3: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.6134678078517", lng: "73.82181644439697"},
-   { id: 4, Name: "Kwik Fit2 - Broxburn", addressline4: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.604438697544907", lng: "73.82130146026611"},
-   { id: 5, Name: "Kwik Fit3 - Broxburn", addressline5: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.610376815014273", lng: "73.79589557647705" },
-   {id: 6, Name: "Kwik Fit4 - Broxburn", addressline6: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.601754275073823", lng: "73.82387638092041"
+   { id: 2, Name: "Kwiks Fit - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.610864870248303", lng: "73.80636692047119"  },
+   { id: 3, Name: "Kwik Fit1 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.6134678078517", lng: "73.82181644439697"},
+   { id: 4, Name: "Kwik Fit2 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.604438697544907", lng: "73.82130146026611"},
+   { id: 5, Name: "Kwik Fit3 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.610376815014273", lng: "73.79589557647705" },
+   {id: 6, Name: "Kwik Fit4 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.601754275073823", lng: "73.82387638092041"
 }];
    $scope.selectedCentre = $scope.centreList[0];
     $scope.selectedCentre.activeCentre = true;
@@ -123,6 +123,17 @@
    $scope.selectCentre = function (centre) {
        $scope.selectedCentre = centre;
    }
+
+    $scope.getCentreDetails = function() {
+        
+        psDataServices.getCentreDetails('pune','pimple gurav').
+        success(function (data) {
+            $scope.carList.centreList = data;
+            
+         }).error(function(){
+        });
+
+    }
 
 }]);
 

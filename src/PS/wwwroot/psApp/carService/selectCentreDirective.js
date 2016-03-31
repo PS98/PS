@@ -18,7 +18,13 @@ angular.module("psApp").directive("selectCentre", function () {
       
             initializeGoogleMap('autocomplete', 'mapholder', "", locations);
 
+            $('body').delegate('.dropdown-menu li', 'click', function() {
 
+                $('#txtArea').val($(this).text());
+                scope.$parent.getCentreDetails();
+
+            });
+        
 
             // function to get lat and lng on click of googlemap
             function placeMarker(location, map) {
