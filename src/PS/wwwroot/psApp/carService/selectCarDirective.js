@@ -34,7 +34,15 @@ angular.module("psApp").directive("centreDetails", function () {
                 $scope.add({ dirCentre: $scope.centre });
                
             }
+            $scope.displaySelectedCentre = function(centre) {
 
+                var lat = centre.lat;
+                var lng = centre.lng;
+
+                myClick(centre.id);
+
+
+            }
             
 
         }

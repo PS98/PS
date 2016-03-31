@@ -535,7 +535,9 @@ pre                             { margin-bottom:20px; }
     -moz-animation:slideOutLeft 0.5s both ease;
     animation:slideOutLeft 0.5s both ease;   
 }
-
+.car-header .form-control {
+    margin-bottom: 0px;
+}
 @media (min-width: 768px) {
     .centre-list-item .centre-list-item_heading {
         font-size: 14px;

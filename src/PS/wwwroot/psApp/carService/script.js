@@ -1,5 +1,6 @@
 
-var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, markers;
+var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, markersLocations, googleMapMarkers = [];
+var infowindow = new google.maps.InfoWindow();
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
@@ -26,7 +27,7 @@ function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, locat
     } else {
         error('Google Map is not supported');
    }
-    markers = locations;
+   markersLocations = locations;
 }
 
 function showMap(position) {
@@ -47,14 +48,11 @@ function showMap(position) {
 
     map = new google.maps.Map(document.getElementById(googleMapHolder), myOptions);
     var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
-    var infowindow = new google.maps.InfoWindow({
-        content: "You are here!"
-    });
-
+    infowindow.setContent("You are here!");
     infowindow.open(map, marker);
 
-    if (markers)
-        setMarkers(map, markers);
+    if (markersLocations)
+        setMarkers(map, markersLocations);
 
 }
 function handleError(err) {
@@ -115,7 +113,7 @@ function geolocate() {
 
 function setMarkers(map, locations) {
 
-    var latlngset;
+    var latlngset,markers =[];
 
     $.each(locations, function(index, val) {
 
@@ -133,13 +131,21 @@ function setMarkers(map, locations) {
 
         var content = val.name;
 
-        var infowindow = new google.maps.InfoWindow();
+        
 
         google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
             return function () {
-                infowindow.setContent(content);
+               infowindow.setContent(content);
                 infowindow.open(map, marker);
             };
         })(marker, content, infowindow));
+
+        googleMapMarkers.push(marker);
+
     });
+    
+    
+}
+function myClick(id) {
+    google.maps.event.trigger(googleMapMarkers[id], 'click');
 }
