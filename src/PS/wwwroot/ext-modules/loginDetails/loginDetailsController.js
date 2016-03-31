@@ -13,10 +13,12 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                 //Success
                 if (result.status == 1 || result.status == 2) {
                     $scope.loginError = true;
-                    $scope.message = result.message;
+                    $scope.message = result.message;d
                 }
                 else if (result.status == 0) {
-                    $scope.userDetails.userName = result.result[1];
+                    $scope.userDetails.firstName = result.result[1];
+                    $scope.userDetails.lastName = result.result[2];
+                    $scope.userDetails.userName = $scope.userDetails.firstName + " " + $scope.userDetails.lastName;
                     $scope.userDetails.imageUrl = "/assets/img/icon-user-default.png";
                     $scope.userDetails.email = result.result[0];
                     $scope.isLoggedIn = true;
@@ -47,7 +49,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
 
     $scope.registerSubmit = function () {
         if ($scope.regPassword == $scope.cnfPassword) {
-            psLoginService.register($scope.regUsername, $scope.regEmail, $scope.regPassword)
+            psLoginService.register($scope.regFirstname, $scope.regLastname, $scope.regEmail, $scope.regPassword)
                 .then(function (result) {
                     //Success
                     if (result.status == 0) {

@@ -14,9 +14,9 @@
         return deferred.promise;
    };
 
-   var _register = function (Username, Email, Password) {
+   var _register = function (Firstname, Lastname, Email, Password) {
        var deferred = $q.defer();
-       $http.post("/api/Auth/Register?Username=" + Username + "&Email=" + Email + "&Password=" + Password)
+       $http.post("/api/Auth/Register?Firstname=" + Firstname + "&LastName=" + Lastname + "&Email=" + Email + "&Password=" + Password)
         .then(function (result) {
             //Success
             deferred.resolve(result.data);

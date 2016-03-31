@@ -90,12 +90,12 @@ namespace PS.Controllers
                     else if(result == 1)
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "User already registered.", Status = result });
+                        return Json(new { Message = "Your email address already registered with us.", Status = result });
                     }
                     else
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "Error while processing request.", Status = result });
+                        return Json(new { Message = "Error while processing your request. Please try again later.", Status = result });
                     }
                     
                 }
