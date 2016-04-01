@@ -118,6 +118,7 @@
     $scope.selectedCentre = "";
    $scope.selectCentre = function (centre) {
        $scope.selectedCentre = centre;
+       myClick(centre._id);
    }
 
     $scope.getCentreDetails = function() {

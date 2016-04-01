@@ -29,16 +29,13 @@ angular.module("psApp").directive("centreDetails", function () {
         },
         controller: function ($scope) {
             // $scope.isActive = $scope.$parent.selectedCentre.Name == $scope.centre.Name;
-            //$scope.isDisplaySelected = $scope.centre.activeCentre;
+            $scope.isDisplaySelected = $scope.centre.activeCentre;
             $scope.displaySelectedCentre = function () {
                 $scope.add({ dirCentre: $scope.centre });
                
             }
             $scope.displaySelectedCentre = function(centre) {
-
-                var lat = centre.lat;
-                var lng = centre.lng;
-
+                $scope.selectedCentre = centre;
                 myClick(centre.id);
 
 

@@ -123,9 +123,12 @@ function setMarkers(map, locations) {
     var bounds = new google.maps.LatLngBounds();
     $.each(locations, function(index, val) {
 
-        var lat = val.latitude;
-        var long = val.longitute;
+        //var lat = val.latitude;
+        //var long = val.longitute;
 
+
+        var lat = val.longitute;
+        var long = val.latitude;
         latlngset = new google.maps.LatLng(lat, long);
 
         var marker = new google.maps.Marker({
@@ -153,5 +156,12 @@ function setMarkers(map, locations) {
     map.fitBounds(bounds);
 }
 function myClick(id) {
-    google.maps.event.trigger(googleMapMarkers[id], 'click');
+    var mapMarker;
+    $.each(googleMapMarkers, function (index, val) {
+
+        if (val._id == id) {
+            mapMarker = val;
+        }
+    });
+    google.maps.event.trigger(mapMarker, 'click');
 }
