@@ -13,7 +13,7 @@
         return $http.get("/api/ServiceCentre/" + city);
     }
     var _getCentreDetails = function (city, area) {
-        return $http.get("/api/ServiceCentre", { params: { "city": city, "area": area } });
+        return $http.get("/api/ServiceCentre/"+ city +"/"+ area );
     }
 
     return {

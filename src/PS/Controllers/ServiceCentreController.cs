@@ -43,13 +43,15 @@ namespace PS.Controllers
 
             return areaList?.Where(x => x.City.ToLower() == city.ToLower()).ToList().Select(centre => centre.Area).Distinct() ?? new List<string>();
         }
+
+        [HttpGet("{city}/{area}")]
         public IEnumerable<ServiceCentre> Get(string city, string area)
         {
             var collection = repo.GetCollection<ServiceCentre>(collectionName, database);
 
             var collectionList = collection?.Find(new BsonDocument()).ToListAsync().Result;
 
-            var list =  collectionList?.Where(x => x.City.ToLower() == city.ToLower() && x.Area == area).ToList();
+            var list =  collectionList?.Where(x => x.City.ToLower() == city.ToLower() && x.Area.ToLower() == area.ToLower()).ToList();
 
             return list;
 
