@@ -39,7 +39,7 @@
 
 
                 <!--</form>-->
-                <centre-details centre="selectedCentre" add="selectCentre(dirCentre)" class="active"></centre-details>
+                <centre-details ng-if="selectedCentre" centre="selectedCentre" add="selectCentre(dirCentre)" class="active"></centre-details>
 
                 <h4 class="header-text">Working Hours</h4>
                 <table class="table table-bordered table-condensed table-striped table-hover">
@@ -105,16 +105,18 @@
             <div class="car-header">
                 <div id="mapholder"></div>
                 <div>
-                    <hr>
+                    <div ng-if="recommendedCentre" >
                     <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
-                    <div class="centre-list_first">
-                        <centre-details centre="recommendedCentre" add="selectCentre(dirCentre)" ng-class="recommendedCentre.Name == selectedCentre.Name ?'active' :''"></centre-details>
+                        <div class="centre-list_first">
+                            <centre-details centre="recommendedCentre" add="selectCentre(dirCentre)" ng-class="recommendedCentre.Name == selectedCentre.Name ?'active' :''"></centre-details>
+                        </div>
                     </div>
-                    <hr>
+                    <div ng-if="centreList" >
                     <h4 class="centre-list_other-title">Other centres nearby</h4>
-                    <div class="centre-list_other">
-                        <centre-details centre="centre" ng-repeat="centre in centreList" add="selectCentre(dirCentre)" ng-class="centre.Name == selectedCentre.Name ?'active' :''"></centre-details>
-                    </div>
+                        <div class="centre-list_other">
+                            <centre-details centre="centre" ng-repeat="centre in centreList" add="selectCentre(dirCentre)" ng-class="centre.Name == selectedCentre.Name ?'active' :''"></centre-details>
+                        </div>
+                        </div>
                 </div>
             </div>
         </div>

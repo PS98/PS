@@ -112,14 +112,19 @@ function geolocate() {
   }
 }
 
+function locate(list) {
+    setMarkers(map, list);
+}
+
+
 function setMarkers(map, locations) {
 
     var latlngset,markers =[];
     var bounds = new google.maps.LatLngBounds();
     $.each(locations, function(index, val) {
 
-        var lat = val.lat;
-        var long = val.lng;
+        var lat = val.latitude;
+        var long = val.longitute;
 
         latlngset = new google.maps.LatLng(lat, long);
 
