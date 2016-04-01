@@ -32,7 +32,7 @@
 }
 
 .login-modal form {
-	max-width: 340px;
+    margin-top: 10%;
 }
 
 .tab-pane form {
@@ -48,21 +48,21 @@
 }
 
 .modal-social-icons{padding:0 10%;}
-.facebook, .twitter, .google, .linkedin {width:100%;height:40px; padding-top:2%; margin-top:8%;}
+.facebook, .twitter, .google, .linkedin {height:40px; margin: 4% 15% 10% 15%; border-radius: 10%;}
 .modal-icons{margin-left: -10px; margin-right: 20px;}
 .google, .google:hover{background-color:#dd4b39;border:2px solid #dd4b39;color:#fff;}
 .twitter, .twitter:hover{ background-color: #00aced; border:2px solid #00aced;color: #fff;}
 .facebook, .facebook:hover{background-color: #3b5999; border:2px solid #3b5999;color:#fff;}
 .linkedin, .linkedin:hover{background-color: #007bb6; border: 2px solid #007bb6; color:#fff;}
 #social-icons-conatainer{position: relative;}
-#center-line{right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
+#center-line{right: 265.7px;top: 80px;background:#ddd;  border: 2px solid #DDDDDD;border-radius: 20px;}
 
 #center-line-OR {   
     position: absolute;
-    right: 200px;
-    top: 230px;
+    right: 47%;
+    top: 35%;
     background: #ddd;
-    border: 6px solid #DDDDDD;
+    border: 10px solid #DDDDDD;
     border-radius: 20px;
 
 }

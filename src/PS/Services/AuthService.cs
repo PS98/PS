@@ -46,7 +46,8 @@ namespace PS.Services
                             if (m.Password == data.Password)
                             {
                                 res.Add(m.Email);
-                                res.Add(m.Username);
+                                res.Add(m.FirstName);
+                                res.Add(m.LastName);
                                 return res;
                             }
                             else
@@ -67,7 +68,7 @@ namespace PS.Services
         public int register(RegisterViewModel data)
         {
             try {
-                if (!string.IsNullOrEmpty(data.Username) && !string.IsNullOrEmpty(data.Email) && !string.IsNullOrEmpty(data.Password))
+                if (!string.IsNullOrEmpty(data.FirstName) && !string.IsNullOrEmpty(data.LastName) && !string.IsNullOrEmpty(data.Email) && !string.IsNullOrEmpty(data.Password))
                 {
                     var modelList = getAll("customer");
                     foreach (var m in modelList)
@@ -79,7 +80,8 @@ namespace PS.Services
                     }
                     var collection = _database.GetCollection<Customer>("customer");
                     Customer c = new Customer();
-                    c.Username = data.Username;
+                    c.FirstName = data.FirstName;
+                    c.LastName = data.LastName;
                     c.Email = data.Email;
                     c.Password = data.Password;
                     collection.InsertOneAsync(c);
