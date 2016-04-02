@@ -68,13 +68,13 @@
                             </div>
                             <div role="tabpanel" class="tab-pan" id="profile">
                                 &nbsp;&nbsp;
-                                <div class="alert alert-danger" role="alert" ng-show="regError && !regSuccess">
+                                <div class="alert alert-danger" role="alert" ng-show="(regError && !regSuccess) || (reqError && !reqSuccess)">
                                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
                                     <a href="#" class="close" ng-click="regReset()" aria-label="close">&times;</a>
                                     <span class="sr-only">Error:</span>
                                     {{errorMessage}}
                                 </div>
-                                <div class="alert alert-success" role="alert" ng-show="regSuccess && !regError">
+                                <div class="alert alert-success" role="alert" ng-show="(regSuccess && !regError) || (reqSuccess && !reqError)">
                                     <span class="fa fa-check-circle-o" aria-hidden="true"></span>
                                     <a href="#" class="close" ng-click="regReset()" aria-label="close">&times;</a>
                                     <span class="sr-only">Success:</span>
@@ -113,13 +113,21 @@
                                             <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
                                             <div>
                                                 <span type="text" class="form-control" id="rmobileprefix" name="rmobileprefix" style="width:10%; line-height: 2px;" readonly>+91</span>
-                                                <input type="tel" class="form-control" id="rmobile" name="rmobile" ng-model="regMobile" style="width:86%;" ng-class="{'bckgrnd-clr': (regForm.rmobile.$error.pattern || regForm.rmobile.$dirty || regForm.rmobile.$error.minlength || regForm.rpassword.$error.maxlength),'bckgrnd-color-default' : (!regForm.rmobile.$error.pattern && !regForm.rmobile.$error.minlength && !regForm.rmobile.$error.maxlength && !regForm.rmobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/">
+                                                <input type="tel" class="form-control" id="rmobile" name="rmobile" ng-model="regMobile" style="width:86%;" ng-class="{'bckgrnd-clr': (regForm.rmobile.$error.pattern || regForm.rmobile.$dirty || regForm.rmobile.$error.minlength || regForm.rmobile.$error.maxlength),'bckgrnd-color-default' : (!regForm.rmobile.$error.pattern && !regForm.rmobile.$error.minlength && !regForm.rmobile.$error.maxlength && !regForm.rmobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/">
                                             </div>
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="regForm.rmobile.$error.required && regForm.rmobile.$dirty">Required Field</p>
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.rmobile.$error.required && (regForm.rmobile.$error.minlength || regForm.rmobile.$error.maxlength) && regForm.rmobile.$dirty">Must be a 10 digit number.</p>
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.rmobile.$error.required && !regForm.rmobile.$error.minlength && !regForm.rmobile.$error.maxlength && regForm.rmobile.$error.pattern && regForm.rmobile.$dirty">Must start with 7, 8 or 9.</p>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div style="display:flex;">
+                                                <input type="password" class="form-control" id="rotp" name="rotp" ng-model="regotp" style="width:100px;" ng-disabled="regForm.rmobile.$invalid" ng-class="{'bckgrnd-clr': (regForm.rotp.$dirty || regForm.rotp.$error.minlength || regForm.rotp.$error.maxlength),'bckgrnd-color-default' : (!regForm.rotp.$error.minlength && !regForm.rotp.$error.maxlength && !regForm.rotp.$error.required)}" placeholder="OTP" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
+                                                <button type="button" id="reqotp_btn" class="btn btn-block btn-info" style="{{again ? 'margin-left:125px;' : 'margin-left:150px;'}}" ng-disabled="regForm.rmobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                                            </div>
+                                        </div>
+                                        </div>
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>

@@ -83,6 +83,7 @@ namespace PS.Services
                     c.FirstName = data.FirstName;
                     c.LastName = data.LastName;
                     c.Email = data.Email;
+                    c.Mobile = data.Mobile;
                     c.Password = data.Password;
                     collection.InsertOneAsync(c);
                     return 0;

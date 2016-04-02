@@ -5,6 +5,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
     $scope.loginError = false;
     $scope.regError = false;
     $scope.regSuccess = false;
+    $scope.again = false;
     $scope.userDetails = {};
 
     $scope.loginSubmit = function () {     
@@ -49,27 +50,35 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
 
     $scope.registerSubmit = function () {
         if ($scope.regPassword == $scope.cnfPassword) {
-            psLoginService.register($scope.regFirstname, $scope.regLastname, $scope.regEmail, $scope.regPassword)
-                .then(function (result) {
-                    //Success
-                    if (result.status == 0) {
-                        $scope.regSuccess = true;
+            if ($scope.otp == $scope.regotp) {
+                psLoginService.register($scope.regFirstname, $scope.regLastname, $scope.regEmail, $scope.regMobile, $scope.regPassword)
+                    .then(function (result) {
+                        //Success
+                        if (result.status == 0) {
+                            $scope.regSuccess = true;
+                            $scope.regError = false;
+                            $scope.successMessage = result.message;
+                        } else if(result.status == 1 || result.status == 2) {
+                            $scope.regError = true;
+                            $scope.regSuccess = false;
+                            $scope.errorMessage = result.message;
+                        }
+                    }, function (error) {
+                        //Error
                         $scope.regError = false;
-                        $scope.successMessage = result.message;
-                    } else if(result.status == 1 || result.status == 2) {
-                        $scope.regError = true;
-                        $scope.regSuccess = false;
-                        $scope.errorMessage = result.message;
-                    }
-                }, function (error) {
-                    //Error
-                    $scope.regError = false;
-                    $scope.errorMessage = error.message;
-                }).finally(function () {
-                    $scope.isBusy = false;
-                });
+                        $scope.errorMessage = error.message;
+                    }).finally(function () {
+                        $scope.isBusy = false;
+                    });
+            }
+            else {
+                $scope.reqError = true;
+                $scope.reqSuccess = false;
+                $scope.errorMessage = "You entered incorrect OTP.";
+            }
         } else {
             $scope.regError = true;
+            $scope.regSuccess = false;
             $scope.errorMessage = "Password doesn't match.";
         }
     }
@@ -77,6 +86,33 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
     $scope.regReset = function () {
         $scope.regSuccess = false;
         $scope.regError = false;
+        $scope.reqSuccess = false;
+        $scope.reqError = false;
+    }
+
+    $scope.requestOtp = function (Mobile) {
+        psLoginService.mobileVerification(Mobile)
+            .then(function (result) {
+                //Success
+                if (result.status == 0) {
+                    $scope.otp = result.result;
+                    $scope.again = true;
+                    $scope.reqSuccess = true;
+                    $scope.reqError = false;
+                    $scope.successMessage = result.message;
+                } else if (result.status == 1 || result.status == 2) {
+                    $scope.reqError = true;
+                    $scope.reqSuccess = false;
+                    $scope.errorMessage = result.message;
+                }
+            }, function (error) {
+                //Error
+                $scope.reqError = true;
+                $scope.reqSuccess = false;
+                $scope.errorMessage = error.message;
+            }).finally(function () {
+                $scope.isBusy = false;
+            });
     }
 
     $scope.forgotSubmit = function () {

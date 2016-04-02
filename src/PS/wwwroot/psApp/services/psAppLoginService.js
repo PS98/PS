@@ -14,9 +14,23 @@
         return deferred.promise;
    };
 
-   var _register = function (Firstname, Lastname, Email, Password) {
+   var _register = function (Firstname, Lastname, Email, Mobile, Password) {
        var deferred = $q.defer();
-       $http.post("/api/Auth/Register?Firstname=" + Firstname + "&LastName=" + Lastname + "&Email=" + Email + "&Password=" + Password)
+       $http.post("/api/Auth/Register?FirstName=" + Firstname + "&LastName=" + Lastname + "&Email=" + Email + "&Mobile=" + Mobile + "&Password=" + Password)
+        .then(function (result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
+
+       return deferred.promise;
+   };
+
+ var _mobileVerification = function (Mobile) {
+       var deferred = $q.defer();
+     $http.post("/api/Auth/MobileOTP?MobileNumber=" + Mobile)
         .then(function (result) {
             //Success
             deferred.resolve(result.data);
@@ -76,5 +90,6 @@
        forgotPassword: _forgotPassword,
        socialLogin: _socialLogin,
        socialCallback: _socialCallback,
+       mobileVerification: _mobileVerification
    };   
 }])

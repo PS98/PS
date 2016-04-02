@@ -53,34 +53,10 @@ namespace PS.Services
                                                    // "i7qydlUseytO4VqWT0ip0tqkoCGKa1rh" secret id
                                                    // SK1222a7d0b0f58495a6c76531997e7fb6 sid
                                                    //Shobhit98 friendly name
-            var result = twilio.SendMessage("+13343283001", "+918380911266", message);
+            var result = twilio.SendMessage("+13343283001", "+91" + number, message);
             System.Diagnostics.Debug.WriteLine(result);
             return Task.FromResult(0);
         }
-
-        //public async Task SendSimpleMessage(string email, string subject, string message)
-        //{
-           // var smtp = new SmtpClient("smtp.live.com", 465);
-
-           // var creds = new NetworkCredential("varshneyshobhit98@hotmail.com", "Shob@9897598165");
-
-            //smtp.UseDefaultCredentials = false;
-            //smtp.Credentials = creds;
-            //smtp.EnableSsl = true;
-
-            //var to = new MailAddress(email);
-           // var from = new MailAddress("info@ycc.com", "Your Contractor Connection");
-
-           // var msg = new MailMessage();
-
-            //msg.To.Add(to);
-            //msg.From = from;
-            //msg.IsBodyHtml = true;
-            //msg.Subject = subject;
-            //msg.Body = message;
-
-           // await smtp.SendMailAsync(msg);
-       // }
 
         public RestResponse SendSimpleMessage(string email, string subject, string message)
         {
