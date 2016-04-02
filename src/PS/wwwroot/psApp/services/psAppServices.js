@@ -9,10 +9,15 @@
     var _getCarVarient = function (collectionName, carType) {
         return $http.get("/api/car/" + collectionName + "/" + carType);
     }
-    var _getCentreArea = function (city) {
+
+    var _getServiceCentreCity = function (city) {
+        return $http.get("/api/ServiceCentre/");
+    }
+    
+    var _getServiceCentreArea = function (city) {
         return $http.get("/api/ServiceCentre/" + city);
     }
-    var _getCentreDetails = function (city, area) {
+    var _getServiceCentreList = function (city, area) {
         return $http.get("/api/ServiceCentre/"+ city +"/"+ area );
     }
 
@@ -20,8 +25,10 @@
         getAllCarColletion: _getAllCarCollection,
         getCarType: _getCarType,
         getCarVarient: _getCarVarient,
-        getCentreArea: _getCentreArea,
-        getCentreDetails: _getCentreDetails
+        getServiceCentreCity:_getServiceCentreCity,
+        getServiceCentreArea: _getServiceCentreArea,
+        getServiceCentreList: _getServiceCentreList,
+
 }
           
     

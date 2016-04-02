@@ -13,7 +13,7 @@
                     <div class="form-group col-md-6">
                         <select class="form-control" id="selCity">
                             <option> Select City</option>
-                            <option>Pune</option>
+                            <option ng-repeat="city in car.centreCity">{{city}}</option>
                            </select>
                     </div>
                     <div class="form-group col-md-6">
@@ -26,9 +26,8 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" style="width:100%;margin:0">
-                                <li><a href="#">Wakad</a></li>
-                                <li><a href="#">Pimple Saudagar</a></li>
-                                <li><a href="#">Pimple Gurav</a></li>
+                                <li ng-repeat="area in car.centreArea "><a href="#">{{area}}</a></li>
+                               
                             </ul>
                         </span>
                     </div>

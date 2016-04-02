@@ -14,21 +14,16 @@ namespace PS.Services
 {
     public class AuthService: IAuthService
     {
-        protected static IMongoClient _client;
-        protected static IMongoDatabase _database;
-        private const string conString = "mongodb://localhost:27017";
+        private MongoRepository _repo = new MongoRepository("auth");
+        //public AuthService()
+        //{
 
-        public AuthService()
-        {
-            _client = new MongoClient(conString);
-            _database = _client.GetDatabase("auth");
-        }
+        //    repo = new MongoRepository("auth");
+        //}
 
         public List<Customer> getAll(string colletionName)
         {
-            var collection = _database.GetCollection<Customer>(colletionName);
-            var modelList = collection.Find(new BsonDocument()).ToListAsync().Result;   
-            return modelList;
+            return _repo.GetDocumentList<Customer>(colletionName);
         }
 
         public List<string> login(LoginViewModel data)
@@ -78,7 +73,7 @@ namespace PS.Services
                             return 1;
                         }
                     }
-                    var collection = _database.GetCollection<Customer>("customer");
+                    var collection = _repo.GetCollection<Customer>("customer");
                     Customer c = new Customer();
                     c.FirstName = data.FirstName;
                     c.LastName = data.LastName;
@@ -102,7 +97,7 @@ namespace PS.Services
                 List<string> res = new List<string>();
                 if (!string.IsNullOrEmpty(data.Email))
                 {
-                    var modelList = _database.GetCollection<Customer>("customer");
+                    var modelList = _repo.GetCollection<Customer>("customer");
                     foreach (var m in modelList.Find(new BsonDocument()).ToListAsync().Result)
                     {
                         if (m.Email.ToLower() == data.Email.ToLower())
@@ -134,11 +129,11 @@ namespace PS.Services
 
         public List<string> SocialLogin(dynamic T)
         {
-            var rep = new MongoRepository();
+            var rep = new MongoRepository("customer");
             List<string> data = new List<string>();
             if (T is GoogleUserProfile)
             {
-                var collection = rep.GetCollection<GoogleUserProfile>("googleCustomer", "customer");
+                var collection = rep.GetCollection<GoogleUserProfile>("googleCustomer");
 
                 //  var filter = Builders<BsonDocument>.Filter.Eq("Email", "");
                 var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
@@ -161,7 +156,7 @@ namespace PS.Services
             }
              if (T is FacebookUserProfile)
             {
-                var collection = rep.GetCollection<FacebookUserProfile>("facebookCustomer", "customer");
+                var collection = rep.GetCollection<FacebookUserProfile>("facebookCustomer");
                 var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
                 if (customerList?.Where(e => e.Email == T.Email).ToList().Count == 0)
                 {

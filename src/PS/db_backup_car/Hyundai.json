@@ -5,37 +5,130 @@
         {
             "name" : "D-Lite", 
             "Price" : "", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.3 kmpl",
+			"Mileage-Highway" : "21.1 kmpl",
+			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
+			tBeige",
+			"Fuel Tank Capacity":"32 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"814",
+			"Service Cost"2,634/yr",
+	
+            }
         }, 
         {
             "name" : "D-Lite +", 
             "Price" : "", 
-            "Type" : ""
+            "Type" : "",
+			"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.0 kmpl",
+			"Mileage-Highway" : "21.1 kmpl",
+			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
+			tBeige",
+			"Fuel Tank Capacity":"32 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"814",
+			"Service Cost"2,634/yr",
+	
+            }
         }, 
         {
-            "name" : "Era +", 
-            "Price" : "", 
-            "Type" : ""
+            "name"  : "Era +", 
+			"Price" : "3.8 lakh", 
+			"Type"  : ""
+			"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.0 kmpl",
+			"Mileage-Highway" : "21.1 kmpl",
+			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
+			tBeige",
+			"Fuel Tank Capacity":"32 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"814",
+			"Service Cost"2,634/yr",
+	
+            }
         }, 
         {
             "name" : "Era + LPG", 
-            "Price" : "", 
-            "Type" : ""
+           "Price" : "4.1 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"(LPG)
+			"Mileage-City":"17.0 km/kg",
+			"Mileage-Highway" : "21.1 km/kg",
+			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
+			tBeige",
+			"Fuel Tank Capacity":"4 (kg)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"814
+			"Service Cost"2,634/yr",
+	
+            }
+
         }, 
         {
             "name" : "Magna +", 
-            "Price" : "", 
-            "Type" : ""
+            "Price" : "4.1 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.0 kmpl",
+			"Mileage-Highway" : "21.1 kmpl",
+			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
+			tBeige",
+			"Fuel Tank Capacity":"32 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"814",
+			"Service Cost"2,634/yr",
+	
+            }
+
         }, 
         {
             "name" : "Magna + LPG", 
-            "Price" : "", 
-            "Type" : ""
+           "Price" : "4.4 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"(LPG)
+			"Mileage-City":"17.0 km/kg",
+			"Mileage-Highway" : "21.1 km/kg",
+			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
+			tBeige",
+			"Fuel Tank Capacity":"4 (kg)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"814
+			"Service Cost"2,634/yr",
+	
+            }
         }, 
         {
             "name" : "Sportz", 
-            "Price" : "", 
-            "Type" : ""
+           "Price" : "4.4 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"17.0 kmpl",
+			"Mileage-Highway" : "21.1 kmpl",
+			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
+			tBeige",
+			"Fuel Tank Capacity":"32 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"814",
+			"Service Cost"2,634/yr",
+	
+            }
         }, 
         {
             "name" : "1.0 Kappa Magna Plus", 
@@ -44,8 +137,22 @@
         }, 
         {
             "name" : "1.0 Kappa Magna Plus (O)", 
-            "Price" : "", 
-            "Type" : ""
+            "Price" : "4.6 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"15.9 kmpl",
+			"Mileage-Highway" : "20.3 kmpl",
+			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
+			tBeige",
+			"Fuel Tank Capacity":"32 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"998",
+			"Service Cost"2,634/yr",
+	
+            }
+
         }
     ]
 }

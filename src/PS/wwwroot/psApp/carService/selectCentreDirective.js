@@ -21,7 +21,7 @@ angular.module("psApp").directive("selectCentre", function () {
             $('body').delegate('.dropdown-menu li', 'click', function() {
 
                 $('#txtArea').val($(this).text());
-                scope.$parent.getCentreDetails();
+                scope.$parent.getCentreDetails($(this).text());
 
             });
         

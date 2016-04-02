@@ -13,22 +13,15 @@ namespace PS.Controllers
     [Route("api/[controller]")]
     public class CarController : Controller
     {
-        private IMongoRepository _mongoDb;
-        private MongoRepository repo = new MongoRepository();
-        public CarController(IMongoRepository mongo)
-        {
-            _mongoDb = mongo;
-        }
-
-
-
+        
+        private MongoRepository _repo = new MongoRepository("car");
         // GET: api/car
         [HttpGet]
         public CarYearList Get()
         {
-            var collectionList = _mongoDb.getAll();
-            var carlist = repo.convertToPresentationList(collectionList);
-            var yearsList = repo.getYears();
+            var collectionList = _repo.GetAllCollectionName();
+            var carlist = _repo.convertToPresentationList(collectionList);
+            var yearsList = _repo.getYears();
 
             CarYearList list
                 = new CarYearList();
@@ -41,19 +34,19 @@ namespace PS.Controllers
         [HttpGet("{collectionName}")]
         public IEnumerable<IEnumerable<string>> Get(string collectionName)
         {
-            var list = _mongoDb.getAll(collectionName);
+            var list = _repo.GetDocumentList<Car>(collectionName);
             var collectionList = list.Select(m => m.name).ToList();
             
 
-            return repo.convertToPresentationList(collectionList);
+            return _repo.convertToPresentationList(collectionList);
 
         }
         [HttpGet("{collectionName}/{carName}")]
         public IEnumerable<IEnumerable<string>> GetVariant(string collectionName, string carName)
         {
-            var list = _mongoDb.getAll(collectionName);
+            var list = _repo.GetDocumentList<Car>(collectionName);
             var varientList = list.Where(m => m.name == carName).SelectMany(y => y.varient);
-            return repo.convertToPresentationList(varientList.Select(y => y.name).ToList());
+            return _repo.convertToPresentationList(varientList.Select(y => y.name).ToList());
         }
 
 

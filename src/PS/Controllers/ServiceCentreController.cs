@@ -15,45 +15,54 @@ namespace PS.Controllers
     [Route("api/[controller]")]
     public class ServiceCentreController : Controller
     {
-        private IMongoRepository _mongoDb;
-        private MongoRepository repo =  new MongoRepository();
+       // private IMongoRepository _mongoDb;
+        private MongoRepository repo =  new MongoRepository("serviceCentre");
         const string database = "serviceCentre";
-        const string collectionName = "centre";
+        const string collectionName = "Pune";
+
+
 
 
        // GET: api/values
        [HttpGet]
         public IEnumerable<string> Get()
-        {
+       {
 
-            var collection = repo.GetCollection<ServiceCentre>(collectionName, database);
+           var collection = repo.GetAllCollectionName();
 
-            var cityList = collection?.Find(new BsonDocument()).ToListAsync().Result;
-
-            return cityList?.Select(centre => centre.City) ?? new List<string>();
+           return collection;
         }
 
         // GET api/values/5
         [HttpGet("{city}")]
         public IEnumerable<string> Get(string city)
         {
-            var collection = repo.GetCollection<ServiceCentre>(collectionName, database);
+
+            
+            var collection = repo.GetCollection<ServiceCentre>(city);
 
             var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
 
-            return areaList?.Where(x => x.City.ToLower() == city.ToLower()).ToList().Select(centre => centre.Area).Distinct() ?? new List<string>();
+            return areaList.Select(x => x.Area).Distinct();
         }
 
         [HttpGet("{city}/{area}")]
-        public IEnumerable<ServiceCentre> Get(string city, string area)
+        public IEnumerable<Centre> Get(string city, string area)
         {
-            var collection = repo.GetCollection<ServiceCentre>(collectionName, database);
+            var collection = repo.GetCollection<ServiceCentre>(city);
 
-            var collectionList = collection?.Find(new BsonDocument()).ToListAsync().Result;
+            var documentList = collection?.Find(new BsonDocument()).ToListAsync().Result;
 
-            var list =  collectionList?.Where(x => x.City.ToLower() == city.ToLower() && x.Area.ToLower() == area.ToLower()).ToList();
+            var list =  documentList?.Where(x=>x.Area.ToLower() == area.ToLower());
 
-            return list;
+            var centreList = new List<Centre>();
+            if (list == null) return centreList;
+            foreach (var a in list)
+            {
+                centreList.AddRange(a.Centres);
+            }
+
+            return centreList;
 
         }
         // POST api/values

@@ -118,12 +118,11 @@
     $scope.selectedCentre = "";
    $scope.selectCentre = function (centre) {
        $scope.selectedCentre = centre;
-       myClick(centre._id);
+       myClick(centre.$$hashKey);
    }
 
-    $scope.getCentreDetails = function() {
-        
-        psDataServices.getCentreDetails('pune','pimple gurav').
+    $scope.getCentreDetails = function(area) {
+       psDataServices.getServiceCentreList('Pune',area).
         success(function (data) {
             $scope.centreList = data;
              $scope.selectedCentre = $scope.centreList[0];
@@ -135,6 +134,11 @@
         });
 
     }
-
+    psDataServices.getServiceCentreCity().success(function(data) {
+        $scope.car.centreCity = data;
+    });
+    psDataServices.getServiceCentreArea("Pune").success(function (data) {
+        $scope.car.centreArea = data;
+    });
 }]);
 

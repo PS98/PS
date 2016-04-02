@@ -10,12 +10,16 @@ namespace PS.Models
     public class ServiceCentre
     {
         public BsonObjectId _id { get; set; }
-        public string Name { get; set; }
-        public string City { get; set; }
         public string Area { get; set; }
+        public List<Centre> Centres { get; set; }
+    }
+
+    public class Centre
+    {
+        public string Name { get; set; }
         public Address Address { get; set; }
         public string PhoneNo { get; set; }
-        public string Longitute { get; set; }
+        public string Longitude { get; set; }
         public string Latitude { get; set; }
     }
 

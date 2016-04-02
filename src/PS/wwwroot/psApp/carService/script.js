@@ -114,6 +114,7 @@ function geolocate() {
 
 function locate(list) {
     setMarkers(map, list);
+    markersLocations = list;
 }
 
 
@@ -127,7 +128,7 @@ function setMarkers(map, locations) {
         //var long = val.longitute;
 
 
-        var lat = val.longitute;
+        var lat = val.longitude;
         var long = val.latitude;
         latlngset = new google.maps.LatLng(lat, long);
 
@@ -156,12 +157,14 @@ function setMarkers(map, locations) {
     map.fitBounds(bounds);
 }
 function myClick(id) {
-    var mapMarker;
-    $.each(googleMapMarkers, function (index, val) {
+    var mapMarkerIndex;
 
-        if (val._id == id) {
-            mapMarker = val;
+
+    $.each(markersLocations, function (index, val) {
+
+        if (val.$$hashKey == id) {
+            mapMarkerIndex = index;
         }
     });
-    google.maps.event.trigger(mapMarker, 'click');
+    google.maps.event.trigger(googleMapMarkers[mapMarkerIndex], 'click');
 }

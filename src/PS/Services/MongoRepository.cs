@@ -19,18 +19,37 @@ namespace PS.Services
         protected static IMongoDatabase _database;
         private const string conString = "mongodb://localhost:27017";
 
-        public MongoRepository()
+        public MongoRepository(string database)
         {
             _client = new MongoClient(conString);
-            _database = _client.GetDatabase("car");
+            _database = _client.GetDatabase(database);
         }
 
-        public IMongoCollection<T> GetCollection<T>(string collectionName, string database)
+        public IMongoCollection<T> GetCollection<T>(string collectionName)
         {
-        var dataBase = _client.GetDatabase(database);
-            var collection = dataBase.GetCollection<T>(collectionName);
+            var collection = _database.GetCollection<T>(collectionName);
             return collection;
         }
+
+
+        public List<T> GetDocumentList<T>(string collectionName)
+        {
+            var collection = _database.GetCollection<T>(collectionName);
+            var documentList = collection.Find(new BsonDocument()).ToListAsync().Result;
+            return documentList;
+        }
+
+        public List<string> GetAllCollectionName()
+        {
+            var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;
+            var bson = (BsonExtensionMethods.ToJson(list));
+            var bsonDictionary = JsonConvert.DeserializeObject<List<Dictionary<string, dynamic>>>(bson);
+
+            return bsonDictionary.Select(i => i.Values.First()).Cast<string>().ToList();
+        }
+
+
+
 
         public List<string> getAll()
         {
