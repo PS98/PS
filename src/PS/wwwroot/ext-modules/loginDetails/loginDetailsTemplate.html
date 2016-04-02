@@ -29,11 +29,9 @@
                                 <div class="clearfix"></div>
                                 <input type="button" name="Google" value="Google" class="google" ng-click="socialSubmit('Google')" />
                                 <input type="button" name="Facebook" value="Facebook" class="facebook" ng-click="socialSubmit('Facebook')" />
-                                <div id="center-line" class="clearfix">
-                                    <div id="center-line-OR" class="clearfix">OR</div>
-                                </div>
+                                <img src="/assets/img/login-sep.jpg" />
                                 <div class="clearfix"></div>
-                                <form name="loginForm">
+                                <form name="loginForm" ng-submit="loginSubmit()">
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-at"></i></div>
@@ -49,7 +47,7 @@
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">Required Field</p>
                                     </div>
-                                    <button type="button" id="login_btn" class="btn btn-block bt-login" ng-disabled="loginForm.$invalid" ng-click="loginSubmit()" data-loading-text="Signing In....">Login</button>
+                                    <button type="submit" id="login_btn" class="btn btn-block bt-login" ng-disabled="loginForm.$invalid" data-loading-text="Signing In....">Login</button>
                                     <div class="login-modal-footer footerPadding15px">
                                         <div class="row">
                                             <div class="col-xs-8 col-sm-8 col-md-8">
@@ -68,20 +66,20 @@
                             </div>
                             <div role="tabpanel" class="tab-pan" id="profile">
                                 &nbsp;&nbsp;
-                                <div class="alert alert-danger" role="alert" ng-show="regError && !regSuccess">
+                                <div class="alert alert-danger" role="alert" ng-show="(regError && !regSuccess) || (reqError && !reqSuccess)">
                                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
                                     <a href="#" class="close" ng-click="regReset()" aria-label="close">&times;</a>
                                     <span class="sr-only">Error:</span>
                                     {{errorMessage}}
                                 </div>
-                                <div class="alert alert-success" role="alert" ng-show="regSuccess && !regError">
+                                <div class="alert alert-success" role="alert" ng-show="(regSuccess && !regError) || (reqSuccess && !reqError)">
                                     <span class="fa fa-check-circle-o" aria-hidden="true"></span>
                                     <a href="#" class="close" ng-click="regReset()" aria-label="close">&times;</a>
                                     <span class="sr-only">Success:</span>
                                     {{successMessage}}
                                 </div>
                                 <div class="clearfix"></div>
-                                <form name="regForm">
+                                <form name="regForm" ng-submit="registerSubmit()">
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -103,7 +101,7 @@
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-at"></i></div>
-                                            <input type="text" class="form-control" id="remail" name="remail" placeholder="Email" ng-class="{'bckgrnd-clr': (regForm.remail.$dirty || regForm.remail.$error.pattern) ,'bckgrnd-color-default' : (!regForm.remail.$error.email && !regForm.remail.$error.required && !regForm.remail.$error.pattern)} " ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" ng-model="regEmail" required>
+                                            <input type="text" class="form-control" id="remail" name="remail" placeholder="Email" ng-model="regEmail" ng-class="{'bckgrnd-clr': (regForm.remail.$dirty || regForm.remail.$error.pattern) ,'bckgrnd-color-default' : (!regForm.remail.$error.email && !regForm.remail.$error.required && !regForm.remail.$error.pattern)} " ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" required>
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="regForm.remail.$error.required && regForm.remail.$dirty">Required Field</p>
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.remail.$error.required && regForm.remail.$error.email && regForm.remail.$dirty">Must be a valid email address.</p>
@@ -113,13 +111,21 @@
                                             <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
                                             <div>
                                                 <span type="text" class="form-control" id="rmobileprefix" name="rmobileprefix" style="width:10%; line-height: 2px;" readonly>+91</span>
-                                                <input type="tel" class="form-control" id="rmobile" name="rmobile" ng-model="regMobile" style="width:86%;" ng-class="{'bckgrnd-clr': (regForm.rmobile.$error.pattern || regForm.rmobile.$dirty || regForm.rmobile.$error.minlength || regForm.rpassword.$error.maxlength),'bckgrnd-color-default' : (!regForm.rmobile.$error.pattern && !regForm.rmobile.$error.minlength && !regForm.rmobile.$error.maxlength && !regForm.rmobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/">
+                                                <input type="tel" class="form-control" id="rmobile" name="rmobile" ng-model="regMobile" style="width:86%;" ng-class="{'bckgrnd-clr': (regForm.rmobile.$error.pattern || regForm.rmobile.$dirty || regForm.rmobile.$error.minlength || regForm.rmobile.$error.maxlength),'bckgrnd-color-default' : (!regForm.rmobile.$error.pattern && !regForm.rmobile.$error.minlength && !regForm.rmobile.$error.maxlength && !regForm.rmobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/">
                                             </div>
                                         </div>
                                         <p class="text-danger" style="float: left;" ng-show="regForm.rmobile.$error.required && regForm.rmobile.$dirty">Required Field</p>
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.rmobile.$error.required && (regForm.rmobile.$error.minlength || regForm.rmobile.$error.maxlength) && regForm.rmobile.$dirty">Must be a 10 digit number.</p>
                                         <p class="text-danger" style="float: left;" ng-show="!regForm.rmobile.$error.required && !regForm.rmobile.$error.minlength && !regForm.rmobile.$error.maxlength && regForm.rmobile.$error.pattern && regForm.rmobile.$dirty">Must start with 7, 8 or 9.</p>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="input-group" style="float: left;">
+                                            <div style="display:flex;">
+                                                <input type="password" class="form-control" id="rotp" name="rotp" ng-model="regotp" style="width:100px;" ng-disabled="regForm.rmobile.$invalid" ng-class="{'bckgrnd-clr': (regForm.rotp.$dirty || regForm.rotp.$error.minlength || regForm.rotp.$error.maxlength),'bckgrnd-color-default' : (!regForm.rotp.$error.minlength && !regForm.rotp.$error.maxlength && !regForm.rotp.$error.required)}" placeholder="OTP" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
+                                                <button type="button" id="reqotp_btn" class="btn btn-block btn-info" style="{{again ? 'margin-left:125px;' : 'margin-left:150px;'}}" ng-disabled="regForm.rmobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                                            </div>
+                                        </div>
+                                        </div>
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-lock"></i></div>
@@ -137,7 +143,7 @@
                                         <p class="text-danger" style="float: left;" ng-show="regForm.rcnfpassword.$error.required && regForm.rcnfpassword.$dirty">Please confirm your password.</p>
                                         <p class="text-danger" style="float: left;" ng-show="regPassword != cnfPassword && !regForm.rcnfpassword.$error.required && regForm.rcnfpassword.$error.noMatch && regForm.rcnfpassword.$dirty">Passwords doesn't match.</p>
                                     </div>
-                                    <button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." ng-disabled="regForm.$invalid" ng-click="registerSubmit()">Register</button>
+                                    <button type="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." ng-disabled="regForm.$invalid">Register</button>
                                     <div class="clearfix"></div>
                                     <div class="login-modal-footer footerPadding15px">
                                         <div class="row">
@@ -170,7 +176,7 @@
                                     {{successMessage}}
                                 </div>
                                 <div class="clearfix"></div>
-                                <form name="fgtForm">
+                                <form name="fgtForm" ng-submit="forgotSubmit()">
                                     <div class="form-group">
                                         <div class="input-group" style="float: left;">
                                             <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -181,7 +187,7 @@
 
                                     </div>
 
-                                    <button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait...." ng-disabled="fgtForm.$invalid" ng-click="forgotSubmit()">Forget Password</button>
+                                    <button type="submit" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait...." ng-disabled="fgtForm.$invalid">Forget Password</button>
                                     <div class="clearfix"></div>
                                     <div class="login-modal-footer footerPadding15px">
                                         <div class="row">

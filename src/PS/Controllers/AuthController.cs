@@ -24,13 +24,15 @@ namespace PS.Controllers
         public AuthSocialLoginOptions Options { get; }
         private IMongoRepository _mongoDb;
         private MongoRepository repo;
+        private readonly ISmsSender _smsSender;
 
-        public AuthController(IAuthService auth, IEmailSender emailSender, IOptions<AuthSocialLoginOptions> optionsAccessor)
+        public AuthController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IOptions<AuthSocialLoginOptions> optionsAccessor)
         {
             _auth = auth;
             _emailSender = emailSender;
-        //    _mongoDb = mongoDb;
-          //  this.repo = repo;
+            _smsSender = smsSender;
+            //    _mongoDb = mongoDb;
+            //  this.repo = repo;
             Options = optionsAccessor.Value;
         }
 
@@ -63,7 +65,7 @@ namespace PS.Controllers
                 return Json(new { Message = ex.Message, Status = 2 });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
-            return Json(new { Message = "System doesn't support entered data format", ModelState = ModelState, Status = 2 });
+            return Json(new { Message = "We are unable to process your request.", ModelState = ModelState, Status = 2 });
         }
 
         // POST api/auth/register
@@ -106,7 +108,7 @@ namespace PS.Controllers
                 return Json(new { Message = ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
-            return Json(new { Message = "System doesn't support entered data format", Status = 2 });
+            return Json(new { Message = "We are unable to process your request.", Status = 2 });
         }
 
         // POST api/auth/ForgotPassword
@@ -139,7 +141,46 @@ namespace PS.Controllers
                 return Json(new { Message = ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
-            return Json(new { Message = "System doesn't support entered data format", Status = 2 });
+            return Json(new { Message = "We are unable to process your request.", Status = 2 });
+        }
+
+        // POST api/auth/MobileOTP
+        [HttpPost]
+        public JsonResult MobileOTP(MobileOTPViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var pass = RandomString(4);
+                    if (pass != null)
+                    {
+                        _smsSender.SendSmsAsync(model.MobileNumber, "Your One Time Password is: " + pass);
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Result = pass, Message = "OTP generated successfully.", Status = 0 });
+                    }
+                    else
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "Error in OTP generation. Please try again later.", Status = 1 });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "We are unable to process your request.", Status = 2 });
+        }
+
+        private static string RandomString(int length)
+        {
+            const string chars = "0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         #region Social Login
