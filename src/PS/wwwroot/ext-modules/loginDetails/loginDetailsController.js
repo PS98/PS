@@ -17,6 +17,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                     $scope.message = result.message;
                 }
                 else if (result.status == 0) {
+                    $scope.resetAfterSubmit();
                     $scope.userDetails.firstName = result.result[1];
                     $scope.userDetails.lastName = result.result[2];
                     $scope.userDetails.userName = $scope.userDetails.firstName + " " + $scope.userDetails.lastName;
@@ -39,6 +40,11 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                 $scope.message = error.message;
             }).finally(function () {
                 $scope.isBusy = false;
+                $scope.Password = null;
+                $scope.loginForm.password.$dirty = false;
+                $timeout(function () {
+                    $scope.logReset();
+                }, 3000);
             });
     }
 
@@ -51,16 +57,19 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
     $scope.registerSubmit = function () {
         if ($scope.regPassword == $scope.cnfPassword) {
             if ($scope.otp == $scope.regotp) {
+                $scope.otp = "";
                 psLoginService.register($scope.regFirstname, $scope.regLastname, $scope.regEmail, $scope.regMobile, $scope.regPassword)
                     .then(function (result) {
                         //Success
                         if (result.status == 0) {
+                            $scope.resetAfterSubmit();
                             $scope.regSuccess = true;
                             $scope.regError = false;
                             $scope.successMessage = result.message;
                         } else if(result.status == 1 || result.status == 2) {
                             $scope.regError = true;
                             $scope.regSuccess = false;
+                            $scope.again = false;
                             $scope.errorMessage = result.message;
                         }
                     }, function (error) {
@@ -69,18 +78,46 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                         $scope.errorMessage = error.message;
                     }).finally(function () {
                         $scope.isBusy = false;
+                        $scope.passAndOTPReset();
+                        $timeout(function () {
+                            $scope.regReset();
+                        }, 3000);
                     });
             }
             else {
                 $scope.reqError = true;
                 $scope.reqSuccess = false;
+                $scope.regError = false;
+                $scope.regSuccess = false;
                 $scope.errorMessage = "You entered incorrect OTP.";
+                $scope.passAndOTPReset();
+                $timeout(function () {
+                    $scope.regReset();
+                }, 3000);
             }
         } else {
             $scope.regError = true;
             $scope.regSuccess = false;
+            $scope.reqError = false;
+            $scope.reqSuccess = false;
+            $scope.regForm.rpassword.$dirty = false;
+            $scope.regForm.rcnfpassword.$dirty = false;
+            $scope.regPassword = null;
+            $scope.cnfPassword = null;
             $scope.errorMessage = "Password doesn't match.";
+            $timeout(function () {
+                $scope.regReset();
+            }, 3000);
         }
+    }
+
+    $scope.passAndOTPReset = function () {
+        $scope.regForm.rotp.$dirty = false;
+        $scope.regForm.rpassword.$dirty = false;
+        $scope.regForm.rcnfpassword.$dirty = false;
+        $scope.regotp = null;
+        $scope.regPassword = null;
+        $scope.cnfPassword = null;
     }
 
     $scope.regReset = function () {
@@ -112,6 +149,9 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                 $scope.errorMessage = error.message;
             }).finally(function () {
                 $scope.isBusy = false;
+                $timeout(function () {
+                    $scope.regReset();
+                }, 3000);
             });
     }
 
@@ -135,12 +175,39 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                     $scope.errorMessage = result.message;
                 }).finally(function () {
                     $scope.isBusy = false;
+                    $scope.resetAfterSubmit();
+                    $timeout(function () {
+                        $scope.frgReset();
+                    }, 3000);
                 });
     }
 
     $scope.frgReset = function () {
         $scope.frgSuccess = false;
         $scope.frgError = false;
+    }
+
+    $scope.resetAfterSubmit = function () {
+        $scope.Email = null;
+        $scope.Password = null;
+        $scope.regFirstname = null;
+        $scope.regLastname = null;
+        $scope.regEmail = null;
+        $scope.regMobile = null;
+        $scope.regotp = null;
+        $scope.regPassword = null;
+        $scope.cnfPassword = null;
+        $scope.fgtEmail = null;
+        $scope.fgtForm.femail.$dirty = false;
+        $scope.loginForm.email.$dirty = false;
+        $scope.loginForm.password.$dirty = false;
+        $scope.regForm.rfirstname.$dirty = false;
+        $scope.regForm.rlastname.$dirty = false;
+        $scope.regForm.remail.$dirty = false;
+        $scope.regForm.rmobile.$dirty = false;
+        $scope.regForm.rotp.$dirty = false;
+        $scope.regForm.rpassword.$dirty = false;
+        $scope.regForm.rcnfpassword.$dirty = false;
     }
 
     $scope.socialSubmit = function (name) {
