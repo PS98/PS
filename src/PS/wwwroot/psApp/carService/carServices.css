@@ -483,6 +483,12 @@ h1, h2, h3, h4,h5,h6{
     border-radius: 4px;
     vertical-align: sub;
 }
+.dayColumn {
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 18.5%;
+    float: left;
+}
 
 @media only screen and (max-device-width: 480px)  {
     .car-selection-flex-column img{

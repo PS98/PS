@@ -1,9 +1,9 @@
-﻿angular.module("psApp").controller("carServiceController", ["$scope", "psDataServices", function ($scope, psDataServices) {
-    
+﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "psDataServices", function ($scope, $state, psDataServices) {
+
     $scope.center = {};
-   
+
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
-    $scope.car = {}; $scope.serviceOpts = {};  $scope.selectedJob = [];
+    $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
     $scope.selectBrand = function (brandName) {
         $scope.showBrandName = false; $scope.showMakeYears = true; $scope.showModel = false; $scope.showVarient = false;
@@ -24,15 +24,15 @@
         $scope.selectedCar.year = year;
     }
     $scope.selectModel = function (model) {
-        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; 
+        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false;
         $scope.selectedCar.model = model; $scope.selectedCar.varient = '';
         psDataServices.getCarVarient($scope.selectedCar.brand, model).
           success(function (data) {
               $scope.carList.carVarientList = data;
               $scope.showVarient = true;
           }).error(function () {
-                $scope.selectVarient("");
-            });
+              $scope.selectVarient("");
+          });
     }
     $scope.selectVarient = function (varient) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
@@ -50,12 +50,12 @@
     }
     $scope.editModel = function () {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = !$scope.showModel; $scope.showVarient = false;
-        if(!$scope.showModel) displayIncompleteModule();
+        if (!$scope.showModel) displayIncompleteModule();
 
     }
     $scope.editVarient = function () {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = !$scope.showVarient;
-      
+
     }
 
 
@@ -68,7 +68,7 @@
             $scope.commonServices = [{ id: 101, type: "Spare Tire Installation", details: true }, { id: 102, type: "Rotate Tare", details: true }];
         if ($scope.serviceOpts.viewMode == 'common')
             $scope.commonServices = [{ id: 1, type: "Change Oil And Filter", details: true }, { id: 2, type: "Breake Pad Replacement", details: true }]
-        if($scope.serviceOpts.viewMode == 'mileage')
+        if ($scope.serviceOpts.viewMode == 'mileage')
             $scope.commonServices = [{ id: 301, type: "10,0000 Milage Mantanance Service", details: true }, { id: 302, type: "15,0000 Milage Mantanance Service", details: true }]
         if ($scope.serviceOpts.viewMode == 'consultation') {
             var des_req = { id: 301, type: " Describe your problem here", details: false, addText: true }
@@ -83,11 +83,11 @@
 
         $scope.car.chooseNewService = false;
         if (!$scope.selectedJob.includes(selectedJob))
-        $scope.selectedJob.push(selectedJob);
+            $scope.selectedJob.push(selectedJob);
     }
     $scope.deleteSelectedJob = function (deletedJob) {
-        if ($scope.selectedJob.indexOf(deletedJob)> -1)
-            $scope.selectedJob.splice($scope.selectedJob.indexOf(deletedJob),1);
+        if ($scope.selectedJob.indexOf(deletedJob) > -1)
+            $scope.selectedJob.splice($scope.selectedJob.indexOf(deletedJob), 1);
     }
     function displayIncompleteModule() {
         if (!$scope.showBrandName) {
@@ -99,42 +99,38 @@
         }
 
     }
-     psDataServices.getAllCarColletion().
-        success(function (data) {
-            $scope.carList.carCollections = data.carList;
-            $scope.carList.yearsList = data.yearsList;
-            // $scope.center.services = data.carList;
-         }).error(function(){
-        });
-   
-   $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
-//   $scope.centreList = [{id:1, Name: "Kwik Fits - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.600534069047335", lng: "73.80731105804443" },
-//   { id: 2, Name: "Kwiks Fit - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.610864870248303", lng: "73.80636692047119"  },
-//   { id: 3, Name: "Kwik Fit1 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.6134678078517", lng: "73.82181644439697"},
-//   { id: 4, Name: "Kwik Fit2 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.604438697544907", lng: "73.82130146026611"},
-//   { id: 5, Name: "Kwik Fit3 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.610376815014273", lng: "73.79589557647705" },
-//   {id: 6, Name: "Kwik Fit4 - Broxburn", addressline1: "East Main Street", addressline2: "Broxburn, EH52 5AS", phoneNo: "01506 856586", lat: "18.601754275073823", lng: "73.82387638092041"
-//}];
-    $scope.selectedCentre = "";
-   $scope.selectCentre = function (centre) {
-       $scope.selectedCentre = centre;
-       myClick(centre.$$hashKey);
-   }
+    psDataServices.getAllCarColletion().
+       success(function (data) {
+           $scope.carList.carCollections = data.carList;
+           $scope.carList.yearsList = data.yearsList;
+           // $scope.center.services = data.carList;
+       }).error(function () {
+       });
 
-    $scope.getCentreDetails = function(area) {
-       psDataServices.getServiceCentreList('Pune',area).
-        success(function (data) {
-            $scope.centreList = data;
+    $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
+    $scope.selectedCentre = "";
+    $scope.showOnMap = function (centre) {
+        $scope.selectedCentre = centre;
+        $scope.selectedCentre.activeCentre = true;
+        myClick(centre.$$hashKey);
+    }
+    $scope.selectCentre = function (centre) {
+        $state.go("service.appointment");
+    }
+    $scope.getCentreDetails = function (area) {
+        psDataServices.getServiceCentreList('Pune', area).
+         success(function (data) {
+             $scope.centreList = data;
              $scope.selectedCentre = $scope.centreList[0];
-    $scope.selectedCentre.activeCentre = true;
-   $scope.recommendedCentre = $scope.centreList[0];
-   $scope.centreList = $scope.centreList.slice(1);
-   locate($scope.centreList);
-            }).error(function(){
-        });
+             $scope.selectedCentre.activeCentre = true;
+             $scope.recommendedCentre = $scope.centreList[0];
+             $scope.centreList = $scope.centreList.slice(1);
+             locate($scope.centreList);
+         }).error(function () {
+         });
 
     }
-    psDataServices.getServiceCentreCity().success(function(data) {
+    psDataServices.getServiceCentreCity().success(function (data) {
         $scope.car.centreCity = data;
     });
     psDataServices.getServiceCentreArea("Pune").success(function (data) {

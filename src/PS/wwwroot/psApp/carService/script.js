@@ -1,5 +1,5 @@
 
-var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, markersLocations, googleMapMarkers = [];
+var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, markersLocations, googleMapMarkers = [], displayCurrentLocation;
 var infowindow = new google.maps.InfoWindow();
 
 var componentForm = {
@@ -11,10 +11,10 @@ var componentForm = {
   postal_code: 'short_name'
 };
 
-function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, locations) {
+function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, locations, currentLocation) {
     googleMapHolder = "";
     googleMapHolder = mapHolderId;
-
+    displayCurrentLocation = currentLocation;
     autocomplete = new google.maps.places.Autocomplete(
        (document.getElementById(textBoxId)),
         { types: ['geocode'] });
@@ -48,10 +48,11 @@ function showMap(position) {
     }
 
     map = new google.maps.Map(document.getElementById(googleMapHolder), myOptions);
-    var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
-    infowindow.setContent("You are here!");
-    infowindow.open(map, marker);
-
+    if (displayCurrentLocation) {
+        var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
+        infowindow.setContent("You are here!");
+        infowindow.open(map, marker);
+    }
     if (markersLocations)
         setMarkers(map, markersLocations);
 
