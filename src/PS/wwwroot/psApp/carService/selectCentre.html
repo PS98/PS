@@ -9,12 +9,12 @@
                 <h2 class="header-text underline">How Can We Reach You</h2>
 
 
-                <div  role="form" class="row">
+                <div role="form" class="row">
                     <div class="form-group col-md-6">
                         <select class="form-control" id="selCity">
                             <option> Select City</option>
                             <option ng-repeat="city in car.centreCity">{{city}}</option>
-                           </select>
+                        </select>
                     </div>
                     <div class="form-group col-md-6">
 
@@ -27,12 +27,12 @@
                             </a>
                             <ul class="dropdown-menu" style="width:100%;margin:0">
                                 <li ng-repeat="area in car.centreArea "><a href="#">{{area}}</a></li>
-                               
+
                             </ul>
                         </span>
                     </div>
 
-                   
+
                 </div>
 
 
@@ -102,20 +102,23 @@
         </div>
         <div class="col-md-6">
             <div class="car-header">
-                <div id="mapholder" class="col-md-12" style="height: 250px"></div>
+                <div class="row">
+                    <div id="mapholder" class="col-md-12" style="height: 250px">
+                    </div>
+                </div>
                 <div>
-                    <div ng-if="recommendedCentre" >
-                    <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
+                    <div ng-if="recommendedCentre">
+                        <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
                         <div class="centre-list_first">
                             <centre-details centre="recommendedCentre" add="selectCentre(dirCentre)" ng-class="recommendedCentre.name == selectedCentre.name ?'active' :''"></centre-details>
                         </div>
                     </div>
-                    <div ng-if="centreList" >
-                    <h4 class="centre-list_other-title">Other centres nearby</h4>
+                    <div ng-if="centreList">
+                        <h4 class="centre-list_other-title">Other centres nearby</h4>
                         <div class="centre-list_other">
                             <centre-details centre="centre" ng-repeat="centre in centreList" add="showOnMap(dirCentre)" ng-if="centre != recommendedCentre" ng-class="centre.name == selectedCentre.name ?'active' :''"></centre-details>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
