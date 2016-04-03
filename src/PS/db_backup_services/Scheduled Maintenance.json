@@ -1,0 +1,298 @@
+{ 
+    "_id" : ObjectId("5700daa3ddc5778a2700cfbb"), 
+    "Name" : "Every Month", 
+    "Service Type" : [
+        {
+            "Name" : "Check Engine Light On", 
+            "Description" : "If light comes on while driving or remains on, your vehicle may have an emissions or sensor problem and should be analyzed. If light flashes, the condition is more severe and must be checked immediately to prevent catalytic converter damage."
+        }, 
+        {
+            "Name" : "Cleaning and Polishing", 
+            "Description" : "To prevent stripping the vehicle's wax finish, use only automotive car wash products, not dishwashing liquids. Polish at least twice a year to maintain and protect the finish."
+        }, 
+        {
+            "Name" : "Lights", 
+            "Description" : "Replace bulb immediately if light is out. Check fuses first."
+        }, 
+        {
+            "Name" : "Tire Inflation and Condition", 
+            "Description" : "Check the pressure of all tires, including the spare, at every oil change. Check the tread for uneven or irregular wear and cuts or bruises along the sidewalls. Inflate tires and maintain at recommended pressure. Replace tires if worn or damaged."
+        }, 
+        {
+            "Name" : "Windshield Washer Fluid", 
+            "Description" : "Check fluid level monthly. Some vehicles have two reservoirs. Do not use water. Use washer fluid only."
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5700ddd8ddc5778a2700cfbd"), 
+    "Name" : "Every 3 months or 3,000 miles", 
+    "Service Type" : [
+        {
+            "Name" : "Automatic Transmission Fluid", 
+            "Description" : "Check fluid level with engine running and transmission in park. If low, add the type of automatic transmission fluid specified in the owner's manual and/or on dipstick. For maximum performance, change every two years or 24,000 miles, or as directed in owner's manual."
+        }, 
+        {
+            "Name" : "Battery and Cables", 
+            "Description" : "Battery should be securely mounted. Battery connection should be clean, tight and corrosion free. If the battery is three years old or more, it should be tested and replaced if necessary."
+        }, 
+        {
+            "Name" : "Belts", 
+            "Description" : "Check V-belts and serpentine belts for looseness and condition. Replace when cracked, frayed, glazed or showing signs of excessive wear. Replace timing belt per interval specified in owner's manual. Typically this is 60,000 to 90,000 miles. Not replacing the belt as required could cause a breakdown or serious engine damage."
+        }, 
+        {
+            "Name" : "Check Engine Light On", 
+            "Description" : "If light comes on while driving or remains on, your vehicle may have an emissions or sensor problem and should be analyzed. If light flashes, the condition is more severe and must be checked immediately to prevent catalytic converter damage."
+        }, 
+        {
+            "Name" : "Engine Air Filter", 
+            "Description" : "Inspect filter at each oil change. Replace annually or when leaking, torn, water or oil soaked, dirty or showing other signs of wear."
+        }, 
+        {
+            "Name" : "Engine Oil and Filter", 
+            "Description" : "Check level with engine off at every fill up. For maximum engine life, change oil and filter every three months or 3,000 miles or as directed in your owner's manual. Use specified oil grade and weight."
+        }, 
+        {
+            "Name" : "Exhaust", 
+            "Description" : "Inspect for leaks, damage and broken supports or hangers if there is an unusual noise. Exhaust leaks can be dangerous and must be corrected without delay."
+        }, 
+        {
+            "Name" : "Fuel Filter", 
+            "Description" : "Inspect filter at each oil change. Replace if restricted or water contaminated or once a year on cars with carburetors. On cars with fuel injection, replace filter every two years or 24,000 miles."
+        }, 
+        {
+            "Name" : "Hoses", 
+            "Description" : "Inspect hoses at each oil change and replace when leaking, brittle, cracked, rusted, swollen or restricted."
+        }, 
+        {
+            "Name" : "Lights", 
+            "Description" : "Replace bulb immediately if light is out. Check fuses first."
+        }, 
+        {
+            "Name" : "Power Steering Fluid", 
+            "Description" : "Check the fluid with the car warmed up. Add correct type of fluid if low. If frequent topping off is required, inspect for leaks and replace if contaminated."
+        }, 
+        {
+            "Name" : "Tire Inflation and Condition", 
+            "Description" : "Check the pressure of all tires, including the spare, at every oil change. Check the tread for uneven or irregular wear and cuts or bruises along the sidewalls. Inflate tires and maintain at recommended pressure. Replace tires if worn or damaged."
+        }, 
+        {
+            "Name" : "Windshield Washer Fluid", 
+            "Description" : "Check fluid level monthly. Some vehicles have two reservoirs. Do not use water. Use washer fluid only."
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5700df88ddc5778a2700cfbe"), 
+    "Name" : "Every 6 months or 6,000 miles", 
+    "Service Type" : [
+        {
+            "Name" : "Automatic Transmission Fluid", 
+            "Description" : "Check fluid level with engine running and transmission in park. If low, add the type of automatic transmission fluid specified in the owner's manual and/or on dipstick. For maximum performance, change every two years or 24,000 miles, or as directed in owner's manual."
+        }, 
+        {
+            "Name" : "Battery and Cables", 
+            "Description" : "Battery should be securely mounted. Battery connection should be clean, tight and corrosion free. If the battery is three years old or more, it should be tested and replaced if necessary."
+        }, 
+        {
+            "Name" : "Belts", 
+            "Description" : "Check V-belts and serpentine belts for looseness and condition. Replace when cracked, frayed, glazed or showing signs of excessive wear. Replace timing belt per interval specified in owner's manual. Typically this is 60,000 to 90,000 miles. Not replacing the belt as required could cause a breakdown or serious engine damage."
+        }, 
+        {
+            "Name" : "Chassis Lubrication", 
+            "Description" : "Many newer cars are lubed-for-life; some still require this service. Check owner's manual. Replacement steering and suspension components may require periodic lubrication."
+        }, 
+        {
+            "Name" : "Check Engine Light On", 
+            "Description" : "If light comes on while driving or remains on, your vehicle may have an emissions or sensor problem and should be analyzed. If light flashes, the condition is more severe and must be checked immediately to prevent catalytic converter damage."
+        }, 
+        {
+            "Name" : "Polish", 
+            "Description" : "To prevent stripping the vehicle's wax finish, use only automotive car wash products, not dishwashing liquids. Polish at least twice a year to maintain and protect the finish."
+        }, 
+        {
+            "Name" : "Engine Air Filter", 
+            "Description" : "Inspect filter at each oil change. Replace annually or when leaking, torn, water or oil soaked, dirty or showing other signs of wear."
+        }, 
+        {
+            "Name" : "Engine Oil and Filter", 
+            "Description" : "Check level with engine off at every fill up. For maximum engine life, change oil and filter every three months or 3,000 miles or as directed in your owner's manual. Use specified oil grade and weight."
+        }, 
+        {
+            "Name" : "Exhaust", 
+            "Description" : "Inspect for leaks, damage and broken supports or hangers if there is an unusual noise. Exhaust leaks can be dangerous and must be corrected without delay."
+        }, 
+        {
+            "Name" : "Fuel Filter", 
+            "Description" : "Inspect filter at each oil change. Replace if restricted or water contaminated or once a year on cars with carburetors. On cars with fuel injection, replace filter every two years or 24,000 miles."
+        }, 
+        {
+            "Name" : "Hoses", 
+            "Description" : "Inspect hoses at each oil change and replace when leaking, brittle, cracked, rusted, swollen or restricted."
+        }, 
+        {
+            "Name" : "Lights", 
+            "Description" : "Replace bulb immediately if light is out. Check fuses first."
+        }, 
+        {
+            "Name" : "Power Steering Fluid", 
+            "Description" : "Check the fluid with the car warmed up. Add correct type of fluid if low. If frequent topping off is required, inspect for leaks and replace if contaminated."
+        }, 
+        {
+            "Name" : "Tire Inflation and Condition", 
+            "Description" : "Check the pressure of all tires, including the spare, at every oil change. Check the tread for uneven or irregular wear and cuts or bruises along the sidewalls. Inflate tires and maintain at recommended pressure. Replace tires if worn or damaged."
+        }, 
+        {
+            "Name" : "Windshield Washer Fluid", 
+            "Description" : "Check fluid level monthly. Some vehicles have two reservoirs. Do not use water. Use washer fluid only."
+        }, 
+        {
+            "Name" : "Wiper Blades", 
+            "Description" : "Replace every six months or when cracked, cut, torn, streaking or chattering."
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5700e0b3ddc5778a2700cfbf"), 
+    "Name" : "Every 9 months or 9,000 miles", 
+    "Service Type" : [
+        {
+            "Name" : "Automatic Transmission Fluid", 
+            "Description" : "Check fluid level with engine running and transmission in park. If low, add the type of automatic transmission fluid specified in the owner's manual and/or on dipstick. For maximum performance, change every two years or 24,000 miles, or as directed in owner's manual."
+        }, 
+        {
+            "Name" : "Battery and Cables", 
+            "Description" : "Battery should be securely mounted. Battery connection should be clean, tight and corrosion free. If the battery is three years old or more, it should be tested and replaced if necessary."
+        }, 
+        {
+            "Name" : "Belts", 
+            "Description" : "Check V-belts and serpentine belts for looseness and condition. Replace when cracked, frayed, glazed or showing signs of excessive wear. Replace timing belt per interval specified in owner's manual. Typically this is 60,000 to 90,000 miles. Not replacing the belt as required could cause a breakdown or serious engine damage."
+        }, 
+        {
+            "Name" : "Check Engine Light On", 
+            "Description" : "If light comes on while driving or remains on, your vehicle may have an emissions or sensor problem and should be analyzed. If light flashes, the condition is more severe and must be checked immediately to prevent catalytic converter damage."
+        }, 
+        {
+            "Name" : "Engine Air Filter", 
+            "Description" : "Inspect filter at each oil change. Replace annually or when leaking, torn, water or oil soaked, dirty or showing other signs of wear."
+        }, 
+        {
+            "Name" : "Engine Oil and Filter", 
+            "Description" : "Check level with engine off at every fill up. For maximum engine life, change oil and filter every three months or 3,000 miles or as directed in your owner's manual. Use specified oil grade and weight."
+        }, 
+        {
+            "Name" : "Exhaust", 
+            "Description" : "Inspect for leaks, damage and broken supports or hangers if there is an unusual noise. Exhaust leaks can be dangerous and must be corrected without delay."
+        }, 
+        {
+            "Name" : "Fuel Filter", 
+            "Description" : "Inspect filter at each oil change. Replace if restricted or water contaminated or once a year on cars with carburetors. On cars with fuel injection, replace filter every two years or 24,000 miles."
+        }, 
+        {
+            "Name" : "Hoses", 
+            "Description" : "Inspect hoses at each oil change and replace when leaking, brittle, cracked, rusted, swollen or restricted."
+        }, 
+        {
+            "Name" : "Lights", 
+            "Description" : "Replace bulb immediately if light is out. Check fuses first."
+        }, 
+        {
+            "Name" : "Power Steering Fluid", 
+            "Description" : "Check the fluid with the car warmed up. Add correct type of fluid if low. If frequent topping off is required, inspect for leaks and replace if contaminated."
+        }, 
+        {
+            "Name" : "Tire Inflation and Condition", 
+            "Description" : "Check the pressure of all tires, including the spare, at every oil change. Check the tread for uneven or irregular wear and cuts or bruises along the sidewalls. Inflate tires and maintain at recommended pressure. Replace tires if worn or damaged."
+        }, 
+        {
+            "Name" : "Windshield Washer Fluid", 
+            "Description" : "Check fluid level monthly. Some vehicles have two reservoirs. Do not use water. Use washer fluid only."
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5700e13addc5778a2700cfc0"), 
+    "Name" : "Every 12 months or 12,000 miles", 
+    "Service Type" : [
+        {
+            "Name" : "Automatic Transmission Fluid", 
+            "Description" : "Check fluid level with engine running and transmission in park. If low, add the type of automatic transmission fluid specified in the owner's manual and/or on dipstick. For maximum performance, change every two years or 24,000 miles, or as directed in owner's manual."
+        }, 
+        {
+            "Name" : "Battery and Cables", 
+            "Description" : "Battery should be securely mounted. Battery connection should be clean, tight and corrosion free. If the battery is three years old or more, it should be tested and replaced if necessary."
+        }, 
+        {
+            "Name" : "Belts", 
+            "Description" : "Check V-belts and serpentine belts for looseness and condition. Replace when cracked, frayed, glazed or showing signs of excessive wear. Replace timing belt per interval specified in owner's manual. Typically this is 60,000 to 90,000 miles. Not replacing the belt as required could cause a breakdown or serious engine damage."
+        }, 
+        {
+            "Name" : "Brakes", 
+            "Description" : "Check the entire brake system every year, including brake linings, rotors and drums."
+        }, 
+        {
+            "Name" : "Cabin Air Filter", 
+            "Description" : "Replace annually, or more often in areas with heavy airborne contaminants or whenever heating or cooling efficiency is reduced."
+        }, 
+        {
+            "Name" : "Chassis Lubrication", 
+            "Description" : "Many newer cars are lubed-for-life; some still require this service. Check owner's manual. Replacement steering and suspension components may require periodic lubrication."
+        }, 
+        {
+            "Name" : "Check Engine Light On", 
+            "Description" : "If light comes on while driving or remains on, your vehicle may have an emissions or sensor problem and should be analyzed. If light flashes, the condition is more severe and must be checked immediately to prevent catalytic converter damage."
+        }, 
+        {
+            "Name" : "Polish", 
+            "Description" : "To prevent stripping the vehicle's wax finish, use only automotive car wash products, not dishwashing liquids. Polish at least twice a year to maintain and protect the finish."
+        }, 
+        {
+            "Name" : "Coolant (Antifreeze)", 
+            "Description" : "Check level at reservoir. Never open a hot radiator cap. If low, add 50/50 mix of approved antifreeze and distilled water. Change coolant annually on most vehicles.\r\n"
+        }, 
+        {
+            "Name" : "Engine Air Filter", 
+            "Description" : "Inspect filter at each oil change. Replace annually or when leaking, torn, water or oil soaked, dirty or showing other signs of wear."
+        }, 
+        {
+            "Name" : "Engine Oil and Filter", 
+            "Description" : "Check level with engine off at every fill up. For maximum engine life, change oil and filter every three months or 3,000 miles or as directed in your owner's manual. Use specified oil grade and weight."
+        }, 
+        {
+            "Name" : "Exhaust", 
+            "Description" : "Inspect for leaks, damage and broken supports or hangers if there is an unusual noise. Exhaust leaks can be dangerous and must be corrected without delay."
+        }, 
+        {
+            "Name" : "Fuel Filter", 
+            "Description" : "Inspect filter at each oil change. Replace if restricted or water contaminated or once a year on cars with carburetors. On cars with fuel injection, replace filter every two years or 24,000 miles."
+        }, 
+        {
+            "Name" : "Hoses", 
+            "Description" : "Inspect hoses at each oil change and replace when leaking, brittle, cracked, rusted, swollen or restricted."
+        }, 
+        {
+            "Name" : "Lights", 
+            "Description" : "Replace bulb immediately if light is out. Check fuses first."
+        }, 
+        {
+            "Name" : "Power Steering Fluid", 
+            "Description" : "Check the fluid with the car warmed up. Add correct type of fluid if low. If frequent topping off is required, inspect for leaks and replace if contaminated."
+        }, 
+        {
+            "Name" : "Steering and Suspension", 
+            "Description" : "Inspect system annually, including shock absorbers, struts and chassis parts, such as ball joints, tie rod ends and other related components. Replace if leaks, damage and loose mounting hardware are found. Symptoms of worn suspension include uneven tire wear and excessive bouncing after bumps."
+        }, 
+        {
+            "Name" : "Tire Inflation and Condition", 
+            "Description" : "Check the pressure of all tires, including the spare, at every oil change. Check the tread for uneven or irregular wear and cuts or bruises along the sidewalls. Inflate tires and maintain at recommended pressure. Replace tires if worn or damaged."
+        }, 
+        {
+            "Name" : "Windshield Washer Fluid", 
+            "Description" : "Check fluid level monthly. Some vehicles have two reservoirs. Do not use water. Use washer fluid only."
+        }, 
+        {
+            "Name" : "Wiper Blades", 
+            "Description" : "Replace every six months or when cracked, cut, torn, streaking or chattering."
+        }
+    ]
+}
