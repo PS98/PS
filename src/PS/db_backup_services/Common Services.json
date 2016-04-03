@@ -1,0 +1,181 @@
+{ 
+    "_id" : ObjectId("5700b0ffddc5778a2700cfb3"), 
+    "Name" : "Essential Car Care", 
+    "Description" : "Our Essential Car Care package combines a full oil change and oil filter replacement with a number of vehicle safety checks.", 
+    "Services" : [
+        {
+            "Name" : "Replace engine oil and filter", 
+            "Description" : "A substance that lubricates and cools the moving parts of the engine and reduces corrosion and the formation of rust.A cartridge-filled canister placed in an engine's lubricating system to strain dirt and abrasive materials out of the oil.\r\n\r\nThis service includes Engine oil drained, Replacement sump plug washer, Oil refill based on manufacturer’s recommendation, Replacement oil filter"
+        }, 
+        {
+            "Name" : "Top up windscreen washer fluid", 
+            "Description" : "test"
+        }, 
+        {
+            "Name" : "Top up coolant levels and check strength and condition", 
+            "Description" : "test1"
+        }, 
+        {
+            "Name" : "Check front, rear, side and main lights", 
+            "Description" : "test2"
+        }, 
+        {
+            "Name" : "Check indicators and hazard lights", 
+            "Description" : "test3"
+        }, 
+        {
+            "Name" : "Check brake and reverse lights", 
+            "Description" : "test4"
+        }, 
+        {
+            "Name" : "Check fog and number plate lights", 
+            "Description" : "test5"
+        }, 
+        {
+            "Name" : "Check horn", 
+            "Description" : "test6"
+        }, 
+        {
+            "Name" : "Check tyres (tread & pressure)", 
+            "Description" : "test7"
+        }, 
+        {
+            "Name" : "Check instruments, gauges, warning lights", 
+            "Description" : "test8"
+        }, 
+        {
+            "Name" : "Test electrics (battery, alternator, starter motor)", 
+            "Description" : "test9"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5700b90eddc5778a2700cfb5"), 
+    "Name" : "Interim Car Care", 
+    "Description" : "Our Interim Service package is ideal for drivers who use their vehicle for regular, short journeys in and around town or for those drivers who have a high mileage and want peace of mind between annual services.\r\n\r\nWe recommend having an Interim Service every 6,000 miles or 6 months (whichever is sooner) and includes checks on essentials such as lights, windscreen wipers and tyres plus a full brake, exhaust and suspension inspection.", 
+    "Services" : [
+        {
+            "Name" : "Top up power steering fluid", 
+            "Description" : "t1"
+        }, 
+        {
+            "Name" : "Full brake inspection", 
+            "Description" : "t2"
+        }, 
+        {
+            "Name" : "Vehicle road test", 
+            "Description" : "t3"
+        }, 
+        {
+            "Name" : "Check windscreen wipers", 
+            "Description" : "t4"
+        }, 
+        {
+            "Name" : "Check windscreen washers", 
+            "Description" : "t5"
+        }, 
+        {
+            "Name" : "Check seat belts", 
+            "Description" : "t6"
+        }, 
+        {
+            "Name" : "Check front windscreen", 
+            "Description" : "t7"
+        }, 
+        {
+            "Name" : "Check clutch", 
+            "Description" : "t8"
+        }, 
+        {
+            "Name" : "Check diagnostic trouble codes", 
+            "Description" : "t9"
+        }, 
+        {
+            "Name" : "Check hand brake", 
+            "Description" : "t10"
+        }, 
+        {
+            "Name" : "Check bonnet", 
+            "Description" : "t11"
+        }, 
+        {
+            "Name" : "Check drive shaft joints and gaiters", 
+            "Description" : "t12"
+        }, 
+        {
+            "Name" : "Check steering, suspension linkages and ball joints", 
+            "Description" : "t13"
+        }, 
+        {
+            "Name" : "Check shock absorbers", 
+            "Description" : "t14"
+        }, 
+        {
+            "Name" : "Check exhaust system and mountings", 
+            "Description" : "t15"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5700b919ddc5778a2700cfb8"), 
+    "Name" : " Full Car Care", 
+    "Description" : "Our Full Service is ideal as an annual maintenance programme for your car. We recommend your car receives a Full Service every 12,000 miles or 12 months – whichever is sooner.\r\n\r\nA Full Service each year will reduce the risk of breakdown and can help maintain the value of the vehicle.\r\n\r\nOur Full Service includes all items included in the Interim Service package plus a thorough inspection of your engine, wheel alignment, wheel bearings and brake fluid condition.  A full car service also includes fuel filter (diesel vehicles), air filter, spark plugs (petrol vehicles)*  and free wheel balance replacements.", 
+    "Services" : [
+        {
+            "Name" : "Replace spark plugs (petrol vehicles)", 
+            "Description" : "tt1"
+        }, 
+        {
+            "Name" : "Replace fuel filter (diesel vehicles)", 
+            "Description" : "tt2"
+        }, 
+        {
+            "Name" : "Replace air filter", 
+            "Description" : "tt3"
+        }, 
+        {
+            "Name" : "Check engine, transmission and rear axle", 
+            "Description" : "tt4"
+        }, 
+        {
+            "Name" : "Check radiator and coolant hoses", 
+            "Description" : "tt5"
+        }, 
+        {
+            "Name" : "Check auxiliary drive belt", 
+            "Description" : "tt6"
+        }, 
+        {
+            "Name" : "Check wheel bearings", 
+            "Description" : "tt7"
+        }, 
+        {
+            "Name" : "Check wheel balancing", 
+            "Description" : "tt8"
+        }, 
+        {
+            "Name" : "Check wheel alignment", 
+            "Description" : "tt9"
+        }, 
+        {
+            "Name" : "Check mirrors", 
+            "Description" : "tt10"
+        }, 
+        {
+            "Name" : "Check doors", 
+            "Description" : "tt11"
+        }, 
+        {
+            "Name" : "Check interior lights", 
+            "Description" : "tt12"
+        }, 
+        {
+            "Name" : "Check fuel pipes", 
+            "Description" : "tt13"
+        }, 
+        {
+            "Name" : "Check wiring", 
+            "Description" : "tt14"
+        }
+    ]
+}
