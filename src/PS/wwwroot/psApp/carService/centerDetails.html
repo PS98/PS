@@ -8,8 +8,8 @@
                 <i class="fa fa-phone"></i> <span>{{ centre.phoneNo }}</span>
             </div>
             <div class="col-lg-4">
-                <button class="btn btn-kf btn-sm btn-primary btn-show-on-map btn-block" data-ng-if="!centre.activeCentre" ng-click="displaySelectedCentre(centre)">Show On Map <i class="fa fa-chevron-right"></i></button>
-                <button class="btn btn-kf btn-sm btn-primary btn-show-on-map btn-block" data-ng-if="centre.activeCentre" ng-click="selectedCentre(centre)">Select Centre <i class="fa fa-chevron-right"></i></button>
+                <button class="btn btn-kf btn-sm btn-primary btn-show-on-map btn-block" data-ng-show="!centre.activeCentre" ng-click="displaySelectedCentre(centre)">Show On Map <i class="fa fa-chevron-right"></i></button>
+                <button class="btn btn-kf btn-sm btn-primary btn-show-on-map btn-block" data-ng-show="centre.activeCentre" ng-click="selectedCentre(centre)">Select Centre <i class="fa fa-chevron-right"></i></button>
             </div>
         </div>
     </div>

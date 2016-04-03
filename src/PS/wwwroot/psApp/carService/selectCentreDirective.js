@@ -55,7 +55,7 @@ angular.module("psApp").directive("selectCentre", function () {
                      $scope.recommendedCentre = $scope.centreList[0];
                      //$scope.centreList = $scope.centreList.slice(1);
                      $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
-                     setMarkers($scope.map, $scope.centreList);
+                     setMarkers($scope.map, $scope.centreList,$scope.markerClick);
                  }).error(function () {
                  });
 
@@ -66,6 +66,15 @@ angular.module("psApp").directive("selectCentre", function () {
             psDataServices.getServiceCentreArea("Pune").success(function (data) {
                 $scope.car.centreArea = data;
             });
+
+            $scope.markerClick = function (centre) {
+                if (centre.$$hashKey != $scope.selectedCentre.$$hashKey) {
+                    $scope.selectedCentre.activeCentre = false;
+                    centre.activeCentre = true;
+                    $scope.selectedCentre = centre;
+                    $scope.$apply();
+                }
+            }
         }]
 
 

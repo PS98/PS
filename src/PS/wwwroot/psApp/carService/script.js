@@ -114,7 +114,7 @@ function geolocate() {
 }
 
 
-function setMarkers(map, locations) {
+function setMarkers(map, locations, callback) {
 
     var latlngset, markers = [];
     googleMapMarkers = [];
@@ -141,12 +141,13 @@ function setMarkers(map, locations) {
 
         bounds.extend(marker.position);
 
-        google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+        google.maps.event.addListener(marker, 'click', (function (marker, infowindow, callback, val) {
             return function () {
-               infowindow.setContent(content);
-                infowindow.open(map, marker);
+                infowindow.setContent(val.name);
+               infowindow.open(map, marker);
+               callback(val);
             };
-        })(marker, content, infowindow));
+        })(marker, infowindow, callback, val));
         if (val.activeCentre) {
             infowindow.open(map, marker);
             infowindow.setContent(content);
