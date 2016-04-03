@@ -130,11 +130,11 @@ namespace PS.Services
 
         public List<string> SocialLogin(dynamic T)
         {
-            var rep = new MongoRepository("customer");
+            var rep = new MongoRepository("auth");
             List<string> data = new List<string>();
             if (T is GoogleUserProfile)
             {
-                var collection = rep.GetCollection<GoogleUserProfile>("googleCustomer");
+                var collection = rep.GetCollection<GoogleUserProfile>("Google Customer");
 
                 //  var filter = Builders<BsonDocument>.Filter.Eq("Email", "");
                 var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
@@ -157,7 +157,7 @@ namespace PS.Services
             }
              if (T is FacebookUserProfile)
             {
-                var collection = rep.GetCollection<FacebookUserProfile>("facebookCustomer");
+                var collection = rep.GetCollection<FacebookUserProfile>("Facebook Customer");
                 var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
                 if (customerList?.Where(e => e.Email == T.Email).ToList().Count == 0)
                 {
