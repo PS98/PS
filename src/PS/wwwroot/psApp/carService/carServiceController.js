@@ -107,34 +107,6 @@
        }).error(function () {
        });
 
-    $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
-    $scope.selectedCentre = "";
-    $scope.showOnMap = function (centre) {
-        $scope.selectedCentre = centre;
-        $scope.selectedCentre.activeCentre = true;
-        myClick(centre.$$hashKey);
-    }
-    $scope.selectCentre = function (centre) {
-        $state.go("service.appointment");
-    }
-    $scope.getCentreDetails = function (area) {
-        psDataServices.getServiceCentreList('Pune', area).
-         success(function (data) {
-             $scope.centreList = data;
-             $scope.selectedCentre = $scope.centreList[0];
-             $scope.selectedCentre.activeCentre = true;
-             $scope.recommendedCentre = $scope.centreList[0];
-             $scope.centreList = $scope.centreList.slice(1);
-             locate($scope.centreList);
-         }).error(function () {
-         });
-
-    }
-    psDataServices.getServiceCentreCity().success(function (data) {
-        $scope.car.centreCity = data;
-    });
-    psDataServices.getServiceCentreArea("Pune").success(function (data) {
-        $scope.car.centreArea = data;
-    });
+  
 }]);
 

@@ -102,7 +102,7 @@
         </div>
         <div class="col-md-6">
             <div class="car-header">
-                <div id="mapholder"></div>
+                <div id="mapholder" class="col-md-12" style="height: 250px"></div>
                 <div>
                     <div ng-if="recommendedCentre" >
                     <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
@@ -113,7 +113,7 @@
                     <div ng-if="centreList" >
                     <h4 class="centre-list_other-title">Other centres nearby</h4>
                         <div class="centre-list_other">
-                            <centre-details centre="centre" ng-repeat="centre in centreList" add="showOnMap(dirCentre)" ng-class="centre.name == selectedCentre.name ?'active' :''"></centre-details>
+                            <centre-details centre="centre" ng-repeat="centre in centreList" add="showOnMap(dirCentre)" ng-if="centre != recommendedCentre" ng-class="centre.name == selectedCentre.name ?'active' :''"></centre-details>
                         </div>
                         </div>
                 </div>

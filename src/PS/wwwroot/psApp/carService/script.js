@@ -1,5 +1,5 @@
 
-var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, markersLocations, googleMapMarkers = [], displayCurrentLocation;
+var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, googleMapMarkers = [], displayCurrentLocation;
 var infowindow = new google.maps.InfoWindow();
 
 var componentForm = {
@@ -113,16 +113,13 @@ function geolocate() {
   }
 }
 
-function locate(list) {
-    setMarkers(map, list);
-    markersLocations = list;
-}
-
 
 function setMarkers(map, locations) {
 
-    var latlngset,markers =[];
+    var latlngset, markers = [];
+    googleMapMarkers = [];
     var bounds = new google.maps.LatLngBounds();
+    infowindow.close();
     $.each(locations, function(index, val) {
 
         //var lat = val.latitude;
@@ -150,6 +147,10 @@ function setMarkers(map, locations) {
                 infowindow.open(map, marker);
             };
         })(marker, content, infowindow));
+        if (val.activeCentre) {
+            infowindow.open(map, marker);
+            infowindow.setContent(content);
+        }
 
         googleMapMarkers.push(marker);
 
@@ -157,7 +158,7 @@ function setMarkers(map, locations) {
     
     map.fitBounds(bounds);
 }
-function myClick(id) {
+function myClick(id, markersLocations) {
     var mapMarkerIndex;
 
 

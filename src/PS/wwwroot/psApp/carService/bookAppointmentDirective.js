@@ -70,6 +70,10 @@ angular.module("psApp").directive("bookAppointment", function() {
 
             }
 
+            $scope.selectTime = function(time) {
+                $scope.isSelected = true;
+            }
+
         }
     }
 });

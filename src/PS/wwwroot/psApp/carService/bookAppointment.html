@@ -4,6 +4,7 @@
             <div class="car-header car-selection-container">
                 <div class="row">
                     <div class="col-xs-12">
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -16,9 +17,9 @@
                                 <li>
                                     <span class="unavailableTime timeData" href="javascript:void(0);" x-apple-data-detectors="false" data-appointmenttime="07:00 AM">Early or Late Vehicle Drop-Off</span>
                                 </li>
-                                <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="wh in cwh.WorkingHours" ng-if="wh.isAvailable">
+                                <li ng-click="selectTime(wh)"  ng-repeat="wh in cwh.WorkingHours" ng-if="wh.isAvailable">
                                     <span>{{ wh.time}}</span>
-                                    <img src="https://static.pepboys.com/images/eServe2.0/WhiteCheck-CalanderTimeSelect.gif">
+                                    <!--<i ng-if="wh.isSelected" class="fa fa-check"></i>-->
                                 </li>
                             </ul>
                         </div>
