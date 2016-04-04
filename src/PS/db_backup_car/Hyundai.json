@@ -1,602 +1,1585 @@
-{ 
-    "_id" : ObjectId("56eed5e0bc9bd93bf4faa360"), 
-    "name" : "Eon", 
-    "varient" : [
-        {
-            "name" : "D-Lite", 
-            "Price" : "", 
-            "Type" : "",
-			"Overview":{
-			"Fuel Type":"petrol",
-			"Mileage-City":"17.3 kmpl",
-			"Mileage-Highway" : "21.1 kmpl",
-			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
-			tBeige",
-			"Fuel Tank Capacity":"32 (Liters)",
-			"Seating Capacity" :"5",
-			"Transmission Type":"Automatic",
-			"Engine Displacement (cc)":"814",
-			"Service Cost"2,634/yr",
-	
-            }
-        }, 
-        {
-            "name" : "D-Lite +", 
-            "Price" : "", 
-            "Type" : "",
-			"Overview":{
-			"Fuel Type":"petrol",
-			"Mileage-City":"17.0 kmpl",
-			"Mileage-Highway" : "21.1 kmpl",
-			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
-			tBeige",
-			"Fuel Tank Capacity":"32 (Liters)",
-			"Seating Capacity" :"5",
-			"Transmission Type":"Automatic",
-			"Engine Displacement (cc)":"814",
-			"Service Cost"2,634/yr",
-	
-            }
-        }, 
-        {
-            "name"  : "Era +", 
-			"Price" : "3.8 lakh", 
-			"Type"  : ""
-			"Overview":{
-			"Fuel Type":"petrol",
-			"Mileage-City":"17.0 kmpl",
-			"Mileage-Highway" : "21.1 kmpl",
-			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
-			tBeige",
-			"Fuel Tank Capacity":"32 (Liters)",
-			"Seating Capacity" :"5",
-			"Transmission Type":"Manual",
-			"Engine Displacement (cc)":"814",
-			"Service Cost"2,634/yr",
-	
-            }
-        }, 
-        {
-            "name" : "Era + LPG", 
-           "Price" : "4.1 lakh", 
-"Type"  : ""
-"Overview":{
-			"Fuel Type":"(LPG)
-			"Mileage-City":"17.0 km/kg",
-			"Mileage-Highway" : "21.1 km/kg",
-			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
-			tBeige",
-			"Fuel Tank Capacity":"4 (kg)",
-			"Seating Capacity" :"5",
-			"Transmission Type":"Manual",
-			"Engine Displacement (cc)":"814
-			"Service Cost"2,634/yr",
-	
-            }
+{
+  "_id": ObjectId("56eed5e0bc9bd93bf4faa360"),
+  "name": "Eon",
+  "varient": [
+    {
+      "name": "D-Lite",
+      "Price": "",
+      "Type": "",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "17.3 kmpl",
+        "Mileage-Highway": "21.1 kmpl",
+        "Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
+        "Fuel Tank Capacity": "32 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "814",
+        "Service Cost" 2,
+        634/yr",
 
-        }, 
-        {
-            "name" : "Magna +", 
-            "Price" : "4.1 lakh", 
-"Type"  : ""
-"Overview":{
-			"Fuel Type":"petrol",
-			"Mileage-City":"17.0 kmpl",
-			"Mileage-Highway" : "21.1 kmpl",
-			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
-			tBeige",
-			"Fuel Tank Capacity":"32 (Liters)",
-			"Seating Capacity" :"5",
-			"Transmission Type":"Manual",
-			"Engine Displacement (cc)":"814",
-			"Service Cost"2,634/yr",
-	
-            }
+      }
+    },
+    {
+      "name": "D-Lite +",
+      "Price": "",
+      "Type": "",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "17.0 kmpl",
+        "Mileage-Highway": "21.1 kmpl",
+        "Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
+        "Fuel Tank Capacity": "32 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "814",
+        "Service Cost" 2,
+        634/yr",
 
-        }, 
-        {
-            "name" : "Magna + LPG", 
-           "Price" : "4.4 lakh", 
-"Type"  : ""
-"Overview":{
-			"Fuel Type":"(LPG)
-			"Mileage-City":"17.0 km/kg",
-			"Mileage-Highway" : "21.1 km/kg",
-			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
-			tBeige",
-			"Fuel Tank Capacity":"4 (kg)",
-			"Seating Capacity" :"5",
-			"Transmission Type":"Manual",
-			"Engine Displacement (cc)":"814
-			"Service Cost"2,634/yr",
-	
-            }
-        }, 
-        {
-            "name" : "Sportz", 
-           "Price" : "4.4 lakh", 
-"Type"  : ""
-"Overview":{
-			"Fuel Type":"petrol",
-			"Mileage-City":"17.0 kmpl",
-			"Mileage-Highway" : "21.1 kmpl",
-			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
-			tBeige",
-			"Fuel Tank Capacity":"32 (Liters)",
-			"Seating Capacity" :"5",
-			"Transmission Type":"Manual",
-			"Engine Displacement (cc)":"814",
-			"Service Cost"2,634/yr",
-	
-            }
-        }, 
-        {
-            "name" : "1.0 Kappa Magna Plus", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.0 Kappa Magna Plus (O)", 
-            "Price" : "4.6 lakh", 
-"Type"  : ""
-"Overview":{
-			"Fuel Type":"petrol",
-			"Mileage-City":"15.9 kmpl",
-			"Mileage-Highway" : "20.3 kmpl",
-			"Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
-			tBeige",
-			"Fuel Tank Capacity":"32 (Liters)",
-			"Seating Capacity" :"5",
-			"Transmission Type":"Manual",
-			"Engine Displacement (cc)":"998",
-			"Service Cost"2,634/yr",
-	
-            }
+      }
+    },
+    {
+      "name": "Era +",
+      "Price": "3.8 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "17.0 kmpl",
+        "Mileage-Highway": "21.1 kmpl",
+        "Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
+        "Fuel Tank Capacity": "32 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "814",
+        "Service Cost" 2,
+        634/yr",
 
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed5e9bc9bd93bf4faa362"), 
-    "name" : "i10", 
-    "varient" : [
-        {
-            "name" : "Era", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Magna", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Magna Special Edition", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz LPG", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed5f1bc9bd93bf4faa364"), 
-    "name" : "Elite i20", 
-    "varient" : [
-        {
-            "name" : "Magna 1.2", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz 1.2", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Era 1.4 CRDI", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Magna 1.4 CRDI", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta 1.2", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta (O) 1.2", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz 1.4", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta 1.4 CRDI", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta (O)", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed5fabc9bd93bf4faa366"), 
-    "name" : "Elantra", 
-    "varient" : [
-        {
-            "name" : "1.8 S MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 L MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 S MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.8 SX MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.8 SX AT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 SX MT", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed604bc9bd93bf4faa368"), 
-    "name" : "Grand i10", 
-    "varient" : [
-        {
-            "name" : "Era 1.2 Kappa VTVT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Magna 1.2 Kappa VTVT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Era 1.1 CRDi", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Magna 1.1 CRDi", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz 1.1 CRDi", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta 1.1 CRDi (O)", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "ASTA OPTION", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta 1.1 CRDi", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz 1.2 Kappa VTVT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "ASTA", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta AT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Magna 1.0 Kappa VTVT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Era CNG", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Magna CNG", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sportz CNG", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta CNG", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Asta Option CNG", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed60fbc9bd93bf4faa36a"), 
-    "name" : "4S Fluidic Verna", 
-    "Varient" : [
-        {
-            "name" : "1.6 CRDi SX AT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 CRDI SX", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 VTVT SX", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.4 VTVT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 VTVT S", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VTVT S (O)", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 VTVT S (O) AT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.4 CRDi", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 CRDi S", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 CRDi S (O)", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed61ebc9bd93bf4faa36c"), 
-    "name" : "Santa Fe", 
-    "varient" : [
-        {
-            "name" : "2 WD MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "2 WD AT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "4 WD AT", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed631bc9bd93bf4faa370"), 
-    "name" : "Xcent", 
-    "varient" : [
-        {
-            "name" : "S 1.2", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SX 1.2", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Sx 1.2 (O)", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S 1.1 CRDi", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SX 1.1 CRDi", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SX 1.1 CRDi (O)", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SX AT 1.2 (O)", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Base 1.2 ABS", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "Base ABS 1.1 CRDi", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed63abc9bd93bf4faa372"), 
-    "name" : "i20 Active", 
-    "varient" : [
-        {
-            "name" : "1.2", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.2 S", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.4", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.4 S", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.2 SX With AVN", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.4 SX With AVN", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SX AT 1.2 (O)", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed649bc9bd93bf4faa374"), 
-    "name" : "Creta", 
-    "varient" : [
-        {
-            "name" : "1.6 VTVT L", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 VTVT S", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 VTVT SX Plus", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.4 CRDi L", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.4 CRDi S", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.4 CRDI S PLUS", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 CRDI SX PLUS", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 CRDI SX OPTION", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 CRDI AT SX PLUS", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "1.6 CRDI SX", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
+      }
+    },
+    {
+      "name": "Era + LPG",
+      "Price": "4.1 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "(LPG)
+        "Mileage-City": "17.0 km/kg",
+        "Mileage-Highway": "21.1 km/kg",
+        "Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
+        "Fuel Tank Capacity": "4 (kg)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "814
+        "Service Cost" 2,
+        634/yr",
+
+      }
+
+    },
+    {
+      "name": "Magna +",
+      "Price": "4.1 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "17.0 kmpl",
+        "Mileage-Highway": "21.1 kmpl",
+        "Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,Ember Grey",
+        "Fuel Tank Capacity": "32 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "814",
+        "Service Cost" 2,
+        634/yr",
+
+      }
+
+    },
+    {
+      "name": "Magna + LPG",
+      "Price": "4.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "(LPG)
+        "Mileage-City": "17.0 km/kg",
+        "Mileage-Highway": "21.1 km/kg",
+        "Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
+        "Fuel Tank Capacity": "4 (kg)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "814
+        "Service Cost" 2,
+        634/yr",
+
+      }
+    },
+    {
+      "name": "Sportz",
+      "Price": "4.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "17.0 kmpl",
+        "Mileage-Highway": "21.1 kmpl",
+        "Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
+        "Fuel Tank Capacity": "32 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "814",
+        "Service Cost" 2,
+        634/yr",
+
+      }
+    },
+    {
+      "name": "1.0 Kappa Magna Plus",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "1.0 Kappa Magna Plus (O)",
+      "Price": "4.6 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.9 kmpl",
+        "Mileage-Highway": "20.3 kmpl",
+        "Available Colors": "Sleek Silver,Coral Whit,Mushroom,pristine blue,Maharajah Red,EmberGrey",
+        "Fuel Tank Capacity": "32 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "998",
+        "Service Cost" 2,
+        634/yr",
+
+      }
+
+    }
+  ]
+} {
+  "_id": ObjectId("56eed5e9bc9bd93bf4faa362"),
+  "name": "i10",
+  "varient": [
+    {
+      "name": "Era",
+      "Price": "6.0 lakh",
+      "Type": "",
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "24.0 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Mushroom,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+    },
+    {
+      "name": "Magna",
+      "Price": "",
+      "Type": "",
+      "Price": "6.2 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "24.0 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+    },
+    {
+      "name": "Magna Special Edition",
+      "Price": "4.7 lakh",
+      "Type": "",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "16.4 kmpl",
+        "Mileage-Highway": "19.81kmpl",
+        "Available Colors": "Sleek Silver,Silky Baige,pure Whit,Wine Red,Star Dust",
+        "Fuel Tank Capacity": "35 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1086",
+        "Service Cost" 2,
+        745/yr",
+
+      }
+
+    },
+    {
+      "name": "Sportz",
+      "Price": "5.0 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "16.4 kmpl",
+        "Mileage-Highway": "19.81kmpl",
+        "Available Colors": "Sleek Silver,Silky Baige,pure Whit,Wine Red,Star Dust",
+        "Fuel Tank Capacity": "35 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1086",
+        "Service Cost" 2,
+        745/yr",
+
+      }
+    },
+    {
+      "name": "Sportz LPG",
+      "Price": "5.3 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "LPG",
+        "Mileage-City": "15.4 km/kg",
+        "Mileage-Highway": "19.2 km/kg",
+        "Available Colors": "Sleek Silver,Silky Baige,pure Whit,Wine Red,Star Dust"
+        "Fuel Tank Capacity": "4 (kg)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1086",
+        "Service Cost" 2,
+        740/yr",
+
+      }
+    },
+  ]
+} {
+  "_id": ObjectId("56eed5f1bc9bd93bf4faa364"),
+  "name": "Elite i20",
+  "varient": [
+    {
+      "name": "Magna 1.2",
+      "Price": "6.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Petrol",
+        "Mileage-City": "13.3 kmpl",
+        "Mileage-Highway": "18.6kmpl",
+        "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+        "Fuel Tank Capacity": "45 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        997/yr",
+      }
+    },
+    {
+      "name": "Era 1.2 ",
+      "Price": "5.8 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Petrol",
+        "Mileage-City": "13.3 kmpl",
+        "Mileage-Highway": "18.6kmpl",
+        "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+        "Fuel Tank Capacity": "45 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        997/yr",
+      }
+
+    }
+
+
+}, {
+  "name": "Sportz 1.2",
+  "Price": "7.0 lakh",
+  "Type": ""
+  "Overview": {
+    "Fuel Type": "Petrol",
+    "Mileage-City": "13.3 kmpl",
+    "Mileage-Highway": "18.6kmpl",
+    "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+    "Fuel Tank Capacity": "45 (Liters)",
+    "Seating Capacity": "5",
+    "Transmission Type": "Manual",
+    "Engine Displacement (cc)": "1197",
+    "Service Cost" 2,
+    997/yr",
+  }
+}, {
+  "name": "Era 1.4 CRDI",
+  "Price": "7.1 lakh",
+  "Type": ""
+  "Overview": {
+    "Fuel Type": "Diesel",
+    "Mileage-City": "18.4 kmpl",
+    "Mileage-Highway": "22.54 kmpl",
+    "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+    "Fuel Tank Capacity": "45 (Liters)",
+    "Seating Capacity": "5",
+    "Transmission Type": "Manual",
+    "Engine Displacement (cc)": "1396",
+    "Service Cost" 4,
+    338/yr",
+  }
+
+}, {
+  "name": "Magna 1.4 CRDI",
+  "Price": "7.7 lakh",
+  "Type": ""
+  "Overview": {
+    "Fuel Type": "Diesel",
+    "Mileage-City": "18.4 kmpl",
+    "Mileage-Highway": "22.54 kmpl",
+    "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+    "Fuel Tank Capacity": "45 (Liters)",
+    "Seating Capacity": "5",
+    "Transmission Type": "Manual",
+    "Engine Displacement (cc)": "1396",
+    "Service Cost" 4,
+    338/yr",
+  }
+
+}, {
+  "name": "Asta 1.2",
+  "Price": "7.5 lakh",
+  "Type": ""
+  "Overview": {
+    "Fuel Type": "Petrol",
+    "Mileage-City": "13.3 kmpl",
+    "Mileage-Highway": "18.6kmpl",
+    "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+    "Fuel Tank Capacity": "45 (Liters)",
+    "Seating Capacity": "5",
+    "Transmission Type": "Manual",
+    "Engine Displacement (cc)": "1197",
+    "Service Cost" 2,
+    997/yr",
+  }
+
+}, {
+  "name": "Asta (O) 1.2",
+  Price" : "7.9 lakh",
+  "Type": ""
+  "Overview": {
+    "Fuel Type": "Petrol",
+    "Mileage-City": "13.3 kmpl",
+    "Mileage-Highway": "18.6kmpl",
+    "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+    "Fuel Tank Capacity": "45 (Liters)",
+    "Seating Capacity": "5",
+    "Transmission Type": "Manual",
+    "Engine Displacement (cc)": "1197",
+    "Service Cost" 2,
+    997/yr",
+  }
+}, {
+  "name": "Sportz 1.4 CRDi  (Diesel)",
+  "Price": "8.3 lakh",
+  "Type": ""
+  "Overview": {
+    "Fuel Type": "Diesel",
+    "Mileage-City": "18.4 kmpl",
+    "Mileage-Highway": "22.54 kmpl",
+    "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+    "Fuel Tank Capacity": "45 (Liters)",
+    "Seating Capacity": "5",
+    "Transmission Type": "Manual",
+    "Engine Displacement (cc)": "1396",
+    "Service Cost" 4,
+    338/yr",
+  }
+
+}, {
+  "name": "Asta 1.4 CRDI",
+  "Price": "8.8 lakh",
+  "Type": ""
+  "Overview": {
+    "Fuel Type": "Diesel",
+    "Mileage-City": "18.4 kmpl",
+    "Mileage-Highway": "22.54 kmpl",
+    "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+    "Fuel Tank Capacity": "45 (Liters)",
+    "Seating Capacity": "5",
+    "Transmission Type": "Manual",
+    "Engine Displacement (cc)": "1396",
+    "Service Cost" 4,
+    338/yr",
+  }
+}, {
+  "name": "Asta 1.4 CRDi (O) ",
+  "Price": "9.2 lakh",
+  "Type": ""
+  "Overview": {
+    "Fuel Type": "Diesel",
+    "Mileage-City": "18.4 kmpl",
+    "Mileage-Highway": "22.54 kmpl",
+    "Available Colors": "Sleek Silver,Passion Red,Phantom black,PristeBlue, polar White,Star Dust",
+    "Fuel Tank Capacity": "45 (Liters)",
+    "Seating Capacity": "5",
+    "Transmission Type": "Manual",
+    "Engine Displacement (cc)": "1396",
+    "Service Cost" 4,
+    338/yr",
+  }
+
+} ] } {
+  "_id": ObjectId("56eed5fabc9bd93bf4faa366"),
+  "name": "Elantra",
+  "varient": [
+    {
+      "name": "1.8 S MT",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "1.6 L MT",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "1.6 S MT",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "1.8 SX MT",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "1.8 SX AT",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "1.6 SX MT",
+      "Price": "",
+      "Type": ""
+    }
+  ]
+} {
+  "_id": ObjectId("56eed604bc9bd93bf4faa368"),
+  "name": "Grand i10",
+  "varient": [
+    {
+      "name": "Era CRDi",
+      "Price": "6.0 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "24.0 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Mushroom,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+    },
+    {
+      "name": "Magna CRDi",
+      "Price": "6.2 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "24.0 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+
+    },
+    {
+      "name": "Sportz CRDi",
+      "Price": "6.7 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "24.0 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+
+    },
+    {
+      "name": "Asta CRDi",
+      "Price": "7.0 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "24.0 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+    },
+    {
+      "name": "Asta CRDi (O)",
+      "Price": "7.3 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "24.0 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+    },
+    {
+      "name": "Era",
+      "Price": "5.1 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.9 kmpl",
+        "Mileage-Highway": "18.9 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        942/yr",
+
+      }
+
+    },
+    {
+      "name": "Magna",
+      "Price": "5.3 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.9 kmpl",
+        "Mileage-Highway": "18.9 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        942/yr",
+
+      }
+
+    },
+    {
+      "name": "Sportz",
+      "Price": "5.7 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.9 kmpl",
+        "Mileage-Highway": "18.9 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        942/yr",
+
+      }
+
+    },
+    {
+      "name": "Asta",
+      "Price": "6.0 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.9 kmpl",
+        "Mileage-Highway": "18.9 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        942/yr",
+
+      }
+
+
+    },
+    {
+      "name": "Asta (O)",
+      "Price": "6.3 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.9 kmpl",
+        "Mileage-Highway": "18.9 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        942/yr",
+
+      }
+
+
+
+    },
+    {
+      "name": "Asta AT (O)",
+      "Price": "6.8 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.9 kmpl",
+        "Mileage-Highway": "18.9 kmpl",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        942/yr",
+
+      }
+
+
+    },
+    {
+      "name": "Era CNG(CNG)",
+      "Price": "5.1 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "10 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+
+    },
+    {
+      "name": "Magna CNG(CNG)",
+      "Price": "5.3 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "10 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+
+    },
+    {
+      "name": "Sportz  CNG(CNG)",
+      "Price": "5.7 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "10 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+
+    },
+    {
+      "name": "Asta  CNG(CNG)",
+      "Price": "6.00lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "10 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+
+    },
+    {
+      "name": "Asta Option CNG(CNG)",
+      "Price": "6.9 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "10 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+    },
+    {
+      "name": "1.2 Kappa LPG Magna (LPG)",
+      "Price": "5.6 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "LPG",
+        "Mileage-City": "15.9 km/kg",
+        "Mileage-Highway": "18.9 km/kg",
+        "Available Colors": "Sleek Silver,pure Whit,Star Dust,Golden Orange,Wine Red,TwilighatBlue-HyundaiGrand 110",
+        "Fuel Tank Capacity": "4 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "998",
+        "Service Cost" 4,
+        370/yr",
+
+      }
+
+    }
+  ]
+} {
+  "_id": ObjectId("56eed60fbc9bd93bf4faa36a"),
+  "name": "4S Fluidic Verna",
+  "Varient": [
+    {
+      "name": "1.6 CRDi SX AT",
+      "Price": "13.7  lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "16.04 kmpl",
+        "Mileage-Highway": "19.08 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "1582",
+        "Service Cost" 4,
+        726/yr",
+      }
+    },
+    {
+      "name": "1.6 CRDI SX",
+      "Price": "11.5 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "19.9kmpl",
+        "Mileage-Highway": "23.9kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1582",
+        "Service Cost" 4,
+        726/yr",
+      }
+    },
+    {
+      "name": "1.6 VTVT SX",
+      "Price": "10.2 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "14.0 kmpl",
+        "Mileage-Highway": "17.01 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1591",
+        "Service Cost" 3,
+        136/yr",
+      }
+    },
+    {
+      "name": "1.4 VTVT",
+      "Price": "8.2 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "14.21kmpl",
+        "Mileage-Highway": "17.43 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 3,
+        136/yr",
+      }
+
+    },
+    {
+      "name": "1.6 VTVT S",
+      "Price": "9.5 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "14.21kmpl",
+        "Mileage-Highway": "17.43 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 3,
+        136/yr",
+      }
+    },
+    {
+      "name": "VTVT S (O)",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "1.6 VTVT S (O) AT",
+      "Price": "9.5 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "14.21kmpl",
+        "Mileage-Highway": "17.43 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 3,
+        136/yr",
+      }
+    },
+    {
+      "name": "1.4 CRDi",
+      "Price": "9.6 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "20.8 kmpl",
+        "Mileage-Highway": "24.8kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 4,
+        726/yr",
+      }
+
+    },
+    {
+      "name": "1.6 CRDi S",
+      "Price": "10.8lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "19.9kmpl",
+        "Mileage-Highway": "23.9kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1582",
+        "Service Cost" 4,
+        726/yr",
+      }
+
+    },
+    {
+      "name": "1.6 CRDi SX (O)",
+      "Price": "12.8 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "19.9 kmpl",
+        "Mileage-Highway": "23.9 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,passion Red,Star Dust",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1582",
+        "Service Cost" 4,
+        726/yr",
+      }
+
+    }
+  ]
+} {
+  "_id": ObjectId("56eed61ebc9bd93bf4faa36c"),
+  "name": "Santa Fe",
+  "varient": [
+    {
+      "name": "2WD MT",
+      "Price": "29.6 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "11.34  kmpl",
+        "Mileage-Highway": "14.74 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,Red Wine,Star Dust ",
+        "Fuel Tank Capacity": "64 (Liters)",
+        "Seating Capacity": "7",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "2199",
+        "Service Cost" 7,
+        150/yr",
+      }
+
+    },
+    {
+      "name": "2WD AT",
+      "Price": "31.0 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "10.0 kmpl",
+        "Mileage-Highway": "13.01 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,Red Wine,Star Dust ",
+        "Fuel Tank Capacity": "64 (Liters)",
+        "Seating Capacity": "7",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "2199",
+        "Service Cost" 7,
+        150/yr",
+      }
+
+
+
+
+    },
+    {
+
+      "name": "4WD AT ,
+      "Price": "33.2 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "10.0 kmpl",
+        "Mileage-Highway": "13.01 kmpl",
+        "Available Colors": "Sleek Silver,Phantom black, pure White,Red Wine,Star Dust ",
+        "Fuel Tank Capacity": "64 (Liters)",
+        "Seating Capacity": "7",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "2199",
+        "Service Cost" 7,
+        150/yr",
+      }
+
+
+
+
+    }
+  ]
+} {
+  "_id": ObjectId("56eed631bc9bd93bf4faa370"),
+  "name": "Xcent",
+  "varient": [
+    {
+      "name": "1.1CRDi Base (Diesel)",
+      "Price": "6.4  lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "18.9   kmpl",
+        "Mileage-Highway": "24.4 kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        632/yr",
+      }
+
+    },
+    {
+      "name": "1.1CRDi S (Diesel)",
+      "Price": "7.3 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "18.9   kmpl",
+        "Mileage-Highway": "24.4 kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        632/yr",
+      }
+
+    },
+    {
+      "name": "1.1CRDi SX (Diesel)",
+      "Price": "7.7 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "18.9   kmpl",
+        "Mileage-Highway": "24.4 kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        632/yr",
+      }
+
+    },
+    {
+      "name": "1.1CRDi SX Option(Diesel)",
+      "Price": "8.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "18.9   kmpl",
+        "Mileage-Highway": "24.4 kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1120",
+        "Service Cost" 4,
+        632/yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa Base(Petrol)",
+      "Price": "5.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.7  kmpl",
+        "Mileage-Highway": "19.1kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 3,
+        110/yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa S(Petrol)",
+      "Price": "6.3  lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.7  kmpl",
+        "Mileage-Highway": "19.1kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 3,
+        110/yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa SX(Petrol)",
+      "Price": "6.7 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.7  kmpl",
+        "Mileage-Highway": "19.1kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 3,
+        110/yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa SX Option(Petrol)",
+      "Price": "7.4lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.7  kmpl",
+        "Mileage-Highway": "19.1kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 3,
+        110/yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa AT SX Option(Petrol)",
+      "Price": "8.2  lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "12.4  kmpl",
+        "Mileage-Highway": "16.9 kmpl",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "43 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 5,
+        216yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa Base CNG(CNG)",
+      "Price": "5.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "12 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        632yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa S CNG(CNG)",
+      "Price": "6.8 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "12 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        632yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa SX CNG(CNG)",
+      "Price": "6.7 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "12 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        632yr",
+      }
+
+    },
+    {
+      "name": "1.2Kappa SX Option CNG(CNG)",
+      "Price": "7.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "CNG",
+        "Mileage-City": "18.0 km/kg",
+        "Mileage-Highway": "25.0 km/kg",
+        "Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+        "Fuel Tank Capacity": "12 (KGS)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        632yr",
+      }
+
+    }
+  ]
+} {
+  "_id": ObjectId("56eed63abc9bd93bf4faa372"),
+  "name": "i20 Active",
+  "varient": [
+    {
+      "name": "1.4   (Diesel)",
+      "Price": "8.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "17.25 kmpl",
+        "Mileage-Highway": "21.19 kmpl",
+        "Available Colors": "Sleek Silver,Passion Red,Phantom black,Retro Shine,Earth Brown, polar White",
+        "Fuel Tank Capacity": "45 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 4,
+        424/yr",
+      }
+
+    },
+    {
+      "name": "1.4 S  (Diesel)",
+      "Price": "9.2 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "17.25 kmpl",
+        "Mileage-Highway": "21.19 kmpl",
+        "Available Colors": "Sleek Silver,Passion Red,Phantom black,Retro Shine,Earth Brown, polar White",
+        "Fuel Tank Capacity": "45 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 4,
+        424/yr",
+      }
+
+    },
+    {
+      "name": "1.4 SX With AVN  (Diesel)",
+      "Price": "10.0 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "17.25 kmpl",
+        "Mileage-Highway": "21.19 kmpl",
+        "Available Colors": "Sleek Silver,Passion Red,Phantom black,Retro Shine,Earth Brown, polar White",
+        "Fuel Tank Capacity": "45 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 4,
+        424/yr",
+      }
+
+    },
+    {
+      "name": "1.2   (petrol)",
+      "Price": "7.0 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "13.5 kmpl",
+        "Mileage-Highway": "17.19 kmpl",
+        "Available Colors": "Sleek Silver,Passion Red,Phantom black,Retro Shine,Earth Brown, polar White",
+        "Fuel Tank Capacity": "45 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        997/yr",
+      }
+
+    },
+    {
+      "name": "1.2 S (petrol)",
+      "Price": "7.7 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "13.5 kmpl",
+        "Mileage-Highway": "17.19 kmpl",
+        "Available Colors": "Sleek Silver,Passion Red,Phantom black,Retro Shine,Earth Brown, polar White",
+        "Fuel Tank Capacity": "45 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 2,
+        997/yr",
+      }
+
+    },
+    {
+      "name": "1.2 SX With AVN (petrol)",
+      "Price": "8.5 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "13.5 kmpl",
+        "Mileage-Highway": "17.19 kmpl",
+        "Available Colors": "Sleek Silver,Passion Red,Phantom black,Retro Shine,Earth Brown, polar White",
+        "Fuel Tank Capacity": "45 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1197",
+        "Service Cost" 4,
+        424/yr",
+      }
+
+    }
+  ]
+} {
+  "_id": ObjectId("56eed649bc9bd93bf4faa374"),
+  "name": "Creta",
+  "varient": [
+    {
+      "name": "1.4 CRDi L",
+      "Price": "10.50 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "18.3  kmpl",
+        "Mileage-Highway": "21.38  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige"
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 5,
+        697/Yr",
+
+      }
+
+    },
+    {
+      "name": "1.4 CRDi S",
+      "Price": "11.60 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "18.3  kmpl",
+        "Mileage-Highway": "21.38  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige"
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 5,
+        697/Yr",
+
+      }
+
+    },
+    {
+      "name": "1.4 CRDi S Plus",
+      "Price": "12.7 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "18.3  kmpl",
+        "Mileage-Highway": "21.38  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige",
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1396",
+        "Service Cost" 5,
+        697/Yr",
+
+      }
+
+    },
+    {
+      "name": "1.6 CRDi SX",
+      "Price": "12.9 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "15.6 kmpl",
+        "Mileage-Highway": "19.67  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige",
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1582",
+        "Service Cost" 5,
+        697/Yr",
+
+      }
+
+    },
+    {
+      "name": "1.6 CRDi SX Plus",
+      "Price": "14.00 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "15.6 kmpl",
+        "Mileage-Highway": "19.67  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige",
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1582",
+        "Service Cost" 5,
+        697/Yr",
+
+      }
+
+    },
+    {
+      "name": "1.6 CRDi AT SX Plus",
+      "Price": "15.1 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "14.0 kmpl",
+        "Mileage-Highway": "17.01  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige",
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "1582",
+        "Service Cost" 5,
+        697/Yr",
+
+      }
+
+    },
+    {
+      "name": "1.6 CRDi SX (O)",
+      "Price": "15.1 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "15.6 kmpl",
+        "Mileage-Highway": "19.67  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige",
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1582",
+        "Service Cost" 5,
+        697/Yr",
+
+      }
+
+    },
+    {
+      "name": "1.6 VTVT L",
+      "Price": "9.6 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "11.2 kmpl",
+        "Mileage-Highway": "15.29  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige",
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1591",
+        "Service Cost" 3,
+        500/yr",
+
+      }
+
+    },
+    {
+      "name": "1.6 VTVT S",
+      "Price": "10.6 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "11.2 kmpl",
+        "Mileage-Highway": "15.29  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige",
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1591",
+        "Service Cost" 3,
+        500/yr",
+
+      }
+
+    },
+    {
+
+      "name": "1.6 VTVT SX Plus",
+      "Price": "12.4 lakh",
+      "Type": ""
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "11.2 kmpl",
+        "Mileage-Highway": "15.29  kmpl",
+        "Available Colors": "Sleek Silver,phentom black,Mystic blue,polar White,Star Dust,Red passion,pearlBeige",
+        "Fuel Tank Capacity": "55 (Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1591",
+        "Service Cost" 3,
+        500/yr",
+
+      }
+
+    }
+
+  ]
 }
