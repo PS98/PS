@@ -8,126 +8,149 @@
 
                 <h2 class="header-text underline">How Can We Reach You</h2>
 
-
-                <div role="form" class="row">
-                    <div class="form-group col-md-6">
-                        <select class="form-control" id="selCity">
-                            <option> Select City</option>
-                            <option ng-repeat="city in car.centreCity">{{city}}</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-
-                        <span class="dropdown col-md-12" style="padding-left:0">
-
-                            <input type="text" class="form-control" id="txtArea" ng-model="area">
-
-                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="position:absolute; top:0; right: 0; padding: 16px">
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" style="width:100%;margin:0">
-                                <li ng-repeat="area in car.centreArea "><a href="#">{{area}}</a></li>
-
-                            </ul>
-                        </span>
-                    </div>
-
-
-                </div>
-
-
-
-                <!--</form>-->
-                <centre-details ng-if="selectedCentre" centre="selectedCentre" add="selectCentre(dirCentre)" class="active"></centre-details>
-
-                <h4 class="header-text">Working Hours</h4>
-                <table class="table table-bordered table-condensed table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th class="text-right">Opening</th>
-                            <th class="text-right">Closing</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Monday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Thursday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Friday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Saturday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">5:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Sunday</td>
-                            <td class="text-right">10:00am</td>
-                            <td class="text-right">4:00pm</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    <small>Opening hours may vary due to public holidays.</small>
-                </p>
-                <div class="list-container ">
-                    <h4 class="header-text">Services</h4>
-                    <div class="list-flex-container">
-                        <ul class="list-flex-column" ng-repeat="serviceList in center.services">
-                            <li ng-repeat="service in serviceList">{{ service }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="car-header">
-                <div class="row">
-                    <div id="mapholder" class="col-md-12" style="height: 250px">
-                    </div>
-                </div>
-                <div>
-                    <div ng-if="recommendedCentre">
-                        <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
-                        <div class="centre-list_first">
-                            <centre-details centre="recommendedCentre" add="selectCentre(dirCentre)" ng-class="recommendedCentre.name == selectedCentre.name ?'active' :''"></centre-details>
+                       <!--<div class="sorting">
+                    <div class="sorting__inner">
+                        <div class="sorting__item">
+                            <span class="sorting__title">Select City</span>
+                            <div class="select jelect">
+                                <input id="page" name="page" value="0" data-text="imagemin" type="text" class="jelect-input">
+                                <div tabindex="0" role="button" class="jelect-current">Pune</div>
+                                <ul class="jelect-options">
+                                    <li class="jelect-option jelect-option_state_active" ng-repeat="city in car.centreCity">{{city}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sorting__item">
+                            <span class="sorting__title">Select Area</span>
+                            <div class="select jelect">
+                                <input id="page" name="page" value="0" data-text="imagemin" type="text" class="jelect-input">
+                                <div tabindex="0" role="button" class="jelect-current">Pune</div>
+                                <ul class="jelect-options">
+                                    <li class="jelect-option jelect-option_state_active" ng-repeat="city in car.centreCity">{{city}}</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div ng-if="centreList">
-                        <h4 class="centre-list_other-title">Other centres nearby</h4>
-                        <div class="centre-list_other">
-                            <centre-details centre="centre" ng-repeat="centre in centreList" add="showOnMap(dirCentre)" ng-if="centre != recommendedCentre" ng-class="centre.name == selectedCentre.name ?'active' :''"></centre-details>
+                </div>-->
+                         <div role="form" class="row">
+                                    <div class="form-group col-md-6">
+                                        <select class="form-control" id="selCity">
+                                            <option> Select City</option>
+                                            <option ng-repeat="city in car.centreCity">{{city}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+
+                                        <span class="dropdown col-md-12" style="padding-left: 0">
+
+                                            <input type="text" class="form-control" id="txtArea" ng-model="area">
+
+                                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="position: absolute; top: 0; right: 0; padding: 16px">
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu" style="width: 100%; margin: 0">
+                                                <li ng-repeat="area in car.centreArea "><a href="#">{{area}}</a></li>
+
+                                            </ul>
+                                        </span>
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <!--</form>-->
+                                <centre-details ng-if="selectedCentre" centre="selectedCentre" add="selectServiceCentre(dirCentre)" class="active"></centre-details>
+
+                                <h4 class="header-text">Working Hours</h4>
+                                <table class="table table-bordered table-condensed table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Day</th>
+                                        <th class="text-right">Opening</th>
+                                        <th class="text-right">Closing</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td class="text-right">8:30am</td>
+                                        <td class="text-right">6:00pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td class="text-right">8:30am</td>
+                                        <td class="text-right">6:00pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td class="text-right">8:30am</td>
+                                        <td class="text-right">6:00pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td class="text-right">8:30am</td>
+                                        <td class="text-right">6:00pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td class="text-right">8:30am</td>
+                                        <td class="text-right">6:00pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saturday</td>
+                                        <td class="text-right">8:30am</td>
+                                        <td class="text-right">5:00pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sunday</td>
+                                        <td class="text-right">10:00am</td>
+                                        <td class="text-right">4:00pm</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <p>
+                                    <small>Opening hours may vary due to public holidays.</small>
+                                </p>
+                                <div class="list-container ">
+                                    <h4 class="header-text">Services</h4>
+                                    <div class="list-flex-container">
+                                        <ul class="list-flex-column" ng-repeat="serviceList in center.services">
+                                            <li ng-repeat="service in serviceList">{{ service }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                           </div>
+                    </div>
+                        <div class="col-md-6">
+                            <div class="car-header">
+                                <div class="row">
+                                    <div id="mapholder" class="col-md-12" style="height: 250px">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div ng-if="recommendedCentre">
+                                        <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
+                                        <div class="centre-list_first">
+                                            <centre-details centre="recommendedCentre" add="selectServiceCentre(dirCentre)" ng-class="recommendedCentre.name == selectedCentre.name ?'active' :''"></centre-details>
+                                        </div>
+                                    </div>
+                                    <div ng-if="centreList">
+                                        <h4 class="centre-list_other-title">Other centres nearby</h4>
+                                        <div class="centre-list_other">
+                                            <centre-details centre="centre" ng-repeat="centre in centreList" add="selectServiceCentre(dirCentre)" ng-if="centre != recommendedCentre" ng-class="centre.name == selectedCentre.name ?'active' :''"></centre-details>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="btn">
-        <div class="btn btn-filter wrap__btn-skew-r js-filter">
-            <button ui-sref="service.car" class="btn btn-skew-r btn-effect "><span class="btn btn-skew-r__inner">Previous Section</span></button>
-        </div>
-    </div>
+                    <div class="btn">
+                        <div class="btn btn-filter wrap__btn-skew-r js-filter">
+                            <button ui-sref="service.car" class="btn btn-skew-r btn-effect "><span class="btn btn-skew-r__inner">Previous Section</span></button>
+                        </div>
+                    </div>
 
-</div>
+                </div>
 

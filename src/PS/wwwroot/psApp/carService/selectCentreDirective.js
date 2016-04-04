@@ -37,14 +37,15 @@ angular.module("psApp").directive("selectCentre", function () {
         }, controller: ["$scope", "psDataServices", "$state", function ($scope, psDataServices, $state) {
             $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
             $scope.selectedCentre = "";
-            $scope.showOnMap = function (centre) {
-                $scope.selectedCentre.activeCentre = false;
-                centre.activeCentre = true;
-                $scope.selectedCentre = centre;
-               myClick(centre.$$hashKey, $scope.centreList);
-            }
-            $scope.selectCentre = function (centre) {
-                $state.go("service.appointment");
+            $scope.selectServiceCentre = function (centre) {
+                if (!centre.activeCentre) {
+                    $scope.selectedCentre.activeCentre = false;
+                    centre.activeCentre = true;
+                    $scope.selectedCentre = centre;
+                    myClick(centre.$$hashKey, $scope.centreList);
+                } else {
+                    $state.go("service.appointment");
+                }
             }
             $scope.getCentreDetails = function (area) {
                 psDataServices.getServiceCentreList('Pune', area).
