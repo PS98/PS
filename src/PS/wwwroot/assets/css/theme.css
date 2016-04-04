@@ -734,7 +734,6 @@ img.pull-left {
 	border-bottom-style: solid;
 	overflow: hidden;
 	transition: all 0.3s;
-	text-align: center;
 }
 .link-img__link:before {
 	position: absolute;
