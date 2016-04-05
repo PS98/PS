@@ -1,6 +1,7 @@
 
-var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, googleMapMarkers = [], displayCurrentLocation;
+var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, googleMapMarkers = [], displayCurrentLocation, latlon, userLocation = {}, locationCall;
 var infowindow = new google.maps.InfoWindow();
+var geocoder = new google.maps.Geocoder();
 
 var componentForm = {
   street_number: 'short_name',
@@ -11,74 +12,141 @@ var componentForm = {
   postal_code: 'short_name'
 };
 
-function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, locations, currentLocation) {
+var mapOptions = {
+    center: latlon,
+    zoom: 14,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeControl: false,
+    navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+}
+
+
+function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, currentLocation, locationCallBack) {
     googleMapHolder = "";
     googleMapHolder = mapHolderId;
     displayCurrentLocation = currentLocation;
-    autocomplete = new google.maps.places.Autocomplete(
-       (document.getElementById(textBoxId)),
+    locationCall = locationCallBack;
+    if (textBoxId !== "") {
+        autocomplete = new google.maps.places.Autocomplete(
+        (document.getElementById(textBoxId)),
         { types: ['geocode'] });
-    if (autocompleteCallback !="")
-    google.maps.event.addListener(autocomplete, 'place_changed',function() {
-        autocompleteCallback(autocomplete);
-    });
+        if (autocompleteCallback != "")
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                autocompleteCallback(autocomplete);
+            });
+    }
 
-   if (navigator.geolocation) {
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showMap, handleError);
     } else {
         error('Google Map is not supported');
-   }
-   markersLocations = locations;
+    }
 }
 
 function showMap(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
-    var latlon = new google.maps.LatLng(lat, lon);
-    var mapholder = document.getElementById(googleMapHolder);
-    mapholder.style.height = "200px";
-    mapholder.style.width = "500px";
+    latlon = new google.maps.LatLng(lat, lon);
+   // var mapholder = document.getElementById(googleMapHolder);
+    //mapholder.style.height = "200px";
+    //mapholder.style.width = "500px";
+    mapOptions.center = latlon;
+   locateCityAndArea(latlon);
+   map = new google.maps.Map(document.getElementById(googleMapHolder), mapOptions);
 
-
-    var myOptions = {
-        center: latlon, zoom: 14,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        mapTypeControl: false,
-        navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
-    }
-
-    map = new google.maps.Map(document.getElementById(googleMapHolder), myOptions);
     if (displayCurrentLocation) {
         var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
         infowindow.setContent("You are here!");
         infowindow.open(map, marker);
     }
-    if (markersLocations)
-        setMarkers(map, markersLocations);
-
+ 
 }
 function handleError(err) {
-    switch (err.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation.";
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable.";
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out.";
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred.";
-            break;
-    }
+    //switch (err.code) {
+    //    case error.PERMISSION_DENIED:
+    //        x.innerHTML = "User denied the request for Geolocation.";
+    //        break;
+    //    case error.POSITION_UNAVAILABLE:
+    //        x.innerHTML = "Location information is unavailable.";
+    //        break;
+    //    case error.TIMEOUT:
+    //        x.innerHTML = "The request to get user location timed out.";
+    //        break;
+    //    case error.UNKNOWN_ERROR:
+    //        x.innerHTML = "An unknown error occurred.";
+    //        break;
+    //}
+   getLatLng('India');
+ 
+}
+function loadMap(lat, lng) {
+    latlon = new google.maps.LatLng(lat, lng);
+    mapOptions.center = latlon;
+    mapOptions.zoom = 4;
+    map = new google.maps.Map(document.getElementById(googleMapHolder), mapOptions);
 }
 
+function loadCurrentLocation(city, area) {
+    locationCall(city.long_name, area.long_name);
 
+}
+function locateCityAndArea(latlng) {
+  
+    var geoType = { 'latLng': latlng };
 
+    var result = callGeoCoderApi(geoType);
 
+ return { city: result.city, area: result.area };
+}
 
+function getLatLng(place) {
+    var address = { 'address': place };
 
+    var result = callGeoCoderApi(address,true);
+
+    return { lat: result.lat, lng: result.lng };
+
+}
+
+function callGeoCoderApi(type, blockbyUser) {
+    var city, area, lat, lng;
+     geocoder.geocode(type, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                for (var i = 0; i < results[0].address_components.length; i++) {
+                    for (var b = 0; b < results[0].address_components[i].types.length; b++) {
+
+                        if (results[0].address_components[i].types[b] == "sublocality_level_1") {
+                            area = results[0].address_components[i];
+
+                        }
+
+                        if (results[0].address_components[i].types[b] == "administrative_area_level_2") {
+                            //this is the object you are looking for
+                            city = results[0].address_components[i];
+                            break;
+                        }
+                    }
+                }
+                lat = results[0].geometry.location.lat();
+                lng = results[0].geometry.location.lng();
+
+                if (blockbyUser)
+                    loadMap(lat, lng);
+                else {
+                    loadCurrentLocation(city,area);
+                }
+            } else {
+                alert("No results found");
+            }
+        } else {
+            alert("Geocoder failed due to: " + status);
+        }
+
+    });
+
+    return { city: city, area: area, lat: lat, lng: lng };
+}
 
 
 
@@ -114,8 +182,9 @@ function geolocate() {
 }
 
 
-function setMarkers(map, locations, callback) {
-
+function setMarkers(googleMap, locations, callback) {
+    if (googleMap)
+        map = googleMap;
     var latlngset, markers = [];
     googleMapMarkers = [];
     var bounds = new google.maps.LatLngBounds();

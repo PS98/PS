@@ -4,31 +4,30 @@ angular.module("psApp").directive("selectCentre", function () {
     return {
         templateUrl: "psApp/carService/selectCentre.html",
         link: function (scope, element, attrs) {
-           // initializeGoogleMap('autocomplete', 'mapholder', "", "", false);
-            var latlng = new google.maps.LatLng(18.520266, 73.856406);
-            var options =
-            {
-                zoom: 14,
-                center: latlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
-            };
+            initializeGoogleMap('autocomplete', 'mapholder', "", false, scope.MapCallback);
+           // var latlng = new google.maps.LatLng(18.520266, 73.856406);
+           // var options =
+           // {
+           //     zoom: 14,
+           //     center: latlng,
+           //     mapTypeId: google.maps.MapTypeId.ROADMAP,
+           //     navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+           // };
 
-            var map = new google.maps.Map(document.getElementById("mapholder"), options);
-            scope.map = map;
-            var marker = new google.maps.Marker(
-            {
-                position: latlng,
-                map: map,
-                title: "Pune"
-            });
+           // var map = new google.maps.Map(document.getElementById("mapholder"), options);
+           // scope.map = map;
+           // var marker = new google.maps.Marker(
+           // {
+           //     position: latlng,
+           //     map: map,
+           //     title: "Pune"
+           // });
 
-           map.setCenter(marker.getPosition());
+            //map.setCenter(marker.getPosition());
 
-
-
+           $('.jelect').jelect();
             $('body').delegate('.dropdown-menu li', 'click', function() {
-
+            
                 $('#txtArea').val($(this).text());
                 scope.getCentreDetails($(this).text());
 
@@ -63,11 +62,20 @@ angular.module("psApp").directive("selectCentre", function () {
             }
             psDataServices.getServiceCentreCity().success(function (data) {
                 $scope.car.centreCity = data;
-            });
-            psDataServices.getServiceCentreArea("Pune").success(function (data) {
-                $scope.car.centreArea = data;
+               // initializeGoogleMap('autocomplete', 'mapholder', "", false,);
             });
 
+            $scope.getServiceCentreArea = function() {
+                psDataServices.getServiceCentreArea($scope.city).success(function (data) {
+                    $scope.car.centreArea = data;
+                    if ($scope.car.centreArea.includes($scope.googleMapArea)) {
+                        $scope.area = $scope.googleMapArea;
+                        $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
+                        $scope.getCentreDetails($scope.googleMapArea);
+                    }
+
+                });
+            }
             $scope.markerClick = function (centre) {
                 if (centre.$$hashKey != $scope.selectedCentre.$$hashKey) {
                     $scope.selectedCentre.activeCentre = false;
@@ -76,6 +84,15 @@ angular.module("psApp").directive("selectCentre", function () {
                     $scope.$apply();
                 }
             }
+            $scope.MapCallback = function(city, area) {
+                if ($scope.car.centreCity.includes(city)) {
+                    $scope.city = city;
+                    $('.select.jelect').find('#cityDropDown').text(city);
+                    $scope.getServiceCentreArea();
+                }
+                $scope.googleMapArea = "Pimple Gaurav"///area;
+            }
+           
         }]
 
 

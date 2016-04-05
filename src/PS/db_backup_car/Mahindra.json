@@ -4,27 +4,116 @@
     "varient" : [
         {
             "name" : "1.5 D2", 
-            "Price" : "6.85 Lac"
+            "Price" : "6.85 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.01 kmpl",
+			"Mileage-Highway" : "21.03 kmpl",
+			"Available Colors": "Diamond White,Dolphin Grye,Fiery black,Toread0r Red,Mist Silver,RockyBaige,Java Brown,TwilighatBlue",
+			"Fuel Tank Capacity":"50(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1461",
+			"Service Cost"3,712/yr",
+            }				
+			
         }, 
         {
             "name" : "1.5 D4 BS-IV", 
-            "Price" : "7.08 Lac"
+            "Price" : "7.08 Lac",
+				Type:"",,
+				"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.01 kmpl",
+			"Mileage-Highway" : "21.03 kmpl",
+			"Available Colors": "Diamond White,Dolphin Grye,Fiery black,Toread0r Red,Mist Silver,RockyBaige,Java Brown,TwilighatBlue",
+			"Fuel Tank Capacity":"50(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1461",
+			"Service Cost"3,712/yr",
+            }
         }, 
         {
             "name" : "1.5 D6 BS-IV", 
-            "Price" : "7.78 Lac"
+            "Price" : "7.78 Lac",
+				Type:"",
+				"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.01 kmpl",
+			"Mileage-Highway" : "21.03 kmpl",
+			"Available Colors": "Diamond White,Dolphin Grye,Fiery black,Toread0r Red,Mist Silver,RockyBaige,Java Brown,TwilighatBlue",
+			"Fuel Tank Capacity":"50(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1461",
+			"Service Cost"3,712/yr",
+            }
         }, 
         {
             "name" : "Vibe D2", 
-            "Price" : "6.09 Lac"
+            "Price" : "6.09 Lac",
+				Type:"",
+				"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.1 kmpl",
+			"Mileage-Highway" : "20.8 kmpl",
+			"Available Colors": "Diamond White,Dolphin Grye,Fiery black,Toread0r Red,Mist Silver,Java Brown,Aqua Rush",
+			"Fuel Tank Capacity":"50(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1461",
+			"Service Cost"3,712/yr",
+            }	
         }, 
+		{
+		"name"  : "1.5 Executive edition(Diesel)", 
+"Price" : "8.6  lakh
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.01 kmpl",
+			"Mileage-Highway" : "21.03 kmpl",
+			"Available Colors": "Diamond White,Dolphin Grye,Fiery black,Toread0r Red,Mist Silver,RockyBaige,Java Brown,TwilighatBlue",
+			"Fuel Tank Capacity":"50(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1461",
+			"Service Cost"3,712/yr",
+            }	
+		}
         {
             "name" : "Vibe D4", 
-            "Price" : "6.37 Lac"
+            "Price" : "6.37 Lac",
+				Type:"",
+				"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.1 kmpl",
+			"Mileage-Highway" : "20.8 kmpl",
+			"Available Colors": "Diamond White,Dolphin Grye,Fiery black,Toread0r Red,Mist Silver,Java Brown,Aqua Rush",
+			"Fuel Tank Capacity":"50(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1461",
+			"Service Cost"3,712/yr",
+            }				
+			
         }, 
         {
             "name" : "Vibe D6", 
-            "Price" : "6.99 Lac"
+            "Price" : "6.99 Lac",
+				Type:"",
+				"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.1 kmpl",
+			"Mileage-Highway" : "20.8 kmpl",
+			"Available Colors": "Diamond White,Dolphin Grye,Fiery black,Toread0r Red,Mist Silver,Java Brown,Aqua Rush",
+			"Fuel Tank Capacity":"50(Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1461",
+			"Service Cost"3,712/yr",
+            }		
         }
     ]
 }
@@ -33,65 +122,595 @@
     "name" : "Bolero", 
     "varient" : [
         {
-            "name" : "DI BS III", 
-            "Price" : "6.47 Lac"
-        }, 
-        {
-            "name" : "ZLX", 
-            "Price" : "8.14 Lac"
-        }, 
-        {
-            "name" : "SLX", 
-            "Price" : "7.98 Lac"
-        }, 
-        {
-            "name" : "SLE", 
-            "Price" : "7.45 Lac"
-        }, 
-        {
-            "name" : "EX", 
-            "Price" : "7.05 Lac"
-        }, 
-        {
-            "name" : "Plus Non AC BS III", 
-            "Price" : "6.73 Lac"
-        }, 
-        {
-            "name" : "BS4", 
-            "Price" : "7.42 Lac"
-        }, 
-        {
-            "name" : "Special Edition (ABS)", 
-            "Price" : "8.25 Lac"
-        }, 
-        {
-            "name" : "EX NON AC", 
-            "Price" : "6.64 Lac"
-        }, 
-        {
-            "name" : "DI 4WD BS III", 
-            "Price" : "6.91 Lac"
-        }, 
-        {
-            "name" : "SLE BS III", 
-            "Price" : "7.3 Lac"
-        }, 
-        {
-            "name" : "SLX BS III", 
-            "Price" : "7.83 Lac"
-        }, 
-        {
-            "name" : "ZLX BS III", 
-            "Price" : "7.99 Lac"
-        }, 
-        {
-            "name" : "Plus AC BS III", 
-            "Price" : "7.12 Lac"
-        }, 
-        {
-            "name" : "Plus Non AC BS4", 
-            "Price" : "7.02 Lac"
-        }
+"name"  : "1.1CRDi Base (Diesel)", 
+"Price" : "6.4  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.9   kmpl",
+			"Mileage-Highway" : "24.4 kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1120",
+			"Service Cost"4,632/yr",
+            }				
+			
+	},
+	{
+"name"  : "1.1CRDi S (Diesel)", 
+"Price" : "7.3 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.9   kmpl",
+			"Mileage-Highway" : "24.4 kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1120",
+			"Service Cost"4,632/yr",
+            }				
+			
+	},
+{
+"name"  : "1.1CRDi SX (Diesel)", 
+"Price" : "7.7 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.9   kmpl",
+			"Mileage-Highway" : "24.4 kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1120",
+			"Service Cost"4,632/yr",
+            }				
+			
+	},
+{
+"name"  : "1.1CRDi SX Option(Diesel)", 
+"Price" : "8.4 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"18.9   kmpl",
+			"Mileage-Highway" : "24.4 kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1120",
+			"Service Cost"4,632/yr",
+            }				
+			
+	},
+	{
+"name"  : "1.2Kappa Base(Petrol)", 
+"Price" : "5.4 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"15.7  kmpl",
+			"Mileage-Highway" : "19.1kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,110/yr",
+            }				
+			
+	},
+	{
+"name"  : "1.2Kappa S(Petrol)", 
+"Price" : "6.3  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"15.7  kmpl",
+			"Mileage-Highway" : "19.1kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,110/yr",
+            }				
+			
+	},
+	{
+	"name"  : "1.2Kappa SX(Petrol)", 
+"Price" : "6.7 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"15.7  kmpl",
+			"Mileage-Highway" : "19.1kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,110/yr",
+            }				
+			
+	},
+{
+"name"  : "1.2Kappa SX Option(Petrol)", 
+"Price" : "7.4lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"15.7  kmpl",
+			"Mileage-Highway" : "19.1kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"3,110/yr",
+            }				
+			
+	},
+{
+"name"  : "1.2Kappa AT SX Option(Petrol)", 
+"Price" : "8.2  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"petrol",
+			"Mileage-City":"12.4  kmpl",
+			"Mileage-Highway" : "16.9 kmpl",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"43 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"5,216yr",
+            }				
+			
+	},
+	{
+"name"  : "1.2Kappa Base CNG(CNG)", 
+"Price" : "5.4 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"18.0 km/kg",
+			"Mileage-Highway" : "25.0 km/kg",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"12 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"4,632yr",
+            }				
+			
+	},
+{
+"name"  : "1.2Kappa S CNG(CNG)", 
+"Price" : "6.8 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"18.0 km/kg",
+			"Mileage-Highway" : "25.0 km/kg",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"12 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"4,632yr",
+            }				
+			
+	},
+{
+"name"  : "1.2Kappa SX CNG(CNG)", 
+"Price" : "6.7 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"18.0 km/kg",
+			"Mileage-Highway" : "25.0 km/kg",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"12 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"4,632yr",
+            }				
+			
+	},
+	{
+"name"  : "1.2Kappa SX Option CNG(CNG)", 
+"Price" : "7.4 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"CNG",
+			"Mileage-City":"18.0 km/kg",
+			"Mileage-Highway" : "25.0 km/kg",
+			"Available Colors": "Sleek Silver,passion Red,Phantom black,PristineBlue,TwilighatBlue,  pure White",
+			"Fuel Tank Capacity":"12 (KGS)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"1197",
+			"Service Cost"4,632yr",
+            }				
+			
+	}	
+Model == Mahindra - Bolero
+{
+"name"  : "DI NON AC BS lll  White (Diesel)", 
+"Price" : "6.1  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+	},
+	{
+"name"  : "DI NON AC BS lll  SILVER(Diesel)", 
+"Price" : "6.0  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+	},
+{
+"name"  : "EX NON AC(Diesel)", 
+"Price" : "6.7  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+	},
+{
+"name"  : "Plus NON ACBSlll(Diesel)", 
+"Price" : "6.3  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+	},
+{
+"name"  : "DI  AC BS lll(Diesel)", 
+"Price" : "6.4  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+			
+	},		
+{
+"name"  : "LX NON  AC BS3 (Diesel)", 
+"Price" : "6.4  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+	},		
+{
+"name"  : "Plus-NON -AC BSlll PS(Diesel)", 
+"Price" : "6.6  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+	},		-					
+{
+"name"  : "LX NON AC BSlll PS(Diesel)", 
+"Price" : "6.6  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+			
+	},	
+{
+"name"  : "Plus Non AC (Diesel)", 
+"Price" : "7.1  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+	},		
+{
+"name"  : "EX AC (Diesel)", 
+"Price" : "7.1  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+	},		
+{
+"name"  : "Plus AC BSlll(Diesel)", 
+"Price" : "6.8 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+	},			
+{
+"name"  : "LX 4WD NON AC BS3(Diesel)", 
+"Price" : "6.8 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+	},					
+{
+"name"  : "Plus AC BSlll PS(Diesel)", 
+"Price" : "7.2  lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+	},				
+{
+"name"  : "SLE BSlll (Diesel)", 
+"Price" : "6.9 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+	},			
+	{		
+
+"name"  : "Plus AC (Diesel)", 
+"Price" : "7.5 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+		},		
+{
+"name"  : "SLE(Diesel)", 
+"Price" : "7.5 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+		},					
+{
+"name"  : "SLX 2WD BSlll(Diesel)", 
+"Price" : "7.4 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+		},			
+{
+"name"  : "ZLX  BSlll(Diesel)", 
+"Price" : "7.6 lakh", 
+"Type"  : ""
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+		},			
+{
+"name"  : "SLX  BSlll(Diesel)", 
+"Price" : "8.1 lakh
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Mist Silver,Rocky Baige",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+				
+		},			
+{
+"name"  : "ZLX  (Diesel)", 
+"Price" : "8.2 lakh
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"12.4   kmpl",
+			"Mileage-Highway" : "15.96 kmpl",
+			"Available Colors": "Diamond White,Toreador Red,Mist Silver,passion Red,Fiery black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"5,058//yr",
+            }				
+			
+
+		}
     ]
 }
 { 
@@ -100,19 +719,67 @@
     "varient" : [
         {
             "name" : "C2", 
-            "Price" : "6.78 Lac"
+            "Price" : "6.78 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8  kmpl",
+			"Mileage-Highway" : "17.21kmpl",
+			"Available Colors": "Diamond Whit,Toreador Red,Mist Silver,  Eiery Black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"55 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"15,976/yr",
+            }
         }, 
         {
             "name" : "C4", 
-            "Price" : "7.33 Lac"
+            "Price" : "7.33 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8  kmpl",
+			"Mileage-Highway" : "17.21kmpl",
+			"Available Colors": "Diamond Whit,Toreador Red,Mist Silver,  Eiery Black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"55 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"15,976/yr",
+            }	
         }, 
         {
             "name" : "C6", 
-            "Price" : "7.8 Lac"
+            "Price" : "7.8 Lac",
+			Type
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8  kmpl",
+			"Mileage-Highway" : "17.21kmpl",
+			"Available Colors": "Diamond Whit,Toreador Red,Mist Silver,  Eiery Black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"55 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"15,976/yr",
+            }
         }, 
         {
             "name" : "C8", 
-            "Price" : "8.31 Lac"
+            "Price" : "8.31 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8  kmpl",
+			"Mileage-Highway" : "17.21kmpl",
+			"Available Colors": "Diamond Whit,Toreador Red,Mist Silver,  Eiery Black,Rocky Baige,Java Brown",
+			"Fuel Tank Capacity":"55 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"15,976/yr",
+            }	
         }
     ]
 }
@@ -122,39 +789,151 @@
     "varient" : [
         {
             "name" : "W6", 
-            "Price" : "12.87Lac"
+            "Price" : "12.87Lac",
+			Type:"","Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2179,
+			"Service Cost"4,148/yr",
+            }				
+			
+			
         }, 
         {
             "name" : "W4", 
-            "Price" : "11.58 Lac"
+            "Price" : "11.58 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2179",
+			"Service Cost"4,148/yr",
+            }				
+			
         }, 
         {
             "name" : "W8", 
-            "Price" : "14.62 Lac"
+            "Price" : "14.62 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1997,
+			"Service Cost"4,148/yr",
+            }	
         }, 
         {
             "name" : "W8 AWD", 
-            "Price" : "15.45 Lac"
+            "Price" : "15.45 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2179,
+			"Service Cost"4,148/yr",
+            }				
+			
         }, 
         {
             "name" : "W10", 
-            "Price" : "15.52 Lac"
+            "Price" : "15.52 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"1997,
+			"Service Cost"4,148/yr",
+            }
         }, 
         {
             "name" : "W10 AWD", 
-            "Price" : "16.53 Lac"
+            "Price" : "16.53 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2179,
+			"Service Cost"4,148/yr",
+            }	
         }, 
         {
             "name" : "W10 AWD AT", 
-            "Price" : "17.37Lac"
+            "Price" : "17.37Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)"2179",
+			"Service Cost"4,148/yr",
+            }
         }, 
         {
             "name" : "W8 AT", 
-            "Price" : "15.53 Lac"
+            "Price" : "15.53 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)"2179,
+			"Service Cost"4,148/yr",
+            }				
+			
         }, 
         {
             "name" : "W10 AT", 
-            "Price" : "16.37 Lac"
+            "Price" : "16.37 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.8 kmpl",
+			"Mileage-Highway" : "16.0 kmpl",
+			"Available Colors": "Dolphin Grye,Sunset orange,Volcano black,Tuscan Red,Opulen purpal,pearlwhite, Moondust Silver",
+			"Fuel Tank Capacity":"70(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)"2179,
+			"Service Cost"4,148/yr",
+            }
         }
     ]
 }
@@ -164,47 +943,168 @@
     "varient" : [
         {
             "name" : " D2 BS III", 
-            "Price" : "8.28 Lac"
+            "Price" : "8.28 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.4kmpl",
+			"Mileage-Highway" : "14.95 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2489",
+			"Service Cost"3,952/yr",
+            }	
         }, 
         {
             "name" : "D2 BS-IV", 
-            "Price" : "8.42 Lac"
+            "Price" : "8.42 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.4kmpl",
+			"Mileage-Highway" : "14.95 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2489",
+			"Service Cost"3,952/yr",
+            }	
         }, 
         {
             "name" : "D2 MAXX BS-III", 
-            "Price" : "7.99 Lac"
+            "Price" : "7.99 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.4kmpl",
+			"Mileage-Highway" : "14.95kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2489",
+			"Service Cost"3,952/yr",
+            }
         }, 
         {
             "name" : "D2 MAXX BS-IV", 
-            "Price" : "8.14 Lac"
+            "Price" : "8.14 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.4kmpl",
+			"Mileage-Highway" : "14.95 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2489",
+			"Service Cost"3,952/yr",
+            }
         }, 
         {
             "name" : "D4 BS-III", 
-            "Price" : "8.71 Lac"
+            "Price" : "8.71 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.4kmpl",
+			"Mileage-Highway" : "14.95 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2489",
+			"Service Cost"3,952/yr",
+            }
         }, 
         {
             "name" : "D4 BS-IV", 
-            "Price" : "8.85 Lac"
+            "Price" : "8.85 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.4kmpl",
+			"Mileage-Highway" : "14.95 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2489",
+			"Service Cost"3,952/yr",
+            }	
         }, 
         {
             "name" : "H4 BS-IV", 
-            "Price" : "9.08 Lac"
+            "Price" : "9.08 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.6 kmpl",
+			"Mileage-Highway" : "14.02 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Javabrown,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2179",
+			"Service Cost"3,952/yr",
+            }
         }, 
         {
             "name" : "H4 ABS BS-IV", 
-            "Price" : "9.36 Lac"
+            "Price" : "9.36 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.6kmpl",
+			"Mileage-Highway" : "14.02 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Javabrown,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2179",
+			"Service Cost"3,952/yr",
+            }	
         }, 
         {
             "name" : "H8 ABS BS-IV", 
-            "Price" : "10.39 Lac"
+            "Price" : "10.39 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.6kmpl",
+			"Mileage-Highway" : "14.02 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Javabrown,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"8",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2179",
+			"Service Cost"3,952/yr",
+            }
         }, 
         {
             "name" : "H8 ABS Airbags BS-IV", 
-            "Price" : "10.89 Lac"
+            "Price" : "10.89 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.6kmpl",
+			"Mileage-Highway" : "14.02 kmpl",
+			"Available Colors": "Diamondlwhite,Mist Silver,Javabrown,Toreador Red,Dolphin Grye",
+			"Fuel Tank Capacity":"55(Liters)",
+			"Seating Capacity" :"8",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)"2179",
+			"Service Cost"3,952/yr",
+            }	
         }, 
         {
             "name" : "H9 BS-IV", 
-            "Price" : "11.73 Lac"
+            "Price" : "11.73 Lac",
+			Type:"",
         }
     ]
 }
@@ -214,51 +1114,162 @@
     "varient" : [
         {
             "name" : "Getaway", 
-            "Price" : "8.41 Lac"
+            "Price" : "8.41 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"9.4kmpl",
+			"Mileage-Highway" : "13.5 kmpl",
+			"Available Colors": "Mist Silver,Eiery Black,Molten Red,Regal Blue"
+			"Fuel Tank Capacity":"80 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2609",
+			"Service Cost"4,319/yr",
+            }		
         }, 
         {
             "name" : "Getaway 4WD", 
-            "Price" : "9.38 Lac"
+            "Price" : "9.38 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"8.1kmpl",
+			"Mileage-Highway" : "10.22kmpl",
+			"Available Colors": "Mist Silver,Eiery Black,Molten Red,Regal Blue",
+			"Fuel Tank Capacity":"80 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2609",
+			"Service Cost"4,319/yr",
+            }
         }, 
         {
             "name" : "S2", 
-            "Price" : "9.06 Lac"
+            "Price" : "9.06 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.5kmpl",
+			"Mileage-Highway" : "15.4 kmpl",
+			"Available Colors": "Diamond White, Mist Silver,Eiery Black,Molten Red,Regal Blue",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7,9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":25.23",
+			"Service Cost"4,319/yr",
+            }	
         }, 
         {
             "name" : "S4", 
-            "Price" : "9.67 Lac"
+            "Price" : "9.67 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.5kmpl",
+			"Mileage-Highway" : "15.4kmpl",
+			"Available Colors": "Diamond White,Mist Silver,Eiery Black,Molten Red,Regal Blue"
+			"Fuel Tank Capacity":"80 (Liters)",
+			"Seating Capacity" :"7,9",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2179",
+			"Service Cost"4,319/yr",
+            }	
         }, 
         {
             "name" : "S6 Plus", 
-            "Price" : "11.09 Lac"
+            "Price" : "11.09 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.5mpl",
+			"Mileage-Highway" : "15.04 kmpl",
+			"Available Colors": "Diamond White,Mist Silver,Eiery Black,Molten Red,Regal Blue",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7,8",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1997",
+			"Service Cost"4,319/yr",
+            }	
         }, 
         {
             "name" : "S8", 
-            "Price" : "12.1 Lac"
+            "Price" : "12.1 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.5kmpl",
+			"Mileage-Highway" : "15.4kmpl",
+			"Available Colors": "Diamond White,Mist Silver,Eiery Black,Molten Red,Regal Blue",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2179",
+			"Service Cost"4,319/yr",
+            }	
         }, 
         {
             "name" : "S10", 
-            "Price" : "12.75 Lac"
+            "Price" : "12.75 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.5kmpl",
+			"Mileage-Highway" : "15.4kmpl",
+			"Available Colors": "Diamond White,Mist Silver,Eiery Black,Molten Red,Regal Blue",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1997",
+			"Service Cost"4,319/yr",
+            }	
         }, 
         {
             "name" : "S4 Plus 4WD", 
-            "Price" : "11.32 Lac"
+            "Price" : "11.32 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.5kmpl",
+			"Mileage-Highway" : "15.4kmpl",
+			"Available Colors": "Diamond White,Mist Silver,Eiery Black,Molten Red,Regal Blue",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1997",
+			"Service Cost"4,319/yr",
+            }	
         }, 
         {
             "name" : "S10 4WD", 
-            "Price" : "13.9 Lac"
+            "Price" : "13.9 Lac",
+			Type:"",
         }, 
         {
             "name" : "S4 Plus", 
-            "Price" : "10.09 Lac"
+            "Price" : "10.09 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"11.5kmpl",
+			"Mileage-Highway" : "15.4kmpl",
+			"Available Colors": "Diamond White,Mist Silver,Eiery Black,Molten Red,Regal Blue",
+			"Fuel Tank Capacity":"60 (Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1997",
+			"Service Cost"4,319/yr",
+            }
         }, 
         {
             "name" : "S10 2WD AT", 
-            "Price" : "13.41 Lac"
+            "Price" : "13.41 Lac",
+			Type:"",
         }, 
         {
             "name" : "S10 4WD AT", 
-            "Price" : "14.61 Lac"
+            "Price" : "14.61 Lac",
+			Type:"",
         }
     ]
 }
@@ -268,15 +1279,52 @@
     "varient" : [
         {
             "name" : "4WD PS", 
-            "Price" : "6.05 Lac"
+            "Price" : "6.05 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.03kmpl",
+			"Mileage-Highway" : "18.06kmpl",
+			"Available Colors": "Dimond White,Mist Silver, Fiery black,RockyBaigeRed Rage,Arctic White DiVariant,ChampangeDi Variant,SunnyBeige Di Variant",
+			"Fuel Tank Capacity":"45(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2523",
+			"Service Cost"5,496/yr",
+            }
         }, 
         {
             "name" : "CRDe", 
-            "Price" : "8.38 Lac"
+            "Price" : "8.38 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"13.25kmpl",
+			"Mileage-Highway" : "16.55kmpl",
+			"Available Colors": "Dimond White,Mist Silver, Fiery black,RockyBaigeRed Rage,Arctic White DiVariant,ChampangeDi Variant,SunnyBeige Di Variant",
+			"Fuel Tank Capacity":"60(Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2498",
+			"Service Cost"5,496/yr",
+            }				
+			
         }, 
         {
             "name" : "2WD PS", 
-            "Price" : "5.54 Lac"
+            "Price" : "5.54 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.03kmpl",
+			"Mileage-Highway" : "18.06kmpl",
+			"Available Colors": "Dimond White,Mist Silver, Fiery black,RockyBaigeRed Rage,Arctic White DiVariant,ChampangeDi Variant,SunnyBeige Di Variant",
+			"Fuel Tank Capacity":"45(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":2523",
+			"Service Cost"5,496/yr",
+            }
         }
     ]
 }
@@ -286,11 +1334,24 @@
     "varient" : [
         {
             "name" : "T2", 
-            "Price" : "7.19 Lac"
+            "Price" : "7.19 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Electric(Battery)",
+			"Mileage-City":"120.0 km/hr",
+			"Mileage-Highway" : "120.0 km/hr",
+			"Available Colors": "Arctic Silver,Eco Green,Oceanic White,Spanish Red,Sunfire Yellow,Coral blue",
+			"Fuel Tank Capacity":"-",
+			"Seating Capacity" :"4",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":"2523",
+			"Service Cost"--",
+            }
         }, 
         {
             "name" : "T01", 
-            "Price" : "5.96 Lac"
+            "Price" : "5.96 Lac",
+			Type:"",
         }
     ]
 }
@@ -300,31 +1361,116 @@
     "varient" : [
         {
             "name" : "T4", 
-            "Price" : "7.11 Lac"
+            "Price" : "7.11 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.06kmpl",
+			"Mileage-Highway" : "18.49kmpl",
+			"Available Colors": "Gleciar White,Bold black,DynamoRed,MoltenOrange,VerveBlue,Mejestic Silver",
+			"Fuel Tank Capacity":"60(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"--/yr",
+            }	
         }, 
         {
             "name" : "T6", 
-            "Price" : "7.77 Lac"
+            "Price" : "7.77 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.06kmpl",
+			"Mileage-Highway" : "18.49kmpl",
+			"Available Colors": "Gleciar White,Bold black,DynamoRed,MoltenOrange,VerveBlue,Mejestic Silver",
+			"Fuel Tank Capacity":"60(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"--/yr",
+            }	
         }, 
         {
             "name" : "T8", 
-            "Price" : "8.62 Lac"
+            "Price" : "8.62 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.06kmpl",
+			"Mileage-Highway" : "18.49kmpl",
+			"Available Colors": "Gleciar White,Bold black,DynamoRed,MoltenOrange,VerveBlue,Mejestic Silver",
+			"Fuel Tank Capacity":"60(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"--/yr",
+            }	
         }, 
         {
             "name" : "T4 Plus", 
-            "Price" : "7.47 Lac"
+            "Price" : "7.47 Lac",
+			Type:"",
+			
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.06kmpl",
+			"Mileage-Highway" : "18.49kmpl",
+			"Available Colors": "Gleciar White,Bold black,DynamoRed,MoltenOrange,VerveBlue,Mejestic Silver",
+			"Fuel Tank Capacity":"60(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"--/yr",
+            }	
         }, 
         {
             "name" : "T6 Plus", 
-            "Price" : "8.02 Lac"
+            "Price" : "8.02 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.06kmpl",
+			"Mileage-Highway" : "18.49kmpl",
+			"Available Colors": "Gleciar White,Bold black,DynamoRed,MoltenOrange,VerveBlue,Mejestic Silver",
+			"Fuel Tank Capacity":"60(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"--/yr",
+            }	
         }, 
         {
             "name" : "T6 Plus AMT", 
-            "Price" : "8.74 Lac"
+            "Price" : "8.74 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.06kmpl",
+			"Mileage-Highway" : "18.49kmpl",
+			"Available Colors": "Gleciar White,Bold black,DynamoRed,MoltenOrange,VerveBlue,Mejestic Silver",
+			"Fuel Tank Capacity":"60(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"--/yr",
+            }	
         }, 
         {
             "name" : "T8 AMT", 
-            "Price" : "9.34 Lac"
+            "Price" : "9.34 Lac",
+			Type:"",
+			"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"15.06kmpl",
+			"Mileage-Highway" : "18.49kmpl",
+			"Available Colors": "Gleciar White,Bold black,DynamoRed,MoltenOrange,VerveBlue,Mejestic Silver",
+			"Fuel Tank Capacity":"60(Liters)",
+			"Seating Capacity" :"7",
+			"Transmission Type":"Automatic",
+			"Engine Displacement (cc)":1493",
+			"Service Cost"--/yr",
+            }	
         }
     ]
 }
@@ -332,101 +1478,352 @@
     "_id" : ObjectId("56e0575ebccb21477edd1d6f"), 
     "name" : "KUV100", 
     "varient" : [
-        {
-            "name" : "K2 6STR", 
-            "Price" : "4.45 Lac"
-        }, 
-        {
-            "name" : "K2+ 6STR", 
-            "Price" : "4.67 Lac"
-        }, 
-        {
-            "name" : "K4 5STR", 
-            "Price" : "4.8 Lac"
-        }, 
-        {
-            "name" : "K4+ 5STR", 
-            "Price" : "5.02 Lac"
-        }, 
-        {
-            "name" : "K6 5STR", 
-            "Price" : "5.39 Lac"
-        }, 
-        {
-            "name" : "K6+ 5STR", 
-            "Price" : "5.61 Lac"
-        }, 
-        {
-            "name" : "K8 5STR", 
-            "Price" : "5.94 Lac"
-        }, 
-        {
-            "name" : "K2 D 6STR", 
-            "Price" : "5.25 Lac"
-        }, 
-        {
-            "name" : "K2+ D 6STR", 
-            "Price" : "5.47 Lac"
-        }, 
-        {
-            "name" : "K4 D 5STR", 
-            "Price" : "5.6 Lac"
-        }, 
-        {
-            "name" : "K4+ D 5STR", 
-            "Price" : "5.82 Lac"
-        }, 
-        {
-            "name" : "K6 D 5STR", 
-            "Price" : "6.24 Lac"
-        }, 
-        {
-            "name" : "K6+ D 5STR", 
-            "Price" : "6.46 Lac"
-        }, 
-        {
-            "name" : "K8 D 5STR", 
-            "Price" : "6.79 Lac"
-        }, 
-        {
-            "name" : "K4+ D 6STR", 
-            "Price" : "5.87 Lac"
-        }, 
-        {
-            "name" : "K4+ 6STR", 
-            "Price" : "5.07 Lac"
-        }, 
-        {
-            "name" : "K4 D 6STR", 
-            "Price" : "5.65 Lac"
-        }, 
-        {
-            "name" : "K4 6STR", 
-            "Price" : "4.85 Lac"
-        }, 
-        {
-            "name" : "K6 6STR", 
-            "Price" : "5.44 Lac"
-        }, 
-        {
-            "name" : "K6 D 6STR", 
-            "Price" : "6.29 Lac"
-        }, 
-        {
-            "name" : "K6+ 6STR", 
-            "Price" : "5.66 Lac"
-        }, 
-        {
-            "name" : "K6+ D 6STR", 
-            "Price" : "6.51 Lac"
-        }, 
-        {
-            "name" : "K8 6STR", 
-            "Price" : "5.99 Lac"
-        }, 
-        {
-            "name" : "K8 D 6STR", 
-            "Price" : "6.84 Lac"
-        }
+    {
+"name"  : " D75 K2(Diesel)", 
+"Price" : "5.3  lakh",
+Type:"",
+ "Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+	{		 		
+
+"name"  : " D75 K2 Plus(Diesel)", 
+"Price" : "5.5  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+	},		
+
+	{		
+
+"name"  : " D75 K4 5Str(Diesel)", 
+"Price" : "5.7  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",,
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+
+	},
+	{			
+"name"  : " D75 K4 (Diesel)", 
+"Price" : "5.7  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+	{			
+"name"  : " D75 K4 Plus 5Str(Diesel)", 
+"Price" : "5.9  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{		
+"name"  : " D75 K4 Plus (Diesel)", 
+"Price" : "5.9  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+
+	},
+{		
+"name"  : " D75 K6 5Str  (Diesel)", 
+"Price" : "6.3lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+
+},
+{
+"name"  : " D75 K6  (Diesel)", 
+"Price" : "6.4  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{		
+"name"  : " D75 K6 PLUS 5sTR (Diesel)", 
+"Price" : "6.5  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{
+"name"  : " D75 K6 PLUS (Diesel)", 
+"Price" : "6.6  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{		
+"name"  : " D75 K8 5sTR (Diesel)", 
+"Price" : "6.9  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey"
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{				
+"name"  : " D75 K8  (Diesel)", 
+"Price" : "6.9  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Diesel",
+			"Mileage-City":"22.25  kmpl",
+			"Mileage-Highway" : "25.32 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+
+},
+{
+"name"  : " G80 K2", 
+"Price" : "4.5  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"15.5  kmpl",
+			"Mileage-Highway" : "18.15 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{		
+"name"  : " G80 K2 PLUS", 
+"Price" : "4.7  lakh"
+Type:"",
+"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"15.5  kmpl",
+			"Mileage-Highway" : "18.15 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{		
+"name"  : " G80 K4 5Str", 
+"Price" : "4.8lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"15.5  kmpl",
+			"Mileage-Highway" : "18.15 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{	
+"name"  : " G80 K4", 
+"Price" : "4.9  lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"15.5  kmpl",
+			"Mileage-Highway" : "18.15 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{
+"name"  : " G80 K4 PLUS 5Str", 
+"Price" : "5.0    lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"15.5  kmpl",
+			"Mileage-Highway" : "18.15 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{	
+"name"  : " G80 K4 PLUS", 
+"Price" : "5.1    lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"15.5  kmpl",
+			"Mileage-Highway" : "18.15 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+},
+{	
+"name"  : " G80 K6 5Str", 
+"Price" : "5.4    lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"15.5  kmpl",
+			"Mileage-Highway" : "18.15 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGrey",
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"5",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+
+},
+{
+"name"  : " G80 K6", 
+"Price" : "5.5    lakh",
+Type:"",
+"Overview":{
+			"Fuel Type":"Petrol",
+			"Mileage-City":"15.5  kmpl",
+			"Mileage-Highway" : "18.15 kmpl",
+			"Available Colors": "Midnight Black, Dazzling Silver,Pearl White,Aquemarine,Flamboyant Red,Fiery Orange,DesignerGre
+			"Fuel Tank Capacity":"35 (Liters)",
+			"Seating Capacity" :"6",
+			"Transmission Type":"Manual",
+			"Engine Displacement (cc)":1198",
+			"Service Cost"-------/yr",
+            }				
+			
+}
     ]
 }
