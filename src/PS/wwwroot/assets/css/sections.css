@@ -40,7 +40,6 @@
 
 .section_default {
 	position: relative;
-	padding-top: 90px;
 	padding-bottom: 130px;
 }
 .section_mod-a {
@@ -135,7 +134,6 @@
 
 .section_map {
 	position: relative;
-	padding-top: 100px;
 	padding-bottom: 50px;
 }
 .section_map:before {

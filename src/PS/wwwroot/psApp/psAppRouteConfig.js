@@ -17,7 +17,6 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                 config: {
                     url: "/CarDetails",
                     template: "<ps-car-details></ps-car-details>",
-                    // requiresLogin: true
                 }
             },
             {
@@ -41,6 +40,20 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                       template: "<ps-vehicle-listings></ps-vehicle-listings>"
                   }
               },
+               {
+                   state: "Contact",
+                   config: {
+                       url: "/Contact",
+                       template: "<ps-contact-us></ps-contact-us>"
+                   }
+               },
+                {
+                    state: "About",
+                    config: {
+                        url: "/About",
+                        template: "<ps-about-us></ps-about-us>"
+                    }
+                },
                {
                    state: "service",
                    config: {
