@@ -22,8 +22,6 @@ namespace PS.Controllers
         private readonly IEmailSender _emailSender;
         private static Oauth2LoginContext _context;
         public AuthSocialLoginOptions Options { get; }
-        private IMongoRepository _mongoDb;
-        private MongoRepository repo;
         private readonly ISmsSender _smsSender;
 
         public AuthController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IOptions<AuthSocialLoginOptions> optionsAccessor)
@@ -31,8 +29,6 @@ namespace PS.Controllers
             _auth = auth;
             _emailSender = emailSender;
             _smsSender = smsSender;
-            //    _mongoDb = mongoDb;
-            //  this.repo = repo;
             Options = optionsAccessor.Value;
         }
 
