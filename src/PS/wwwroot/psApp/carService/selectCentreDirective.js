@@ -27,7 +27,7 @@ angular.module("psApp").directive("selectCentre", function () {
                 if (area.toLowerCase() !== "select area") {
                     psDataServices.getServiceCentreList($scope.city, area).
                         success(function (data) {
-                            scope.centreList = [];
+                            $scope.centreList = [];
                             $scope.centreList = data;
                             $scope.selectedCentre = $scope.centreList[0];
                             $scope.selectedCentre.activeCentre = true;
