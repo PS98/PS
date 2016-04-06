@@ -13,9 +13,9 @@
                         <div class="sorting__item">
                             <span class="sorting__title">Select City</span>
                             <div class="select jelect">
-                                <input ng-model="city" type="text" id="txtCity" class="jelect-input" onchange="getServiceCentreArea()">
-                                <div tabindex="0" role="button" class="jelect-current" ng-model="city" id="cityDropDown" >Select City</div>
-                                <ul class="jelect-options">
+                                <input ng-model="city" type="text" id="txtCity" class="jelect-input" ng-change="getServiceCentreArea()">
+                                <div tabindex="0" role="button" class="jelect-current"  id="cityDropDown" >Select City</div>
+                                <ul class="jelect-options" id="dropDownCity">
                                     <li class="jelect-option jelect-option_state_active">Select City</li>
                                     <li class="jelect-option jelect-option_state_active" ng-repeat="city in car.centreCity">{{city}}</li>
                                 </ul>
@@ -24,9 +24,9 @@
                         <div class="sorting__item">
                             <span class="sorting__title">Select Area</span>
                             <div class="select jelect">
-                                <input id="txtArea" ng-model="area" type="text" class="jelect-input" onchange="getCentreDetails()">
+                                <input id="txtArea" ng-model="area" type="text" class="jelect-input" ng-change="getCentreDetails()">
                                 <div tabindex="0" role="button" class="jelect-current" id="areaDropDown">Select Area</div>
-                                <ul class="jelect-options">
+                                <ul class="jelect-options" id="dropDownArea">
                                     <li class="jelect-option jelect-option_state_active">Select Area</li>
                                     <li class="jelect-option jelect-option_state_active" ng-repeat="area in car.centreArea">{{area}}</li>
                                 </ul>

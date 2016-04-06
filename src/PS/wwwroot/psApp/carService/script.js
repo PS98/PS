@@ -51,7 +51,7 @@ function showMap(position) {
     //mapholder.style.height = "200px";
     //mapholder.style.width = "500px";
     mapOptions.center = latlon;
-   locateCityAndArea(latlon);
+    locateCityAndArea(latlon);
    map = new google.maps.Map(document.getElementById(googleMapHolder), mapOptions);
 
     if (displayCurrentLocation) {
@@ -61,6 +61,7 @@ function showMap(position) {
     }
  
 }
+
 function handleError(err) {
     //switch (err.code) {
     //    case error.PERMISSION_DENIED:
@@ -79,10 +80,12 @@ function handleError(err) {
    getLatLng('India');
  
 }
-function loadMap(lat, lng) {
+function loadMap(lat, lng, zoom) {
+    if (!zoom)
+        zoom = 4;
     latlon = new google.maps.LatLng(lat, lng);
     mapOptions.center = latlon;
-    mapOptions.zoom = 4;
+    mapOptions.zoom = zoom;
     map = new google.maps.Map(document.getElementById(googleMapHolder), mapOptions);
 }
 
@@ -94,22 +97,27 @@ function locateCityAndArea(latlng) {
   
     var geoType = { 'latLng': latlng };
 
-    var result = callGeoCoderApi(geoType);
+    callGeoCoderApi(geoType).then(function(data) {
+        loadCurrentLocation(data.city,data.area);
+     });
 
- return { city: result.city, area: result.area };
+ //return { city: result.city, area: result.area };
 }
 
-function getLatLng(place) {
+function getLatLng(place,zoom) {
     var address = { 'address': place };
 
-    var result = callGeoCoderApi(address,true);
+    callGeoCoderApi(address).then(function(data) {
+        loadMap(data.lat, data.lng, zoom);
+    });
 
-    return { lat: result.lat, lng: result.lng };
+    //return { lat: result.lat, lng: result.lng };
 
 }
 
-function callGeoCoderApi(type, blockbyUser) {
+function callGeoCoderApi(type) {
     var city, area, lat, lng;
+    var defer = new $.Deferred();
      geocoder.geocode(type, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[0]) {
@@ -130,25 +138,22 @@ function callGeoCoderApi(type, blockbyUser) {
                 }
                 lat = results[0].geometry.location.lat();
                 lng = results[0].geometry.location.lng();
+                var obj =  { city: city, area: area, lat: lat, lng: lng };
+                defer.resolve(obj);
 
-                if (blockbyUser)
-                    loadMap(lat, lng);
-                else {
-                    loadCurrentLocation(city,area);
-                }
             } else {
                 alert("No results found");
+                defer.reject();
             }
         } else {
             alert("Geocoder failed due to: " + status);
+            defer.reject();
         }
-
-    });
-
-    return { city: city, area: area, lat: lat, lng: lng };
+       
+     });
+     return defer.promise();
+   
 }
-
-
 
 function fillInAddress(autocomplete) {
   var place = autocomplete.getPlace();
@@ -203,8 +208,8 @@ function setMarkers(googleMap, locations, callback) {
             map: map,
             position: latlngset
         });
-        map.setCenter(marker.getPosition());
-
+      //  map.setCenter(marker.getPosition());
+        marker.setMap(map)
 
         var content = val.name;
 
@@ -239,4 +244,11 @@ function myClick(id, markersLocations) {
         }
     });
     google.maps.event.trigger(googleMapMarkers[mapMarkerIndex], 'click');
+}
+function removeMarker() {
+    
+    for (var i = 0; i < googleMapMarkers.length; i++) {
+        googleMapMarkers[i].setMap(null);
+    }
+    googleMapMarkers = []; 
 }

@@ -75,7 +75,7 @@
 
 						// Change the value of input and fire trigger `change`
 						.siblings( opts.input )
-						.val( currentVal )
+						.val(currentText)
 						.attr( 'data-text', currentText )
 						.trigger( 'change' );
 				});

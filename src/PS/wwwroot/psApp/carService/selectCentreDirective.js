@@ -4,35 +4,9 @@ angular.module("psApp").directive("selectCentre", function () {
     return {
         templateUrl: "psApp/carService/selectCentre.html",
         link: function (scope, element, attrs) {
-            initializeGoogleMap('autocomplete', 'mapholder', "", false, scope.MapCallback);
-           // var latlng = new google.maps.LatLng(18.520266, 73.856406);
-           // var options =
-           // {
-           //     zoom: 14,
-           //     center: latlng,
-           //     mapTypeId: google.maps.MapTypeId.ROADMAP,
-           //     navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
-           // };
-
-           // var map = new google.maps.Map(document.getElementById("mapholder"), options);
-           // scope.map = map;
-           // var marker = new google.maps.Marker(
-           // {
-           //     position: latlng,
-           //     map: map,
-           //     title: "Pune"
-           // });
-
-            //map.setCenter(marker.getPosition());
-
-           $('.jelect').jelect();
-            $('body').delegate('.dropdown-menu li', 'click', function() {
-            
-                $('#txtArea').val($(this).text());
-                scope.getCentreDetails($(this).text());
-
-            });
-        
+            initializeGoogleMap("", 'mapholder', "", false, scope.MapCallback);
+            $('.jelect').jelect();
+           
         }, controller: ["$scope", "psDataServices", "$state", function ($scope, psDataServices, $state) {
             $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
             $scope.selectedCentre = "";
@@ -47,17 +21,25 @@ angular.module("psApp").directive("selectCentre", function () {
                 }
             }
             $scope.getCentreDetails = function (area) {
-                psDataServices.getServiceCentreList('Pune', area).
-                 success(function (data) {
-                     $scope.centreList = data;
-                     $scope.selectedCentre = $scope.centreList[0];
-                     $scope.selectedCentre.activeCentre = true;
-                     $scope.recommendedCentre = $scope.centreList[0];
-                     //$scope.centreList = $scope.centreList.slice(1);
-                     $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
-                     setMarkers($scope.map, $scope.centreList,$scope.markerClick);
-                 }).error(function () {
-                 });
+                if(!area)
+                    area = $scope.area;
+
+                if (area.toLowerCase() !== "select area") {
+                    psDataServices.getServiceCentreList($scope.city, area).
+                        success(function (data) {
+                            scope.centreList = [];
+                            $scope.centreList = data;
+                            $scope.selectedCentre = $scope.centreList[0];
+                            $scope.selectedCentre.activeCentre = true;
+                            $scope.recommendedCentre = $scope.centreList[0];
+                            //$scope.centreList = $scope.centreList.slice(1);
+                            $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
+                            setMarkers($scope.map, $scope.centreList, $scope.markerClick);
+                        }).error(function() {
+                        });
+                } else {
+                    removemarker();
+                }
 
             }
             psDataServices.getServiceCentreCity().success(function (data) {
@@ -65,17 +47,25 @@ angular.module("psApp").directive("selectCentre", function () {
                // initializeGoogleMap('autocomplete', 'mapholder', "", false,);
             });
 
-            $scope.getServiceCentreArea = function() {
-                psDataServices.getServiceCentreArea($scope.city).success(function (data) {
-                    $scope.car.centreArea = data;
-                    if ($scope.car.centreArea.includes($scope.googleMapArea)) {
-                        $scope.area = $scope.googleMapArea;
-                        $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
-                        $scope.getCentreDetails($scope.googleMapArea);
-                    }
+            $scope.getServiceCentreArea = function () {
+                if ($scope.city.toLowerCase() !== "select city") {
+                    psDataServices.getServiceCentreArea($scope.city).success(function(data) {
+                        $scope.car.centreArea = data;
+                        if ($scope.car.centreArea.includes($scope.googleMapArea)) {
+                            $scope.area = $scope.googleMapArea;''
+                            $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
+                            $scope.getCentreDetails($scope.googleMapArea);
+                        } else {
+                            getLatLng($scope.city,10);
+                        }
 
-                });
+                    });
+                } else {
+                    $scope.car.centreArea = {};
+                    removemarker();
+                }
             }
+
             $scope.markerClick = function (centre) {
                 if (centre.$$hashKey != $scope.selectedCentre.$$hashKey) {
                     $scope.selectedCentre.activeCentre = false;
@@ -84,13 +74,20 @@ angular.module("psApp").directive("selectCentre", function () {
                     $scope.$apply();
                 }
             }
-            $scope.MapCallback = function(city, area) {
+            $scope.MapCallback = function (city, area) {
+                $scope.googleMapArea = area;
+
                 if ($scope.car.centreCity.includes(city)) {
                     $scope.city = city;
+
                     $('.select.jelect').find('#cityDropDown').text(city);
                     $scope.getServiceCentreArea();
+                } else {
+                    getLatLng("India");
                 }
-                $scope.googleMapArea = "Pimple Gaurav"///area;
+            }
+            function removemarker() {
+                removeMarker();
             }
            
         }]
