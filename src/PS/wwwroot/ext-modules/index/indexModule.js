@@ -67,15 +67,33 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
               }
             ];
 
+            var terms = "Dummy Text";
+
+            var privacyPolicy = "Dummy Privacy Text";
+
             var _getHighlights = function () {
                 return $timeout(function () {
                     return highlights;
                 }, 0);
             };
 
+            var _getPrivacyPolicy = function () {
+                return $timeout(function () {
+                    return privacyPolicy;
+                }, 0);
+            };
+
+            var _getTerms = function () {
+                return $timeout(function () {
+                    return terms;
+                }, 0);
+            };
+
 
             return {
                 getHighlights: _getHighlights,
+                getPrivacyPolicy: _getPrivacyPolicy,
+                getTerms: _getTerms,
             };
         }
     ]);
