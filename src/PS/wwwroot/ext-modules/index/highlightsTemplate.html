@@ -1,0 +1,31 @@
+﻿<section class="section_mod-i wow bounceInRight" data-wow-duration="2s">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="ui-title-block text-center">You Book, We Service!</h2>
+                <div class="ui-subtitle-block_mod-b text-center">We’ll pick up your car, wave a magic wand over it and hand it back to you as good as new!</div>
+                <main class="list-progress">
+                    <div class="wrap-post">
+                        <article class="post post_mod-c clearfix" data-ng-repeat="highlightsData in highlightsList">
+                            <div class="entry-media">
+                                <img class="img-responsive" ng-src={{highlightsData.imageSrc}} width="370" height="250" alt="Foto" />
+                                <div class="post-hover"></div>
+                            </div>
+                            <div class="entry-main entry-main_mod-a">
+                                <div class="entry-main__inner">
+                                    <h3 class="entry-title"><a href="javascript:void(0);">{{highlightsData.title}}</a></h3>
+                                </div>
+                                <div class="decor-1"></div>
+                                <div class="entry-date"><span class="entry-date__inner"><span class="entry-date__number">{{highlightsData.date.day}}</span><br>{{highlightsData.date.month}}</span></div>
+                                <div class="entry-content">
+                                    <p>{{highlightsData.content}}</p>
+                                </div>
+                                <a class="post-link" href="javascript:void(0);">read more</a>
+                            </div>
+                        </article>
+                    </div><!-- end wrap-post -->
+                </main><!-- end main-content -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+    </section>
