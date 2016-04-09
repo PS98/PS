@@ -1,14 +1,14 @@
 ﻿"use strict";
 
-angular.module("index").directive("aboutUs", function () {
+angular.module("index").directive("highlights", function () {
     return {
         //Not defining the scope because now we want the inherited scope(default scope for angular) for psDashboard 
         //instead of isolated scope
-        templateUrl: "ext-modules/index/aboutUsTemplate.html",
         controller: "indexController",
+        templateUrl: "ext-modules/index/highlightsTemplate.html",
         link: function (scope, el, attrs) {
-          
-        }
+
+        }, 
     };
 });
 

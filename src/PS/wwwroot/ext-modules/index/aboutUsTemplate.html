@@ -2,7 +2,7 @@
     <div class="block-title">
         <div class="block-title__inner section-bg section-bg_second">
             <div class="bg-inner">
-                <h1 class="ui-title-page">Service</h1>
+                <h1 class="ui-title-page">What We Are</h1>
                 <div class="decor-1 center-block"></div>
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
@@ -18,20 +18,18 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="ui-title-block">About Us</h2>
-                    <div class="ui-subtitle-block_mod-b">Sed euismod ullamcorper tortor suspendisse potena</div>
+                    <div class="ui-subtitle-block_mod-b">ENGINEEARS.in as the name suggests, do what our customer’s expects . We listen to what your vehicle says and needs. We believe in servicing you the best by means of your vehicle. We take great pride is specifying that we are first of the kind in PUNE and we are a pune based company itself. In today’s busy and quick moving world, everyone wants to save his/her time and energy so that they could invest the same in other productive work. So it is quite common that our vehicles don’t get the attention they need (repair/service/maintenance etc).</div>
                 </div>
                 <!-- end col -->
             </div>
             <!-- end row -->
             <div class="row">
-                <div class="col-md-5">
-                    <h3 class="ui-title-inner"><i class="decor-3 fa fa-caret-right"></i>trusted name in auto-world</h3>
+                <div class="col-md-5" ng-repeat="aboutUs in aboutUsList">
+                    <h3 class="ui-title-inner"><i class="decor-3 fa fa-caret-right"></i>{{aboutUs.heading}}</h3>
                     <div class="decor-1 decor-1_mod-c"></div>
-                    <div class="ui-description">
-                        <p>Integer tortor bibendum estar faucibus gravida aliquam nulla lectus lacinia egar pulvinar matis nl risus quisque sagitis lorem acda lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div ng-repeat="desc in aboutUs.desc">
+                        <p>{{desc.text}}</p>
                     </div>
-                    <p>Integer tortor bibendum est faucibus gravida aliquam nul lectus lacinia eget pulvinar mattis inl risus. Quisque sagittis lorem acdua er pharetral interdum quisque convallis nulla id ipsum vamus aliquam arcu arcu.</p>
-                    <p>Etiam imperdiet aliquam eriat volutpat mauris consecteta. Aliquam enisem pretium vitae posuere ac mats vitae arcu.</p>
                     <a class="link" href="javascript:void(0);">we have largest vehicles stock</a>
                     <div class="decor-1"></div>
                     <a class="link" href="javascript:void(0);">we got worldwide locations</a>
@@ -46,4 +44,6 @@
     </section>
     <!-- end section_mod-d -->
 </div>
+
+<our-team></our-team>
 <!-- end section_default -->

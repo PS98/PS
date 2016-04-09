@@ -186,8 +186,6 @@ img.pull-left {
 	margin-left: 20px;
 }
 .decor-1_mod-c {
-	margin-top: 17px;
-	margin-bottom: 30px;
 	margin-left: 30px;
 }
 .tab-content .decor-1 {
@@ -907,7 +905,7 @@ img.pull-left {
 
 .list-progress {
 	margin-top: 52px;
-	margin-bottom: 150px;
+    margin-bottom: 100px;
 	text-align: center;
 }
 .list-progress__item {

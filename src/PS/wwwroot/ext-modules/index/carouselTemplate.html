@@ -60,7 +60,7 @@
                     <div class="main-block text-center wow bounceInUp" data-wow-duration="2s">
                         <div class="main-block__label">welcome to</div>
                         <div class="decor-1 center-block"></div>
-                        <h1 class="main-block__title"><strong>AUTOZONE</strong>the ONLINE AUTOS world</h1>
+                        <h1 class="main-block__title"><strong>Mile Mates</strong>the ONLINE Car world</h1>
                         <div class="decor-2"><i class="icon fa fa-caret-down"></i></div>
                     </div>
                     <div class="wrap-link-img">
@@ -97,27 +97,25 @@
                 <!-- end col -->
             </div>
             <!-- end row -->
-
-            <div class="row">
+            <div class="row" ng-repeat="mainFeature in mainFeatureList">
                 <div class="col-sm-6 wow bounceInLeft" data-wow-duration="2s" data-wow-delay="1s">
-                    <p>ENGINEEARS.in is a one stop vehicle care point where customer's can request for their vehicle servicing anytime, anywhere without the tension of long queues outside the service centres. ENGINEEARS.in provides customers with haslefree pickup and drop service from your doorstep's. </p>
-                    <p>We provide customer's the option of full, interim and quick servicing options. Customer can also avail other services </p>
+                    <div ng-repeat="desc in mainFeature.desc">
+                        <p>{{desc.text}}</p>
+                    </div>
                 </div>
                 <!-- end col -->
                 <div class="col-sm-6 wow bounceInRight" data-wow-duration="2s" data-wow-delay="1s">
-                    <h2 class="ui-title-inner">MAIN FEATURES</h2>
+                    <h2 class="ui-title-inner">{{mainFeature.heading}}</h2>
                     <div class="decor-1"></div>
-                    <ul class="list-mark list-unstyled">
-                        <li> <i class="decor-3 fa fa-caret-right"></i>Full Servicing : includes Oil, Air filter change, washing, coating and all parts checkup </li>
-                        <li> <i class="decor-3 fa fa-caret-right"></i>Interim Servicing : includes washing, full checkup and greasing </li>
-                        <li> <i class="decor-3 fa fa-caret-right"></i>Quick Servicing : includes touch up, greasing, washing and check up</li>
-                        <li> <i class="decor-3 fa fa-caret-right"></i>Haslefree Pickup and Drop facility </li>
-                    </ul>
+                    <div ng-repeat="desc in mainFeature.desc">
+                        <ul class="list-unstyled" ng-repeat="listItem in desc.list">
+                            <li> <i class="decor-3 fa fa-caret-right"></i>{{listItem.text}}</li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- end col -->
             </div>
             <!-- end row -->
-
             <div class="row">
                 <div class="col-xs-12">
                     <a class="brand-link text-center wow bounceInUp" data-wow-duration="2s" data-wow-delay="1s" href="javascript:void(0);">
