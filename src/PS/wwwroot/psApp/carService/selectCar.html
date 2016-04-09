@@ -181,31 +181,13 @@
                                         <div class="row" ng-if="(searchedPhrase || []).length == 0">
                                             <div class="col-xs-12">
                                                 <div class="b-categories">
-                                                    <a ng-click="serviceOpts.viewMode = 'common'; changeView();">
-                                                        <div class="content content-first content-active" ng-class="serviceOpts.viewMode == 'common' ? 'content-active' : null">
-                                                            <div ng-class="serviceOpts.viewMode == 'common' ? 'icon-common-services-selected ' :'icon-common-services'" class="icon-common-services-selected"></div>
-                                                            Common <br> services
+                                                    <a ng-click="changeView(event);" ng-repeat="service in services.serviceName">
+                                                        <div class="content content-first" ng-class="serviceOpts.viewMode == '{{service}}' ? 'content-active' : null">
+                                                            <div ng-class="serviceOpts.viewMode =='{{service}}' ? 'icon-common-services-selected ' :'icon-common-services'" class="icon-common-services"></div>
+                                                           {{ service }}
                                                         </div>
                                                     </a>
-                                                    <a ng-click="serviceOpts.viewMode = 'direct'; changeView();">
-                                                        <div class="content" ng-class="serviceOpts.viewMode == 'direct' ? 'content-active' : null">
-                                                            <div ng-class="serviceOpts.viewMode == 'direct' ? 'icon-repair-selected' :'icon-repair'" class="icon-repair"></div>
-                                                            Repair & <br>maintenance
-                                                        </div>
-                                                    </a>
-                                                    <a ng-click="serviceOpts.viewMode = 'diagnose';changeView();">
-                                                        <div class="content" ng-class="serviceOpts.viewMode == 'diagnose' ? 'content-active' : null">
-                                                            <div ng-class="serviceOpts.viewMode == 'diagnose' ? 'icon-diagnostics-selected' :'icon-diagnostics'" class="icon-diagnostics"></div>
-                                                            Diagnostics <br>/ Inspections
-                                                        </div>
-                                                    </a>
-                                                    <a ng-click="serviceOpts.viewMode = 'mileage';changeView();">
-                                                        <div class="content" ng-class="serviceOpts.viewMode == 'mileage' ? 'content-active' : null">
-                                                            <div ng-class="serviceOpts.viewMode == 'mileage' ? 'icon-maintenance-selected ' :'icon-maintenance'" class="icon-maintenance"></div>
-                                                            Scheduled <br>Maintenance
-                                                        </div>
-                                                    </a>
-                                                    <a ng-click="serviceOpts.viewMode = 'consultation'; changeView();">
+                                                  <a ng-click="serviceOpts.viewMode = 'consultation'; changeView();">
                                                         <div class="content" ng-class="serviceOpts.viewMode == 'consultation' ? 'content-active' : null">
                                                             <div ng-class="serviceOpts.viewMode == 'consultation' ? 'icon-describe-selected' :'icon-describe'" class="icon-describe"></div>
                                                             Describe <br>your service

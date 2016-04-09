@@ -1,12 +1,17 @@
 ﻿<div class="row spacet-10">
-   <div class="col-sm-12">
-       <div class="select-service-box">
-          <ul>
-              <li ng-click="addSelectedJob(job)" ng-repeat="job in commonServices">
-                    <div class="icon-service-plus pull-left"></div>
-                    {{ job.type }}
-                    <div class="service-details pull-right" ng-click="showDetails(job.details); $event.stopPropagation();" ng-if="(job.details || []).length > 0">Details</div>
+    <div class="col-sm-12">
+        <div class="select-service-box">
+            <ul id="mybox">
+                <li ng-repeat="job in commonServices" class="panel">
+                    <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
+                    <i class="fa fa-plus-circle" data-toggle="collapse" data-parent="#mybox" data-target="#{{job.name | makeId}}"> </i>
+                    <span data-toggle="collapse" data-parent="#mybox" data-target="#{{job.name | makeId}}">{{job.name}}</span>
+                    <div id="{{job.name | makeId}}" class="collapse">
+                        {{job.description}}
+                    </div>
+
                 </li>
+
             </ul>
         </div>
     </div>

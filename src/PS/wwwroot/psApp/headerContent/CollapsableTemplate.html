@@ -1,0 +1,9 @@
+﻿
+
+<div ng-repeat="details in data" class="panel">
+    <i class="fa fa-plus-circle" data-toggle="collapse" data-parent="#container" data-target="#{{details.name | makeId}}"> </i>
+    <span data-toggle="collapse" data-parent="#container" data-target="#{{details.name | makeId}}">{{details.name}}</span>
+    <div id="{{details.name | makeId}}" class="collapse">
+        {{details.description}}
+    </div>
+</div>

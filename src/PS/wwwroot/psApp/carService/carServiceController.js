@@ -59,24 +59,24 @@
     }
 
 
-    $scope.commonServices = [{ id: 1, type: "Essential Car Care", details: [{ heading: "Essential Services", Description: "Our Essential car care package combines a f full oil changes and oil filter replacement with a number of vehicle safety checks." }] },
-        { id: 2, type: "Interim Service", details: [{ heading: "Interim Service", Description: "We recommend having an Interim Service every 6,000 miles or 6 months (whichever is sooner) and includes checks on essentials such as lights, windsceen wipers and tyres plus a full brake, exhaust and suspension inspection." }] },
-        { id: 3, type: "Full Service", details: [{ heading: "Full Service", deescriptions: "Our Full Service is ideal as an annual maintenance proggramme for your car. We recommend your car receives a Full Service every 12,000 miles or 12 months- whichever is sooner. Our Full Service includes all items included in the Interim Service package plus a through inspection of your engine plus wheel alignment, wheel bearing and break fluid condition." }] }];
-    $scope.changeView = function () {
+    $scope.commonServices = [];
+    $scope.changeView = function (event) {
+        $scope.serviceOpts.viewMode = this.service;
 
-        if ($scope.serviceOpts.viewMode == 'direct')
-            $scope.commonServices = [{ id: 101, type: "Spare Tire Installation", details: true }, { id: 102, type: "Rotate Tare", details: true }];
-        if ($scope.serviceOpts.viewMode == 'common')
-            $scope.commonServices = [{ id: 1, type: "Change Oil And Filter", details: true }, { id: 2, type: "Breake Pad Replacement", details: true }]
-        if ($scope.serviceOpts.viewMode == 'mileage')
-            $scope.commonServices = [{ id: 301, type: "10,0000 Milage Mantanance Service", details: true }, { id: 302, type: "15,0000 Milage Mantanance Service", details: true }]
-        if ($scope.serviceOpts.viewMode == 'consultation') {
-            var des_req = { id: 301, type: " Describe your problem here", details: false, addText: true }
-            if (!$scope.selectedJob.includes(des_req))
-                $scope.selectedJob.push(des_req);
-            $scope.car.chooseNewService = false;
-            $scope.serviceOpts.viewMode = 'common';
-        }
+        $scope.commonServices = $scope.services.serviceDetails[$scope.services.serviceName.indexOf(this.service)];
+        //if ($scope.serviceOpts.viewMode == 'direct')
+        //    $scope.commonServices = [{ id: 101, type: "Spare Tire Installation", details: true }, { id: 102, type: "Rotate Tare", details: true }];
+        //if ($scope.serviceOpts.viewMode == 'common')
+        //    $scope.commonServices = [{ id: 1, type: "Change Oil And Filter", details: true }, { id: 2, type: "Breake Pad Replacement", details: true }]
+        //if ($scope.serviceOpts.viewMode == 'mileage')
+        //    $scope.commonServices = [{ id: 301, type: "10,0000 Milage Mantanance Service", details: true }, { id: 302, type: "15,0000 Milage Mantanance Service", details: true }]
+        //if ($scope.serviceOpts.viewMode == 'consultation') {
+        //    var des_req = { id: 301, type: " Describe your problem here", details: false, addText: true }
+        //    if (!$scope.selectedJob.includes(des_req))
+        //        $scope.selectedJob.push(des_req);
+        //    $scope.car.chooseNewService = false;
+        //    $scope.serviceOpts.viewMode = 'common';
+        //}
     }
 
     $scope.addSelectedJob = function (selectedJob) {
@@ -106,7 +106,20 @@
            // $scope.center.services = data.carList;
        }).error(function () {
        });
+    psDataServices.getAllService().
+       success(function (data) {
+           $scope.services = data;
+           $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+           $scope.commonServices = $scope.services.serviceDetails[0];
+          }).error(function () {
+       });
+    $scope.showDetails = function (types) {
+        $scope.overlayData = types;
+        $("#detailsModal").modal();
 
+    }
   
 }]);
+
+
 

@@ -73,6 +73,7 @@
 /// <reference path="psapp/directives/psNewsGridDirective.js" />
 /// <reference path="psapp/directives/psVehicleListingsDirective.js" />
 /// <reference path="psapp/footercontent/footerContentDirective.js" />
+/// <reference path="psapp/headercontent/collapsabledirective.js" />
 /// <reference path="psapp/headercontent/headercontentcontroller.js" />
 /// <reference path="psapp/headercontent/headerContentDirective.js" />
 /// <reference path="psapp/psappconfig.js" />
