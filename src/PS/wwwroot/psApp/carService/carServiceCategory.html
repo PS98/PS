@@ -1,16 +1,26 @@
 ﻿<div class="row spacet-10">
     <div class="col-sm-12">
         <div class="select-service-box">
-            <ul id="mybox">
-                <li ng-repeat="job in commonServices" class="panel">
-                    <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
-                    <i class="fa fa-plus-circle" data-toggle="collapse" data-parent="#mybox" data-target="#{{job.name | makeId}}"> </i>
-                    <span data-toggle="collapse" data-parent="#mybox" data-target="#{{job.name | makeId}}">{{job.name}}</span>
-                    <div id="{{job.name | makeId}}" class="collapse">
-                        {{job.description}}
-                    </div>
+         <ul class="panel-group" id="accordion" >
+             <li ng-repeat="job in commonServices" class="panel row">
+                 <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
+                 <i class="fa fa-check-circle" ng-class="job.selected ? 'selected' : ''" ng-click="addSelectedJob(job)"></i>
+                 <div class="col-xs-11">
+                     <div class="panel-heading">
+                         <div class="panel-title">
+                             <a data-toggle="collapse" data-parent="#accordion" data-target="#{{job.name | makeId}}">
+                                 {{job.name}}
+                             </a>
+                         </div>
+                     </div>
+                     <div id="{{job.name | makeId}}" class="panel-collapse collapse">
+                         <div class="panel-body">
+                             {{job.description}}
+                         </div>
+                     </div>
+                 </div>
 
-                </li>
+             </li>
 
             </ul>
         </div>
