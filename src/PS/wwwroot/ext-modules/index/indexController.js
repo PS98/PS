@@ -11,7 +11,7 @@ angular.module("index").controller("indexController",
                      $scope.highlightsList = result;
                  }, function () {
                      //Error
-                     alert("Could not load highlights data.");
+                     console.log("Could not load highlights data.");
                  }).finally(function () {
                      //  $scope.isBusy = true;
                  });
@@ -22,7 +22,7 @@ angular.module("index").controller("indexController",
                      $scope.privacyPolicyList = result;
                  }, function () {
                      //Error
-                     alert("Could not load privacy policy data.");
+                     console.log("Could not load privacy policy data.");
                  }).finally(function () {
                      //  $scope.isBusy = true;
                  });
@@ -33,7 +33,29 @@ angular.module("index").controller("indexController",
                      $scope.termsList = result;
                  }, function () {
                      //Error
-                     alert("Could not load terms data.");
+                     console.log("Could not load terms data.");
+                 }).finally(function () {
+                     //  $scope.isBusy = true;
+                 });
+
+                indexDataService.getAboutUs()
+                 .then(function (result) {
+                     //Success
+                     $scope.aboutUsList = result;
+                 }, function () {
+                     //Error
+                     console.log("Could not load about us data.");
+                 }).finally(function () {
+                     //  $scope.isBusy = true;
+                 });
+
+                indexDataService.getMainFeatures()
+                 .then(function (result) {
+                     //Success
+                     $scope.mainFeatureList = result;
+                 }, function () {
+                     //Error
+                     console.log("Could not load main feature data.");
                  }).finally(function () {
                      //  $scope.isBusy = true;
                  });

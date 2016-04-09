@@ -5,7 +5,7 @@ angular.module("index").directive("aboutUs", function () {
         //Not defining the scope because now we want the inherited scope(default scope for angular) for psDashboard 
         //instead of isolated scope
         templateUrl: "ext-modules/index/aboutUsTemplate.html",
-        //controller: "indexController",
+        controller: "indexController",
         link: function (scope, el, attrs) {
           
         }
