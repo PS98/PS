@@ -21,12 +21,12 @@
 
 .header.sticky  .logo {
     display: inline-block;
-    margin-top: 22px;
+    margin-top: 5px;
 	
 }
 
 .header.sticky   .yamm .nav > li > a {
-    padding: 50px 13px 23px;	
+    padding: 30px 13px 23px;	
 }
 
 
@@ -45,7 +45,7 @@
 
 .yamm {
 	position: relative;
-	margin-bottom: 0;
+	margin-bottom: -20px;
 	min-height: auto;
 	border: 0 none;
 	z-index: 777;
