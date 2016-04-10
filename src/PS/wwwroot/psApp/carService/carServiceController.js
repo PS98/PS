@@ -67,23 +67,23 @@
             $scope.serviceOpts.viewMode = "consultation";
         }
         $scope.commonServices = $scope.services.serviceDetails[$scope.services.serviceName.indexOf(this.service)];
-        //if ($scope.serviceOpts.viewMode == 'direct')
-        //    $scope.commonServices = [{ id: 101, type: "Spare Tire Installation", details: true }, { id: 102, type: "Rotate Tare", details: true }];
-        //if ($scope.serviceOpts.viewMode == 'common')
-        //    $scope.commonServices = [{ id: 1, type: "Change Oil And Filter", details: true }, { id: 2, type: "Breake Pad Replacement", details: true }]
-        //if ($scope.serviceOpts.viewMode == 'mileage')
-        //    $scope.commonServices = [{ id: 301, type: "10,0000 Milage Mantanance Service", details: true }, { id: 302, type: "15,0000 Milage Mantanance Service", details: true }]
+      
         if ($scope.serviceOpts.viewMode === "consultation") {
             var des_req = { id: 301, type: " Describe your problem here", details: false, addText: true }
             if (!$scope.selectedJob.includes(des_req))
                 $scope.selectedJob.push(des_req);
-           // $scope.car.chooseNewService = false;
-           // $scope.serviceOpts.viewMode = 'common';
-        }
+         }
     }
 
     $scope.addSelectedJob = function (selectedJob) {
-        $scope.car.chooseNewService = false;
+        if ($scope.serviceOpts.viewMode === "Common Services" || $scope.serviceOpts.viewMode === "Scheduled Maintenance") {
+            var anyJobSelected = ($scope.selectedJob || []).length > 0;
+            if (anyJobSelected) {
+                
+            }
+            selectedJob.onlyOne = true;
+
+        }
         selectedJob.selected = !selectedJob.selected;
         if (!$scope.selectedJob.includes(selectedJob))
             $scope.selectedJob.push(selectedJob);

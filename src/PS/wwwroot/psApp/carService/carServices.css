@@ -6,6 +6,9 @@ h1, h2, h3, h4,h5,h6{
     margin-bottom:0;
     margin-top:0;
 }
+.top-padding10 {
+    padding-top: 10px;
+}
 .car-header{
         background: #fff;
     border: 1px solid #e7ebeb;
@@ -360,7 +363,6 @@ h1, h2, h3, h4,h5,h6{
     margin:10px 0;
 }
 .select-service-box ul li {
-    
     font-size: 14px;
     padding: 12px 15px;
     border-bottom: 1px solid #E2E2E2;
@@ -512,7 +514,8 @@ h1, h2, h3, h4,h5,h6{
     float: left;
 }
 .select-service-box ul .panel-heading {
-    padding: 0px;    
+    padding: 0px;   
+    margin-left: 10px 
 }
 /*.select-service-box .panel-heading {
     width: 88%;

@@ -23,6 +23,7 @@
 .panel-collapse {
     border: 1px solid #ddd;
 }
+
 .panel-title a[aria-expanded="true"]::before {
 	content: "\f056";
 	color:#c2c2c2;

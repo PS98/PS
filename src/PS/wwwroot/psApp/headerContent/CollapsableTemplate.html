@@ -5,13 +5,13 @@
     <div class="panel panel-default" ng-repeat="details in data">
         <div class="panel-heading">
             <div class="panel-title">
-                <a data-toggle="collapse" data-parent="#group" data-target="#{{details.name | makeId}}">
+                <a data-toggle="collapse" data-parent="#group" data-target="#{{details.name | makeId}}" aria-expanded="{{ $index === 0 ? 'true': false}}">
                     {{details.name}}
                 </a>
 
             </div>
         </div>
-        <div id="{{details.name | makeId}}" class="panel-collapse collapse">
+        <div id="{{details.name | makeId}}" class="panel-collapse collapse" ng-class="{in :$index === 0}">
             <div class="panel-body">
                 {{details.description}}
             </div>
