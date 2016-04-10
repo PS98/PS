@@ -1,6 +1,7 @@
 ﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "psDataServices", function ($scope, $state, psDataServices) {
 
     $scope.center = {};
+    var custRequest = {name: " Describe your problem here", type: [], addText: true }
 
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
@@ -69,9 +70,8 @@
         $scope.commonServices = $scope.services.serviceDetails[$scope.services.serviceName.indexOf(this.service)];
       
         if ($scope.serviceOpts.viewMode === "consultation") {
-            var des_req = {name: " Describe your problem here", type: [], addText: true }
-            if (!$scope.selectedJob.includes(des_req))
-                $scope.selectedJob.push(des_req);
+            if (!$scope.selectedJob.includes(custRequest))
+                $scope.selectedJob.push(custRequest);
          }
     }
 
@@ -98,7 +98,7 @@
             $scope.selectedJob.splice($scope.selectedJob.indexOf(deletedJob), 1);
         deletedJob.selected = !deletedJob.selected;
 
-        if ($scope.serviceOpts.viewMode === "consultation") {
+        if ($scope.serviceOpts.viewMode === "consultation" && $scope.selectedJob.length === 0) {
             $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
             $scope.commonServices = $scope.services.serviceDetails[0];
         }

@@ -553,6 +553,18 @@ h1, h2, h3, h4,h5,h6{
 .panel-group .panel + .panel {
     margin-top: 0;
 }
+.btn-next {
+    color: #FFF;
+    bottom: 10px;
+    right: 50px;
+    padding: 10px;
+}
+.btn-next .btn {
+    padding: 10px 15px
+}
+.btn-next .btn:hover {
+    color: #fff;
+}
 @media only screen and (max-device-width: 480px)  {
     .car-selection-flex-column img{
         display:none;
