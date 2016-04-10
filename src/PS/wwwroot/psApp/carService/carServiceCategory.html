@@ -5,7 +5,7 @@
              <li ng-repeat="job in commonServices" class="panel row">
                  <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
                  <i class="fa fa-check-circle" ng-class="job.selected ? 'selected' : ''" ng-click="addSelectedJob(job)"></i>
-                 <div class="col-xs-11">
+                 <div class="col-xs-10">
                      <div class="panel-heading">
                          <div class="panel-title">
                              <a data-toggle="collapse" data-parent="#accordion" data-target="#{{job.name | makeId}}">

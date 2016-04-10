@@ -360,7 +360,7 @@ h1, h2, h3, h4,h5,h6{
     margin:10px 0;
 }
 .select-service-box ul li {
-    cursor: pointer;
+    
     font-size: 14px;
     padding: 12px 15px;
     border-bottom: 1px solid #E2E2E2;
@@ -399,6 +399,7 @@ h1, h2, h3, h4,h5,h6{
     letter-spacing: 0.09em;
        right: 50px;
     position: absolute;
+    cursor: pointer;
 }
 .select-service-box ul li:first-child {
     padding-right: 0
@@ -513,9 +514,9 @@ h1, h2, h3, h4,h5,h6{
 .select-service-box ul .panel-heading {
     padding: 0px;    
 }
-.select-service-box .panel-heading {
+/*.select-service-box .panel-heading {
     width: 88%;
-}
+}*/
 .selected {
     color: #5cb85c !important;
 }

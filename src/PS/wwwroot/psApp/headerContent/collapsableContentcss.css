@@ -4,6 +4,7 @@
 	-moz-transition: all 0.4s ease;
 	-webkit-transition: all 0.4s ease;
 	-ms-transition: all 0.4s ease;
+    cursor: pointer;
 }
 .panel-heading .panel-title a[aria-expanded="true"] {
 	background-color:#218be7;

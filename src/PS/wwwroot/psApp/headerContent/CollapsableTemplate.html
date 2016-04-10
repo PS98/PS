@@ -1,12 +1,12 @@
 ﻿
 
 
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default" ng-repeat="details in data" >
+<div class="panel-group" id="group">
+    <div class="panel panel-default" ng-repeat="details in data">
         <div class="panel-heading">
             <div class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" data-target="#{{details.name | makeId}}">
-                {{details.name}}
+                <a data-toggle="collapse" data-parent="#group" data-target="#{{details.name | makeId}}">
+                    {{details.name}}
                 </a>
 
             </div>
