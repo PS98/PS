@@ -156,9 +156,9 @@
   ]
 }
 {
-  "_id": ObjectId("5700e0b3ddc5778a2700cfbf"),
+  "_id": "ObjectId(\"5700e0b3ddc5778a2700cfbf\")",
   "Name": "Every 9 months or 9,000 miles",
-  "Description": "",
+  "Description": "This servicing will include a almost a full vehicle (washing, battery brakes, exhaust, fuel filter, power steering etc) checkup along with replacement of necessary lubricants (oil, coolant etc)",
   "Type": [
     {
       "Name": "Automatic Transmission Fluid",
