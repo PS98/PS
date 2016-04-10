@@ -1,6 +1,12 @@
-﻿.ps-user-profile-small{
+﻿.header .ps-user-profile-small{
     color:#333;
-    padding:47px 13px 0;
+    padding:45px 13px 0;
+    cursor: pointer;
+}
+
+.sticky .ps-user-profile-small{
+    color:#333;
+    padding:25px 13px 0;
     cursor: pointer;
 }
 
@@ -40,7 +46,6 @@
 .drpdwnLogin span{
     margin-right: 0;
     color: white;
-    padding: 10px 0 0 10px;
     position: relative;
     font: normal;
     text-transform: none;
@@ -60,15 +65,6 @@
 .btn-default{
     padding:4px;
 }
-.yamm .nav > li > div {
-    display:inline-flex; padding :50px 13px 5px;
-}
-.yamm .nav > li > div > a {
-    padding-right:15px; position:relative; font: 700 12px Raleway; color: #FFF; text-transform: uppercase;  transition: all .3s ease-out;
-}
-.yamm  .dropdown-menu{
-    margin-right:10px;
-}
 
 .userDetailsDropdown
 {
@@ -80,7 +76,11 @@
 .dropdown-menu :hover 
 {
    background-color:white !important ;
+}
 
+.dropdown 
+{
+   padding-top: 10px;
 }
 
 .modal-left-half

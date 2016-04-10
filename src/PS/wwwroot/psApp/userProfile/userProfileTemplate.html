@@ -6,18 +6,18 @@
     <div class="dropdown">
         <ul class="dropdown-menu jelect-options drpdwnLogin" role="menu" aria-labelledby="drpdownLogout">
             <li class="userDetailsDropdown">
-                <div style="position:absolute;">
+                <div style="position:absolute; padding-top: 10px;">
                     <span role="menuitem" class="modal-left-half">
                         <img ng-src="{{userDetails.imageUrl}}" style="width:75px; height: 75px; margin-top:10px; margin-left: 10px;" />
                     </span>
                     <span class="modal-right-half">
-                        <span style="font-size:15px;color:black; margin: 5px 0 5px 0;"> {{userDetails.userName}}</span>
+                        <span style="font-size:15px;color:black;"> {{userDetails.userName}}</span>
                         <span style="font-size:12px;color:black">{{userDetails.email}}</span>
                     </span>
                 </div>
                 <div style="position:absolute; top: 75%; border-top: 2px solid lightgray; width: 100%;">
-                    <a role="menuitem" ng-click="logout()" style="color:black; float: left;">Edit Profile</a>
-                    <a role="menuitem" ng-click="logout()" style="color:black; float: right;">Logout</a>
+                    <a role="menuitem" ng-click="logout()" style="color:black; float: left; cursor: pointer;">Edit Profile</a>
+                    <a role="menuitem" ng-click="logout()" style="color:black; float: right; cursor: pointer;">Logout</a>
                 </div>
             </li>
         </ul>
