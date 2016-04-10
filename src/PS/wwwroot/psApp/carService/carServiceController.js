@@ -103,6 +103,15 @@
             $scope.commonServices = $scope.services.serviceDetails[0];
         }
     }
+    $scope.chooseAnswer = function (job,question, option) {
+        if (!question.ans)
+            question.ans = [];
+        if (!question.ans.includes(option))
+            question.ans.push(option);
+        else {
+            question.ans.splice(question.ans.indexOf(option), 1);
+        }
+    }
     function displayIncompleteModule() {
         if (!$scope.showBrandName) {
             $scope.showMakeYears = $scope.selectedCar.year == undefined ? true : false;
