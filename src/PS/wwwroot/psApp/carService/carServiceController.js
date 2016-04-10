@@ -36,7 +36,7 @@
     }
     $scope.selectVarient = function (varient) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
-        $scope.selectedCar.varient = varient; $scope.car.choose_a_service = true; $scope.car.chooseNewService = true; $scope.car.showServiceType = true;
+        $scope.selectedCar.varient = varient; $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
         $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
     }
     $scope.editBrand = function () {
@@ -69,7 +69,7 @@
         $scope.commonServices = $scope.services.serviceDetails[$scope.services.serviceName.indexOf(this.service)];
       
         if ($scope.serviceOpts.viewMode === "consultation") {
-            var des_req = { id: 301, type: " Describe your problem here", details: false, addText: true }
+            var des_req = {name: " Describe your problem here", type: [], addText: true }
             if (!$scope.selectedJob.includes(des_req))
                 $scope.selectedJob.push(des_req);
          }
