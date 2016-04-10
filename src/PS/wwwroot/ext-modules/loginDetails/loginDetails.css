@@ -1,38 +1,13 @@
 ﻿
 /*/* Login related CSS Classes*/
-.bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
-    background-color: #ff8627;
-    color: #ffffff;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    transition: background-color 300ms linear 0s;
-}
-
 
 .login-tab {
 	margin: 0 auto;
 	max-width: 380px;
 }
 
-.login-modal-header {
-	background: #27ae60;
-	color: #fff;
-}
-
-.login-modal-header .modal-title {
-	color: #fff;
-}
-
-.login-modal-header .close {
-	color: #fff;
-}
-
-.login-modal i {
-	color: #000;
-}
-
-.login-modal form {
-    margin-top: 10%;
+.login-modal {
+	width: 80%;
 }
 
 .tab-pane form {
@@ -47,25 +22,57 @@
   display: block;
 }
 
-.modal-social-icons{padding:0 10%;}
-.facebook, .twitter, .google, .linkedin {height:40px; margin: 4% 15% 10% 15%; border-radius: 10%;}
-.modal-icons{margin-left: -10px; margin-right: 20px;}
-.google, .google:hover{background-color:#dd4b39;border:2px solid #dd4b39;color:#fff;}
-.twitter, .twitter:hover{ background-color: #00aced; border:2px solid #00aced;color: #fff;}
-.facebook, .facebook:hover{background-color: #3b5999; border:2px solid #3b5999;color:#fff;}
-.linkedin, .linkedin:hover{background-color: #007bb6; border: 2px solid #007bb6; color:#fff;}
-#social-icons-conatainer{position: relative;}
-#center-line{right: 265.7px;top: 80px;background:#ddd;  border: 2px solid #DDDDDD;border-radius: 20px;}
-
-#center-line-OR {   
-    position: absolute;
-    right: 47%;
-    top: 35%;
-    background: #ddd;
-    border: 10px solid #DDDDDD;
-    border-radius: 20px;
-
+.formFootnote#signupLinkWrapper {
+    margin-top: 3.5em;
 }
+.formFootnote a {
+    opacity: 0;
+    color: #ddd;
+    text-decoration: none;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.formFootnote.ready a {
+    opacity: 1;
+}
+.formFootnote {
+    z-index: 10;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin-left: -2.5em;
+}
+.forgotLink {
+    margin-top: 2em;
+}
+.forgotLink a {
+    color: #7f7f7f;
+    text-decoration: none;
+}
+a {
+    color:#7f7f7f;
+}
+
+.buttonFacebook{background:#3b5998 url(https://static.canva.com/static/images/facebook_button.svg) no-repeat 50%;background-position:18px,left;padding-left:40px}
+.buttonFacebook:active,.buttonFacebook:focus{border-color:#1c2b4c}
+.buttonFacebook:hover{background-color:#4562a1}
+.buttonGoogle{background:#dd4b39 url(https://static.canva.com/static/images/google_button.svg) no-repeat 50%;background-position:15px,left;padding-left:40px}
+.buttonGoogle:active,.buttonGoogle:focus{border-color:#b12a1f}
+.buttonGoogle:hover{background-color:#ee503d}
+.buttonBlock{display:block;width:100%}
+.button{-moz-appearance:none;-webkit-appearance:none;border:2px solid transparent;border-radius:5px;box-sizing:border-box;color:#fff;cursor:pointer;display:inline-block;font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;margin:0;min-width:2.78572em;line-height:2.78572;outline-width:0;padding:0 1em;position:relative;text-align:center;text-decoration:none;transition:background-color .15s,border-color .15s,color .15s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.button.disabled,.button.disabled:active,.button.disabled:focus,.button.disabled:hover,.button:disabled,.button:disabled:hover{background-color:#ccc;border-color:#ccc;color:#999;cursor:default;pointer-events:none}
+.button::-moz-focus-inner{border:0;padding:0}
+.buttonSubmit{background: #99c432; background-position:18px,left;padding-left:40px}
+.buttonSubmit:active,.buttonSubmit:focus{border-color:#a5d92b;}
+.buttonSubmit:hover{background-color: #a5d92b;}
+.button:visited{color:#fff}
+.or{position:relative;margin:.8em 0 0;font-size:110%;font-family:Georgia,Times New Roman,serif;font-style:italic;text-align:center;opacity:.5;font-weight:300}
+.or::before{content: "------- "; opacity: 0.5}
+.or::after{content: " -------"; opacity: 0.5}
+.clearfix{margin: 10px 0 10px 0;}
 
 .bckgrnd-clr{
     background-color: antiquewhite;
