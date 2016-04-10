@@ -1,7 +1,12 @@
 { 
     "_id" : ObjectId("5700b0ffddc5778a2700cfb3"), 
-    "Name" : "Essential Car Care", 
-    "Description" : "Our Essential Car Care package combines a full oil change and oil filter replacement with a number of vehicle safety checks.", 
+    "Name" : "Essential Car Care",
+  "Description": "Our Essential Car Care package combines a full oil change and oil filter replacement with a number of vehicle safety checks.",
+  "Questions": [
+    {
+      "Question": "which oil you want us to use?",
+      "Options": ["regular","synthetic"]
+    } ]
     "Type" : [
         {
             "Name" : "Replace engine oil and filter", 
