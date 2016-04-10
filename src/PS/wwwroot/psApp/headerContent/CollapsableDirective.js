@@ -5,9 +5,7 @@
             scope: {
                 data: "="
             },
-            link: function (scope, el, attr) {
-
-              templateUrl: "psApp/headerContent/CollapsableTemplate.html"
+            templateUrl: "psApp/headerContent/CollapsableTemplate.html"
         }
     }
 );
