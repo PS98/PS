@@ -76,12 +76,14 @@
     }
 
     $scope.addSelectedJob = function (selectedJob) {
-        if ($scope.serviceOpts.viewMode === "Common Services" || $scope.serviceOpts.viewMode === "Scheduled Maintenance") {
-            var anyJobSelected = ($scope.selectedJob || []).length > 0;
-            if (anyJobSelected) {
-                
-            }
+        if (($scope.serviceOpts.viewMode === "Common Services" || $scope.serviceOpts.viewMode === "Scheduled Maintenance") && !selectedJob.selected) {
             selectedJob.onlyOne = true;
+
+            var jobToRemove = $scope.selectedJob.filter(function (job) {
+                return job.onlyOne === true;
+            });
+          if(jobToRemove.length>0)
+            $scope.deleteSelectedJob(jobToRemove[0]);
 
         }
         selectedJob.selected = !selectedJob.selected;
