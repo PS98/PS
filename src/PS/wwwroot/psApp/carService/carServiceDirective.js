@@ -30,3 +30,11 @@ angular.module("psApp").directive("carService", function () {
         // controllerAs: "vm"
     };
 });
+angular.module('psApp').filter("formatToCss", function() {
+    
+    return function (data) {
+        if (!data)
+            return "";
+        return data.replace(/\(|\)|&|$|\@ |! |-|\+|,/g, "").replace(/  /g, "-").replace(/ /g, "-");
+    }
+})

@@ -24,26 +24,30 @@ namespace PS.Controllers
 
             var coll = repo.GetAllCollectionName();
 
-            return new List<string>();
+            return coll;
         }
 
 
 
         [HttpGet(("all"))]
         [Route("all")]
-        public List<IEnumerable<Models.Services>> GetAll()
+        public ServiceList GetAll()
         {
-           // return new string[] { "value1", "value2" };
+            var collections = repo.GetAllCollectionName();
+            var serviceList = new ServiceList();
+            serviceList.ServiceName = new string[collections.Count];
 
-          var commonServices =  repo.GetDocumentList<Models.Services>("Common Services");
-          var repairServices = repo.GetDocumentList<Models.Services>("Repair & Maintenance");
-           var scheduleServices = repo.GetDocumentList<Models.Services>("Scheduled Maintenance");
-            List<IEnumerable<Models.Services>> listAll = new List<IEnumerable<Models.Services>>();
-            listAll.Add(commonServices);
-            listAll.Add(repairServices);
-            listAll.Add(scheduleServices);
+            foreach (var collName in collections)
+            {
+                var temp = collName.Split('.');
+                serviceList.ServiceName[int.Parse(temp[0]) - 1] = temp[1];
+                var service = repo.GetDocumentList<Models.Services>(collName);
+                serviceList.ServiceDetails.Add(service);
 
-            return listAll;
+            }
+           
+
+            return serviceList;
         }
 
         // GET api/values/5

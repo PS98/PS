@@ -23,4 +23,17 @@ namespace PS.Models
         public string Description { get; set; }
     }
 
+
+
+    public class ServiceList
+    {
+        public ServiceList()
+        {
+            ServiceDetails = new List<List<Services>>();
+        }
+
+        public string[] ServiceName { get; set; }
+        public List<List<Services>> ServiceDetails { get; set; }
+    }
+
 }

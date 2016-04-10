@@ -13,31 +13,28 @@
     </div><!-- end block-title -->
 </div>
 <div class="section_default section_mod-e section-bg-2 wow bounceInRight" data-wow-duration="2s">
-    <section class="section_mod-d">
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <h2 class="ui-title-block">Privacy Policy</h2>
-                    <div class="ui-subtitle-block_mod-b">{{privacyPolicyList}}</div>
+                    <div class="ui-subtitle-block_mod-b">Privacy Policy Dummy Description</div>
                 </div>
                 <!-- end col -->
             </div>
             <!-- end row -->
-            <div class="row">
-                <div class="col-md-5">
-                    <h3 class="ui-title-inner"><i class="decor-3 fa fa-caret-right"></i>trusted name in auto-world</h3>
+            <div class="row" style="padding-top: 50px;">
+                <div class="col-md-12" ng-repeat="privacyPolicy in privacyPolicyList">
+                    <h3 class="ui-title-inner"><i class="decor-3 fa fa-caret-right"></i>{{privacyPolicy.heading}}</h3>
                     <div class="decor-1 decor-1_mod-c"></div>
-                    <div class="ui-description">
-                        <p>Integer tortor bibendum estar faucibus gravida aliquam nulla lectus lacinia egar pulvinar matis nl risus quisque sagitis lorem acda lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div ng-repeat="desc in privacyPolicy.desc">
+                        <p>{{desc.text}}</p>
+                        <ul ng-repeat="listItem in desc.list">
+                            <li>{{listItem.text}}</li>
+                        </ul>
+                        <p></p>
                     </div>
-                    <p>Integer tortor bibendum est faucibus gravida aliquam nul lectus lacinia eget pulvinar mattis inl risus. Quisque sagittis lorem acdua er pharetral interdum quisque convallis nulla id ipsum vamus aliquam arcu arcu.</p>
-                    <p>Etiam imperdiet aliquam eriat volutpat mauris consecteta. Aliquam enisem pretium vitae posuere ac mats vitae arcu.</p>
-                    <a class="link" href="javascript:void(0);">we have largest vehicles stock</a>
-                    <div class="decor-1"></div>
-                    <a class="link" href="javascript:void(0);">we got worldwide locations</a>
-                    <div class="decor-1"></div>
-                    <a class="link" href="javascript:void(0);">we deal in all kinds of brands & vehicles</a>
-                </div>
+                    </div>
                 <!-- end col -->
             </div>
             <!-- end row -->

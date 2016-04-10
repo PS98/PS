@@ -20,7 +20,9 @@
     var _getServiceCentreList = function (city, area) {
         return $http.get("/api/ServiceCentre/"+ city +"/"+ area );
     }
-
+    var _getAllService = function (city, area) {
+        return $http.get("/api/services/all");
+    }
     return {
         getAllCarColletion: _getAllCarCollection,
         getCarType: _getCarType,
@@ -28,6 +30,7 @@
         getServiceCentreCity:_getServiceCentreCity,
         getServiceCentreArea: _getServiceCentreArea,
         getServiceCentreList: _getServiceCentreList,
+        getAllService: _getAllService,
 
 }
           

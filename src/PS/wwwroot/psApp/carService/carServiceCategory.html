@@ -1,12 +1,30 @@
 ﻿<div class="row spacet-10">
-   <div class="col-sm-12">
-       <div class="select-service-box">
-          <ul>
-              <li ng-click="addSelectedJob(job)" ng-repeat="job in commonServices">
-                    <div class="icon-service-plus pull-left"></div>
-                    {{ job.type }}
-                    <div class="service-details pull-right" ng-click="showDetails(job.details); $event.stopPropagation();" ng-if="(job.details || []).length > 0">Details</div>
-                </li>
+    <div class="col-sm-12">
+        <div class="select-service-box">
+         <ul class="panel-group" id="accordion" >
+             <li ng-repeat="job in commonServices" class="panel row">
+                 <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
+                 <i class="fa fa-check-circle" ng-class="job.selected ? 'selected' : ''" ng-click="addSelectedJob(job)"></i>
+                 <!--<div class="col-xs-10">-->
+                     <div class="panel-heading" ng-if="job.description" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'">
+                         <div class="panel-title">
+                             <a data-toggle="collapse" data-parent="#accordion" data-target="#{{job.name | makeId}}"> <!--aria-expanded="{{ $index === 0 ? 'true': false}}">-->
+                                 {{job.name}}
+                             </a>
+                         </div>
+                     </div>
+                 <div id="{{job.name | makeId}}" class="panel-collapse collapse" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'" ng-if="job.description">
+                     <div class="panel-body">
+                         {{job.description}}
+                     </div>
+                 </div>
+                 <div class="col-xs-10 top-padding10" ng-if="(job.description || []).length == 0">
+                     {{job.name}}
+                 </div>
+                 <!--</div>-->
+
+             </li>
+
             </ul>
         </div>
     </div>

@@ -1,10 +1,16 @@
 ﻿.service a{
-        color: #0026ff;
+        color: #218be7;
         text-decoration:none;
+}
+.service li {
+    list-style: none;
 }
 h1, h2, h3, h4,h5,h6{
     margin-bottom:0;
     margin-top:0;
+}
+.top-padding10 {
+    padding-top: 10px;
 }
 .car-header{
         background: #fff;
@@ -306,10 +312,10 @@ h1, h2, h3, h4,h5,h6{
     color: #218be7;
     background-color: #ecf5fd !important;
 }
-.b-categories a .content-first {
+.b-categories:first-child a:first-child .content {
     margin-left: 0;
 }
-.icon-common-services, .icon-diagnostics, .icon-repair, .icon-maintenance, .icon-describe, .icon-common-services-selected, .icon-diagnostics-selected, .icon-repair-selected, .icon-maintenance-selected, .icon-describe-selected {
+.icon-common-services, .icon-diagnostics, .icon-repair-maintenance, .icon-scheduled-maintenance, .icon-describe, .icon-common-services-selected, .icon-diagnostics-selected, .icon-repair-maintenance-selected, .icon-scheduled-maintenance-selected, .icon-describe-selected {
     display: block;
     width: 42px;
     height: 42px;
@@ -326,10 +332,10 @@ h1, h2, h3, h4,h5,h6{
 .icon-common-services-selected:hover {
     background-image: url("../carService/icons/icon-common-services-blue.svg");
 }
-.icon-repair {
+.icon-repair-maintenance {
     background-image: url("../carService/icons/icon-repair.svg");
 }
-.icon-repair-selected {
+.icon-repair-maintenance-selected {
     background-image: url("../carService/icons/icon-repair-blue.svg");
 }
 .icon-diagnostics {
@@ -338,10 +344,10 @@ h1, h2, h3, h4,h5,h6{
 .icon-diagnostics-selected {
     background-image: url("../carService/icons/icon-diagnostics-blue.svg");
 }
-.icon-maintenance {
+.icon-scheduled-maintenance {
     background-image: url("../carService/icons/icon-maintenance.svg");
 }
-.icon-maintenance-selected {
+.icon-scheduled-maintenance-selected {
     background-image: url("../carService/icons/icon-maintenance-blue.svg");
 }
 .icon-describe {
@@ -360,7 +366,6 @@ h1, h2, h3, h4,h5,h6{
     margin:10px 0;
 }
 .select-service-box ul li {
-    cursor: pointer;
     font-size: 14px;
     padding: 12px 15px;
     border-bottom: 1px solid #E2E2E2;
@@ -387,6 +392,9 @@ h1, h2, h3, h4,h5,h6{
 .remove-icon{
     color: red; font-size:12px; top: -10px; cursor:pointer;
 }
+.select-service-box .panel-collapse {
+    border: 0; 
+}
 
 .select-service-box ul li .service-details {
     font-size: 10px;
@@ -394,6 +402,12 @@ h1, h2, h3, h4,h5,h6{
     text-transform: uppercase;
     color: #6d7579;
     letter-spacing: 0.09em;
+       right: 50px;
+    position: absolute;
+    cursor: pointer;
+}
+.select-service-box ul li:first-child {
+    padding-right: 0
 }
 .select-service-box ul li .icon-service-plus {
     display: block;
@@ -437,6 +451,20 @@ h1, h2, h3, h4,h5,h6{
     border-radius: 0 0 4px 4px;
     margin-top: -1px;
 }
+.b-service-adds .b-adds ul {
+    height: auto;
+    overflow: hidden;
+            border: 0;
+    border-bottom: 2px solid #E2E2E2;
+}
+    .b-service-adds .b-adds ul li {
+        display: inline-flex;
+        border: 0;
+    }
+.b-service-adds .b-adds .fa{
+    font-size: 20px;
+    padding: 0 10px;
+}
 
 .b-service .details {
     cursor: pointer;
@@ -463,7 +491,7 @@ h1, h2, h3, h4,h5,h6{
 .b-service-textarea textarea {
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
     padding: 20px;
-    margin-top: -1px;
+    margin-top: -10px;
     width: 100%;
     border-radius: 0 0 4px 4px;
     background: #F8F8F8;
@@ -483,13 +511,48 @@ h1, h2, h3, h4,h5,h6{
     border-radius: 4px;
     vertical-align: sub;
 }
+.content-full-width {
+    width: 100% !important;
+}
+.b-service-add .b-adds {
+    padding: 20px;
+    display: block;
+    width: 100%;
+    background: #F8F8F8;
+    border: 1px solid #E2E2E2;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
+    border-radius: 0 0 4px 4px;
+    margin-top: -1px;
+}
 .dayColumn {
     margin-left: 4px;
     margin-right: 4px;
     width: 18.5%;
     float: left;
 }
-
+.select-service-box ul .panel {
+    margin: 0px;
+    padding: 0px;
+}
+.select-service-box ul .fa {
+    font-size: 28px;
+   padding: 5px 0 5px 8px;
+    color: #ddd;
+    float: left;
+}
+.select-service-box ul .panel-heading {
+    padding: 0px;   
+    margin-left: 10px 
+}
+/*.select-service-box .panel-heading {
+    width: 88%;
+}*/
+.selected {
+    color: #5cb85c !important;
+}
+.panel-group .panel + .panel {
+    margin-top: 0;
+}
 @media only screen and (max-device-width: 480px)  {
     .car-selection-flex-column img{
         display:none;
@@ -498,7 +561,6 @@ h1, h2, h3, h4,h5,h6{
               
 /* BASIC STYLINGS
 ============================================================================= */
-body                            { padding-top:20px; }
 pre                             { margin-bottom:20px; }
 
 /* form styling */

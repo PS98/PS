@@ -14,27 +14,49 @@
 
     <div class="row">
 
-            <div id="form-container">
+        <div id="form-container">
 
-                <div class="page-header text-center">
-                    <h2>Complete Your Service Steps</h2>
+            <div class="page-header text-center">
+                <h2>Complete Your Service Steps</h2>
 
-                    <div id="status-buttons" class="text-center">
-                        <a ui-sref-active="active" ui-sref=".car"><span>1</span> Select Car</a>
-                        <a ui-sref-active="active" ui-sref=".centre"><span>2</span> Select Centre</a>
-                        <a ui-sref-active="active" ui-sref=".appointment"><span>3</span> book Appointment</a>
-                        <a ui-sref-active="active" ui-sref=".address"><span>4</span>select Address</a>
-                    </div>
+                <div id="status-buttons" class="text-center">
+                    <a ui-sref-active="active" ui-sref=".car"><span>1</span> Select Car</a>
+                    <a ui-sref-active="active" ui-sref=".centre"><span>2</span> Select Centre</a>
+                    <a ui-sref-active="active" ui-sref=".appointment"><span>3</span> book Appointment</a>
+                    <a ui-sref-active="active" ui-sref=".address"><span>4</span>select Address</a>
                 </div>
-
-                <!-- use ng-submit to catch the form submission and use our Angular function -->
-                <form id="service-form" ng-submit="processForm()">
-                    <!-- our nested state views will be injected here -->
-                    <div id="form-views" ui-view></div>
-                </form>
-
             </div>
 
+            <!-- use ng-submit to catch the form submission and use our Angular function -->
+            <form id="service-form" ng-submit="processForm()">
+                <!-- our nested state views will be injected here -->
+                <div id="form-views" ui-view></div>
+            </form>
+
         </div>
+
     </div>
-   
+
+    <div id="detailsModal" class="modal fade" role="dialog" style="z-index:9999">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Details</h4>
+                </div>
+                <div class="modal-body" id="container">
+
+                    <collapsable data="overlayData"></collapsable>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
