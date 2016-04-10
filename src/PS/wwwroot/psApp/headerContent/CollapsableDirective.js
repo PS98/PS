@@ -5,7 +5,7 @@
             scope: {
                 data: "="
             },
-            templateUrl: "psApp/headerContent/CollapsableTemplate.html"
+              templateUrl: "psApp/headerContent/CollapsableTemplate.html"
         }
     }
 );

@@ -159,7 +159,7 @@
                        
                     </div>
 
-                    <div class="row">
+                    <div class="row select-service-box">
                         <div class="col-lg-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0">
                             <car-service-category ng-if="(searchedPhrase || []).length == 0"></car-service-category>
                         </div>
@@ -168,7 +168,7 @@
                                 <div class="row spacet-10 " id="edit-service-container" ng-class="animate-repeat" ng-repeat="job in selectedJob" scroll-offset="-100">
                                     <div class="col-md-12 " id="jj_278">
                                         <!--ng-controller="ServiceEditController">-->
-                                        <div class="spacet-10" ng-class="job.addText ? 'b-service-textarea' : 'b-service-add' ">
+                                        <div class="spacet-10" ng-class="job.addText ? 'b-service-textarea' : 'b-service-adds' ">
                                             <div class="b-service">
                                                 <p class="ng-binding">
                                                     {{ job.name}}
@@ -181,11 +181,29 @@
                                                 </div>
                                             </div>
                                             <textarea ng-if="job.addText" ng-model="selectedJob.request" placeholder="Descrbe here what's happen to your car'" ym-change-focus="serviceOpts.addingNotes"></textarea>
+                                            <div class="b-adds" ng-if="job.questions">
+                                                <div class="row" ng-repeat="que in job.questions">
+                                                    <div class="col-xs-12"><span> {{ que.question }} </span></div>
+                                                    <div class="col-xs-12">
+                                                        <ul>
+                                                            <li ng-repeat="opt in que.options">
+                                                                <i class="fa fa-check-circle" ng-class="que.ans.includes(opt) ? 'selected' : ''" ng-model="que.ans"ng-click="chooseAnswer(job,que,opt)"></i>
+                                                                <span> {{ opt }}</span>
+                                                            </li>
+
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
                                         </div>
-                                    </div>
+                                        </div>
+                                       
                                 </div>
 
-                                <div class="row margin-bottom10 margin-top10" ng-show="!car.chooseNewService && (selectedJob || []).length > 0">
+                                <div class="row margin-bottom10 margin-top10" ng-show="(selectedJob || []).length > 0">
                                     <div class="col-xs-12">
                                         <div class="services-options">
                                             <!--<p class="pull-left clickable" ng-click="car.chooseNewService = true">

@@ -2,6 +2,9 @@
         color: #218be7;
         text-decoration:none;
 }
+.service li {
+    list-style: none;
+}
 h1, h2, h3, h4,h5,h6{
     margin-bottom:0;
     margin-top:0;
@@ -448,6 +451,20 @@ h1, h2, h3, h4,h5,h6{
     border-radius: 0 0 4px 4px;
     margin-top: -1px;
 }
+.b-service-adds .b-adds ul {
+    height: auto;
+    overflow: hidden;
+            border: 0;
+    border-bottom: 2px solid #E2E2E2;
+}
+    .b-service-adds .b-adds ul li {
+        display: inline-flex;
+        border: 0;
+    }
+.b-service-adds .b-adds .fa{
+    font-size: 20px;
+    padding: 0 10px;
+}
 
 .b-service .details {
     cursor: pointer;
@@ -474,7 +491,7 @@ h1, h2, h3, h4,h5,h6{
 .b-service-textarea textarea {
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
     padding: 20px;
-    margin-top: -1px;
+    margin-top: -10px;
     width: 100%;
     border-radius: 0 0 4px 4px;
     background: #F8F8F8;
@@ -496,6 +513,16 @@ h1, h2, h3, h4,h5,h6{
 }
 .content-full-width {
     width: 100% !important;
+}
+.b-service-add .b-adds {
+    padding: 20px;
+    display: block;
+    width: 100%;
+    background: #F8F8F8;
+    border: 1px solid #E2E2E2;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
+    border-radius: 0 0 4px 4px;
+    margin-top: -1px;
 }
 .dayColumn {
     margin-left: 4px;
