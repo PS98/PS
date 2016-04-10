@@ -1,0 +1,78 @@
+﻿.panel-heading {
+	position:relative;
+	transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+    cursor: pointer;
+}
+.panel-heading .panel-title a[aria-expanded="true"] {
+	background-color:#218be7;
+	color:#fff;
+   }
+.panel-heading .panel-title a::before {	
+    content: "\f055";
+	font-family: 'FontAwesome';
+	font-size: 18px;
+    /*position: absolute;
+    right: 20px;
+    top: 9px;*/
+    margin-right: 10px;
+    color: #ddd;
+}
+.panel-collapse {
+    border: 1px solid #ddd;
+}
+.panel-title a[aria-expanded="true"]::before {
+	content: "\f056";
+	color:#c2c2c2;
+}
+
+.panel-title {
+	font-family:"Ubuntu, Helvetica, Arial, sans-serif";
+	font-size:14px;
+	/*color:#218be7;*/
+	text-transform:none;
+    font-weight: normal;
+}
+.panel-title i {
+	margin-right:10px;
+	content: "\f055";
+	font-family: 'FontAwesome';
+	font-size: 18px;
+}
+.panel-default > .panel-heading {
+	background-color:#fff;
+    padding: 0;
+    border: 1px solid #ddd;
+}
+.panel-body {
+	font-family:lato-regular;
+	font-size:14px;
+	padding: 10px 15px;
+}
+#accordion .panel-default {
+	box-shadow:none;
+	border-radius:0px;
+    margin-top: 0;
+    border: 0
+}
+.panel-title a {
+	padding:5px 15px;
+	text-decoration:none;
+	display:block;
+}
+.panel-heading:hover {
+	background-color:#218be7;
+    color: #fff;
+	
+}
+.panel-heading:hover .panel-title a {
+	color:#fff;
+}
+.panel-heading:hover .panel-title a::before {
+	color:#fff;
+}
+.panel-group .panel {
+    margin-bottom: 10px;
+}

@@ -1,9 +1,20 @@
 ﻿
 
-<div ng-repeat="details in data" class="panel">
-    <i class="fa fa-plus-circle" data-toggle="collapse" data-parent="#container" data-target="#{{details.name | makeId}}"> </i>
-    <span data-toggle="collapse" data-parent="#container" data-target="#{{details.name | makeId}}">{{details.name}}</span>
-    <div id="{{details.name | makeId}}" class="collapse">
-        {{details.description}}
+
+<div class="panel-group" id="group">
+    <div class="panel panel-default" ng-repeat="details in data">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <a data-toggle="collapse" data-parent="#group" data-target="#{{details.name | makeId}}">
+                    {{details.name}}
+                </a>
+
+            </div>
+        </div>
+        <div id="{{details.name | makeId}}" class="panel-collapse collapse">
+            <div class="panel-body">
+                {{details.description}}
+            </div>
+        </div>
     </div>
 </div>

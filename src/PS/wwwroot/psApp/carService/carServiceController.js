@@ -37,7 +37,7 @@
     $scope.selectVarient = function (varient) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
         $scope.selectedCar.varient = varient; $scope.car.choose_a_service = true; $scope.car.chooseNewService = true; $scope.car.showServiceType = true;
-        $scope.serviceOpts.viewMode = 'common';
+        $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
     }
     $scope.editBrand = function () {
         $scope.showBrandName = !$scope.showBrandName; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
@@ -61,8 +61,11 @@
 
     $scope.commonServices = [];
     $scope.changeView = function (event) {
+        if(this.service)
         $scope.serviceOpts.viewMode = this.service;
-
+        else {
+            $scope.serviceOpts.viewMode = "consultation";
+        }
         $scope.commonServices = $scope.services.serviceDetails[$scope.services.serviceName.indexOf(this.service)];
         //if ($scope.serviceOpts.viewMode == 'direct')
         //    $scope.commonServices = [{ id: 101, type: "Spare Tire Installation", details: true }, { id: 102, type: "Rotate Tare", details: true }];
@@ -70,24 +73,33 @@
         //    $scope.commonServices = [{ id: 1, type: "Change Oil And Filter", details: true }, { id: 2, type: "Breake Pad Replacement", details: true }]
         //if ($scope.serviceOpts.viewMode == 'mileage')
         //    $scope.commonServices = [{ id: 301, type: "10,0000 Milage Mantanance Service", details: true }, { id: 302, type: "15,0000 Milage Mantanance Service", details: true }]
-        //if ($scope.serviceOpts.viewMode == 'consultation') {
-        //    var des_req = { id: 301, type: " Describe your problem here", details: false, addText: true }
-        //    if (!$scope.selectedJob.includes(des_req))
-        //        $scope.selectedJob.push(des_req);
-        //    $scope.car.chooseNewService = false;
-        //    $scope.serviceOpts.viewMode = 'common';
-        //}
+        if ($scope.serviceOpts.viewMode === "consultation") {
+            var des_req = { id: 301, type: " Describe your problem here", details: false, addText: true }
+            if (!$scope.selectedJob.includes(des_req))
+                $scope.selectedJob.push(des_req);
+           // $scope.car.chooseNewService = false;
+           // $scope.serviceOpts.viewMode = 'common';
+        }
     }
 
     $scope.addSelectedJob = function (selectedJob) {
-
         $scope.car.chooseNewService = false;
+        selectedJob.selected = !selectedJob.selected;
         if (!$scope.selectedJob.includes(selectedJob))
             $scope.selectedJob.push(selectedJob);
+        else {
+            $scope.selectedJob.splice($scope.selectedJob.indexOf(selectedJob), 1);
+        }
     }
     $scope.deleteSelectedJob = function (deletedJob) {
         if ($scope.selectedJob.indexOf(deletedJob) > -1)
             $scope.selectedJob.splice($scope.selectedJob.indexOf(deletedJob), 1);
+        deletedJob.selected = !deletedJob.selected;
+
+        if ($scope.serviceOpts.viewMode === "consultation") {
+            $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+            $scope.commonServices = $scope.services.serviceDetails[0];
+        }
     }
     function displayIncompleteModule() {
         if (!$scope.showBrandName) {
@@ -103,16 +115,20 @@
        success(function (data) {
            $scope.carList.carCollections = data.carList;
            $scope.carList.yearsList = data.yearsList;
-           // $scope.center.services = data.carList;
-       }).error(function () {
+           fetchServiceDetails();
+        }).error(function () {
        });
-    psDataServices.getAllService().
-       success(function (data) {
-           $scope.services = data;
-           $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
-           $scope.commonServices = $scope.services.serviceDetails[0];
-          }).error(function () {
-       });
+
+    function fetchServiceDetails() {
+        psDataServices.getAllService().
+            success(function(data) {
+                $scope.services = data;
+                $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+                $scope.commonServices = $scope.services.serviceDetails[0];
+            }).error(function() {
+            });
+    }
+
     $scope.showDetails = function (types) {
         $scope.overlayData = types;
         $("#detailsModal").modal();
