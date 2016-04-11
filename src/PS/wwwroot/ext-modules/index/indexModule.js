@@ -72,7 +72,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                     "heading": "License for Personal Use",
                     "desc": [
                         {
-                            "text": "By using this Website, whether as a “Visitor” (meaning you simply browse the Website) or as a “User” (meaning you have registered with and/or submitted content to the Website either as an individual or as a company), implies that you agree to be bound by this Agreement and the Privacy Policy located at http://www.autofixers.com/privacy . The terms “You”, “Your” or “User” shall mean any natural or legal person who has agreed to become a User on the Website by providing registration data while registering on the Website as a User using the computer systems and the terms  “We”, “ours will mean autofixers.com."
+                            "text": "By using this Website, whether as a “Visitor” (meaning you simply browse the Website) or as a “User” (meaning you have registered with and/or submitted content to the Website either as an individual or as a company), implies that you agree to be bound by this Agreement and the Privacy Policy located at http://www.milemates.com/privacypolicy . The terms “You”, “Your” or “User” shall mean any natural or legal person who has agreed to become a User on the Website by providing registration data while registering on the Website as a User using the computer systems and the terms  “We”, “ours will refer to milemates.com."
                         },
                         {
                             "text": "The Terms of use mentioned, include your rights, obligations and restrictions regarding the use of the Website by you, please read it carefully. If you do not agree with the Terms, you should leave the Website and discontinue use of the Services immediately. If you wish to become a User, and generally avail our Services, you must read these Terms of Use and indicate your acceptance during the content submission process."
@@ -92,13 +92,13 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                             "text": "All services  provided by the Service Provider, through Software, to the Customer by means of the Customer’s use of the booking channel (Website/Application/call center etc.), for booking purposes, are hereinafter referred to as the “Service”. Furthermore, the term Services shall include any service for which any consideration is paid /not paid to the Service Provider by the Customer and will be covered by these Terms and Conditions."
                         },
                         {
-                            "text": "This Website is a platform which facilitates the online transaction of products and services offered by Autofixer's various affiliates/ registered merchants/ service providers/ service providers. The Services are offered to the Users through various modes which shall include but not be limited to, sale of Vouchers that can be redeemed for various products and services, sale of products etc. The Service Providers are the sellers of products and services on the Website and will be solely responsible to you for the products sold or services availed and purchased by you through the Website."
+                            "text": "This Website is a platform which facilitates the online transaction of products and services offered by MILEMATES various affiliates/ registered merchants/ service providers/ service providers. The Services are offered to the Users through various modes which shall include but not be limited to, sale of Vouchers that can be redeemed for various products and services, sale of products etc. The Service Providers are the sellers of products and services on the Website and will be solely responsible to you for the products sold or services availed and purchased by you through the Website."
                         },
                         {
                             "text": "The Services may be requested through phone via Website, calling on the number provided on the website, an application supplied by the Service Provider and downloaded and installed by You on internet-enabled mobile device (the “Application”) or through any other channel made available by the Service Provider for booking purpose."
                         },
                         {
-                            "text": "Some of the Services offered by the Service Provider are sourced from third parties who have a contractual relationship with the Service Provider. Autofixers is only responsible for the services which is directly provided by us. The Service Provider offers information and a method to obtain such third party services from third party service providers, but does not, and does not intend to, provide third party services or act in any way as a third party service provider, and has no responsibility or liability for any third party services provided to (or failed to be provided) nor for the actions or inactions of any third party service providers."
+                            "text": "Some of the Services offered by the Service Provider are sourced from third parties who have a contractual relationship with the Service Provider. MILEMATES is only responsible for the services which is directly provided by us. The Service Provider offers information and a method to obtain such third party services from third party service providers, but does not, and does not intend to, provide third party services or act in any way as a third party service provider, and has no responsibility or liability for any third party services provided to (or failed to be provided) nor for the actions or inactions of any third party service providers."
                         },
                          {
                              "text": "The services provided by third party service providers is termed as “TP Services or External Services” and include servicing of Customer’s vehicle for scheduled/unscheduled, maintenance/accidental or for any other kind of repair and maintenance work of vehicle (“Customer Vehicle ”)."
@@ -107,7 +107,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                               "text": "The Website/Application also provides Customer with the option of hiring of Ambassadors with facility to track Vehicle movement, that tracks the Customer Vehicle from Customer’s residence/office or any other location as specified by the Customer to the registered Service Network Partner of the third party service provider and from the registered Service Network Partner to a location as specified by Customer. Movement of vehicle facility provides Customer the ability to track the movement of Customer Vehicle during pickup and delivery service."
                           },
                            {
-                               "text": "We(“Autofixers”) do not guarantee or warrant, and make no representations regarding, the reliability, quality or suitability of such third party service providers. The Service Provider shall reasonably provide sufficient training, quality control procedures and processes to ensure commercially reasonable services by third party service providers. However, under no circumstance does the Service Provider accept liability in connection with and/or arising from the services or any acts, action, behaviour, conduct, and/or negligence on the part of the third party service provider whether online or offline. Any complaints about the services provided by the third party service provider should be directly submitted to the concerned third party service provider. By using the Services, You agree to hold the Company free from any responsibility, liability or damages that may arise out of or in relation to booking Service through call center, Website, Application or the Services. The Company and its affiliates and licensors shall not be liable for any claim, injury or damages arising out of or in connection with your use of the Service or the TP Services."
+                               "text": "We(“MILEMATES”) do not guarantee or warrant, and make no representations regarding, the reliability, quality or suitability of such third party service providers. The Service Provider shall reasonably provide sufficient training, quality control procedures and processes to ensure commercially reasonable services by third party service providers. However, under no circumstance does the Service Provider accept liability in connection with and/or arising from the services or any acts, action, behaviour, conduct, and/or negligence on the part of the third party service provider whether online or offline. Any complaints about the services provided by the third party service provider should be directly submitted to the concerned third party service provider. By using the Services, You agree to hold the Company free from any responsibility, liability or damages that may arise out of or in relation to booking Service through call center, Website, Application or the Services. The Company and its affiliates and licensors shall not be liable for any claim, injury or damages arising out of or in connection with your use of the Service or the TP Services."
                            },
                             {
                                 "text": "You may only access the Service using authorized means. It is Your responsibility to check and ensure You have accessed or downloaded the correct Website/Application for Your device. The Company is not liable if You do not have a compatible handset."
@@ -118,19 +118,19 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                      "heading": "Liability and Warranty Disclaimers",
                      "desc": [
                          {
-                             "text": "ALL MATERIALS, INFORMATION, SOFTWARE, PRODUCTS AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THE AUTOFIXERS AUTOMOTIVE NETWORK ARE PROVIDED 'AS AVAILABLE' AND 'AS IS' FOR YOUR USE. THE AUTOFIXERS AUTOMOTIVE NETWORK AND ALL MATERIALS, INFORMATION, SOFTWARE, PRODUCTS AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THE AUTOFIXERS AUTOMOTIVE NETWORK ARE PROVIDED WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT. WE AND THE OTHER ENTITIES FROM WHOM WE OBTAIN CONTENT DO NOT WARRANT THAT THE MATERIALS, INFORMATION (INCLUDING PRICES), SOFTWARE, PRODUCTS OR SERVICES INCLUDED IN OR AVAILABLE THROUGH THE AUTOFIXERS AUTOMOTIVE NETWORK ARE ACCURATE, RELIABLE OR CORRECT; THAT THE Autofixers AUTOMOTIVE NETWORK WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION; THAT ANY DEFECTS OR ERRORS WILL BE CORRECTED; OR THAT THE Autofixers AUTOMOTIVE NETWORK IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOUR USE OF THE autofixers  AUTOMOTIVE NETWORK IS SOLELY AT YOUR RISK. BECAUSE SOME JURISDICTIONS DO NOT PERMIT THE EXCLUSION OF CERTAIN WARRANTIES, THESE EXCLUSIONS MAY NOT APPLY TO YOU."
+                             "text": "ALL MATERIALS, INFORMATION, SOFTWARE, PRODUCTS AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THE MILEMATES AUTOMOTIVE NETWORK ARE PROVIDED 'AS AVAILABLE' AND 'AS IS' FOR YOUR USE. THE MILEMATES AUTOMOTIVE NETWORK AND ALL MATERIALS, INFORMATION, SOFTWARE, PRODUCTS AND SERVICES INCLUDED IN OR AVAILABLE THROUGH THE MILEMATES AUTOMOTIVE NETWORK ARE PROVIDED WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT. WE AND THE OTHER ENTITIES FROM WHOM WE OBTAIN CONTENT DO NOT WARRANT THAT THE MATERIALS, INFORMATION (INCLUDING PRICES), SOFTWARE, PRODUCTS OR SERVICES INCLUDED IN OR AVAILABLE THROUGH THE MILEMATES AUTOMOTIVE NETWORK ARE ACCURATE, RELIABLE OR CORRECT; THAT THE MILEMATES AUTOMOTIVE NETWORK WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION; THAT ANY DEFECTS OR ERRORS WILL BE CORRECTED; OR THAT THE MILEMATES AUTOMOTIVE NETWORK IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOUR USE OF THE MILEMATES  AUTOMOTIVE NETWORK IS SOLELY AT YOUR RISK. BECAUSE SOME JURISDICTIONS DO NOT PERMIT THE EXCLUSION OF CERTAIN WARRANTIES, THESE EXCLUSIONS MAY NOT APPLY TO YOU."
                          },
                          {
-                             "text": "All prices, incentives (like offers) and rebate information, and other information displayed on the autofixers Automotive Network are gathered from sources and based on algorithms that are believed by us to be reliable (other than Visitor-Submitted Content, as to which we make no such representation), but we do not verify this information and no assurance can be given that this information is accurate, complete or current. Furthermore, the  prices displayed on the Edmunds Automotive Network for vehicles advertised by dealers are sometimes calculated by us based on data autofixers rules supplied to us by the dealers or by intermediaries who transmit data from the dealers to us; neither we nor the dealers are responsible for any errors in such data or rules, or for any errors that may occur in the manner in which we apply such data and rules to determine the vehicle prices displayed. Before purchasing any vehicle or other goods or services you read about on the autofixers Automotive Network, you should confirm with the dealer or vendor any information (including the price and available incentives or rebates) that is important to your decision."
+                             "text": "All prices, incentives (like offers) and rebate information, and other information displayed on the MILEMATES Automotive Network are gathered from sources and based on algorithms that are believed by us to be reliable (other than Visitor-Submitted Content, as to which we make no such representation), but we do not verify this information and no assurance can be given that this information is accurate, complete or current. Furthermore, the  prices displayed on the Milemates Automotive Network for vehicles advertised by dealers are sometimes calculated by us based on data MILEMATES rules supplied to us by the dealers or by intermediaries who transmit data from the dealers to us; neither we nor the dealers are responsible for any errors in such data or rules, or for any errors that may occur in the manner in which we apply such data and rules to determine the vehicle prices displayed. Before purchasing any vehicle or other goods or services you read about on the MILEMATES Automotive Network, you should confirm with the dealer or vendor any information (including the price and available incentives or rebates) that is important to your decision."
                          },
                          {
-                             "text": "In addition, we can give no assurance that any advice, recommendation or guidance that we provide on the autofixers website , in press releases, in communications between our staff and third parties, or in any other medium, or that are provided by our visitors through the autofixers website, is accurate, complete or current. We do not warrant the accuracy of, or assume (and you agree that Edmunds does not bear any) responsibility for any errors or omissions in the information, advice, recommendations or guidance provided by either our staff or our visitors."
+                             "text": "In addition, we can give no assurance that any advice, recommendation or guidance that we provide on the MILEMATES website , in press releases, in communications between our staff and third parties, or in any other medium, or that are provided by our visitors through the MILEMATES website, is accurate, complete or current. We do not warrant the accuracy of, or assume (and you agree that Milemates does not bear any) responsibility for any errors or omissions in the information, advice, recommendations or guidance provided by either our staff or our visitors."
                          },
                          {
-                             "text": "The autofixers website displays both third-party advertising and links to many other Web sites not operated by us, including sites where you can obtain products and services such as new and used vehicles and vehicle financing and insurance. While we encourage you to consult such sites, autofixers does not control, endorse or guarantee any of the content found on such sites, or the content of any advertising we display; we are not responsible for the claims made by third parties or for the products or services those third parties provide; and we do not guarantee or warrant the prices, terms, quality, reliability or performance of the products or services provided by those third parties. You agree that autofixers is not responsible for any advertising that we display on our website, or for any content, associated links, resources or services on or provided through sites not operated by us, and that autofixers shall not be liable for any loss or damage of any kind arising from or incurred in connection with your use of third-party content, services or products. We do not co-sponsor, operate, endorse or guarantee any sweepstakes or contest offer that may be promoted from time to time by third parties or that may be accessible through links from the autofixers."
+                             "text": "The MILEMATES website displays both third-party advertising and links to many other Web sites not operated by us, including sites where you can obtain products and services such as new and used vehicles and vehicle financing and insurance. While we encourage you to consult such sites, MILEMATES does not control, endorse or guarantee any of the content found on such sites, or the content of any advertising we display; we are not responsible for the claims made by third parties or for the products or services those third parties provide; and we do not guarantee or warrant the prices, terms, quality, reliability or performance of the products or services provided by those third parties. You agree that MILEMATES is not responsible for any advertising that we display on our website, or for any content, associated links, resources or services on or provided through sites not operated by us, and that MILEMATES shall not be liable for any loss or damage of any kind arising from or incurred in connection with your use of third-party content, services or products. We do not co-sponsor, operate, endorse or guarantee any sweepstakes or contest offer that may be promoted from time to time by third parties or that may be accessible through links from the MILEMATES."
                          },
                           {
-                              "text": "On the Engine ears website we collect personally identifiable information from individuals who authorize us to submit such information to one or more automobile dealers. As provided in our Privacy Statement, in some instances such information is also provided to other third parties. Those dealers and other third parties are not affiliated with engineears.com, Inc. These services are provided on an 'as is' basis; neither we nor such third parties make any representation or warranty concerning, or are responsible for, any of the products or services those dealers provide, the manner in which those products or services are provided, or for any use made by those dealers of your personally identifiable information."
+                              "text": "On the Engine ears website we collect personally identifiable information from individuals who authorize us to submit such information to one or more automobile dealers. As provided in our Privacy Statement, in some instances such information is also provided to other third parties. Those dealers and other third parties are not affiliated with milemates.com, Inc. These services are provided on an 'as is' basis; neither we nor such third parties make any representation or warranty concerning, or are responsible for, any of the products or services those dealers provide, the manner in which those products or services are provided, or for any use made by those dealers of your personally identifiable information."
                           }
                      ]
                  },
@@ -138,7 +138,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                      "heading": "Electronic Communications",
                      "desc": [
                          {
-                             "text": "When you visit the AUTOFIXERS website or send e-mails to us, you are communicating with us electronically. You consent to receive communications from us electronically via emails and more. We may communicate with you by e-mail or by posting notices on the Autofixer website. You agree that all agreements, notices, disclosures and other communications that we provide to you electronically or that you provide to us electronically satisfy any legal requirement that such communications be in writing."
+                             "text": "When you visit the MILEMATES website or send e-mails to us, you are communicating with us electronically. You consent to receive communications from us electronically via emails and more. We may communicate with you by e-mail or by posting notices on the MILEMATES website. You agree that all agreements, notices, disclosures and other communications that we provide to you electronically or that you provide to us electronically satisfy any legal requirement that such communications be in writing."
                          }
                      ]
                  },
@@ -149,7 +149,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                               "text": "We provide access to our services to only those individuals or companies who can form legally binding contracts under Indian law. Therefore, Customer(s) must be at least eighteen (18) years of age to be eligible to use Our Services."
                           },
                           {
-                              "text": "We (“autofixers”) advises our Customers that while using the Website/Application, You must follow/abide by all applicable laws. We are not responsible for any possible consequences caused by your behaviour during use of the Website."
+                              "text": "We (“MILEMATES”) advises our Customers that while using the Website/Application, You must follow/abide by all applicable laws. We are not responsible for any possible consequences caused by your behaviour during use of the Website."
                           }
                       ]
                   },
@@ -184,7 +184,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                       "heading": "Termination of Services",
                       "desc": [
                           {
-                              "text": "We may suspend or cancel your registration and/ or terminate your access to autofixers if you breach any of these  Terms of Use or have made improper use of The Services. You may cancel your registration at any time by informing us in writing. If you do so you must stop using The Services."
+                              "text": "We may suspend or cancel your registration and/ or terminate your access to MILEMATES if you breach any of these  Terms of Use or have made improper use of The Services. You may cancel your registration at any time by informing us in writing. If you do so you must stop using The Services."
                           },
                           {
                               "text": "The suspension, cancellation or termination of your registration and your right to use The Services shall not affect either party’s statutory right or liabilities."
@@ -195,7 +195,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                       "heading": "Compliance with Laws",
                       "desc": [
                           {
-                              "text": "All dealing entities on autofixers website are informed to comply with the applicable laws including Foreign Exchange Management Act, 1999 but not limited to the rules made and notifications issued there under and the Exchange Control Manual as may be issued by Reserve Bank of India from time to time, Customs Act, Information and Technology Act, 2000 as amended by the Information Technology (Amendment) Act 2008, Prevention of Money Laundering Act, 2002 and the rules made there under, Foreign Contribution Regulation Act, 1976 and the rules made there under, Income Tax Act, 1961 and the rules made there under, Export Import Policy of government of India) applicable to them respectively and relevant amendment from time to time."
+                              "text": "All dealing entities on MILEMATES website are informed to comply with the applicable laws including Foreign Exchange Management Act, 1999 but not limited to the rules made and notifications issued there under and the Exchange Control Manual as may be issued by Reserve Bank of India from time to time, Customs Act, Information and Technology Act, 2000 as amended by the Information Technology (Amendment) Act 2008, Prevention of Money Laundering Act, 2002 and the rules made there under, Foreign Contribution Regulation Act, 1976 and the rules made there under, Income Tax Act, 1961 and the rules made there under, Export Import Policy of government of India) applicable to them respectively and relevant amendment from time to time."
                           }
                       ]
                   },
@@ -222,7 +222,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                                         "text": "Additional Charges (When ?)Once the vehicle has been picked-up, customer can’t avail of free cancellation. In case customer initiates a cancellation after the car has been picked-up, customer will have to pay a ‘cancellation charge’ of Rs.200."
                                     },
                                     {
-                                        "text": "Customer will have to pay a cancellation charge of Rs. 500 or 10% of the total estimated labour charges whichever is high if the job is not entrusted to “autofixers and its affiliates” after obtaining the estimates."
+                                        "text": "Customer will have to pay a cancellation charge of Rs. 500 or 10% of the total estimated labour charges whichever is high if the job is not entrusted to “MILEMATES and its affiliates” after obtaining the estimates."
                                     },
                                     {
                                         "text": "In case the customer initiates a cancellation after work has commenced on the car, the customer shall be liable to pay charges for spares and labour already used on the car."
@@ -256,16 +256,16 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                     "heading": "PRIVACY & SAFEGUARD NOTICE",
                     "desc": [
                         {
-                            "text": "This privacy policy has been collated to signify the uses and protection of customer information, which you have disclosed (for various services availed on our site) during the use of our site."
+                            "text": "This privacy policy has been collated to signify the use and protection of customer information, which you have disclosed (for various services availed on our site) during the use of our site."
                         },
                         {
-                            "text": "We, at the “AUTOFIXERS” are committed towards ensuring that customer’s privacy is maintained and protected."
+                            "text": "We, at the “MILEMATES” are committed towards ensuring that customer’s privacy is maintained and protected."
                         },
                         {
-                            "text": "While availing facilities on AUTOFIXERS, you will be required to provide some personal data by which you can be identified, be rest assured that your data will only be used based on this privacy policy."
+                            "text": "While availing facilities on MILEMATES, you will be required to provide some personal data by which you can be identified, be rest assured that your data will only be used based on this privacy policy."
                         },
                         {
-                            "text": "This policy might be updated anytime in future without any prior notice, so please keep yourself updated about AUTOFIXERS privacy policy by visiting this privacy policy page."
+                            "text": "This policy might be updated anytime in future without any prior notice, so please keep yourself updated about MILEMATES privacy policy by visiting this privacy policy page."
                         },
                         {
                             "text": "This Privacy Policy was last updated on 1st April 2016."
@@ -276,7 +276,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                      "heading": "WHAT WE COMPLY/OBEY TO",
                      "desc": [
                          {
-                             "text": "At AUTOFIXERS, we will not expose (sell, share or rent) your personal information to any third party. Also, your email address/mobile number will not be used for any unsolicited emails and/or SMS. Any emails and/or SMS received from AUTOFIXERS will only be accordance with the provision of agreed services, products and will obey this Policy."
+                             "text": "At MILEMATES, we will not expose (sell, share or rent) your personal information to any third party. Also, your email address/mobile number will not be used for any unsolicited emails and/or SMS. Any emails and/or SMS received from MILEMATES will only be accordance with the provision of agreed services, products and will obey this Policy."
                          },
                          {
                              "text": "Some periodic statistics may be disclosed from our end related to number of visitors, number of services availed and track of goods purchased etc."
@@ -298,7 +298,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                      "heading": "DATA Collection : WHAT?",
                      "desc": [
                          {
-                             "text": "No personal identification information is required to visit this site. AUTOFIXERS automatically collects data (your preferences on our site)based on your selection and service availed by you from our site. Your personal details will be fetched only when you share it while availing our services which require you to provide personal data."
+                             "text": "No personal identification information is required to visit this site. MILEMATES automatically collects data (your preferences on our site)based on your selection and service availed by you from our site. Your personal details will be fetched only when you share it while availing our services which require you to provide personal data."
                          },
                          {
                              "text": "The Information we collect based on your submission may include the following:",
@@ -347,7 +347,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                          {
                              "list": [
                                  {
-                                     "text": "By providing your email address to AUTOFIXERS, either during a transaction or any other relevant form, you agree to be included in our mailing list. You can un-subscribe by using the relevant link in the email. Your e-mail address will not be provided to any third party."
+                                     "text": "By providing your email address to MILEMATES, either during a transaction or any other relevant form, you agree to be included in our mailing list. You can un-subscribe by using the relevant link in the email. Your e-mail address will not be provided to any third party."
                                  }
                              ]
                          }
@@ -357,7 +357,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                      "heading": "INFORMATION SECURITY",
                      "desc": [
                          {
-                             "text": "Information security is the most important part of any website management. We have taken several measures at AUTOFIXERS to provide apt security to customer personal  information."
+                             "text": "Information security is the most important part of any website management. We have taken several measures at MILEMATES to provide apt security to customer personal  information."
                          }
                      ]
                  },
@@ -387,7 +387,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                                      "text": "Whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that you do not want the information to be used by anybody for direct marketing purposes."
                                  },
                                   {
-                                      "text": "If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by writing to or emailing us at autofixers@schwab.com"
+                                      "text": "If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by writing to or emailing us at support@milemates.com"
                                   },
                                   {
                                       "text": "You may request details of personal information which we hold about you under the Data Protection Act 1998."
@@ -395,7 +395,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                              ]
                          },
                          {
-                             "text": "For any issue related to any of our privacy policy or personal information related queries, please write to or email us at autofixers@schwab.com."
+                             "text": "For any issue related to any of our privacy policy or personal information related queries, please write to or email us at support@milemates.com."
                          }
                      ]
                  },
@@ -409,7 +409,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                             "text": "We personally faced these problems related to servicing of vehicles and felt this is ‘the need’ of the hour. Issues like, hectic work hours, difficulty in locating nearby service centres, sudden breakdown in traffic are faced by many people and we are here to provide you with solutions for your basic vehicle problem."
                         },
                         {
-                            "text": "We, at ENGINEEARS.in are determined to make your vehicle maintenance easy through an online platform. We bring all service centres (authorized) under a roof, enabling customers to pick from the best service centres available in the market. The idea is to reduce the waiting time in the service centres and provide a hassle free service booking, management and maintenance of vehicles for people."
+                            "text": "We, at milemates.in are determined to make your vehicle maintenance easy through an online platform. We bring all service centres (authorized) under a roof, enabling customers to pick from the best service centres available in the market. The idea is to reduce the waiting time in the service centres and provide a hassle free service booking, management and maintenance of vehicles for people."
                         }
                     ]
                 }

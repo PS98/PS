@@ -1,7 +1,7 @@
 {
   "_id": ObjectId("5700daa3ddc5778a2700cfbb"),
   "Name": "Every Month",
-  "Description": "",
+  "Description": "This servicing is performed monthly and includes basic service features such as checking engine light, tires, windshield and polishing.",
   "Type": [
     {
       "Name": "Check Engine Light On",
@@ -28,7 +28,7 @@
 {
   "_id": ObjectId("5700ddd8ddc5778a2700cfbd"),
   "Name": "Every 3 months or 3,000 miles",
-  "Description": "",
+  "Description": "In this servicing type we include Transmission related checkup, battery, belts, engine light, air filter and oil filter checkup, hoses and many more checkup.",
   "Type": [
     {
       "Name": "Automatic Transmission Fluid",
@@ -87,7 +87,7 @@
 {
   "_id": ObjectId("5700df88ddc5778a2700cfbe"),
   "Name": "Every 6 months or 6,000 miles",
-  "Description": "",
+  "Description": "This servicing type includes transmission , battery, oil,air filter tire, power steering, windshield, wiper checkup and many more features.",
   "Type": [
     {
       "Name": "Automatic Transmission Fluid",
@@ -156,9 +156,9 @@
   ]
 }
 {
-  "_id": ObjectId("5700e0b3ddc5778a2700cfbf"),
+  "_id": "ObjectId(\"5700e0b3ddc5778a2700cfbf\")",
   "Name": "Every 9 months or 9,000 miles",
-  "Description": "",
+  "Description": "This servicing will include a almost a full vehicle (washing, battery brakes, exhaust, fuel filter, power steering etc) checkup along with replacement of necessary lubricants (oil, coolant etc)",
   "Type": [
     {
       "Name": "Automatic Transmission Fluid",
@@ -217,7 +217,7 @@
 {
   "_id": ObjectId("5700e13addc5778a2700cfc0"),
   "Name": "Every 12 months or 12,000 miles",
-  "Description": "",
+  "Description": "This servicing will include a full vehicle (washing, battery brakes, exhaust, fuel filter, hoses, power steering etc) checkup along with replacement of necessary lubricants (oil, grease, coolant etc)",
   "Type": [
     {
       "Name": "Automatic Transmission Fluid",
