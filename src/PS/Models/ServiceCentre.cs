@@ -7,6 +7,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace PS.Models
 {
+    [BsonIgnoreExtraElements]
     public class ServiceCentre
     {
         public BsonObjectId _id { get; set; }
@@ -21,6 +22,7 @@ namespace PS.Models
         public string PhoneNo { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
+        public List<string> ServiceList { get; set; }
     }
 
     public class Address

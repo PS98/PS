@@ -7,7 +7,8 @@ angular.module("psApp").directive("selectCentre", function () {
             initializeGoogleMap("", 'mapholder', "", false, scope.MapCallback);
             $('.jelect').jelect();
            
-        }, controller: ["$scope", "psDataServices", "$state", function ($scope, psDataServices, $state) {
+        },
+        controller: ["$scope", "psDataServices", "$state", function ($scope, psDataServices, $state) {
             $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
             $scope.selectedCentre = "";
             $scope.selectServiceCentre = function (centre) {

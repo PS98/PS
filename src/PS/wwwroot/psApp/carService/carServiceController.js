@@ -145,6 +145,13 @@
         $("#detailsModal").modal();
 
     }
+    $scope.setUserJob = function() {
+        var jobName = []
+        $.each($scope.selectedJob, function(index,value) {
+            jobName.push(value.name);
+        });
+        psDataServices.setSelectedCarAndService($scope.selectedCar, jobName);
+    }
   
 }]);
 

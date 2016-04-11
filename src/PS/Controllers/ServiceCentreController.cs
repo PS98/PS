@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http;
 using Microsoft.AspNet.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -46,8 +47,8 @@ namespace PS.Controllers
             return areaList.Select(x => x.Area).Distinct();
         }
 
-        [HttpGet("{city}/{area}")]
-        public IEnumerable<Centre> Get(string city, string area)
+        [HttpPost("{city}/{area}")]
+        public IEnumerable<Centre> Get(string city, string area, [FromUri] string[] serviceList)
         {
             var collection = repo.GetCollection<ServiceCentre>(city);
 
@@ -59,7 +60,10 @@ namespace PS.Controllers
             if (list == null) return centreList;
             foreach (var a in list)
             {
-                centreList.AddRange(a.Centres);
+                foreach (var service in serviceList)
+                {
+                    centreList.AddRange(a.Centres.Where(x => x.ServiceList.Contains(service)));
+                }
             }
 
             return centreList;
