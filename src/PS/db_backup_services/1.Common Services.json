@@ -6,7 +6,7 @@
     {
       "Question": "which oil you want us to use?",
       "Options": ["regular","synthetic"]
-    } ]
+    } ],
     "Type" : [
         {
             "Name" : "Replace engine oil and filter", 

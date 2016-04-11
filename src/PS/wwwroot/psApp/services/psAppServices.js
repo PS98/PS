@@ -1,4 +1,14 @@
 ﻿angular.module("psApp").factory("psDataServices", ["$http", function ($http) {
+    var selectedCar, selectedService;
+
+    
+    var _getSelectedService = function () {
+        return { "selectedService": selectedService, "selectedCar": selectedCar };
+    }
+    var _setSelectedCarAndService = function (car, job) {
+        selectedCar = car;
+        selectedService = job;
+    }
     var _getAllCarCollection = function () {
      return  $http.get("/api/car");
     };
@@ -18,11 +28,13 @@
         return $http.get("/api/ServiceCentre/" + city);
     }
     var _getServiceCentreList = function (city, area) {
-        return $http.get("/api/ServiceCentre/"+ city +"/"+ area );
+        var serviceList = selectedService;
+        return $http.post("/api/ServiceCentre/" + city + "/" + area, { params: serviceList });
     }
     var _getAllService = function (city, area) {
         return $http.get("/api/services/all");
     }
+
     return {
         getAllCarColletion: _getAllCarCollection,
         getCarType: _getCarType,
@@ -31,6 +43,8 @@
         getServiceCentreArea: _getServiceCentreArea,
         getServiceCentreList: _getServiceCentreList,
         getAllService: _getAllService,
+        setSelectedCarAndService: _setSelectedCarAndService,
+        getSelectedService: _getSelectedService
 
 }
           
