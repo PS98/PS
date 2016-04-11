@@ -1,1 +1,140 @@
 ﻿
+.footer {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-size: 14px;
+	line-height: 28px;
+	color: #636363;
+}
+.footer-landing {
+	font-size: 15px;
+	line-height: 30px;
+	font-weight: 500;
+	color: #8c8c8c;
+}
+.footer .inner {
+	background: #000;
+	background: rgba(0,0,0,.9);
+}
+.footer .top {
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+.footer h4 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 32px;
+    padding-left: 20px;
+    border-left: 3px solid #51b8e3;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.26px;
+    color: #fff;
+    text-align: left;
+}
+.footer .bottom {
+	font-size: 13px;
+	letter-spacing: .52px;
+	color: #fff;
+	line-height: 58px;
+	background: rgba(0,0,0,.6);
+	text-align: center;
+}
+.footer hr {
+	border-top: 1px solid #353434;
+	margin: 68px 0;
+}
+.footer-logo {
+	margin-bottom: 22px;
+}
+.footer-landing .footer-logo {
+	margin-bottom: 38px;
+}
+.footer li {
+	color: #fff;
+	letter-spacing: .98px;
+	line-height: 28px;
+	margin-bottom: 4px;
+	font-weight: 400;
+    text-align: left;
+}
+.footer li a {
+	color: #fff;
+	letter-spacing: .98px;
+	line-height: 28px;
+	margin-bottom: 4px;
+	font-weight: 400;
+    text-align: left;
+}
+.footer-social-icons a {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	line-height: 26px;
+	text-align: center;
+	color: #636363;
+	border: 1px solid #636363;
+	margin-right: 10px;
+}
+.footer-landing .footer-social-icons {
+	margin-top: 35px;
+}
+.footer-landing .footer-social-icons a {
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	border: none;
+	border-radius: 100%;
+	background: #414141;
+	color: #fff;
+	margin: 0 4px;
+}
+.footer input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
+	line-height: 44px;
+	height: 46px;
+	padding: 0 18px;
+	background: none;
+	border: 1px solid #636363;
+	font-size: 10px;
+	color: #636363;
+	letter-spacing: 2px;
+}
+.footer .form-group {
+	margin-bottom: 35px;
+}
+.footer-contact {
+	color: #fff;
+	font-size: 12px;
+	line-height: 22px;
+	letter-spacing: .84px;
+	margin-bottom: 12px;
+	font-weight: 400;
+    text-align: left;
+}
+.footer-contact i {
+	float: left;
+	font-size: 24px;
+}
+.footer-contact .content {
+	margin-left: 38px;
+}
+.footer-hours {
+	color: #fff;
+	font-size: 14px;
+	line-height: 28px;
+	letter-spacing: .98px;
+	margin-bottom: 12px;
+	font-weight: 400;
+    text-align: left;
+}
+.footer-map {
+	display: block;
+	width: 100%;
+	height: 180px;
+}
+@media all and (max-width: 768px) {
+	
+}
+}
