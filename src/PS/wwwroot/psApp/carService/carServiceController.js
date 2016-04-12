@@ -146,7 +146,7 @@
 
     }
     $scope.setUserJob = function() {
-        var jobName = []
+        var jobName = [];
         $.each($scope.selectedJob, function(index,value) {
             jobName.push(value.name);
         });

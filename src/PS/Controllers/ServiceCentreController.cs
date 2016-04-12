@@ -46,27 +46,44 @@ namespace PS.Controllers
 
             return areaList.Select(x => x.Area).Distinct();
         }
-
-        [HttpPost("{city}/{area}")]
-        public IEnumerable<Centre> Get(string city, string area, [FromUri] string[] serviceList)
+        [HttpPost]
+        [Route("centerlist")]
+        public IEnumerable<Centre> Get(SelectedService selectedService)
         {
-            var collection = repo.GetCollection<ServiceCentre>(city);
-
+            var collection = repo.GetCollection<ServiceCentre>(selectedService.City);
             var documentList = collection?.Find(new BsonDocument()).ToListAsync().Result;
+            // get document by area
+            var list =  documentList?.Where(x=>x.Area.ToLower() == selectedService.Area.ToLower());
+            if (list == null) return null;
 
-            var list =  documentList?.Where(x=>x.Area.ToLower() == area.ToLower());
+            // select fist because one area will have one document
+            var centreList = list.First().Centres;
 
-            var centreList = new List<Centre>();
-            if (list == null) return centreList;
-            foreach (var a in list)
+            // if no service selected then display all service centre list
+            if (selectedService.Name.Count == 0)
+                return centreList;
+
+            // select only those which are providing all selected services;
+
+            var selectedCentres = new List<Centre>();
+
+            foreach (var a in centreList)
             {
-                foreach (var service in serviceList)
+                var count = 0;
+                foreach (var service in selectedService.Name)
                 {
-                    centreList.AddRange(a.Centres.Where(x => x.ServiceList.Contains(service)));
+                    if (!a.ServiceList.Contains(service))
+                        break;
+                        count++;
+                    if (selectedService.Name.Count == count)
+                    {
+                        selectedCentres.Add(a);
+                    }
                 }
+
             }
 
-            return centreList;
+            return selectedCentres;
 
         }
         // POST api/values

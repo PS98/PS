@@ -28,14 +28,18 @@ angular.module("psApp").directive("selectCentre", function () {
                 if (area.toLowerCase() !== "select area") {
                     psDataServices.getServiceCentreList($scope.city, area).
                         success(function (data) {
-                            $scope.centreList = [];
-                            $scope.centreList = data;
-                            $scope.selectedCentre = $scope.centreList[0];
-                            $scope.selectedCentre.activeCentre = true;
-                            $scope.recommendedCentre = $scope.centreList[0];
-                            //$scope.centreList = $scope.centreList.slice(1);
-                            $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
-                            setMarkers($scope.map, $scope.centreList, $scope.markerClick);
+                            if (data.length > 0) {
+                                $scope.centreList = [];
+                                $scope.centreList = data;
+                                $scope.selectedCentre = $scope.centreList[0];
+                                $scope.selectedCentre.activeCentre = true;
+                                $scope.recommendedCentre = $scope.centreList[0];
+                                //$scope.centreList = $scope.centreList.slice(1);
+                                $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
+                                setMarkers($scope.map, $scope.centreList, $scope.markerClick);
+                            } else {
+                                $scope.noCentreMatch = true;
+                            }
                         }).error(function() {
                         });
                 } else {
