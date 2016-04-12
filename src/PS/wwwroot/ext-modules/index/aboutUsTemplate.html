@@ -2,48 +2,167 @@
     <div class="block-title">
         <div class="block-title__inner section-bg section-bg_second">
             <div class="bg-inner">
-                <h1 class="ui-title-page">What We Are</h1>
+                <h1 class="ui-title-page">WHY CHOOSE US?</h1>
                 <div class="decor-1 center-block"></div>
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
-                    <li class="active">What We Are</li>
+                    <li class="active">WHY CHOOSE US?</li>
                 </ol>
             </div><!-- end bg-inner -->
         </div><!-- end block-title__inner -->
     </div><!-- end block-title -->
 </div>
-<div class="section_default section_mod-e section-bg-2 wow bounceInRight" data-wow-duration="2s">
-    <section class="section_mod-d">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 class="ui-title-block">About Us</h2>
-                    <div class="ui-subtitle-block_mod-b">MIELMATES as the name suggests, "are your mates at every mile". We are available for help at your doorsteps. We believe in servicing you the the best way possible by means of your vehicle. We take great pride is specifying that we are first of the kind in PUNE and we are a pune based company itself. In today’s busy and quick moving world, everyone wants to save his/her time and energy so that they could invest the same in other productive work. So it is quite common that our vehicles don’t get the attention they need (repair/service/maintenance etc).</div>
-                </div>
-                <!-- end col -->
-            </div>
-            <!-- end row -->
-            <div class="row">
-                <div class="col-md-5" ng-repeat="aboutUs in aboutUsList">
-                    <h3 class="ui-title-inner"><i class="decor-3 fa fa-caret-right"></i>{{aboutUs.heading}}</h3>
-                    <div class="decor-1 decor-1_mod-c"></div>
-                    <div ng-repeat="desc in aboutUs.desc">
-                        <p>{{desc.text}}</p>
-                    </div>
-                    <a class="link" href="javascript:void(0);">we have largest vehicles stock</a>
-                    <div class="decor-1"></div>
-                    <a class="link" href="javascript:void(0);">we got worldwide locations</a>
-                    <div class="decor-1"></div>
-                    <a class="link" href="javascript:void(0);">we deal in all kinds of brands & vehicles</a>
-                </div>
-                <!-- end col -->
-            </div>
-            <!-- end row -->
+<section>
+    <div class="container">
+        <div class="section-heading no-padding-top">
+            <h2>WHY CHOOSE US?</h2>
+            <p>MileMates as the name suggests, "are your mates at every mile". We are available for help at your doorsteps. We believe in servicing you the the best way possible by means of your vehicle. We take great pride is specifying that we are first of the kind in PUNE and we are a pune based company itself. In today’s busy and quick moving world, everyone wants to save his/her time and energy so that they could invest the same in other productive work. So it is quite common that our vehicles don’t get the attention they need (repair/service/maintenance etc).</p>
         </div>
-        <!-- end container -->
-    </section>
-    <!-- end section_mod-d -->
-</div>
-
-<our-team></our-team>
+        <div class="section-detail no-padding-bottom">
+            <div class="tab-section">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4">
+                        <div class="tab">
+                            <ul class="nav nav-stacked">
+                                <li class="active"><a data-toggle="tab" href="#about" aria-expanded="true"> <span class="curve"><i class="fa fa-users"></i></span> <span class="curve-text">About MileMates</span></a></li>
+                                <li><a data-toggle="tab" href="#service"><span class="curve"><i class="fa fa-cogs"></i></span><span class="curve-text">Service Offers</span></a></li>
+                                <li><a data-toggle="tab" href="#offers"><span class="curve"><i class="fa fa-rocket"></i></span><span class="curve-text">Offer</span></a></li>
+                                <li><a data-toggle="tab" href="#delivery"><span class="curve"><i class="fa fa-thumbs-o-up"></i></span><span class="curve-text">Delivery</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-8">
+                        <div class="tab-content">
+                            <div id="about" class="tab-pane fade in active">
+                                <h4>About MileMates</h4>
+                                <p>
+                                    We personally faced these problems related to servicing of vehicles and felt this is ‘the need’ of the hour.
+                                    Issues like, hectic work hours, difficulty in locating nearby service centres,
+                                    sudden breakdown in traffic are faced by many people and we are here to provide you with solutions for your basic vehicle problem.
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="services-name">
+                                            <li>
+                                                <i class="icon-keyboard5"></i><span>
+                                                    Complete Computer<br>
+                                                    Diagnostics
+                                                </span>
+                                            </li>
+                                            <li><i class="icon-gaspump"></i><span>Fuel System Services</span></li>
+                                            <li><i class="icon-road2"></i><span>Brake Repair Specialists</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="services-name">
+                                            <li><i class="icon-wrench3"></i><span>Complete Safety Analysis</span></li>
+                                            <li><i class="icon-steering-wheel"></i><span>Steering and Suspensions</span></li>
+                                            <li><i class="icon-flow-tree"></i><span>Mufflers and Exhaust Systems</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-secondary">Learn More</a>
+                            </div>
+                            <div id="service" class="tab-pane fade">
+                                <h4>Services Offers</h4>
+                                <p>
+                                    We, at milemates.in are determined to make your vehicle maintenance easy through an online platform.
+                                    We bring all service centres (authorized) under a roof,
+                                    enabling customers to pick from the best service centres available in the market.
+                                    The idea is to reduce the waiting time in the service centres and provide a hassle free service booking,
+                                    management and maintenance of vehicles for people.
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="services-name">
+                                            <li>
+                                                <i class="icon-keyboard5"></i><span>
+                                                    Complete Computer<br>
+                                                    Diagnostics
+                                                </span>
+                                            </li>
+                                            <li><i class="icon-gaspump"></i><span>Fuel System Services</span></li>
+                                            <li><i class="icon-road2"></i><span>Brake Repair Specialists</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="services-name">
+                                            <li><i class="icon-wrench3"></i><span>Complete Safety Analysis</span></li>
+                                            <li><i class="icon-steering-wheel"></i><span>Steering and Suspensions</span></li>
+                                            <li><i class="icon-flow-tree"></i><span>Mufflers and Exhaust Systems</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-pri">Learn More</a>
+                            </div>
+                            <div id="offers" class="tab-pane fade">
+                                <h4>Offers</h4>
+                                <p>
+                                    Erspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+                                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beataesal
+                                    vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia.
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="services-name">
+                                            <li>
+                                                <i class="fa icon-keyboard"></i><span>
+                                                    Complete Computer<br>
+                                                    Diagnostics
+                                                </span>
+                                            </li>
+                                            <li><i class="icon-gaspump"></i><span>Fuel System Services</span></li>
+                                            <li><i class="icon-road2"></i><span>Brake Repair Specialists</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="services-name">
+                                            <li><i class="icon-wrench3"></i><span>Complete Safety Analysis</span></li>
+                                            <li><i class="icon-steering-wheel"></i><span>Steering and Suspensions</span></li>
+                                            <li><i class="icon-flow-tree"></i><span>Mufflers and Exhaust Systems</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-pri">Learn More</a>
+                            </div>
+                            <div id="delivery" class="tab-pane fade">
+                                <h4>Delivery</h4>
+                                <p>
+                                    Erspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+                                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beataesal
+                                    vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia.
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="services-name">
+                                            <li>
+                                                <i class="icon-keyboard5"></i><span>
+                                                    Complete Computer<br>
+                                                    Diagnostics
+                                                </span>
+                                            </li>
+                                            <li><i class="icon-gaspump"></i><span>Fuel System Services</span></li>
+                                            <li><i class="icon-road2"></i><span>Brake Repair Specialists</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="services-name">
+                                            <li><i class="icon-wrench3"></i><span>Complete Safety Analysis</span></li>
+                                            <li><i class="icon-steering-wheel"></i><span>Steering and Suspensions</span></li>
+                                            <li><i class="icon-flow-tree"></i><span>Mufflers and Exhaust Systems</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-pri">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-1">
+                        <div class="offer-img"> <img src="../../assets/img/service-man.png" class="img-responsive" alt="image"> </div>
+                    </div>
+                </div>
+            </div><!-- /tab-section -->
+        </div>
+    </div>
+</section>
 <!-- end section_default -->
