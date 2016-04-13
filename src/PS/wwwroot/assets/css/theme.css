@@ -909,33 +909,18 @@ img.pull-left {
 .list-progress__item {
 	position: relative;
 	display: inline-block;
-	margin-right: 7px;
-	margin-left: 7px;
+	margin-right: 22px;
+	margin-left: 22px;
 	padding: 20px 0 0;
 	vertical-align: top;
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	background-size: contain;
 }
-.list-progress__item:nth-child(1) {
-	width: 350px;
-	height: 122px;
-	background-image: url('../media/figure/figure-1.svg');
-}
-.list-progress__item:nth-child(2) {
-	width: 360px;
-	height: 118px;
-	background-image: url('../media/figure/figure-2.svg');
-	background-position: 0 100%;
-}
-.list-progress__item:nth-child(3) {
-	width: 350px;
-	height: 120px;
-	background-image: url('../media/figure/figure-3.svg');
-}
+
 .list-progress__inner {
 	display: inline-block;
-	text-align: left;
+	text-align: center;
 }
 .list-progress .chart {
 	font-size: 34px;
@@ -947,16 +932,6 @@ img.pull-left {
 	margin-right: 22px;
 	line-height: 1;
 }
-.list-progress__item:nth-child(1) .icon {
-	font-size: 78px;
-}
-.list-progress__item:nth-child(2) .icon {
-	font-size: 53px;
-}
-.list-progress__item:nth-child(3) .icon {
-	font-size: 58px;
-}
-
 .list-progress__name {
 	display: block;
 	font-family: Raleway;
