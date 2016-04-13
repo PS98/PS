@@ -22,22 +22,41 @@
     }
     $scope.selectYear = function (year) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = true; $scope.showVarient = false;
-        $scope.selectedCar.year = year;
+        if (year !== "")
+            $scope.selectedCar.year = year;
+        else {
+            $scope.selectedCar.year = "I Don't Know";
+        }
     }
     $scope.selectModel = function (model) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false;
-        $scope.selectedCar.model = model; $scope.selectedCar.varient = '';
-        psDataServices.getCarVarient($scope.selectedCar.brand, model).
-          success(function (data) {
-              $scope.carList.carVarientList = data;
-              $scope.showVarient = true;
-          }).error(function () {
-              $scope.selectVarient("");
-          });
+        if (model !== "") {
+            $scope.selectedCar.model = model;
+            $scope.selectedCar.varient = '';
+            psDataServices.getCarVarient($scope.selectedCar.brand, model).
+                    success(function (data) {
+                        $scope.carList.carVarientList = data;
+                        $scope.showVarient = true;
+                    }).error(function () {
+                        $scope.selectVarient("");
+                    });
+
+        } else {
+            $scope.selectedCar.model = "I Don't Know";
+            $scope.selectedCar.varient = "I Don't Know";
+
+        }
+      
     }
     $scope.selectVarient = function (varient) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
-        $scope.selectedCar.varient = varient; $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
+        if (varient !== "")
+            $scope.selectedCar.varient = varient;
+        else {
+            $scope.selectedCar.varient = "I Don't Know";
+
+        }
+        $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
         $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
     }
     $scope.editBrand = function () {
