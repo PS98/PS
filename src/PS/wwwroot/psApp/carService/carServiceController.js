@@ -1,7 +1,7 @@
-﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "psDataServices", function ($scope, $state, psDataServices) {
+﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state","$timeout", "psDataServices", function ($scope, $state,$timeout, psDataServices) {
 
     $scope.center = {};
-    $scope.state = $state;
+    $scope.searchedText = {};    $scope.state = $state;
     var custRequest = {name: " Describe your problem here", type: [], addText: true }
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
@@ -155,6 +155,14 @@
                 $scope.services = data;
                 $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                 $scope.commonServices = $scope.services.serviceDetails[0];
+                $scope.car.services = [];
+                $timeout(function() {
+                    $.each($scope.services.serviceDetails, function(i, val) {
+                        $.each(val, function(i, value) {
+                            $scope.car.services.push(value);
+                        });
+                    });
+                },200);
             }).error(function() {
             });
     }
@@ -177,6 +185,15 @@
     $state.go("service.car");
     $scope.state = $state;
 
+    $scope.search = function() {
+        if ($scope.searchedText.name && $scope.searchedText.name.length > 0) {
+            $scope.commonServices = $scope.car.services;
+
+        } else {
+           $scope.commonServices = $scope.services.serviceDetails[0];  
+        }
+
+    }
 }]);
 
 
