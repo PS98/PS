@@ -16,16 +16,16 @@
 
         <div id="form-container">
 
-            <div class="page-header text-center">
+            <!--<div class="page-header text-center">
                 <h2>Complete Your Service Steps</h2>
 
                 <div id="status-buttons" class="text-center">
-                    <a ui-sref-active="active" ui-sref=".car"><span>1</span> Select Car</a>
-                    <a ui-sref-active="active" ui-sref=".centre"><span>2</span> Select Centre</a>
-                    <a ui-sref-active="active" ui-sref=".appointment"><span>3</span> book Appointment</a>
-                    <a ui-sref-active="active" ui-sref=".address"><span>4</span>select Address</a>
+                    <a ng-class="{active: state.current.name == 'service.car'}"><span>1</span> Select Car</a>
+                    <a ng-class="{active: state.current.name === service.centre}"><span>2</span> Select Centre</a>
+                    <a ng-class="{active: state.current.name === service.appointment}"><span>3</span> book Appointment</a>
+                    <a ng-class="{active: state.current.name === service.address}"><span>4</span>select Address</a>
                 </div>
-            </div>
+            </div>-->
 
             <!-- use ng-submit to catch the form submission and use our Angular function -->
             <form id="service-form" ng-submit="processForm()">

@@ -2,7 +2,7 @@
     <div class="col-sm-12">
         <div class="select-service-box">
          <ul class="panel-group" id="accordion" >
-             <li ng-repeat="job in commonServices" class="panel row">
+             <li ng-repeat="job in commonServices | filter : searchedText:strict" class="panel row">
                  <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
                  <i class="fa fa-check-circle" ng-class="job.selected ? 'selected' : ''" ng-click="addSelectedJob(job)"></i>
                  <!--<div class="col-xs-10">-->
@@ -18,9 +18,9 @@
                          {{job.description}}
                      </div>
                  </div>
-                 <div class="col-xs-10 top-padding10" ng-if="(job.description || []).length == 0">
+                 <a class="col-xs-10 top-padding10" ng-if="(job.description || []).length == 0">
                      {{job.name}}
-                 </div>
+                 </a>
                  <!--</div>-->
 
              </li>
