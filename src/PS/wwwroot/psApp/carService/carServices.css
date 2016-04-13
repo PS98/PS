@@ -561,6 +561,18 @@
 .btn-next .btn:hover {
     color: #fff;
 }
+.steps::before {
+    content: "-------------------"
+}
+.steps::after {
+    content: "-------------------"
+}
+.steps.first-step::before {
+    content: ""
+}
+.steps.last-step::after {
+    content: ""
+}
 @media only screen and (max-device-width: 480px)  {
     .car-selection-flex-column img{
         display:none;

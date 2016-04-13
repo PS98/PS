@@ -1,8 +1,8 @@
 ﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "psDataServices", function ($scope, $state, psDataServices) {
 
     $scope.center = {};
+    $scope.state = $state;
     var custRequest = {name: " Describe your problem here", type: [], addText: true }
-
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
@@ -151,8 +151,13 @@
             jobName.push(value.name);
         });
         psDataServices.setSelectedCarAndService($scope.selectedCar, jobName);
+        $state.go("service.centre");
     }
-  
+    console.log($state.current.name);
+
+    $state.go("service.car");
+    $scope.state = $state;
+
 }]);
 
 
