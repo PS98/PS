@@ -78,28 +78,28 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                 {
                     state: "service.car",
                     config: {
-                        url: "/Car",
+                        url: "/",
                         template: "<select-car></select-car>"
                     }
                 },
                  {
                      state: "service.centre",
                      config: {
-                         url: "/Centre",
+                         url: "/",
                          template: "<select-centre></select-centre>"
                      }
                  },
                  {
                      state: "service.appointment",
                      config: {
-                         url: "/book",
+                         url: "/",
                          template: "<book-appointment></book-appointment>"
                      }
                  },
                   {
                       state: "service.address",
                       config: {
-                          url: "/address",
+                          url: "/",
                           template: "<select-address></select-address>"
                       }
                   },

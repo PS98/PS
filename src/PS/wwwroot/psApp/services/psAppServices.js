@@ -29,7 +29,13 @@
     }
     var _getServiceCentreList = function (city, area) {
         var serviceList = selectedService;
-        return $http.post("/api/ServiceCentre/" + city + "/" + area, { params: serviceList });
+        var data = { 'City': city, 'Area': area, 'Name': serviceList }
+        return $http(
+        {
+            url: "/api/ServiceCentre/centerlist",
+            method: "POST",
+            params: data
+    });
     }
     var _getAllService = function (city, area) {
         return $http.get("/api/services/all");

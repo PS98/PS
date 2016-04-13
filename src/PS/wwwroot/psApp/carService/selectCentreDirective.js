@@ -9,6 +9,8 @@ angular.module("psApp").directive("selectCentre", function () {
            
         },
         controller: ["$scope", "psDataServices", "$state", function ($scope, psDataServices, $state) {
+            $scope.state = $state;
+            $scope.$parent.state = $state;
             $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
             $scope.selectedCentre = "";
             $scope.selectServiceCentre = function (centre) {
@@ -28,14 +30,18 @@ angular.module("psApp").directive("selectCentre", function () {
                 if (area.toLowerCase() !== "select area") {
                     psDataServices.getServiceCentreList($scope.city, area).
                         success(function (data) {
-                            $scope.centreList = [];
-                            $scope.centreList = data;
-                            $scope.selectedCentre = $scope.centreList[0];
-                            $scope.selectedCentre.activeCentre = true;
-                            $scope.recommendedCentre = $scope.centreList[0];
-                            //$scope.centreList = $scope.centreList.slice(1);
-                            $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
-                            setMarkers($scope.map, $scope.centreList, $scope.markerClick);
+                            if (data.length > 0) {
+                                $scope.centreList = [];
+                                $scope.centreList = data;
+                                $scope.selectedCentre = $scope.centreList[0];
+                                $scope.selectedCentre.activeCentre = true;
+                                $scope.recommendedCentre = $scope.centreList[0];
+                                //$scope.centreList = $scope.centreList.slice(1);
+                                $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
+                                setMarkers($scope.map, $scope.centreList, $scope.markerClick);
+                            } else {
+                                $scope.noCentreMatch = true;
+                            }
                         }).error(function() {
                         });
                 } else {

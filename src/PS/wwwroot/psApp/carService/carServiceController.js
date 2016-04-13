@@ -1,8 +1,8 @@
-﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "psDataServices", function ($scope, $state, psDataServices) {
+﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state","$timeout", "psDataServices", function ($scope, $state,$timeout, psDataServices) {
 
     $scope.center = {};
+    $scope.searchedText = {};    $scope.state = $state;
     var custRequest = {name: " Describe your problem here", type: [], addText: true }
-
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
@@ -22,22 +22,41 @@
     }
     $scope.selectYear = function (year) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = true; $scope.showVarient = false;
-        $scope.selectedCar.year = year;
+        if (year !== "")
+            $scope.selectedCar.year = year;
+        else {
+            $scope.selectedCar.year = "I Don't Know";
+        }
     }
     $scope.selectModel = function (model) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false;
-        $scope.selectedCar.model = model; $scope.selectedCar.varient = '';
-        psDataServices.getCarVarient($scope.selectedCar.brand, model).
-          success(function (data) {
-              $scope.carList.carVarientList = data;
-              $scope.showVarient = true;
-          }).error(function () {
-              $scope.selectVarient("");
-          });
+        if (model !== "") {
+            $scope.selectedCar.model = model;
+            $scope.selectedCar.varient = '';
+            psDataServices.getCarVarient($scope.selectedCar.brand, model).
+                    success(function (data) {
+                        $scope.carList.carVarientList = data;
+                        $scope.showVarient = true;
+                    }).error(function () {
+                        $scope.selectVarient("");
+                    });
+
+        } else {
+            $scope.selectedCar.model = "I Don't Know";
+            $scope.selectedCar.varient = "I Don't Know";
+
+        }
+      
     }
     $scope.selectVarient = function (varient) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
-        $scope.selectedCar.varient = varient; $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
+        if (varient !== "")
+            $scope.selectedCar.varient = varient;
+        else {
+            $scope.selectedCar.varient = "I Don't Know";
+
+        }
+        $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
         $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
     }
     $scope.editBrand = function () {
@@ -136,6 +155,14 @@
                 $scope.services = data;
                 $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                 $scope.commonServices = $scope.services.serviceDetails[0];
+                $scope.car.services = [];
+                $timeout(function() {
+                    $.each($scope.services.serviceDetails, function(i, val) {
+                        $.each(val, function(i, value) {
+                            $scope.car.services.push(value);
+                        });
+                    });
+                },200);
             }).error(function() {
             });
     }
@@ -146,13 +173,27 @@
 
     }
     $scope.setUserJob = function() {
-        var jobName = []
+        var jobName = [];
         $.each($scope.selectedJob, function(index,value) {
             jobName.push(value.name);
         });
         psDataServices.setSelectedCarAndService($scope.selectedCar, jobName);
+        $state.go("service.centre");
     }
-  
+    console.log($state.current.name);
+
+    $state.go("service.car");
+    $scope.state = $state;
+
+    $scope.search = function() {
+        if ($scope.searchedText.name && $scope.searchedText.name.length > 0) {
+            $scope.commonServices = $scope.car.services;
+
+        } else {
+           $scope.commonServices = $scope.services.serviceDetails[0];  
+        }
+
+    }
 }]);
 
 

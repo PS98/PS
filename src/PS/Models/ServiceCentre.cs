@@ -33,4 +33,13 @@ namespace PS.Models
         public string Line2 { get; set; }
     }
 
+    public class SelectedService
+
+    {
+        public string City { get; set; }
+        public string Area { get; set; }
+        public List<string> Name { get; set; }
+
+    }
+
 }

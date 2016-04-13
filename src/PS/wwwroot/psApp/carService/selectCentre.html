@@ -37,6 +37,8 @@
 
                 <centre-details ng-if="selectedCentre" centre="selectedCentre" add="selectServiceCentre(dirCentre)" class="active"></centre-details>
 
+                <div class="row" ng-if="noCentreMatch">"There is no service centre"</div>
+
                 <h4 class="header-text">Working Hours</h4>
                 <table class="table table-bordered table-condensed table-striped table-hover">
                     <thead>
