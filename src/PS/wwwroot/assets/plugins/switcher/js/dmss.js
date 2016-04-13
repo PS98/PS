@@ -73,7 +73,7 @@ function eraseCookie(name){
 // DEMO Swticher Base
 jQuery('body').delegate('.demo_changer .demo-icon', 'click', function (event) {
 	if(jQuery('.demo_changer').hasClass("active")){
-		jQuery('.demo_changer').animate({"left":"-70px"},function(){
+		jQuery('.demo_changer').animate({"left":"-250px"},function(){
 			jQuery('.demo_changer').toggleClass("active");
 		});						
 	}else{
@@ -91,7 +91,7 @@ $(window).on('load', function () {
 	});
 	$(document).click(function(){
 	    if(jQuery('.demo_changer').hasClass("active")){
-	        jQuery('.demo_changer').animate({"left":"-70px"},function(){
+	        jQuery('.demo_changer').animate({"left":"-250px"},function(){
 	            jQuery('.demo_changer').toggleClass("active");
 	        });
 	    }});

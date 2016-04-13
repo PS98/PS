@@ -22,9 +22,9 @@ angular.module("psApp").controller('psController', function ($rootScope) {
                      var $preloader = $('#page-preloader'),
                         $spinner = $preloader.find('.spinner-loader');
                      $preloader.show();
-                     $spinner.fadeOut();
-                     $preloader.delay(50).fadeOut('slow');
-
+                    $spinner.fadeOut();
+                    $preloader.delay(50).fadeOut('slow');
+                    $preloader.hide();
                  });
 });
 

@@ -26,9 +26,10 @@ function makeSyickyHeader() {
 
         var $preloader = $('#page-preloader'),
         $spinner = $preloader.find('.spinner-loader');
+        $preloader.show();        
         $spinner.fadeOut();
         $preloader.delay(50).fadeOut('slow');
-
+        
 
         /////////////////////////////////////
         //  Sticky Header
