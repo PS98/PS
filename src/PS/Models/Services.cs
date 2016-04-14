@@ -32,6 +32,7 @@ namespace PS.Models
         }
         public string Question { get; set; }
         public List<string> Options { get; set; }
+        public bool IsMultiple { get; set; }
     }
 
     public class ServiceList

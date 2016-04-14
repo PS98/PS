@@ -4,9 +4,21 @@
   "Description": "Our Essential Car Care package combines a full oil change and oil filter replacement with a number of vehicle safety checks.",
   "Questions": [
     {
-      "Question": "which oil you want us to use?",
-      "Options": ["regular","synthetic"]
-    } ],
+            "Question" : "Which oil you want us to use?",
+      "Options": [
+        "Regular",
+        "Synthetic"
+      ],
+            "IsMultiple" : true
+        }, 
+        {
+            "Question" : "Breakpad replacement?",
+            "Options" : [ 
+                "Yes", 
+                "No"
+            ],
+            "IsMultiple" : false
+        } ],
     "Type" : [
         {
             "Name" : "Replace engine oil and filter", 
