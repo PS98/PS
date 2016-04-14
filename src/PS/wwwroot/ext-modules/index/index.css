@@ -34,9 +34,80 @@
 .no-padding-bottom {
     padding-bottom: 0;
 }
-.section-detail {
-    padding-bottom: 50px;
+ 
+ /*Brands new CSS*/
+@media (min-width: 1200px) {
+    .section-detail {
+        padding-bottom: 80px;
+    }
 }
+.brands-section {
+    padding-left: 55px;
+    padding-right: 55px;
+    position: relative;
+}
+
+.brands-section .brands-controls .caro-prev {
+    left: 0;
+}
+.brands-section .brands-controls .caro-prev, .brands-section .brands-controls .caro-next {
+    margin-top: -18px;
+    position: absolute;
+    top: 50%;
+}
+.caro-prev:hover, .caro-next:hover {
+    border-color: #3f51b5;
+    color: #3f51b5;
+}
+.caro-prev, .caro-next {
+    width: 36px;
+    height: 36px;
+    line-height: 32px;
+    text-align: center;
+    color: #777777;
+    border: 2px solid #e8e8e8;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+}
+.brands-section .brands-controls .caro-next {
+    right: 0;
+}
+.brands-section .brands-controls .caro-prev, .brands-section .brands-controls .caro-next {
+    margin-top: -18px;
+    position: absolute;
+    top: 50%;
+}
+.caro-prev, .caro-next {
+    width: 36px;
+    height: 36px;
+    line-height: 32px;
+    text-align: center;
+    color: #777777;
+    border: 2px solid #e74c46;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+}
+.caro-prev:before {
+    content: "\f104";
+    font-family: fontawesome;
+    font-size: 18px;
+}
+.caro-next:before {
+    content: "\f105";
+    font-family: fontawesome;
+    font-size: 18px;
+}
+
 .tab-section > .row {
     margin-left: 0;
     margin-right: 0;
@@ -192,3 +263,200 @@ ul.services-name {
     margin: 0;
     list-style: none;
 }
+
+/*highlight region css*/
+.ct-sectionHeader {
+    text-align: center;
+}
+.ct-u-paddingBottom70 {
+    padding-bottom: 70px !important;
+}
+.ct-u-paddingTop60 {
+    padding-top: 60px !important;
+}
+.ct-sectionHeader-title, .ct-sectionHeader-title * {
+    font-weight: lighter;
+}
+
+h2, .h2 {
+    font-size: 42.86px;
+}
+h1, h2, h3, h4, h5, h6, small, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Lato", sans-serif;
+}
+h1, h2, .h1, .h2 {
+    line-height: 0.75em;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+}
+
+
+.ct-sectionHeader-separator {
+    margin-top: 6px;
+    margin-bottom: 3px;
+}
+
+.ct-sectionHeader p {
+    font-weight: bold;
+    color: #aaa;
+}
+p {
+    color: #777;
+    line-height: 1.86em;
+}
+p {
+    font-size: 14px;
+}
+p {
+    margin: 0 0 50px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.ct-u-marginTop30 {
+    margin-top: 30px !important;
+}
+.ct-iconBox {
+    position: relative;
+    margin-top: 0;
+}
+.ct-iconBox.ct-iconBox--type3 .media-right {
+    padding-left: 18px;
+}
+h3, .h3 {
+    font-size: 22px ;
+}
+h1, h2, h3, h4, h5, h6, small, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Lato", sans-serif;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+}
+.ct-u-paddingBottom90 {
+    padding-bottom: 90px !important;
+}
+
+
+.ct-sectionHeader-title, .ct-sectionHeader-title * {
+    font-weight: lighter;
+}
+h2 small, .h2 small {
+    font-size: 2.857rem;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}
+.ct-sectionHeader-title span, .ct-sectionHeader-title * span {
+    font-weight: 900;
+}
+.ct-sectionHeader-title, .ct-sectionHeader-title * {
+    font-weight: lighter;
+}
+* {
+    outline: none !important;
+}
+
+.ct-sectionHeader-separator .minus:first-child {
+    margin-right: -1px;
+}
+.ct-sectionHeader-separator .minus {
+    width: 20px;
+    height: 2px;
+    margin-bottom: 4px;
+    background: #222;
+    display: inline-block;
+}
+
+.ct-sectionHeader-separator .slash {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -3px;
+    color: #222;
+}
+
+.ct-sectionHeader-separator .slash {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -3px;
+    color: #222;
+}
+.ct-sectionHeader-separator .minus:last-child {
+    margin-left: 1px;
+}
+.ct-sectionHeader-separator .minus {
+    width: 20px;
+    height: 2px;
+    margin-bottom: 4px;
+    background: #222;
+    display: inline-block;
+}
+
+.ct-iconBox .ct-iconBox-header.ct-u-hr {
+    padding-bottom: 1.286em;
+    margin-bottom: 1.143em;
+}
+.ct-u-hr.ct-u-hr--left, .ct-u-hr.ct-u-hr--right, .ct-u-hr.ct-u-hr--center, .ct-u-hr.ct-u-hr--wide {
+    padding-bottom: 1.429rem;
+    margin-bottom: 1.429rem;
+    position: relative;
+}
+.ct-iconBox .ct-iconBox-header {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+h6, .h6 {
+    font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6, small, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Lato", sans-serif;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+}
+    .ct-iconBox .ct-iconBox-icon.ct-iconBox-icon--inverse i {
+    background: #e74c46;
+    border-color: #e74c46;
+    color: #fff;
+}
+.ct-iconBox.ct-iconBox--type3 .ct-iconBox-icon i {
+    width: 2em;
+    height: 2em;
+    border: 3px solid #e74c46;
+    border-radius: 50%;
+    line-height: 1.95em;
+    text-align: center;
+}
+.ct-iconBox .ct-iconBox-icon i {
+    color: #e74c46;
+}
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+h3 small, .h3 small {
+    font-size: 1.786rem;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}
+

@@ -25,9 +25,13 @@ blockquote:before,
 .comments-list .comment-datetime {color: #ff8300;}
 
 
+.close-outline-color{
+    border: 2px solid #ff8300 ;
+}
+
 .bg-color_primary,
 .main-slider__link,
-.close-styler,
+.close-styler:hover,
 .decor-2:before,
 .decor-2:after,
 .section-bg_primary,

@@ -24,10 +24,13 @@ a,
 blockquote:before,
 .comments-list .comment-datetime {color: #38abf4;}
 
+.close-outline-color{
+    border: 2px solid #38abf4 ;
+}
 
 .bg-color_primary,
 .main-slider__link,
-.close-styler,
+.close-styler:hover,
 .decor-2:before,
 .decor-2:after,
 .section-bg_primary,

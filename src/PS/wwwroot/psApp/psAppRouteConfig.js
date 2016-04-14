@@ -107,10 +107,10 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    state: "socialCallback",
                    config: {
                        url: "/Auth/Success",
-                       template: "<div id='page-preloader'><img class='spinner' src='~/assets/img/cool-loading-animated.gif' alt='MileMates'></div>",
-                       controller: "loginDetailsController"
-                   }
-               }
+                       template: "<div id='page-preloader'><img class='spinner' src='../assets/img/cool-loading-animated.gif' alt='MileMates'></div>",                      
+                        controller: "loginDetailsController"
+                 }
+            }
         ];
 
         routes.forEach(function (route) {

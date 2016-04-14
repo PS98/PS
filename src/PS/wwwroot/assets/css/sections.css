@@ -108,7 +108,7 @@
 }
 
 .section_mod-i {
-	padding-top: 100px;
+	padding-top: 50px;
 	padding-bottom: 45px;
 }
 
@@ -156,3 +156,17 @@
 .section_letter:after {
 	background-image: url('../media/bg/12.jpg');
 }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: scrollbar;
+}
+h2 small, .h2 small {
+    font-size: 40px;
+}
+p {
+    font-size: 1.000rem;
+}
+h6, .h6 {
+    font-size: 14px;
+}   

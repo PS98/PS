@@ -210,13 +210,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
         $scope.regForm.rcnfpassword.$dirty = false;
     }
 
-    $scope.socialSubmit = function (name) {
-        debugger;
-    var $preloader = $('#page-preloader'),
-       $spinner = $preloader.find('.spinner-loader');
-        $preloader.show();
-        $spinner.fadeOut();
-        $preloader.delay(50).fadeOut('slow');
+    $scope.socialSubmit = function (name) {         
         var fbHeight = /facebook/ig.test(name) ? 340 : 520;
         fbHeight = /paypal/ig.test(name) ? 550 : fbHeight;
         var w = /paypal/ig.test(name) ? 400 : 680;
@@ -239,6 +233,15 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
         var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
         var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
         window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizeable=no,location=no,status=no');
+
+        //window.onload = function () {
+        //    var $preloader = $('#page-preloader'),
+        //    $spinner = $preloader.find('.spinner-loader');
+        //    $preloader.show();
+        //    $spinner.fadeOut();
+        //    $preloader.delay(100).fadeOut('slow');
+
+        //}
     }
 
     var loc = $location.search();
