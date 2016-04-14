@@ -37,7 +37,7 @@
  
  /*Brands new CSS*/
 @media (min-width: 1200px) {
-.section-detail {
+    .section-detail {
         padding-bottom: 80px;
     }
 }
@@ -294,6 +294,7 @@ ul.services-name {
     display: inline-block;
     padding: 0 0 10px;
     border-bottom: 2px solid #fb4848;
+    color: white;
 }
 .sec-title h3 {
     font-size: 18px;
@@ -340,6 +341,7 @@ ul.services-name {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin: 0 18px 0 18px;
 }
 
 
@@ -595,3 +597,246 @@ color: white !important;
     }
 }
 
+
+
+
+
+
+
+
+
+/*highlight region css*/
+.ct-sectionHeader {
+    text-align: center;
+}
+.ct-u-paddingBottom70 {
+    padding-bottom: 70px !important;
+}
+.ct-u-paddingTop60 {
+    padding-top: 60px !important;
+}
+.ct-sectionHeader-title, .ct-sectionHeader-title * {
+    font-weight: lighter;
+}
+
+/*h2, .h2 {
+    font-size: 42.86px;
+}
+h1, h2, h3, h4, h5, h6, small, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Lato", sans-serif;
+}
+h1, h2, .h1, .h2 {
+    line-height: 0.75em;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+}*/
+
+
+.ct-sectionHeader-separator {
+    margin-top: 6px;
+    margin-bottom: 3px;
+}
+
+.ct-sectionHeader p {
+    font-weight: bold;
+    color: #aaa;
+}
+/*p {
+    color: #777;
+    line-height: 1.86em;
+}
+p {
+    font-size: 14px;
+}
+p {
+    margin: 0 0 50px;
+}*/
+
+/*.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}*/
+.ct-u-marginTop30 {
+    margin-top: 30px !important;
+}
+.ct-iconBox {
+    position: relative;
+    margin-top: 0;
+}
+.ct-iconBox.ct-iconBox--type3 .media-right {
+    padding-left: 18px;
+}
+/*h3, .h3 {
+    font-size: 22px ;
+}
+h1, h2, h3, h4, h5, h6, small, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Lato", sans-serif;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+}*/
+.ct-u-paddingBottom90 {
+    padding-bottom: 90px !important;
+}
+
+
+.ct-sectionHeader-title, .ct-sectionHeader-title * {
+    font-weight: lighter;
+}
+/*h2 small, .h2 small {
+    font-size: 2.857rem;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}*/
+.ct-sectionHeader-title span, .ct-sectionHeader-title * span {
+    font-weight: 900;
+}
+.ct-sectionHeader-title, .ct-sectionHeader-title * {
+    font-weight: lighter;
+}
+
+.ct-sectionHeader-separator .minus:first-child {
+    margin-right: -1px;
+}
+.ct-sectionHeader-separator .minus {
+    width: 20px;
+    height: 2px;
+    margin-bottom: 4px;
+    background: #222;
+    display: inline-block;
+}
+
+.ct-sectionHeader-separator .slash {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -3px;
+    color: #222;
+}
+
+.ct-sectionHeader-separator .slash {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -3px;
+    color: #222;
+}
+.ct-sectionHeader-separator .minus:last-child {
+    margin-left: 1px;
+}
+.ct-sectionHeader-separator .minus {
+    width: 20px;
+    height: 2px;
+    margin-bottom: 4px;
+    background: #222;
+    display: inline-block;
+}
+
+.ct-iconBox .ct-iconBox-header.ct-u-hr {
+    padding-bottom: 1.286em;
+    margin-bottom: 1.143em;
+}
+.ct-u-hr.ct-u-hr--left, .ct-u-hr.ct-u-hr--right, .ct-u-hr.ct-u-hr--center, .ct-u-hr.ct-u-hr--wide {
+    padding-bottom: 1.429rem;
+    margin-bottom: 1.429rem;
+    position: relative;
+}
+.ct-iconBox .ct-iconBox-header {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*h6, .h6 {
+    font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6, small, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Lato", sans-serif;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+}*/
+    .ct-iconBox .ct-iconBox-icon.ct-iconBox-icon--inverse i {
+    background: #e74c46;
+    border-color: #e74c46;
+    color: #fff;
+}
+.ct-iconBox.ct-iconBox--type3 .ct-iconBox-icon i {
+    width: 2em;
+    height: 2em;
+    border: 3px solid #e74c46;
+    border-radius: 50%;
+    line-height: 1.95em;
+    text-align: center;
+}
+.ct-iconBox .ct-iconBox-icon i {
+    color: #e74c46;
+}
+/*.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}*/
+
+
+
+/*h3 small, .h3 small {
+    font-size: 1.786rem;
+}
+h1, h1 small, h2, h2 small, h3, h3 small, h4, h4 small, h5, h5 small, h6, h6 small, .h1, .h1 small, .h2, .h2 small, .h3, .h3 small, .h4, .h4 small, .h5, .h5 small, .h6, .h6 small, body {
+    color: inherit;
+}*/
+
+.ct-u-paddingBottom90 p {
+    
+    color: #777;
+    line-height: 1.86em;
+    font-size: 14px;
+    margin: 0 0 50px;
+}
+
+
+.ct-u-paddingBottom90 h6 {
+    font-size: 14px;
+    font-family: "Lato", sans-serif;color: inherit;
+    margin: 0;
+}
+
+.ct-u-hr.ct-u-hr--right:after {
+    right: 0;
+}
+.ct-u-hr.ct-u-hr--left:after, .ct-u-hr.ct-u-hr--right:after, .ct-u-hr.ct-u-hr--center:after, .ct-u-hr.ct-u-hr--wide:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 30px;
+    background-color: #222;
+}
+
+.ct-iconBox-icon small{
+    font-size : 100%;
+}
+
+.ct-u-hr.ct-u-hr--left:after {
+    left: 0;
+}
+.ct-u-hr.ct-u-hr--left:after, .ct-u-hr.ct-u-hr--right:after, .ct-u-hr.ct-u-hr--center:after, .ct-u-hr.ct-u-hr--wide:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 30px;
+    background-color: #222;
+}
