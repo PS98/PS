@@ -121,12 +121,16 @@
             $scope.commonServices = $scope.services.serviceDetails[0];
         }
     }
-    $scope.chooseAnswer = function (job,question, option) {
+    $scope.chooseAnswer = function(job, question, option) {
         if (!question.ans)
             question.ans = [];
-        if (!question.ans.includes(option))
-            question.ans.push(option);
-        else {
+        if (!question.ans.includes(option)) {
+            if (!question.isMultiple)
+                question.ans = [];
+                question.ans.push(option);
+        }
+    
+    else {
             question.ans.splice(question.ans.indexOf(option), 1);
         }
     }
