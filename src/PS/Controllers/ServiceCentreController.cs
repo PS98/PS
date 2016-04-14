@@ -72,9 +72,9 @@ namespace PS.Controllers
                 var count = 0;
                 foreach (var service in selectedService.Name)
                 {
-                    if (!a.ServiceList.Contains(service))
+                    if (a.ServiceList !=null && !a.ServiceList.Contains(service))
                         break;
-                        count++;
+                    count++;
                     if (selectedService.Name.Count == count)
                     {
                         selectedCentres.Add(a);

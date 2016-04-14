@@ -4,14 +4,45 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="header-contacts"> <span class="header-contacts__item"><i class="icon fa fa-phone"></i>+91 8380911266</span> <a class="header-contacts__item" href="mailto:support@milemates.com"><i class="icon fa fa-envelope"></i>support (at) milemates.com</a> </div>
-                    <ul class="social-links list-inline">
-                        <li><a class="icon fa fa-facebook" href="javascript:void(0);"></a></li>
-                        <li><a class="icon fa fa-twitter" href="javascript:void(0);"></a></li>
-                        <li><a class="icon fa fa-youtube-play" href="javascript:void(0);"></a></li>
-                        <li><a class="icon fa fa-instagram" href="javascript:void(0);"></a></li>
-                        <li><a class="icon fa fa-google-plus" href="javascript:void(0);"></a></li>
-                    </ul>
+                    <div class="header-contacts">
+                        <ul class="social-links list-inline">
+                            <li><a class="icon fa fa-facebook" href="javascript:void(0);"></a></li>
+                            <li><a class="icon fa fa-twitter" href="javascript:void(0);"></a></li>
+                            <li><a class="icon fa fa-youtube-play" href="javascript:void(0);"></a></li>
+                            <li><a class="icon fa fa-instagram" href="javascript:void(0);"></a></li>
+                            <li><a class="icon fa fa-google-plus" href="javascript:void(0);"></a></li>
+                        </ul>
+                    </div>
+                    <!--<div class="header-contacts">
+                        <span class="header-contacts__item">
+                            <i class="icon fa fa-phone"></i>+91 8380911266
+                        </span>
+                        <a class="header-contacts__item" href="mailto:support@milemates.com">
+                            <i class="icon fa fa-envelope"></i>support (at) milemates.com
+                        </a>
+                    </div>-->
+                    <div class="bottom-bar">
+                        <div class="list-bottom-bar">
+                            <i class="fa fa-car"></i>
+                            <h6><a href="#">My Vehicles:</a></h6>
+                            <a href="#" class="add">Add a Vehicles</a>
+                        </div>
+                        <!-- /.list-bottom-bar -->
+
+                        <div class="list-bottom-bar">
+                            <i class="fa fa-map-marker"></i>
+                            <h6><a href="#">My store:</a></h6>
+                            <!--<p>Auto car online</p>-->
+                        </div>
+                        <!-- /.list-bottom-bar -->
+
+                        <div class="list-bottom-bar">
+                            <i class="fa fa-calendar"></i>
+                            <h6><a href="#">My Appointments:</a></h6>
+                            <a href="subpage-appointment.html" class="add">Make an appointment</a>
+                        </div>
+                        <!-- /.list-bottom-bar -->
+                    </div>
                 </div>
                 <!-- end col -->
             </div>
@@ -34,26 +65,15 @@
                         <div id="navbar-collapse-1" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="/">Home</a></li>
-                                <!--<li><a href="/VehicleListings">VEHICLE LISTINGS</a></li>
-                                <li><a href="/CarDetails">CAR DETAILS</a></li>
-                                <li class="dropdown">
-                                    <a>NEWS</a>
-                                    <ul role="menu" class="dropdown-menu">
-                                        <li><a href="/NewsGrid">NEWS GRID</a></li>
-                                        <li><a href="/NewsDetails">NEWS DETAILS</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="/NewsGrid">NEWS GRID</a></li>
-                                <li><a href="/NewsDetails">NEWS DETAILS</a></li>-->
                                 <li><a href="/About">WHY CHOOSE US?</a></li>
                                 <li><a href="/Contact">Connect With Us</a></li>
                                 <li>
                                     <a href="/Service">Service</a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="" ng-if="!isLoggedIn" ng-click="openloginModal()">LOGIN</a>
                                     <ps-user-profile ng-if="isLoggedIn"></ps-user-profile>
-                                </li>                                                               
+                                </li>
                             </ul>
                         </div>
                     </div>
