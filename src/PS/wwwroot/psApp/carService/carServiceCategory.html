@@ -3,25 +3,31 @@
         <div class="select-service-box">
          <ul class="panel-group" id="accordion" >
              <li ng-repeat="job in commonServices | filter : searchedText:strict" class="panel row">
-                 <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
+                 <div class="service-details pull-right abs-position " ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
                  <i class="fa fa-check-circle" ng-class="job.selected ? 'selected' : ''" ng-click="addSelectedJob(job)"></i>
                  <!--<div class="col-xs-10">-->
-                     <div class="panel-heading" ng-if="job.description" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'">
-                         <div class="panel-title">
-                             <a data-toggle="collapse" data-parent="#accordion" data-target="#{{job.name | makeId}}"> <!--aria-expanded="{{ $index === 0 ? 'true': false}}">-->
-                                 {{job.name}}
-                             </a>
-                         </div>
+                 <div class="panel-heading" ng-if="job.description" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'">
+                     <div class="panel-title">
+                         <a data-toggle="collapse" data-parent="#accordion" data-target="#{{job.name | makeId}}"> <!--aria-expanded="{{ $index === 0 ? 'true': false}}">-->
+                             {{job.name}}
+                         </a>
                      </div>
+                 </div>
                  <div id="{{job.name | makeId}}" class="panel-collapse collapse" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'" ng-if="job.description">
                      <div class="panel-body">
                          {{job.description}}
                      </div>
                  </div>
-                 <a class="col-xs-10 top-padding10" ng-if="(job.description || []).length == 0">
+                 <a class="top-padding10" ng-if="(job.description || []).length == 0" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'">
                      {{job.name}}
                  </a>
+
+             </li>
+             <li  ng-if="(commonServices | filter : searchedText:strict).length == 0"  class="panel row">
                  <!--</div>-->
+                 <a class="top-padding10 bottom-padding10 clickable col-xs-12" ng-click="changeView(); clearSearch();">
+                     {{searchedText.name}} did not match any services. Click here to describe your service.
+                 </a>
 
              </li>
 

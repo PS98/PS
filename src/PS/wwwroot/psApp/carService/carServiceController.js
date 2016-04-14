@@ -2,7 +2,8 @@
 
     $scope.center = {};
     $scope.searchedText = {};    $scope.state = $state;
-    var custRequest = {name: " Describe your problem here", type: [], addText: true }
+    var custRequest = { name: " Describe your problem here", type: [], addText: true };
+    var prevMode, preService = [];
     $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
@@ -95,11 +96,9 @@
     }
 
     $scope.addSelectedJob = function (selectedJob) {
-        if (($scope.serviceOpts.viewMode === "Common Services" || $scope.serviceOpts.viewMode === "Scheduled Maintenance") && !selectedJob.selected) {
-            selectedJob.onlyOne = true;
-
+        if (selectedJob.isSingleSelectJob && !selectedJob.selected) {
             var jobToRemove = $scope.selectedJob.filter(function (job) {
-                return job.onlyOne === true;
+                return job.isSingleSelectJob === true;
             });
           if(jobToRemove.length>0)
             $scope.deleteSelectedJob(jobToRemove[0]);
@@ -158,8 +157,10 @@
                 $scope.car.services = [];
                 $timeout(function() {
                     $.each($scope.services.serviceDetails, function(i, val) {
-                        $.each(val, function(i, value) {
-                            $scope.car.services.push(value);
+                        $.each(val, function (j, value) {
+                            if ($scope.services.serviceName[i] === "Common Services" || $scope.services.serviceName[i] === "Scheduled Maintenance")
+                            value.isSingleSelectJob = true;
+                           $scope.car.services.push(value);
                         });
                     });
                 },200);
@@ -185,14 +186,27 @@
     $state.go("service.car");
     $scope.state = $state;
 
-    $scope.search = function() {
-        if ($scope.searchedText.name && $scope.searchedText.name.length > 0) {
-            $scope.commonServices = $scope.car.services;
-
-        } else {
-           $scope.commonServices = $scope.services.serviceDetails[0];  
+    $scope.search = function () {
+        if (!prevMode) {
+            prevMode = $scope.serviceOpts.viewMode;
+            preService = $scope.commonServices;
         }
 
+        if ($scope.searchedText.name && $scope.searchedText.name.length > 0 ) {
+            $scope.commonServices = $scope.car.services;
+            $scope.serviceOpts.viewMode = "search";
+
+        } else {
+            $scope.clearSearch();
+        }
+
+    }
+    $scope.clearSearch = function () {
+        $scope.serviceOpts.viewMode = prevMode;
+        $scope.commonServices = preService;
+        prevMode = undefined;
+        $scope.searchedText.name = "";
+        prevMode = undefined;
     }
 }]);
 
