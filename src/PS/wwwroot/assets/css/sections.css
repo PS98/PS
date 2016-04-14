@@ -112,6 +112,11 @@
 	padding-bottom: 45px;
 }
 
+.highlight-section {
+    padding-top : 0px;
+    padding-bottom : 0px;
+}
+
 .section_brands {
 	margin-top: 100px;
 	padding-bottom: 0;

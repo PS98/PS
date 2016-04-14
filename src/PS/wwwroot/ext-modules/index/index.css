@@ -41,16 +41,48 @@
         padding-bottom: 80px;
     }
 }
+.brands-pad-section {
+        padding-bottom: 50px;
+    }
+
 .brands-section {
     padding-left: 55px;
     padding-right: 55px;
     position: relative;
 }
 
+.brand-carousel .owl-controls{
+    position : relative !important;
+    padding-top : 10px;
+}
+.brand-carousel .owl-page span{
+    border: 1px solid !important;
+    border-color: lightslategray !important;
+}
+.brand-carousel .owl-page.active span, .brand-carousel .owl-page:hover span {
+    background-color: #dc2d13 !important;
+    border-color: #dc2d13 !important;
+}
+
 .brands-section .brands-controls .caro-prev {
     left: 0;
 }
 .brands-section .brands-controls .caro-prev, .brands-section .brands-controls .caro-next {
+    margin-top: -18px;
+    position: absolute;
+    top: 50%;
+}
+
+.feedback-section {
+    padding-left: 55px;
+    padding-right: 55px;
+    position: relative;
+}
+
+.feedback-section .feedback-controls .caro-prev {
+    left: 0;
+}
+.feedback-section .feedback-controls .caro-prev, .feedback-section .feedback-controls .caro-next {
     margin-top: -18px;
     position: absolute;
     top: 50%;
@@ -74,6 +106,13 @@
     -moz-transition: all 0.4s ease 0s;
     -webkit-transition: all 0.4s ease 0s;
 }
+
+.brand-image img{
+    width: 140px;
+    height: 108px;
+    border: 1px solid lightgray;
+}
+
 .brands-section .brands-controls .caro-next {
     right: 0;
 }
@@ -82,6 +121,17 @@
     position: absolute;
     top: 50%;
 }
+
+.feedback-section .feedback-controls .caro-next {
+    right: 0;
+}
+.feedback-section .feedback-controls .caro-prev, .feedback-section .feedback-controls .caro-next {
+    margin-top: -18px;
+    position: absolute;
+    top: 50%;
+}
+
+
 .caro-prev, .caro-next {
     width: 36px;
     height: 36px;
@@ -340,8 +390,7 @@ ul.services-name {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
-    margin: 0 18px 0 18px;
+    user-select: none;    
 }
 
 
@@ -388,6 +437,11 @@ ul.services-name {
 .column-carousel .owl-dots {
     display: none !important;
 }
+.column-carousel .owl-item {
+    width : 353px !important;
+    padding: 0 15px 0 15px;
+}
+
 .owl-theme .owl-dots .owl-dot {
     display: inline-block;
 }
