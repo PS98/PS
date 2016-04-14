@@ -372,9 +372,9 @@ a.evo-hist {
     color: #FFF;
     position: relative;
     line-height: 1;
-    top: 15px;
-    left: 15px;
-    font-size: 20px;
+    top: 10px;
+    left: 12px;
+    font-size: 30px;
 }
 
 
@@ -399,10 +399,25 @@ a.evo-hist {
     text-transform: uppercase;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
-    -ms-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+    /*-ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;*/
     transition: all 0.3s ease 0s;
 }
+
+.close-styler  {
+    color: #323232;
+    border-radius: 50px;
+    padding: 10px 30px;
+    background: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    /*-ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;*/
+    transition: all 0.3s ease 0s;
+}
+
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
     color: #fff;
     background-color: #3276b1;
@@ -450,11 +465,30 @@ a.evo-hist {
     transition: all 0.3s ease 0s;
 }
 
+
+.demo_changer h3 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+h3 {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3 {
+    color: #323232;
+}
+
 .demo_changer #preset3 {
     background-color: #ee3b24;
 }
 .btn.btn-primary {
     border: 2px solid #ee3b24;
+    transform:none;
 }
 .btn.btn-primary {
     color: #323232;
@@ -484,9 +518,12 @@ a.evo-hist {
 .close-styler{
     border-radius: 50px;
     padding: 10px 30px;
-    transform : skewX(-17deg);
 }
-
+a.close-styler {
+    color: #fff;
+    padding: 7px 20px !important;
+    margin-right: 6px;
+}
 
 
 .bootstrap-select.show-menu-arrow.open > .btn {
