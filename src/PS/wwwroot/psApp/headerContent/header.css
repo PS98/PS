@@ -1,1 +1,67 @@
 ﻿
+.bottom-bar {
+    float: right;
+}
+.bottom-bar .list-bottom-bar {
+    float: left;
+    position: relative;
+    padding: 0 20px 0 10px;
+}
+.bottom-bar .list-bottom-bar::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 24px;
+    top: 0;
+    right: 0;
+    background: rgb(235, 235, 235);
+}
+.bottom-bar .list-bottom-bar i {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 20px;
+    color:#fff;
+}
+.bottom-bar .list-bottom-bar h6 {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(115, 115, 115);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    margin: 0 10px 0 0;
+}
+.bottom-bar .list-bottom-bar h6 a {
+    color: #fff;
+}
+    .bottom-bar .list-bottom-bar .add {
+        display: inline-block;
+        font-family: Raleway, sans-serif;
+        font-size: 10px;
+        line-height: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        letter-spacing: 0.02em;
+        position: relative;
+        -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        padding: 3px 7px 2px;
+        background: rgb(204, 204, 204);
+        -moz-transition: color 600ms ease-out 0s, visibility 0s ease 0s;
+        -o-transition: color 600ms ease-out 0s, visibility 0s ease 0s;
+        -webkit-transition: color 600ms ease-out 0s, visibility 0s ease 0s;
+        transition: color 600ms ease-out 0s, visibility 0s ease 0s;
+    }
+.bottom-bar .list-bottom-bar p {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    margin: 0 0 0 30px;
+}
+
