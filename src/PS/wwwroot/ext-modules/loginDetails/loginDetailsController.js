@@ -211,6 +211,12 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
     }
 
     $scope.socialSubmit = function (name) {
+        debugger;
+    var $preloader = $('#page-preloader'),
+       $spinner = $preloader.find('.spinner-loader');
+        $preloader.show();
+        $spinner.fadeOut();
+        $preloader.delay(50).fadeOut('slow');
         var fbHeight = /facebook/ig.test(name) ? 340 : 520;
         fbHeight = /paypal/ig.test(name) ? 550 : fbHeight;
         var w = /paypal/ig.test(name) ? 400 : 680;

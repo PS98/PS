@@ -415,7 +415,7 @@ a.evo-hist {
 .demo_changer button {
     width: 30px;
     height: 30px;
-    border-radius: 100% !important;
+    /*border-radius: 100%;*/
     margin-bottom: 5px;
     color: #fff;
     display: inline-block;
@@ -479,6 +479,12 @@ a.evo-hist {
     padding: 0 !important;
     margin-right: 2px;
     border: 0 !important;
+}
+
+.close-styler{
+    border-radius: 50px;
+    padding: 10px 30px;
+    transform : skewX(-17deg);
 }
 
 
