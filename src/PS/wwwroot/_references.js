@@ -38,6 +38,7 @@
 /// <reference path="ext-modules/index/privacypolicydirective.js" />
 /// <reference path="ext-modules/index/realfactsdirective.js" />
 /// <reference path="ext-modules/index/servicesdirective.js" />
+/// <reference path="ext-modules/index/subscribeusdirective.js" />
 /// <reference path="ext-modules/index/termsdirective.js" />
 /// <reference path="ext-modules/index/typesofvehiclesdirective.js" />
 /// <reference path="ext-modules/logindetails/loginDetailsController.js" />
