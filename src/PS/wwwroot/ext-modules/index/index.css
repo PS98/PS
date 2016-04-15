@@ -161,9 +161,9 @@
     padding-left: 0;
     padding-right: 0;
 }
-.tab li:hover .curve:after, .nav.nav-stacked > li.active > a:focus .curve:after, .nav.nav-stacked li a[aria-expanded="true"] .curve:after {
+/*.tab li:hover .curve:after, .nav.nav-stacked > li.active > a:focus .curve:after, .nav.nav-stacked li a[aria-expanded="true"] .curve:after {
     border-color: #ff5252 transparent #ff5252 #ff5252;
-}
+}*/
 
 .tab li span.curve:after {
     width: 0;
@@ -238,9 +238,9 @@
     background-color: #3f51b5;
     outline: 0;
 }
-.tab li:hover .curve, .nav.nav-stacked > li.active > a:focus .curve, .nav.nav-stacked li a[aria-expanded="true"] .curve {
+/*.tab li:hover .curve, .nav.nav-stacked > li.active > a:focus .curve, .nav.nav-stacked li a[aria-expanded="true"] .curve {
     background-color: #ff5252;
-}
+}*/
 @media (min-width: 768px) {
     .tab-section .tab-content {
         margin-top: 0;
@@ -784,7 +784,7 @@ color: white !important;
 }
 .water-sports .ct-callToAction.ct-callToAction--type2 {
     border-top: 0;
-    border-left: 7px solid #23c9b5;
+    border-left: 7px solid;
 }
 .water-sports .ct-callToAction {
     border-top: 7px solid #23c9b5;
@@ -796,7 +796,7 @@ color: white !important;
 }
 .ct-callToAction.ct-callToAction--type2 {
     border-top: 0;
-    border-left: 7px solid #e74c46;
+    border-left: 7px solid;
 }
 .ct-callToAction {
     text-align: center;

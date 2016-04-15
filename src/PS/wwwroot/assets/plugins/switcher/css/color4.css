@@ -39,6 +39,7 @@ blockquote:before,
 .brand-carousel .owl-controls .owl-page:hover span,
 .brand-carousel .owl-controls .owl-page.active span,
 .ct-newsletter,
+.tab li:hover .curve, .nav.nav-stacked > li.active > a:focus .curve, .nav.nav-stacked li a[aria-expanded="true"] .curve,
 .decor-2:before,
 .decor-2:after,
 .section-bg_primary,
@@ -76,7 +77,7 @@ blockquote:before,
 .owl-theme_mod-d .owl-controls.clickable .owl-page:hover span,
 .list-type__link:hover {border-color: #ff8300!important;}
 
-#iview div.iview-directionNav a.iview-nextNav:hover:before, .footer-landing h4,
+#iview div.iview-directionNav a.iview-nextNav:hover:before, .footer-landing h4, .ct-callToAction.ct-callToAction--type2,
 .list-staff__item:nth-child(even):hover .list-staff__info:after,
 .reviews:hover .reviews__title {border-left-color: #ff8300!important;}
 
@@ -108,4 +109,8 @@ blockquote:before,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
 	box-shadow: 0 3px 0 0 #ff8300;
+}
+
+.tab li:hover .curve:after, .nav.nav-stacked > li.active > a:focus .curve:after, .nav.nav-stacked li a[aria-expanded="true"] .curve:after{
+        border-color: #ff8300 transparent #ff8300 #ff8300;
 }
