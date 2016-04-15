@@ -11,7 +11,7 @@ angular.module("psApp").filter("makeId", function() {
 
     return function(data) {
         if (data)
-            return data.replace(/ /g, "_").replace(/\(|\)|&|$|\@ |! |-|\+|,/g, "");
+            return data.replace(/[^a-zA-Z0-9 ]/g, "").replace(/ /g, "_");
         else
             return "";
     }
