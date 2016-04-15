@@ -49,7 +49,7 @@
 }
 .section_mod-a:before {
 	bottom: -30px;
-	background: url('../../assets/img/5.jpg') no-repeat bottom center;
+	background: url('../media/bg/1.png') no-repeat bottom center;
 }
 .section_mod-a .ui-title-inner {
 	margin-top: 0;
