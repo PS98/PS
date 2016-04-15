@@ -909,7 +909,6 @@ img.pull-left {
 .list-progress__item {
 	position: relative;
 	display: inline-block;
-	margin-right: 22px;
 	margin-left: 22px;
 	padding: 20px 0 0;
 	vertical-align: top;

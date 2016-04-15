@@ -10,7 +10,9 @@
     "underscore": "~1.8.3",
     "angular-ui-router": "~0.2.18",
     "angular-cookies": "~1.5.3",
-    "bootstrap": "3.3.5"
+    "bootstrap": "3.3.5",
+    "jquery-migrate": "1.2.1",
+    "modernizr": "3.0.0"
   },
   "resolutions": {
     "angular": "1.4.8"
