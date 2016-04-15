@@ -32,6 +32,12 @@ blockquote:before,
 .bg-color_primary,
 .main-slider__link,
 .close-styler:hover,
+.bottom-bar .list-bottom-bar .add,
+.ct-iconBox .ct-iconBox-icon.ct-iconBox-icon--inverse i,
+.testimonials-section .column-carousel .owl-controls .owl-page:hover span,
+.testimonials-section .column-carousel .owl-controls .owl-page.active span,
+.brand-carousel .owl-controls .owl-page:hover span,
+.brand-carousel .owl-controls .owl-page.active span,
 .decor-2:before,
 .decor-2:after,
 .section-bg_primary,
@@ -60,21 +66,25 @@ blockquote:before,
 .about-autor {background-color: #ffc73c;}
 
 .link-img__link,
+.brands-controls .caro-prev, .brands-controls .caro-next,
+.feedback-controls .caro-prev, .feedback-controls .caro-next,
+.testimonials-section .testimonials-slider .slide-item,
 .owl-theme_mod-c .owl-controls .owl-page.active span,
 .owl-theme_mod-c .owl-controls.clickable .owl-page:hover span,
 .owl-theme_mod-d .owl-controls .owl-page.active span,
 .owl-theme_mod-d .owl-controls.clickable .owl-page:hover span,
-.list-type__link:hover {border-color: #ffc73c;}
+.list-type__link:hover {border-color: #ffc73c!important;}
 
-#iview div.iview-directionNav a.iview-nextNav:hover:before,
+#iview div.iview-directionNav a.iview-nextNav:hover:before, .footer-landing h4,
 .list-staff__item:nth-child(even):hover .list-staff__info:after,
-.reviews:hover .reviews__title {border-left-color: #ffc73c;}
+.reviews:hover .reviews__title {border-left-color: #ffc73c!important;}
 
 #iview div.iview-directionNav a.iview-prevNav:hover:before,
 .list-staff__item:nth-child(odd):hover .list-staff__info:after {border-right-color: #ffc73c;}
 
 .header.sticky .navbar,
-.form-control:focus {border-bottom-color: #ffc73c;}
+.testimonials-section .sec-title h3,
+.form-control:focus {border-bottom-color: #ffc73c!important;}
 
 .btn-default,
 .btn-success {box-shadow: 5px 0 0 0 #ffc73c;}

@@ -57,11 +57,6 @@
 }
 .brand-carousel .owl-page span{
     border: 1px solid !important;
-    border-color: lightslategray !important;
-}
-.brand-carousel .owl-page.active span, .brand-carousel .owl-page:hover span {
-    background-color: #dc2d13 !important;
-    border-color: #dc2d13 !important;
 }
 
 .brands-section .brands-controls .caro-prev {
@@ -88,7 +83,7 @@
     top: 50%;
 }
 .caro-prev:hover, .caro-next:hover {
-    border-color: #3f51b5;
+    border-color: lightyellow !important;
     color: #3f51b5;
 }
 .caro-prev, .caro-next {
@@ -97,7 +92,7 @@
     line-height: 32px;
     text-align: center;
     color: #777777;
-    border: 2px solid #e8e8e8;
+    border: 2px solid;
     border-radius: 50%;
     display: inline-block;
     vertical-align: top;
@@ -343,7 +338,7 @@ ul.services-name {
 .testimonials-section .sec-title h3 {
     display: inline-block;
     padding: 0 0 10px;
-    border-bottom: 2px solid #fb4848;
+    border-bottom: 2px solid;
     color: white;
 }
 .sec-title h3 {
@@ -448,7 +443,7 @@ ul.services-name {
 .testimonials-section .testimonials-slider .slide-item {
     position: relative;
     margin: 50px 0 0 0;
-    border: 1px solid #fb4848;
+    border: 1px solid;
     background: #ffffff;
     text-align: center;
 }
@@ -818,14 +813,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin: 0;
 }*/
     .ct-iconBox .ct-iconBox-icon.ct-iconBox-icon--inverse i {
-    background: #e74c46;
     border-color: #e74c46;
     color: #fff;
 }
 .ct-iconBox.ct-iconBox--type3 .ct-iconBox-icon i {
     width: 2em;
     height: 2em;
-    border: 3px solid #e74c46;
+    border: 3px solid;
     border-radius: 50%;
     line-height: 1.95em;
     text-align: center;

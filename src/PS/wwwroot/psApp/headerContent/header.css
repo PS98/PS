@@ -50,8 +50,7 @@
         -o-transform: translate(0, 0);
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
-        padding: 3px 7px 2px;
-        background: rgb(204, 204, 204);
+        padding: 3px 7px 2px;        
         -moz-transition: color 600ms ease-out 0s, visibility 0s ease 0s;
         -o-transition: color 600ms ease-out 0s, visibility 0s ease 0s;
         -webkit-transition: color 600ms ease-out 0s, visibility 0s ease 0s;
