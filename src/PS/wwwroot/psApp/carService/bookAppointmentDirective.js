@@ -9,28 +9,34 @@ angular.module("psApp").directive("bookAppointment", function() {
         controller: function ($scope) {
             $scope.dateToDisplay = []; $scope.timeToDisplay = [8,9,10,11,12,13,14,15,16,17,18,19,20];
             $scope.centreWorkingHours = [];
-            var today, day, hour, nextDate;
+            var today = new Date();
+            var currentTime = today.getHours();
 
-            today = new Date();
-            day = today.getDate();
-            nextDate = new Date();
-            hour = today.getHours();
-            for (var i = 0; i < 4; i++) {
-                var WH = [];
-                nextDate.setDate(day + i);
-                var datepart = nextDate.toDateString();
-               // dateToDisplay.push(datepart);
-                for (var j = 0; j < $scope.timeToDisplay.length; j++) {
+            $scope.setFiveDay = function (date,type) {
+                var day = date.getDate();
+               var nextDate = new Date();
+                for (var i = 0; i < 4; i++) {
+                    var WH = [];
+                    if (type === "prev")
+                        nextDate.setDate(day - 4 + i);
+                    else if(type ==="next")
+                        nextDate.setDate(day +1+ i);
+                    else
+                    nextDate.setDate(day + i);
+                    var datepart = nextDate.toDateString();
+                    // dateToDisplay.push(datepart);
+                    for (var j = 0; j < $scope.timeToDisplay.length; j++) {
 
-                    var time = formatTime($scope.timeToDisplay[j]);
-                    var isAvailable = checkAvailibility($scope.timeToDisplay[j], nextDate);
-                    var obj = { time: time, isAvailable: isAvailable };
+                        var time = formatTime($scope.timeToDisplay[j]);
+                        var isAvailable = checkAvailibility($scope.timeToDisplay[j], nextDate);
+                        var obj = { time: time, isAvailable: isAvailable };
 
-                    WH.push(obj);
+                        WH.push(obj);
+                    }
+                    $scope.centreWorkingHours.push({ day: datepart, WorkingHours: WH });
                 }
-                $scope.centreWorkingHours.push({ day: datepart, WorkingHours: WH });
             }
-  
+
             function formatTime(time) {
              //   var d = new Date(date);
                 var hh = time;
@@ -59,7 +65,7 @@ angular.module("psApp").directive("bookAppointment", function() {
             }
             function checkAvailibility(time, date) {
                 if (date.toDateString() === today.toDateString()) {
-                    if( hour < time)
+                    if (currentTime < time)
                         return true;
                     else
                     return false;
@@ -74,6 +80,18 @@ angular.module("psApp").directive("bookAppointment", function() {
                 $scope.isSelected = true;
             }
 
+            $scope.nextDates = function (type) {
+                var date = type === "prev" ? $scope.centreWorkingHours[0].day : $scope.centreWorkingHours[$scope.centreWorkingHours.length - 1].day;
+                date = new Date(date);
+                var day = date.getDate();
+
+             //   date = type === "prev" ? today.setDate(day + 1) : today.setDate(day - 4);
+                $scope.centreWorkingHours = [];
+                $scope.setFiveDay(date,type);
+
+
+            }
+            $scope.setFiveDay(today);
         }
     }
 });
