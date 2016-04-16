@@ -40,7 +40,6 @@
 
 .section_default {
 	position: relative;
-	padding-bottom: 130px;
 }
 .section_mod-a {
 	position: relative;
@@ -118,7 +117,7 @@
 }
 
 .section_brands {
-	margin-top: 100px;
+	margin-top: 50px;
 	padding-bottom: 0;
 }
 .section_brands .ui-title-inner {
