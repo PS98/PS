@@ -1,8 +1,8 @@
 ﻿"use strict";
 
 angular.module("index").controller("indexController",
-    ["$localStorage", "$location", "$scope", "$http", "indexDataService",
-        function indexController($localStorage, $location, $scope, $http, indexDataService) {
+    ["$localStorage", "$location", "$scope", "$http", "indexDataService", "$timeout",
+        function indexController($localStorage, $location, $scope, $http, indexDataService, $timeout) {
             if (indexDataService) {
                 //      $scope.isBusy = true;
                 indexDataService.getHighlights()
@@ -59,5 +59,48 @@ angular.module("index").controller("indexController",
                  }).finally(function () {
                      //  $scope.isBusy = true;
                  });
+            }
+
+            $scope.fSuccess = false;
+            $scope.fError = false;
+            $scope.contactUs = function () {
+                    indexDataService.feedback($scope.firstName, $scope.lastName, $scope.phone, $scope.subject, $scope.message)
+                        .then(function (result) {
+                            //Success
+                            if (result.status == 0) {
+                                $scope.fSuccess = true;
+                                $scope.fError = false;
+                                $scope.successMessage = result.message;
+                            } else if (result.status == 1) {
+                                $scope.fError = true;
+                                $scope.fSuccess = false;
+                                $scope.errorMessage = result.message;
+                            }
+                        }, function (error) {
+                            //Error
+                            $scope.fError = true;
+                            $scope.fSuccess = false;
+                            $scope.errorMessage = error.message;
+                        }).finally(function () {
+                            $scope.isBusy = false;
+                            $scope.feedbackForm.firstName.$dirty = false;
+                            $scope.feedbackForm.lastName.$dirty = false;
+                            $scope.feedbackForm.mobile.$dirty = false;
+                            $scope.feedbackForm.subject.$dirty = false;
+                            $scope.feedbackForm.message.$dirty = false;
+                            $scope.firstName = null;
+                            $scope.lastName = null;
+                            $scope.mobile = null;
+                            $scope.subject = null;
+                            $scope.message = null;
+                            $timeout(function () {
+                                $scope.fReset();
+                            }, 3000);
+                        });
+            }
+
+            $scope.fReset = function () {
+                $scope.fSuccess = false;
+                $scope.fError = false;
             }
  }]);

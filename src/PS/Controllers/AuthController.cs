@@ -234,7 +234,29 @@ namespace PS.Controllers
             }
         }
 
-        public ActionResult Error()
+        public JsonResult Feedback(FeedbackModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile + 
+                        "provided feedback regarding MileMates services.<br /><br />" + model.Message;
+                    _emailSender.SendSimpleMessage("feedback@milemates.com", model.Subject, message);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Message = "Your message has been submitted successfully.", Status = 0 });
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "We are unable to process your request.", Status = 1 });
+        }
+
+    public ActionResult Error()
         {
             return View();
         }

@@ -1,8 +1,8 @@
 ﻿"use strict";
 
 angular.module("index", ["ngStorage"]).factory("indexDataService",
-    ["$timeout",
-        function ($timeout) {
+    ["$timeout", "$http", "$q",
+        function ($timeout, $http, $q) {
 
             var highlights = [
                 {
@@ -476,13 +476,27 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                 }, 0);
             };
 
+            var _feedback = function (f, l, p, s, m) {
+                var deferred = $q.defer();
+                $http.post("/api/Auth/Feedback?FirstName=" + f + "&LastName=" + l + "&Mobile=" + p + "&Subject=" + s + "&Message=" + m)
+                 .then(function (result) {
+                     //Success
+                     deferred.resolve(result.data);
+                 }, function (error) {
+                     //Error
+                     deferred.reject(error);
+                 });
+
+                return deferred.promise;
+            };
 
             return {
                 getHighlights: _getHighlights,
                 getPrivacyPolicy: _getPrivacyPolicy,
                 getTerms: _getTerms,
                 getAboutUs: _getAboutUs,
-                getMainFeatures: _getMainFeatures
+                getMainFeatures: _getMainFeatures,
+                feedback: _feedback
             };
         }
     ]);
