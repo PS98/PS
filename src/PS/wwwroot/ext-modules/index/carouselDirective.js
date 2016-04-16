@@ -38,4 +38,14 @@ var loadCraousel = function () {
         });
 
     }
+
+    $('.ct-embed').each(function () {
+        var $this = $(this);
+        $this.find('i').on('click', function () {
+            $(this).addClass('hide');
+            $this.find('img').addClass('hide');
+            $this.find('.ct-embed-content').addClass('hide');
+            $this.find('video').get(0).play();
+        })
+    });
 }
