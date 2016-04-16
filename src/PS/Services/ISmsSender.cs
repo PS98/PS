@@ -7,6 +7,6 @@ namespace PS.Services
 {
     public interface ISmsSender
     {
-        Task SendSmsAsync(string number, string message);
+        bool SendSmsAsync(string number, string message);
     }
 }

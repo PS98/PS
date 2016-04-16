@@ -111,7 +111,7 @@
                                         <div class="form-group">
                                             <div class="input-group" style="float: left;">
                                                 <div style="display:flex;">
-                                                    <input type="password" class="form-control" id="rotp" name="rotp" ng-model="regotp" style="width:100px;" ng-disabled="regForm.rmobile.$invalid" ng-class="{'bckgrnd-clr': (regForm.rotp.$dirty || regForm.rotp.$error.minlength || regForm.rotp.$error.maxlength),'bckgrnd-color-default' : (!regForm.rotp.$error.minlength && !regForm.rotp.$error.maxlength && !regForm.rotp.$error.required)}" placeholder="OTP" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
+                                                    <input type="password" class="form-control" id="rotp" name="rotp" ng-model="regotp" ng-disabled="regForm.rmobile.$invalid" ng-class="{'bckgrnd-clr': (regForm.rotp.$dirty || regForm.rotp.$error.minlength || regForm.rotp.$error.maxlength),'bckgrnd-color-default' : (!regForm.rotp.$error.minlength && !regForm.rotp.$error.maxlength && !regForm.rotp.$error.required)}" placeholder="OTP" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
                                                     <button type="button" id="reqotp_btn" class="btn btn-block btn-info" style="{{again ? 'margin-left:43px;' : 'margin-left:75px;'}}" ng-disabled="regForm.rmobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
                                                 </div>
                                             </div>

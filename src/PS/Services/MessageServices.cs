@@ -1,9 +1,13 @@
 ﻿using Microsoft.Extensions.OptionsModel;
 using RestSharp;
 using RestSharp.Authenticators;
+using RestSharp.Extensions.MonoHttp;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 //using System.Net.Mail;
 //using System.Net;
@@ -44,18 +48,61 @@ namespace PS.Services
             //}
        // }
 
-        public Task SendSmsAsync(string number, string message)
+        public bool SendSmsAsync(string number, string message)
         {
-            // Plug in your SMS service here to send a text message.
-            var twilio = new Twilio.TwilioRestClient(
-           Options.MessageSid,           // Account Sid from dashboard
-           Options.MessageAuthToken);    // Auth Token
-                                                   // "i7qydlUseytO4VqWT0ip0tqkoCGKa1rh" secret id
-                                                   // SK1222a7d0b0f58495a6c76531997e7fb6 sid
-                                                   //Shobhit98 friendly name
-            var result = twilio.SendMessage("+13343283001", "+91" + number, message);
-            System.Diagnostics.Debug.WriteLine(result);
-            return Task.FromResult(0);
+            //Your authentication key
+            string authKey = Options.MessageSid;
+            //Multiple mobiles numbers separated by comma
+            string mobileNumber = number;
+            //Sender ID,While using route4 sender id should be 6 characters long.
+            string senderId = "102234";
+            //Your message to send, Add URL encoding here.
+            string msg = HttpUtility.UrlEncode(message);
+
+            //Prepare you post parameters
+            StringBuilder sbPostData = new StringBuilder();
+            sbPostData.AppendFormat("authkey={0}", authKey);
+            sbPostData.AppendFormat("&mobiles={0}", mobileNumber);
+            sbPostData.AppendFormat("&message={0}", msg);
+            sbPostData.AppendFormat("&sender={0}", senderId);
+            sbPostData.AppendFormat("&route={0}", "default");
+
+            try
+            {
+                //Call Send SMS API
+                string sendSMSUri = Options.MessageBaseUri;
+                //Create HTTPWebrequest
+                HttpWebRequest httpWReq = (HttpWebRequest)WebRequest.Create(sendSMSUri);
+                //Prepare and Add URL Encoded data
+                UTF8Encoding encoding = new UTF8Encoding();
+                byte[] data = encoding.GetBytes(sbPostData.ToString());
+                //Specify post method
+                httpWReq.Method = "POST";
+                httpWReq.ContentType = "application/x-www-form-urlencoded";
+                httpWReq.ContentLength = data.Length;
+                using (Stream stream = httpWReq.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+                //Get the response
+
+                //TODO: Uncomment below lines for sending the message
+
+                //HttpWebResponse response = (HttpWebResponse)httpWReq.GetResponse();
+                //StreamReader reader = new StreamReader(response.GetResponseStream());
+                //string responseString = reader.ReadToEnd();
+
+                //Close the response
+                //reader.Close();
+                //response.Close();
+                return true;
+            }
+            catch (SystemException ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message.ToString());
+                return false;
+            }
+
         }
 
         public RestResponse SendSimpleMessage(string email, string subject, string message)
