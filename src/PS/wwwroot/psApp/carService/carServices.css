@@ -2,6 +2,7 @@
         color: #218be7;
         text-decoration:none;
 }
+
 .service li {
     list-style: none;
 }
@@ -638,7 +639,17 @@ pre                             { margin-bottom:20px; }
 .car-header .form-control {
     margin-bottom: 0px;
 }
+@media (min-width: 1200px) {
+     .container.service {
+    margin-left: 100px
+}
+}
+
 @media (min-width: 768px) {
+  .dateContainer {
+    border: 1px solid #DDD;
+    margin: 0 10px 0 0;
+}
     .centre-list-item .centre-list-item_heading {
         font-size: 14px;
     }
@@ -664,8 +675,85 @@ pre                             { margin-bottom:20px; }
 }
 }
 
+/* book Appoinment
+    ======================================================================
+*/
+.selectedTime {
+    background-color: #218be7 !important;
+    font-weight: 600 !important;
+    color: black !important;
+}
 
+.car-selection-container ul li.date:hover i {
+    color: #fff;
+}
+.car-selection-container ul li.dateHeader {
+    cursor: none;
+    font-weight: bold;
+    background-color: #505050;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#505050), to(#181818));
+    background-image: -webkit-linear-gradient(top, #505050, #181818);
+    background-image: -moz-linear-gradient(top, #505050, #181818);
+    background-image: -o-linear-gradient(top, #505050, #181818);
+    background-image: linear-gradient(to bottom, #505050, #181818);
+    color: white;
+    text-align: center;
+}
+.car-selection-container ul li.date:hover {
+    background-color: #218be7;
+}
 
+.dayColumn {
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 18.5%;
+    float: left;
+}
+.dateHeader div.day {
+    position: relative;
+    top: 13%;
+}
+.dateHeader div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dateHeader div.subDate {
+    border-left: 1px solid #505050;
+    padding-right: 10px;
+    padding-left: 7px;
+}
+.date {
+        border-bottom: 1px solid #DDD;
+    text-align: center;
+}
+.offerDiv {
+    display: inline-block;
+    line-height: 1.5;
+    padding-bottom: 5px;
+    float: left;
+    font-size: 11px
+}
+.offerDiv div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.offerKey {
+    height: 20px;
+    margin-right: 10px;
+    width: 20px;
+    border: 1px solid silver;
+}.offerText {
+     width: 140px;
+ }
+.greenPromo {
+    background-color: #458B00;
+}
+.book .fa.fa-check-circle {
+    font-size: 22px;
+    margin-right: 5px;
+    
+}
 
 /* ANIMATIONS
 ============================================================================= */
