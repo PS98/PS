@@ -6,18 +6,15 @@ angular.module("psApp").directive("calendarDirective", function() {
         replace: true,
         scope: {
             data: "=",
-            setDateTime: "&",
-        },
-        link: function (scope, element, attrs) {
-           
+            update: '&'
         },
         controller:function($scope) {
             $scope.updateTime = function (time, date) {
                 debugger;
                 $scope.selectedDate = {};
                 $scope.selectedDate.time = time;
-                $scope.selectedDate.date = date;
-                $scope.setDateTime({ selectedTime: $scope.selectedDate });
+                $scope.selectedDate.day = date;
+                $scope.update({ selectedDateTime: $scope.selectedDate });
             }
         }
 

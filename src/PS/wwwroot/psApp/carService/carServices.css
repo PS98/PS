@@ -754,6 +754,16 @@ pre                             { margin-bottom:20px; }
     margin-right: 5px;
     
 }
+.calendar-header {
+        font-size: 13px;
+    color: green;
+    margin-bottom: 5px;
+}
+.disabledLink {
+     background-color:#d9d9d9 !important;
+    color:#aaa !important;
+    cursor: not-allowed;
+}
 
 /* ANIMATIONS
 ============================================================================= */

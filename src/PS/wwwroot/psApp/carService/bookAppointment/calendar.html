@@ -8,7 +8,7 @@
             <li class="date">
                 <span class="unavailableTime timeData" href="javascript:void(0);" x-apple-data-detectors="false" data-appointmenttime="07:00 AM">Early or Late Vehicle Drop-Off</span>
             </li>
-            <li ng-click="updateTime(wh.time, cwh.day)" ng-repeat="wh in cwh.WorkingHours" ng-if="wh.isAvailable" class="date" ng-class="{selectedTime : cwh.day === selectedDate.day && wh.time === selectedDate.time}">
+            <li ng-click="updateTime(wh.time, cwh.day)" ng-repeat="wh in cwh.WorkingHours" ng-if="wh.isAvailable" class="date" ng-class="{selectedTime : cwh.day === selectedDate.day && wh.time === selectedDate.time, disabledLink: wh.isDisabled}">
                 <span>{{ wh.time}}</span>
                 <!--<i ng-if="cwh.day === selectedDate.day && wh.time === selectedDate.time" class="fa fa-check pull-right"></i>-->
             </li>
