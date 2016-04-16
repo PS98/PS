@@ -75,13 +75,13 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                        template: "<car-service></car-service>"
                    }
                },
-                {
-                    state: "service.car",
-                    config: {
-                        url: "/",
-                        template: "<select-car></select-car>"
-                    }
-                },
+               {
+                   state: "service.car",
+                   config: {
+                       url: "/",
+                       template: "<select-car></select-car>"
+                   }
+               },
                  {
                      state: "service.centre",
                      config: {
@@ -96,13 +96,14 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                          template: "<book-appointment></book-appointment>"
                      }
                  },
-                  {
-                      state: "service.address",
-                      config: {
-                          url: "/",
-                          template: "<select-address></select-address>"
-                      }
-                  },
+               {
+                   state: "service.address",
+                   config: {
+                       url: "/",
+                       template: "<select-address></select-address>"
+                   }
+               },
+                  
                {
                    state: "socialCallback",
                    config: {

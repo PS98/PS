@@ -2,29 +2,27 @@
 
 angular.module("psApp").directive("bookAppointment", function() {
     return {
-        templateUrl: "psApp/carService/bookAppointment.html",
+        templateUrl: "psApp/carService/bookAppointment/bookAppointment.html",
         link: function(scope, element, attrs) {
 
         },
+        scope:false,
         controller: function ($scope) {
             $scope.dateToDisplay = []; $scope.timeToDisplay = [8,9,10,11,12,13,14,15,16,17,18,19,20];
+            $scope.hideCalendar = false;
             $scope.centreWorkingHours = [];
             var today = new Date();
             var currentTime = today.getHours();
 
             $scope.setFiveDay = function (date,type) {
                 var day = date.getDate();
-               var nextDate = new Date();
-                for (var i = 0; i < 4; i++) {
+               var nextDate;
+                for (var i = 0; i < 5; i++) {
                     var WH = [];
-                    if (type === "prev")
-                        nextDate.setDate(day - 4 + i);
-                    else if(type ==="next")
-                        nextDate.setDate(day +1+ i);
-                    else
-                    nextDate.setDate(day + i);
+                    var tempDate = new Date(date);
+                    tempDate.setDate(day);
+                    nextDate = tempDate;
                     var datepart = nextDate.toDateString();
-                    // dateToDisplay.push(datepart);
                     for (var j = 0; j < $scope.timeToDisplay.length; j++) {
 
                         var time = formatTime($scope.timeToDisplay[j]);
@@ -34,8 +32,18 @@ angular.module("psApp").directive("bookAppointment", function() {
                         WH.push(obj);
                     }
                     $scope.centreWorkingHours.push({ day: datepart, WorkingHours: WH });
+                    day++;
+                    if (i === 0 ) {
+                        if (today.toDateString() === nextDate.toDateString()) {
+                            $scope.disablePrevBtn = true;
+                        } else {
+                            $scope.disablePrevBtn = false;
+                        }
+                    }
+
                 }
             }
+            $scope.selectedDate = { pickUpDate: {}, dropOffDate: {} };
 
             function formatTime(time) {
              //   var d = new Date(date);
@@ -76,22 +84,36 @@ angular.module("psApp").directive("bookAppointment", function() {
 
             }
 
-            $scope.selectTime = function(time) {
-                $scope.isSelected = true;
+            $scope.selectpickUpTime = function (dateTime) {
+                $scope.selectedDate.pickUpDate.day = dateTime.day;
+                $scope.selectedDate.pickUpDate.time = dateTime.time;
+                $scope.hidePickUpCalendar = true;
+                $scope.showDropCalendar = true;
+            }
+            $scope.selectDropTime = function (dateTime) {
+                $scope.selectedDate.dropOffDate.day = dateTime.day;
+                $scope.selectedDate.dropOffDate.time = dateTime.time;
+                $scope.hidePickUpCalendar = true;
+                $scope.showDropCalendar = false;
             }
 
             $scope.nextDates = function (type) {
                 var date = type === "prev" ? $scope.centreWorkingHours[0].day : $scope.centreWorkingHours[$scope.centreWorkingHours.length - 1].day;
                 date = new Date(date);
                 var day = date.getDate();
-
-             //   date = type === "prev" ? today.setDate(day + 1) : today.setDate(day - 4);
+                type === "prev" ? date.setDate(day - 5) : date.setDate(day + 1 );
                 $scope.centreWorkingHours = [];
                 $scope.setFiveDay(date,type);
-
-
             }
             $scope.setFiveDay(today);
+            $scope.editPickUpDate = function () {
+                $scope.hidePickUpCalendar = !$scope.hidePickUpCalendar;
+              //  $scope.hideDropCalendar = true;
+            }
+            $scope.doPickUp = function() {
+                
+            }
         }
+      
     }
 });

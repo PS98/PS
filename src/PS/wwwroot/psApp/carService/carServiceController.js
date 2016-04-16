@@ -187,7 +187,7 @@
     }
     console.log($state.current.name);
 
-    $state.go("service.car");
+  $state.go("service.car");
     $scope.state = $state;
 
     $scope.search = function () {
