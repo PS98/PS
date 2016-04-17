@@ -1,72 +1,145 @@
-﻿
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="car-header">
-                <div class="row">
-                    <div class="col-md-8">
-                        <form class="form-horizontal">
+﻿<div class="user-address">
+    <div class="header-text">How Can We Reach You</div>
+    <form class="form-horizontal">
+        <div class="row top-padding10">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="autocompleteTextBox"> Start typing your address</label>
+                    <input class="form-control" id="autocompleteTextBox" placeholder="Start typing your address" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="street_number" class="">ADDRESS LINE 1</label>
+                    <input class="form-control" id="street_number" placeholder="address line 1" />
+                    <br />
+                    <label for="street_number" class="">ADDRESS LINE 2</label>
+                    <input class="form-control" id="route" placeholder="address line 2" />
+                </div>
+                <div class="form-group col-xs-6">
+                    <label for="administrative_area_level_2" class="">City</label>
+                    <input class="form-control" id="administrative_area_level_2" placeholder="city" />
+                </div>
 
-                            <h2 class="text-center underline">How Can We Reach You</h2>
+                <div class="form-group col-xs-6">
+                    <label for="administrative_area_level_1">State</label>
+                    <input class="form-control" id="administrative_area_level_1" placeholder="state" />
+                </div>
+                <div class="form-group col-xs-6">
+                    <label for="country">Country</label>
+                    <input class="form-control" id="country" placeholder="country" />
+                </div>
 
-
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">&nbsp;</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" id="autocompleteTextBox" placeholder="Enter your address" type="text"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Street address</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" id="street_number"/>
-                                    <br/>
-                                    <input class="form-control" id="route"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">City</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" id="locality"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">State</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" id="administrative_area_level_1"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Country</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" id="country"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Zip code</label>
-                                <div class="col-sm-10">
-                                    <input class="form-control" id="postal_code"/>
-                                </div>
-                            </div>
-
-                        </form>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="googleMap" style="margin: 100px;"></div>
-                    </div>
+                <div class="form-group col-xs-6">
+                    <label for="postal_code">Zip code</label>
+                    <input class="form-control" id="postal_code" placeholder="zip code" />
+                </div>
+                <div class="form-group">
+                    <label for="FirstName"> First Name</label>
+                    <input class="form-control" id="FirstName" placeholder="first name" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="LastName"> Last Name</label>
+                    <input class="form-control" id="LastName" placeholder="last name" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="MobileNo"> Mobile No</label>
+                    <input class="form-control" id="MobileNo" placeholder="mobile no" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="Email"> Email Address</label>
+                    <input class="form-control" id="Email" placeholder="email address" type="text" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="googleMap" class="address-map" ng-if="true"></div>
+                <div class="col-xs-12 order-details">
+                    <div class="header-text padding-top30">Your Order</div>
+                    <table class="table">
+                        <thead>
+                            <tr scope="row">
+                                <th class="col-xs-9">Vehicle Details</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row">
+                                <td>{{userSelectedService.selectedCar.brand}}-{{userSelectedService.selectedCar.model}}-{{userSelectedService.selectedCar.varient}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr scope="row">
+                                <th class="col-xs-9">Service Details</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row" ng-repeat="srv in userSelectedService.selectedServices">
+                                <td>{{ srv.name}}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr scope="row">
+                                <th class="col-xs-9">Centre Details</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row">
+                                <td>Name</td>
+                                <td>{{ userSelectedService.selectedCentre.name}}</td>
+                            </tr>
+                            <tr scope="row">
+                                <td>Address</td>
+                                <td>
+                                    {{userSelectedService.selectedCentre.address.line1}}
+                                    {{userSelectedService.selectedCentre.address.line2}}
+                                </td>
+                            </tr>
+                            <tr scope="row">
+                                <td>Contact No</td>
+                                <td>
+                                    {{userSelectedService.selectedCentre.phoneNo}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr scope="row">
+                                <th class="col-xs-9">Appointment Details</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row">
+                                <td ng-if="userSelectedPickUp">Pick-up time</td>
+                                <td ng-if="!userSelectedPickUp">Drop-time</td>
+                                <td>
+                                    {{userSelectedService.selectedAppointment.dropOffDate.day}}
+                                    {{userSelectedService.selectedAppointment.dropOffDate.time}}
+                                </td>
+                            </tr>
+                            <tr scope="row">
+                                <td ng-if="userSelectedPickUp">Drop-time</td>
+                                <td ng-if="!userSelectedPickUp">Pick-up time</td>
+                                <td>
+                                    {{userSelectedService.selectedAppointment.pickUpDate.day}}
+                                    {{userSelectedService.selectedAppointment.pickUpDate.time}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        </div>
-    <div class="btn">
-        <div class="btn btn-filter wrap__btn-skew-r js-filter">
-            <button ui-sref="service.car" class="btn btn-skew-r btn-effect "><span class="btn btn-skew-r__inner">Previous Section</span></button>
-        </div>
+    </form>
+</div>
+<div class="btn">
+    <div class="btn btn-filter wrap__btn-skew-r js-filter">
+        <button ui-sref="service.centre" class="btn btn-skew-r btn-effect "><span class="btn btn-skew-r__inner">Previous Section</span></button>
     </div>
-
 </div>

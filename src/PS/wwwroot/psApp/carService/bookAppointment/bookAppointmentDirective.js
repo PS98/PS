@@ -7,13 +7,14 @@ angular.module("psApp").directive("bookAppointment", function () {
 
         },
         scope: false,
-        controller: ["$scope", function ($scope) {
+        controller: ["$scope", "psDataServices", function ($scope,psDataServices) {
             $scope.dateToDisplay = [];
             $scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
             $scope.hideCalendar = false;
             $scope.showPickUpCalendar = true;
             $scope.centreWorkingHours = [];
             $scope.availablePickUpTime = [];
+                $scope.userSelectedService = {};
             var today = new Date();
             var currentTime = today.getHours();
 
@@ -95,7 +96,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                     var time1 = time.split(" ");
                     var time2 = selectedTime.split(" ");
                     time1 = time1[1] === "AM" ? time1[0] : time1[0] !== 12 ? 12 + time1[0] :time1[0];
-                    time2 = time2[1] === "AM" ? time2[0] : time2[0] !== 12 ? 12 + time2[0] : time2[0];
+                    time2 = time2[1] === "AM" ? time2[0] : time2[0] !== 12 ? 12 + time2[0] : time2u[0];
                     if (parseInt(time1) <= parseInt(time2))
                         return true;
                     else
@@ -120,12 +121,16 @@ angular.module("psApp").directive("bookAppointment", function () {
                 $scope.selectedDate.pickUpDate.time = dateTime.time;
                 $scope.showPickUpCalendar = false;
                 $scope.showDropCalendar = true;
+                psDataServices.setSelectedAppointment($scope.selectedDate);
+                 $scope.userSelectedService = psDataServices.getSelectedService();
             }
             $scope.selectDropTime = function (dateTime) {
                 $scope.selectedDate.dropOffDate.day = dateTime.day;
                 $scope.selectedDate.dropOffDate.time = dateTime.time;
                 $scope.showDropCalendar = false;
                 $scope.hideCalendar = true;
+                psDataServices.setSelectedAppointment($scope.selectedDate);
+                $scope.userSelectedService = psDataServices.getSelectedService();
             }
 
             $scope.nextDates = function (type) {

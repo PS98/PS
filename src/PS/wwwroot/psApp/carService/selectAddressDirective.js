@@ -4,21 +4,20 @@ angular.module("psApp").directive("selectAddress", function () {
     return {
         templateUrl: "psApp/carService/selectAddress.html",
         link: function (scope, element, attrs) {
-            var autocomplete;
-            initializeGoogleMap('autocompleteTextBox', 'googleMap',setAutocomplete, true);
-           function setAutocomplete(auto) {
+            var autocomplete = initializeGoogleMap('autocompleteTextBox', 'googleMap', setAutocomplete, true, undefined, true);
+            function setAutocomplete(auto) {
              //  autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocompleteTextBox')), { types: ['geocode'] });
                //google.maps.event.addListener(autocomplete, 'place_changed', function () {
 
 
-               autocomplete = auto;
+              // autocomplete = auto;
                  var place = autocomplete.getPlace();
                  var lat = place.geometry.location.lat();
                  var lon = place.geometry.location.lng();
                   var latlon = new google.maps.LatLng(lat, lon);
              var mapholder = document.getElementById('googleMap');
-             mapholder.style.height = "200px";
-             mapholder.style.width = "500px";
+           //  mapholder.style.height = "200px";
+             //mapholder.style.width = "500px";
 
              fillInAddress(autocomplete);
              var myOptions = {

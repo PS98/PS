@@ -10,7 +10,6 @@ angular.module("psApp").directive("calendarDirective", function() {
         },
         controller:function($scope) {
             $scope.updateTime = function (time, date) {
-                debugger;
                 $scope.selectedDate = {};
                 $scope.selectedDate.time = time;
                 $scope.selectedDate.day = date;
