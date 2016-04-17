@@ -765,33 +765,40 @@ pre                             { margin-bottom:20px; }
     cursor: not-allowed;
 }
 .user-address .form-group {
-    margin: 0 0 10px 0;
+    margin: 15px 0 10px 0;
 }
 .user-address .form-group label {
     text-transform: uppercase;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+}
+
+.padding-top30 {
+    padding-top: 30px;
 }
 .user-address .form-group input {
     border-bottom: 1px solid;
     padding: 0.26em 0.76em;
+    color: black;
+    font-size: 14px;
 }
 .user-address .address-map {
-    height: 250px;
+    height: 200px;
     border: 2px Solid black;
     margin:  0;
 }
 .user-address .form-group.col-xs-6 {
     padding: 0 10px 0 0;
 }
-.order-details-header {
+thead th {
     font-size: 13px;
 }
 .order-details {
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
 }
-.order-details-text {
-    
+tbody td {
+    font-size: 14px;
+    font-weight: 500;
 }
 .order-details-description {
     

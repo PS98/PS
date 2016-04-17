@@ -1,13 +1,32 @@
 ﻿angular.module("psApp").factory("psDataServices", ["$http", function ($http) {
-    var selectedCar, selectedService;
+    var selectedCar, selectedService, serviceNameList;
+    var userServiceData= {selectedCar:'',selectedServices:'', selectedCentre:'',selectedAppointment:'',userDetails:''};
 
     
     var _getSelectedService = function () {
-        return { "selectedService": selectedService, "selectedCar": selectedCar };
+        return userServiceData;
     }
-    var _setSelectedCarAndService = function (car, job) {
+    var _setSelectedCarAndService = function (car, job,centre,appointment,user) {
         selectedCar = car;
         selectedService = job;
+        userServiceData.selectedCar = car;
+        userServiceData.selectedServices = job;
+       // userServiceData.selectedCentre = centre;
+      //  userServiceData.selectedAppointment = appointment;
+       // userServiceData.userDetails = user;
+    }
+    var _setSelectedServiceName = function(servicesName) {
+        serviceNameList = servicesName;
+    }
+    var _setSelectedAppointment = function (appointment) {
+        userServiceData.selectedAppointment = appointment;
+        console.log(userServiceData);
+    }
+    var _setuserDetails = function (user) {
+        userServiceData.userDetails = user;
+    }
+    var _setSelectedCentre = function (centre) {
+        userServiceData.selectedCentre = centre;
     }
     var _getAllCarCollection = function () {
      return  $http.get("/api/car");
@@ -28,7 +47,7 @@
         return $http.get("/api/ServiceCentre/" + city);
     }
     var _getServiceCentreList = function (city, area) {
-        var serviceList = selectedService;
+        var serviceList = serviceNameList;
         var data = { 'City': city, 'Area': area, 'Name': serviceList }
         return $http(
         {
@@ -50,7 +69,11 @@
         getServiceCentreList: _getServiceCentreList,
         getAllService: _getAllService,
         setSelectedCarAndService: _setSelectedCarAndService,
-        getSelectedService: _getSelectedService
+        getSelectedService: _getSelectedService,
+        setSelectedServiceName: _setSelectedServiceName,
+        setSelectedCentre: _setSelectedCentre,
+        setSelectedAppointment: _setSelectedAppointment,
+        setuserDetails: _setuserDetails
 
 }
           

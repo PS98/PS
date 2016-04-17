@@ -22,12 +22,16 @@
         }
     }
     $scope.selectYear = function (year) {
-        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = true; $scope.showVarient = false;
+        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showVarient = false;
         if (year !== "")
             $scope.selectedCar.year = year;
         else {
             $scope.selectedCar.year = "I Don't Know";
         }
+        if (!$scope.selectedCar.model)
+             $scope.showModel = true;
+        psDataServices.setSelectedCarAndService($scope.selectedCar);
+        displayIncompleteModule();
     }
     $scope.selectModel = function (model) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false;
@@ -45,6 +49,7 @@
         } else {
             $scope.selectedCar.model = "I Don't Know";
             $scope.selectedCar.varient = "I Don't Know";
+              $scope.carList.carVarientList = { };
 
         }
       
@@ -59,6 +64,7 @@
         }
         $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
         $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+         psDataServices.setSelectedCarAndService($scope.selectedCar);
     }
     $scope.editBrand = function () {
         $scope.showBrandName = !$scope.showBrandName; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
@@ -136,11 +142,11 @@
     }
     function displayIncompleteModule() {
         if (!$scope.showBrandName) {
-            $scope.showMakeYears = $scope.selectedCar.year == undefined ? true : false;
+            $scope.showMakeYears = $scope.selectedCar.year == undefined || $scope.selectedCar.year ==="" ? true: false;
             if (!$scope.showMakeYears)
-                $scope.showModel = $scope.selectedCar.model == undefined ? true : false;
+                $scope.showModel = $scope.selectedCar.model == undefined || $scope.selectedCar.model === "" ? true : false;
             if (!$scope.showModel)
-                $scope.showVarient = $scope.selectedCar.varient == undefined ? true : false;
+                $scope.showVarient = $scope.selectedCar.varient == undefined || $scope.selectedCar.varient === "" ? true : false;
         }
 
     }
@@ -182,10 +188,10 @@
         $.each($scope.selectedJob, function(index,value) {
             jobName.push(value.name);
         });
-        psDataServices.setSelectedCarAndService($scope.selectedCar, jobName);
+        psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
+        psDataServices.setSelectedServiceName(jobName);
         $state.go("service.centre");
     }
-    console.log($state.current.name);
 
  $state.go("service.car");
     $scope.state = $state;

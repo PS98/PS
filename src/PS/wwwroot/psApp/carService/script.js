@@ -46,6 +46,7 @@ function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, curre
     } else {
         draggable = false;
     }
+    return autocomplete;
 }
 
 function showMap(position) {

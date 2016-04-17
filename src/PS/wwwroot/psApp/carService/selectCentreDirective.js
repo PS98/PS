@@ -20,6 +20,7 @@ angular.module("psApp").directive("selectCentre", function () {
                     $scope.selectedCentre = centre;
                     myClick(centre.$$hashKey, $scope.centreList);
                 } else {
+                    psDataServices.setSelectedCentre($scope.selectedCentre);
                     $state.go("service.appointment");
                 }
             }

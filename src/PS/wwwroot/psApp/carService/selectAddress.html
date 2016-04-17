@@ -1,151 +1,190 @@
-﻿
-<!--<div class="container">
+﻿<!--<div class="container">
     <div class="row">
         <div class="col-xs-12">
             <div class="car-header">-->
-                <div class="user-address">
-                    <!--<div class="col-xs-12">-->
-                        <form class="form-horizontal">
-                            <div class="row">
-                                <div class="header-text underline">How Can We Reach You</div>
-                                <div class="col-md-6">
-                                    <!--<div class="row">-->
-                                    <div class="form-group">
-                                        <!--<label for="autocompleteTextBox"> Start typing your address</label>-->
-                                        <input class="form-control" id="autocompleteTextBox" placeholder="Start typing your address" type="text"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <!--<label for="street_number" class="">ADDRESS LINE 1</label>-->
-                                        <input class="form-control" id="street_number" placeholder="Enter address line 1"/>
-                                        <br/>
-                                        <!--<label for="street_number" class="">ADDRESS LINE 2</label>-->
-                                        <input class="form-control" id="route" placeholder="Enter address line 2"/>
-                                    </div>
-                                    <div class="form-group col-xs-6">
-                                        <!--<label for="administrative_area_level_2" class="">City</label>-->
-                                        <input class="form-control" id="administrative_area_level_2" placeholder="Enter city"/>
-                                    </div>
+<div class="user-address">
+    <!--<div class="col-xs-12">-->
+    <div class="header-text">How Can We Reach You</div>
 
-                                    <div class="form-group col-xs-6">
-                                        <!--<label for="administrative_area_level_1">State</label>-->
-                                        <input class="form-control" id="administrative_area_level_1" placeholder="Enter state"/>
-                                    </div>
-                                    <div class="form-group col-xs-6">
-                                        <!--<label for="country">Country</label>-->
-                                        <input class="form-control" id="country" placeholder="Enter country"/>
-                                    </div>
+    <form class="form-horizontal">
+        <div class="row top-padding10">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="autocompleteTextBox"> Start typing your address</label>
+                    <input class="form-control" id="autocompleteTextBox" placeholder="Start typing your address" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="street_number" class="">ADDRESS LINE 1</label>
+                    <input class="form-control" id="street_number" placeholder="address line 1" />
+                    <br />
+                    <label for="street_number" class="">ADDRESS LINE 2</label>
+                    <input class="form-control" id="route" placeholder="address line 2" />
+                </div>
+                <div class="form-group col-xs-6">
+                    <label for="administrative_area_level_2" class="">City</label>
+                    <input class="form-control" id="administrative_area_level_2" placeholder="city" />
+                </div>
 
-                                    <div class="form-group col-xs-6">
-                                        <!--<label for="postal_code">Zip code</label>-->
-                                        <input class="form-control" id="postal_code" placeholder="Enter zip code"/>
-                                    </div>
-                                    <!--</div>-->
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <div id="googleMap" class="address-map"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <!--<label for="FirstName"> First Name</label>-->
-                                        <input class="form-control" id="FirstName" placeholder="Enter first name" type="text" />
-                                    </div>
-                                    <div class="form-group">
-                                        <!--<label for="LastName"> Last Name</label>-->
-                                        <input class="form-control" id="LastName" placeholder="Enter last name" type="text" />
-                                    </div>
-                                    <div class="form-group">
-                                        <!--<label for="MobileNo"> Mobile No</label>-->
-                                        <input class="form-control" id="MobileNo" placeholder="Enter mobile no" type="text" />
-                                    </div>
-                                    <div class="form-group">
-                                        <!--<label for="Email"> Email Address</label>-->
-                                        <input class="form-control" id="Email" placeholder="Enter email address" type="text" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6" >
-                                    <div class="header-text underline">Your Order</div>
-                                    <div class="col-xs-12">
-                                        <!--<div class="order-details-header"> Appointment Details</div>
-                                        <div class="row order-details"><div class="col-xs-6">Centre</div> <div class="col-xs-6">Kwik-Fit Centre 985 Broxburn</div></div>
-                                        <div class="row"><div class="col-xs-6">Date/Time</div><div class="col-xs-6">Tuesday 19th April 2016, 8:30am</div></div>-->
-                                        <table class="table">
-                                            <thead>
-                                            <tr scope="row">
-                                                <th class="col-xs-9">Vehicle Details</th>
-                                                <th class="text-right">&nbsp;</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr scope="row">
-                                                <td>ModeL</td>
-                                                <td>£54.95</td>
-                                            </tr>
-                                            <tr scope="row">
-                                                <td>Make</td>
-                                                <td>£54.95</td>
-                                            </tr>
-                                            <tr scope="row">
-                                                <td>Year</td>
-                                                <td>£54.95</td>
-                                            </tr>
-                                                <tr scope="row">
-                                                    <td>Engine Type</td>
-                                                    <td>£54.95</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <table class="table">
-                                            <thead>
-                                                <tr scope="row">
-                                                    <th class="col-xs-9">Service Details</th>
-                                                    <th class="text-right">&nbsp;</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr scope="row">
-                                                    <td>1 x Essential Service at £54.95</td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                            <table class="table">
-                                                <thead>
-                                                    <tr scope="row">
-                                                        <th class="col-xs-9">Centre Details</th>
-                                                        <th class="text-right">&nbsp;</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr scope="row">
-                                                        <td>Name</td>
-                                                        <td>Jkk,jk ajhfkhlkaflkallkakjklajlkjaklnmnlkklahkln.kl</td>
-                                                    </tr>
-                                                </tbody>
-                                                <!--<tfoot>
-                <tr scope="row">
-                    <th >Total</th>
-                    <th>£54.95</th>
-                </tr>
-            </tfoot>-->
-                                            </table>
-</div>
-                                </div>
-                            </div>
-</form>
-                    </div>
-                    <!--<div class="col-md-4">
-                        <div id="googleMap" style="margin: 100px;"></div>
-                    </div>-->
-                <!--</div>-->
+                <div class="form-group col-xs-6">
+                    <label for="administrative_area_level_1">State</label>
+                    <input class="form-control" id="administrative_area_level_1" placeholder="state" />
+                </div>
+                <div class="form-group col-xs-6">
+                    <label for="country">Country</label>
+                    <input class="form-control" id="country" placeholder="country" />
+                </div>
+
+                <div class="form-group col-xs-6">
+                    <label for="postal_code">Zip code</label>
+                    <input class="form-control" id="postal_code" placeholder="zip code" />
+                </div>
+                <!--</div>
+                <div class="form-group col-md-6">-->
+                <div class="form-group">
+                    <label for="FirstName"> First Name</label>
+                    <input class="form-control" id="FirstName" placeholder="first name" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="LastName"> Last Name</label>
+                    <input class="form-control" id="LastName" placeholder="last name" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="MobileNo"> Mobile No</label>
+                    <input class="form-control" id="MobileNo" placeholder="mobile no" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="Email"> Email Address</label>
+                    <input class="form-control" id="Email" placeholder="email address" type="text" />
+                </div>
+            </div>
             <!--</div>
+            <div class="row">-->
+            <div class="col-md-6">
+                <div id="googleMap" class="address-map" ng-if="true"></div>
+
+                <!--</div>
+                <div class="col-md-6" >-->
+                <div class="col-xs-12 order-details">
+                    <div class="header-text padding-top30">Your Order</div>
+
+                    <!--<div class="order-details-header"> Appointment Details</div>
+                    <div class="row order-details"><div class="col-xs-6">Centre</div> <div class="col-xs-6">Kwik-Fit Centre 985 Broxburn</div></div>
+                    <div class="row"><div class="col-xs-6">Date/Time</div><div class="col-xs-6">Tuesday 19th April 2016, 8:30am</div></div>-->
+                    <table class="table">
+                        <thead>
+                            <tr scope="row">
+                                <th class="col-xs-9">Vehicle Details</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row">
+                                <td>{{userSelectedService.selectedCar.brand}}-{{userSelectedService.selectedCar.model}}-{{userSelectedService.selectedCar.varient}}</td>
+                            </tr>
+                            <!--<tr scope="row">
+                                <td>Make</td>
+                                <td>{{userSelectedService.selectedCar.model}}</td>
+                            </tr>
+                            <tr scope="row">
+                                <td>Year</td>
+                                <td>{{userSelectedService.selectedCar.varient}}</td>
+                            </tr>
+                            <tr scope="row">
+                                <td>Engine Type</td>
+                                <td>{{userSelectedService.selectedCar.year}}</td>
+                            </tr>-->
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr scope="row">
+                                <th class="col-xs-9">Service Details</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row" ng-repeat="srv in userSelectedService.selectedServices">
+                                <td>{{ srv.name}}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr scope="row">
+                                <th class="col-xs-9">Centre Details</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row">
+                                <td>Name</td>
+                                <td>{{ userSelectedService.selectedCentre.name}}</td>
+                            </tr>
+                            <tr scope="row">
+                                <td>Address</td>
+                                <td>
+                                    {{userSelectedService.selectedCentre.address.line1}}
+                                    {{userSelectedService.selectedCentre.address.line2}}
+                                </td>
+                            </tr>
+                            <tr scope="row">
+                                <td>Contact No</td>
+                                <td>
+                                    {{userSelectedService.selectedCentre.phoneNo}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr scope="row">
+                                <th class="col-xs-9">Appointment Details</th>
+                                <th class="text-right">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr scope="row">
+                                <td ng-if="userSelectedPickUp">Pick-up time</td>
+                                <td ng-if="!userSelectedPickUp">Drop-time</td>
+                                <td>
+                                    {{userSelectedService.selectedAppointment.dropOffDate.day}}
+                                    {{userSelectedService.selectedAppointment.dropOffDate.time}}
+                                </td>
+                            </tr>
+                            <tr scope="row">
+                                <td ng-if="userSelectedPickUp">Drop-time</td>
+                                <td ng-if="!userSelectedPickUp">Pick-up time</td>
+                                <td>
+                                    {{userSelectedService.selectedAppointment.pickUpDate.day}}
+                                    {{userSelectedService.selectedAppointment.pickUpDate.time}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--<tfoot>
+                    <tr scope="row">
+                        <th >Total</th>
+                        <th>£54.95</th>
+                    </tr>
+                    </tfoot>-->
+
+                </div>
+            </div>
         </div>
-        </div>-->
-    <div class="btn">
-        <div class="btn btn-filter wrap__btn-skew-r js-filter">
-            <button ui-sref="service.car" class="btn btn-skew-r btn-effect "><span class="btn btn-skew-r__inner">Previous Section</span></button>
-        </div>
+    </form>
+</div>
+<!--<div class="col-md-4">
+    <div id="googleMap" style="margin: 100px;"></div>
+</div>-->
+<!--</div>-->
+<!--</div>
+</div>
+</div>-->
+<div class="btn">
+    <div class="btn btn-filter wrap__btn-skew-r js-filter">
+        <button ui-sref="service.centre" class="btn btn-skew-r btn-effect "><span class="btn btn-skew-r__inner">Previous Section</span></button>
     </div>
+</div>
 
 <!--</div>-->
