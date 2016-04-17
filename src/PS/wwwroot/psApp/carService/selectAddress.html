@@ -1,11 +1,5 @@
-﻿<!--<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="car-header">-->
-<div class="user-address">
-    <!--<div class="col-xs-12">-->
+﻿<div class="user-address">
     <div class="header-text">How Can We Reach You</div>
-
     <form class="form-horizontal">
         <div class="row top-padding10">
             <div class="col-md-6">
@@ -38,8 +32,6 @@
                     <label for="postal_code">Zip code</label>
                     <input class="form-control" id="postal_code" placeholder="zip code" />
                 </div>
-                <!--</div>
-                <div class="form-group col-md-6">-->
                 <div class="form-group">
                     <label for="FirstName"> First Name</label>
                     <input class="form-control" id="FirstName" placeholder="first name" type="text" />
@@ -57,19 +49,10 @@
                     <input class="form-control" id="Email" placeholder="email address" type="text" />
                 </div>
             </div>
-            <!--</div>
-            <div class="row">-->
             <div class="col-md-6">
                 <div id="googleMap" class="address-map" ng-if="true"></div>
-
-                <!--</div>
-                <div class="col-md-6" >-->
                 <div class="col-xs-12 order-details">
                     <div class="header-text padding-top30">Your Order</div>
-
-                    <!--<div class="order-details-header"> Appointment Details</div>
-                    <div class="row order-details"><div class="col-xs-6">Centre</div> <div class="col-xs-6">Kwik-Fit Centre 985 Broxburn</div></div>
-                    <div class="row"><div class="col-xs-6">Date/Time</div><div class="col-xs-6">Tuesday 19th April 2016, 8:30am</div></div>-->
                     <table class="table">
                         <thead>
                             <tr scope="row">
@@ -81,18 +64,6 @@
                             <tr scope="row">
                                 <td>{{userSelectedService.selectedCar.brand}}-{{userSelectedService.selectedCar.model}}-{{userSelectedService.selectedCar.varient}}</td>
                             </tr>
-                            <!--<tr scope="row">
-                                <td>Make</td>
-                                <td>{{userSelectedService.selectedCar.model}}</td>
-                            </tr>
-                            <tr scope="row">
-                                <td>Year</td>
-                                <td>{{userSelectedService.selectedCar.varient}}</td>
-                            </tr>
-                            <tr scope="row">
-                                <td>Engine Type</td>
-                                <td>{{userSelectedService.selectedCar.year}}</td>
-                            </tr>-->
                         </tbody>
                     </table>
                     <table class="table">
@@ -162,29 +133,13 @@
                             </tr>
                         </tbody>
                     </table>
-                    <!--<tfoot>
-                    <tr scope="row">
-                        <th >Total</th>
-                        <th>£54.95</th>
-                    </tr>
-                    </tfoot>-->
-
                 </div>
             </div>
         </div>
     </form>
 </div>
-<!--<div class="col-md-4">
-    <div id="googleMap" style="margin: 100px;"></div>
-</div>-->
-<!--</div>-->
-<!--</div>
-</div>
-</div>-->
 <div class="btn">
     <div class="btn btn-filter wrap__btn-skew-r js-filter">
         <button ui-sref="service.centre" class="btn btn-skew-r btn-effect "><span class="btn btn-skew-r__inner">Previous Section</span></button>
     </div>
 </div>
-
-<!--</div>-->
