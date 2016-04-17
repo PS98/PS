@@ -764,6 +764,40 @@ pre                             { margin-bottom:20px; }
     color:#aaa !important;
     cursor: not-allowed;
 }
+.user-address .form-group {
+    margin: 0 0 10px 0;
+}
+.user-address .form-group label {
+    text-transform: uppercase;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.user-address .form-group input {
+    border-bottom: 1px solid;
+    padding: 0.26em 0.76em;
+}
+.user-address .address-map {
+    height: 250px;
+    border: 2px Solid black;
+    margin:  0;
+}
+.user-address .form-group.col-xs-6 {
+    padding: 0 10px 0 0;
+}
+.order-details-header {
+    font-size: 13px;
+}
+.order-details {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.order-details-text {
+    
+}
+.order-details-description {
+    
+}
+
+
 
 /* ANIMATIONS
 ============================================================================= */

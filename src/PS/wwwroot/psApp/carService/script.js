@@ -1,12 +1,12 @@
 
-var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, googleMapMarkers = [], displayCurrentLocation, latlon, userLocation = {}, locationCall;
+var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, googleMapMarkers = [], displayCurrentLocation, latlon, userLocation = {}, locationCall, draggable;
 var infowindow = new google.maps.InfoWindow();
 var geocoder = new google.maps.Geocoder();
 
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
-  locality: 'long_name',
+  administrative_area_level_2: 'long_name',
   administrative_area_level_1: 'short_name',
   country: 'long_name',
   postal_code: 'short_name'
@@ -21,7 +21,7 @@ var mapOptions = {
 }
 
 
-function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, currentLocation, locationCallBack) {
+function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, currentLocation, locationCallBack, candrag) {
     googleMapHolder = "";
     googleMapHolder = mapHolderId;
     displayCurrentLocation = currentLocation;
@@ -41,6 +41,11 @@ function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, curre
     } else {
         error('Google Map is not supported');
     }
+    if (candrag) {
+        draggable = candrag;
+    } else {
+        draggable = false;
+    }
 }
 
 function showMap(position) {
@@ -55,9 +60,16 @@ function showMap(position) {
    map = new google.maps.Map(document.getElementById(googleMapHolder), mapOptions);
 
     if (displayCurrentLocation) {
-        var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
+        var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!", draggable: draggable});
         infowindow.setContent("You are here!");
         infowindow.open(map, marker);
+        if (draggable) {
+            google.maps.event.addListener(marker,'drag',function () {
+       // document.getElementById('lat').value = marker.position.lat();
+        //document.getElementById('lng').value = marker.position.lng();
+    }
+);
+        }
     }
  
 }
@@ -90,6 +102,7 @@ function loadMap(lat, lng, zoom) {
 }
 
 function loadCurrentLocation(city, area) {
+    if (locationCall)
     locationCall(city.long_name, area.long_name);
 
 }

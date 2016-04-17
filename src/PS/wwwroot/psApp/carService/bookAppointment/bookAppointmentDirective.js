@@ -95,7 +95,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                     var time1 = time.split(" ");
                     var time2 = selectedTime.split(" ");
                     time1 = time1[1] === "AM" ? time1[0] : time1[0] !== 12 ? 12 + time1[0] :time1[0];
-                    time2 = time2[1] === "AM" ? time2[0] : time2[0] !== 12 ? 12 + time2[0] : time2[0];
+                    time2 = time2[1] === "AM" ? time2[0] : time2[0] !== 12 ? 12 + time2[0] : time2u[0];
                     if (parseInt(time1) <= parseInt(time2))
                         return true;
                     else
