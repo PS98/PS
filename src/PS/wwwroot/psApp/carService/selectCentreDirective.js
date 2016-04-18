@@ -10,8 +10,8 @@ angular.module("psApp").directive("selectCentre", function () {
         },
         controller: ["$scope", "psDataServices", "$state", function ($scope, psDataServices, $state) {
             $scope.state = $state;
-            $scope.$parent.state = $state;
-            $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
+          //  $scope.$parent.state = $state;
+           // $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
             $scope.selectedCentre = "";
             $scope.selectServiceCentre = function (centre) {
                 if (!centre.activeCentre) {
@@ -32,6 +32,7 @@ angular.module("psApp").directive("selectCentre", function () {
                     psDataServices.getServiceCentreList($scope.city, area).
                         success(function (data) {
                             if (data.length > 0) {
+                                removemarker();
                                 $scope.centreList = [];
                                 $scope.centreList = data;
                                 $scope.selectedCentre = $scope.centreList[0];
@@ -42,11 +43,17 @@ angular.module("psApp").directive("selectCentre", function () {
                                 setMarkers($scope.map, $scope.centreList, $scope.markerClick);
                             } else {
                                 $scope.noCentreMatch = true;
+                                $scope.centreList = [];
+                                $scope.selectedCentre = {};
+                                $scope.recommendedCentre = {};
                             }
                         }).error(function() {
                         });
                 } else {
                     removemarker();
+                    $scope.centreList = [];
+                    $scope.selectedCentre = {};
+                    $scope.recommendedCentre = {};
                 }
 
             }
@@ -57,10 +64,11 @@ angular.module("psApp").directive("selectCentre", function () {
 
             $scope.getServiceCentreArea = function () {
                 if ($scope.city.toLowerCase() !== "select city") {
-                    psDataServices.getServiceCentreArea($scope.city).success(function(data) {
+                    psDataServices.getServiceCentreArea($scope.city).success(function (data) {
+                        removemarker();
                         $scope.car.centreArea = data;
                         if ($scope.car.centreArea.includes($scope.googleMapArea)) {
-                            $scope.area = $scope.googleMapArea;''
+                            $scope.area = $scope.googleMapArea;
                             $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
                             $scope.getCentreDetails($scope.googleMapArea);
                         } else {
@@ -71,6 +79,11 @@ angular.module("psApp").directive("selectCentre", function () {
                 } else {
                     $scope.car.centreArea = {};
                     removemarker();
+                    $('.select.jelect').find('#areaDropDown').text("Select Area");
+                    $scope.centreList = [];
+                    $scope.selectedCentre = {};
+                    $scope.recommendedCentre = {};
+
                 }
             }
 

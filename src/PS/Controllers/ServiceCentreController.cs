@@ -48,15 +48,17 @@ namespace PS.Controllers
         }
         [HttpPost]
         [Route("centerlist")]
-        public IEnumerable<Centre> Get(SelectedService selectedService)
+        public IEnumerable<Centre> Get([FromBody] SelectedService selectedService)
         {
             var collection = repo.GetCollection<ServiceCentre>(selectedService.City);
+           // var filter = Builders<BsonDocument>.Filter.Eq("area", selectedService.Area);
             var documentList = collection?.Find(new BsonDocument()).ToListAsync().Result;
+            //var result = await collection.Find(filter).ToListAsync();
             // get document by area
             var list =  documentList?.Where(x=>x.Area.ToLower() == selectedService.Area.ToLower());
             if (list == null) return null;
 
-            // select fist because one area will have one document
+            // select first because one area will have one document
             var centreList = list.First().Centres;
 
             // if no service selected then display all service centre list
@@ -66,18 +68,30 @@ namespace PS.Controllers
             // select only those which are providing all selected services;
 
             var selectedCentres = new List<Centre>();
-
             foreach (var a in centreList)
             {
                 var count = 0;
-                foreach (var service in selectedService.Name)
+                var price = new List<int>();
+
+                foreach (var service in selectedService.Name.TakeWhile(service => a.ServiceDetails == null || a.ServiceDetails.Any(x => x.Name == service)))
                 {
-                    if (a.ServiceList !=null && !a.ServiceList.Contains(service))
-                        break;
                     count++;
+                  price.AddRange(from detailse in a.ServiceDetails where detailse.Name == service select detailse.Price);
+
+
+                    // price.Add(a.ServiceList.Where(x=> x.Name == service).Single(y=>y.Price));
                     if (selectedService.Name.Count == count)
                     {
-                        selectedCentres.Add(a);
+                        selectedCentres.Add(new Centre
+                        {
+                         Name   = a.Name,
+                         Address = a.Address,
+                         Latitude = a.Latitude,
+                         Longitude = a.Longitude,
+                         PhoneNo = a.PhoneNo,
+                         TotalPrice = price.Sum()
+                         
+                        });
                     }
                 }
 

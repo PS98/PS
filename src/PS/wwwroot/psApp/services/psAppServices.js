@@ -53,7 +53,7 @@
         {
             url: "/api/ServiceCentre/centerlist",
             method: "POST",
-            params: data
+            data: data
     });
     }
     var _getAllService = function (city, area) {

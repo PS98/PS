@@ -1,180 +1,276 @@
-{ 
-    "_id" : ObjectId("56ff4043c9c7cebda13afcbb"), 
-    "Area" : "Pimple Gaurav", 
-    "Centres" : [
-      {
-        "Name": "ABC Corp",
-        "Address": {
-          "line1": "new road",
-          "line2": "near datt Mandir"
-        },
-        "PhoneNo": "123456987",
-        "Latitude": "73.80731105804443",
-        "Longitude": "18.600534069047335",
-        "serviceList": [
-          "Essential Car Care",
-          "Full Car Care",
-          "Engine Performance",
-          "Oil, Filters and Fluids",
-          "Mufflers & Exhaust Service"
-
-        ]
+{
+  "_id": "ObjectId(56ff4043c9c7cebda13afcbb)",
+  "Area": "Pimple Gaurav",
+  "Centres": [
+    {
+      "Name": "ABC Corp",
+      "Address": {
+        "line1": "new road",
+        "line2": "near datt Mandir"
       },
-      {
-        "Name": "DEF Corp",
-        "Address": {
-          "line1": "old road",
-          "line2": "near abc Mandir"
+      "PhoneNo": "123456987",
+      "Longitude": "18.600534069047335",
+      "Latitude": "73.80731105804443",
+      "ServiceDetails": [
+        {
+          "Name": "Essential Car Care",
+          "Price": 2530
         },
-        "PhoneNo": "46645645644",
-        "Latitude": "73.80636692047119",
-        "Longitude": "18.610864870248303",
-        "serviceList": [
-          "Essential Car Care",
-          "Full Car Care",
-          "Engine Performance",
-          "Oil, Filters and Fluids",
-          "Mufflers & Exhaust Service"
-
-        ]
-      },
-      {
-        "Name": "GHI Corp",
-        "Address": {
-          "line1": "test1",
-          "line2": "test1 line 2"
+        {
+          "Name": "Full Car Care",
+          "Price": 2530
         },
-        "PhoneNo": "7655453454",
-        "Latitude": "73.82181644439697",
-        "Longitude": "18.6134678078517",
-        "serviceList": [
-          "Essential Car Care",
-          "Full Car Care",
-          "Engine Performance",
-          "Oil, Filters and Fluids",
-          "Mufflers & Exhaust Service"
-
-        ]
-      }, 
         {
-            "Name" : "JKL Corp", 
-            "Address" : {
-                "line1" : "test2", 
-                "line2" : "test2 line2"
-            }, 
-            "PhoneNo" : "1214765444", 
-            "Latitude" : "73.82130146026611", 
-            "Longitude" : "18.604438697544907"
-        }, 
+          "Name": "Engine Performance",
+          "Price": 2530
+        },
         {
-            "Name" : "MNO Corp", 
-            "Address" : {
-                "line1" : "test3", 
-                "line2" : "test3 line2"
-            }, 
-            "PhoneNo" : "8708967859", 
-            "Latitude" : "73.79589557647705", 
-            "Longitude" : "18.610376815014273"
-        }, 
-        {
-            "Name" : "PQR Corp", 
-            "Address" : {
-                "line1" : "test5", 
-                "line2" : "test5 line 2"
-            }, 
-            "PhoneNo" : "0987654321", 
-            "Latitude" : "73.82387638092041", 
-            "Longitude" : "18.601754275073823"
+          "Name": "Oil, Filters and Fluids",
+          "Price": 2530
         }
-    ]
-}
-{ 
-    "_id" : ObjectId("56ff42bac9c7cebda13afcbd"), 
-    "Area" : "Wakad", 
-    "Centres" : [
-        {
-            "Name" : "AB Corp", 
-            "Address" : {
-                "line1" : "line1", 
-                "line2" : "line2"
-            }, 
-            "PhoneNo" : "0987654321", 
-            "Latitude" : "73.80731105804443", 
-            "Longitude" : "18.600534069047335"
-        },
-      {
-        "Name": "DE Corp",
-        "Address": {
-          "line1": " t1 line1",
-          "line2": "t1 line2"
-        },
-        "PhoneNo": "1234567890",
-        "Latitude": "73.80636692047119",
-        "Longitude": "18.610864870248303",
-        "serviceList": [
-          "Essential Car Care",
-          "Full Car Care",
-          "Engine Performance",
-          "Oil, Filters and Fluids",
-          "Mufflers & Exhaust Service"
-
-        ]
-      }, 
-        {
-            "Name" : "GH Corp", 
-            "Address" : {
-                "line1" : "t2 line1", 
-                "line2" : "t2 line2"
-            }, 
-            "PhoneNo" : "09876", 
-            "Latitude" : "73.82181644439697", 
-            "Longitude" : "18.6134678078517"
-        },
-      {
-        "Name": "JK Corp",
-        "Address": {
-          "line1": "t3 line 1",
-          "line2": "t3 line 2"
-        },
-        "PhoneNo": "67890",
-        "Latitude": "73.82130146026611",
-        "Longitude": "18.604438697544907",
-        "serviceList": [
-          "Essential Car Care",
-          "Full Car Care",
-          "Engine Performance",
-          "Oil, Filters and Fluids",
-          "Mufflers & Exhaust Service"
-
-        ]
+      ]
+    },
+    {
+      "Name": "DEF Corp",
+      "Address": {
+        "line1": "old road",
+        "line2": "near abc Mandir"
       },
-      {
-        "Name": "MN Corp",
-        "Address": {
-          "line1": "t4 l1",
-          "line2": "t4 l2"
-        },
-        "PhoneNo": "54321",
-        "Latitude": "73.79589557647705",
-        "Longitude": "18.610376815014273",
-        "serviceList": [
-          "Essential Car Care",
-          "Full Car Care",
-          "Engine Performance",
-          "Oil, Filters and Fluids",
-          "Mufflers & Exhaust Service"
-
-        ]
-      }, 
+      "PhoneNo": "46645645644",
+      "Longitude": "18.610864870248303",
+      "Latitude": "73.80636692047119",
+      "ServiceDetails": [
         {
-            "Name" : "PQ Corp", 
+          "Name": "Essential Car Care",
+          "Price": 2000
+        },
+        {
+          "Name": "Full Car Care",
+          "Price": 3000
+        },
+        {
+          "Name": "Engine Performance",
+          "Price": 4000
+        },
+        {
+          "Name": "Oil, Filters and Fluids",
+          "Price": 1000
+        }
+      ]
+    },
+    {
+      "Name": "GHI Corp",
+      "Address": {
+        "line1": "test1",
+        "line2": "test1 line 2"
+      },
+      "PhoneNo": "7655453454",
+      "Longitude": "18.6134678078517",
+      "Latitude": "73.82181644439697",
+      "ServiceDetails": [
+        {
+          "Name": "Essential Car Care",
+          "Price": 1500
+        },
+        {
+          "Name": "Full Car Care",
+          "Price": 1400
+        },
+        {
+          "Name": "Engine Performance",
+          "Price": 7147
+        },
+        {
+          "Name": "Oil, Filters and Fluids",
+          "Price": 1422
+        }
+      ]
+    },
+    {
+      "Name": "JKL Corp",
+      "Address": {
+        "line1": "test2",
+        "line2": "test2 line2"
+      },
+      "PhoneNo": "1214765444",
+      "Longitude": "18.604438697544907",
+      "Latitude": "73.82130146026611",
+      "ServiceDetails": [ ]
+    },
+    {
+      "Name": "MNO Corp",
+      "Address": {
+        "line1": "test3",
+        "line2": "test3 line2"
+      },
+      "PhoneNo": "8708967859",
+      "Longitude": "18.610376815014273",
+      "Latitude": "73.79589557647705",
+      "ServiceDetails": [ ]
+    },
+    {
+      "Name": "PQR Corp",
+      "Address": {
+        "line1": "test5",
+        "line2": "test5 line 2"
+      },
+      "PhoneNo": "0987654321",
+      "Longitude": "18.601754275073823",
+      "Latitude": "73.82387638092041",
+      "ServiceDetails": [ ]
+    }
+  ]
+}
+
+{
+    "_id" : ObjectId("56ff8a13f47380f1ab96d860"),
+    "Area" : "Wakad",
+    "Centres" : [ 
+        {
+            "Name" : "AB Corp",
             "Address" : {
-                "line1" : "t5 l1", 
+                "line1" : "line1",
+                "line2" : "line2"
+            },
+            "PhoneNo" : "0987654321",
+            "Longitude" : "18.590589063881723",
+            "Latitude" : "73.76061916351318",
+            "ServiceDetails" : [ 
+                {
+                    "Name" : "Essential Car Care",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Full Car Care",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Engine Performance",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Oil, Filters and Fluids",
+                    "Price" : 2530
+                }
+            ]
+        }, 
+        {
+            "Name" : "DE Corp",
+            "Address" : {
+                "line1" : " t1 line1",
+                "line2" : "t1 line2"
+            },
+            "PhoneNo" : "1234567890",
+            "Longitude" : "18.593904130132692",
+            "Latitude" : "73.76235723495483",
+            "ServiceDetails" : [ 
+                {
+                    "Name" : "Essential Car Care",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Full Car Care",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Engine Performance",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Oil, Filters and Fluids",
+                    "Price" : 2530
+                }
+            ]
+        }, 
+        {
+            "Name" : "GH Corp",
+            "Address" : {
+                "line1" : "t2 line1",
+                "line2" : "t2 line2"
+            },
+            "PhoneNo" : "09876",
+            "Longitude" : "18.5938227795859",
+            "Latitude" : "73.76692771911621",
+            "ServiceDetails" : [ 
+                {
+                    "Name" : "Essential Car Care",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Full Car Care",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Engine Performance",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Oil, Filters and Fluids",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Brake Service",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Check Engine Light",
+                    "Price" : 2530
+                }
+            ]
+        }, 
+        {
+            "Name" : "JK Corp",
+            "Address" : {
+                "line1" : "t3 line 1",
+                "line2" : "t3 line 2"
+            },
+            "PhoneNo" : "67890",
+            "Longitude" : "18.59662935099407",
+            "Latitude" : "73.76430988311768",
+            "ServiceDetails" : [ 
+                {
+                    "Name" : "Essential Car Care",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Full Car Care",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Engine Performance",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Oil, Filters and Fluids",
+                    "Price" : 2530
+                }, 
+                {
+                    "Name" : "Mufflers & Exhaust Service",
+                    "Price" : 2530
+                }
+            ]
+        }, 
+        {
+            "Name" : "MN Corp",
+            "Address" : {
+                "line1" : "t4 l1",
+                "line2" : "t4 l2"
+            },
+            "PhoneNo" : "54321",
+            "Longitude" : "18.596975084851625",
+            "Latitude" : "73.76126289367676",
+            "ServiceDetails" : []
+        }, 
+        {
+            "Name" : "PQ Corp",
+            "Address" : {
+                "line1" : "t5 l1",
                 "line2" : "t5 l2"
-            }, 
-            "PhoneNo" : "12345", 
-            "Latitude" : "73.82387638092041", 
-            "Longitude" : "18.601754275073823"
+            },
+            "PhoneNo" : "12345",
+            "Longitude" : "18.594636283305135",
+            "Latitude" : "73.75765800476074",
+            "ServiceDetails" : []
         }
     ]
 }

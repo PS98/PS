@@ -1,5 +1,11 @@
 ﻿<div class="centre-list-item well">
-    <div class="centre-list-item_heading">{{ centre.name }} </div>
+    <div class="centre-list-item_heading">
+        {{ centre.name }}
+        <span class="pull-right">
+            {{ centre.totalPrice }}
+            <i class="fa fa-inr"></i>
+        </span>
+    </div>
     <div class="centre-list-item_body">
         <div class="row">
             <div class="col-lg-8">

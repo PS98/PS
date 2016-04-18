@@ -22,7 +22,8 @@ namespace PS.Models
         public string PhoneNo { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
-        public List<string> ServiceList { get; set; }
+        public int TotalPrice { get; set; }
+        public List<ServiceDetails> ServiceDetails { get; set; }
     }
 
     public class Address
@@ -42,4 +43,9 @@ namespace PS.Models
 
     }
 
+    public class ServiceDetails
+    {
+        public string Name { get; set; }
+        public int Price { get; set; }
+    }
 }
