@@ -235,7 +235,6 @@
 }
 .tab li a:hover, .nav.nav-stacked > li.active > a, .nav.nav-stacked > li.active > a:focus {
     color: #FFF;
-    background-color: tomato;
     outline: 0;
 }
 /*.tab li:hover .curve, .nav.nav-stacked > li.active > a:focus .curve, .nav.nav-stacked li a[aria-expanded="true"] .curve {
@@ -936,4 +935,13 @@ color: white !important;
 }
 .ct-u-paddingBottom50 {
     padding-bottom: 50px !important;
+}
+.tab-content p {
+    text-align : justify;
+}
+
+.color-setter{
+    background-image: -webkit-linear-gradient(top, #c9cfd2 0%, #39CCCC 100%);
+    background-image: -o-linear-gradient(top, #c9cfd2 0%, #39CCCC 100%);
+    background-image: linear-gradient(to bottom, #c9cfd2 0%, #39CCCC 100%);
 }

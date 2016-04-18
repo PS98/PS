@@ -65,7 +65,9 @@ blockquote:before,
 .noUi-origin,
 .btn-skew-r,
 .list-tags__link:hover,
-.about-autor {background-color: #02cc8b!important;}
+.about-autor { background-image: -webkit-linear-gradient(top, #c9cfd2 0%, #02cc8b 100%);
+    background-image: -o-linear-gradient(top, #c9cfd2 0%, #02cc8b 100%);
+    background-image: linear-gradient(to bottom, #c9cfd2 0%, #02cc8b 100%);}
 
 .link-img__link,
 .brands-controls .caro-prev, .brands-controls .caro-next,
