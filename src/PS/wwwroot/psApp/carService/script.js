@@ -65,11 +65,13 @@ function showMap(position) {
         infowindow.setContent("You are here!");
         infowindow.open(map, marker);
         if (draggable) {
-            google.maps.event.addListener(marker,'drag',function () {
-       // document.getElementById('lat').value = marker.position.lat();
-        //document.getElementById('lng').value = marker.position.lng();
-    }
-);
+            google.maps.event.addListener(marker,'drag', function() {
+                    // document.getElementById('lat').value = marker.position.lat();
+                    //document.getElementById('lng').value = marker.position.lng();
+                    var latlong = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+                    locateCityAndArea(latlong);
+                }
+            );
         }
     }
  
@@ -79,8 +81,7 @@ function handleError(err) {
     //switch (err.code) {
     //    case error.PERMISSION_DENIED:
     //        x.innerHTML = "User denied the request for Geolocation.";
-    //        break;
-    //    case error.POSITION_UNAVAILABLE:
+    ////    case error.POSITION_UNAVAILABLE:
     //        x.innerHTML = "Location information is unavailable.";
     //        break;
     //    case error.TIMEOUT:
@@ -89,7 +90,8 @@ function handleError(err) {
     //    case error.UNKNOWN_ERROR:
     //        x.innerHTML = "An unknown error occurred.";
     //        break;
-    //}
+    //}        break;
+    
    getLatLng('India');
  
 }
@@ -150,6 +152,8 @@ function callGeoCoderApi(type) {
                         }
                     }
                 }
+                if (draggable)
+                fillInAddressToTextBox(results[0].address_components);
                 lat = results[0].geometry.location.lat();
                 lng = results[0].geometry.location.lng();
                 var obj =  { city: city, area: area, lat: lat, lng: lng };
@@ -160,7 +164,7 @@ function callGeoCoderApi(type) {
                 defer.reject();
             }
         } else {
-            alert("Geocoder failed due to: " + status);
+           // alert("Geocoder failed due to: " + status);
             defer.reject();
         }
        
@@ -170,17 +174,20 @@ function callGeoCoderApi(type) {
 }
 
 function fillInAddress(autocomplete) {
-  var place = autocomplete.getPlace();
-  console.log(place.geometry.location.lng());
-  for (var component in componentForm) {
-    document.getElementById(component).value = '';
-    document.getElementById(component).disabled = false;
-  }
+    var place = autocomplete.getPlace();
+    console.log(place.geometry.location.lng());
+    for (var component in componentForm) {
+        document.getElementById(component).value = '';
+        document.getElementById(component).disabled = false;
+        fillInAddressToTextBox(place.address_components);
+    }
+}
 
-  for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
+function fillInAddressToTextBox(addressComponents) {
+  for (var i = 0; i < addressComponents.length; i++) {
+    var addressType = addressComponents[i].types[0];
     if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
+      var val = addressComponents[i][componentForm[addressType]];
       document.getElementById(addressType).value = val;
     }
   }
