@@ -35,7 +35,7 @@
                     </div>
                 </div>
 
-                <centre-details ng-if="selectedCentre.Name" centre="selectedCentre" add="selectServiceCentre(dirCentre)" class="active"></centre-details>
+                <centre-details ng-if="selectedCentre.name" centre="selectedCentre" add="selectServiceCentre(dirCentre)" class="active"></centre-details>
 
                 <div class="row" ng-if="noCentreMatch">"There is no service centre"</div>
 
@@ -106,10 +106,10 @@
                     </div>
                 </div>
                 <div>
-                    <div ng-if="recommendedCentre">
+                    <div ng-if="recommendedCentre.name">
                         <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
                         <div class="centre-list_first">
-                            <centre-details centre="recommendedCentre.Name" add="selectServiceCentre(dirCentre)" ng-class="recommendedCentre.name == selectedCentre.name ?'active' :''"></centre-details>
+                            <centre-details centre="recommendedCentre" add="selectServiceCentre(dirCentre)" ng-class="recommendedCentre.name == selectedCentre.name ?'active' :''"></centre-details>
                         </div>
                     </div>
                     <div ng-if="centreList">
