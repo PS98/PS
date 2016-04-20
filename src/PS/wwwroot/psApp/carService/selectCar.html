@@ -1,265 +1,263 @@
 ﻿<!--<div class="container service" style="margin-left: 100px">-->
-    <div class="row">
-        <div class="col-xs-10">
-            <div class="car-header">
-                <h3 class="header-text">
-                    Select your car
-                    <div class="b-step">
-                        1
-                    </div>
-                </h3>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="car-header">
+            <div class="header-text">
+                Select your car
+                <div class="b-step mrgtop15">
+                    1
+                </div>
+            </div>
+            <div>
                 <div>
-                    <div>
-                        <div class="row margin-top10" car="quote.car" ng-if="true" on-change="newCarChanged()" on-finish="getMaintenanceSchedule()">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="car-selection-car-container" ng-show="true">
+                    <div class="row margin-top10" car="quote.car" ng-if="true" on-change="newCarChanged()" on-finish="getMaintenanceSchedule()">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="car-selection-car-container" ng-show="true">
 
-                                            <div class="car-option" ng-class="car-option-active" ng-click="editBrand()" ng-if="true" ng-show="selectedCar.brand">
-                                                {{selectedCar.brand}}
-                                            </div>
-                                            <div class="car-option" ng-class="car-option-active" ng-click="editYear()" ng-if="true" ng-show="selectedCar.year">
-                                                {{ selectedCar.year}}
-                                            </div>
-                                            <div class="car-option" ng-class="" ng-click="editModel()" ng-if="true" ng-show="selectedCar.model">
-                                                {{selectedCar.model}}
-                                            </div>
+                                        <div class="car-option" ng-class="car-option-active" ng-click="editBrand()" ng-if="true" ng-show="selectedCar.brand">
+                                            {{selectedCar.brand}}
+                                        </div>
+                                        <div class="car-option" ng-class="car-option-active" ng-click="editYear()" ng-if="true" ng-show="selectedCar.year">
+                                            {{ selectedCar.year}}
+                                        </div>
+                                        <div class="car-option" ng-class="" ng-click="editModel()" ng-if="true" ng-show="selectedCar.model">
+                                            {{selectedCar.model}}
+                                        </div>
 
-                                            <div class="car-option" ng-class="" ng-click="editVarient()" ng-if="true" ng-show="selectedCar.varient">
-                                                {{ selectedCar.varient }}
-                                            </div>
+                                        <div class="car-option" ng-class="" ng-click="editVarient()" ng-if="true" ng-show="selectedCar.varient">
+                                            {{ selectedCar.varient }}
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="row" ng-if="showBrandName">
-                                    <div class="col-xs-12">
-                                        <div class="car-selection-container" error-message="Please select your car's make." require-info="car.make" data-original-title="" title="">
-                                            <span class="car-selection-step-name">
-                                                YOUR MAKE
-                                            </span>
-                                            <div class="car-selection-flex-container">
-                                                <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections">
-                                                    <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
-                                                        <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" width="24" height="24">
-                                                        <span ng-bind="carBrand" style="padding-left:10px"></span>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                            <div class="row" ng-if="showBrandName">
+                                <div class="col-xs-12">
+                                    <div class="car-selection-container" error-message="Please select your car's make." require-info="car.make" data-original-title="" title="">
+                                        <span class="car-selection-step-name">
+                                            YOUR MAKE
+                                        </span>
+                                        <div class="car-selection-flex-container">
+                                            <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections">
+                                                <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
+                                                    <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" width="24" height="24">
+                                                    <span ng-bind="carBrand" style="padding-left:10px"></span>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row" ng-if="showMakeYears">
-                                    <div class="col-xs-12">
-                                        <div class="car-selection-container" error-message="Please select your car's year." require-info="car.year" data-original-title="" title="">
-                                            <span class="car-selection-step-name">
-                                                YOUR CAR'S YEAR
-                                            </span>
-                                            <div class="car-selection-flex-container">
-                                                <div class="btn-idk" ng-click="selectYear('')">
-                                                    I don't know
-                                                </div>
-                                                <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList">
-                                                    <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
-                                                </ul>
+                            </div>
+                            <div class="row" ng-if="showMakeYears">
+                                <div class="col-xs-12">
+                                    <div class="car-selection-container" error-message="Please select your car's year." require-info="car.year" data-original-title="" title="">
+                                        <span class="car-selection-step-name">
+                                            YOUR CAR'S YEAR
+                                        </span>
+                                        <div class="car-selection-flex-container">
+                                            <div class="btn-idk" ng-click="selectYear('')">
+                                                I don't know
                                             </div>
+                                            <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList">
+                                                <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row" ng-if="showModel">
-                                    <div class="col-xs-12">
-                                        <div class="car-selection-container" error-message="Please select your car's model." require-info="car.model" data-original-title="" title="">
-                                            <span class="car-selection-step-name">
-                                                YOUR MODEL
-                                            </span>
-                                            <div class="car-selection-flex-container">
-                                                <div class="btn-idk" ng-click="selectModel('')">
-                                                    I don't know
-                                                </div>
-                                                <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes" >
-                                                    <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
-                                                </ul>
+                            </div>
+                            <div class="row" ng-if="showModel">
+                                <div class="col-xs-12">
+                                    <div class="car-selection-container" error-message="Please select your car's model." require-info="car.model" data-original-title="" title="">
+                                        <span class="car-selection-step-name">
+                                            YOUR MODEL
+                                        </span>
+                                        <div class="car-selection-flex-container">
+                                            <div class="btn-idk" ng-click="selectModel('')">
+                                                I don't know
+                                            </div>
+                                            <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes">
+                                                <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
+                                            </ul>
 
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row" ng-if="showVarient && (carList.carVarientList ||[]).length >0">
-                                    <div class="col-xs-12">
-                                        <div class="car-selection-container" error-message="Please select your car's engine type." require-info="car.trim" data-original-title="" title="">
-                                            <span class="car-selection-step-name">
-                                                ENGINE TYPE
-                                            </span>
-                                            <div class="car-selection-flex-container">
-                                                <div class="btn-idk" ng-click="selectVarient('')">
-                                                    I don't know
-                                                </div>
-                                                <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList">
-                                                    <li ng-click="selectVarient(varient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-repeat="varient in carVarient" ng-bind="varient"></li>
-                                                </ul>
+                            </div>
+                            <div class="row" ng-if="showVarient && (carList.carVarientList ||[]).length >0">
+                                <div class="col-xs-12">
+                                    <div class="car-selection-container" error-message="Please select your car's engine type." require-info="car.trim" data-original-title="" title="">
+                                        <span class="car-selection-step-name">
+                                            ENGINE TYPE
+                                        </span>
+                                        <div class="car-selection-flex-container">
+                                            <div class="btn-idk" ng-click="selectVarient('')">
+                                                I don't know
                                             </div>
+                                            <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList">
+                                                <li ng-click="selectVarient(varient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-repeat="varient in carVarient" ng-bind="varient"></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row" id="slide-container" ng-if="car.choose_a_service">
-        <div class="col-xs-10">
-            <div class="spacet-20">
-                <div class="white-container">
+<div class="row" id="slide-container" ng-if="car.choose_a_service">
+    <div class="col-xs-12">
+        <div class="spacet-20">
+            <div class="white-container">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="header-text" error-message="Please select a service." require-info="quote.jobs[0]" data-original-title="" title="">
-                                Select your services
-                                <div class="b-step">
-                                    2
-                                </div>
-                            </h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header-text" error-message="Please select a service." require-info="quote.jobs[0]" data-original-title="" title="">
+                            Select your services
+                            <div class="b-step">
+                                2
+                            </div>
                         </div>
                     </div>
-                    <div class="cssSlideUp" id="add-new-job-container">
-                        <div ng-show="car.showServiceType">
-                            <div class="row">
-                                <div class="col-xs-12 searchContainer margin-top10">
-                                    <i class="fa fa-search"></i>
-                                    <input class="form-control margin-bottom10" id="searchBox" ng-change="search()" ng-model="searchedText.name" type="text" placeholder="Search"/>
-                                    <i class="fa fa-times remove-icon" ng-if="(searchedText.name || []).length > 0" ng-click="clearSearch()" ></i>
-                                </div>
-                                
+                </div>
+                <div class="cssSlideUp" id="add-new-job-container">
+                    <div ng-show="car.showServiceType">
+                        <div class="row">
+                            <div class="col-xs-12 searchContainer margin-top10">
+                                <i class="fa fa-search"></i>
+                                <input class="form-control margin-bottom10" id="searchBox" ng-change="search()" ng-model="searchedText.name" type="text" placeholder="Search" />
+                                <i class="fa fa-times remove-icon" ng-if="(searchedText.name || []).length > 0" ng-click="clearSearch()"></i>
                             </div>
-                            <div class="row" ng-if="(searchedText.name || []).length == 0">
-                                <div class="col-xs-12">
-                                    <div class="b-categories">
-                                        <a ng-click="changeView();" ng-repeat="service in services.serviceName">
-                                            <div class="content content" ng-class="serviceOpts.viewMode == '{{service}}' ? 'content-active' : null">
-                                                <div ng-class="serviceOpts.viewMode =='{{service}}' ? 'icon-{{service | lowercase |formatToCss }}-selected ' :'icon-{{service | lowercase | formatToCss}}'" class="icon-common-services"></div>
-                                                {{ service }}
-                                            </div>
-                                        </a>
-                                        <a ng-click="serviceOpts.viewMode = 'consultation'; changeView();">
-                                            <div class="content" ng-class="serviceOpts.viewMode == 'consultation' ? 'content-active' : null">
-                                                <div ng-class="serviceOpts.viewMode == 'consultation' ? 'icon-describe-selected' :'icon-describe'" class="icon-describe"></div>
-                                                Describe <br>your service
-                                            </div>
-                                        </a>
-                                    </div>
+
+                        </div>
+                        <div class="row" ng-if="(searchedText.name || []).length == 0">
+                            <div class="col-xs-12">
+                                <div class="b-categories">
+                                    <a ng-click="changeView();" ng-repeat="service in services.serviceName">
+                                        <div class="content content" ng-class="serviceOpts.viewMode == '{{service}}' ? 'content-active' : null">
+                                            <div ng-class="serviceOpts.viewMode =='{{service}}' ? 'icon-{{service | lowercase |formatToCss }}-selected ' :'icon-{{service | lowercase | formatToCss}}'" class="icon-common-services"></div>
+                                            {{ service }}
+                                        </div>
+                                    </a>
+                                    <a ng-click="serviceOpts.viewMode = 'consultation'; changeView();">
+                                        <div class="content" ng-class="serviceOpts.viewMode == 'consultation' ? 'content-active' : null">
+                                            <div ng-class="serviceOpts.viewMode == 'consultation' ? 'icon-describe-selected' :'icon-describe'" class="icon-describe"></div>
+                                            Describe <br>your service
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
 
-                    <div class="row select-service-box">
-                        <div class="col-lg-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length == 0 ">
-                            <car-service-category  ng-if="(searchedText.name || []).length == 0"></car-service-category>
-                        </div>
-                        <div class="col-xs-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length>0">
-                            <car-service-category ng-if="(searchedText.name || []).length > 0"></car-service-category>
-                          
-                        </div>
-                        <div class="col-lg-5" ng-class="serviceOpts.viewMode === 'consultation' ? 'content-full-width' : '' ">
-                            <div>
-                                <div class="row spacet-10 " id="edit-service-container" ng-class="animate-repeat" ng-repeat="job in selectedJob" scroll-offset="-100">
-                                    <div class="col-md-12 " id="jj_278">
-                                        <!--ng-controller="ServiceEditController">-->
-                                        <div class="spacet-10" ng-class="job.addText ? 'b-service-textarea' : 'b-service-adds' ">
-                                            <div class="b-service">
-                                                <p class="ng-binding">
-                                                    {{ job.name}}
-                                                </p>
-                                                <div class="b-service-option pull-right">
-                                                    <p class="details" ng-click="showDetails(job.type)" ng-if="job.type" style="margin-right: 30px;">
-                                                        Details
-                                                    </p>
-                                                    <i class="fa fa-times remove-icon" ng-click="deleteSelectedJob(job)"></i>
-                                                </div>
-                                            </div>
-                                            <textarea ng-if="job.addText" ng-model="job.request" placeholder="Descrbe here what's happen to your car'" ym-change-focus="serviceOpts.addingNotes"></textarea>
-                                            <div class="b-adds" ng-if="job.questions">
-                                                <div class="row" ng-repeat="que in job.questions">
-                                                    <div class="col-xs-12"><span> {{ que.question }} </span></div>
-                                                    <div class="col-xs-12">
-                                                        <ul>
-                                                            <li ng-repeat="opt in que.options">
-                                                                <i class="fa fa-check-circle" ng-class="que.ans.includes(opt) ? 'selected' : ''" ng-model="que.ans" ng-click="chooseAnswer(job,que,opt)"></i>
-                                                                <span> {{ opt }}</span>
-                                                            </li>
 
-                                                        </ul>   
+                </div>
 
-                                                    </div>
+                <div class="row select-service-box">
+                    <div class="col-lg-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length == 0 ">
+                        <car-service-category ng-if="(searchedText.name || []).length == 0"></car-service-category>
+                    </div>
+                    <div class="col-xs-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length>0">
+                        <car-service-category ng-if="(searchedText.name || []).length > 0"></car-service-category>
 
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="row margin-bottom10 margin-top10" ng-show="(selectedJob || []).length > 0">
-                                    <div class="col-xs-12">
-                                        <div class="services-options">
-                                            <!--<p class="pull-left clickable" ng-click="car.chooseNewService = true">
-                                                + ADD ANOTHER SERVICE
-                                            </p>-->
-                                            <div class="mechanic-notes add_notes pull-right" ng-click="serviceOpts.addingNotes =!serviceOpts.addingNotes; " ng-show="!serviceOpts.addingNotes">
-                                                <div class="icon-mechanic-note clickable"></div>
-                                                <p class="clickable">
-                                                    ADD NOTES FOR THE MECHANIC
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row spacet-10 ng-hide" ng-show="serviceOpts.addingNotes && (selectedJob || []).length >0">
-                                <div class="col-lg-12">
-                                    <div class="b-service-textarea">
-                                        <!--ng-controller="NotesController">-->
+                    </div>
+                    <div class="col-lg-5" ng-class="serviceOpts.viewMode === 'consultation' ? 'content-full-width' : '' ">
+                        <div>
+                            <div class="row spacet-10 " id="edit-service-container" ng-class="animate-repeat" ng-repeat="job in selectedJob" scroll-offset="-100">
+                                <div class="col-md-12 " id="jj_278">
+                                    <!--ng-controller="ServiceEditController">-->
+                                    <div class="spacet-10" ng-class="job.addText ? 'b-service-textarea' : 'b-service-adds' ">
                                         <div class="b-service">
-                                            <p>
-                                                Add notes you would like the mechanic to see
+                                            <p class="ng-binding">
+                                                {{ job.name}}
                                             </p>
                                             <div class="b-service-option pull-right">
-                                                <div class="fa fa-times remove-icon" ng-click="serviceOpts.addingNotes = !serviceOpts.addingNotes"></div>
+                                                <p class="details" ng-click="showDetails(job.type)" ng-if="job.type" style="margin-right: 30px;">
+                                                    Details
+                                                </p>
+                                                <i class="fa fa-times remove-icon" ng-click="deleteSelectedJob(job)"></i>
                                             </div>
                                         </div>
-                                        <textarea ng-model="selectedJob.notes" placeholder="Enter notes here" ym-change-focus="serviceOpts.addingNotes" class="ng-pristine"></textarea>
+                                        <textarea ng-if="job.addText" ng-model="job.request" placeholder="Descrbe here what's happen to your car'" ym-change-focus="serviceOpts.addingNotes"></textarea>
+                                        <div class="b-adds" ng-if="job.questions">
+                                            <div class="row" ng-repeat="que in job.questions">
+                                                <div class="col-xs-12"><span> {{ que.question }} </span></div>
+                                                <div class="col-xs-12">
+                                                    <ul>
+                                                        <li ng-repeat="opt in que.options">
+                                                            <i class="fa fa-check-circle" ng-class="que.ans.includes(opt) ? 'selected' : ''" ng-model="que.ans" ng-click="chooseAnswer(job,que,opt)"></i>
+                                                            <span> {{ opt }}</span>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row margin-bottom10 margin-top10" ng-show="(selectedJob || []).length > 0">
+                                <div class="col-xs-12">
+                                    <div class="services-options">
+                                        <!--<p class="pull-left clickable" ng-click="car.chooseNewService = true">
+                                            + ADD ANOTHER SERVICE
+                                        </p>-->
+                                        <div class="mechanic-notes add_notes pull-right" ng-click="serviceOpts.addingNotes =!serviceOpts.addingNotes; " ng-show="!serviceOpts.addingNotes">
+                                            <div class="icon-mechanic-note clickable"></div>
+                                            <p class="clickable">
+                                                ADD NOTES FOR THE MECHANIC
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row spacet-10">
-                        <div class="col-sm-6">
-                            <a ng-click="changeView();" ng-show="car.showServiceType">
-                                <div class="cannot-find spacet-10 clickable">
-                                    <div class="cannot-find-text">I CANNOT FIND WHAT I NEED</div>
+                        <div class="row spacet-10 ng-hide" ng-show="serviceOpts.addingNotes && (selectedJob || []).length >0">
+                            <div class="col-lg-12">
+                                <div class="b-service-textarea">
+                                    <!--ng-controller="NotesController">-->
+                                    <div class="b-service">
+                                        <p>
+                                            Add notes you would like the mechanic to see
+                                        </p>
+                                        <div class="b-service-option pull-right">
+                                            <div class="fa fa-times remove-icon" ng-click="serviceOpts.addingNotes = !serviceOpts.addingNotes"></div>
+                                        </div>
+                                    </div>
+                                    <textarea ng-model="selectedJob.notes" placeholder="Enter notes here" ym-change-focus="serviceOpts.addingNotes" class="ng-pristine"></textarea>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                        <div ng-if="(selectedJob || []).length >0" class="btn-next col-sm-6">
-                            <!--<button  class="btn btn-skew-r btn-effect pull-right" ng-click="setUserJob()">
-                                <span>Next Section</span>
-                            </button>-->
-                            <button class="main-slider__btn btn-effect pull-right" ng-click="setUserJob()"><span class="main-slider__btn_inner common-button-structure-inner">Next Section</span></button>
+                    </div>
+                </div>
 
-                        </div>
+                <div class="row spacet-10">
+                    <div class="col-sm-6">
+                        <a ng-click="changeView();" ng-show="car.showServiceType">
+                            <div class="cannot-find spacet-10 clickable">
+                                <div class="cannot-find-text">I CANNOT FIND WHAT I NEED</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6" ng-if="(selectedJob || []).length > 0">
+                        <a class="main-slider__btn btn-effect pull-right" ng-click="setUserJob()">
+                            <span class="main-slider__btn_inner common-button-structure-inner">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <!--</div>-->

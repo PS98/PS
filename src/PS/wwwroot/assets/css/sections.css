@@ -24,11 +24,6 @@
 	opacity: 0.1;
 	content: '';
 }
-.section-bg .bg-inner {
-	padding-top: 60px;
-    padding-bottom: 30px;
-}
-
 .section-bg-2:before {
 	position: absolute;
 	display: block;

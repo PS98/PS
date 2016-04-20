@@ -45,7 +45,7 @@
     top: -7px;
     font-size: 13px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 8px;
     color: #4A5155;
 }
 .spacet-10, .margin-top10{ margin-top:10px;}
@@ -564,6 +564,10 @@
 }
 .panel-group .panel + .panel {
     margin-top: 0;
+    padding-left: 0 !important;
+}
+.mrgtop15{
+    margin-top: 15px;
 }
 .btn-next {
     color: #FFF;

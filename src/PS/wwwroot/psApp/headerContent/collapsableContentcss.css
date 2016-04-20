@@ -76,4 +76,8 @@
 }
 .panel-group .panel {
     margin-bottom: 10px;
+    padding-left: 0 !important;
+}
+.panel{
+    margin-right: 33px;
 }
