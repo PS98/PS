@@ -39,6 +39,7 @@ namespace PS.Models
     {
         public string City { get; set; }
         public string Area { get; set; }
+        public string Model { get; set; }
         public List<string> Name { get; set; }
 
     }
@@ -46,6 +47,13 @@ namespace PS.Models
     public class ServiceDetails
     {
         public string Name { get; set; }
+        public int Price { get; set; }
+       // public List<PriceDetails> PriceDetails { get; set; }
+    }
+
+    public class PriceDetails
+    {
+        public List<string> Model { get; set; }
         public int Price { get; set; }
     }
 }

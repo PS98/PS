@@ -68,27 +68,30 @@ namespace PS.Controllers
             // select only those which are providing all selected services;
 
             var selectedCentres = new List<Centre>();
-            foreach (var a in centreList)
+            foreach (var centre in centreList)
             {
                 var count = 0;
                 var price = new List<int>();
 
-                foreach (var service in selectedService.Name.TakeWhile(service => a.ServiceDetails == null || a.ServiceDetails.Any(x => x.Name == service)))
+                foreach (var service in selectedService.Name.TakeWhile(service => centre.ServiceDetails == null || centre.ServiceDetails.Any(x => x.Name == service)))
                 {
                     count++;
-                  price.AddRange(from detailse in a.ServiceDetails where detailse.Name == service select detailse.Price);
+                  price.AddRange(from detailse in centre.ServiceDetails where detailse.Name == service select detailse.Price);
+
+                   // centre.ServiceDetails.Where( x=>x.Name == service).Select(y=>y.PriceDetails.Where(z=>z.Model.Any(a=>a.Model == selectedService.Model)))
+                     //price.Add(centre.ServiceList.Where(x=> x.Name == service).Single(y=>y.Price));
+                    //price.AddRange(centre.ServiceDetails.Where(detail => detail.Name == service).Select(detail => detail.PriceDetails.Where(x => x.Model.Any(yy => yy == selectedService.Model)).Select(x => x.Price).FirstOrDefault()));
 
 
-                    // price.Add(a.ServiceList.Where(x=> x.Name == service).Single(y=>y.Price));
                     if (selectedService.Name.Count == count)
                     {
                         selectedCentres.Add(new Centre
                         {
-                         Name   = a.Name,
-                         Address = a.Address,
-                         Latitude = a.Latitude,
-                         Longitude = a.Longitude,
-                         PhoneNo = a.PhoneNo,
+                         Name   = centre.Name,
+                         Address = centre.Address,
+                         Latitude = centre.Latitude,
+                         Longitude = centre.Longitude,
+                         PhoneNo = centre.PhoneNo,
                          TotalPrice = price.Sum()
                          
                         });

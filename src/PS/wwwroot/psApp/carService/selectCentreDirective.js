@@ -71,6 +71,7 @@ angular.module("psApp").directive("selectCentre", function () {
                             $scope.area = $scope.googleMapArea;
                             $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
                             $scope.getCentreDetails($scope.googleMapArea);
+                            $scope.googleMapArea = "";
                         } else {
                             getLatLng($scope.city,10);
                         }
