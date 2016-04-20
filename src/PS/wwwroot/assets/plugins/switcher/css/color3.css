@@ -66,11 +66,7 @@ blockquote:before,
 .noUi-origin,
 .btn-skew-r,
 .list-tags__link:hover,
-.about-autor {
-         background-image: -webkit-linear-gradient(top, #c9cfd2 0%, #ffc73c 100%);
-    background-image: -o-linear-gradient(top, #c9cfd2 0%, #ffc73c 100%);
-    background-image: linear-gradient(to bottom, #c9cfd2 0%, #ffc73c 100%);
-}
+.about-autor {background-color: #ffc73c;}
 
 .link-img__link,
 .brands-controls .caro-prev, .brands-controls .caro-next,
