@@ -1,6 +1,11 @@
 ﻿<div class="container book">
     <div class="row">
         <div class="col-md-12">
+            <div class="header-text" error-message="Please select a service." require-info="quote.jobs[0]" data-original-title="" title="">
+                <div class="b-step mrgtop15" style="margin-left: 20px;">
+                    4
+                </div>
+            </div>
             <div class="car-header car-selection-container white-container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -8,13 +13,13 @@
                         <div class="header-text" ng-if="userSelectedPickUp"> Select a Pick-Up Date & Time</div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="header-text" ng-if="userSelectedPickUp"> Select a Drop-Off Date & Time</div>
-                        <div class="header-text " ng-if="!    userSelectedPickUp"> Select a Pick-Up Date & Time</div>
+                        <div class="header-text pull-right" ng-if="userSelectedPickUp"> Select a Drop-Off Date & Time</div>
+                        <div class="header-text pull-right" ng-if="!userSelectedPickUp"> Select a Pick-Up Date & Time</div>
                     </div>
                 </div>
-                <div>
+                <div style="margin-top: 15px; margin-bottom: 15px;">
                     <i class="fa fa-check-circle" ng-click="userSelectedPickUp = !userSelectedPickUp" ng-class="{selected :userSelectedPickUp}"></i>
-                    <span>Do you want us to Pick-up your vehicals</span>
+                    <span>Do you want us to Pick-up & Drop-off your vehicals</span>
 
                 </div>
                 <div class="row" ng-if="selectedDate.pickUpDate.time">
@@ -29,18 +34,20 @@
 
                     </div>
                     <div class="col-xs-6 bottom-padding10 top-padding10" ng-if="selectedDate.dropOffDate.time">
-                        <div class="header-text">You have Selected</div>
-                        <div class="car-option" ng-class="car-option-active" ng-click="editDropDate()">
-                            {{selectedDate.dropOffDate.day}}
-                        </div>
-                        <div class="car-option" ng-class="car-option-active" ng-click="editDropDate()">
-                            {{ selectedDate.dropOffDate.time}}
+                        <div class="pull-right">
+                            <div class="header-text">You have Selected</div>
+                            <div class="car-option" ng-class="car-option-active" ng-click="editDropDate()">
+                                {{selectedDate.dropOffDate.day}}
+                            </div>
+                            <div class="car-option" ng-class="car-option-active" ng-click="editDropDate()">
+                                {{ selectedDate.dropOffDate.time}}
+                            </div>
                         </div>
 
                     </div>
 
                 </div>
-                <div class="row top-padding10" ng-show="showPickUpCalendar">
+                <!--<div class="row top-padding10" ng-show="showPickUpCalendar">
                     <div class="col-lg-6">
                         <div class="offerDiv">
                             <div class="offerKey greenPromo"></div>
@@ -52,32 +59,58 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
 
                 <div ng-show="!hideCalendar">
                     <div class="row">
                         <div class="col-xs-12 bottom-padding10 top-padding10">
-                            <div class="col-xs-7">
-                                <button class="btn btn-default " ng-click="" >Change Centre </button>
+                            <div class="col-sm-8">
+                                <a class="main-slider__btn btn-effect" ng-click="setUserJob()">
+                                    <span class="main-slider__btn_inner common-button-structure-inner">Change Centre</span>
+                                </a>
                             </div>
-                            <div class="col-xs-5">
-                                <button class="btn btn-default " ng-click="nextDates('prev')" ng-disabled="disablePrevBtn"><< Previous 5 Days</button>
-                                <button class="btn btn-default pull-right" ng-click="nextDates('next')"> Next 5 Days >></button>
+                            <div class="col-xs-4">
+                                <a class="main-slider__btn btn-effect" ng-click="nextDates('prev')" ng-disabled="disablePrevBtn">
+                                    <span class="main-slider__btn_inner common-button-structure-inner" style="width: 145px;"><< Previous 5 Days</span>
+                                </a>
+                                <a class="main-slider__btn btn-effect pull-right" ng-click="nextDates('next')">
+                                    <span class="main-slider__btn_inner common-button-structure-inner">Next 5 Days >></span>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="row" ng-show="showPickUpCalendar">
-                        <div class="calendar-header col-xs-4"> Please choose {{ userSelectedPickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
+                        <div class="calendar-header col-xs-12 col-xs-offset-4"> Please choose {{ userSelectedPickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
                         <calendar-directive data="centreWorkingHours" update="selectpickUpTime(selectedDateTime)"></calendar-directive>
                     </div>
                     <div class="row" ng-show="showDropCalendar">
-                        <div class="calendar-header col-xs-4"> Please choose {{ !userSelectedPickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
+                        <div class="calendar-header col-xs-12 col-xs-offset-4"> Please choose {{ !userSelectedPickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
                         <calendar-directive data="availablePickUpTime" update="selectDropTime(selectedDateTime)"></calendar-directive>
                     </div>
                 </div>
-                <select-address ng-if="hideCalendar" isPickup ="userSelectedPickUp"></select-address>
+
             </div>
         </div>
     </div>
-</div>
+    <div class="row" id="slide-container" ng-if="car.choose_a_date">
+        <div class="col-xs-12">
+            <div class="spacet-20">
+                <div class="white-container">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="header-text" error-message="Please select a service." require-info="quote.jobs[0]" data-original-title="" title="">
+                                How Can We Reach You
+                                <div class="b-step">
+                                    5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <select-address ng-if="hideCalendar" isPickup="userSelectedPickUp"></select-address>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
