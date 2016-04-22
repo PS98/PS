@@ -133,6 +133,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                 //Success
                 if (result.status == 0) {
                     $scope.otp = result.result;
+                    console.log($scope.otp);
                     $scope.again = true;
                     $scope.reqSuccess = true;
                     $scope.reqError = false;

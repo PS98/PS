@@ -109,6 +109,7 @@ namespace MessageBoard
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<IPaymentProcessor, AuthMessageSender>();
             services.AddInstance<IMongoRepository>(new MongoRepository("car"));
             services.AddTransient<IAuthService, AuthService>();
         }
