@@ -45,8 +45,10 @@ namespace PS.Controllers
         public IEnumerable<IEnumerable<string>> GetVariant(string collectionName, string carName)
         {
             var list = _repo.GetDocumentList<Car>(collectionName);
-            var varientList = list.Where(m => m.name == carName).SelectMany(y => y.varient);
+            var varientList = list.Where(m => m.name == carName && m.varient != null).SelectMany(y => y.varient);
+            if(varientList.ToList().Count > 0)
             return _repo.convertToPresentationList(varientList.Select(y => y.name).ToList());
+            return new List<List<string>>();
         }
 
 

@@ -40,8 +40,14 @@
             $scope.selectedCar.varient = '';
             psDataServices.getCarVarient($scope.selectedCar.brand, model).
                     success(function (data) {
-                        $scope.carList.carVarientList = data;
-                        $scope.showVarient = true;
+                        if (data.length > 0) {
+                            $scope.carList.carVarientList = data;
+                            $scope.showVarient = true;
+                        } else {
+                            $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
+                            $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+                            psDataServices.setSelectedCarAndService($scope.selectedCar);
+                        }
                     }).error(function () {
                         $scope.selectVarient("");
                     });

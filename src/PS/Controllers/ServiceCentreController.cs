@@ -16,22 +16,22 @@ namespace PS.Controllers
     [Route("api/[controller]")]
     public class ServiceCentreController : Controller
     {
-       // private IMongoRepository _mongoDb;
-        private MongoRepository repo =  new MongoRepository("serviceCentre");
+        // private IMongoRepository _mongoDb;
+        private MongoRepository repo = new MongoRepository("serviceCentre");
         const string database = "serviceCentre";
         const string collectionName = "Pune";
 
 
 
 
-       // GET: api/values
-       [HttpGet]
+        // GET: api/values
+        [HttpGet]
         public IEnumerable<string> Get()
-       {
+        {
 
-           var collection = repo.GetAllCollectionName();
+            var collection = repo.GetAllCollectionName();
 
-           return collection;
+            return collection;
         }
 
         // GET api/values/5
@@ -39,7 +39,7 @@ namespace PS.Controllers
         public IEnumerable<string> Get(string city)
         {
 
-            
+
             var collection = repo.GetCollection<ServiceCentre>(city);
 
             var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
@@ -51,11 +51,11 @@ namespace PS.Controllers
         public IEnumerable<Centre> Get([FromBody] SelectedService selectedService)
         {
             var collection = repo.GetCollection<ServiceCentre>(selectedService.City);
-           // var filter = Builders<BsonDocument>.Filter.Eq("area", selectedService.Area);
+            // var filter = Builders<BsonDocument>.Filter.Eq("area", selectedService.Area);
             var documentList = collection?.Find(new BsonDocument()).ToListAsync().Result;
             //var result = await collection.Find(filter).ToListAsync();
             // get document by area
-            var list =  documentList?.Where(x=>x.Area.ToLower() == selectedService.Area.ToLower());
+            var list = documentList?.Where(x => x.Area.ToLower() == selectedService.Area.ToLower());
             if (list == null) return null;
 
             // select first because one area will have one document
@@ -70,32 +70,39 @@ namespace PS.Controllers
             var selectedCentres = new List<Centre>();
             foreach (var centre in centreList)
             {
-                var count = 0;
                 var price = new List<int>();
-
-                foreach (var service in selectedService.Name.TakeWhile(service => centre.ServiceDetails == null || centre.ServiceDetails.Any(x => x.Name == service)))
+                
+                // check if centre is providing all user selected service
+                if (selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
                 {
-                    count++;
-                  price.AddRange(from detailse in centre.ServiceDetails where detailse.Name == service select detailse.Price);
 
-                   // centre.ServiceDetails.Where( x=>x.Name == service).Select(y=>y.PriceDetails.Where(z=>z.Model.Any(a=>a.Model == selectedService.Model)))
-                     //price.Add(centre.ServiceList.Where(x=> x.Name == service).Single(y=>y.Price));
-                    //price.AddRange(centre.ServiceDetails.Where(detail => detail.Name == service).Select(detail => detail.PriceDetails.Where(x => x.Model.Any(yy => yy == selectedService.Model)).Select(x => x.Price).FirstOrDefault()));
-
-
-                    if (selectedService.Name.Count == count)
+                    foreach (var abc in centre.ServiceDetails)
                     {
+                        if (selectedService.Name.Contains(abc.Name.Trim()))
+                        {
+                            if (!string.IsNullOrEmpty(selectedService.Varient))
+                            {
+                                price.AddRange(abc.PriceDetails.Where(x => x.ModelList.Contains(selectedService.Model) && x.VarientList.Any(a => a.Varient.Contains(selectedService.Varient))).Select(a => a.VarientList.First().Price));
+                            }
+                            else
+                            {
+                                price.AddRange(abc.PriceDetails.Where(x => x.ModelList.Contains(selectedService.Model)).Select(x => x.Price));
+                            }
+                        }
+                    }
+                    
+                    if (selectedService.Name.Count == price.Count)
                         selectedCentres.Add(new Centre
                         {
-                         Name   = centre.Name,
-                         Address = centre.Address,
-                         Latitude = centre.Latitude,
-                         Longitude = centre.Longitude,
-                         PhoneNo = centre.PhoneNo,
-                         TotalPrice = price.Sum()
-                         
+                            Name = centre.Name,
+                            Address = centre.Address,
+                            Latitude = centre.Latitude,
+                            Longitude = centre.Longitude,
+                            PhoneNo = centre.PhoneNo,
+                            TotalPrice = price.Sum()
+
                         });
-                    }
+
                 }
 
             }

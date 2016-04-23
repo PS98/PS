@@ -40,20 +40,29 @@ namespace PS.Models
         public string City { get; set; }
         public string Area { get; set; }
         public string Model { get; set; }
-        public List<string> Name { get; set; }
+        public List<string> Name { get; set; } 
+        public string Varient { get; set; }
 
     }
 
     public class ServiceDetails
     {
         public string Name { get; set; }
-        public int Price { get; set; }
-       // public List<PriceDetails> PriceDetails { get; set; }
+        //  public int Price { get; set; }
+        public List<PriceDetails> PriceDetails { get; set; }
     }
-
+    [BsonIgnoreExtraElements]
     public class PriceDetails
     {
-        public List<string> Model { get; set; }
+        public List<string> ModelList { get; set; }
+        public List<VarientList> VarientList { get; set; }
         public int Price { get; set; }
     }
+    [BsonIgnoreExtraElements]
+    public class VarientList
+    {
+        public List<string> Varient { get; set; }
+        public int Price { get; set; }
+    }
+
 }

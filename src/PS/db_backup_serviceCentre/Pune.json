@@ -1,6 +1,6 @@
 {
-  "_id": "ObjectId(56ff4043c9c7cebda13afcbb)",
-  "Area": "Pimple Gaurav",
+  "_id": "ObjectId(\"56ff89b5f47380f1ab96d85f\")",
+  "Area": "Pimple Gurav",
   "Centres": [
     {
       "Name": "ABC Corp",
@@ -14,19 +14,227 @@
       "ServiceDetails": [
         {
           "Name": "Essential Car Care",
-          "Price": 2530
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 2300
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 3000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 2500
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 2700
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 2300
+            }
+          ]
         },
         {
           "Name": "Full Car Care",
-          "Price": 2530
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 1230
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 1500
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 2700
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 3000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 2300
+            }
+          ]
         },
         {
           "Name": "Engine Performance",
-          "Price": 2530
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 500
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 600
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 2050
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 2070
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 2300
+            }
+          ]
         },
         {
           "Name": "Oil, Filters and Fluids",
-          "Price": 2530
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 200
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 300
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 500
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 700
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 300
+            }
+          ]
         }
       ]
     },
@@ -42,19 +250,227 @@
       "ServiceDetails": [
         {
           "Name": "Essential Car Care",
-          "Price": 2000
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 5000
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 6000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 2000
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 3000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 4000
+            }
+          ]
         },
         {
           "Name": "Full Car Care",
-          "Price": 3000
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 8000
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 3000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 2500
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 5000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 2300
+            }
+          ]
         },
         {
           "Name": "Engine Performance",
-          "Price": 4000
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 2300
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 3000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 2500
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 2700
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 5000
+            }
+          ]
         },
         {
           "Name": "Oil, Filters and Fluids",
-          "Price": 1000
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 300
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 400
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 600
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 700
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 200
+            }
+          ]
         }
       ]
     },
@@ -70,19 +486,227 @@
       "ServiceDetails": [
         {
           "Name": "Essential Car Care",
-          "Price": 1500
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 2500
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 3000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 2500
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 2700
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 2300
+            }
+          ]
         },
         {
           "Name": "Full Car Care",
-          "Price": 1400
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 4000
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 3000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 6000
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 8000
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 2300
+            }
+          ]
         },
         {
           "Name": "Engine Performance",
-          "Price": 7147
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 400
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 350
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 250
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 700
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 300
+            }
+          ]
         },
         {
           "Name": "Oil, Filters and Fluids",
-          "Price": 1422
+          "PriceDetails": [
+            {
+              "ModelList": [
+                "Bolero",
+                "Scorpio"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "BS4",
+                    "S2"
+                  ],
+                  "Price": 400
+                },
+                {
+                  "Varient": [
+                    "SLE",
+                    "S4"
+                  ],
+                  "Price": 500
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "Cruze",
+                "Go"
+              ],
+              "VarientList": [
+                {
+                  "Varient": [
+                    "LT",
+                    "A"
+                  ],
+                  "Price": 200
+                },
+                {
+                  "Varient": [
+                    "LTZ",
+                    "D"
+                  ],
+                  "Price": 700
+                }
+              ]
+            },
+            {
+              "ModelList": [
+                "M3",
+                "M5"
+              ],
+              "Price": 200
+            }
+          ]
         }
       ]
     },
@@ -122,6 +746,7 @@
   ]
 }
 
+
 {
     "_id" : ObjectId("56ff8a13f47380f1ab96d860"),
     "Area" : "Wakad",
@@ -138,19 +763,227 @@
             "ServiceDetails" : [ 
                 {
                     "Name" : "Essential Car Care",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Full Car Care",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 7000
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 5000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 3500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 3700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 3300
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Engine Performance",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 3300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 3500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 4700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 5000
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Oil, Filters and Fluids",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 1300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 1500
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2200
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2500
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2700
+                        }
+                    ]
                 }
             ]
         }, 
@@ -166,19 +999,171 @@
             "ServiceDetails" : [ 
                 {
                     "Name" : "Essential Car Care",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 3300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3050
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 3500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 4700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 5000
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Full Car Care",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 5300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3200
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 3500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 3700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 3300
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Engine Performance",
-                    "Price" : 2530
-                }, 
-                {
-                    "Name" : "Oil, Filters and Fluids",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }
             ]
         }, 
@@ -193,28 +1178,172 @@
             "Latitude" : "73.76692771911621",
             "ServiceDetails" : [ 
                 {
-                    "Name" : "Essential Car Care",
-                    "Price" : 2530
-                }, 
-                {
                     "Name" : "Full Car Care",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Engine Performance",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Oil, Filters and Fluids",
-                    "Price" : 2530
-                }, 
-                {
-                    "Name" : "Brake Service",
-                    "Price" : 2530
-                }, 
-                {
-                    "Name" : "Check Engine Light",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }
             ]
         }, 
@@ -230,23 +1359,227 @@
             "ServiceDetails" : [ 
                 {
                     "Name" : "Essential Car Care",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Full Car Care",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Engine Performance",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }, 
                 {
                     "Name" : "Oil, Filters and Fluids",
-                    "Price" : 2530
-                }, 
-                {
-                    "Name" : "Mufflers & Exhaust Service",
-                    "Price" : 2530
+                    "PriceDetails" : [ 
+                        {
+                            "ModelList" : [ 
+                                "Bolero", 
+                                "Scorpio"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "BS4", 
+                                        "S2"
+                                    ],
+                                    "Price" : 2300
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "SLE", 
+                                        "S4"
+                                    ],
+                                    "Price" : 3000
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "Cruze", 
+                                "Go"
+                            ],
+                            "VarientList" : [ 
+                                {
+                                    "Varient" : [ 
+                                        "LT", 
+                                        "A"
+                                    ],
+                                    "Price" : 2500
+                                }, 
+                                {
+                                    "Varient" : [ 
+                                        "LTZ", 
+                                        "D"
+                                    ],
+                                    "Price" : 2700
+                                }
+                            ]
+                        }, 
+                        {
+                            "ModelList" : [ 
+                                "M3", 
+                                "M5"
+                            ],
+                            "Price" : 2300
+                        }
+                    ]
                 }
             ]
         }, 
