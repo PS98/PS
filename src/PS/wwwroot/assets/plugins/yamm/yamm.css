@@ -78,9 +78,9 @@
 	position: relative;
 	display: block;
 	padding: 50px 13px 23px;
-	font: 700 12px Raleway;
+	font: 700 16px Raleway;
 	color: #FFF;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	transition: all .3s ease-out;
 }
 .yamm .dropdown.yamm-fw .dropdown-menu {

@@ -1,12 +1,12 @@
 ﻿.header .ps-user-profile-small{
     color:#333;
-    padding:45px 13px 0;
+    padding:50px 13px 0;
     cursor: pointer;
 }
 
 .sticky .ps-user-profile-small{
     color:#333;
-    padding:25px 13px 0;
+    padding:30px 13px 0;
     cursor: pointer;
 }
 
@@ -18,13 +18,17 @@
     font: 700 14px Raleway;
 }
 
+.mrgright10{
+    margin-right: 10px;
+}
+
 .ps-user-profile-small span {
     margin-right: 10px;
     color: white;
     padding-right: 15px;
     position: relative;
-    font: 700 12px Raleway;
-    text-transform: uppercase;
+    font: 700 16px Raleway;
+    text-transform: capitalize;
     -moz-transition: all .3s ease-out;
     -o-transition: all .3s ease-out;
     -webkit-transition: all .3s ease-out;

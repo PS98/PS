@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <a id="scrollUp" class="back-to-top" href="#top" title="<i class='scroll-icon fa fa-chevron-up scroll-up'></i>" style="position: fixed; z-index: 2147483647; display:none;"><i class="scroll-icon fa fa-chevron-up scroll-up"></i></a>    
-                    <div class="header-contacts">
+                    <div class="pull-left">
                         <ul class="social-links list-inline">
                             <li><a class="icon fa fa-facebook" href="javascript:void(0);"></a></li>
                             <li><a class="icon fa fa-twitter" href="javascript:void(0);"></a></li>
@@ -14,15 +14,15 @@
                             <li><a class="icon fa fa-google-plus" href="javascript:void(0);"></a></li>
                         </ul>
                     </div>
-                    <!--<div class="header-contacts">
+                    <div class="pull-right" ng-if="!isLoggedIn">
                         <span class="header-contacts__item">
                             <i class="icon fa fa-phone"></i>+91 8380911266
                         </span>
                         <a class="header-contacts__item" href="mailto:support@milemates.com">
                             <i class="icon fa fa-envelope"></i>support (at) milemates.com
                         </a>
-                    </div>-->
-                    <div class="bottom-bar">
+                    </div>
+                    <div class="bottom-bar" ng-if="isLoggedIn">
                         <div class="list-bottom-bar">
                             <i class="fa fa-car"></i>
                             <h6><a href="#">My Vehicles:</a></h6>
@@ -66,10 +66,10 @@
                         <div id="navbar-collapse-1" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="/">Home</a></li>
-                                <li><a href="/About">WHY CHOOSE US?</a></li>
+                                <li><a href="/About">Why Choose Us?</a></li>
                                 <li><a href="/Contact">Connect With Us?</a></li>
                                 <li>
-                                    <a href="/Service">Service</a>
+                                    <a href="/Service">Book Now</a>
                                 </li>
                                 <li>
                                     <a href="" ng-if="!isLoggedIn" ng-click="openloginModal()">LOGIN</a>
