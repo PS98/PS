@@ -56,6 +56,7 @@ angular.module("psApp").directive("selectAddress", function () {
             });
         },
         controller: ["$scope", "$window", "psDataServices", function ($scope, $window, psDataServices) {
+            $scope.payNow = true;
              $scope.orderProcess = function () {
                  $scope.response = psDataServices.payment("test_user", "testing", "10", "varshneyshobhit98@yahoo.com", "+918380911266", "true", "true").then(function (result) {
                      //Success

@@ -131,7 +131,6 @@ angular.module("psApp").directive("bookAppointment", function () {
                 $scope.hideCalendar = true;
                 psDataServices.setSelectedAppointment($scope.selectedDate);
                 $scope.userSelectedService = psDataServices.getSelectedService();
-                $scope.car.choose_a_date = true;
             }
 
             $scope.nextDates = function (type) {
