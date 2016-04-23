@@ -1,4 +1,4 @@
-﻿angular.module("psApp").factory("psDataServices", ["$http", function ($http) {
+﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", function ($http, $q) {
     var selectedCar, selectedService, serviceNameList;
     var userServiceData= {selectedCar:'',selectedServices:'', selectedCentre:'',selectedAppointment:'',userDetails:''};
 
@@ -60,6 +60,20 @@
         return $http.get("/api/services/all");
     }
 
+    var _payment = function (name, purpose, amount, email, phone, send_email, send_sms) {
+        var deferred = $q.defer();
+        $http.post("/api/Auth/ProcessPayment?name=" + name + "&purpose=" + purpose + "&amount=" + amount + "&email=" + email + "&phone=" + phone + "&send_email=" + send_email + "&send_sms=" + send_sms)
+         .then(function (result) {
+             //Success
+             deferred.resolve(result.data);
+         }, function (error) {
+             //Error
+             deferred.reject(error);
+         });
+
+        return deferred.promise;
+    }
+
     return {
         getAllCarColletion: _getAllCarCollection,
         getCarType: _getCarType,
@@ -73,8 +87,8 @@
         setSelectedServiceName: _setSelectedServiceName,
         setSelectedCentre: _setSelectedCentre,
         setSelectedAppointment: _setSelectedAppointment,
-        setuserDetails: _setuserDetails
-
+        setuserDetails: _setuserDetails,
+        payment: _payment
 }
           
     

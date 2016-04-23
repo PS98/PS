@@ -362,9 +362,8 @@ img.pull-left {
 .block-title {
 	position: relative;
 	display: block;
-	margin-bottom: 40px;
 	overflow: hidden;
-	text-align: center;;
+	text-align: center;
 }
 .block-title__inner:after {
 	background-image: url('../media/bg/11.jpg');
@@ -393,6 +392,7 @@ img.pull-left {
 }
 
 .sorting {
+    margin-top: 30px;
 	margin-bottom: 30px;
 	padding-top: 20px;
 	padding-bottom: 10px;
@@ -820,7 +820,6 @@ img.pull-left {
 	display: block;
 	margin-bottom: 7px;
 	font-size: 30px;
-    text-shadow : 3px 3px 2px lightsteelblue;
 }
 
 .list-services {

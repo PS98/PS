@@ -1,6 +1,5 @@
 ﻿<div class="user-address">
-    <div class="header-text">How Can We Reach You</div>
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="addForm">
         <div class="row top-padding10">
             <div class="col-md-6">
                 <div class="form-group">
@@ -42,11 +41,37 @@
                 </div>
                 <div class="form-group">
                     <label for="MobileNo"> Mobile No</label>
-                    <input class="form-control" id="MobileNo" placeholder="mobile no" type="text" />
+                    <input class="form-control" id="MobileNo" name="addmobile" placeholder="mobile no" type="text" />
+                </div>
+
+                <div class="form-group">
+                    <label for="MobileNo">OTP Code</label>
+                    <input type="password" class="form-control" id="addotp" name="addotp" ng-model="addotp" ng-disabled="addForm.addmobile.$invalid" ng-class="{'bckgrnd-clr': (addForm.rotp.$dirty || addForm.rotp.$error.minlength || addForm.rotp.$error.maxlength),'bckgrnd-color-default' : (!addForm.rotp.$error.minlength && !addForm.rotp.$error.maxlength && !addForm.rotp.$error.required)}" placeholder="Enter OTP code here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
+                    <button type="button" id="reqotp_btn" style="width: 25%; float:right;" class="btn btn-block btn-info" style="{{again ? 'margin-left:43px;' : 'margin-left:75px;'}}" ng-disabled="addForm.rmobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
                 </div>
                 <div class="form-group">
                     <label for="Email"> Email Address</label>
                     <input class="form-control" id="Email" placeholder="email address" type="text" />
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12" style="margin-top: 15px; margin-bottom: 15px;">
+                        <div class="col-md-6">
+                            <i class="fa fa-check-circle" ng-click="!payNow = payNow" ng-class="{selected :!payNow}"></i>
+                            <span>Pay Now</span>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="fa fa-check-circle" ng-click="payNow = !payNow" ng-class="{selected :payNow}"></i>
+                            <span>COD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-md-offset-2">
+                    <a ui-sref="service.centre" class="main-slider__btn btn-effect">
+                        <span class="main-slider__btn_inner common-button-structure-inner">Back</span>
+                    </a>
+                    <a class="main-slider__btn btn-effect pull-right" ng-click="orderProcess()">
+                        <span class="main-slider__btn_inner common-button-structure-inner">Submit Order</span>
+                    </a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -137,9 +162,4 @@
             </div>
         </div>
     </form>
-</div>
-<div class="btn">
-    <div class="btn btn-filter wrap__btn-skew-r js-filter">
-        <button ui-sref="service.centre" class="btn btn-skew-r btn-effect "><span class="btn btn-skew-r__inner">Previous Section</span></button>
-    </div>
 </div>

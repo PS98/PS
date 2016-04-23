@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace PS.Services
 {
-    public class AuthMessageSender : IEmailSender, ISmsSender
+    public class AuthMessageSender : IEmailSender, ISmsSender, IPaymentProcessor
     {
         public AuthMessageSender(IOptions<AuthMessageSenderOptions> optionsAccessor)
         {
@@ -22,31 +22,6 @@ namespace PS.Services
         }
 
         public AuthMessageSenderOptions Options { get; }  // set only via Secret Manager
-
-        //public Task SendSimpleMessage(string email, string subject, string message)
-        //{
-            // Plug in your email service here to send an email.
-            //var myMessage = new SendGrid.SendGridMessage();
-            //myMessage.AddTo(email);
-            //myMessage.From = new MailAddress("varshney@shobhit.com", "Shobhit", System.Text.Encoding.Default);
-            //myMessage.Subject = subject;
-            //myMessage.Text = message;
-            //myMessage.Html = message;
-            //var credentials = new NetworkCredential(
-            //    Options.SendGridUser,
-            //    Options.SendGridKey);
-            //// Create a Web transport for sending email.
-            //var transportWeb = new SendGrid.Web(credentials);
-            // Send the email.
-            //if (transportWeb != null)
-            //{
-            //    return transportWeb.DeliverAsync(myMessage);
-            //}
-            //else
-            //{
-               // return Task.FromResult(0);
-            //}
-       // }
 
         public bool SendSmsAsync(string number, string message)
         {
@@ -119,6 +94,27 @@ namespace PS.Services
             request.AddParameter("to", email);
             request.AddParameter("subject", subject);
             request.AddParameter("text", message);
+            request.Method = Method.POST;
+            var a = (RestResponse)client.Execute(request);
+            return a;
+        }
+
+        public RestResponse OrderPayment(string name, string purpose, int amount, string email, string phone, bool send_email, bool send_sms)
+        {
+            RestClient client = new RestClient();
+
+            client.BaseUrl = new Uri(Options.payment.BaseUrl, UriKind.Absolute);
+            RestRequest request = new RestRequest();
+            request.AddHeader("X-Api-Key", Options.payment.XApiKey);
+            request.AddHeader("X-Auth-Token", Options.payment.XAuthToken);
+            request.AddParameter("buyer_name", name);
+            request.AddParameter("purpose", purpose);
+            request.AddParameter("amount", amount);
+            request.AddParameter("email", email);
+            request.AddParameter("phone", phone);
+            request.AddParameter("redirect_url", Options.payment.RedirectUrl);
+            request.AddParameter("send_email", send_email);
+            request.AddParameter("send_sms", send_sms);
             request.Method = Method.POST;
             var a = (RestResponse)client.Execute(request);
             return a;

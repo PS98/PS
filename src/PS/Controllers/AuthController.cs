@@ -23,12 +23,14 @@ namespace PS.Controllers
         private static Oauth2LoginContext _context;
         public AuthSocialLoginOptions Options { get; }
         private readonly ISmsSender _smsSender;
+        private IPaymentProcessor _paymentProcessor;
 
-        public AuthController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IOptions<AuthSocialLoginOptions> optionsAccessor)
+        public AuthController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor)
         {
             _auth = auth;
             _emailSender = emailSender;
             _smsSender = smsSender;
+            _paymentProcessor = paymentProcessor;
             Options = optionsAccessor.Value;
         }
 
@@ -256,7 +258,28 @@ namespace PS.Controllers
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
         }
 
-    public ActionResult Error()
+        public JsonResult ProcessPayment(PaymentDetailsModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var res = _paymentProcessor.OrderPayment(model.name, model.purpose, model.amount, model.email, model.phone, model.send_email, model.send_sms);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    var data = JsonConvert.DeserializeAnonymousType(res.Content, new PaymentResponseModel());
+                    return Json(new {Status = 0, Result = data });
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "We are unable to process your request.", Status = 1 });
+        }
+
+        public ActionResult Error()
         {
             return View();
         }
