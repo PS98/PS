@@ -130,7 +130,6 @@ angular.module("psApp").directive("bookAppointment", function () {
                 $scope.showDropCalendar = false;
                 $scope.hideCalendar = true;
                 psDataServices.setSelectedAppointment($scope.selectedDate);
-                $scope.userSelectedService = psDataServices.getSelectedService();
             }
 
             $scope.nextDates = function (type) {
