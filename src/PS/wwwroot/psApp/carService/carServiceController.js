@@ -196,7 +196,11 @@
         });
         psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
         psDataServices.setSelectedServiceName(jobName);
-        $state.go("service.centre");
+        if (psDataServices.getuserDetails())
+            $state.go("service.centre");
+        else {
+            $("#loginModal").modal('toggle');
+        }
     }
 
  $state.go("service.car");

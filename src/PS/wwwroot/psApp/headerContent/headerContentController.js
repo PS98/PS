@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("headerContentController", ["$scope", "$localStorage", "$location", "$rootScope", "psLoginService",
-function ($scope, $localStorage, $location,$rootScope, psLoginService) {
+﻿angular.module("psApp").controller("headerContentController", ["$scope", "$localStorage", "$location", "$rootScope", "$state","psLoginService",
+function ($scope, $localStorage, $location, $rootScope, $state, psLoginService) {
 
     $scope.isLoggedIn = $localStorage.userDetails ? true : false ;
     $scope.userDetails = $localStorage.userDetails ? $localStorage.userDetails : "";
@@ -16,6 +16,7 @@ function ($scope, $localStorage, $location,$rootScope, psLoginService) {
     $scope.logout = function () {
         $scope.isLoggedIn = false;
         $localStorage.$reset();
+        $state.reload();
     }
 
 }]);

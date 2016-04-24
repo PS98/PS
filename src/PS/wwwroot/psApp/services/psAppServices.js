@@ -23,7 +23,7 @@
         console.log(userServiceData);
     }
     var _getuserDetails = function (user) {
-        userServiceData.userDetails = $localStorage.userDetails;
+        return $localStorage.userDetails;
     }
     var _setSelectedCentre = function (centre) {
         userServiceData.selectedCentre = centre;
