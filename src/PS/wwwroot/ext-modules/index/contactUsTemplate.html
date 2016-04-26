@@ -2,8 +2,7 @@
     <div class="block-title">
         <div class="block-title__inner section-bg section-bg_second">
             <div class="bg-inner">
-                <h1 class="ui-title-page">Connect With Us</h1>
-                <div class="decor-1 center-block"></div>
+                <div class="decor-1-header center-block"></div>
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
                     <li class="active">Connect With Us</li>
@@ -13,83 +12,82 @@
     </div><!-- end block-title -->
     </div>
     <section class="section_map section-bg-2 wow bounceInUp" data-wow-duration="2s">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h2 class="ui-title-block">Contact us</h2>
-                    <div class="ui-subtitle-block_mod-b">Sed euismod ullamcorper tortsed ipsum dui</div>
-                </div>
-                <!-- end col -->
+    <div class="container">
+        <div class="row">
+            <div class="section-heading no-padding-top">
+                <h2>Connect With Us?</h2>
             </div>
-            <!-- end row -->
+            <!-- end col -->
         </div>
-        <!-- end container -->
-        <div class="map"><img class="img-responsive" src="assets/img/map.jpg" height="520" width="1600" alt="map"></div>
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="decor-2"><i class="icon fa fa-caret-down"></i></div>
-                    <h2 class="ui-title-inner">
-                        feel free to send us a message <br>
-                        or ask for a FREE quote
-                    </h2>
-                    <div class="decor-1 center-block"></div>
-                </div>
-                <!-- end col -->
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+    <div class="map"><img class="img-responsive" src="assets/img/map.jpg" height="520" width="1600" alt="map"></div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="decor-2"><i class="icon fa fa-caret-down"></i></div>
+                <h2 class="ui-title-inner">
+                    feel free to send us a message <br>
+                    or ask for a FREE quote
+                </h2>
+                <div class="decor-1 center-block"></div>
             </div>
-            <!-- end row -->
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1">
-                    <div class="alert alert-danger" role="alert" ng-show="(fError && !fSuccess) || (fError && !fSuccess)">
-                        <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                        <a href="#" class="close" ng-click="fReset()" aria-label="close">&times;</a>
-                        <span class="sr-only">Error:</span>
-                        {{errorMessage}}
-                    </div>
-                    <div class="alert alert-success" role="alert" ng-show="(fSuccess && !fError) || (fSuccess && !fError)">
-                        <span class="fa fa-check-circle-o" aria-hidden="true"></span>
-                        <a href="#" class="close" ng-click="fReset()" aria-label="close">&times;</a>
-                        <span class="sr-only">Success:</span>
-                        {{successMessage}}
-                    </div>
-                    <div class="clearfix"></div>
-                    <form class="form-contact" name="feedbackForm">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input class="form-control" type="text" name="firstName" placeholder="First Name" ng-model="firstName" ng-class="{'bckgrnd-clr': (feedbackForm.firstName.$error.pattern || feedbackForm.firstName.$dirty || feedbackForm.firstName.$error.minlength || feedbackForm.firstName.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.firstName.$error.pattern && !feedbackForm.firstName.$error.minlength && !feedbackForm.firstName.$error.maxlength && !feedbackForm.firstName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-sm-6">
-                                <input class="form-control" type="text" placeholder="Last Name" name="lastName" ng-model="lastName" ng-class="{'bckgrnd-clr': (feedbackForm.lastName.$error.pattern || feedbackForm.lastName.$dirty || feedbackForm.lastName.$error.minlength || feedbackForm.lastName.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.lastName.$error.pattern && !feedbackForm.lastName.$error.minlength && !feedbackForm.lastName.$error.maxlength && !feedbackForm.lastName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input class="form-control" type="tel" name="mobile" ng-model="phone" ng-class="{'bckgrnd-clr': (feedbackForm.mobile.$error.pattern || feedbackForm.mobile.$dirty || feedbackForm.mobile.$error.minlength || feedbackForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.mobile.$error.pattern && !feedbackForm.mobile.$error.minlength && !feedbackForm.mobile.$error.maxlength && !feedbackForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/">
-                            </div>
-                            <!-- end col -->
-                            <div class="col-sm-6">
-                                <input class="form-control" type="text" placeholder="Subject" name="subject" ng-model="subject" ng-class="{'bckgrnd-clr': (feedbackForm.subject.$error.pattern || feedbackForm.subject.$dirty || feedbackForm.subject.$error.minlength || feedbackForm.subject.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.subject.$error.pattern && !feedbackForm.subject.$error.minlength && !feedbackForm.subject.$error.maxlength && !feedbackForm.subject.$error.required)}" ng-minlength="5" ng-maxlength="30" ng-pattern="/^[A-z][A-z]*$/" required>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <textarea class="form-control" placeholder="Message Details ..." required rows="7" name="message" ng-model="message" style="margin-bottom : 30px;" ng-class="{'bckgrnd-clr': (feedbackForm.message.$error.pattern || feedbackForm.message.$dirty || feedbackForm.message.$error.minlength || feedbackForm.message.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.message.$error.pattern && !feedbackForm.message.$error.minlength && !feedbackForm.message.$error.maxlength && !feedbackForm.message.$error.required)}" ng-minlength="5" ng-maxlength="1000" ng-pattern="/^[A-z][A-z]*$/"></textarea>
-                                    <a class="main-slider__btn btn-effect" ng-disabled="feedbackForm.$invalid" ng-click="contactUs()">
-                                        <span class="main-slider__btn_inner common-button-structure-inner" disabled="disabled">Send Message</span>
-                                    </a>
-                            </div>
-                        </div>
-                        <!-- end row -->
-                    </form>
-                </div>
-            </div>
-            <!-- end row -->
+            <!-- end col -->
         </div>
-        <!-- end container -->
-    </section>
+        <!-- end row -->
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="alert alert-danger" role="alert" ng-show="(fError && !fSuccess) || (fError && !fSuccess)">
+                    <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                    <a href="#" class="close" ng-click="fReset()" aria-label="close">&times;</a>
+                    <span class="sr-only">Error:</span>
+                    {{errorMessage}}
+                </div>
+                <div class="alert alert-success" role="alert" ng-show="(fSuccess && !fError) || (fSuccess && !fError)">
+                    <span class="fa fa-check-circle-o" aria-hidden="true"></span>
+                    <a href="#" class="close" ng-click="fReset()" aria-label="close">&times;</a>
+                    <span class="sr-only">Success:</span>
+                    {{successMessage}}
+                </div>
+                <div class="clearfix"></div>
+                <form class="form-contact" name="feedbackForm">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text" name="firstName" placeholder="First Name" ng-model="firstName" ng-class="{'bckgrnd-clr': (feedbackForm.firstName.$error.pattern || feedbackForm.firstName.$dirty || feedbackForm.firstName.$error.minlength || feedbackForm.firstName.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.firstName.$error.pattern && !feedbackForm.firstName.$error.minlength && !feedbackForm.firstName.$error.maxlength && !feedbackForm.firstName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text" placeholder="Last Name" name="lastName" ng-model="lastName" ng-class="{'bckgrnd-clr': (feedbackForm.lastName.$error.pattern || feedbackForm.lastName.$dirty || feedbackForm.lastName.$error.minlength || feedbackForm.lastName.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.lastName.$error.pattern && !feedbackForm.lastName.$error.minlength && !feedbackForm.lastName.$error.maxlength && !feedbackForm.lastName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input class="form-control" type="tel" name="mobile" ng-model="phone" ng-class="{'bckgrnd-clr': (feedbackForm.mobile.$error.pattern || feedbackForm.mobile.$dirty || feedbackForm.mobile.$error.minlength || feedbackForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.mobile.$error.pattern && !feedbackForm.mobile.$error.minlength && !feedbackForm.mobile.$error.maxlength && !feedbackForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/">
+                        </div>
+                        <!-- end col -->
+                        <div class="col-sm-6">
+                            <input class="form-control" type="text" placeholder="Subject" name="subject" ng-model="subject" ng-class="{'bckgrnd-clr': (feedbackForm.subject.$error.pattern || feedbackForm.subject.$dirty || feedbackForm.subject.$error.minlength || feedbackForm.subject.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.subject.$error.pattern && !feedbackForm.subject.$error.minlength && !feedbackForm.subject.$error.maxlength && !feedbackForm.subject.$error.required)}" ng-minlength="5" ng-maxlength="30" ng-pattern="/^[A-z][A-z]*$/" required>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <textarea class="form-control" placeholder="Message Details ..." required rows="7" name="message" ng-model="message" style="margin-bottom : 30px;" ng-class="{'bckgrnd-clr': (feedbackForm.message.$error.pattern || feedbackForm.message.$dirty || feedbackForm.message.$error.minlength || feedbackForm.message.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.message.$error.pattern && !feedbackForm.message.$error.minlength && !feedbackForm.message.$error.maxlength && !feedbackForm.message.$error.required)}" ng-minlength="5" ng-maxlength="1000" ng-pattern="/^[A-z][A-z]*$/"></textarea>
+                            <a class="main-slider__btn btn-effect" ng-disabled="feedbackForm.$invalid" ng-click="contactUs()">
+                                <span class="main-slider__btn_inner common-button-structure-inner" disabled="disabled">Send Message</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </form>
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
     <!-- end section_default -->

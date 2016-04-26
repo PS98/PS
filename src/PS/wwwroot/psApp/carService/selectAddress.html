@@ -1,71 +1,62 @@
 ﻿<div class="user-address">
-    <form class="form-horizontal" name="addForm" novalidate="">
-        <div class="row top-padding10">
-            <div class="col-md-6">
+    <div class="row top-padding10">
+        <div class="col-md-6">
+            <div ng-show="userSelectedPickUp">
                 <div class="form-group">
                     <label for="autocompleteTextBox"> Start typing your address</label>
-                    <input class="form-control" id="autocompleteTextBox" placeholder="Start typing your address" type="text" />
+                    <input class="form-control" id="formatted_address" placeholder="Start typing your address" type="text" />
                 </div>
                 <div class="form-group">
-                    <label for="street_number" class="">ADDRESS LINE 1</label>
-                    <input class="form-control" id="street_number" placeholder="address line 1" />
+                    <label for="sublocality_level_2" class="">ADDRESS LINE 1</label>
+                    <input class="form-control" id="sublocality_level_2" placeholder="address line 1" model="userSelectedService.userDetails.addressLine1" />
                     <br />
-                    <label for="street_number" class="">ADDRESS LINE 2</label>
-                    <input class="form-control" id="route" placeholder="address line 2" />
+                    <label for="sublocality_level_1" class="">ADDRESS LINE 2</label>
+                    <input class="form-control" id="sublocality_level_1" placeholder="address line 2" model="userSelectedService.userDetails.addressLine2"/>
                 </div>
                 <div class="form-group col-xs-6">
                     <label for="administrative_area_level_2" class="">City</label>
-                    <input class="form-control" id="administrative_area_level_2" placeholder="city" />
+                    <input class="form-control" id="administrative_area_level_2" placeholder="city" disabled="disabled" model="userSelectedService.userDetails.city"/>
                 </div>
 
                 <div class="form-group col-xs-6">
                     <label for="administrative_area_level_1">State</label>
-                    <input class="form-control" id="administrative_area_level_1" placeholder="state" />
+                    <input class="form-control" id="administrative_area_level_1" placeholder="state" disabled="disabled" model="userSelectedService.userDetails.state"/>
                 </div>
                 <div class="form-group col-xs-6">
                     <label for="country">Country</label>
-                    <input class="form-control" id="country" placeholder="country" />
+                    <input class="form-control" id="country" placeholder="country" disabled="disabled" model="userSelectedService.userDetails.country"/>
                 </div>
 
                 <div class="form-group col-xs-6">
-                    <label for="postal_code">
-                        <span>Zip code</span>
-                        <input class="form-control" id="postal_code" name="zipCode" placeholder="zip code" required />
-                        <p class="text-danger" style="float: left;" ng-show="addForm.zipCode.$error.required">Required Field</p>
-                    </label>
+                    <label for="postal_code">Zip code</label>
+                    <input class="form-control" id="postal_code" placeholder="zip code" disabled="disabled" model="userSelectedService.userDetails.zipCode"/>
                 </div>
+            </div>
+            <div>
                 <div class="form-group">
                     <label for="FirstName"> First Name</label>
-                    <input class="form-control" id="FirstName" name="fName" placeholder="first name" type="text"  ng-class="{'bckgrnd-clr': (addForm.fName.$error.pattern || addForm.fName.$dirty || addForm.fName.$error.minlength || addForm.fName.$error.maxlength),'bckgrnd-color-default' : (!addForm.fName.$error.pattern && !addForm.fName.$error.minlength && !addForm.fName.$error.maxlength && !addForm.fName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
-                    <p class="text-danger" style="float: left;" ng-show="addForm.fName.$error.required && addForm.fName.$dirty">Required Field</p>
-                    <p class="text-danger" style="float: left;" ng-show="!addForm.fName.$error.minLength && !addForm.fName.$error.maxLength && addForm.fName.$error.pattern && addName.fName.$dirty">Must start with a letter, and contain letters only.</p>
-                    <p class="text-danger" style="float: left;" ng-show="!addName.fName.$error.required && (addForm.fName.$error.minlength || addForm.fName.$error.maxlength) && addForm.fName.$dirty">Must be between 2 and 20 characters.</p>
-
+                    <input class="form-control" id="FirstName" name="firstName" placeholder="first name" type="text" ng-model="userSelectedService.userDetails.firstName" ng-class="{'bckgrnd-clr': (addressForm.firstName.$error.pattern || addressForm.firstName.$dirty || addressForm.firstName.$error.minlength || addressForm.firstName.$error.maxlength),'bckgrnd-color-default' : (!addressForm.firstName.$error.pattern && !addressForm.firstName.$error.minlength && !addressForm.firstName.$error.maxlength && !addressForm.firstName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
                 </div>
                 <div class="form-group">
                     <label for="LastName"> Last Name</label>
-                    <input class="form-control" id="LastName" placeholder="last name" name="lName" type="text" />
-                    <p class="text-danger" style="float: left;" ng-show="addForm.lName.$error.required && addForm.lName.$dirty">Required Field</p>
-                    <p class="text-danger" style="float: left;" ng-show="!addName.lName.$error.minLength && !addForm.lName.$error.maxLength && addForm.lName.$error.pattern && addForm.lName.$dirty">Must start with a letter, and contain letters only.</p>
-                    <p class="text-danger" style="float: left;" ng-show="!addForm.lName.$error.required && (addForm.lName.$error.minlength || addForm.lName.$error.maxlength) && addForm.lName.$dirty">Must be between 2 and 20 characters.</p>
-
+                    <input class="form-control" id="LastName" name="lastName" placeholder="last name" type="text" ng-model="userSelectedService.userDetails.lastName" ng-class="{'bckgrnd-clr': (addressForm.lastName.$error.pattern || addressForm.lastName.$dirty || addressForm.lastName.$error.minlength || addressForm.lastName.$error.maxlength),'bckgrnd-color-default' : (!addressForm.lastName.$error.pattern && !addressForm.lastName.$error.minlength && !addressForm.lastName.$error.maxlength && !addressForm.lastName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
                 </div>
                 <div class="form-group">
                     <label for="MobileNo"> Mobile No</label>
-                    <input class="form-control" id="MobileNo" name="addmobile" placeholder="mobile no" type="text" />
+                    <input class="form-control" id="MobileNo" name="mobile" type="text" ng-model="userSelectedService.userDetails.phoneNo" ng-class="{'bckgrnd-clr': (addressForm.mobile.$error.pattern || addressForm.mobile.$dirty || addressForm.mobile.$error.minlength || addressForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!addressForm.mobile.$error.pattern && !addressForm.mobile.$error.minlength && !addressForm.mobile.$error.maxlength && !addressForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/" />
                 </div>
 
                 <div class="form-group">
                     <label for="MobileNo">OTP Code</label>
-                    <input type="password" class="form-control" id="addotp" name="addotp" ng-model="addotp" ng-disabled="addForm.addmobile.$invalid" ng-class="{'bckgrnd-clr': (addForm.rotp.$dirty || addForm.rotp.$error.minlength || addForm.rotp.$error.maxlength),'bckgrnd-color-default' : (!addForm.rotp.$error.minlength && !addForm.rotp.$error.maxlength && !addForm.rotp.$error.required)}" placeholder="Enter OTP code here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
-                    <button type="button" id="reqotp_btn" style="width: 25%; float:right;" class="btn btn-block btn-info" style="{{again ? 'margin-left:43px;' : 'margin-left:75px;'}}" ng-disabled="addForm.rmobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                    <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-disabled="addressForm.mobile.$invalid" ng-class="{'bckgrnd-clr': (addressForm.addressOtp.$dirty || addressForm.addressOtp.$error.minlength || addressForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!addressForm.addressOtp.$error.minlength && !addressForm.addressOtp.$error.maxlength && !addressForm.addressOtp.$error.required)}" placeholder="Enter OTP code here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
+                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info" style="margin-bottom: 20px; width: 25%; float:right;" ng-disabled="addressForm.mobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
                 </div>
                 <div class="form-group">
                     <label for="Email"> Email Address</label>
-                    <input class="form-control" id="Email" placeholder="email address" type="text" />
+                    <input class="form-control" id="Email" name="email" placeholder="email address" type="text" ng-model="userSelectedService.userDetails.email" ng-class="{'bckgrnd-clr': (addressForm.email.$dirty || addressForm.email.$error.pattern) ,'bckgrnd-color-default' : (!addressForm.email.$error.email && !addressForm.email.$error.required && !addressForm.email.$error.pattern)} " ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" required />
                 </div>
                 <div class="form-group">
-                    <div class="col-md-12" style="margin-top: 15px; margin-bottom: 15px;">
+                    <div style="margin-top: 15px; margin-bottom: 15px; font-size: 16px;">
                         <div class="col-md-6">
                             <i class="fa fa-check-circle" ng-click="payNow = !payNow" ng-class="{selected : payNow}"></i>
                             <span>Pay Now</span>
@@ -85,92 +76,92 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div id="googleMap" class="address-map" ng-if="true"></div>
-                <div class="col-xs-12 order-details">
-                    <div class="header-text padding-top30">Your Order</div>
-                    <table class="table">
-                        <thead>
-                            <tr scope="row">
-                                <th class="col-xs-9">Vehicle Details</th>
-                                <th class="text-right">&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr scope="row">
-                                <td>{{userSelectedService.selectedCar.brand}}-{{userSelectedService.selectedCar.model}}-{{userSelectedService.selectedCar.varient}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table">
-                        <thead>
-                            <tr scope="row">
-                                <th class="col-xs-9">Service Details</th>
-                                <th class="text-right">&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr scope="row" ng-repeat="srv in userSelectedService.selectedServices">
-                                <td>{{ srv.name}}</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table">
-                        <thead>
-                            <tr scope="row">
-                                <th class="col-xs-9">Centre Details</th>
-                                <th class="text-right">&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr scope="row">
-                                <td>Name</td>
-                                <td>{{ userSelectedService.selectedCentre.name}}</td>
-                            </tr>
-                            <tr scope="row">
-                                <td>Address</td>
-                                <td>
-                                    {{userSelectedService.selectedCentre.address.line1}}
-                                    {{userSelectedService.selectedCentre.address.line2}}
-                                </td>
-                            </tr>
-                            <tr scope="row">
-                                <td>Contact No</td>
-                                <td>
-                                    {{userSelectedService.selectedCentre.phoneNo}}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table">
-                        <thead>
-                            <tr scope="row">
-                                <th class="col-xs-9">Appointment Details</th>
-                                <th class="text-right">&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr scope="row">
-                                <td ng-if="userSelectedPickUp">Pick-up time</td>
-                                <td ng-if="!userSelectedPickUp">Drop-time</td>
-                                <td>
-                                    {{userSelectedService.selectedAppointment.dropOffDate.day}}
-                                    {{userSelectedService.selectedAppointment.dropOffDate.time}}
-                                </td>
-                            </tr>
-                            <tr scope="row">
-                                <td ng-if="userSelectedPickUp">Drop-time</td>
-                                <td ng-if="!userSelectedPickUp">Pick-up time</td>
-                                <td>
-                                    {{userSelectedService.selectedAppointment.pickUpDate.day}}
-                                    {{userSelectedService.selectedAppointment.pickUpDate.time}}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        </div>
+        <div class="col-md-6">
+            <div id="googleMap" class="address-map" ng-show="userSelectedPickUp"></div>
+            <div class="col-xs-12">
+                <div class="header-text padding-top30">Your Order</div>
+                <table class="table">
+                    <thead>
+                        <tr scope="row">
+                            <th class="col-xs-9">Vehicle Details</th>
+                            <th class="text-right">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row">
+                            <td>{{userSelectedService.selectedCar.brand}}-{{userSelectedService.selectedCar.model}}-{{userSelectedService.selectedCar.varient}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr scope="row">
+                            <th class="col-xs-9">Service Details</th>
+                            <th class="text-right">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row" ng-repeat="srv in userSelectedService.selectedServices">
+                            <td>{{ srv.name}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr scope="row">
+                            <th class="col-xs-9">Centre Details</th>
+                            <th class="text-right">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row">
+                            <td>Name</td>
+                            <td>{{ userSelectedService.selectedCentre.name}}</td>
+                        </tr>
+                        <tr scope="row">
+                            <td>Address</td>
+                            <td>
+                                {{userSelectedService.selectedCentre.address.line1}}
+                                {{userSelectedService.selectedCentre.address.line2}}
+                            </td>
+                        </tr>
+                        <tr scope="row">
+                            <td>Contact No</td>
+                            <td>
+                                {{userSelectedService.selectedCentre.phoneNo}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <thead>
+                        <tr scope="row">
+                            <th class="col-xs-9">Appointment Details</th>
+                            <th class="text-right">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row">
+                            <td ng-if="userSelectedPickUp">Pick-up time</td>
+                            <td ng-if="!userSelectedPickUp">Drop-time</td>
+                            <td>
+                                {{userSelectedService.selectedAppointment.dropOffDate.day}}
+                                {{userSelectedService.selectedAppointment.dropOffDate.time}}
+                            </td>
+                        </tr>
+                        <tr scope="row">
+                            <td ng-if="userSelectedPickUp">Drop-time</td>
+                            <td ng-if="!userSelectedPickUp">Pick-up time</td>
+                            <td>
+                                {{userSelectedService.selectedAppointment.pickUpDate.day}}
+                                {{userSelectedService.selectedAppointment.pickUpDate.time}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </form>
+    </div>
 </div>

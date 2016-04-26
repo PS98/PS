@@ -12,34 +12,6 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                      template: "<ps-index></ps-index>"
                  }
              },
-            {
-                state: "CarDetails",
-                config: {
-                    url: "/CarDetails",
-                    template: "<ps-car-details></ps-car-details>",
-                }
-            },
-            {
-                state: "NewsDetails",
-                config: {
-                    url: "/NewsDetails",
-                    template: "<ps-news-details></ps-news-details>"
-                }
-            },
-             {
-                 state: "NewsGrid",
-                 config: {
-                     url: "/NewsGrid",
-                     template: "<ps-news-grid></ps-news-grid>"
-                 }
-             },
-              {
-                  state: "VehicleListings",
-                  config: {
-                      url: "/VehicleListings",
-                      template: "<ps-vehicle-listings></ps-vehicle-listings>"
-                  }
-              },
                {
                    state: "Contact",
                    config: {
@@ -52,6 +24,13 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                     config: {
                         url: "/About",
                         template: "<ps-about-us></ps-about-us>"
+                    }
+                },
+                {
+                    state: "Dashboard",
+                    config: {
+                        url: "/Dashboard",
+                        template: "<ps-dashboard></ps-dashboard>"
                     }
                 },
                 {
@@ -101,6 +80,13 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    config: {
                        url: "/",
                        template: "<select-address></select-address>"
+                   }
+               },
+               {
+                   state: "orderSuccess",
+                   config: {
+                       url: "/Success",
+                       template: "<order-summary></order-summary>"
                    }
                },
                   

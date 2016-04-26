@@ -17,12 +17,7 @@
                         <div class="header-text pull-right" ng-if="!userSelectedPickUp"> Select a Pick-Up Date & Time</div>
                     </div>
                 </div>
-                <div style="margin-top: 15px; margin-bottom: 15px;">
-                    <i class="fa fa-check-circle" ng-click="userSelectedPickUp = !userSelectedPickUp" ng-class="{selected :userSelectedPickUp}"></i>
-                    <span>Do you want us to Pick-up & Drop-off your vehicals</span>
-
-                </div>
-                <div class="row" ng-if="selectedDate.pickUpDate.time">
+               <div class="row" ng-if="selectedDate.pickUpDate.time">
                     <div class="col-xs-6 bottom-padding10 top-padding10">
                         <div class="header-text">You have Selected</div>
                         <div class="car-option" ng-class="car-option-active" ng-click="editPickUpDate()">
@@ -106,9 +101,16 @@
                                     5
                                 </div>
                             </div>
+                            <div style="margin-top: 15px; margin-bottom: 15px;">
+                                <i class="fa fa-check-circle" ng-click="userSelectedPickUp = !userSelectedPickUp;showMap();" ng-class="{selected :userSelectedPickUp}"></i>
+                                <span>Do you want us to Pick-up & Drop-off your vehicals</span>
+
+                            </div>
                         </div>
                     </div>
-                    <select-address ng-if="hideCalendar" isPickup="userSelectedPickUp"></select-address>
+                    <div>
+                        <select-address isPickup="userSelectedPickUp"></select-address>
+                    </div>
                 </div>
             </div>
         </div>

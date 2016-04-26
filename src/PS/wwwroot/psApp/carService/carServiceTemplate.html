@@ -2,8 +2,7 @@
     <div class="block-title">
         <div class="block-title__inner section-bg section-bg_second">
             <div class="bg-inner">
-                <h1 class="ui-title-page">Service</h1>
-                <div class="decor-1 center-block"></div>
+                <div class="decor-1-header center-block"></div>
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
                     <li class="active">Service</li>
@@ -28,7 +27,7 @@
             </div>-->
 
             <!-- use ng-submit to catch the form submission and use our Angular function -->
-            <form id="service-form" ng-submit="processForm()">
+            <form id="service-form" name="addressForm" ng-submit="processForm()">
                 <!-- our nested state views will be injected here -->
                 <div id="form-views" ui-view class="container service" ></div>
             </form>
@@ -46,7 +45,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Details</h4>
                 </div>
-                <div class="modal-body" id="container">
+                <div class="modal-body collapse-content" id="container">
 
                     <collapsable data="overlayData"></collapsable>
 

@@ -1,6 +1,7 @@
-﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", function ($http, $q) {
+﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", "$localStorage", function ($http, $q, $localStorage) {
     var selectedCar, selectedService, serviceNameList;
     var userServiceData= {selectedCar:'',selectedServices:'', selectedCentre:'',selectedAppointment:'',userDetails:''};
+    userServiceData.userDetails = $localStorage.userDetails;
 
     
     var _getSelectedService = function () {
@@ -13,7 +14,6 @@
         userServiceData.selectedServices = job;
        // userServiceData.selectedCentre = centre;
       //  userServiceData.selectedAppointment = appointment;
-       // userServiceData.userDetails = user;
     }
     var _setSelectedServiceName = function(servicesName) {
         serviceNameList = servicesName;
@@ -22,8 +22,8 @@
         userServiceData.selectedAppointment = appointment;
         console.log(userServiceData);
     }
-    var _setuserDetails = function (user) {
-        userServiceData.userDetails = user;
+    var _getuserDetails = function (user) {
+        return $localStorage.userDetails;
     }
     var _setSelectedCentre = function (centre) {
         userServiceData.selectedCentre = centre;
@@ -87,7 +87,7 @@
         setSelectedServiceName: _setSelectedServiceName,
         setSelectedCentre: _setSelectedCentre,
         setSelectedAppointment: _setSelectedAppointment,
-        setuserDetails: _setuserDetails,
+        getuserDetails: _getuserDetails,
         payment: _payment
 }
           

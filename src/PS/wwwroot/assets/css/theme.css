@@ -57,7 +57,7 @@ img.pull-left {
 	font-size: 34px;
 	font-weight: 700;
 	color: #fff;
-	text-transform: uppercase;
+	text-transform: capitalize;
 }
 
 .ui-title-block {
@@ -157,6 +157,19 @@ img.pull-left {
 
 /* ======= BASIC ELEMENTS ======= */
 
+.decor-1-header {
+	width: 30px;
+	margin-top: 20px;
+	border-top: 1px solid #ccc;
+}
+.decor-1-header:after {
+	display: block;
+	width: 30px;
+	margin-top: 2px;
+	margin-left: 10px;
+	border-top: 1px solid #ccc;
+	content: '';
+}
 .decor-1 {
 	width: 30px;
 	margin-bottom: 20px;
@@ -542,9 +555,6 @@ img.pull-left {
 	padding-bottom: 6px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 	background: linear-gradient(0deg, rgba(186, 209, 241, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-}
-.header-contacts {
-	float: left;
 }
 .header-contacts__item {
 	display: inline-block;

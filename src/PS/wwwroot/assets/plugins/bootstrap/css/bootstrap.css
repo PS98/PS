@@ -1477,7 +1477,7 @@ abbr[data-original-title] {
 }
 .initialism {
   font-size: 90%;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 blockquote {
   position: relative;
@@ -4086,7 +4086,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-family: Ubuntu;
   color: #999999;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-right: 2px;
   padding: 4px 15px;
 }
@@ -4761,7 +4761,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   display: inline-block;
   font-size: 12px;
   font-weight: 500;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .breadcrumb > li + li:before {
   content: "\f0da";
@@ -5522,7 +5522,7 @@ button.list-group-item-danger.active:focus {
 .panel-title {
   margin-top: 0;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 0;
   font-size: 14px;
   font-family: Raleway;
