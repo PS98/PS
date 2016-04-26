@@ -23,7 +23,7 @@
     position: relative;
 }
 .car-header .sorting__inner {
-    padding-left: 20px;
+    padding-left: 12px;
 }
 .header-text {
     font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
@@ -809,6 +809,13 @@ tbody td {
 }
 .order-details-description {
     
+}
+
+.bckgrnd-clr{
+    background-color: red;
+}
+.bckgrnd-color-default{
+    background-color : white;
 }
 
 

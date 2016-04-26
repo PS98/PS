@@ -44,11 +44,11 @@ namespace PS.Models
         public string Varient { get; set; }
 
     }
-
+    [BsonIgnoreExtraElements]
     public class ServiceDetails
     {
         public string Name { get; set; }
-        //  public int Price { get; set; }
+        public int Price { get; set; }
         public List<PriceDetails> PriceDetails { get; set; }
     }
     [BsonIgnoreExtraElements]

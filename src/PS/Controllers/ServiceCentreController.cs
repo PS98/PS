@@ -71,7 +71,7 @@ namespace PS.Controllers
             foreach (var centre in centreList)
             {
                 var price = new List<int>();
-                
+                var serviceDetails = new List<ServiceDetails>();
                 // check if centre is providing all user selected service
                 if (selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
                 {
@@ -88,6 +88,7 @@ namespace PS.Controllers
                             {
                                 price.AddRange(abc.PriceDetails.Where(x => x.ModelList.Contains(selectedService.Model)).Select(x => x.Price));
                             }
+                            serviceDetails.Add(new ServiceDetails { Name = abc.Name, Price = price[price.Count - 1] });
                         }
                     }
                     
@@ -99,7 +100,8 @@ namespace PS.Controllers
                             Latitude = centre.Latitude,
                             Longitude = centre.Longitude,
                             PhoneNo = centre.PhoneNo,
-                            TotalPrice = price.Sum()
+                            TotalPrice = price.Sum(),
+                            ServiceDetails = serviceDetails
 
                         });
 

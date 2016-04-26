@@ -1,0 +1,128 @@
+﻿<div id="wrapper">
+    <div class="block-title">
+        <div class="block-title__inner section-bg section-bg_second">
+            <div class="bg-inner">
+                <div class="decor-1-header center-block"></div>
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Order Summary</li>
+                </ol>
+            </div><!-- end bg-inner -->
+        </div><!-- end block-title__inner -->
+    </div><!-- end block-title -->
+
+    <div class="row">
+
+
+        <div class="container summary">
+            <div class="row white-container">
+                <div class="col-xs-12">
+                    <div class="text-center">
+                        <i class="fa fa-search-plus pull-left icon-large"></i>
+                        <h2>Invoice for purchase #33221</h2>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
+                            <div class="panel panel-default height">
+                                <div class="panel-heading">Your Details</div>
+                                <div class="panel-body">
+                                    <div class="capitalize"><strong>{{orderDetails.userDetails.firstName}} {{orderDetails.userDetails.lastName}}:</strong></div>
+                                    <div>{{orderDetails.userDetails.addressLine1 }}</div>
+                                    <div> {{orderDetails.userDetails.addressLine2 }}                            </div>
+                                    <div> {{orderDetails.userDetails.city }}{{orderDetails.userDetails.state }}</div>
+                                    <div><strong>{{orderDetails.userDetails.phoneNo }} </strong></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3 col-lg-3">
+                            <div class="panel panel-default height">
+                                <div class="panel-heading">Payment Information</div>
+                                <div class="panel-body">
+                                    <div  ng-if="payNow">
+                                        <div><strong>Card Name:</strong> Visa</div>
+                                        <div><strong>Card Number:</strong> ***** 332</div>
+                                        <div><strong>Exp Date:</strong> 09/2020 </div>
+                                    </div>
+                                    <div ng-if="!payNow">
+                                        <div><strong> Cash On Delivery</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3 col-lg-3">
+                            <div class="panel panel-default height">
+                                <div class="panel-heading">Vehical Details</div>
+                                <div class="panel-body">
+                                    <div> <strong>Make:</strong> {{orderDetails.selectedCar.brand }}</div>
+                                    <div><strong>Model:</strong> {{orderDetails.selectedCar.model }}</div>
+                                    <div><strong>Varient:</strong> {{orderDetails.selectedCar.varient }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-3 col-lg-3 pull-right">
+                            <div class="panel panel-default height">
+                                <div class="panel-heading">Service Centre Details</div>
+                                <div class="panel-body">
+                                    <div> <strong>{{orderDetails.selectedCentre.name }}</strong></div>
+                                    <div> {{orderDetails.selectedCentre.address.line1 }}</div>
+                                    <div> {{orderDetails.selectedCentre.address.line2 }}</div>
+                                    <div><strong>{{orderDetails.selectedCentre.phoneNo }}</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row white-container">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="text-center"><strong>Order summary</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <td><strong>Service Name</strong></td>
+                                            <td class="text-center"><strong>Service Charge</strong></td>
+                                            <td class="text-center"><strong>Service Quantity</strong></td>
+                                            <td class="text-right"><strong>Total</strong></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="service in orderDetails.selectedCentre.serviceDetails">
+                                            <td>{{service.name}}</td>
+                                            <td class="text-center">{{service.price}}</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-right">{{service.price}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="highrow"></td>
+                                            <td class="highrow"></td>
+                                            <td class="highrow text-center"><strong>Subtotal</strong></td>
+                                            <td class="highrow text-right">{{orderDetails.selectedCentre.totalPrice}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="emptyrow"></td>
+                                            <td class="emptyrow"></td>
+                                            <td class="emptyrow text-center"><strong>Service Charge</strong></td>
+                                            <td class="emptyrow text-right">20</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+                                            <td class="emptyrow"></td>
+                                            <td class="emptyrow text-center"><strong>Total</strong></td>
+                                            <td class="emptyrow text-right">{{orderDetails.selectedCentre.totalPrice + 20 }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+</div>

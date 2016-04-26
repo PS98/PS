@@ -59,24 +59,29 @@ angular.module("psApp").directive("selectAddress", function () {
                 }
             });
         },
-        controller: ["$scope", "$window", "psDataServices", function ($scope, $window, psDataServices) {
+        controller: ["$scope", "$window","$state", "psDataServices", function ($scope, $window,$state, psDataServices) {
             $scope.payNow = true;
-             $scope.orderProcess = function () {
-                 $scope.response = psDataServices.payment("test_user", "testing", "10", "varshneyshobhit98@yahoo.com", "+918380911266", "true", "true").then(function (result) {
-                     //Success
-                     if (result.status == 0) {
-                         if (result.result != null) {
-                             $window.location.href = result.result.payment_request.longurl;
-                         }
-                     } else if (result.status == 1 || result.status == 2) {
-                         $scope.reqError = true;
-                         $scope.errorMessage = result.message;
-                     }
-                 }, function (error) {
-                     //Error
-                 }).finally(function () {
-                 });
-             }
+            $scope.orderProcess = function () {
+                if ($scope.payNow) {
+                    $scope.response = psDataServices.payment("test_user", "testing", "10", "varshneyshobhit98@yahoo.com", "+918380911266", "true", "true").then(function (result) {
+                        //Success
+                        if (result.status == 0) {
+                            if (result.result != null) {
+                                $window.location.href = result.result.payment_request.longurl;
+                            }
+                        } else if (result.status == 1 || result.status == 2) {
+                            $scope.reqError = true;
+                            $scope.errorMessage = result.message;
+                        }
+                    }, function (error) {
+                        //Error
+                    }).finally(function () {
+                    });
+                }
+                else {
+                    $state.go("orderSuccess");
+                }
+            }
              
         }
 
