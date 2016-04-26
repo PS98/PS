@@ -276,12 +276,12 @@ th {
 }
 .button-0 {
     position: relative;
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin: 0px 10px 10px 0px;
     float: left;
-    border-radius: 40px;
+    border-radius: 10px;
     font-family: 'Helvetica', cursive;
-    font-size: 16px;
+    font-size: 14px;
     color: #FFF;
     text-decoration: none;
     background-color: #3498DB;
@@ -296,6 +296,7 @@ th {
 .button-0:focus {
     text-decoration: none;
     color:white;
+    cursor:pointer;
 }
 
 .button-0:active {
@@ -305,6 +306,7 @@ th {
     -webkit-transform: translate(0px,5px);
     transform: translate(0px,5px);
     border-bottom: 1px solid;
+    cursor:pointer;
 }
 .button-0:disabled {
     cursor:default;
