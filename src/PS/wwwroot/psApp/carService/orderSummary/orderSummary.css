@@ -50,3 +50,6 @@
 .summary .table > tbody > tr > .highrow {
     border-top: 3px solid;
 }
+.summary .capitalize{
+    text-transform:capitalize;
+}

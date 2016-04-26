@@ -27,24 +27,26 @@
                             <div class="panel panel-default height">
                                 <div class="panel-heading">Your Details</div>
                                 <div class="panel-body">
-                                    <strong>{{orderDetails.userDetails.firstName}} {{orderDetails.userDetails.lastName}}:</strong><br>
-                                    {{orderDetails.userDetails.addressLine1 }} <br>
-                                   {{orderDetails.userDetails.addressLine2 }} <br>
-                                    {{orderDetails.userDetails.city }}{{orderDetails.userDetails.state }}
-                                    <strong>{{orderDetails.userDetails.phoneNo }} </strong><br>
+                                    <div class="capitalize"><strong>{{orderDetails.userDetails.firstName}} {{orderDetails.userDetails.lastName}}:</strong></div>
+                                    <div>{{orderDetails.userDetails.addressLine1 }}</div>
+                                    <div> {{orderDetails.userDetails.addressLine2 }}                            </div>
+                                    <div> {{orderDetails.userDetails.city }}{{orderDetails.userDetails.state }}</div>
+                                    <div><strong>{{orderDetails.userDetails.phoneNo }} </strong></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-12 col-md-3 col-lg-3">
                             <div class="panel panel-default height">
                                 <div class="panel-heading">Payment Information</div>
-                                <div class="panel-body" ng-if="payNow">
-                                    <strong>Card Name:</strong> Visa<br>
-                                    <strong>Card Number:</strong> ***** 332<br>
-                                    <strong>Exp Date:</strong> 09/2020<br>
-                                </div>
-                                <div ng-if="!payNow">
-                                    <strong> Cash On Delivery</strong>
+                                <div class="panel-body">
+                                    <div  ng-if="payNow">
+                                        <div><strong>Card Name:</strong> Visa</div>
+                                        <div><strong>Card Number:</strong> ***** 332</div>
+                                        <div><strong>Exp Date:</strong> 09/2020 </div>
+                                    </div>
+                                    <div ng-if="!payNow">
+                                        <div><strong> Cash On Delivery</strong></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -52,9 +54,9 @@
                             <div class="panel panel-default height">
                                 <div class="panel-heading">Vehical Details</div>
                                 <div class="panel-body">
-                                    <strong>Make:</strong> {{orderDetails.selectedCar.brand }}<br>
-                                    <strong>Model:</strong> {{orderDetails.selectedCar.model }}<br>
-                                    <strong>Varient:</strong> {{orderDetails.selectedCar.varient }}<br>
+                                    <div> <strong>Make:</strong> {{orderDetails.selectedCar.brand }}</div>
+                                    <div><strong>Model:</strong> {{orderDetails.selectedCar.model }}</div>
+                                    <div><strong>Varient:</strong> {{orderDetails.selectedCar.varient }}</div>
                                 </div>
                             </div>
                         </div>
@@ -62,11 +64,10 @@
                             <div class="panel panel-default height">
                                 <div class="panel-heading">Service Centre Details</div>
                                 <div class="panel-body">
-                                    <strong>{{orderDetails.selectedCentre.name }}</strong><br>
-                                    {{orderDetails.selectedCentre.address.line1 }}<br>
-                                    {{orderDetails.selectedCentre.address.line2 }}<br>
-                                   <br>
-                                    <strong>{{orderDetails.selectedCentre.phoneNo }}</strong><br>
+                                    <div> <strong>{{orderDetails.selectedCentre.name }}</strong></div>
+                                    <div> {{orderDetails.selectedCentre.address.line1 }}</div>
+                                    <div> {{orderDetails.selectedCentre.address.line2 }}</div>
+                                    <div><strong>{{orderDetails.selectedCentre.phoneNo }}</strong></div>
                                 </div>
                             </div>
                         </div>
@@ -91,29 +92,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="service in orderDetails.selectedServices">
+                                        <tr ng-repeat="service in orderDetails.selectedCentre.serviceDetails">
                                             <td>{{service.name}}</td>
-                                            <td class="text-center">900</td>
+                                            <td class="text-center">{{service.price}}</td>
                                             <td class="text-center">1</td>
-                                            <td class="text-right">RS/- 900</td>
+                                            <td class="text-right">{{service.price}}</td>
                                         </tr>
                                         <tr>
                                             <td class="highrow"></td>
                                             <td class="highrow"></td>
                                             <td class="highrow text-center"><strong>Subtotal</strong></td>
-                                            <td class="highrow text-right">$958.00</td>
+                                            <td class="highrow text-right">{{orderDetails.selectedCentre.totalPrice}}</td>
                                         </tr>
                                         <tr>
                                             <td class="emptyrow"></td>
                                             <td class="emptyrow"></td>
-                                            <td class="emptyrow text-center"><strong>Shipping</strong></td>
-                                            <td class="emptyrow text-right">$20</td>
+                                            <td class="emptyrow text-center"><strong>Service Charge</strong></td>
+                                            <td class="emptyrow text-right">20</td>
                                         </tr>
                                         <tr>
                                             <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
                                             <td class="emptyrow"></td>
                                             <td class="emptyrow text-center"><strong>Total</strong></td>
-                                            <td class="emptyrow text-right">$978.00</td>
+                                            <td class="emptyrow text-right">{{orderDetails.selectedCentre.totalPrice + 20 }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
