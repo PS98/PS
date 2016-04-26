@@ -1,7 +1,7 @@
 
 var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, googleMapMarkers = [], displayCurrentLocation, latlon, userLocation = {}, locationCall, draggable;
-var infowindow = new google.maps.InfoWindow();
-var geocoder = new google.maps.Geocoder();
+var infowindow = google.maps ? new google.maps.InfoWindow() : "";
+var geocoder = google.maps ? new google.maps.Geocoder(): "";
 
 var componentForm = {
     //street_number: 'short_name',

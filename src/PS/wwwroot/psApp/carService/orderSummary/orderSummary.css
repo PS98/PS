@@ -1,0 +1,52 @@
+﻿.summary .panel-default > .panel-heading {
+    color: #333;
+    background-color: #F5F5F5;
+    border-color: #DDD;
+}
+.summary .panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.summary .height {
+    min-height: 200px;
+}
+ .summary .panel-default {
+    border-color: #DDD;
+}
+.summary .panel {
+    margin-bottom: 20px;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+    margin-right:0px;
+}
+.summary .panel-body{
+    padding-top:10px;
+}
+.summary  * {
+    box-sizing: border-box;
+}
+.summary .icon-large {
+    font-size: 47px;
+    color: #5CB85C;
+}
+
+.summary .iconbig {
+    font-size: 77px;
+    color: #5CB85C;
+}
+
+.summary .table > tbody > tr > .emptyrow {
+    border-top: none;
+}
+
+.summary .table > thead > tr > .emptyrow {
+    border-bottom: none;
+}
+
+.summary .table > tbody > tr > .highrow {
+    border-top: 3px solid;
+}

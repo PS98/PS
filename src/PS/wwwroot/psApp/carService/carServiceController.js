@@ -1,10 +1,10 @@
-﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state","$timeout", "psDataServices", function ($scope, $state,$timeout, psDataServices) {
+﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "$timeout", "$localStorage", "psDataServices", function ($scope, $state, $timeout, $localStorage, psDataServices) {
 
-    $scope.center = {};
+    $scope.center = {}; $localStorage.userSelection = $localStorage.userSelection || {};
     $scope.searchedText = {};    $scope.state = $state;
     var custRequest = { name: " Describe your problem here", type: [], addText: true };
     var prevMode, preService = [];
-    $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
+    $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = $localStorage.userSelection;// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
     $scope.selectBrand = function (brandName) {
@@ -38,7 +38,7 @@
         if (model !== "") {
             $scope.selectedCar.model = model;
             $scope.selectedCar.varient = '';
-            psDataServices.getCarVarient($scope.selectedCar.brand, model).
+           getCarVarient($scope.selectedCar.brand, model).
                     success(function (data) {
                         if (data.length > 0) {
                             $scope.carList.carVarientList = data;
@@ -58,7 +58,8 @@
               $scope.carList.carVarientList = { };
 
         }
-      
+        $localStorage.userSelection = $scope.selectedCar;
+
     }
     $scope.selectVarient = function (varient) {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
@@ -68,6 +69,7 @@
             $scope.selectedCar.varient = "I Don't Know";
 
         }
+        $localStorage.userSelection = $scope.selectedCar;
         $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
         $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
          psDataServices.setSelectedCarAndService($scope.selectedCar);
@@ -161,6 +163,7 @@
            $scope.carList.carCollections = data.carList;
            $scope.carList.yearsList = data.yearsList;
            fetchServiceDetails();
+           
         }).error(function () {
        });
 
@@ -171,6 +174,20 @@
                 $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                 $scope.commonServices = $scope.services.serviceDetails[0];
                 $scope.car.services = [];
+                if ($localStorage.userSelection.brand) {
+                    $scope.showBrandName = false;
+                    getCarType($localStorage.userSelection.brand).then(function () {
+                        getCarVarient($localStorage.userSelection.brand, $localStorage.userSelection.model).
+                            success(function (data) {
+                                $scope.carList.carVarientList = data;
+                                $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
+                                $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+                                psDataServices.setSelectedCarAndService($scope.selectedCar);
+                        }).error(function () {
+                            $scope.selectVarient("");
+                        });;
+                    })
+                }
                 $timeout(function() {
                     $.each($scope.services.serviceDetails, function(i, val) {
                         $.each(val, function (j, value) {
@@ -196,11 +213,11 @@
         });
         psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
         psDataServices.setSelectedServiceName(jobName);
-        if (psDataServices.getuserDetails())
+       // if (psDataServices.getuserDetails())
             $state.go("service.centre");
-        else {
-            $("#loginModal").modal('toggle');
-        }
+        //else {
+        //    $("#loginModal").modal('toggle');
+        //}
     }
 
  $state.go("service.car");
@@ -227,6 +244,18 @@
         prevMode = undefined;
         $scope.searchedText.name = "";
         prevMode = undefined;
+    }
+
+    function getCarType(brandName) {
+      return  psDataServices.getCarType(brandName).
+         success(function (data) {
+             $scope.carList.carTypes = data;
+         }).error(function () {
+         });
+    };
+    function getCarVarient(brand, model) {
+        return psDataServices.getCarVarient(brand, model);
+                   
     }
 }]);
 
