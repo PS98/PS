@@ -14,12 +14,8 @@
                 <i class="fa fa-phone"></i> <span>{{ centre.phoneNo }}</span>
             </div>
             <div class="col-lg-4">
-                <a class="main-slider__btn btn-effect" data-ng-show="!centre.activeCentre" ng-click="selectedCentre(centre)">
-                    <span class="main-slider__btn_inner common-button-structure-inner">Show On Map <i class="fa fa-chevron-right"></i></span>
-                </a>
-                <a class="main-slider__btn btn-effect" data-ng-show="centre.activeCentre" ng-click="selectedCentre(centre)">
-                    <span class="main-slider__btn_inner common-button-structure-inner">Select Centre <i class="fa fa-chevron-right"></i></span>
-                </a>
+                <a class="button-0 pull-right" data-ng-show="!centre.activeCentre" ng-click="selectedCentre(centre)">Show On Map</a>
+                <a class="button-0 pull-right" data-ng-show="centre.activeCentre" ng-click="selectedCentre(centre)">Select Centre <i class="fa fa-chevron-right"></i></a>
             </div>
         </div>
     </div>
