@@ -23,6 +23,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                     $scope.userDetails.userName = $scope.userDetails.firstName + " " + $scope.userDetails.lastName;
                     $scope.userDetails.imageUrl = "/assets/img/icon-user-default.png";
                     $scope.userDetails.email = result.result[0];
+                    $scope.userDetails.phoneNo = result.result[3];
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
                     $localStorage.userDetails = $scope.userDetails;
