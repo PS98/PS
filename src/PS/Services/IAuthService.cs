@@ -13,5 +13,6 @@ namespace PS.Services
         string forgotPassword(ForgotPasswordViewModel data);
 
         List<string> SocialLogin(dynamic type);
+        int SubcribeUser(dynamic data);
     }
 }

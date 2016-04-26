@@ -28,6 +28,20 @@
        return deferred.promise;
    };
 
+   var _subscribe = function (Name, Email) {
+       var deferred = $q.defer();
+       $http.post("/api/Auth/Subscribe?FirstName=" + Name + "&Email=" + Email)
+        .then(function (result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
+
+       return deferred.promise;
+   };
+
  var _mobileVerification = function (Mobile) {
        var deferred = $q.defer();
      $http.post("/api/Auth/MobileOTP?MobileNumber=" + Mobile)

@@ -1,5 +1,5 @@
 ﻿<div class="user-address">
-    <form class="form-horizontal" name="addForm">
+    <form class="form-horizontal" name="addForm" novalidate="">
         <div class="row top-padding10">
             <div class="col-md-6">
                 <div class="form-group">
@@ -28,16 +28,27 @@
                 </div>
 
                 <div class="form-group col-xs-6">
-                    <label for="postal_code">Zip code</label>
-                    <input class="form-control" id="postal_code" placeholder="zip code" />
+                    <label for="postal_code">
+                        <span>Zip code</span>
+                        <input class="form-control" id="postal_code" name="zipCode" placeholder="zip code" required />
+                        <p class="text-danger" style="float: left;" ng-show="addForm.zipCode.$error.required">Required Field</p>
+                    </label>
                 </div>
                 <div class="form-group">
                     <label for="FirstName"> First Name</label>
-                    <input class="form-control" id="FirstName" placeholder="first name" type="text" />
+                    <input class="form-control" id="FirstName" name="fName" placeholder="first name" type="text"  ng-class="{'bckgrnd-clr': (addForm.fName.$error.pattern || addForm.fName.$dirty || addForm.fName.$error.minlength || addForm.fName.$error.maxlength),'bckgrnd-color-default' : (!addForm.fName.$error.pattern && !addForm.fName.$error.minlength && !addForm.fName.$error.maxlength && !addForm.fName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
+                    <p class="text-danger" style="float: left;" ng-show="addForm.fName.$error.required && addForm.fName.$dirty">Required Field</p>
+                    <p class="text-danger" style="float: left;" ng-show="!addForm.fName.$error.minLength && !addForm.fName.$error.maxLength && addForm.fName.$error.pattern && addName.fName.$dirty">Must start with a letter, and contain letters only.</p>
+                    <p class="text-danger" style="float: left;" ng-show="!addName.fName.$error.required && (addForm.fName.$error.minlength || addForm.fName.$error.maxlength) && addForm.fName.$dirty">Must be between 2 and 20 characters.</p>
+
                 </div>
                 <div class="form-group">
                     <label for="LastName"> Last Name</label>
-                    <input class="form-control" id="LastName" placeholder="last name" type="text" />
+                    <input class="form-control" id="LastName" placeholder="last name" name="lName" type="text" />
+                    <p class="text-danger" style="float: left;" ng-show="addForm.lName.$error.required && addForm.lName.$dirty">Required Field</p>
+                    <p class="text-danger" style="float: left;" ng-show="!addName.lName.$error.minLength && !addForm.lName.$error.maxLength && addForm.lName.$error.pattern && addForm.lName.$dirty">Must start with a letter, and contain letters only.</p>
+                    <p class="text-danger" style="float: left;" ng-show="!addForm.lName.$error.required && (addForm.lName.$error.minlength || addForm.lName.$error.maxlength) && addForm.lName.$dirty">Must be between 2 and 20 characters.</p>
+
                 </div>
                 <div class="form-group">
                     <label for="MobileNo"> Mobile No</label>

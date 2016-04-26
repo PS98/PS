@@ -64,43 +64,75 @@ angular.module("index").controller("indexController",
             $scope.fSuccess = false;
             $scope.fError = false;
             $scope.contactUs = function () {
-                    indexDataService.feedback($scope.firstName, $scope.lastName, $scope.phone, $scope.subject, $scope.message)
-                        .then(function (result) {
-                            //Success
-                            if (result.status == 0) {
-                                $scope.fSuccess = true;
-                                $scope.fError = false;
-                                $scope.successMessage = result.message;
-                            } else if (result.status == 1) {
-                                $scope.fError = true;
-                                $scope.fSuccess = false;
-                                $scope.errorMessage = result.message;
-                            }
-                        }, function (error) {
-                            //Error
+                indexDataService.feedback($scope.firstName, $scope.lastName, $scope.phone, $scope.subject, $scope.message)
+                    .then(function (result) {
+                        //Success
+                        if (result.status == 0) {
+                            $scope.fSuccess = true;
+                            $scope.fError = false;
+                            $scope.successMessage = result.message;
+                        } else if (result.status == 1) {
                             $scope.fError = true;
                             $scope.fSuccess = false;
-                            $scope.errorMessage = error.message;
-                        }).finally(function () {
-                            $scope.isBusy = false;
-                            $scope.feedbackForm.firstName.$dirty = false;
-                            $scope.feedbackForm.lastName.$dirty = false;
-                            $scope.feedbackForm.mobile.$dirty = false;
-                            $scope.feedbackForm.subject.$dirty = false;
-                            $scope.feedbackForm.message.$dirty = false;
-                            $scope.firstName = null;
-                            $scope.lastName = null;
-                            $scope.mobile = null;
-                            $scope.subject = null;
-                            $scope.message = null;
-                            $timeout(function () {
-                                $scope.fReset();
-                            }, 3000);
-                        });
+                            $scope.errorMessage = result.message;
+                        }
+                    }, function (error) {
+                        //Error
+                        $scope.fError = true;
+                        $scope.fSuccess = false;
+                        $scope.errorMessage = error.message;
+                    }).finally(function () {
+                        $scope.isBusy = false;
+                        $scope.feedbackForm.firstName.$dirty = false;
+                        $scope.feedbackForm.lastName.$dirty = false;
+                        $scope.feedbackForm.mobile.$dirty = false;
+                        $scope.feedbackForm.subject.$dirty = false;
+                        $scope.feedbackForm.message.$dirty = false;
+                        $scope.firstName = null;
+                        $scope.lastName = null;
+                        $scope.mobile = null;
+                        $scope.subject = null;
+                        $scope.message = null;
+                        $timeout(function () {
+                            $scope.fReset();
+                        }, 3000);
+                    });
             }
 
             $scope.fReset = function () {
                 $scope.fSuccess = false;
                 $scope.fError = false;
             }
+
+
+            //subscribe function
+
+            $scope.subscribeUser = function () {
+        
+                indexDataService.subscribeUser($scope.subName, $scope.subEmail)
+                    .then(function (result) {
+                        //Success
+                        if (result.status == 0) {
+                            $scope.resetAfterSubmit();
+                            $scope.regSuccess = true;
+                            $scope.regError = false;
+                            $scope.successMessage = result.message;
+                        } else if(result.status == 1 || result.status == 2) {
+                            $scope.regError = true;
+                            $scope.regSuccess = false;
+                            $scope.again = false;
+                            $scope.errorMessage = result.message;
+                        }
+                    }, function (error) {
+                        //Error
+                        $scope.regError = false;
+                        $scope.errorMessage = error.message;
+                    }).finally(function () {
+                        $scope.isBusy = false;                        
+                        $timeout(function () {
+                            $scope.regReset();
+                        }, 3000);
+                    });
+            }
+           
  }]);

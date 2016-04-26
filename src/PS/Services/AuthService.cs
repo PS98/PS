@@ -179,6 +179,44 @@ namespace PS.Services
         }
 
 
+
+        //subcribeUser function for new subscribers
+
+
+        public int SubcribeUser(dynamic data)
+        {
+            var rep = new MongoRepository("auth");
+            try
+            {
+                if (!string.IsNullOrEmpty(data.Name) && !string.IsNullOrEmpty(data.Email))
+                {
+                    var modelList = getAll("subscribers");
+                    foreach (var m in modelList)
+                    {
+                        if (m.Email.ToLower() == data.Email.ToLower())
+                        {
+                            return 1;
+                        }
+                    }
+                    var collection = _repo.GetCollection<Subscribe>("subscribers");
+                    Subscribe c = new Subscribe();
+                    c.Name = data.Name;                   
+                    c.Email = data.Email;                   
+                    collection.InsertOneAsync(c);
+                    return 0;
+                }
+                return 2;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
+        }
+
+
+
+
     }
 }
 
