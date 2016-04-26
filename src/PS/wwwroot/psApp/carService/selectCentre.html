@@ -120,13 +120,13 @@
                 <div ng-if="recommendedCentre.name">
                     <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
                     <div class="centre-list_first">
-                        <centre-details centre="recommendedCentre" add="selectServiceCentre(dirCentre)" ng-class="recommendedCentre.name == selectedCentre.name ?'active' :''"></centre-details>
+                        <centre-details centre="recommendedCentre" add="selectServiceCentre(dirCentre)" ng-class="recommendedCentre.name == selectedCentre.name ?'active' :'non-active'"></centre-details>
                     </div>
                 </div>
                 <div ng-if="centreList">
                     <h4 class="centre-list_other-title">Other centres nearby</h4>
                     <div class="centre-list_other">
-                        <centre-details centre="centre" ng-repeat="centre in centreList" add="selectServiceCentre(dirCentre)" ng-if="centre != recommendedCentre" ng-class="centre.name == selectedCentre.name ?'active' :''"></centre-details>
+                        <centre-details centre="centre" ng-repeat="centre in centreList" add="selectServiceCentre(dirCentre)" ng-if="centre != recommendedCentre" ng-class="centre.name == selectedCentre.name ?'active' :'non-active'"></centre-details>
                     </div>
                 </div>
             </div>

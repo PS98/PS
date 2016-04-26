@@ -114,8 +114,12 @@
     padding: 20px 20px 50px 20px;
 }
 .centre-list .active {
-    /*background: #2196f3;*/
     background: rgba(33, 150, 243, 0.22);
+    margin-bottom:15px;
+}
+.centre-list .non-active{
+    background-color: lightgrey;
+    margin-bottom:15px;
 }
 
 .list-flex-container {
@@ -656,19 +660,15 @@ pre                             { margin-bottom:20px; }
     border: 1px solid #DDD;
     margin: 0 10px 0 0;
 }
-    .centre-list-item .centre-list-item_heading {
-        font-size: 14px;
-    }
-
-    .centre-list-item .centre-list-item_heading {
-        font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
-        font-size: 14px;
-        line-height: 22px;
-        border-bottom: 1px solid #CCCCCC;
-        padding-bottom: 4px;
-        margin-bottom: 8px;
-        color: #0364b0;
-    }
+.centre-list-item .centre-list-item_heading {
+    font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+    color: #0364b0;
+}
     .centre-list-item {
     margin: 10px 5px;
     min-height: 20px;
@@ -847,4 +847,72 @@ tbody td {
     to      { -webkit-transform: translateX(0); }
 }
 
-                
+.featured-item .right-content {
+    border-top: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    background-color: #ffffff;
+    margin-left: 20px;
+    padding-left:5px;
+}                
+
+.featured-item .right-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #222222;
+    font-weight: 700;
+    width: 70%;
+}
+
+.featured-item .right-content span {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 36px;
+    padding: 0px 12px;
+    display: inline-block;
+    margin-top: -37px;
+    margin-right: 0px;
+    float: right;
+    background-color: #f4c23d;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #222222;
+    font-weight: 700;
+}
+
+.featured-item .right-content .light-line {
+    width: 60px;
+    height: 2px;
+    background-color: #eeeeee;
+    margin-top: 15px;
+}
+
+.featured-item .right-content p {
+    margin-top: 10px;
+    margin-bottom: 18px;
+    margin-right: 20px;
+}
+
+.featured-item .right-content .item-rate ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.featured-item .right-content .item-rate ul li {
+    display: inline-block;
+}
+
+.featured-item .right-content .item-rate ul li i {
+    font-size: 13px;
+    color: #f4c23d;
+}
+
+.featured-item .right-content .car-info {
+    margin-top: 20px;
+    border-bottom: 2px solid #eeeeee;
+    border-top: 2px solid #eeeeee;
+}
