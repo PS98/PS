@@ -109,6 +109,52 @@ namespace PS.Controllers
             return Json(new { Message = "We are unable to process your request.", Status = 2 });
         }
 
+
+        // POST api/auth/register
+        // result = 0 : Success
+        // result = 1 : Already Registered
+        // result = 2 : Error
+        [HttpPost]
+        public JsonResult Subscribe(SubscribeViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (model.Created == default(DateTime))
+                    {
+                        model.Created = DateTime.UtcNow;
+                    }
+                    int result = _auth.SubcribeUser(model);
+                    if (result == 0)
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.Created;
+                        return Json(new { Message = "User subscribed Successfully.", Status = result });
+                    }
+                    else if (result == 1)
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "Your email address already subscribed with us.", Status = result });
+                    }
+                    else
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "Error while processing your request. Please try again later.", Status = result });
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "We are unable to process your request.", Status = 2 });
+        }
+
+
+
         // POST api/auth/ForgotPassword
         [HttpPost]
         public JsonResult ForgotPassword(ForgotPasswordViewModel model)

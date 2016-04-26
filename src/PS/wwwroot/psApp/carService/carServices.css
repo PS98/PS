@@ -812,6 +812,13 @@ tbody td {
     
 }
 
+.bckgrnd-clr{
+    background-color: red;
+}
+.bckgrnd-color-default{
+    background-color : white;
+}
+
 
 
 /* ANIMATIONS
