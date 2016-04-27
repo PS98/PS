@@ -6,8 +6,7 @@
 	-ms-transition: all 0.4s ease;
     cursor: pointer;
 }
-.panel-heading .panel-title a[aria-expanded="true"] {
-	background-color:#218be7;
+.service-panel-color .panel-title a[aria-expanded="true"] {	
 	color:#fff;
    }
 .panel-heading .panel-title a::before {	
@@ -64,7 +63,6 @@
 	display:block;
 }
 .panel-heading:hover {
-	background-color:#218be7;
     color: #fff;
 	
 }

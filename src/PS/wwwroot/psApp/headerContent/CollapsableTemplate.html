@@ -3,7 +3,7 @@
 
 <div class="panel-group collapse-content" id="group">
     <div class="panel panel-default" ng-repeat="details in data">
-        <div class="panel-heading">
+        <div class="panel-heading service-panel-color">
             <div class="panel-title">
                 <a data-toggle="collapse" data-parent="#group" data-target="#{{details.name | makeId}}" aria-expanded="{{ $index === 0 ? 'true': false}}">
                     {{details.name}}

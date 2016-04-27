@@ -115,7 +115,6 @@
     padding: 20px 20px 50px 20px;
 }
 .centre-list .active {
-    background: rgba(33, 150, 243, 0.22);
     margin-bottom:15px;
 }
 .centre-list .non-active{
@@ -214,8 +213,7 @@
     transition: box-shadow,0.6s;
 }
 
-.services-options p {
-    color: #218be7;
+.services-options p {    
     font-size: 12px;
     font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
     font-style: normal;
@@ -229,7 +227,7 @@
 }
 .add_notes {
     padding: 8px 15px 5px 15px;
-    border: 1px solid #2196F3;
+    border: 1px solid;
     border-radius: 3px;
 }
 .pull-right {
@@ -705,9 +703,6 @@ pre                             { margin-bottom:20px; }
     background-image: linear-gradient(to bottom, #505050, #181818);
     color: white;
     text-align: center;
-}
-.car-selection-container ul li.date:hover {
-    background-color: #218be7;
 }
 
 .dayColumn {
