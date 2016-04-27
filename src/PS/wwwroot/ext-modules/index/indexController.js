@@ -127,7 +127,7 @@ angular.module("index").controller("indexController",
             //subscribe function
 
              $scope.subscribe = function () {
-                 $("#subscribeModal").modal('toggle');
+                
                  psLoginService.subscribe($scope.subName, $scope.subEmail)
                      .then(function (result) {
                          //Success
@@ -136,9 +136,17 @@ angular.module("index").controller("indexController",
                              $scope.resetSubscriberAfterSubmit();
                              $scope.regSuccess = true;
                              $scope.regError = false;
-                             $scope.successMessage = result.message;
-                             debugger;
+                             $scope.successMessage = result.message;                             
+                             $("#subscribeModal").modal('toggle');
+
                              $(".subscriptionMessage").text($scope.successMessage);
+                             $timeout(function () {
+                                 $("#subscribeModal").modal('toggle');
+                                 $(".modal").on("hidden.bs.modal", function () {
+                                     $(".modal-body1").html("");
+                                 });
+                             }, 3000);
+                             
                          } else if (result.status == 1 || result.status == 2) {
                              $scope.regError = true;
                              $scope.regSuccess = false;
@@ -149,8 +157,15 @@ angular.module("index").controller("indexController",
                          //Error
                          $scope.regError = false;
                          $scope.errorMessage = error.message;
-                         debugger;
+                         $("#subscribeModal").modal('toggle');
+
                          $(".subscriptionMessage").text($scope.errorMessage);
+                         $timeout(function () {
+                             $("#subscribeModal").modal('toggle');
+                             $(".modal").on("hidden.bs.modal", function () {
+                                 $(".modal-body1").html("");
+                             });
+                         }, 3000);
                      }).finally(function () {
                          $scope.isBusy = false;
                          $timeout(function () {
