@@ -24,6 +24,11 @@ namespace PS.Services
         {
             return _repo.GetDocumentList<Customer>(colletionName);
         }
+        
+            public List<Subscribe> getAllSubscribers(string colletionName)
+        {
+            return _repo.GetDocumentList<Subscribe>(colletionName);
+        }
 
         public List<string> login(LoginViewModel data)
         {
@@ -191,7 +196,7 @@ namespace PS.Services
             {
                 if (!string.IsNullOrEmpty(data.Name) && !string.IsNullOrEmpty(data.Email))
                 {
-                    var modelList = getAll("subscribers");
+                    var modelList = getAllSubscribers("subscribers");
                     foreach (var m in modelList)
                     {
                         if (m.Email.ToLower() == data.Email.ToLower())
@@ -202,7 +207,8 @@ namespace PS.Services
                     var collection = _repo.GetCollection<Subscribe>("subscribers");
                     Subscribe c = new Subscribe();
                     c.Name = data.Name;                   
-                    c.Email = data.Email;                   
+                    c.Email = data.Email;
+                    c.Created = data.Created;                   
                     collection.InsertOneAsync(c);
                     return 0;
                 }

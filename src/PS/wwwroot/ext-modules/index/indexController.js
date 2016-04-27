@@ -1,8 +1,8 @@
 ﻿"use strict";
 
 angular.module("index").controller("indexController",
-    ["$localStorage", "$location", "$scope", "$http", "indexDataService", "$timeout",
-        function indexController($localStorage, $location, $scope, $http, indexDataService, $timeout) {
+    ["$localStorage", "$location", "$scope", "$http", "indexDataService", "psLoginService", "$timeout",
+        function indexController($localStorage, $location, $scope, $http, indexDataService, psLoginService, $timeout) {
             if (indexDataService) {
                 //      $scope.isBusy = true;
                 indexDataService.getHighlights()
@@ -105,34 +105,77 @@ angular.module("index").controller("indexController",
             }
 
 
+
+             $scope.resetSubscriberAfterSubmit = function () {
+                 $scope.subEmail = null;
+                 $scope.subName = null;
+        
+       
+                 $scope.subForm.remail.$dirty = false;
+       
+                 $scope.subForm.rname.$dirty = false;
+      
+             }
+
+             $scope.subReset = function () {
+                 $scope.regSuccess = false;
+                 $scope.regError = false;
+                 $scope.reqSuccess = false;
+                 $scope.reqError = false;
+             }
+
             //subscribe function
 
-            $scope.subscribeUser = function () {
-        
-                indexDataService.subscribeUser($scope.subName, $scope.subEmail)
-                    .then(function (result) {
-                        //Success
-                        if (result.status == 0) {
-                            $scope.resetAfterSubmit();
-                            $scope.regSuccess = true;
-                            $scope.regError = false;
-                            $scope.successMessage = result.message;
-                        } else if(result.status == 1 || result.status == 2) {
-                            $scope.regError = true;
-                            $scope.regSuccess = false;
-                            $scope.again = false;
-                            $scope.errorMessage = result.message;
-                        }
-                    }, function (error) {
-                        //Error
-                        $scope.regError = false;
-                        $scope.errorMessage = error.message;
-                    }).finally(function () {
-                        $scope.isBusy = false;                        
-                        $timeout(function () {
-                            $scope.regReset();
-                        }, 3000);
-                    });
-            }
+             $scope.subscribe = function () {
+                
+                 psLoginService.subscribe($scope.subName, $scope.subEmail)
+                     .then(function (result) {
+                         //Success
+                         
+                         if (result.status == 0) {
+                             $scope.resetSubscriberAfterSubmit();
+                             $scope.regSuccess = true;
+                             $scope.regError = false;
+                             $scope.successMessage = result.message;                             
+                             $("#subscribeModal").modal('toggle');
+
+                             $(".subscriptionMessage").text($scope.successMessage);
+                             $timeout(function () {
+                                 $("#subscribeModal").modal('toggle');
+                                 $(".modal").on("hidden.bs.modal", function () {
+                                     $(".modal-body1").html("");
+                                 });
+                             }, 3000);
+                             
+                         } else if (result.status == 1 || result.status == 2) {
+                             $scope.regError = true;
+                             $scope.regSuccess = false;
+                             $scope.again = false;
+                             $scope.errorMessage = result.message;
+                         }
+                     }, function (error) {
+                         //Error
+                         $scope.regError = false;
+                         $scope.errorMessage = error.message;
+                         $("#subscribeModal").modal('toggle');
+
+                         $(".subscriptionMessage").text($scope.errorMessage);
+                         $timeout(function () {
+                             $("#subscribeModal").modal('toggle');
+                             $(".modal").on("hidden.bs.modal", function () {
+                                 $(".modal-body1").html("");
+                             });
+                         }, 3000);
+                     }).finally(function () {
+                         $scope.isBusy = false;
+                         $timeout(function () {
+                             $scope.subReset();
+                         }, 3000);
+                     });
+
+
+
+
+             }
            
  }]);
