@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label for="MobileNo">OTP Code</label>
                     <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-disabled="addressForm.mobile.$invalid" ng-class="{'bckgrnd-clr': (addressForm.addressOtp.$dirty || addressForm.addressOtp.$error.minlength || addressForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!addressForm.addressOtp.$error.minlength && !addressForm.addressOtp.$error.maxlength && !addressForm.addressOtp.$error.required)}" placeholder="Enter OTP code here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
-                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info" style="margin-bottom: 20px; width: 25%; float:right;" ng-disabled="addressForm.mobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info col-md-offset-9" style="width: 25%; text-align: center;" ng-disabled="addressForm.mobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
                 </div>
                 <div class="form-group">
                     <label for="Email"> Email Address</label>
