@@ -937,3 +937,12 @@ color: white !important;
 .ct-u-paddingBottom50 {
     padding-bottom: 50px !important;
 }
+.subscribeModel{
+        width: 500px;
+    height: 200px;
+    margin-left: 220px;
+}
+.subscriptionMessage{
+    font-size: 20px;
+    font-weight: 600;
+}

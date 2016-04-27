@@ -30,7 +30,7 @@
 
    var _subscribe = function (Name, Email) {
        var deferred = $q.defer();
-       $http.post("/api/Auth/Subscribe?FirstName=" + Name + "&Email=" + Email)
+       $http.post("/api/Auth/Subscribe?Name=" + Name + "&Email=" + Email)
         .then(function (result) {
             //Success
             deferred.resolve(result.data);
@@ -104,6 +104,7 @@
        forgotPassword: _forgotPassword,
        socialLogin: _socialLogin,
        socialCallback: _socialCallback,
-       mobileVerification: _mobileVerification
+       mobileVerification: _mobileVerification,
+       subscribe: _subscribe
    };   
 }])

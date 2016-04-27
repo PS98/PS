@@ -11,5 +11,6 @@ namespace PS.Models
         public ObjectId _id { get; set; }
         public string Name { get; set; }        
         public string Email { get; set; }
+        public DateTime Created { get; set; }
     }
 }
