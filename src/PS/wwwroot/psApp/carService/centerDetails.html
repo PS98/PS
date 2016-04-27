@@ -1,24 +1,19 @@
-﻿<div class="centre-list-item well">
-    <div class="centre-list-item_heading">
-        {{ centre.name }}
-        <span class="pull-right">
-            {{ centre.totalPrice }}
-            <i class="fa fa-inr"></i>
-        </span>
-    </div>
-    <div class="centre-list-item_body">
-        <div class="row">
-            <div class="col-lg-8">
-                <div> {{ centre.address.line1 }},</div>
-                <div> {{ centre.address.line2 }}</div>
-                <i class="fa fa-phone"></i> <span>{{ centre.phoneNo }}</span>
-            </div>
-            <div class="col-lg-4">
-                <a class="main-slider__btn btn-effect" data-ng-show="!centre.activeCentre" ng-click="selectedCentre(centre)">
-                    <span class="main-slider__btn_inner common-button-structure-inner">Show On Map <i class="fa fa-chevron-right"></i></span>
+﻿<div class="featured-item">
+    <div class="right-content">
+        <h2>{{ centre.name }}</h2>
+        <span class="rupee"><i class="fa fa-inr" style="padding-right:5px;"></i>{{ centre.totalPrice }}</span>
+        <div class="light-line"></div>
+        <p>{{ centre.address.line1 }},<br />{{ centre.address.line2 }}<br /><i class="fa fa-phone"></i>{{ centre.phoneNo }}</p>
+        <div class="info-box clearfix">
+            <strong class="rating">
+                <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+            </strong>
+            <div class="pull-right">
+                <a data-ng-show="!centre.activeCentre" ng-click="selectedCentre(centre)" class="main-slider__btn btn-effect">
+                    <span class="main-slider__btn_inner common-button-structure-inner">Show On Map</span>
                 </a>
-                <a class="main-slider__btn btn-effect" data-ng-show="centre.activeCentre" ng-click="selectedCentre(centre)">
-                    <span class="main-slider__btn_inner common-button-structure-inner">Select Centre <i class="fa fa-chevron-right"></i></span>
+                <a data-ng-show="centre.activeCentre" ng-click="selectedCentre(centre)" class="main-slider__btn btn-effect">
+                    <span class="main-slider__btn_inner common-button-structure-inner">Select Centre<i class="fa fa-chevron-right" style="padding-left:5px;"></i></span>
                 </a>
             </div>
         </div>

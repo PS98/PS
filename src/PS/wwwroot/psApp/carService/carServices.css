@@ -1,6 +1,5 @@
 ﻿.service a{
-        color: #218be7;
-        text-decoration:none;
+    text-decoration:none;
 }
 
 .service li {
@@ -32,8 +31,23 @@
     font-weight: 600;
     font-size: 18px;
     color: #363946;
+    margin-bottom:20px;
 }
 
+.rating {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.rating .star {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 16px;
+    background: url(../../assets/img/star-icon.png) center center no-repeat;
+}
 .b-step {
     display: block;
     width: 34px;
@@ -868,7 +882,7 @@ tbody td {
     width: 70%;
 }
 
-.featured-item .right-content span {
+.featured-item .right-content .rupee {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     line-height: 36px;
@@ -899,7 +913,6 @@ tbody td {
 
 .featured-item .right-content .item-rate ul {
     padding: 0;
-    margin: 0;
     list-style: none;
 }
 
