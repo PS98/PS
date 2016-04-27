@@ -77,7 +77,9 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <textarea class="form-control" placeholder="Message Details ..." required rows="7" name="message" ng-model="message" style="margin-bottom : 30px;" ng-class="{'bckgrnd-clr': (feedbackForm.message.$error.pattern || feedbackForm.message.$dirty || feedbackForm.message.$error.minlength || feedbackForm.message.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.message.$error.pattern && !feedbackForm.message.$error.minlength && !feedbackForm.message.$error.maxlength && !feedbackForm.message.$error.required)}" ng-minlength="5" ng-maxlength="1000" ng-pattern="/^[A-z][A-z]*$/"></textarea>
-                            <a class="button-0 col-md-offset-5" ng-disabled="feedbackForm.$invalid" ng-click="contactUs()">Send Message</a>
+                            <a class="main-slider__btn btn-effect pull-right" ng-disabled="feedbackForm.$invalid" ng-click="contactUs()">
+                                <span class="main-slider__btn_inner common-button-structure-inner">Send Message</span>
+                            </a>
                         </div>
                     </div>
                     <!-- end row -->

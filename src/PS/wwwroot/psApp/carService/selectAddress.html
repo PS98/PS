@@ -8,28 +8,28 @@
                 </div>
                 <div class="form-group">
                     <label for="sublocality_level_2" class="">ADDRESS LINE 1</label>
-                    <input class="form-control" id="sublocality_level_2" placeholder="address line 1" model="userSelectedService.userDetails.addressLine1" />
+                    <input class="form-control" id="sublocality_level_2" placeholder="address line 1" />
                     <br />
                     <label for="sublocality_level_1" class="">ADDRESS LINE 2</label>
-                    <input class="form-control" id="sublocality_level_1" placeholder="address line 2" model="userSelectedService.userDetails.addressLine2"/>
+                    <input class="form-control" id="sublocality_level_1" placeholder="address line 2" />
                 </div>
                 <div class="form-group col-xs-6">
                     <label for="administrative_area_level_2" class="">City</label>
-                    <input class="form-control" id="administrative_area_level_2" placeholder="city" disabled="disabled" model="userSelectedService.userDetails.city"/>
+                    <input class="form-control" id="administrative_area_level_2" placeholder="city" disabled="disabled" />
                 </div>
 
                 <div class="form-group col-xs-6">
                     <label for="administrative_area_level_1">State</label>
-                    <input class="form-control" id="administrative_area_level_1" placeholder="state" disabled="disabled" model="userSelectedService.userDetails.state"/>
+                    <input class="form-control" id="administrative_area_level_1" placeholder="state" disabled="disabled" />
                 </div>
                 <div class="form-group col-xs-6">
                     <label for="country">Country</label>
-                    <input class="form-control" id="country" placeholder="country" disabled="disabled" model="userSelectedService.userDetails.country"/>
+                    <input class="form-control" id="country" placeholder="country" disabled="disabled" />
                 </div>
 
                 <div class="form-group col-xs-6">
                     <label for="postal_code">Zip code</label>
-                    <input class="form-control" id="postal_code" placeholder="zip code" disabled="disabled" model="userSelectedService.userDetails.zipCode"/>
+                    <input class="form-control" id="postal_code" placeholder="zip code" disabled="disabled" />
                 </div>
             </div>
             <div>
@@ -68,8 +68,12 @@
                     </div>
                 </div>
                 <div class="form-group col-md-12 col-md-offset-2">
-                    <a class="button-0 pull-left" ui-sref="service.centre"><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Change Centre</a>
-                    <a class="button-0 pull-right" ng-click="orderProcess()">Submit Order<i class="fa fa-chevron-right" style="padding-left:5px;"></i></a>
+                    <a ui-sref="service.centre" class="main-slider__btn btn-effect">
+                        <span class="main-slider__btn_inner common-button-structure-inner">Back</span>
+                    </a>
+                    <a class="main-slider__btn btn-effect pull-right" ng-click="orderProcess()">
+                        <span class="main-slider__btn_inner common-button-structure-inner">Submit Order</span>
+                    </a>
                 </div>
             </div>
         </div>

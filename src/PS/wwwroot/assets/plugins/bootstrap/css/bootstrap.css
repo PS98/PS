@@ -274,67 +274,6 @@ th {
   src: url('../fonts/glyphicons-halflings-regular.html');
   src: url('../fonts/glyphicons-halflings-regulard41d.html?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular-2.html') format('woff2'), url('../fonts/glyphicons-halflings-regular-3.html') format('woff'), url('../fonts/glyphicons-halflings-regular-4.html') format('truetype'), url('../fonts/glyphicons-halflings-regular-5.html#glyphicons_halflingsregular') format('svg');
 }
-.button-0 {
-    position: relative;
-    padding: 10px 15px;
-    margin: 0px 10px 10px 0px;
-    float: left;
-    border-radius: 10px;
-    font-family: 'Helvetica', cursive;
-    font-size: 14px;
-    color: #FFF;
-    text-decoration: none;
-    background-color: #3498DB;
-    border-bottom: 5px solid #2980B9;
-    text-shadow: 0px -2px #2980B9;
-    -moz-transition: all 0.1s;
-    -o-transition: all 0.1s;
-    -webkit-transition: all 0.1s;
-    transition: all 0.1s;
-}
-.button-0:hover, 
-.button-0:focus {
-    text-decoration: none;
-    color:white;
-    cursor:pointer;
-}
-
-.button-0:active {
-    -moz-transform: translate(0px,5px);
-    -ms-transform: translate(0px,5px);
-    -o-transform: translate(0px,5px);
-    -webkit-transform: translate(0px,5px);
-    transform: translate(0px,5px);
-    border-bottom: 1px solid;
-    cursor:pointer;
-}
-.button-0:disabled {
-    cursor:default;
-    background-color:gray;
-}
-.compass {
-    -moz-transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -o-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    background: #444;
-    border-radius: 0 50% 50% 50%;
-    border: 10px solid white;
-    box-shadow: 0 0 8px rgba(0,0,0,.2);
-    border-right-color: coral;
-    border-bottom-color: coral;
-    -moz-transition: border-radius .2s;
-    -o-transition: border-radius .2s;
-    -webkit-transition: border-radius .2s;
-    transition: border-radius .2s;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
 .glyphicon {
   position: relative;
   top: 1px;
