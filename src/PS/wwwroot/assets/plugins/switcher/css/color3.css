@@ -70,7 +70,7 @@ blockquote:before,
 .service-panel-color .panel-title a[aria-expanded="true"],
 .service-panel-color:hover,
 .car-selection-container ul li.date:hover,
-.about-autor {background-color: #ffc73c;}
+.about-autor {background-color: #ffc73c !important;}
 
 .link-img__link,
 .add_notes,
