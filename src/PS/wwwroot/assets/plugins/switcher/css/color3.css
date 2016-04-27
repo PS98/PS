@@ -4,6 +4,7 @@
 
 
 a,
+.services-options p,
 .ct-iconBox .ct-iconBox-icon i,
 .color_primary,
 .ui-title-inner .icon:before,
@@ -66,9 +67,13 @@ blockquote:before,
 .noUi-origin,
 .btn-skew-r,
 .list-tags__link:hover,
+.service-panel-color .panel-title a[aria-expanded="true"],
+.service-panel-color:hover,
+.car-selection-container ul li.date:hover,
 .about-autor {background-color: #ffc73c;}
 
 .link-img__link,
+.add_notes,
 .brands-controls .caro-prev, .brands-controls .caro-next,
 .feedback-controls .caro-prev, .feedback-controls .caro-next,
 .testimonials-section .testimonials-slider .slide-item,
@@ -114,4 +119,7 @@ blockquote:before,
 
 .tab li:hover .curve:after, .nav.nav-stacked > li.active > a:focus .curve:after, .nav.nav-stacked li a[aria-expanded="true"] .curve:after{
         border-color: #ffc73c transparent #ffc73c #ffc73c;
+}
+.centre-list .active {
+    background-color: lightyellow;
 }
