@@ -107,8 +107,8 @@ angular.module("index").controller("indexController",
 
 
              $scope.resetSubscriberAfterSubmit = function () {
-                 $scope.remail = null;       
-                 $scope.rname = null;
+                 $scope.subEmail = null;
+                 $scope.subName = null;
         
        
                  $scope.subForm.remail.$dirty = false;
