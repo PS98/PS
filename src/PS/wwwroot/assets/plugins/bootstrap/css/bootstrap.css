@@ -3069,8 +3069,6 @@ fieldset[disabled] a.btn {
 }
 .btn-default {
   color: #222;
-  background-color: #ffffff;
-  transform: skewX(-17deg);
   padding: 12px 16px;
 }
 .btn-default:focus,

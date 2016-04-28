@@ -21,17 +21,17 @@
                             <ul class="nav nav-stacked">
                                 <li class="active">
                                     <a data-toggle="tab" href="#about" aria-expanded="true">
-                                        <span class="curve"><i class="fa fa-users"></i></span><span class="curve-text">My Appointments</span>
+                                        <span class="curve"><i class="fa fa-pencil-square-o"></i></span><span class="curve-text">My Appointments</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#history">
-                                        <span class="curve"><i class="fa fa-cogs"></i></span><span class="curve-text">Appointment History</span>
+                                        <span class="curve"><i class="fa fa-history"></i></span><span class="curve-text">Appointment History</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#settings">
-                                        <span class="curve"><i class="fa fa-rocket"></i></span><span class="curve-text">Account Settings</span>
+                                        <span class="curve"><i class="fa fa-cog"></i></span><span class="curve-text">Account Settings</span>
                                     </a>
                                 </li>
 
@@ -42,18 +42,73 @@
                         <div class="tab-content">
                             <div id="about" class="tab-pane fade in active">
                                 <h4>Appointments</h4>
-                               
-                                <!--<a class="main-slider__btn btn-effect" href="#"><span class="main-slider__btn_inner common-button-structure-inner">Learn More</span></a>-->
+                                <div class="content-box">
+                                     <i class="fa fa-anchor" aria-hidden="true"></i>
+                                    <h3 style="text-transform:capitalize;">
+                                        Your recent bookings will reflect here
+                                    </h3>
+                                </div>
                             </div>
                             <div id="history" class="tab-pane fade">
                                 <h4>History</h4>
-                                
-                                <!--<a class="main-slider__btn btn-effect" href="#"><span class="main-slider__btn_inner common-button-structure-inner">Learn More</span></a>-->
+                                <div class="content-box">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    <h3 style="text-transform:capitalize;">
+                                        You Have Not Booked Any Service Yet
+                                    </h3>
+                                </div>
                             </div>
                             <div id="settings" class="tab-pane fade">
-                                <h4>Profile Update</h4>
-                               
-                                <!--<a class="main-slider__btn btn-effect" href="#"><span class="main-slider__btn_inner common-button-structure-inner">Learn More</span></a>-->
+                                <h4>User Profile Update</h4>
+                                    <form name="profileForm" ng-submit="registerSubmit()">
+                                        <div class="form-group col-md-5 col-md-offset-3">
+                                            <div class="input-group" style="float: left;">
+                                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                <input type="text" class="form-control" id="rfirstname" name="rfirstname" placeholder="First Name" ng-model="regFirstname" ng-class="{'bckgrnd-clr': (profileForm.rfirstname.$error.pattern || profileForm.rfirstname.$dirty || profileForm.rfirstname.$error.minlength || profileForm.rfirstname.$error.maxlength),'bckgrnd-color-default' : (!profileForm.rfirstname.$error.pattern && !profileForm.rfirstname.$error.minlength && !profileForm.rfirstname.$error.maxlength && !profileForm.rfirstname.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required>
+                                            </div>
+                                            <span class="text-danger" style="float: left;" ng-show="profileForm.rfirstname.$error.required && profileForm.rfirstname.$dirty">Required Field</span>
+                                            <span class="text-danger" style="float: left;" ng-show="!profileForm.rfirstname.$error.minLength && !profileForm.rfirstname.$error.maxLength && profileForm.rfirstname.$error.pattern && profileForm.rfirstname.$dirty">Must start with a letter, and contain letters only.</span>
+                                            <span class="text-danger" style="float: left;" ng-show="!profileForm.rfirstname.$error.required && (profileForm.rfirstname.$error.minlength || profileForm.rfirstname.$error.maxlength) && profileForm.rfirstname.$dirty">Must be between 2 and 20 characters.</span>
+                                        </div>
+                                        <div class="form-group col-md-5 col-md-offset-3">
+                                            <div class="input-group" style="float: left;">
+                                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                <input type="text" class="form-control" id="rlastname" name="rlastname" placeholder="Last Name" ng-model="regLastname" ng-class="{'bckgrnd-clr': (profileForm.rlastname.$error.pattern || profileForm.rlastname.$dirty || profileForm.rlastname.$error.minlength || profileForm.rlastname.$error.maxlength),'bckgrnd-color-default' : (!profileForm.rlastname.$error.pattern && !profileForm.rlastname.$error.minlength && !profileForm.rlastname.$error.maxlength  && !profileForm.rlastname.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required>
+                                            </div>
+                                            <span class="text-danger" style="float: left;" ng-show="profileForm.rlastname.$error.required && profileForm.rlastname.$dirty">Required Field</span>
+                                            <span class="text-danger" style="float: left;" ng-show="!profileForm.rlastname.$error.minLength && !profileForm.rlastname.$error.maxLength && profileForm.rlastname.$error.pattern && profileForm.rlastname.$dirty">Must start with a letter, and contain letters only.</span>
+                                            <span class="text-danger" style="float: left;" ng-show="!profileForm.rlastname.$error.required && (profileForm.rlastname.$error.minlength || profileForm.rlastname.$error.maxlength) && profileForm.rlastname.$dirty">Must be between 2 and 20 characters.</span>
+                                        </div>
+                                        <div class="form-group col-md-5 col-md-offset-3">
+                                            <div class="input-group" style="float: left;">
+                                                <div class="input-group-addon"><i class="fa fa-at"></i></div>
+                                                <input type="text" class="form-control" id="remail" name="remail" placeholder="Email" ng-model="regEmail" ng-class="{'bckgrnd-clr': (profileForm.remail.$dirty || profileForm.remail.$error.pattern) ,'bckgrnd-color-default' : (!profileForm.remail.$error.email && !profileForm.remail.$error.required && !profileForm.remail.$error.pattern)}" ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" required>
+                                            </div>
+                                            <span class="text-danger" style="float: left;" ng-show="profileForm.remail.$error.required && profileForm.remail.$dirty">Required Field</span>
+                                            <span class="text-danger" style="float: left;" ng-show="!profileForm.remail.$error.required && profileForm.remail.$error.pattern && profileForm.remail.$dirty">Must be a valid email address.</span>
+                                        </div>
+                                        <div class="form-group col-md-5 col-md-offset-3">
+                                            <div class="input-group" style="float: left;">
+                                                <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
+                                                <div>
+                                                    <input type="tel" class="form-control" id="rmobile" name="rmobile" ng-model="regMobile" ng-class="{'bckgrnd-clr': (profileForm.rmobile.$error.pattern || profileForm.rmobile.$dirty || profileForm.rmobile.$error.minlength || profileForm.rmobile.$error.maxlength),'bckgrnd-color-default' : (!profileForm.rmobile.$error.pattern && !profileForm.rmobile.$error.minlength && !profileForm.rmobile.$error.maxlength && !profileForm.rmobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/">
+                                                </div>
+                                            </div>
+                                            <span class="text-danger" style="float: left;" ng-show="profileForm.rmobile.$error.required && profileForm.rmobile.$dirty">Required Field</span>
+                                            <span class="text-danger" style="float: left;" ng-show="!profileForm.rmobile.$error.required && (profileForm.rmobile.$error.minlength || profileForm.rmobile.$error.maxlength) && profileForm.rmobile.$dirty">Must be a 10 digit number.</span>
+                                            <span class="text-danger" style="float: left;" ng-show="!profileForm.rmobile.$error.required && !profileForm.rmobile.$error.minlength && !profileForm.rmobile.$error.maxlength && profileForm.rmobile.$error.pattern && profileForm.rmobile.$dirty">Must start with 7, 8 or 9.</span>
+                                        </div>
+                                        <div class="form-group col-md-5 col-md-offset-3">
+                                            <div class="input-group" style="float: left;">
+                                                <div style="display:flex;">
+                                                    <input type="password" class="form-control" id="rotp" name="rotp" ng-model="regotp" ng-disabled="profileForm.rmobile.$invalid" ng-class="{'bckgrnd-clr': (profileForm.rotp.$dirty || profileForm.rotp.$error.minlength || profileForm.rotp.$error.maxlength),'bckgrnd-color-default' : (!profileForm.rotp.$error.minlength && !profileForm.rotp.$error.maxlength && !profileForm.rotp.$error.required)}" placeholder="OTP" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
+                                                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info" style="{{again ? 'margin-left:43px;' : 'margin-left:75px;'}}" ng-disabled="profileForm.rmobile.$invalid" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" id="register_btn" class="btn buttonSubmit col-md-offset-4" ng-disabled="profileForm.$invalid">Update</button>
+                                        <button type="submit" id="register_btn" class="btn btn-default" style="margin-left:30px;">Cancel</button>
+                                    </form>
                             </div>
 
                         </div>
