@@ -44,9 +44,10 @@
                 <div class="form-group">
                     <label for="MobileNo"> Mobile No</label>
                     <input class="form-control" id="MobileNo" name="mobile" type="text" ng-model="userSelectedService.userDetails.phoneNo" ng-class="{'bckgrnd-clr': (addressForm.mobile.$error.pattern || addressForm.mobile.$dirty || addressForm.mobile.$error.minlength || addressForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!addressForm.mobile.$error.pattern && !addressForm.mobile.$error.minlength && !addressForm.mobile.$error.maxlength && !addressForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/" />
+                    <!--ng-change="checkMobileNumber(userSelectedService.userDetails.phoneNo)"-->
                 </div>
 
-                <div class="form-group mobile_validation" ng-hide="addressForm.mobile.$invalid">
+                <div class="form-group mobile_validation" ng-hide="addressForm.mobile.$invalid || !addressForm.mobile.$dirty">
                     <label for="MobileNo">OTP Code</label>
                     <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp"  ng-class="{'bckgrnd-clr': (addressForm.addressOtp.$dirty || addressForm.addressOtp.$error.minlength || addressForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!addressForm.addressOtp.$error.minlength && !addressForm.addressOtp.$error.maxlength && !addressForm.addressOtp.$error.required)}" placeholder="Enter OTP code here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
                     <button type="button" id="reqotp_btn" class="btn btn-block btn-info col-md-offset-9" style="width: 25%; text-align: center;" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
