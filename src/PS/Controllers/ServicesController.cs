@@ -20,7 +20,6 @@ namespace PS.Controllers
         
         public List<string> Get()
         {
-            // return new string[] { "value1", "value2" };
 
             var coll = repo.GetAllCollectionName();
 
@@ -57,10 +56,27 @@ namespace PS.Controllers
             return "value";
         }
 
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        [Route("order")]
+        public IActionResult Post([FromBody] OrderDetails userServiceData)
         {
+
+            try {
+                repo.insertDocument("orders", "Invoice", userServiceData);
+                return new HttpOkObjectResult("");
+            }
+            catch(Exception e)
+            {
+                //internal information.
+                var error = new
+                {
+                    message = "Enter you user friendly error message",
+                    status = (int)System.Net.HttpStatusCode.InternalServerError
+                };
+               // Context.Response.StatusCode = error.status;
+                return new ObjectResult(error);
+            }
+
         }
 
         // PUT api/values/5

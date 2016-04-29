@@ -20,7 +20,9 @@
     }
     var _setSelectedAppointment = function (appointment) {
         userServiceData.selectedAppointment = appointment;
-        console.log(userServiceData);
+    }
+    var _setPaymentMode = function (mode) {
+        userServiceData.PaymentMode = mode;
     }
     var _getuserDetails = function (user) {
         return $localStorage.userDetails;
@@ -56,10 +58,19 @@
             data: data
     });
     }
+
     var _getAllService = function (city, area) {
         return $http.get("/api/services/all");
     }
-
+    var _submitOrder = function (city, area) {
+        var data = {"selectedServices": userServiceData.selectedServices,"InvoiceNo":"","PaymentMode":userServiceData.PaymentMode,"selectedCentre": userServiceData.selectedCentre ,"selectedCar": userServiceData.selectedCar, "selectedAppointment": userServiceData.selectedAppointment, "userDetails": userServiceData.userDetails, };
+        return $http(
+        {
+            url: "/api/services/order",
+            method: "POST",
+            data: data
+        });
+    }
     var _payment = function (name, purpose, amount, email, phone, send_email, send_sms) {
         var deferred = $q.defer();
         $http.post("/api/Auth/ProcessPayment?name=" + name + "&purpose=" + purpose + "&amount=" + amount + "&email=" + email + "&phone=" + phone + "&send_email=" + send_email + "&send_sms=" + send_sms)
@@ -87,8 +98,10 @@
         setSelectedServiceName: _setSelectedServiceName,
         setSelectedCentre: _setSelectedCentre,
         setSelectedAppointment: _setSelectedAppointment,
+        setPaymentMode:_setPaymentMode,
         getuserDetails: _getuserDetails,
-        payment: _payment
+        payment: _payment,
+        submitOrder: _submitOrder
 }
           
     

@@ -96,5 +96,12 @@ namespace PS.Services
 
             return listAll;
         }
+        public async void insertDocument(string databaseName,string collectionName, dynamic data )
+        {
+
+            _database = _client.GetDatabase(databaseName);
+            var collection = _database.GetCollection<OrderDetails>(collectionName);
+            await collection.InsertOneAsync(data);
+        }
     }
 }

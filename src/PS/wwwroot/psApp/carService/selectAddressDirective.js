@@ -63,6 +63,7 @@ angular.module("psApp").directive("selectAddress", function () {
             $scope.payNow = true;
             $scope.orderProcess = function () {
                 if ($scope.payNow) {
+                    psDataServices.setPaymentMode("Online");
                     $scope.response = psDataServices.payment("test_user", "testing", "10", "varshneyshobhit98@yahoo.com", "+918380911266", "true", "true").then(function (result) {
                         //Success
                         if (result.status == 0) {
@@ -79,7 +80,12 @@ angular.module("psApp").directive("selectAddress", function () {
                     });
                 }
                 else {
-                    $state.go("orderSuccess");
+                   psDataServices.setPaymentMode("COD");
+                   psDataServices.submitOrder().success(function () {
+                        $state.go("orderSuccess");
+                    }).error(function () {
+                        alert('error');
+                    })
                 }
             }
              
