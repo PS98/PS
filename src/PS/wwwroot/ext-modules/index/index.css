@@ -310,7 +310,6 @@ ul.services-name {
 }
 .testimonials-section {
     position: relative;
-    padding: 30px 0 0;
     background: url(../../assets/img/texture-map.png) center center no-repeat;
     background-color: #3d3d3d;
 }
@@ -650,10 +649,10 @@ color: white !important;
     text-align: center;
 }
 .ct-u-paddingBottom70 {
-    padding-bottom: 70px !important;
+    padding-bottom: 10px !important;
 }
 .ct-u-paddingTop60 {
-    padding-top: 60px !important;
+    padding-top: 10px !important;
 }
 .ct-sectionHeader-title, .ct-sectionHeader-title * {
     font-weight: lighter;
@@ -678,7 +677,7 @@ color: white !important;
     padding-left: 18px;
 }
 .ct-u-paddingBottom90 {
-    padding-bottom: 90px !important;
+    padding-bottom: 40px !important;
 }
 
 .ct-sectionHeader-title span, .ct-sectionHeader-title span {
