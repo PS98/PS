@@ -188,7 +188,7 @@
                     })
                 }
                 else {
-                    $scope.showBrandName = false;
+                    $scope.showBrandName = true;
                 }
                 $timeout(function() {
                     $.each($scope.services.serviceDetails, function(i, val) {
