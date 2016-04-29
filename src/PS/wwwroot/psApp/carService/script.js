@@ -184,7 +184,10 @@ function fillInAddress(autocomplete) {
     console.log(place.geometry.location.lng());
     for (var component in componentForm) {
         document.getElementById(component).value = '';
-        document.getElementById(component).disabled = false;
+        if (component != "administrative_area_level_2" && component != "administrative_area_level_1" && component != "country" && component != "postal_code")
+        {
+            document.getElementById(component).disabled = false;
+        }        
         fillInAddressToTextBox(place.address_components);
     }
 }
