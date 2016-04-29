@@ -140,18 +140,21 @@ angular.module("index").controller("indexController",
                              $("#subscribeModal").modal('toggle');
 
                              $(".subscriptionMessage").text($scope.successMessage);
-                             $timeout(function () {
-                                 $("#subscribeModal").modal('toggle');
-                                 $(".modal").on("hidden.bs.modal", function () {
-                                     $(".modal-body1").html("");
-                                 });
-                             }, 3000);
+                             //$timeout(function () {
+                             //    $("#subscribeModal").modal('toggle');
+                             //    $(".modal").on("hidden.bs.modal", function () {
+                             //        $(".modal-body1").html("");
+                             //    });
+                             //}, 3000);
                              
                          } else if (result.status == 1 || result.status == 2) {
                              $scope.regError = true;
                              $scope.regSuccess = false;
                              $scope.again = false;
                              $scope.errorMessage = result.message;
+                             $("#subscribeModal").modal('toggle');
+
+                             $(".subscriptionMessage").text($scope.errorMessage);
                          }
                      }, function (error) {
                          //Error
@@ -160,12 +163,12 @@ angular.module("index").controller("indexController",
                          $("#subscribeModal").modal('toggle');
 
                          $(".subscriptionMessage").text($scope.errorMessage);
-                         $timeout(function () {
-                             $("#subscribeModal").modal('toggle');
-                             $(".modal").on("hidden.bs.modal", function () {
-                                 $(".modal-body1").html("");
-                             });
-                         }, 3000);
+                         //$timeout(function () {
+                         //    $("#subscribeModal").modal('toggle');
+                         //    $(".modal").on("hidden.bs.modal", function () {
+                         //        $(".modal-body1").html("");
+                         //    });
+                         //}, 3000);
                      }).finally(function () {
                          $scope.isBusy = false;
                          $timeout(function () {
