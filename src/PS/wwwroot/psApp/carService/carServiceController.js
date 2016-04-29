@@ -4,7 +4,7 @@
     $scope.searchedText = {};    $scope.state = $state;
     var custRequest = { name: " Describe your problem here", type: [], addText: true };
     var prevMode, preService = [];
-    $scope.showBrandName = true; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = $localStorage.userSelection;// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
+    $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = $localStorage.userSelection;// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
     $scope.selectBrand = function (brandName) {
@@ -175,7 +175,6 @@
                 $scope.commonServices = $scope.services.serviceDetails[0];
                 $scope.car.services = [];
                 if ($localStorage.userSelection.brand) {
-                    $scope.showBrandName = false;
                     getCarType($localStorage.userSelection.brand).then(function () {
                         getCarVarient($localStorage.userSelection.brand, $localStorage.userSelection.model).
                             success(function (data) {
@@ -187,6 +186,9 @@
                             $scope.selectVarient("");
                         });;
                     })
+                }
+                else {
+                    $scope.showBrandName = true;
                 }
                 $timeout(function() {
                     $.each($scope.services.serviceDetails, function(i, val) {
@@ -214,7 +216,7 @@
         psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
         psDataServices.setSelectedServiceName(jobName);
         if (psDataServices.getuserDetails())
-            $state.go("service.centre");
+          $state.go("service.centre");
         else {
             $("#loginModal").modal('toggle');
         }

@@ -108,7 +108,7 @@
                                             <p class="text-danger" style="float: left;" ng-show="!regForm.rmobile.$error.required && (regForm.rmobile.$error.minlength || regForm.rmobile.$error.maxlength) && regForm.rmobile.$dirty">Must be a 10 digit number.</p>
                                             <p class="text-danger" style="float: left;" ng-show="!regForm.rmobile.$error.required && !regForm.rmobile.$error.minlength && !regForm.rmobile.$error.maxlength && regForm.rmobile.$error.pattern && regForm.rmobile.$dirty">Must start with 7, 8 or 9.</p>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" ng-hide="regForm.rmobile.$invalid || !regForm.rmobile.$dirty">
                                             <div class="input-group" style="float: left;">
                                                 <div style="display:flex;">
                                                     <input type="password" class="form-control" id="rotp" name="rotp" ng-model="regotp" ng-disabled="regForm.rmobile.$invalid" ng-class="{'bckgrnd-clr': (regForm.rotp.$dirty || regForm.rotp.$error.minlength || regForm.rotp.$error.maxlength),'bckgrnd-color-default' : (!regForm.rotp.$error.minlength && !regForm.rotp.$error.maxlength && !regForm.rotp.$error.required)}" placeholder="OTP" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">

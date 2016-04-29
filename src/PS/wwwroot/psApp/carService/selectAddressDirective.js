@@ -3,7 +3,7 @@
 angular.module("psApp").directive("selectAddress", function () {
     return {
         templateUrl: "psApp/carService/selectAddress.html",
-        link: function (scope, element, attrs) {
+        link: function (scope, element, attrs) {           
             var autocomplete
             scope.showMap = function () {
                 if (!autocomplete)
@@ -59,10 +59,18 @@ angular.module("psApp").directive("selectAddress", function () {
                 }
             });
         },
-        controller: ["$scope", "$window","$state", "psDataServices", function ($scope, $window,$state, psDataServices) {
-            $scope.payNow = true;
+        controller: ["$scope", "$window","$state", "$localStorage", "psDataServices", function ($scope, $window,$state, $localStorage, psDataServices) {
+            $scope.payNow = true;           
+            $scope.oldNumber = $localStorage.userDetails.phoneNo;
+            $scope.checkMobileNumber = function () {               
+                if ($localStorage.userDetails.phoneNo == $scope.oldNumber) {
+                    $('.mobile_validation').hide();
+                }
+            }
+
             $scope.orderProcess = function () {
                 if ($scope.payNow) {
+                    psDataServices.setPaymentMode("Online");
                     $scope.response = psDataServices.payment("test_user", "testing", "10", "varshneyshobhit98@yahoo.com", "+918380911266", "true", "true").then(function (result) {
                         //Success
                         if (result.status == 0) {
@@ -79,7 +87,12 @@ angular.module("psApp").directive("selectAddress", function () {
                     });
                 }
                 else {
-                    $state.go("orderSuccess");
+                   psDataServices.setPaymentMode("COD");
+                   psDataServices.submitOrder().success(function () {
+                        $state.go("orderSuccess");
+                    }).error(function () {
+                        alert('error');
+                    })
                 }
             }
              
