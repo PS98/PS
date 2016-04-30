@@ -11,6 +11,7 @@ function ($scope, $localStorage, $location, $rootScope, $state, psLoginService) 
 
     $scope.openloginModal = function () {
         $("#loginModal").modal('toggle');
+        $('#signin-taba').tab('show');       
     }
 
     $scope.logout = function () {
