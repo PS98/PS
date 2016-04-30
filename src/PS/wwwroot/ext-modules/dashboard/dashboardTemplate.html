@@ -20,7 +20,7 @@
                         <div class="tab">
                             <ul class="nav nav-stacked">
                                 <li class="active">
-                                    <a data-toggle="tab" href="#about" aria-expanded="true">
+                                    <a data-toggle="tab" href="#booking" aria-expanded="true">
                                         <span class="curve"><i class="fa fa-pencil-square-o"></i></span><span class="curve-text">My Appointments</span>
                                     </a>
                                 </li>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-9 col-sm-8">
                         <div class="tab-content">
-                            <div id="about" class="tab-pane fade in active">
+                            <div id="booking" class="tab-pane fade in active">
                                 <h4>Appointments</h4>
                                 <div class="content-box">
                                     <i class="fa fa-anchor" aria-hidden="true"></i>
@@ -58,96 +58,187 @@
                                     </h3>
                                 </div>
                             </div>
-                            <div id="settings" class="tab-pane fade">
-                                <div class="panel-group" id="userProfile">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                <span data-toggle="collapse" data-parent="#userProfile" data-target="#profileDetails" aria-expanded="true">
-                                                   Update Your Profile 
-                                                </span>
+                            <div id="settings" class="fade">
 
+                                <div class="tabs">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"> <a data-toggle="tab" href="#profile-tab"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                        <li class=""> <a data-toggle="tab" href="#password-tab"> Change Password <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                        <li class=""> <a data-toggle="tab" href="#vehicle-tab"> Add A Vehicle <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="profile-tab" class="tab-pane active">
+                                            <div class="vd_info tr" ng-click="isEdit = !isEdit">
+                                                <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a>
                                             </div>
-                                        </div>
-                                        <div id="profileDetails" class="panel-collapse collapse" ng-class="{in :$index === 0}">
-                                            <div class="panel-body">
-                                                <form name="profileForm" ng-submit="updateProfile()" novalidate>
-                                                    <div class="form-group col-md-5 col-md-offset-3">
-                                                        <label for="FirstName"> First Name</label>
-                                                        <input class="form-control" id="FirstName" name="firstName" placeholder="first name" type="text" ng-model="userDetails.firstName" ng-class="{'bckgrnd-clr': (profileForm.firstName.$error.pattern || profileForm.firstName.$dirty || profileForm.firstName.$error.minlength || profileForm.firstName.$error.maxlength),'bckgrnd-color-default' : (!profileForm.firstName.$error.pattern && !profileForm.firstName.$error.minlength && !profileForm.firstName.$error.maxlength && !profileForm.firstName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
-                                                        <span class="text-danger" style="float: left;" ng-show="profileForm.firstName.$error.required && profileForm.firstName.$dirty">Required Field</span>
-                                                        <span class="text-danger" style="float: left;" ng-show="!profileForm.firstName.$error.minLength && !profileForm.firstName.$error.maxLength && profileForm.firstName.$error.pattern && profileForm.firstName.$dirty">Must start with a letter, and contain letters only.</span>
-                                                        <span class="text-danger" style="float: left;" ng-show="!profileForm.firstName.$error.required && (profileForm.firstName.$error.minlength || profileForm.firstName.$error.maxlength) && profileForm.firstName.$dirty">Must be between 2 and 20 characters.</span>
+                                            <form name="profileForm" ng-submit="updateProfile()" class="mgtp-30">
+                                                <div class="row">
+                                                    <div class="col-sm-12 mgtp-10 mgbt-10">
+                                                        <div class="row mgbt-xs-0">
+                                                            <label class="col-xs-2 control-label">First Name:</label>
+                                                            <div class="col-xs-6 controls" ng-show="!isEdit">
+                                                                {{userDetails.firstName}}
+                                                            </div>
+                                                            <div class="col-xs-6 controls" ng-show="isEdit">
+                                                                <input class="form-control" id="FirstName" name="firstName" placeholder="First Name" type="text" ng-model="userDetails.firstName" ng-class="{'bckgrnd-clr': (profileForm.firstName.$error.pattern || profileForm.firstName.$dirty || profileForm.firstName.$error.minlength || profileForm.firstName.$error.maxlength),'bckgrnd-color-default' : (!profileForm.firstName.$error.pattern && !profileForm.firstName.$error.minlength && !profileForm.firstName.$error.maxlength && !profileForm.firstName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
+                                                            </div>
+                                                            <div class="col-xs-4 controls">
+                                                                <span class="text-danger" style="float: left;" ng-show="profileForm.firstName.$error.required && profileForm.firstName.$dirty">Required Field</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!profileForm.firstName.$error.minLength && !profileForm.firstName.$error.maxLength && profileForm.firstName.$error.pattern && profileForm.firstName.$dirty">Must start with a letter, and contain letters only.</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!profileForm.firstName.$error.required && (profileForm.firstName.$error.minlength || profileForm.firstName.$error.maxlength) && profileForm.firstName.$dirty">Must be between 2 and 20 characters.</span>
+                                                            </div>
+                                                            <!-- col-sm-10 -->
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-5 col-md-offset-3">
-                                                        <label for="LastName"> Last Name</label>
-                                                        <input class="form-control" id="LastName" name="lastName" placeholder="last name" type="text" ng-model="userDetails.lastName" ng-class="{'bckgrnd-clr': (profileForm.lastName.$error.pattern || profileForm.lastName.$dirty || profileForm.lastName.$error.minlength || profileForm.lastName.$error.maxlength),'bckgrnd-color-default' : (!profileForm.lastName.$error.pattern && !profileForm.lastName.$error.minlength && !profileForm.lastName.$error.maxlength && !profileForm.lastName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
-                                                        <span class="text-danger" style="float: left;" ng-show="profileForm.lastName.$error.required && profileForm.lastName.$dirty">Required Field</span>
-                                                        <span class="text-danger" style="float: left;" ng-show="!profileForm.lastName.$error.minLength && !profileForm.lastName.$error.maxLength && profileForm.lastName.$error.pattern && profileForm.lastName.$dirty">Must start with a letter, and contain letters only.</span>
-                                                        <span class="text-danger" style="float: left;" ng-show="!profileForm.lastName.$error.required && (profileForm.lastName.$error.minlength || profileForm.lastName.$error.maxlength) && profileForm.lastName.$dirty">Must be between 2 and 20 characters.</span>
+                                                    <div class="col-sm-12 mgtp-10 mgbt-10">
+                                                        <div class="row mgbt-xs-0">
+                                                            <label class="col-xs-2 control-label">Last Name:</label>
+                                                            <div class="col-xs-6 controls" ng-show="!isEdit">
+                                                                {{userDetails.lastName}}
+                                                            </div>
+                                                            <div class="col-xs-6 controls" ng-show="isEdit">
+                                                                <input class="form-control" id="LastName" name="lastName" placeholder="Last Name" type="text" ng-model="userDetails.lastName" ng-class="{'bckgrnd-clr': (profileForm.lastName.$error.pattern || profileForm.lastName.$dirty || profileForm.lastName.$error.minlength || profileForm.lastName.$error.maxlength),'bckgrnd-color-default' : (!profileForm.lastName.$error.pattern && !profileForm.lastName.$error.minlength && !profileForm.lastName.$error.maxlength && !profileForm.lastName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
+                                                            </div>
+                                                            <div class="col-xs-4 controls">
+                                                                <span class="text-danger" style="float: left;" ng-show="profileForm.lastName.$error.required && profileForm.lastName.$dirty">Required Field</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!profileForm.lastName.$error.minLength && !profileForm.lastName.$error.maxLength && profileForm.lastName.$error.pattern && profileForm.lastName.$dirty">Must start with a letter, and contain letters only.</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!profileForm.lastName.$error.required && (profileForm.lastName.$error.minlength || profileForm.lastName.$error.maxlength) && profileForm.lastName.$dirty">Must be between 2 and 20 characters.</span>
+                                                            </div>
+                                                            <!-- col-sm-10 -->
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-5 col-md-offset-3">
-                                                        <label for="MobileNo"> Mobile No</label>
-                                                        <input class="form-control" id="MobileNo" name="mobile" type="text" ng-model="userDetails.phoneNo" ng-class="{'bckgrnd-clr': (profileForm.mobile.$error.pattern || profileForm.mobile.$dirty || profileForm.mobile.$error.minlength || profileForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!profileForm.mobile.$error.pattern && !profileForm.mobile.$error.minlength && !profileForm.mobile.$error.maxlength && !profileForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/" />
-                                                        <span class="text-danger" style="float: left;" ng-show="profileForm.mobile.$error.required && profileForm.mobile.$dirty">Required Field</span>
-                                                        <span class="text-danger" style="float: left;" ng-show="!profileForm.mobile.$error.required && (profileForm.mobile.$error.minlength || profileForm.mobile.$error.maxlength) && profileForm.mobile.$dirty">Must be a 10 digit number.</span>
-                                                        <span class="text-danger" style="float: left;" ng-show="!profileForm.mobile.$error.required && !profileForm.mobile.$error.minlength && !profileForm.mobile.$error.maxlength && profileForm.mobile.$error.pattern && profileForm.mobile.$dirty">Must start with 7, 8 or 9.</span>
+                                                    <div class="col-sm-12 mgtp-10 mgbt-10">
+                                                        <div class="row mgbt-xs-0">
+                                                            <label class="col-xs-2 control-label">Email:</label>
+                                                            <div class="col-xs-6 controls">
+                                                                {{userDetails.email}}
+                                                            </div>
+                                                            <div class="col-xs-4 controls">
+                                                                <span class="text-danger" style="float: left;" ng-show="profileForm.email.$error.required && profileForm.email.$dirty">Required Field</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!profileForm.email.$error.required && profileForm.email.$error.pattern && profileForm.email.$dirty">Must be a valid email address.</span>
+                                                            </div>
+                                                            <!-- col-sm-10 -->
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-5 col-md-offset-3 mobile_validation" ng-show="profileForm.mobile.$valid && userDetails.phoneNo !== oldNo">
-                                                        <label for="MobileNo">OTP Code</label>
-                                                        <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-class="{'bckgrnd-clr': (profileForm.addressOtp.$dirty || profileForm.addressOtp.$error.minlength || profileForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!profileForm.addressOtp.$error.minlength && !profileForm.addressOtp.$error.maxlength && !profileForm.addressOtp.$error.required)}" placeholder="Enter OTP code here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
-                                                        <button type="button" id="reqotp_btn" class="btn btn-block btn-info" style="width: 40%; text-align: center; float: right;" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                                                    <div class="col-sm-12 mgtp-10 mgbt-10">
+                                                        <div class="row mgbt-xs-0">
+                                                            <label class="col-xs-2 control-label">Mobile:</label>
+                                                            <div class="col-xs-6 controls" ng-show="!isEdit">
+                                                                {{userDetails.phoneNo}}
+                                                            </div>
+                                                            <div class="col-xs-6 controls" ng-show="isEdit">
+                                                                <input class="form-control" id="MobileNo" name="mobile" type="text" ng-model="userDetails.phoneNo" ng-class="{'bckgrnd-clr': (profileForm.mobile.$error.pattern || profileForm.mobile.$dirty || profileForm.mobile.$error.minlength || profileForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!profileForm.mobile.$error.pattern && !profileForm.mobile.$error.minlength && !profileForm.mobile.$error.maxlength && !profileForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/" />
+                                                            </div>
+                                                            <div class="col-xs-4 controls">
+                                                                <span class="text-danger" style="float: left;" ng-show="profileForm.mobile.$error.required && profileForm.mobile.$dirty">Required Field</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!profileForm.mobile.$error.required && (profileForm.mobile.$error.minlength || profileForm.mobile.$error.maxlength) && profileForm.mobile.$dirty">Must be a 10 digit number.</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!profileForm.mobile.$error.required && !profileForm.mobile.$error.minlength && !profileForm.mobile.$error.maxlength && profileForm.mobile.$error.pattern && profileForm.mobile.$dirty">Must start with 7, 8 or 9.</span>
+                                                            </div>
+                                                            <!-- col-sm-10 -->
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-5 col-md-offset-3">
-                                                        <label for="Email"> Email Address</label>
-                                                        <input class="form-control" id="Email" name="email" readonly placeholder="email address" type="text" ng-model="userDetails.email" ng-class="{'bckgrnd-clr': (profileForm.email.$dirty || profileForm.email.$error.pattern) ,'bckgrnd-color-default' : (!profileForm.email.$error.email && !profileForm.email.$error.required && !profileForm.email.$error.pattern)} " ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" required />
-                                                        <span class="text-danger" style="float: left;" ng-show="profileForm.email.$error.required && profileForm.email.$dirty">Required Field</span>
-                                                        <span class="text-danger" style="float: left;" ng-show="!profileForm.email.$error.required && profileForm.email.$error.pattern && profileForm.email.$dirty">Must be a valid email address.</span>
+                                                    <div class="col-sm-12 mgtp-10 mgbt-10">
+                                                        <div class="row mgbt-xs-0">
+                                                            <div class="mobile_validation" ng-show="profileForm.mobile.$valid && userDetails.phoneNo !== oldNo">
+                                                                <label class="col-xs-2 control-label">OTP Code:</label>
+                                                                <div class="col-xs-6 controls">
+                                                                    <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-class="{'bckgrnd-clr': (profileForm.addressOtp.$dirty || profileForm.addressOtp.$error.minlength || profileForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!profileForm.addressOtp.$error.minlength && !profileForm.addressOtp.$error.maxlength && !profileForm.addressOtp.$error.required)}" placeholder="Enter OTP Code Here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
+                                                                </div>
+                                                                <div class="col-xs-4 controls">
+                                                                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info pull-left" style="width: 40%; text-align: center; float: right;" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <button type="submit" id="updateProfile_btn" class="btn buttonSubmit col-md-offset-4" ng-disabled="profileForm.$invalid">Update</button>
-                                                    <button type="submit" id="cancleProfile_btn" class="btn btn-default" style="margin-left:30px;">Cancel</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="panel-heading service-panel-color">
-                                            <div class="panel-title">
-                                                <span data-toggle="collapse" data-parent="#userProfile" data-target="#changePwd" aria-expanded="false">
-                                                    Change Password 
-                                                </span>
-
-                                            </div>
-                                        </div>
-                                        <div id="changePwd" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <form  name="changePassword" ng-submit="updatePassword()" novalidate>
-                                                    <div class="form-group col-md-5 col-md-offset-3">
-                                                        <label for="FirstName"> Previous Password</label>
-                                                        <input type="password" class="form-control" id="oldPwd" name="oldPwd" ng-model="oldPwd" ng-class="{'bckgrnd-clr': (changePassword.oldPwd.$error.pattern || changePassword.oldPwd.$dirty || changePassword.oldPwd.$error.minlength || changePassword.oldPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.oldPwd.$error.pattern && !changePassword.oldPwd.$error.minlength && !changePassword.oldPwd.$error.maxlength && !changePassword.oldPwd.$error.required)}" placeholder="old Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
+                                                    <div class="col-sm-4 col-sm-offset-3 mgtp-10 mgbt-10">
+                                                        <button type="submit" id="updateProfile_btn" class="btn buttonSubmit pull-left" ng-show="isEdit" ng-disabled="profileForm.$invalid">Update</button>
+                                                        <button type="submit" id="cancleProfile_btn" class="btn btn-default pull-right" ng-show="isEdit" ng-click="isEdit = !isEdit">Cancel</button>
                                                     </div>
-                                                    <div class="form-group col-md-5 col-md-offset-3">
-                                                        <label for="FirstName"> New Password</label>
-                                                        <input type="password" class="form-control" id="newPwd" name="newPwd" ng-model="newPwd" ng-class="{'bckgrnd-clr': (changePassword.newPwd.$error.pattern || changePassword.newPwd.$dirty || changePassword.newPwd.$error.minlength || changePassword.newPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.newPwd.$error.pattern && !changePassword.newPwd.$error.minlength && !changePassword.newPwd.$error.maxlength && !changePassword.newPwd.$error.required)}" placeholder="new Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
-                                                    </div>
-                                                    <div class="form-group col-md-5 col-md-offset-3">
-                                                        <label for="FirstName"> ReType New Password</label>
-                                                        <input type="password" class="form-control" id="reNewPwd" name="reNewPwd" ng-model="reNewPwd" ng-class="{'bckgrnd-clr': (changePassword.reNewPwd.$error.pattern || changePassword.reNewPwd.$dirty || changePassword.reNewPwd.$error.minlength || changePassword.reNewPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.reNewPwd.$error.pattern && !changePassword.reNewPwd.$error.minlength && !changePassword.reNewPwd.$error.maxlength && !changePassword.reNewPwd.$error.required)}" placeholder="re Type Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
-                                                    </div>
-                                                    <button type="submit" id="changePswd_btn" class="btn buttonSubmit col-md-offset-4" ng-disabled="changePassword.$invalid">Update Password</button>
-                                                    <div ng-class="{'alert-danger' : result.status == 2 ,'alert-success': result.status == 1 }">{{result.result }}</div>
-                                                </form>
                                                 </div>
+                                            </form>
+                                        </div>
+
+                                        <div id="password-tab" class="tab-pane">
+                                            <div class="alert alert-danger" role="alert" ng-show="(cngError && !cngSuccess) || (cngError && !cngSuccess)">
+                                                <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                                                <a href="#" class="close" ng-click="cngReset()" aria-label="close">&times;</a>
+                                                <span class="sr-only">Error:</span>
+                                                {{errorMessage}}
+                                            </div>
+                                            <div class="alert alert-success" role="alert" ng-show="(cngSuccess && !cngError) || (cngSuccess && !cngError)">
+                                                <span class="fa fa-check-circle-o" aria-hidden="true"></span>
+                                                <a href="#" class="close" ng-click="cngReset()" aria-label="close">&times;</a>
+                                                <span class="sr-only">Success:</span>
+                                                {{successMessage}}
+                                            </div>
+                                            <form name="changePassword" ng-submit="updatePassword()" class="mgtp-30">
+                                                <div class="row">
+                                                    <div class="col-sm-12 mgtp-10 mgbt-10">
+                                                        <div class="row mgbt-xs-0">
+                                                            <label class="col-xs-2 control-label">Old Password:</label>
+                                                            <div class="col-xs-6 controls">
+                                                                <input type="password" class="form-control" id="oldPwd" name="oldPwd" ng-model="oldPwd" ng-class="{'bckgrnd-clr': (changePassword.oldPwd.$error.pattern || changePassword.oldPwd.$dirty || changePassword.oldPwd.$error.minlength || changePassword.oldPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.oldPwd.$error.pattern && !changePassword.oldPwd.$error.minlength && !changePassword.oldPwd.$error.maxlength && !changePassword.oldPwd.$error.required)}" placeholder="Old Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
+                                                            </div>
+                                                            <div class="col-xs-4 controls">
+                                                                <span class="text-danger" style="float: left;" ng-show="changePassword.oldPwd.$error.required && changePassword.oldPwd.$dirty">Required Field</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!changePassword.oldPwd.$error.required && (changePassword.oldPwd.$error.minlength || changePassword.oldPwd.$error.maxlength) && changePassword.oldPwd.$dirty">Must be between 8 and 20 characters.</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!changePassword.oldPwd.$error.required && !changePassword.oldPwd.$error.minlength && !changePassword.oldPwd.$error.maxlength && changePassword.oldPwd.$error.pattern && changePassword.oldPwd.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character.</span>
+                                                            </div>
+                                                            <!-- col-sm-10 -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12 mgtp-10 mgbt-10">
+                                                        <div class="row mgbt-xs-0">
+                                                            <label class="col-xs-2 control-label">New Password:</label>
+                                                            <div class="col-xs-6 controls">
+                                                                <input type="password" class="form-control" id="newPwd" name="newPwd" ng-model="newPwd" ng-class="{'bckgrnd-clr': (changePassword.newPwd.$error.pattern || changePassword.newPwd.$dirty || changePassword.newPwd.$error.minlength || changePassword.newPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.newPwd.$error.pattern && !changePassword.newPwd.$error.minlength && !changePassword.newPwd.$error.maxlength && !changePassword.newPwd.$error.required)}" placeholder="New Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
+                                                            </div>
+                                                            <div class="col-xs-4 controls">
+                                                                <span class="text-danger" style="float: left;" ng-show="changePassword.newPwd.$error.required && changePassword.newPwd.$dirty">Required Field</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!changePassword.newPwd.$error.required && (changePassword.newPwd.$error.minlength || changePassword.newPwd.$error.maxlength) && changePassword.newPwd.$dirty">Must be between 8 and 20 characters.</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!changePassword.newPwd.$error.required && !changePassword.newPwd.$error.minlength && !changePassword.newPwd.$error.maxlength && changePassword.newPwd.$error.pattern && changePassword.newPwd.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character.</span>
+                                                            </div>
+                                                            <!-- col-sm-10 -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12 mgtp-10 mgbt-10">
+                                                        <div class="row mgbt-xs-0">
+                                                            <label class="col-xs-2 control-label">Password Again:</label>
+                                                            <div class="col-xs-6 controls">
+                                                                <input type="password" class="form-control" id="reNewPwd" name="reNewPwd" ng-model="reNewPwd" ng-class="{'bckgrnd-clr': (changePassword.reNewPwd.$error.pattern || changePassword.reNewPwd.$dirty || changePassword.reNewPwd.$error.minlength || changePassword.reNewPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.reNewPwd.$error.pattern && !changePassword.reNewPwd.$error.minlength && !changePassword.reNewPwd.$error.maxlength && !changePassword.reNewPwd.$error.required)}" placeholder="Enter Password Again" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
+                                                            </div>
+                                                            <div class="col-xs-4 controls">
+                                                                <span class="text-danger" style="float: left;" ng-show="changePassword.reNewPwd.$error.required && changePassword.reNewPwd.$dirty">Required Field</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!changePassword.reNewPwd.$error.required && (changePassword.reNewPwd.$error.minlength || changePassword.reNewPwd.$error.maxlength) && changePassword.reNewPwd.$dirty">Must be between 8 and 20 characters.</span>
+                                                                <span class="text-danger" style="float: left;" ng-show="!changePassword.reNewPwd.$error.required && !changePassword.reNewPwd.$error.minlength && !changePassword.reNewPwd.$error.maxlength && changePassword.reNewPwd.$error.pattern && changePassword.reNewPwd.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character.</span>
+                                                            </div>
+                                                            <!-- col-sm-10 -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 col-sm-offset-3 mgtp-10 mgbt-10">
+                                                        <button type="submit" id="changePswd_btn" class="btn buttonSubmit pull-left" ng-disabled="changePassword.$invalid">Update</button>
+                                                        <button type="button" id="cancleProfile_btn" class="btn btn-default pull-right" ng-show="changePassword.$dirty" ng-click="resetAfterSubmit()">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div id="vehicle-tab" class="tab-pane">
+                                            <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Add </a> </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
 
+
                         </div>
+
                     </div>
                 </div>
-            </div><!-- /tab-section -->
-        </div>
+            </div>
+        </div><!-- /tab-section -->
+    </div>
     </div>
 </section>
 <!-- end section_default -->
