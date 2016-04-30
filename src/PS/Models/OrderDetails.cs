@@ -14,7 +14,7 @@ namespace PS.Models
         private string _invoiceNo;
         public string InvoiceNo {
 
-            get { 
+            get {
                 return _invoiceNo;
             }
 
@@ -26,11 +26,24 @@ namespace PS.Models
                 _invoiceNo = orderCount.ToString() + date.ToString("MM") + date.ToString("dd");
             }
         }
-      //  public List<PS.Models.Services> selectedServices { get; set; }
+        public Service selectedServices { get; set; }
         public CarDetails selectedCar { get; set; }
         public Appointment selectedAppointment { get; set; }
         public User userDetails { get; set; }
     }
+
+    //public class UserServices
+    //{
+    //    public List<Service> service { get; set; }
+    //}
+
+    public class Service
+    {
+        public string Name { get; set; }
+        public string Question { get; set; }
+        public string Answer { get; set; }
+    }
+
 
     public class CarDetails
     {

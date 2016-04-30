@@ -58,11 +58,11 @@ namespace PS.Controllers
 
         [HttpPost]
         [Route("order")]
-        public IActionResult Post([FromBody] OrderDetails userServiceData)
+        public IActionResult Post([FromBody] OrderDetails model)
         {
 
             try {
-                repo.insertDocument("orders", "Invoice", userServiceData);
+                repo.insertDocument("orders", "Invoice", model);
                 return new HttpOkObjectResult("");
             }
             catch(Exception e)

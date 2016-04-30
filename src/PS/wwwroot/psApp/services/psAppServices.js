@@ -63,7 +63,11 @@
         return $http.get("/api/services/all");
     }
     var _submitOrder = function (city, area) {
-        var data = {"selectedServices": userServiceData.selectedServices,"InvoiceNo":"","PaymentMode":userServiceData.PaymentMode,"selectedCentre": userServiceData.selectedCentre ,"selectedCar": userServiceData.selectedCar, "selectedAppointment": userServiceData.selectedAppointment, "userDetails": userServiceData.userDetails, };
+        var service = {};
+        service.Name = userServiceData.selectedServices[0].name;
+        service.Question = userServiceData.selectedServices[0].questions[0].question;
+        service.Answer = userServiceData.selectedServices[0].questions[0].ans[0];
+        var data = { "selectedServices": service, "InvoiceNo": "", "PaymentMode": userServiceData.PaymentMode, "selectedCentre": userServiceData.selectedCentre, "selectedCar": userServiceData.selectedCar, "selectedAppointment": userServiceData.selectedAppointment, "userDetails": userServiceData.userDetails };
         return $http(
         {
             url: "/api/services/order",
