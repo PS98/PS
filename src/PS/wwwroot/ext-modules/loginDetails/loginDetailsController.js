@@ -64,6 +64,24 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                         //Success
                         if (result.status == 0) {
                             $scope.resetAfterSubmit();
+                            $scope.userDetails.firstName = result.result[2];
+                            $scope.userDetails.lastName = result.result[3];
+                            $scope.userDetails.userName = $scope.userDetails.firstName + " " + $scope.userDetails.lastName;
+                            $scope.userDetails.imageUrl = "/assets/img/icon-user-default.png";
+                            $scope.userDetails.email = result.result[1];
+                            $scope.userDetails.phoneNo = result.result[4];
+                    $scope.isLoggedIn = true;
+                    $scope.loginError = false;
+                    $localStorage.userDetails = $scope.userDetails;
+                    $rootScope.$broadcast("ps-user-profile-show",
+                       {
+                           isLoggedIn: $scope.isLoggedIn,
+                           userDetails: $scope.userDetails
+                       });
+                    $("#loginModal").modal('toggle');
+
+
+                           
                             $scope.regSuccess = true;
                             $scope.regError = false;
                             $scope.successMessage = result.message;
