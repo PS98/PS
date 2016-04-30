@@ -218,7 +218,39 @@ namespace PS.Controllers
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 2 });
         }
+        [HttpPost]
+        public JsonResult ChangePassword(ChangePasswordViewModel changeModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = _auth.changePassword(changeModel);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    if (result.Equals("S"))
+                    {
+                        return Json(new { Result = "Your password updated successfully", Status = 1 });
+                        }
+                    else
+                    {
+                        return Json(new { Result = "Old password doesn't match", Status = 2 });
 
+                        }
+
+                }
+                else
+                {
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Result = "Please fill All Required Details",Status=3 });
+                } 
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+          
+        }
         private static string RandomString(int length)
         {
             const string chars = "0123456789";

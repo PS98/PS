@@ -124,7 +124,37 @@ namespace PS.Services
                 throw;
             }
         }
+        public string changePassword(ChangePasswordViewModel data)
+        {
+            try
+            {
+                List<string> res = new List<string>();
+                if (!string.IsNullOrEmpty(data.Email))
+                {
+                    var modelList = _repo.GetCollection<Customer>("customer");
 
+                    foreach (var doc in modelList.Find(new BsonDocument()).ToListAsync().Result.Where(x=>x.Email.ToLower() == data.Email.ToLower()))
+                    {
+                        if (doc.Password.Equals(data.OldPassword)) { 
+                            var filter = Builders<Customer>.Filter.Eq("Email", doc.Email);
+                            var update = Builders<Customer>.Update
+                                .Set("Password", data.NewPassword);
+                            var result = modelList.UpdateOneAsync(filter, update);
+                            return "S";
+                        }
+                        else
+                        {
+                            return "E";
+                        }
+                    }
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         private static string RandomString(int length)
         {
             const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
