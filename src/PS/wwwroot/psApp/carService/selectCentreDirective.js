@@ -4,11 +4,11 @@ angular.module("psApp").directive("selectCentre", function () {
     return {
         templateUrl: "psApp/carService/selectCentre.html",
         link: function (scope, element, attrs) {
-            initializeGoogleMap("", 'mapholder', "", false, scope.MapCallback);
+          initializeGoogleMap("", 'mapholder', "", false, scope.MapCallback);
             $('.jelect').jelect();
            
         },
-        controller: ["$scope", "psDataServices", "$state", function ($scope, psDataServices, $state) {
+        controller: ["$scope", "psDataServices", "$state", "$localStorage", function ($scope, psDataServices, $state, $localStorage) {
             $scope.state = $state;
           //  $scope.$parent.state = $state;
            // $scope.center.services = [['Tyers', 'MOT', 'Servicing', 'betteries', 'Breaks ', 'Exhausts'], ['Air-conditioning recharge', 'Shock Absorbers', 'Nitrogern Filled Tyres']];
@@ -27,6 +27,7 @@ angular.module("psApp").directive("selectCentre", function () {
             $scope.getCentreDetails = function (area) {
                 if(!area)
                     area = $scope.area;
+                $localStorage.userData.area = area;
 
                 if (area.toLowerCase() !== "select area") {
                     psDataServices.getServiceCentreList($scope.city, area).
@@ -40,7 +41,7 @@ angular.module("psApp").directive("selectCentre", function () {
                                 $scope.recommendedCentre = $scope.centreList[0];
                                 //$scope.centreList = $scope.centreList.slice(1);
                                 $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
-                                setMarkers($scope.map, $scope.centreList, $scope.markerClick);
+                               setMarkers($scope.map, $scope.centreList, $scope.markerClick);
                             } else {
                                 $scope.noCentreMatch = true;
                                 $scope.centreList = [];
@@ -63,10 +64,12 @@ angular.module("psApp").directive("selectCentre", function () {
             });
 
             $scope.getServiceCentreArea = function () {
+                $localStorage.userData.city = $scope.city;
                 if ($scope.city.toLowerCase() !== "select city") {
                     psDataServices.getServiceCentreArea($scope.city).success(function (data) {
                         removemarker();
                         $scope.car.centreArea = data;
+
                         if ($scope.car.centreArea.includes($scope.googleMapArea)) {
                             $scope.area = $scope.googleMapArea;
                             $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
@@ -98,7 +101,8 @@ angular.module("psApp").directive("selectCentre", function () {
             }
             $scope.MapCallback = function (city, area) {
                 $scope.googleMapArea = area;
-
+                $localStorage.userData.area = area;
+                $localStorage.userData.city = city;
                 if ($scope.car.centreCity.includes(city)) {
                     $scope.city = city;
 
@@ -110,6 +114,14 @@ angular.module("psApp").directive("selectCentre", function () {
             }
             function removemarker() {
                 removeMarker();
+            }
+            if ($localStorage.userData.area) {
+                $('.select.jelect').find('#cityDropDown').text($localStorage.userData.city);
+                $('.select.jelect').find('#areaDropDown').text($localStorage.userData.area);
+
+                $scope.city = $localStorage.userData.city;
+                $scope.getServiceCentreArea();
+                $scope.getCentreDetails($localStorage.userData.area);
             }
            
         }]

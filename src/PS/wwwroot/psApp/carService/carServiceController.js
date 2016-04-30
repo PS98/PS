@@ -1,10 +1,10 @@
 ﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "$timeout", "$localStorage", "$rootScope", "psDataServices", function ($scope, $state, $timeout, $localStorage, $rootScope, psDataServices) {
 
-    $scope.center = {}; $localStorage.userSelection = $localStorage.userSelection || {};
+    $scope.center = {}; $localStorage.userData = $localStorage.userData || {};
     $scope.searchedText = {};    $scope.state = $state;
     var custRequest = { name: " Describe your problem here", type: [], addText: true };
     var prevMode, preService = [];
-    $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = $localStorage.userSelection;// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
+    $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = $localStorage.userData.car || {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
     $scope.selectBrand = function (brandName) {
@@ -58,7 +58,7 @@
               $scope.carList.carVarientList = { };
 
         }
-        $localStorage.userSelection = $scope.selectedCar;
+        $localStorage.userData.car = $scope.selectedCar;
 
     }
     $scope.selectVarient = function (varient) {
@@ -69,7 +69,7 @@
             $scope.selectedCar.varient = "I Don't Know";
 
         }
-        $localStorage.userSelection = $scope.selectedCar;
+        $localStorage.userData.car = $scope.selectedCar;
         $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
         $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
          psDataServices.setSelectedCarAndService($scope.selectedCar);
@@ -168,39 +168,39 @@
        });
 
     function fetchServiceDetails() {
-        psDataServices.getAllService().
-            success(function(data) {
-                $scope.services = data;
-                $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
-                $scope.commonServices = $scope.services.serviceDetails[0];
-                $scope.car.services = [];
-                if ($localStorage.userSelection.brand) {
-                    getCarType($localStorage.userSelection.brand).then(function () {
-                        getCarVarient($localStorage.userSelection.brand, $localStorage.userSelection.model).
-                            success(function (data) {
-                                $scope.carList.carVarientList = data;
-                                $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
-                                $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
-                                psDataServices.setSelectedCarAndService($scope.selectedCar);
-                        }).error(function () {
-                            $scope.selectVarient("");
-                        });;
-                    })
-                }
-                else {
-                    $scope.showBrandName = true;
-                }
-                $timeout(function() {
-                    $.each($scope.services.serviceDetails, function(i, val) {
-                        $.each(val, function (j, value) {
-                            if ($scope.services.serviceName[i] === "Common Services" || $scope.services.serviceName[i] === "Scheduled Maintenance")
-                            value.isSingleSelectJob = true;
-                           $scope.car.services.push(value);
+            psDataServices.getAllService().
+                success(function (data) {
+                    $scope.services = data;
+                    $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+                    $scope.commonServices = $scope.services.serviceDetails[0];
+                    $scope.car.services = [];
+                    if ($scope.selectedCar.brand) {
+                        getCarType($scope.selectedCar.brand).then(function () {
+                            getCarVarient($scope.selectedCar.brand, $scope.selectedCar.model).
+                                success(function (data) {
+                                    $scope.carList.carVarientList = data;
+                                    $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
+                                    $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+                                    psDataServices.setSelectedCarAndService($scope.selectedCar);
+                                }).error(function () {
+                                    $scope.selectVarient("");
+                                });;
+                        })
+                    }
+                    else {
+                        $scope.showBrandName = true;
+                    }
+                    $timeout(function () {
+                        $.each($scope.services.serviceDetails, function (i, val) {
+                            $.each(val, function (j, value) {
+                                if ($scope.services.serviceName[i] === "Common Services" || $scope.services.serviceName[i] === "Scheduled Maintenance")
+                                    value.isSingleSelectJob = true;
+                                $scope.car.services.push(value);
+                            });
                         });
-                    });
-                },200);
-            }).error(function() {
-            });
+                    }, 200);
+                }).error(function () {
+                });
     }
 
     $scope.showDetails = function (types) {
