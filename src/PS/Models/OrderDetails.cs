@@ -10,6 +10,8 @@ namespace PS.Models
         public static int orderCount = 0;
         public MongoDB.Bson.ObjectId _id { get; set; }
         public string PaymentMode { get; set; }
+        public string PaymentId { get; set; }
+        public string PaymentRequestId { get; set; }
         public Centre selectedCentre { get; set; }
         private string _invoiceNo;
         public string InvoiceNo {

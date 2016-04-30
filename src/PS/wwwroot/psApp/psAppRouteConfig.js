@@ -86,10 +86,11 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    state: "orderSuccess",
                    config: {
                        url: "/Success",
+                       controller: "selectAddressController",
                        template: "<order-summary></order-summary>"
                    }
                },
-                  
+
                {
                    state: "socialCallback",
                    config: {

@@ -62,12 +62,12 @@
     var _getAllService = function (city, area) {
         return $http.get("/api/services/all");
     }
-    var _submitOrder = function (city, area) {
+    var _submitOrder = function (payment_id, payment_request_id) {
         var service = {};
         service.Name = userServiceData.selectedServices[0].name;
         service.Question = userServiceData.selectedServices[0].questions[0].question;
         service.Answer = userServiceData.selectedServices[0].questions[0].ans[0];
-        var data = { "selectedServices": service, "InvoiceNo": "", "PaymentMode": userServiceData.PaymentMode, "selectedCentre": userServiceData.selectedCentre, "selectedCar": userServiceData.selectedCar, "selectedAppointment": userServiceData.selectedAppointment, "userDetails": userServiceData.userDetails };
+        var data = { "selectedServices": service, "InvoiceNo": "", "PaymentMode": userServiceData.PaymentMode, "PaymentId": payment_id, "PaymentRequestId": payment_request_id, "selectedCentre": userServiceData.selectedCentre, "selectedCar": userServiceData.selectedCar, "selectedAppointment": userServiceData.selectedAppointment, "userDetails": userServiceData.userDetails };
         return $http(
         {
             url: "/api/services/order",
@@ -75,9 +75,9 @@
             data: data
         });
     }
-    var _payment = function (name, purpose, amount, email, phone, send_email, send_sms) {
+    var _payment = function () {
         var deferred = $q.defer();
-        $http.post("/api/Auth/ProcessPayment?name=" + name + "&purpose=" + purpose + "&amount=" + amount + "&email=" + email + "&phone=" + phone + "&send_email=" + send_email + "&send_sms=" + send_sms)
+        $http.post("/api/Auth/ProcessPayment?name=" + userServiceData.userDetails.userName + "&purpose=" + "MileMates Service Payment" + "&amount=" + userServiceData.selectedCentre.totalPrice + "&email=" + userServiceData.userDetails.email + "&phone=" + userServiceData.userDetails.phoneNo + "&send_email=" + false + "&send_sms=" + false)
          .then(function (result) {
              //Success
              deferred.resolve(result.data);

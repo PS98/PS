@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using PS.Services;
 using PS.Models;
+using System.Net;
+using Newtonsoft.Json;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,6 +16,19 @@ namespace PS.Controllers
     public class ServicesController : Controller
     {
         private MongoRepository repo = new MongoRepository("services");
+        private readonly IAuthService _auth;
+        private readonly IEmailSender _emailSender;
+        public AuthSocialLoginOptions Options { get; }
+        private readonly ISmsSender _smsSender;
+        private IPaymentProcessor _paymentProcessor;
+
+        public ServicesController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor)
+        {
+            _auth = auth;
+            _emailSender = emailSender;
+            _smsSender = smsSender;
+            _paymentProcessor = paymentProcessor;
+        }
 
         // GET: api/values
         [HttpGet]
@@ -77,18 +92,6 @@ namespace PS.Controllers
                 return new ObjectResult(error);
             }
 
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
