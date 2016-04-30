@@ -10,12 +10,10 @@ namespace PS.Models
     {
         [Required]
         [Display(Name = "name")]
-        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         public string name { get; set; }
 
         [Required]
         [Display(Name = "purpose")]
-        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         public string purpose { get; set; }
 
         [Required]
