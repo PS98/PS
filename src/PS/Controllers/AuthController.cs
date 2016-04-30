@@ -81,21 +81,21 @@ namespace PS.Controllers
                     {
                         model.Created = DateTime.UtcNow;
                     }
-                    int result = _auth.register(model);
-                    if(result == 0)
+                    var result = _auth.register(model);                    
+                    if(result[0] == "0")
                     {
                         Response.StatusCode = (int)HttpStatusCode.Created;
-                        return Json(new { Message = "User registered Successfully.", Status = result });
+                        return Json(new { Message = "User registered Successfully.", Result = result, Status = 0 });
                     }
-                    else if(result == 1)
+                    else if(result[0] == "1")
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "Your email address already registered with us.", Status = result });
+                        return Json(new { Message = "Your email address already registered with us.", Status = 1 });
                     }
                     else
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "Error while processing your request. Please try again later.", Status = result });
+                        return Json(new { Message = "Error while processing your request. Please try again later.", Status = 2 });
                     }
                     
                 }

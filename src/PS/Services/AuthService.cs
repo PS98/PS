@@ -65,8 +65,9 @@ namespace PS.Services
             }
         }
 
-        public int register(RegisterViewModel data)
+        public List<string> register(RegisterViewModel data)
         {
+            List<string> res = new List<string>();
             try {
                 if (!string.IsNullOrEmpty(data.FirstName) && !string.IsNullOrEmpty(data.LastName) && !string.IsNullOrEmpty(data.Email) && !string.IsNullOrEmpty(data.Password))
                 {
@@ -75,7 +76,8 @@ namespace PS.Services
                     {
                         if (m.Email.ToLower() == data.Email.ToLower())
                         {
-                            return 1;
+                            res.Add("1");                 
+                            return res;
                         }
                     }
                     var collection = _repo.GetCollection<Customer>("customer");
@@ -86,9 +88,15 @@ namespace PS.Services
                     c.Mobile = data.Mobile;
                     c.Password = data.Password;
                     collection.InsertOneAsync(c);
-                    return 0;
+                    res.Add("0");
+                    res.Add(data.Email);
+                    res.Add(data.FirstName);
+                    res.Add(data.LastName);
+                    res.Add(data.Mobile);
+                    return res;
                 }
-                return 2;
+                res.Add("2");
+                return res;
             }
             catch (Exception)
             {

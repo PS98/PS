@@ -9,7 +9,7 @@ namespace PS.Services
     public interface IAuthService
     {
         List<string> login(LoginViewModel data);
-        int register(RegisterViewModel data);
+        List<string> register(RegisterViewModel data);
         string forgotPassword(ForgotPasswordViewModel data);
         string changePassword(ChangePasswordViewModel data);
         List<string> SocialLogin(dynamic type);
