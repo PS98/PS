@@ -132,6 +132,36 @@ namespace PS.Services
                 throw;
             }
         }
+
+        public string updateProfile(UpdateUserProfileViewModel data)
+        {
+            try
+            {
+                List<string> res = new List<string>();
+                if (!string.IsNullOrEmpty(data.Email))
+                {
+                    var modelList = _repo.GetCollection<Customer>("customer");
+
+                    foreach (var doc in modelList.Find(new BsonDocument()).ToListAsync().Result.Where(x => x.Email.ToLower() == data.Email.ToLower()))
+                    {                        
+                            var filter = Builders<Customer>.Filter.Eq("Email", doc.Email);
+                            var update = Builders<Customer>.Update
+                                .Set("FirstName", data.FirstName)
+                                .Set("LastName",data.LastName)
+                                .Set("Mobile", data.Mobile);
+                            var result = modelList.UpdateOneAsync(filter, update);
+                            return "S";                       
+                    }
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
         public string changePassword(ChangePasswordViewModel data)
         {
             try

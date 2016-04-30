@@ -98,6 +98,22 @@
 
        return deferred.promise;
    };
+
+   var _updateProfile = function (data) {
+       var deferred = $q.defer();
+       $http.post("/api/Auth/UpdateProfile?firstName=" + data.firstName + "&lastName=" + data.lastName + "&mobile=" + data.mobile + "&email=" + data.email)
+        .then(function (result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
+
+       return deferred.promise;
+
+   };
+
    var _updatePassword = function (data) {
        var deferred = $q.defer();
        $http.post("/api/Auth/ChangePassword?email=" + data.email + "&oldPassword=" + data.oldPassword + "&newPassword=" + data.newPassword)
@@ -120,6 +136,7 @@
        socialCallback: _socialCallback,
        mobileVerification: _mobileVerification,
        subscribe: _subscribe,
-       updatePassword: _updatePassword
+       updatePassword: _updatePassword,
+       updateProfile: _updateProfile
    };   
 }])

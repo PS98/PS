@@ -218,6 +218,44 @@ namespace PS.Controllers
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 2 });
         }
+
+
+        [HttpPost]
+        public JsonResult UpdateProfile(UpdateUserProfileViewModel changeModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = _auth.updateProfile(changeModel);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    if (result.Equals("S"))
+                    {
+                        return Json(new { Result = "Your Details updated successfully", Status = 1 });
+                    }
+                    else
+                    {
+                        return Json(new { Result = "Could not update Details", Status = 2 });
+
+                    }
+
+                }
+                else
+                {
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Result = "Please fill All Required Details", Status = 3 });
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+
+        }
+
+
+
         [HttpPost]
         public JsonResult ChangePassword(ChangePasswordViewModel changeModel)
         {
