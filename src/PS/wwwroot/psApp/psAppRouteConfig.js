@@ -1,7 +1,9 @@
 ﻿"use strict";
 
-angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider",
-    function ($stateProvider, $urlRouterProvider, $locationProvider) {
+angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider",
+    function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+
+        $httpProvider.interceptors.push('LoadingInterceptor');
 
         var routes = [
              {

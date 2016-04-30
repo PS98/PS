@@ -1,4 +1,4 @@
-﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "$timeout", "$localStorage", "psDataServices", function ($scope, $state, $timeout, $localStorage, psDataServices) {
+﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "$timeout", "$localStorage", "$rootScope", "psDataServices", function ($scope, $state, $timeout, $localStorage, $rootScope, psDataServices) {
 
     $scope.center = {}; $localStorage.userSelection = $localStorage.userSelection || {};
     $scope.searchedText = {};    $scope.state = $state;
