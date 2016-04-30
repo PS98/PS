@@ -57,7 +57,7 @@ namespace PS.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public string MobileNo { get; set; }
+        public string PhoneNo { get; set; }
         public string FormattedAddress { get; set; }
         public string AddressLine1 { get; set; }
 
