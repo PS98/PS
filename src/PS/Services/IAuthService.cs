@@ -11,7 +11,7 @@ namespace PS.Services
         List<string> login(LoginViewModel data);
         int register(RegisterViewModel data);
         string forgotPassword(ForgotPasswordViewModel data);
-
+        string changePassword(ChangePasswordViewModel data);
         List<string> SocialLogin(dynamic type);
         int SubcribeUser(dynamic data);
     }

@@ -98,6 +98,20 @@
 
        return deferred.promise;
    };
+   var _updatePassword = function (data) {
+       var deferred = $q.defer();
+       $http.post("/api/Auth/ChangePassword?email=" + data.email + "&oldPassword=" + data.oldPassword + "&newPassword=" + data.newPassword)
+        .then(function (result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
+
+       return deferred.promise;
+       
+   }
    return {
        login: _login,
        register: _register,
@@ -105,6 +119,7 @@
        socialLogin: _socialLogin,
        socialCallback: _socialCallback,
        mobileVerification: _mobileVerification,
-       subscribe: _subscribe
+       subscribe: _subscribe,
+       updatePassword: _updatePassword
    };   
 }])

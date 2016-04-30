@@ -1,5 +1,6 @@
-﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "psDataServices",
-function ($scope, $localStorage, psDataServices) {
+﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "psDataServices", "psLoginService",
+function ($scope, $localStorage, psDataServices, psLoginService) {
+    $scope.userDetails = {};
     if (psDataServices.getuserDetails())
         $scope.userDetails = psDataServices.getuserDetails();
     $scope.oldNo = $localStorage.userDetails.phoneNo;
@@ -10,4 +11,15 @@ function ($scope, $localStorage, psDataServices) {
     //        $scope.otpHide = false;
     //    }
     //});
+    $scope.updatePassword = function () {
+        var data = { "oldPassword": $scope.oldPwd, "newPassword": $scope.newPwd, "email": $scope.userDetails.email }
+        psLoginService.updatePassword(data)
+ .then(function (result) {
+     //Success
+     $scope.result = result;
+ }, function (error) {
+ });
+        //Error
+
+    }
 }]);
