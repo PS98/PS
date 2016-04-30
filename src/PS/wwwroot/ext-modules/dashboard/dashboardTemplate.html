@@ -142,16 +142,16 @@
                                                             <div class="mobile_validation" ng-show="profileForm.mobile.$valid && userDetails.phoneNo !== oldNo">
                                                                 <label class="col-xs-2 control-label">OTP Code:</label>
                                                                 <div class="col-xs-6 controls">
-                                                                    <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-class="{'bckgrnd-clr': (profileForm.addressOtp.$dirty || profileForm.addressOtp.$error.minlength || profileForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!profileForm.addressOtp.$error.minlength && !profileForm.addressOtp.$error.maxlength && !profileForm.addressOtp.$error.required)}" placeholder="Enter OTP Code Here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
+                                                                    <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-class="{'bckgrnd-clr': (profileForm.addressOtp.$dirty || profileForm.addressOtp.$error.minlength || profileForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!profileForm.addressOtp.$error.minlength && !profileForm.addressOtp.$error.maxlength && !profileForm.addressOtp.$error.required)}" placeholder="Enter OTP Code Here"  ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
                                                                 </div>
                                                                 <div class="col-xs-4 controls">
-                                                                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info pull-left" style="width: 40%; text-align: center; float: right;" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                                                                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info pull-left" style="width: 46%; text-align: center; float: right;" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4 col-sm-offset-3 mgtp-10 mgbt-10">
-                                                        <button type="submit" id="updateProfile_btn" class="btn buttonSubmit pull-left" ng-show="isEdit" ng-disabled="profileForm.$invalid">Update</button>
+                                                        <button type="submit" id="updateProfile_btn" class="btn buttonSubmit pull-left" ng-show="isEdit" ng-disabled="profileForm.$invalid ||(!profileForm.lastname.$dirty && !profileForm.firstname.$dirty && !profileForm.addressOtp.$dirty)">Update</button>
                                                         <button type="submit" id="cancleProfile_btn" class="btn btn-default pull-right" ng-show="isEdit" ng-click="isEdit = !isEdit">Cancel</button>
                                                     </div>
                                                 </div>
