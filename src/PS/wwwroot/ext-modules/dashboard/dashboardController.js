@@ -2,6 +2,7 @@
 function ($scope, $localStorage, psDataServices) {
     if (psDataServices.getuserDetails())
         $scope.userDetails = psDataServices.getuserDetails();
+    $scope.oldNo = $localStorage.userDetails.phoneNo;
     //$scope.$watch('$scope.userDetails.phoneNo', function () {
     //    if ($localStorage.userDetails.phoneNo == $scope.userDetails.phoneNo) {
     //        $scope.otpHide = true;

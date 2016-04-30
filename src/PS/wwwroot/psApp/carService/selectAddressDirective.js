@@ -61,7 +61,7 @@ angular.module("psApp").directive("selectAddress", function () {
         },
         controller: ["$scope", "$window","$state", "$localStorage", "psDataServices", function ($scope, $window,$state, $localStorage, psDataServices) {
             $scope.payNow = true;           
-            $scope.oldNumber = $localStorage.userDetails.phoneNo;
+            $scope.oldNumber =$localStorage.userDetails? $localStorage.userDetails.phoneNo :undefined;
             $scope.checkMobileNumber = function () {               
                 if ($localStorage.userDetails.phoneNo == $scope.oldNumber) {
                     $('.mobile_validation').hide();
