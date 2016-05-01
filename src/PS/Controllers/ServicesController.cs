@@ -64,11 +64,24 @@ namespace PS.Controllers
             return serviceList;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpPost]
+        [Route("validateOrder")]
+        public JsonResult Post([FromBody] PaymentValidateModel model)
         {
-            return "value";
+            try
+            {
+                var res = _paymentProcessor.ValidateOrder(model.PaymentId, model.PaymentRequestId);
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                var data = JsonConvert.DeserializeAnonymousType(res.Content, new PaymentValidateResponseModel());
+                return Json(new { Status = 0, Result = data });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            //Response.StatusCode = (int)HttpStatusCode.OK;
+            //return Json(new { Message = "We are unable to process your request.", Status = 1 });
         }
 
         [HttpPost]
@@ -80,7 +93,7 @@ namespace PS.Controllers
                 repo.insertDocument("orders", "Invoice", model);
                 return new HttpOkObjectResult("");
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 //internal information.
                 var error = new

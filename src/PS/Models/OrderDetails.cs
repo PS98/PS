@@ -12,6 +12,7 @@ namespace PS.Models
         public string PaymentMode { get; set; }
         public string PaymentId { get; set; }
         public string PaymentRequestId { get; set; }
+        public PaymentValidateResponseModel PaymentResponse { get; set; }        
         public Centre selectedCentre { get; set; }
         private string _invoiceNo;
         public string InvoiceNo {

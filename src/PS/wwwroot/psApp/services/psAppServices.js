@@ -62,12 +62,23 @@
     var _getAllService = function (city, area) {
         return $http.get("/api/services/all");
     }
-    var _submitOrder = function (payment_id, payment_request_id) {
+
+    var _validateOrder = function (payment_id, payment_request_id) {
+        var data = { 'PaymentId': payment_id, 'PaymentRequestId': payment_request_id }
+        return $http(
+        {
+            url: "/api/services/validateOrder",
+            method: "POST",
+            data: data
+        });
+    }
+
+    var _submitOrder = function (payment_id, payment_request_id, response) {
         var service = {};
-        service.Name = userServiceData.selectedServices[0].name;
-        service.Question = userServiceData.selectedServices[0].questions[0].question;
-        service.Answer = userServiceData.selectedServices[0].questions[0].ans[0];
-        var data = { "selectedServices": service, "InvoiceNo": "", "PaymentMode": userServiceData.PaymentMode, "PaymentId": payment_id, "PaymentRequestId": payment_request_id, "selectedCentre": userServiceData.selectedCentre, "selectedCar": userServiceData.selectedCar, "selectedAppointment": userServiceData.selectedAppointment, "userDetails": userServiceData.userDetails };
+        service.Name = "Essential Car Care";
+        service.Question = "oil?";
+        service.Answer = "regular";
+        var data = { "selectedServices": service, "InvoiceNo": "", "PaymentMode": userServiceData.PaymentMode, "PaymentId": payment_id, "PaymentRequestId": payment_request_id, "PaymentResponse": response, "selectedCentre": userServiceData.selectedCentre, "selectedCar": userServiceData.selectedCar, "selectedAppointment": userServiceData.selectedAppointment, "userDetails": userServiceData.userDetails };
         return $http(
         {
             url: "/api/services/order",
@@ -105,6 +116,7 @@
         setPaymentMode:_setPaymentMode,
         getuserDetails: _getuserDetails,
         payment: _payment,
+        validateOrder: _validateOrder,
         submitOrder: _submitOrder
 }
           

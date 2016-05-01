@@ -29,21 +29,26 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices) {
         }
         else {
             psDataServices.setPaymentMode("COD");
-            $scope.orderSubmit("", "");
+            $scope.orderSubmit("", "", "");
         }
     }
 
-    $scope.orderSubmit = function (payment_id, payment_request_id) {
-        psDataServices.submitOrder(payment_id, payment_request_id).success(function () {
+    $scope.orderSubmit = function (payment_id, payment_request_id, result) {
+        psDataServices.submitOrder(payment_id, payment_request_id, result).success(function () {
             $state.go("orderSuccess");
         }).error(function () {
             alert('error');
         })
     }
-
     var returnData = $location.search();
-    if (returnData.payment_id != null && returnData.payment_request_id !=null)
-        $scope.orderSubmit(returnData.payment_id, returnData.payment_request_id);
+    if (returnData.payment_id != null && returnData.payment_request_id !=null){
+        psDataServices.validateOrder(returnData.payment_id, returnData.payment_request_id).success(function (data) {
+            if(data.status == 0 && data.result.success == true)
+                $scope.orderSubmit(returnData.payment_id, returnData.payment_request_id, data.result);
+        }).error(function () {
+            alert('error');
+        })    
+    }
 
 
 }]);

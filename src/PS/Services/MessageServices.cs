@@ -99,6 +99,19 @@ namespace PS.Services
             return a;
         }
 
+        public RestResponse ValidateOrder(string pId, string pReqId)
+        {
+            RestClient client = new RestClient();
+
+            client.BaseUrl = new Uri(Options.payment.BaseUrl + pReqId + "/" + pId, UriKind.Absolute);
+            RestRequest request = new RestRequest();
+            request.AddHeader("X-Api-Key", Options.payment.XApiKey);
+            request.AddHeader("X-Auth-Token", Options.payment.XAuthToken);
+            request.Method = Method.POST;
+            var a = (RestResponse)client.Execute(request);
+            return a;
+        }
+
         public RestResponse OrderPayment(string name, string purpose, int amount, string email, string phone, bool send_email, bool send_sms)
         {
             RestClient client = new RestClient();
