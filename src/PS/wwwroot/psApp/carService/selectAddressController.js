@@ -34,8 +34,15 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices) {
     }
 
     $scope.orderSubmit = function (payment_id, payment_request_id, result) {
-        psDataServices.submitOrder(payment_id, payment_request_id, result).success(function () {
-            $state.go("orderSuccess");
+        psDataServices.submitOrder(payment_id, payment_request_id, result).success(function (data) {
+            if(status == 0) {
+                $scope.receivedOrder = result;
+                $state.go("orderSuccess");
+            }
+            else if (status == 1 || status == 2) {
+                $scope.orderErrorMessage = result;
+                $state.go("orderError");
+            }
         }).error(function () {
             alert('error');
         })

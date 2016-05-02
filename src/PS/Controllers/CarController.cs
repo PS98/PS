@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using PS.Services;
 using PS.Models;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -55,8 +56,19 @@ namespace PS.Controllers
 
         // POST api/car
         [HttpPost]
-        public void Post([FromBody]string value)
+        [Route("save")]
+        public JsonResult UpdateCarPreference([FromBody]UserPreference model)
         {
+            try {
+              var result =  _repo.UpdateCarDetailsIntoCollection(model.CustType, model);
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = "Your car preference is saved successfully.", Status = 1 });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = "Sorry we are unable to save you preference.Please try after some time", Status = 2 });
+            }
         }
 
         // PUT api/car/5

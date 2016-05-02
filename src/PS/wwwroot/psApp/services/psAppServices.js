@@ -100,6 +100,16 @@
         return deferred.promise;
     }
 
+    var _setUserPreference = function () {
+        var data = { "carDetails": userServiceData.selectedCar, "CustType": "M", "Email": $localStorage.userDetails.email }
+        return $http(
+       {
+           url: "/api/car/save",
+           method: "POST",
+           data: data
+       });
+    }
+
     return {
         getAllCarColletion: _getAllCarCollection,
         getCarType: _getCarType,
@@ -117,7 +127,8 @@
         getuserDetails: _getuserDetails,
         payment: _payment,
         validateOrder: _validateOrder,
-        submitOrder: _submitOrder
+        submitOrder: _submitOrder,
+        setUserPreference:_setUserPreference
 }
           
     

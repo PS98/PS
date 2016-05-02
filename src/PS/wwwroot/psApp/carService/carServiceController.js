@@ -259,6 +259,11 @@
         return psDataServices.getCarVarient(brand, model);
                    
     }
+
+    $scope.setDefault = function () {
+        psDataServices.setUserPreference();
+    }
+
 }]);
 
 

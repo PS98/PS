@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Reflection;
 //using MongoDB.Driver.Builders;
 using PS.Models;
+using PS.Api.Model;
 
 namespace PS.Services
 {
@@ -75,7 +76,7 @@ namespace PS.Services
             var yearsList = new List<int>();
             int take, skip, divisor;
             var currYear = DateTime.Now.Year;
-            for(int i = 1990; i<= currYear; i++)
+            for (int i = 1990; i <= currYear; i++)
             {
                 yearsList.Add(i);
             }
@@ -96,12 +97,56 @@ namespace PS.Services
 
             return listAll;
         }
-        public async void insertDocument(string databaseName,string collectionName, dynamic data )
+        public async void insertDocument<T>(string databaseName, string collectionName, T data)
         {
 
             _database = _client.GetDatabase(databaseName);
-            var collection = _database.GetCollection<OrderDetails>(collectionName);
+            var collection = _database.GetCollection<T>(collectionName);
             await collection.InsertOneAsync(data);
         }
+
+        public string UpdateCarDetailsIntoCollection(string custType, UserPreference model)
+        {
+            var repo = new MongoRepository("auth");
+
+            var filterDic = new Dictionary<string, string>();
+            filterDic.Add("Email", model.Email);
+
+            var updateDic = new Dictionary<string, object>();
+            updateDic.Add("CarDetails", model.carDetails);
+
+            if (custType.Equals("F"))
+            {
+                var facebookCollection = repo.GetCollection<FacebookUserProfile>("Facebook Customer");
+                UpdateDocumentWithFilter(filterDic, updateDic, facebookCollection);
+                return "S";
+            }
+            else if (custType.Equals("G"))
+            {
+                var googleCollection = repo.GetCollection<GoogleUserProfile>("Facebook Customer");
+                UpdateDocumentWithFilter(filterDic, updateDic, googleCollection);
+                return "S";
+            }
+
+            var collection = repo.GetCollection<Customer>("customer");
+            UpdateDocumentWithFilter(filterDic, updateDic, collection);
+            return "S";
+
+        }
+
+        public void UpdateDocumentWithFilter<T>(Dictionary<string, string> filterDic, Dictionary<string, object> updateDic, IMongoCollection<T> collection)
+        {
+            try
+            {
+                var filter = Builders<T>.Filter.Eq(filterDic.Keys.ToString(), filterDic.Values);
+                var update = Builders<T>.Update.Set(updateDic.Keys.ToString(), updateDic.Values);
+                collection.UpdateOneAsync(filter, update);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
     }
 }

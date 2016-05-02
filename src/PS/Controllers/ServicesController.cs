@@ -68,43 +68,46 @@ namespace PS.Controllers
         [Route("validateOrder")]
         public JsonResult Post([FromBody] PaymentValidateModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                var res = _paymentProcessor.ValidateOrder(model.PaymentId, model.PaymentRequestId);
-                Response.StatusCode = (int)HttpStatusCode.OK;
-                var data = JsonConvert.DeserializeAnonymousType(res.Content, new PaymentValidateResponseModel());
-                return Json(new { Status = 0, Result = data });
+                try
+                {
+                    var res = _paymentProcessor.ValidateOrder(model.PaymentId, model.PaymentRequestId);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    var data = JsonConvert.DeserializeAnonymousType(res.Content, new PaymentValidateResponseModel());
+                    return Json(new { Status = 0, Result = data });
+                }
+                catch (Exception ex)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json(new { Message = ex.Message });
+                }
             }
-            catch (Exception ex)
-            {
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message });
-            }
-            //Response.StatusCode = (int)HttpStatusCode.OK;
-            //return Json(new { Message = "We are unable to process your request.", Status = 1 });
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "We are unable to process your request.", Status = 1 });
         }
 
         [HttpPost]
         [Route("order")]
-        public IActionResult Post([FromBody] OrderDetails model)
+        public JsonResult Post([FromBody] OrderDetails model)
         {
-
-            try {
-                repo.insertDocument("orders", "Invoice", model);
-                return new HttpOkObjectResult("");
-            }
-            catch(Exception)
+            if (ModelState.IsValid)
             {
-                //internal information.
-                var error = new
+                try
                 {
-                    message = "Enter you user friendly error message",
-                    status = (int)System.Net.HttpStatusCode.InternalServerError
-                };
-               // Context.Response.StatusCode = error.status;
-                return new ObjectResult(error);
+                    repo.insertDocument("orders", "Invoice", model);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Status = 0, Result = model });
+                    
+                }
+                catch (Exception ex)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json(new { Status = 1, Message = ex.Message });
+                }
             }
-
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "We are unable to process your request.", Status = 2 });
         }
     }
 }
