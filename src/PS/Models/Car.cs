@@ -31,4 +31,11 @@ namespace PS.Models
 
         public List<IEnumerable<int>> yearsList { get; set; }
     }
+
+    public class UserPreference
+    {
+        public CarDetails carDetails { get; set; }
+        public string Email { get; set; }
+        public string CustType { get; set; }
+    }
 }

@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using PS.Models;
 namespace PS.Api.Model
 {
     public class FacebookUserProfile
     {
+        public FacebookUserProfile()
+        {
+            CustomerType = "F";
+        }
         public string Id { get; set; }
         public string Name { get; set; }
         public string First_Name { get; set; }
@@ -15,8 +19,14 @@ namespace PS.Api.Model
         public string Gender { get; set; }
         public string Email { get; set; }
         public Picture Picture { get; set; }
+        public CarDetails carData { get; set; }
+        public string CustomerType { get; set; }
+      
     }
-
+    public class CustomerPreference
+    {
+        public CarDetails carData { get; set; }
+    }
     public class Picture
     {
         public Data Data { get; set; }

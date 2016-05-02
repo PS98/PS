@@ -152,7 +152,6 @@ function callGeoCoderApi(type) {
                         }
 
                         if (results[0].address_components[i].types[b] == "administrative_area_level_2") {
-                            //this is the object you are looking for
                             city = results[0].address_components[i];
                             break;
                         }
