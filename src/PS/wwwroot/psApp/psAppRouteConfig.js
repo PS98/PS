@@ -29,6 +29,13 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                     }
                 },
                 {
+                    state: "Pricing",
+                    config: {
+                        url: "/Pricing",
+                        template: "<ps-pricing></ps-pricing>"
+                    }
+                },
+                {
                     state: "Dashboard",
                     config: {
                         url: "/Dashboard",
