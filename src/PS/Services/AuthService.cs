@@ -201,53 +201,55 @@ namespace PS.Services
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public List<string> SocialLogin(dynamic T)
+        public ResultUserDto SocialLogin(dynamic model)
         {
             var rep = new MongoRepository("auth");
-            List<string> data = new List<string>();
-            if (T is GoogleUserProfile)
+           var  data = new ResultUserDto();
+            if (model is GoogleUserProfile)
             {
                 var collection = rep.GetCollection<GoogleUserProfile>("Google Customer");
 
                 //  var filter = Builders<BsonDocument>.Filter.Eq("Email", "");
                 var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
-                if (customerList?.Where(e => e.Email == T.Email).ToList().Count == 0)
+                if (customerList?.Where(e => e.Email == model.Email).ToList().Count == 0)
                 {
-                    collection.InsertOneAsync(T);
+                    collection.InsertOneAsync(model);
 
-                    return T.ToJson();
+                   // return (object)model;
                 }
                 else {
-                    foreach (var i in customerList?.Where(e => e.Email == T.Email).ToList())
+                    foreach (var i in customerList?.Where(e => e.Email == model.Email).ToList())
                     {
-                        data.Add(i.Given_Name);
-                        data.Add(i.Name);
-                        data.Add(i.Picture);
-                        data.Add(i.Email);
-                        return data;
+                        //data.Add(i.Given_Name);
+                        //data.Add(i.Name);
+                        //data.Add(i.Picture);
+                        //data.Add(i.Email);
+                        //return data;
                     }
                 }
+                return GoogleUserProfile.ToResultObject(model);
             }
-             if (T is FacebookUserProfile)
+            if (model is FacebookUserProfile)
             {
                 var collection = rep.GetCollection<FacebookUserProfile>("Facebook Customer");
                 var customerList = collection?.Find(new BsonDocument()).ToListAsync().Result;
-                if (customerList?.Where(e => e.Email == T.Email).ToList().Count == 0)
+                if (customerList?.Where(e => e.Email == model.Email).ToList().Count == 0)
                 {
-                    collection.InsertOneAsync(T);
+                    collection.InsertOneAsync(model);
 
-                    return T.ToJson();
+                   // return model.ToJson();
                 }
                 else {
-                    foreach(var i in customerList?.Where(e => e.Email == T.Email).ToList())
+                    foreach(var i in customerList?.Where(e => e.Email == model.Email).ToList())
                     {
-                        data.Add(i.First_Name);
-                        data.Add(i.Name);
-                        data.Add(i.Picture.Data.Url);
-                        data.Add(i.Email);
-                        return data;
+                        //data.Add(i.First_Name);
+                        //data.Add(i.Name);
+                        //data.Add(i.Picture.Data.Url);
+                        //data.Add(i.Email);
+                        //return data;
                     } 
                 }
+                return FacebookUserProfile.ToResultObject(model);
             }
             return null;
         }

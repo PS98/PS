@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage", "psDataServices",
-function ($scope, $window, $state, $location, $localStorage, psDataServices) {
+﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage", "psDataServices","psOrderDetailsService",
+function ($scope, $window, $state, $location, $localStorage, psDataServices,psOrderDetailsService) {
     $scope.payNow = true;
     $scope.oldNumber = $localStorage.userDetails ? $localStorage.userDetails.phoneNo : undefined;
     $scope.checkMobileNumber = function () {
@@ -11,7 +11,7 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices) {
     $scope.orderProcess = function () {
         if ($scope.payNow) {
             psDataServices.setPaymentMode("Online");
-            $scope.response = psDataServices.payment()
+            $scope.response = psOrderDetailsService.payment()
                 .then(function (result) {
                     //Success
                     if (result.status == 0) {
@@ -34,22 +34,23 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices) {
     }
 
     $scope.orderSubmit = function (payment_id, payment_request_id, result) {
-        psDataServices.submitOrder(payment_id, payment_request_id, result).success(function (data) {
-            if(status == 0) {
-                $scope.receivedOrder = result;
-                $state.go("orderSuccess");
+        psOrderDetailsService.submitOrder(payment_id, payment_request_id, result).
+            then(function (data) {
+            if (data.status === 0) {
+                $scope.receivedOrder = data.result;
+                $state.go("service.orderSuccess");
             }
-            else if (status == 1 || status == 2) {
-                $scope.orderErrorMessage = result;
+            else if (data.status === 1 || data.status === 2) {
+                $scope.orderErrorMessage = data.result;
                 $state.go("orderError");
             }
-        }).error(function () {
-            alert('error');
-        })
+        }, function () {
+            alert('Sorry we are unable to process your order. Please try after some time');
+        });
     }
     var returnData = $location.search();
     if (returnData.payment_id != null && returnData.payment_request_id !=null){
-        psDataServices.validateOrder(returnData.payment_id, returnData.payment_request_id).success(function (data) {
+        psOrderDetailsService.validateOrder(returnData.payment_id, returnData.payment_request_id).success(function (data) {
             if(data.status == 0 && data.result.success == true)
                 $scope.orderSubmit(returnData.payment_id, returnData.payment_request_id, data.result);
         }).error(function () {

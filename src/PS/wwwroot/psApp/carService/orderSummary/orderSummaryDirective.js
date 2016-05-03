@@ -6,8 +6,8 @@ angular.module("psApp").directive("orderSummary", function () {
         link: function (scope, element, attrs) {
             //   initializeGoogleMap("", 'mapholder', "", false, scope.MapCallback);
         },
-        controller: ["$scope", "$location", "psDataServices", function ($scope, $location, psDataServices) {
-            $scope.orderDetails = psDataServices.getSelectedService();
+        controller: ["$scope", "$location", "psOrderDetailsService", function ($scope, $location, psOrderDetailsService) {
+            $scope.orderDetails = psOrderDetailsService.getsubmittedOrder();
             $scope.go = function (path) {
                 $location.path(path);
             };

@@ -138,9 +138,10 @@ namespace PS.Services
         {
             try
             {
-                var filter = Builders<T>.Filter.Eq(filterDic.Keys.ToString(), filterDic.Values);
-                var update = Builders<T>.Update.Set(updateDic.Keys.ToString(), updateDic.Values);
-                collection.UpdateOneAsync(filter, update);
+               
+                    var filter = Builders<T>.Filter.Eq(filterDic.Keys.FirstOrDefault().ToString(), filterDic.Values.First());
+                    var update = Builders<T>.Update.Set(updateDic.Keys.FirstOrDefault().ToString(), updateDic.Values.First());
+                    collection.UpdateOneAsync(filter, update);
             }
             catch (Exception e)
             {

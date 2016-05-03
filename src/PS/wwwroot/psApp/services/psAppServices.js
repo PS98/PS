@@ -23,8 +23,12 @@
     var _setPaymentMode = function (mode) {
         userServiceData.PaymentMode = mode;
     }
-    var _getuserDetails = function (user) {
-        return $localStorage.userDetails;
+    var _getuserDetails = function () {
+        return userServiceData.userDetails;
+    }
+    var _setuserDetails = function (user) {
+        userServiceData.userDetails = user;
+        $localStorage.userDetails = user;
     }
     var _setSelectedCentre = function (centre) {
         userServiceData.selectedCentre = centre;
@@ -62,45 +66,12 @@
         return $http.get("/api/services/all");
     }
 
-    var _validateOrder = function (payment_id, payment_request_id) {
-        var data = { 'PaymentId': payment_id, 'PaymentRequestId': payment_request_id }
-        return $http(
-        {
-            url: "/api/services/validateOrder",
-            method: "POST",
-            data: data
-        });
-    }
+  
 
-    var _submitOrder = function (payment_id, payment_request_id, response) {
-        var service = {};
-        service.Name = "Essential Car Care";
-        service.Question = "oil?";
-        service.Answer = "regular";
-        var data = { "selectedServices": service, "InvoiceNo": "", "PaymentMode": userServiceData.PaymentMode, "PaymentId": payment_id, "PaymentRequestId": payment_request_id, "PaymentResponse": response, "selectedCentre": userServiceData.selectedCentre, "selectedCar": userServiceData.selectedCar, "selectedAppointment": userServiceData.selectedAppointment, "userDetails": userServiceData.userDetails };
-        return $http(
-        {
-            url: "/api/services/order",
-            method: "POST",
-            data: data
-        });
-    }
-    var _payment = function () {
-        var deferred = $q.defer();
-        $http.post("/api/Auth/ProcessPayment?name=" + userServiceData.userDetails.userName + "&purpose=" + "MileMates Service Payment" + "&amount=" + userServiceData.selectedCentre.totalPrice + "&email=" + userServiceData.userDetails.email + "&phone=" + userServiceData.userDetails.phoneNo + "&send_email=" + false + "&send_sms=" + false)
-         .then(function (result) {
-             //Success
-             deferred.resolve(result.data);
-         }, function (error) {
-             //Error
-             deferred.reject(error);
-         });
-
-        return deferred.promise;
-    }
+   
 
     var _setUserPreference = function () {
-        var data = { "carDetails": userServiceData.selectedCar, "CustType": "M", "Email": $localStorage.userDetails.email }
+        var data = { "carDetails": userServiceData.selectedCar, "CustType": $localStorage.userDetails.customerType, "Email": $localStorage.userDetails.email }
         return $http(
        {
            url: "/api/car/save",
@@ -124,9 +95,7 @@
         setSelectedAppointment: _setSelectedAppointment,
         setPaymentMode:_setPaymentMode,
         getuserDetails: _getuserDetails,
-        payment: _payment,
-        validateOrder: _validateOrder,
-        submitOrder: _submitOrder,
+        setuserDetails:_setuserDetails,
         setUserPreference:_setUserPreference
 }
           

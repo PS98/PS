@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,31 +9,26 @@ namespace PS.Models
     public class OrderDetails
     {
         public static int orderCount = 0;
+
+        public OrderDetails()
+        {
+            orderCount++;
+            var date = DateTime.Now;
+            InvoiceNo = orderCount.ToString() + date.ToString("MM") + date.ToString("dd");
+        }
+        [JsonIgnore]
         public MongoDB.Bson.ObjectId _id { get; set; }
         public string PaymentMode { get; set; }
         public string PaymentId { get; set; }
         public string PaymentRequestId { get; set; }
         public PaymentValidateResponseModel PaymentResponse { get; set; }        
         public Centre selectedCentre { get; set; }
-        private string _invoiceNo;
-        public string InvoiceNo {
-
-            get {
-                return _invoiceNo;
-            }
-
-            set
-            {
-
-                orderCount++;
-                var date = DateTime.Now;
-                _invoiceNo = orderCount.ToString() + date.ToString("MM") + date.ToString("dd");
-            }
-        }
-        public Service selectedServices { get; set; }
+        public string InvoiceNo { get; set; }
+        public List<Service> selectedServices { get; set; }
         public CarDetails selectedCar { get; set; }
         public Appointment selectedAppointment { get; set; }
         public User userDetails { get; set; }
+        public string Status { get; set; }
     }
 
     //public class UserServices
@@ -43,8 +39,8 @@ namespace PS.Models
     public class Service
     {
         public string Name { get; set; }
-        public string Question { get; set; }
-        public string Answer { get; set; }
+        public List<Questions> Questions { get; set; }
+        
     }
 
 
