@@ -1,18 +1,23 @@
 ﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "$timeout", "psDataServices", "psLoginService",
 function ($scope, $localStorage, $timeout, psDataServices, psLoginService) {
 
-    $scope.userDetails = {};
+    $scope.userData = {};
 
-    if (psDataServices.getuserDetails())
+    if (psDataServices.getuserDetails()){
         $scope.userDetails = psDataServices.getuserDetails();
+        angular.extend($scope.userData, $scope.userDetails);
+    }
 
-    $scope.oldNo = $localStorage.userDetails.phoneNo;
+    $scope.oldNo = $scope.userData.phoneNo;
+    $scope.oldFirstName = $scope.userData.firstName;
+    $scope.oldLastName = $scope.userData.lastName;
+    
     $scope.isEdit = false;
 
 
 
     $scope.updateProfile = function () {
-        var data = { "firstName": $scope.userDetails.firstName, "lastName": $scope.userDetails.lastName, "mobile": $scope.userDetails.phoneNo, "email": $scope.userDetails.email }
+        var data = { "firstName": $scope.userData.firstName, "lastName": $scope.userData.lastName, "mobile": $scope.userData.phoneNo, "email": $scope.userData.email }
         
             psLoginService.updateProfile(data)
              .then(function (result) {
@@ -35,6 +40,11 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService) {
                  $scope.cngSuccess = false;
                  $scope.errorMessage = result.result;
              }).finally(function () {
+                 $scope.isEdit = false;
+                 $localStorage.userDetails = $scope.userData;
+                 $scope.oldNo = $scope.userData.phoneNo;
+                 $scope.oldFirstName = $scope.userData.firstName;
+                 $scope.oldLastName = $scope.userData.lastName;
                  $scope.resetAfterSubmitProfile();
                  $timeout(function () {
                      $scope.cngReset();
