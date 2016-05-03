@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PS.Models;
+using PS.Api.Model;
 
 namespace PS.Services
 {
@@ -13,7 +14,7 @@ namespace PS.Services
         string forgotPassword(ForgotPasswordViewModel data);
         string changePassword(ChangePasswordViewModel data);
         string updateProfile(UpdateUserProfileViewModel data);
-        List<string> SocialLogin(dynamic type);
+        ResultUserDto SocialLogin(dynamic type);
         int SubcribeUser(dynamic data);
     }
 }

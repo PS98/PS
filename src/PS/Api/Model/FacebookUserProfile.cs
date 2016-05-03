@@ -19,9 +19,22 @@ namespace PS.Api.Model
         public string Gender { get; set; }
         public string Email { get; set; }
         public Picture Picture { get; set; }
-        public CarDetails carData { get; set; }
+        public CarDetails CarDetails { get; set; }
         public string CustomerType { get; set; }
-      
+
+        public static ResultUserDto ToResultObject(FacebookUserProfile model)
+        {
+            ResultUserDto jk = new ResultUserDto();
+
+            jk.Email = model.Email;
+            jk.FirstName = model.First_Name;
+            jk.LastName = model.Last_Name;
+            jk.Link= model.Picture.Data.Url;
+            jk.CustomerType = model.CustomerType;
+            jk.CarDetails = model.CarDetails;
+            jk.Name = model.Name;
+            return jk;
+        }
     }
     public class CustomerPreference
     {
@@ -37,4 +50,6 @@ namespace PS.Api.Model
         public bool Is_Silhouette { get; set; }
         public string Url { get; set; }
     }
+
+    
 }

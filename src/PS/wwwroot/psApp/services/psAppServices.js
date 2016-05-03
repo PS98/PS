@@ -101,7 +101,7 @@
     }
 
     var _setUserPreference = function () {
-        var data = { "carDetails": userServiceData.selectedCar, "CustType": "M", "Email": $localStorage.userDetails.email }
+        var data = { "carDetails": userServiceData.selectedCar, "CustType": $localStorage.userDetails.customerType, "Email": $localStorage.userDetails.email }
         return $http(
        {
            url: "/api/car/save",
