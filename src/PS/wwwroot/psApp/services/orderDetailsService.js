@@ -50,12 +50,27 @@
     var _getSubmittedOrder = function () {
         return submittedOrder;
     }
+    var _getAllPendingOrder = function (status) {
+        var deferred = $q.defer();
+        $http(
+            {
+                url: "/api/OrderDetails/order?email="+ $localStorage.userDetails.email+"&status="+ status , method: "GET"
+            }).then(function (result) {
+            //Success
+            deferred.resolve(result.data.result);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
 
+        return deferred.promise;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
         submitOrder: _submitOrder,
-        getsubmittedOrder:_getSubmittedOrder
+        getsubmittedOrder: _getSubmittedOrder,
+        getAllPendingOrder:_getAllPendingOrder
     }
 
 }]);

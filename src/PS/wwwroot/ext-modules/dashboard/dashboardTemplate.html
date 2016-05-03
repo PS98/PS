@@ -42,16 +42,16 @@
                         <div class="tab-content">
                             <div id="booking" class="tab-pane fade in active">
                                 <h4>Appointments</h4>
-                                <div class="content-box">
+                                <div class="content-box" ng-if="(pendingOrders || []).length == 0">
                                     <i class="fa fa-anchor" aria-hidden="true"></i>
                                     <h3 style="text-transform:capitalize;">
                                         Your recent bookings will reflect here
                                     </h3>
                                 </div>
-                                <div class="row row-fluid utilBoxDetails">
+                                <div class="row row-fluid utilBoxDetails" ng-if="(pendingOrders || []).length > 0" ng-repeat="order in pendingOrders">
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <h3 class="override-exclude" style="color:black;">Appointment Details</h3>
+                                            <h3 class="override-exclude" style="color:black;">Appointment Details(OrderID: # {{ order.InvoiceNo}})</h3>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="col-md-4" style="margin-left: 90px; margin-left: 70px;">
@@ -69,7 +69,7 @@
                                     <div class="col-md-12">
                                         <div class="col-md-6" style="margin-left:0px !important ">
                                             <div style="min-height: 150px">
-                                                <h4 class="override-exclude">Location</h4>
+                                                <h4 class="override-exclude">Cemtre Details</h4>
                                                 <div>
                                                     <div style="color:black; font-size: 14px; font-weight:bold;">Pep Boys Indianapolis</div>
                                                     <p style="padding-top:5px; font-size: 14px;margin-bottom: 15px;">

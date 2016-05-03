@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "$timeout", "psDataServices", "psLoginService",
-function ($scope, $localStorage, $timeout, psDataServices, psLoginService) {
+﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "$timeout", "psDataServices", "psLoginService","psOrderDetailsService",
+function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrderDetailsService) {
 
     $scope.userDetails = {};
 
@@ -106,5 +106,14 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService) {
         $scope.changePassword.newPwd.$dirty = false;
         $scope.changePassword.reNewPwd.$dirty = false;
     }
-
+    function getPendingOrder() {
+        debugger;
+        psOrderDetailsService.getAllPendingOrder("Pending").then(function (data) {
+            $scope.pendingOrders = data;
+            console.log(data);
+        }, function () {
+            alert("error");
+        })
+    }
+    getPendingOrder();
 }]);

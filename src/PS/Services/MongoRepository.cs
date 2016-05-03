@@ -148,6 +148,15 @@ namespace PS.Services
                 throw e;
             }
         }
+        public List<OrderDetails> GetOrderOnStatus(string status, string email)
+        {
+            var builder = Builders<OrderDetails>.Filter;
+            var filter = builder.Eq("userDetails.Email", email) & builder.Eq("Status", status);
+            var collection = _database.GetCollection<OrderDetails>("Invoice");
+            var documentList = collection.Find(filter).ToListAsync().Result;
+            return documentList;
+           // return new List<OrderDetails>();
+        }
 
     }
 }
