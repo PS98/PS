@@ -1,4 +1,11 @@
-﻿.wrap {
+﻿.section_pricing{
+
+}
+.section_pricing:before {
+    bottom: -30px;
+    background: url('../media/bg/7.jpg') no-repeat 100% 100%;
+}
+.wrap {
   position: absolute;
   top: 50%;
   left: 50%;

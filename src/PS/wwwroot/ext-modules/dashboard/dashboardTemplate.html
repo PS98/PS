@@ -216,35 +216,35 @@
                                     <ul class="nav nav-tabs">
                                         <li class="active"> <a data-toggle="tab" href="#profile-tab"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
                                         <li class=""> <a data-toggle="tab" href="#password-tab"> Change Password <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
-                                        <li class=""> <a data-toggle="tab" href="#vehicle-tab"> Add A Vehicle <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                        <!--<li class=""> <a data-toggle="tab" href="#vehicle-tab"> Add A Vehicle <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>-->
                                     </ul>
                                     <div class="tab-content">
                                         <div id="profile-tab" class="tab-pane active">
                                             <div class="vd_info tr" ng-click="isEdit = !isEdit">
                                                 <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a>
                                             </div>
-                                            <div class="alert alert-danger" role="alert" ng-show="(cngError && !cngSuccess) || (cngError && !cngSuccess)">
+                                            <div class="alert alert-danger mgtp-30" role="alert" ng-show="(cngError && !cngSuccess) || (cngError && !cngSuccess)">
                                                 <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
                                                 <a href="#" class="close" ng-click="cngReset()" aria-label="close">&times;</a>
                                                 <span class="sr-only">Error:</span>
                                                 {{errorMessage}}
                                             </div>
-                                            <div class="alert alert-success" role="alert" ng-show="(cngSuccess && !cngError) || (cngSuccess && !cngError)">
+                                            <div class="alert alert-success mgtp-30" role="alert" ng-show="(cngSuccess && !cngError) || (cngSuccess && !cngError)">
                                                 <span class="fa fa-check-circle-o" aria-hidden="true"></span>
                                                 <a href="#" class="close" ng-click="cngReset()" aria-label="close">&times;</a>
                                                 <span class="sr-only">Success:</span>
                                                 {{successMessage}}
                                             </div>
-                                            <form name="profileForm" ng-submit="updateProfile()" class="mgtp-30">
+                                            <form name="profileForm" ng-submit="updateProfile()">
                                                 <div class="row">
                                                     <div class="col-sm-12 mgtp-10 mgbt-10">
                                                         <div class="row mgbt-xs-0">
                                                             <label class="col-xs-2 control-label">First Name:</label>
                                                             <div class="col-xs-6 controls" ng-show="!isEdit">
-                                                                {{userDetails.firstName}}
+                                                                {{userData.firstName}}
                                                             </div>
                                                             <div class="col-xs-6 controls" ng-show="isEdit">
-                                                                <input class="form-control" id="FirstName" name="firstName" placeholder="First Name" type="text" ng-model="userDetails.firstName" ng-class="{'bckgrnd-clr': (profileForm.firstName.$error.pattern || profileForm.firstName.$dirty || profileForm.firstName.$error.minlength || profileForm.firstName.$error.maxlength),'bckgrnd-color-default' : (!profileForm.firstName.$error.pattern && !profileForm.firstName.$error.minlength && !profileForm.firstName.$error.maxlength && !profileForm.firstName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
+                                                                <input class="form-control" id="FirstName" name="firstName" placeholder="First Name" type="text" ng-model="userData.firstName" ng-class="{'bckgrnd-clr': (profileForm.firstName.$error.pattern || profileForm.firstName.$dirty || profileForm.firstName.$error.minlength || profileForm.firstName.$error.maxlength),'bckgrnd-color-default' : (!profileForm.firstName.$error.pattern && !profileForm.firstName.$error.minlength && !profileForm.firstName.$error.maxlength && !profileForm.firstName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
                                                             </div>
                                                             <div class="col-xs-4 controls">
                                                                 <span class="text-danger" style="float: left;" ng-show="profileForm.firstName.$error.required && profileForm.firstName.$dirty">Required Field</span>
@@ -258,10 +258,10 @@
                                                         <div class="row mgbt-xs-0">
                                                             <label class="col-xs-2 control-label">Last Name:</label>
                                                             <div class="col-xs-6 controls" ng-show="!isEdit">
-                                                                {{userDetails.lastName}}
+                                                                {{userData.lastName}}
                                                             </div>
                                                             <div class="col-xs-6 controls" ng-show="isEdit">
-                                                                <input class="form-control" id="LastName" name="lastName" placeholder="Last Name" type="text" ng-model="userDetails.lastName" ng-class="{'bckgrnd-clr': (profileForm.lastName.$error.pattern || profileForm.lastName.$dirty || profileForm.lastName.$error.minlength || profileForm.lastName.$error.maxlength),'bckgrnd-color-default' : (!profileForm.lastName.$error.pattern && !profileForm.lastName.$error.minlength && !profileForm.lastName.$error.maxlength && !profileForm.lastName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
+                                                                <input class="form-control" id="LastName" name="lastName" placeholder="Last Name" type="text" ng-model="userData.lastName" ng-class="{'bckgrnd-clr': (profileForm.lastName.$error.pattern || profileForm.lastName.$dirty || profileForm.lastName.$error.minlength || profileForm.lastName.$error.maxlength),'bckgrnd-color-default' : (!profileForm.lastName.$error.pattern && !profileForm.lastName.$error.minlength && !profileForm.lastName.$error.maxlength && !profileForm.lastName.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required />
                                                             </div>
                                                             <div class="col-xs-4 controls">
                                                                 <span class="text-danger" style="float: left;" ng-show="profileForm.lastName.$error.required && profileForm.lastName.$dirty">Required Field</span>
@@ -275,7 +275,7 @@
                                                         <div class="row mgbt-xs-0">
                                                             <label class="col-xs-2 control-label">Email:</label>
                                                             <div class="col-xs-6 controls">
-                                                                {{userDetails.email}}
+                                                                {{userData.email}}
                                                             </div>
                                                             <div class="col-xs-4 controls">
                                                                 <span class="text-danger" style="float: left;" ng-show="profileForm.email.$error.required && profileForm.email.$dirty">Required Field</span>
@@ -288,10 +288,10 @@
                                                         <div class="row mgbt-xs-0">
                                                             <label class="col-xs-2 control-label">Mobile:</label>
                                                             <div class="col-xs-6 controls" ng-show="!isEdit">
-                                                                {{userDetails.phoneNo}}
+                                                                {{userData.phoneNo}}
                                                             </div>
                                                             <div class="col-xs-6 controls" ng-show="isEdit">
-                                                                <input class="form-control" id="MobileNo" name="mobile" type="text" ng-model="userDetails.phoneNo" ng-class="{'bckgrnd-clr': (profileForm.mobile.$error.pattern || profileForm.mobile.$dirty || profileForm.mobile.$error.minlength || profileForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!profileForm.mobile.$error.pattern && !profileForm.mobile.$error.minlength && !profileForm.mobile.$error.maxlength && !profileForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/" />
+                                                                <input class="form-control" id="MobileNo" name="mobile" type="text" ng-model="userData.phoneNo" ng-class="{'bckgrnd-clr': (profileForm.mobile.$error.pattern || profileForm.mobile.$dirty || profileForm.mobile.$error.minlength || profileForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!profileForm.mobile.$error.pattern && !profileForm.mobile.$error.minlength && !profileForm.mobile.$error.maxlength && !profileForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/" />
                                                             </div>
                                                             <div class="col-xs-4 controls">
                                                                 <span class="text-danger" style="float: left;" ng-show="profileForm.mobile.$error.required && profileForm.mobile.$dirty">Required Field</span>
@@ -303,7 +303,7 @@
                                                     </div>
                                                     <div class="col-sm-12 mgtp-10 mgbt-10">
                                                         <div class="row mgbt-xs-0">
-                                                            <div class="mobile_validation" ng-show="profileForm.mobile.$valid && userDetails.phoneNo !== oldNo">
+                                                            <div class="mobile_validation" ng-show="profileForm.mobile.$valid && userData.phoneNo !== oldNo">
                                                                 <label class="col-xs-2 control-label">OTP Code:</label>
                                                                 <div class="col-xs-6 controls">
                                                                     <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-class="{'bckgrnd-clr': (profileForm.addressOtp.$dirty || profileForm.addressOtp.$error.minlength || profileForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!profileForm.addressOtp.$error.minlength && !profileForm.addressOtp.$error.maxlength && !profileForm.addressOtp.$error.required)}" placeholder="Enter OTP Code Here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
@@ -315,7 +315,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4 col-sm-offset-3 mgtp-10 mgbt-10">
-                                                        <button type="submit" id="updateProfile_btn" class="btn buttonSubmit pull-left" ng-show="isEdit" ng-disabled="profileForm.$invalid ||(!profileForm.lastname.$dirty && !profileForm.firstname.$dirty && !profileForm.addressOtp.$dirty && !profileForm.addressOtp.$error.required)">Update</button>
+                                                        <button type="submit" id="updateProfile_btn" class="btn buttonSubmit pull-left" ng-show="isEdit" ng-click="updateProfile()" ng-disabled="(profileForm.firstname.$invalid || profileForm.lastname.$invalid || profileForm.mobile.$invalid) || (userData.phoneNo == oldNo && userData.firstName == oldFirstName && userData.lastName == oldLastName && profileForm.addressOtp.$invalid)">Update</button>
                                                         <button type="submit" id="cancleProfile_btn" class="btn btn-default pull-right" ng-show="isEdit" ng-click="isEdit = !isEdit">Cancel</button>
                                                     </div>
                                                 </div>
