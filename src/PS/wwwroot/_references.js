@@ -82,6 +82,7 @@
 /// <reference path="psapp/psappconfig.js" />
 /// <reference path="psapp/psappmodule.js" />
 /// <reference path="psapp/psapprouteconfig.js" />
+/// <reference path="psapp/services/orderdetailsservice.js" />
 /// <reference path="psapp/services/psapploginservice.js" />
 /// <reference path="psapp/services/psappservices.js" />
 /// <reference path="psapp/switchercontent/switcherContentDirective.js" />

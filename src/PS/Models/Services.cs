@@ -17,24 +17,26 @@ namespace PS.Models
         public List<Type> Type { get; set; }
         public List<Questions> Questions { get; set; }
     }
-
+    [BsonIgnoreExtraElements]
     public class Type
     { 
         public string Name { get; set; }
         public string Description { get; set; }
     }
-
+    [BsonIgnoreExtraElements]
     public class Questions
     {
         public Questions()
         {
             Options = new List<string>();
+            Answer = new List<string>();
         }
         public string Question { get; set; }
         public List<string> Options { get; set; }
+        public List<string> Answer { get; set; }
         public bool IsMultiple { get; set; }
     }
-
+    [BsonIgnoreExtraElements]
     public class ServiceList
     {
         public ServiceList()

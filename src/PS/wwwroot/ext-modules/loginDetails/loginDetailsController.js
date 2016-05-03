@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService",
-function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) {
+﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService","psDataServices",
+function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService, psDataServices) {
     $scope.isBusy = true;
   //  $scope.isLoggedIn = false;
     $scope.loginError = false;
@@ -27,7 +27,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                     $scope.userDetails.customerType = "M";
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
-                    $localStorage.userDetails = $scope.userDetails;
+                    psDataServices.setuserDetails($scope.userDetails);
                     $rootScope.$broadcast("ps-user-profile-show",
                        {
                            isLoggedIn: $scope.isLoggedIn,
@@ -71,9 +71,11 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                             $scope.userDetails.imageUrl = "/assets/img/icon-user-default.png";
                             $scope.userDetails.email = result.result[1];
                             $scope.userDetails.phoneNo = result.result[4];
+                            $scope.userDetails.customerType = "M";
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
-                    $localStorage.userDetails = $scope.userDetails;
+                    psDataServices.setuserDetails($scope.userDetails);
+
                     $rootScope.$broadcast("ps-user-profile-show",
                        {
                            isLoggedIn: $scope.isLoggedIn,
@@ -283,7 +285,7 @@ function ($scope, $localStorage, $location,$rootScope,$timeout, psLoginService) 
                              isLoggedIn: $scope.isLoggedIn,
                              userDetails: $scope.userDetails
                          });
-                $localStorage.userDetails = $scope.userDetails;
+                psDataServices.setuserDetails($scope.userDetails);
                 opener.location.reload(); 
                 window.close();
 
