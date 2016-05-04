@@ -27,8 +27,7 @@ namespace PS.Controllers
                 {
                     var res = repo.GetOrderOnStatus(status,email);
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    var data = JsonConvert.SerializeObject(res);
-                    return Json(new { Status = 0, Result = data });
+                    return Json(new { Status = 0, Result = res });
                 }
             }
             catch (Exception ex)
