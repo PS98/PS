@@ -148,6 +148,34 @@ namespace PS.Services
                 throw e;
             }
         }
+        public List<OrderDetails> GetOrderOnStatus(string status, string email)
+        {
+            FilterDefinition<OrderDetails> filter;
+            if (status.Equals("Success"))
+            {
+                filter = Builders<OrderDetails>.Filter.Where(x => x.userDetails.Email == email && (x.Status == status || x.Status == "Cancelled"));
+            }
+            else
+                filter = Builders<OrderDetails>.Filter.Where(x => x.userDetails.Email == email && (x.Status == status));
+            var collection = _database.GetCollection<OrderDetails>("Invoice");
+            var documentList = collection.Find(filter).ToListAsync().Result;
+            return documentList;
+        }
+        public List<OrderDetails> CancelSelectedOrder(string invoiceNo, string email)
+        {
+            var collection = _database.GetCollection<OrderDetails>("Invoice");
 
+            var filterDic = new Dictionary<string, string>();
+            filterDic.Add("InvoiceNo", invoiceNo);
+
+            var updateDic = new Dictionary<string, object>();
+            updateDic.Add("Status", "Cancelled");
+            UpdateDocumentWithFilter<OrderDetails>(filterDic, updateDic, collection);
+
+            // get remaining pending order list
+            var filter = Builders<OrderDetails>.Filter.Where(x => x.userDetails.Email == email && (x.Status == "Pending"));
+            var documentList = collection.Find(filter).ToListAsync().Result;
+            return documentList;
+        }
     }
 }
