@@ -18,7 +18,6 @@ namespace PS.Models
         }
         [JsonIgnore]
         public MongoDB.Bson.ObjectId _id { get; set; }
-        [JsonIgnore]
         public string PaymentMode { get; set; }
         [JsonIgnore]
         public string PaymentId { get; set; }

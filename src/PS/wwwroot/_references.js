@@ -21,6 +21,7 @@
 /// <reference path="assets/plugins/switcher/js/evol.colorpicker.min.js" />
 /// <reference path="ext-modules/dashboard/dashboardController.js" />
 /// <reference path="ext-modules/dashboard/dashboardDirective.js" />
+/// <reference path="ext-modules/dashboard/orderdetailsdirective.js" />
 /// <reference path="ext-modules/index/aboutusdirective.js" />
 /// <reference path="ext-modules/index/carouseldirective.js" />
 /// <reference path="ext-modules/index/contactusdirective.js" />

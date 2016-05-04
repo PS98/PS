@@ -116,14 +116,24 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrde
         $scope.changePassword.newPwd.$dirty = false;
         $scope.changePassword.reNewPwd.$dirty = false;
     }
-    function getPendingOrder() {
-        debugger;
-        psOrderDetailsService.getAllPendingOrder("Pending").then(function (data) {
+    function getOrderOnStatus(status) {
+        psOrderDetailsService.getAllPendingOrder(status).then(function (data) {
+            if (status == "Pending")
             $scope.pendingOrders = data;
-            console.log(data);
+            if (status == "Success")
+                $scope.successOrders = data;
         }, function () {
             alert("error");
         })
     }
-    getPendingOrder();
+    getOrderOnStatus("Pending");
+    getOrderOnStatus("Success");
+    $scope.cancelOrder = function (order) {
+        psOrderDetailsService.cancelOrder(order.invoiceNo,order.userDetails.email).then(function (data) {
+           $scope.pendingOrders = data;
+           getOrderOnStatus("Success");
+        }, function () {
+            alert("error");
+        })
+    }
 }]);

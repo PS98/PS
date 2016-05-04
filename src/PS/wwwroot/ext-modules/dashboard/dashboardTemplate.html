@@ -48,207 +48,21 @@
                                         Your recent bookings will reflect here
                                     </h3>
                                 </div>
-                                <div class="row row-fluid utilBoxDetails" ng-if="(pendingOrders || []).length > 0" ng-repeat="order in pendingOrders">
-                                    <div class="col-md-12">
-                                        <div class="col-md-8">
-                                            <h3 class="override-exclude" style="color:black;">Appointment Details(OrderID: # {{ order.invoiceNo}})</h3>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-6">
-                                                <div class="vd_info tr" ng-click="isEdit = !isEdit">
-                                                    <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="vd_info tr" ng-click="isEdit = !isEdit">
-                                                    <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-times append-icon"></i> Cancel </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="col-md-6" style="margin-left:0px !important ">
-                                            <div style="min-height: 150px">
-                                                <h4 class="override-exclude">Centre Details</h4>
-                                                <div>
-                                                    <div style="color:black; font-size: 14px; font-weight:bold;">{{order.selectedCentre.name}}</div>
-                                                    <p style="padding-top:5px; font-size: 14px;margin-bottom: 15px;">
-                                                        {{order.selectedCentre.phoneNo}}<br>
-                                                        {{order.selectedCentre.address.line1}}<br>
-                                                        {{order.selectedCentre.address.line2}}
-                                                    </p>
-                                                    <p style="margin-bottom:0">
-                                                        <a target="_blank" href="http://pepboys.know-where.com/pepboys/cgi/selection?mapid=US_web2&amp;lang=en&amp;design=default&amp;place=46254&amp;region=&amp;mapx=&amp;mapy=">
-                                                            <img src="https://static.pepboys.com/images/eServe2.0/ViewMapIcon.gif">&nbsp;View on Map
-                                                        </a>
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div style="min-height: 150px">
-                                                <h4 class="override-exclude">Contact Information</h4>
-                                                <div>
-                                                    <div style="color:black; font-size: 14px; font-weight:bold;">{{order.userDetails.firstName}}&nbsp;{{order.userDetails.lastName}} </div>
-                                                    <p style="padding-top:5px; font-size: 14px; margin-bottom: 15px;">
-                                                        {{order.userDetails.email}}<br>
-                                                        Phone:&nbsp;{{order.userDetails.phoneNo}}<br>
-                                                        Email Alerts:&nbsp;No<br>
-                                                        Text Alerts:&nbsp;No
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <h4 class="override-exclude">Date &amp; Time</h4>
-                                            <p style="margin-bottom: 15px;">
-                                                <span style="color:black; font-weight: bold;">DropOff</span><br>
-                                                <span>{{order.selectedAppointment.dropOffDate.day}}</span><br>
-                                                <span>{{order.selectedAppointment.dropOffDate.time}}</span>
-                                            </p>
-                                            <p style="margin-bottom: 15px;">
-                                                <span style="color:black; font-weight: bold;">PickUp</span><br>
-                                                <span>{{order.selectedAppointment.pickUpDate.day}}</span><br>
-                                                <span>{{order.selectedAppointment.pickUpDate.time}}</span>
-                                            </p>
-
-                                        </div>
-                                        <div class="col-md-4" style="min-height: 80px">
-                                            <h4 class="override-exclude">Vehicle</h4>
-                                            <p style="color:black; margin-bottom: 15px; font-weight: bold;">{{order.selectedCar.brand}}&nbsp;{{order.selectedCar.year}} &nbsp;{{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}</p>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h4 class="override-exclude">Payment Details </h4>
-                                            <div>
-                                                <div><strong>Card Name:</strong> Visa</div>
-                                                <div><strong>Card Number:</strong> ***** 332</div>
-                                                <div><strong>Exp Date:</strong> 09/2020 </div>
-                                            </div>
-                                            <div ng-if="!payNow">
-                                                <div><strong> Cash On Delivery</strong></div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-12">
-                                            <h4 class="override-exclude">Service Details</h4>
-                                            <div class="table-responsive">
-                                                <table class="table table-condensed">
-                                                    <tbody>
-                                                        <tr ng-repeat="service in order.selectedCentre.serviceDetails">
-                                                            <td>{{service.name}}</td>
-                                                            <td class="text-center">{{service.price}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="highrow text-center"><strong>Subtotal</strong></td>
-                                                            <td class="highrow text-right">{{order.selectedCentre.totalPrice}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="emptyrow text-center"><strong>Service Charge</strong></td>
-                                                            <td class="emptyrow text-center">20</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="emptyrow text-center"><strong>Total</strong></td>
-                                                            <td class="emptyrow text-center">{{order.selectedCentre.totalPrice + 20 }}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                      
-                                    </div>
+                              <order-details orders="pendingOrders"></order-details>
                                 </div>
                                 <div id="history" class="tab-pane fade">
                                     <h4>History</h4>
-                                    <div class="content-box">
+                                    <div class="content-box" ng-if="(successOrders || []).length == 0">
                                         <i class="fa fa-newspaper-o" aria-hidden="true"></i>
                                         <h3 style="text-transform:capitalize;">
                                             You Have Not Booked Any Service Yet
                                         </h3>
                                     </div>
-                                    <div class="row row-fluid utilBoxDetails">
-                                        <div class="col-md-12">
-                                            <div class="col-md-6">
-                                                <h3 class="override-exclude" style="color:black;">Appointment Details</h3>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="col-md-4" style="margin-left: 90px; margin-left: 70px;">
-                                                    <div class="vd_info tr" ng-click="isEdit = !isEdit">
-                                                        <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5" style="margin-left: 10px;">
-                                                    <div class="vd_info tr" ng-click="isEdit = !isEdit">
-                                                        <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-times append-icon"></i> Cancel </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="col-md-6" style="margin-left:0px !important ">
-                                                <div style="min-height: 150px">
-                                                    <h4 class="override-exclude">Location</h4>
-                                                    <div>
-                                                        <div style="color:black; font-size: 14px; font-weight:bold;">Pep Boys Indianapolis</div>
-                                                        <p style="padding-top:5px; font-size: 14px;margin-bottom: 15px;">
-                                                            (317) 297-0090<br>
-                                                            4500 Lafayette Rd<br>
-                                                            Indianapolis, IN46254
-                                                        </p>
-                                                        <p style="margin-bottom:0">
-                                                            <a target="_blank" href="http://pepboys.know-where.com/pepboys/cgi/selection?mapid=US_web2&amp;lang=en&amp;design=default&amp;place=46254&amp;region=&amp;mapx=&amp;mapy=">
-                                                                <img src="https://static.pepboys.com/images/eServe2.0/ViewMapIcon.gif">&nbsp;View on Map
-                                                            </a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div style="min-height: 150px">
-                                                    <h4 class="override-exclude">Contact Information</h4>
-                                                    <div>
-                                                        <div style="color:black; font-size: 14px; font-weight:bold;">Shobhit&nbsp;Varshney</div>
-                                                        <p style="padding-top:5px; font-size: 14px; margin-bottom: 15px;">
-                                                            varshneyshobhit@yahoo.com<br>
-                                                            Phone:&nbsp;5-645-646-454-5645<br>
-                                                            Email Alerts:&nbsp;No<br>
-                                                            Text Alerts:&nbsp;No
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <h4 class="override-exclude">Date &amp; Time</h4>
-                                                <p style="margin-bottom: 15px;">
-                                                    <span style="color:black; font-weight: bold;">Tuesday, May 3, 2016</span><br>
-                                                    <span style="color:black; font-weight: bold;">1:00 PM</span>
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4" style="min-height: 80px">
-                                                <h4 class="override-exclude">Vehicle</h4>
-                                                <p style="color:black; margin-bottom: 15px; font-weight: bold;">2016&nbsp;BMW&nbsp;335 Series</p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <h4 class="override-exclude">Service(s)</h4>
-                                                <p style="margin-bottom: 15px;">
-
-                                                    No Services Selected
-                                                </p>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
+                                    <order-details orders="successOrders"></order-details>
                                 </div>
-                                <div id="settings" class="fade">
+                                <div id="settings" class="fade tab-pane">
 
-                                    <div class="tabs">
+                                    <div class="tabs"> 
                                         <ul class="nav nav-tabs">
                                             <li class="active"> <a data-toggle="tab" href="#profile-tab"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
                                             <li class=""> <a data-toggle="tab" href="#password-tab"> Change Password <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>

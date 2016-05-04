@@ -40,11 +40,26 @@ namespace PS.Controllers
            // return new List<OrderDetails>();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("cancelorder")]
+        public JsonResult CancelOrder(string email, string invoiceNo)
         {
-            return "value";
+            try
+            {
+                if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(invoiceNo))
+                {
+                    var res = repo.CancelSelectedOrder(invoiceNo, email);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Status = 0, Result = res });
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "We are unable to process your request.", Status = 1 });
         }
 
         // POST api/values

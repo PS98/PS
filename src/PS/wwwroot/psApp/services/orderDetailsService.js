@@ -65,12 +65,28 @@
 
         return deferred.promise;
     }
+    var _cancelOrder = function (invoiceNo,email) {
+        var deferred = $q.defer();
+        $http(
+            {
+                url: "/api/OrderDetails/cancelorder?invoiceNo=" + invoiceNo + "&email=" + email, method: "GET"
+            }).then(function (result) {
+                //Success
+                deferred.resolve(result.data.result);
+            }, function (error) {
+                //Error
+                deferred.reject(error);
+            });
+
+        return deferred.promise;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
         submitOrder: _submitOrder,
         getsubmittedOrder: _getSubmittedOrder,
-        getAllPendingOrder:_getAllPendingOrder
+        getAllPendingOrder:_getAllPendingOrder,
+        cancelOrder: _cancelOrder
     }
 
 }]);
