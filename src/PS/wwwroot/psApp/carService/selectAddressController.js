@@ -38,7 +38,7 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
             then(function (data) {
             if (data.status === 0) {
                 $scope.receivedOrder = data.result;
-                $state.go("service.orderSuccess");
+                $state.go("orderSuccess");
             }
             else if (data.status === 1 || data.status === 2) {
                 $scope.orderErrorMessage = data.result;
