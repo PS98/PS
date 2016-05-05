@@ -94,8 +94,15 @@
 .vd_bg-yellow {
     background-color: #f89c2c !important;
 }
+.vd_bg-green {
+    background-color: #1fae66 !important;
+}
+.order-status{
+    font-size:14px;
+    color:black;
+}
 .btn-xs {
-    font-size: 13px;
+    font-size: 13px;    
     padding: 8px 8px;
 }
 .vd_btn {

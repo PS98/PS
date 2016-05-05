@@ -123,7 +123,9 @@ namespace PS.Services
             request.AddParameter("buyer_name", name);
             request.AddParameter("purpose", purpose);
             request.AddParameter("amount", amount);
+            if (!string.IsNullOrEmpty(email))
             request.AddParameter("email", email);
+            if (!string.IsNullOrEmpty(phone))
             request.AddParameter("phone", phone);
             request.AddParameter("redirect_url", Options.payment.RedirectUrl);
             request.AddParameter("send_email", send_email);

@@ -31,7 +31,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div><a ng-click="setDefault()">Add as a default</a></div>
                             </div>
 
                             <div class="row" ng-if="showBrandName">
@@ -192,7 +191,7 @@
                                                 <div class="col-xs-12">
                                                     <ul>
                                                         <li ng-repeat="opt in que.options">
-                                                            <i class="fa fa-check-circle" ng-class="que.ans.includes(opt) ? 'selected' : ''" ng-model="que.ans" ng-click="chooseAnswer(job,que,opt)"></i>
+                                                            <i class="fa fa-check-circle" ng-class="que.answer.includes(opt) ? 'selected' : ''" ng-model="que.answer" ng-click="chooseAnswer(job,que,opt)"></i>
                                                             <span> {{ opt }}</span>
                                                         </li>
 

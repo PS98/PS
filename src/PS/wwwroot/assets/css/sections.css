@@ -101,6 +101,11 @@
 	background: url('../img/page_heading_bg.jpg') no-repeat 0 100%;
 }
 
+.section_mod-q:before {
+	bottom: 0;
+	background: url('../img/Fixed-Price-Servicing.jpg') no-repeat 0 100%;
+}
+
 .section_mod-i {
 	padding-top: 50px;
 	padding-bottom: 45px;
@@ -136,8 +141,8 @@
 	padding-bottom: 50px;
 }
 .section_map:before {
-	bottom: -30px;
-	background: url('../media/bg/7.jpg') no-repeat 100% 100%;
+	bottom: -40px;
+	background: url('../../assets/img/contact-us.png') no-repeat 100% 100%;
 }
 .section_map .ui-title-inner {
 	margin-top: 43px;
