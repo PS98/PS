@@ -15,6 +15,8 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                 if (result.status == 1 || result.status == 2) {
                     $scope.loginError = true;
                     $scope.message = result.message;
+                    $scope.isLoggedIn = false;
+                    psLoginService.setUserAuthenticated(false);
                 }
                 else if (result.status == 0) {
                     $scope.resetAfterSubmit();
@@ -28,11 +30,7 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
                     psDataServices.setuserDetails($scope.userDetails);
-                    $rootScope.$broadcast("ps-user-profile-show",
-                       {
-                           isLoggedIn: $scope.isLoggedIn,
-                           userDetails: $scope.userDetails
-                       });
+                    psLoginService.setUserAuthenticated(true);
                     $("#loginModal").modal('toggle');
                 }
             }, function (error) {
@@ -40,10 +38,16 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                 $scope.isLoggedIn = false;
                 $scope.loginError = true;
                 $scope.message = error.message;
+                psLoginService.setUserAuthenticated(false);
             }).finally(function () {
                 $scope.isBusy = false;
                 $scope.Password = null;
                 $scope.loginForm.password.$dirty = false;
+                $rootScope.$broadcast("ps-user-profile-show",
+                       {
+                           isLoggedIn: $scope.isLoggedIn,
+                           userDetails: $scope.userDetails
+                       });
                 $timeout(function () {
                     $scope.logReset();
                 }, 3000);
@@ -75,7 +79,7 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                     $scope.isLoggedIn = true;
                     $scope.loginError = false;
                     psDataServices.setuserDetails($scope.userDetails);
-
+                    psLoginService.setUserAuthenticated(true);
                     $rootScope.$broadcast("ps-user-profile-show",
                        {
                            isLoggedIn: $scope.isLoggedIn,
@@ -93,11 +97,13 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                             $scope.regSuccess = false;
                             $scope.again = false;
                             $scope.errorMessage = result.message;
+                            psLoginService.setUserAuthenticated(false);
                         }
                     }, function (error) {
                         //Error
                         $scope.regError = false;
                         $scope.errorMessage = error.message;
+                        psLoginService.setUserAuthenticated(false);
                     }).finally(function () {
                         $scope.isBusy = false;
                         $scope.passAndOTPReset();
@@ -286,11 +292,13 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                              userDetails: $scope.userDetails
                          });
                 psDataServices.setuserDetails($scope.userDetails);
+                psLoginService.setUserAuthenticated(true);
                 opener.location.reload(); 
                 window.close();
 
             }, function (error) {
-             //Error
+                //Error
+                psLoginService.setUserAuthenticated(false);
          }).finally(function () {
              $scope.isBusy = false;
          });
