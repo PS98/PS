@@ -126,10 +126,17 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrde
             alert("error");
         })
     }
+    $scope.modalShown = false;
     getOrderOnStatus("Pending");
     getOrderOnStatus("Success");
-    $scope.cancelOrder = function (order) {
-        psOrderDetailsService.cancelOrder(order.invoiceNo,order.userDetails.email).then(function (data) {
+    $scope.showDailog = function (order) {
+        $scope.modalShown = true;
+        $("#modalOverlay").modal('toggle');
+        $scope.cancelledOrder = order;
+    }
+    $scope.cancelOrder = function () {
+        $scope.modalShown = false;
+        psOrderDetailsService.cancelOrder($scope.cancelledOrder.invoiceNo, $scope.cancelledOrder.userDetails.email).then(function (data) {
            $scope.pendingOrders = data;
            getOrderOnStatus("Success");
         }, function () {
