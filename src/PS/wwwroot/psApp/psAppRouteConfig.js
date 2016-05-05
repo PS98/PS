@@ -92,9 +92,9 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    }
                },
                {
-                   state: "service.orderSuccess",
+                   state: "orderSuccess",
                    config: {
-                       url: "/",
+                       url: "/Success",
                      controller: "selectAddressController",
                        template: "<order-summary></order-summary>"
                    }
