@@ -733,10 +733,11 @@ color: white !important;
 }
 .ct-u-paddingBottom90 p {
     
-    color: #777;
+    color: black;
     line-height: 1.86em;
     font-size: 14px;
     margin: 0 0 50px;
+    font-weight: 400;
 }
 
 

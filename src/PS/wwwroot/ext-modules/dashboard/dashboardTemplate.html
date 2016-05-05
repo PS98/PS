@@ -89,7 +89,7 @@
                                                     <div class="row">
                                                         <div class="col-sm-12 mgtp-10 mgbt-10">
                                                             <div class="row mgbt-xs-0">
-                                                                <label class="col-xs-2 control-label">First Name:</label>
+                                                                <label class="col-xs-2 control-label">First Name</label>
                                                                 <div class="col-xs-6 controls" ng-show="!isEdit">
                                                                     {{userData.firstName}}
                                                                 </div>
@@ -106,7 +106,7 @@
                                                         </div>
                                                         <div class="col-sm-12 mgtp-10 mgbt-10">
                                                             <div class="row mgbt-xs-0">
-                                                                <label class="col-xs-2 control-label">Last Name:</label>
+                                                                <label class="col-xs-2 control-label">Last Name</label>
                                                                 <div class="col-xs-6 controls" ng-show="!isEdit">
                                                                     {{userData.lastName}}
                                                                 </div>
@@ -123,7 +123,7 @@
                                                         </div>
                                                         <div class="col-sm-12 mgtp-10 mgbt-10">
                                                             <div class="row mgbt-xs-0">
-                                                                <label class="col-xs-2 control-label">Email:</label>
+                                                                <label class="col-xs-2 control-label">Email</label>
                                                                 <div class="col-xs-6 controls">
                                                                     {{userData.email}}
                                                                 </div>
@@ -136,7 +136,7 @@
                                                         </div>
                                                         <div class="col-sm-12 mgtp-10 mgbt-10">
                                                             <div class="row mgbt-xs-0">
-                                                                <label class="col-xs-2 control-label">Mobile:</label>
+                                                                <label class="col-xs-2 control-label">Mobile</label>
                                                                 <div class="col-xs-6 controls" ng-show="!isEdit">
                                                                     {{userData.phoneNo}}
                                                                 </div>
@@ -154,7 +154,7 @@
                                                         <div class="col-sm-12 mgtp-10 mgbt-10">
                                                             <div class="row mgbt-xs-0">
                                                                 <div class="mobile_validation" ng-show="profileForm.mobile.$valid && userData.phoneNo !== oldNo">
-                                                                    <label class="col-xs-2 control-label">OTP Code:</label>
+                                                                    <label class="col-xs-2 control-label">OTP Code</label>
                                                                     <div class="col-xs-6 controls">
                                                                         <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-class="{'bckgrnd-clr': (profileForm.addressOtp.$dirty || profileForm.addressOtp.$error.minlength || profileForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!profileForm.addressOtp.$error.minlength && !profileForm.addressOtp.$error.maxlength && !profileForm.addressOtp.$error.required)}" placeholder="Enter OTP Code Here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
                                                                     </div>
@@ -189,7 +189,7 @@
                                                     <div class="row">
                                                         <div class="col-sm-12 mgtp-10 mgbt-10">
                                                             <div class="row mgbt-xs-0">
-                                                                <label class="col-xs-2 control-label">Old Password:</label>
+                                                                <label class="col-xs-2 control-label">Old Password</label>
                                                                 <div class="col-xs-6 controls">
                                                                     <input type="password" class="form-control" id="oldPwd" name="oldPwd" ng-model="oldPwd" ng-class="{'bckgrnd-clr': (changePassword.oldPwd.$error.pattern || changePassword.oldPwd.$dirty || changePassword.oldPwd.$error.minlength || changePassword.oldPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.oldPwd.$error.pattern && !changePassword.oldPwd.$error.minlength && !changePassword.oldPwd.$error.maxlength && !changePassword.oldPwd.$error.required)}" placeholder="Old Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
                                                                 </div>
@@ -203,7 +203,7 @@
                                                         </div>
                                                         <div class="col-sm-12 mgtp-10 mgbt-10">
                                                             <div class="row mgbt-xs-0">
-                                                                <label class="col-xs-2 control-label">New Password:</label>
+                                                                <label class="col-xs-2 control-label">New Password</label>
                                                                 <div class="col-xs-6 controls">
                                                                     <input type="password" class="form-control" id="newPwd" name="newPwd" ng-model="newPwd" ng-class="{'bckgrnd-clr': (changePassword.newPwd.$error.pattern || changePassword.newPwd.$dirty || changePassword.newPwd.$error.minlength || changePassword.newPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.newPwd.$error.pattern && !changePassword.newPwd.$error.minlength && !changePassword.newPwd.$error.maxlength && !changePassword.newPwd.$error.required)}" placeholder="New Password" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
                                                                 </div>
@@ -217,7 +217,7 @@
                                                         </div>
                                                         <div class="col-sm-12 mgtp-10 mgbt-10">
                                                             <div class="row mgbt-xs-0">
-                                                                <label class="col-xs-2 control-label">Password Again:</label>
+                                                                <label class="col-xs-2 control-label">Password Again</label>
                                                                 <div class="col-xs-6 controls">
                                                                     <input type="password" class="form-control" id="reNewPwd" name="reNewPwd" ng-model="reNewPwd" ng-class="{'bckgrnd-clr': (changePassword.reNewPwd.$error.pattern || changePassword.reNewPwd.$dirty || changePassword.reNewPwd.$error.minlength || changePassword.reNewPwd.$error.maxlength),'bckgrnd-color-default' : (!changePassword.reNewPwd.$error.pattern && !changePassword.reNewPwd.$error.minlength && !changePassword.reNewPwd.$error.maxlength && !changePassword.reNewPwd.$error.required)}" placeholder="Enter Password Again" required ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/">
                                                                 </div>
