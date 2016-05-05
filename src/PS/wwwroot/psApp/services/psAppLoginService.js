@@ -1,5 +1,5 @@
 ﻿angular.module("psApp").factory("psLoginService", ["$http", "$q", function ($http, $q) {
-   
+    var isAuthenticated = false;
    var _login = function (Email, Password) {
         var deferred = $q.defer();
        $http.post("/api/Auth/Login?Email=" + Email + "&Password=" + Password)
@@ -128,6 +128,12 @@
        return deferred.promise;
        
    }
+   var _setUserAuthenticated = function (authenticated) {
+       isAuthenticated = authenticated;
+   }
+   var _isAuthenticated = function () {
+      return isAuthenticated;
+   }
    return {
        login: _login,
        register: _register,
@@ -137,6 +143,8 @@
        mobileVerification: _mobileVerification,
        subscribe: _subscribe,
        updatePassword: _updatePassword,
-       updateProfile: _updateProfile
+       updateProfile: _updateProfile,
+       setUserAuthenticated: _setUserAuthenticated,
+       isAuthenticated: _isAuthenticated
    };   
 }])
