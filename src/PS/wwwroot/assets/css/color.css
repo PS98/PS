@@ -24,6 +24,8 @@ a,
 .nav-tabs > li.active > a:focus,
 .social-blog__item:before,
 blockquote:before,
+.trial,
+.package li::before,
 .comments-list .comment-datetime {color: #dc2d13;}
 
 
@@ -36,7 +38,6 @@ blockquote:before,
 .main-slider__link,
 .close-styler:hover,
 .bottom-bar .list-bottom-bar .add,
-.ct-iconBox .ct-iconBox-icon.ct-iconBox-icon--inverse i,
 .testimonials-section .column-carousel .owl-controls .owl-page:hover span,
 .testimonials-section .column-carousel .owl-controls .owl-page.active span,
 .brand-carousel .owl-controls .owl-page:hover span,
@@ -82,7 +83,12 @@ blockquote:before,
 .owl-theme_mod-c .owl-controls.clickable .owl-page:hover span,
 .owl-theme_mod-d .owl-controls .owl-page.active span,
 .owl-theme_mod-d .owl-controls.clickable .owl-page:hover span,
+.brilliant,
 .list-type__link:hover {border-color: #dc2d13!important;}
+
+    .brilliant::before {
+        border-color: #dc2d13 transparent transparent transparent;
+    }
 
 #iview div.iview-directionNav a.iview-nextNav:hover:before,
 .list-staff__item:nth-child(even):hover .list-staff__info:after, .footer-landing h4, .ct-callToAction.ct-callToAction--type2,

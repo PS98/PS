@@ -24,6 +24,8 @@ a,
 .nav-tabs > li.active > a:focus,
 .social-blog__item:before,
 blockquote:before,
+.trial,
+.package li::before,
 .comments-list .comment-datetime {color: #ffc73c;}
 
 .close-outline-color{
@@ -35,7 +37,6 @@ blockquote:before,
 .main-slider__link,
 .close-styler:hover,
 .bottom-bar .list-bottom-bar .add,
-.ct-iconBox .ct-iconBox-icon.ct-iconBox-icon--inverse i,
 .testimonials-section .column-carousel .owl-controls .owl-page:hover span,
 .testimonials-section .column-carousel .owl-controls .owl-page.active span,
 .brand-carousel .owl-controls .owl-page:hover span,
@@ -74,6 +75,7 @@ blockquote:before,
 
 .link-img__link,
 .add_notes,
+.brilliant,
 .brands-controls .caro-prev, .brands-controls .caro-next,
 .feedback-controls .caro-prev, .feedback-controls .caro-next,
 .testimonials-section .testimonials-slider .slide-item,
@@ -82,6 +84,12 @@ blockquote:before,
 .owl-theme_mod-d .owl-controls .owl-page.active span,
 .owl-theme_mod-d .owl-controls.clickable .owl-page:hover span,
 .list-type__link:hover {border-color: #ffc73c!important;}
+
+
+.brilliant::before {
+        border-color: #ffc73c transparent transparent transparent;
+    }
+
 
 #iview div.iview-directionNav a.iview-nextNav:hover:before, .footer-landing h4, .ct-callToAction.ct-callToAction--type2,
 .list-staff__item:nth-child(even):hover .list-staff__info:after,
