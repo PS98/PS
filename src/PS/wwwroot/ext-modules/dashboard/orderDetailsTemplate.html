@@ -1,29 +1,53 @@
-﻿<div class="row row-fluid utilBoxDetails" ng-repeat="order in orders">
+﻿<div class="row row-fluid utilBoxDetails" ng-repeat="order in orders" style="margin-bottom: 20px;">
     <div class="col-md-12">
         <div class="col-md-8">
             <h3 class="override-exclude" style="color:black;">Appointment Details(OrderID: # {{ order.invoiceNo}})</h3>
-            <div class="order-status"> <span>Status: &nbsp;</span><span ng-class="{'vd_bg-yellow':order.status =='Pending','vd_bg-green':order.status =='Success'}">{{order.status}}</span></div>
         </div>
-        <div class="col-md-4"  ng-if="order.status =='Pending'">
+        <div class="col-md-4" ng-if="order.status =='Pending'">
             <div class="col-md-6">
                 <div class="vd_info tr" ng-click="isEdit = !isEdit">
                     <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="vd_info tr" ng-click="cancelOrder(order)">
+                <div class="vd_info tr" ng-click="showDailog(order)">
                     <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-times append-icon"></i> Cancel </a>
                 </div>
             </div>
         </div>
     </div>
+    <div class="col-md-12" style="margin-bottom: 10px;">
+        <div class="order-status col-md-6">
+            <span>Status: &nbsp;</span>
+            <span ng-class="{'vd_bg-yellow':order.status =='Pending','vd_bg-green':order.status =='Success'}"><strong>{{order.status}}</strong></span>
+        </div>
+        <div class="order-status col-md-6">
+            <span>Payment Mode: &nbsp;</span>
+            <div ng-if="order.paymentMode !=='COD'">
+                <div><strong>Online (Paid INR {{order.selectedCentre.totalPrice}})</strong></div>
+            </div>
+            <span ng-if="order.paymentMode ==='COD'">
+                <span><strong>Cash On Delivery (INR {{order.selectedCentre.totalPrice}})</strong></span>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-12" style="margin-bottom: 10px;">
+        <div class="order-status col-md-6">
+            <span>DropOff Date &amp; Time: &nbsp;</span>
+            <span><strong>{{order.selectedAppointment.dropOffDate.day}}{{order.selectedAppointment.dropOffDate.time}}</strong></span>
+        </div>
+        <div class="order-status col-md-6">
+            <span>Pickup Date &amp; Time: &nbsp;</span>
+            <span><strong>{{order.selectedAppointment.pickUpDate.day}}{{order.selectedAppointment.pickUpDate.time}}</strong></span>
+        </div>
+    </div>
     <div class="col-md-12">
-        <div class="col-md-6" style="margin-left:0px !important ">
+        <div class="col-md-6">
             <div style="min-height: 150px">
                 <h4 class="override-exclude">Centre Details</h4>
                 <div>
                     <div style="color:black; font-size: 14px; font-weight:bold;">{{order.selectedCentre.name}}</div>
-                    <p style="padding-top:5px; font-size: 14px;margin-bottom: 15px;">
+                    <p style="padding-top:5px; font-size: 14px;margin-bottom: 0;">
                         {{order.selectedCentre.phoneNo}}<br>
                         {{order.selectedCentre.address.line1}}<br>
                         {{order.selectedCentre.address.line2}}
@@ -53,53 +77,21 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-md-4">
-            <h4 class="override-exclude">Date &amp; Time</h4>
-            <p style="margin-bottom: 15px;">
-                <span style="color:black; font-weight: bold;">DropOff</span><br>
-                <span>{{order.selectedAppointment.dropOffDate.day}}</span><br>
-                <span>{{order.selectedAppointment.dropOffDate.time}}</span>
-            </p>
-            <p style="margin-bottom: 15px;">
-                <span style="color:black; font-weight: bold;">PickUp</span><br>
-                <span>{{order.selectedAppointment.pickUpDate.day}}</span><br>
-                <span>{{order.selectedAppointment.pickUpDate.time}}</span>
-            </p>
-
+    </div>
+    <div class="col-md-12" style="margin-bottom: 15px;">
+        <div class="col-md-6">
+                <h4 class="override-exclude">Vehicle Details</h4>
+                <strong>
+                    {{order.selectedCar.brand}}&nbsp;{{order.selectedCar.year}} &nbsp;
+                    {{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}
+                </strong>
         </div>
-        <div class="col-md-4" style="min-height: 80px">
-            <h4 class="override-exclude">Vehicle</h4>
-            <p style="color:black; margin-bottom: 15px; font-weight: bold;">{{order.selectedCar.brand}}&nbsp;{{order.selectedCar.year}} &nbsp;{{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}</p>
-        </div>
-        <div class="col-md-4">
-            <h4 class="override-exclude">Payment Details </h4>
-            <div ng-if="order.paymentMode !=='COD'">
-                <div><strong>Card Name:</strong> {{order.PaymentMode}}</div>
-                <div><strong>Card Number:</strong> ***** 332</div>
-                <div><strong>Exp Date:</strong> 09/2020 </div>
-            </div>
-            <div ng-if="order.paymentMode ==='COD'">
-                <div><strong> Cash On Delivery</strong></div>
+        <div class="col-md-6">
+            <h4 class="override-exclude">Service Details</h4>
+            <div ng-repeat="service in order.selectedCentre.serviceDetails">
+                <strong>{{service.name}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INR {{service.price}}<br />
             </div>
         </div>
-
     </div>
-    <div class="col-md-12">
-        <h4 class="override-exclude">Service Details</h4>
-        <div class="table-responsive">
-            <table class="table table-condensed">
-                <tbody>
-                    <tr ng-repeat="service in order.selectedCentre.serviceDetails">
-                        <td>{{service.name}}</td>
-                        <td class="text-center">{{service.price}}</td>
-                    </tr>
-                    <tr>
-                        <td class="highrow text-center"><strong>Total</strong></td>
-                        <td class="highrow text-center">{{order.selectedCentre.totalPrice}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+   
 </div>

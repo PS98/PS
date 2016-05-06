@@ -16,8 +16,10 @@ function ($scope, $localStorage, $location, $rootScope, $state, psLoginService) 
 
     $scope.logout = function () {
         $scope.isLoggedIn = false;
-        $localStorage.$reset();
-        $state.reload();
+        psLoginService.setUserAuthenticated(false);
+        $localStorage.userDetails = undefined;
+        //$state.reload();
+        $state.go("home");
     }
 
 }]);

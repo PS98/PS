@@ -39,6 +39,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                     state: "Dashboard",
                     config: {
                         url: "/Dashboard",
+                        requireLogin:true,
                         template: "<ps-dashboard></ps-dashboard>"
                     }
                 },
@@ -74,6 +75,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                      state: "service.centre",
                      config: {
                          url: "/",
+                         requireLogin: true,
                          template: "<select-centre></select-centre>"
                      }
                  },
@@ -81,6 +83,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                      state: "service.appointment",
                      config: {
                          url: "/",
+                         requireLogin:true,
                          template: "<book-appointment></book-appointment>"
                      }
                  },
@@ -88,14 +91,15 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    state: "service.address",
                    config: {
                        url: "/",
+                       requireLogin: true,
                        template: "<select-address></select-address>"
                    }
                },
                {
-                   state: "service.orderSuccess",
+                   state: "orderSuccess",
                    config: {
-                       url: "/",
-                     controller: "selectAddressController",
+                       url: "/Success",
+                       controller: "selectAddressController",
                        template: "<order-summary></order-summary>"
                    }
                },
@@ -104,10 +108,10 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    state: "socialCallback",
                    config: {
                        url: "/Auth/Success",
-                       template: "<div id='page-preloader'><img class='spinner' src='../assets/img/cool-loading-animated.gif' alt='MileMates'></div>",                      
-                        controller: "loginDetailsController"
-                 }
-            }
+                       template: "<div id='page-preloader'><img class='spinner' src='../assets/img/cool-loading-animated.gif' alt='MileMates'></div>",
+                       controller: "loginDetailsController"
+                   }
+               }
         ];
 
         routes.forEach(function (route) {
@@ -119,5 +123,17 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
 
         //TODO: don't forget to configure iis settings for html5 mode angular when deploying the code
         $locationProvider.html5Mode(true);
-
-    }]);
+        
+    }]).run(["$rootScope", "$state", "psLoginService", function ($rootScope, $state, psLoginService) {
+    $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
+        if (toState.requireLogin && !psLoginService.isAuthenticated()) {
+            // User isn’t authenticated
+            if (toState.name === "service.centre")
+                $("#loginModal").modal('toggle');
+            else {
+                $state.go("home");
+            }
+            event.preventDefault();
+        }
+    });
+}]);

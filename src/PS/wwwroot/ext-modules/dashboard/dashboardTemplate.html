@@ -165,7 +165,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-4 col-sm-offset-3 mgtp-10 mgbt-10">
-                                                            <button type="submit" id="updateProfile_btn" class="btn buttonSubmit pull-left" ng-show="isEdit" ng-click="updateProfile()" ng-disabled="(profileForm.firstname.$invalid || profileForm.lastname.$invalid || profileForm.mobile.$invalid) || (userData.phoneNo == oldNo && userData.firstName == oldFirstName && userData.lastName == oldLastName && profileForm.addressOtp.$invalid)">Update</button>
+                                                            <button type="submit" id="updateProfile_btn" class="btn buttonSubmit pull-left" ng-show="isEdit" ng-click="updateProfile()" ng-disabled="(profileForm.firstname.$invalid || profileForm.lastname.$invalid || profileForm.mobile.$invalid) || ((userData.phoneNo == oldNo || (!profileForm.addressOtp.$dirty || profileForm.addressOtp.$invalid )) && userData.firstName == oldFirstName && userData.lastName == oldLastName && profileForm.addressOtp.$invalid)">Update</button>
                                                             <button type="submit" id="cancleProfile_btn" class="btn btn-default pull-right" ng-show="isEdit" ng-click="isEdit = !isEdit">Cancel</button>
                                                         </div>
                                                     </div>
@@ -253,6 +253,11 @@
                 </div>
             </div><!-- /tab-section -->
         </div>
-    </div>
+    <!--</div>-->
 </section>
+
+<modal-dialog show="modalShown" width='750px' height='60%' okay="cancelOrder(order)" >
+
+</modal-dialog>
+
 <!-- end section_default -->
