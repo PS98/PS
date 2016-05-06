@@ -1,0 +1,132 @@
+﻿<div id="wrapper">
+    <div class="block-title">
+        <div class="block-title__inner section-bg section-bg_second">
+            <div class="bg-inner">
+                <div class="decor-1-header center-block"></div>
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Admin</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="row margin-top10" car="quote.car" ng-if="true" on-change="newCarChanged()" on-finish="getMaintenanceSchedule()">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="car-selection-car-container" ng-show="true">
+
+                                <div class="car-option" ng-class="car-option-active" ng-click="editBrand()" ng-show="centreDetails.brand">
+                                    {{centreDetails.brand}}
+                                </div>
+
+                                <div class="car-option" ng-class="" ng-click="editModel()" ng-show="centreDetails.model">
+                                    {{centreDetails.model}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sorting">
+                    <div class="sorting__inner">
+                        <div class="sorting__item">
+                            <span class="sorting__title">Select Service</span>
+                            <div class="select jelect">
+                                <input ng-model="city" type="text" id="txtCity" class="jelect-input" ng-change="getServiceCentreArea()">
+                                <div tabindex="0" role="button" class="jelect-current" id="cityDropDown">Select Service</div>
+                                <ul class="jelect-options" id="dropDownCity">
+                                    <li class="jelect-option jelect-option_state_active">Select Service</li>
+                                    <li class="jelect-option" >Essential Car Care</li>
+                                    <li class="jelect-option">Essential Car Care</li>
+                                    <li class="jelect-option">Essential Car Care</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sorting__item">
+                            <span class="sorting__title">Select Type</span>
+                            <div class="select jelect">
+                                <input ng-model="city" type="text" id="txtCity" class="jelect-input" ng-change="getServiceCentreArea()">
+                                <div tabindex="0" role="button" class="jelect-current" id="cityDropDown">Select Type</div>
+                                <ul class="jelect-options" id="dropDownCity">
+                                    <li class="jelect-option jelect-option_state_active">Select Type</li>
+                                    <li class="jelect-option">Petrol</li>
+                                    <li class="jelect-option">Diesel</li>
+                                    <li class="jelect-option">CNG</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div id="form-container">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-lg-6">
+
+                                <label for="sublocality_level_2" class="">Area</label>
+                                <input class="form-control" placeholder="Area" ng-model="centreDetails.area" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="sublocality_level_1" class="">Centre ID</label>
+                                <input class="form-control" placeholder="address line 2" ng-model="centreDetails.id" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-selection-container" ng-show="showBrandName">
+                    <span class="car-selection-step-name">
+                        Select MAKE
+                    </span>
+                    <div class="car-selection-flex-container">
+                        <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections">
+                            <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
+                                <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" width="24" height="24">
+                                <span ng-bind="carBrand" style="padding-left:10px"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" ng-if="showModel">
+                    <div class="col-xs-12">
+                        <div class="car-selection-container">
+                            <span class="car-selection-step-name">
+                                YOUR MODEL
+                            </span>
+                            <div class="car-selection-flex-container">
+                                <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes">
+                                    <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="car-selection-container">
+                            <span class="car-selection-step-name">
+                                YOUR have Selected MODEL
+                            </span>
+                            <div class="car-selection-flex">
+                                <ul class="car-selection-flex-column" >
+                                    <li ng-click="selectModel(type)" ng-repeat="model in centreDetails.modelList">{{model}}</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
