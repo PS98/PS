@@ -113,7 +113,7 @@ namespace PS.Controllers
                             Longitude = centre.Longitude,
                             PhoneNo = centre.PhoneNo,
                             TotalPrice = price.Sum(),
-                            // ServiceDetails = serviceDetails
+                            ServiceDetails = serviceDetails
 
                         });
 

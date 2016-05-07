@@ -143,4 +143,8 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrde
             alert("error");
         })
     }
+    $scope.editDropDate= function(){
+        $("#editOrder").modal('toggle');
+        $scope.dateType = "Drop Off Date & Time"
+    }
 }]);

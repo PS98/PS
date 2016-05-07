@@ -55,21 +55,10 @@
                     <label for="Email"> Email Address</label>
                     <input class="form-control" id="Email" name="email" placeholder="email address" type="text" ng-model="userSelectedService.userDetails.email" ng-class="{'bckgrnd-clr': (addressForm.email.$dirty || addressForm.email.$error.pattern) ,'bckgrnd-color-default' : (!addressForm.email.$error.email && !addressForm.email.$error.required && !addressForm.email.$error.pattern)} " ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" required />
                 </div>
-                <div class="form-group">
-                    <div style="margin-top: 15px; margin-bottom: 15px; font-size: 16px;">
-                        <div class="col-md-6">
-                            <i class="fa fa-check-circle" ng-click="payNow = !payNow" ng-class="{selected : payNow}"></i>
-                            <span>Pay Now</span>
-                        </div>
-                        <div class="col-md-6">
-                            <i class="fa fa-check-circle" ng-click="payNow = !payNow" ng-class="{selected :!payNow}"></i>
-                            <span>COD</span>
-                        </div>
-                    </div>
-                </div>
+            
                 <div class="form-group col-md-12 col-md-offset-2">
                     <button type="button" class="btn btn-primary btn-effect" ui-sref="service.centre"><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Back</button>
-                    <button type="button" class="btn btn-primary btn-effect pull-right" ng-click="orderProcess()">Review</button>
+                    <button type="button" class="btn btn-primary btn-effect pull-right" ng-click="ReviewOrder()">Review</button>
                 </div>
             </div>
         </div>
@@ -159,5 +148,38 @@
                 </table>
             </div>
         </div>
+    </div>
+</div>
+<div id="ReviewOrder" class="modal fade" role="dialog" style="z-index:9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Booking Details</h4>
+            </div>
+            <div class="modal-body collapse-content" id="container">
+
+                <order-details orders="reviewOrder" review="review"></order-details>
+                <div class="form-group">
+                    <div style="margin-top: 15px; margin-bottom: 15px; font-size: 16px;">
+                        <div class="col-md-6">
+                            <i class="fa fa-check-circle" ng-click="payNow = !payNow" ng-class="{selected : payNow}"></i>
+                            <span>Pay Now</span>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="fa fa-check-circle" ng-click="payNow = !payNow" ng-class="{selected :!payNow}"></i>
+                            <span>COD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal" ng-click="orderSubmit()">Submit Order</button>
+                <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal">Edit Order</button>
+            </div>
+        </div>
+
     </div>
 </div>

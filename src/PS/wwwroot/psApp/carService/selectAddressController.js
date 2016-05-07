@@ -58,5 +58,12 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
         })    
     }
 
+    $scope.ReviewOrder = function () {
+        $scope.reviewOrder = [];
+        var order = psDataServices.getSelectedService();
+        $scope.review = true;
+        $scope.reviewOrder.push(order);
+        $("#ReviewOrder").modal();
+    }
 
 }]);
