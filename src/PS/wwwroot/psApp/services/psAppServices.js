@@ -53,7 +53,7 @@
     }
     var _getServiceCentreList = function (city, area) {
         var serviceList = serviceNameList;
-        var data = { 'City': city, 'Area': area, 'Name': serviceList, 'Model': selectedCar.model, 'Varient': selectedCar.varient }
+        var data = { 'City': city, 'Area': area, 'Name': serviceList, 'Model': selectedCar.model, 'Type': selectedCar.varient }
         return $http(
         {
             url: "/api/ServiceCentre/centerlist",

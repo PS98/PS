@@ -41,6 +41,8 @@ namespace PS.Models
     public class ServiceDetails
     {
         public string Name { get; set; }
+        [BsonIgnore]
+        public int Price { get; set; }
         public List<PriceDetails> Petrol { get; set; }
         public List<PriceDetails> Diesel { get; set; }
         public List<PriceDetails> CNG { get; set; }
@@ -62,12 +64,9 @@ namespace PS.Models
         public string Area { get; set; }
         public string Model { get; set; }
         public List<string> Name { get; set; }
-        public string Varient { get; set; }
+        public string Type { get; set; }
 
     }
-
-
-
 
 
 }

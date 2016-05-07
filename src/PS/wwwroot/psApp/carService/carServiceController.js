@@ -38,19 +38,19 @@
         if (model !== "") {
             $scope.selectedCar.model = model;
             $scope.selectedCar.varient = '';
-           getCarVarient($scope.selectedCar.brand, model).
-                    success(function (data) {
-                        if (data.length > 0) {
-                            $scope.carList.carVarientList = data;
+           //getCarVarient($scope.selectedCar.brand, model).
+           //         success(function (data) {
+           //             if (data.length > 0) {
+                             $scope.carList.carVarientList = ["Petrol", "Diesel", "CNG", "Electric"];
                             $scope.showVarient = true;
-                        } else {
+           //             } else {
                             $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
                             $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                             psDataServices.setSelectedCarAndService($scope.selectedCar);
-                        }
-                    }).error(function () {
-                        $scope.selectVarient("");
-                    });
+           //             }
+           //         }).error(function () {
+           //             $scope.selectVarient("");
+           //         });
 
         } else {
             $scope.selectedCar.model = "I Don't Know";
@@ -176,15 +176,15 @@
                     $scope.car.services = [];
                     if ($scope.selectedCar.brand) {
                         getCarType($scope.selectedCar.brand).then(function () {
-                            getCarVarient($scope.selectedCar.brand, $scope.selectedCar.model).
-                                success(function (data) {
-                                    $scope.carList.carVarientList = data;
+                            //getCarVarient($scope.selectedCar.brand, $scope.selectedCar.model).
+                            //    success(function (data) {
+                                    $scope.carList.carVarientList = ["Petrol","Diesel","CNG","Electric"];
                                     $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
                                     $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                                     psDataServices.setSelectedCarAndService($scope.selectedCar);
-                                }).error(function () {
-                                    $scope.selectVarient("");
-                                });;
+                                //}).error(function () {
+                                //    $scope.selectVarient("");
+                                //});;
                         })
                     }
                     else {
@@ -256,7 +256,7 @@
          });
     };
     function getCarVarient(brand, model) {
-        return psDataServices.getCarVarient(brand, model);
+     //   return psDataServices.getCarVarient(brand, model);
                    
     }
 
