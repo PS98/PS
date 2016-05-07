@@ -73,40 +73,52 @@ namespace PS.Controllers
             {
                 var price = new List<int>();
                 var serviceDetails = new List<ServiceDetails>();
-                // check if centre is providing all user selected service
-                //if (selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
-                //{
+              //  check if centre is providing all user selected service
+                if (selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
+                {
 
-                //    foreach (var abc in centre.ServiceDetails)
-                //    {
-                //        //if (selectedService.Name.Contains(abc.Name.Trim()))
-                //        //{
-                //        //    if (!string.IsNullOrEmpty(selectedService.Varient))
-                //        //    {
-                //        //        price.AddRange(abc.PriceDetails.Where(x => x.ModelList.Contains(selectedService.Model) && x.VarientList.Any(a => a.Varient.Contains(selectedService.Varient))).Select(a => a.VarientList.First().Price));
-                //        //    }
-                //        //    else
-                //        //    {
-                //        //        price.AddRange(abc.PriceDetails.Where(x => x.ModelList.Contains(selectedService.Model)).Select(x => x.Price));
-                //        //    }
-                //        //    serviceDetails.Add(new ServiceDetails { Name = abc.Name, Price = price[price.Count - 1] });
-                //        //}
-                //    }
-                    
-                //    if (selectedService.Name.Count == price.Count)
-                //        selectedCentres.Add(new Centre
-                //        {
-                //            Name = centre.Name,
-                //            Address = centre.Address,
-                //            Latitude = centre.Latitude,
-                //            Longitude = centre.Longitude,
-                //            PhoneNo = centre.PhoneNo,
-                //            TotalPrice = price.Sum(),
-                //           // ServiceDetails = serviceDetails
+                    foreach (var abc in centre.ServiceDetails)
+                    {
+                        if (selectedService.Name.Contains(abc.Name.Trim()))
+                        {
+                            if (!string.IsNullOrEmpty(selectedService.Type))
+                            {
+                            switch (selectedService.Type.ToLower().Trim())
+                            {
+                                case "petrol":
+                                    price.AddRange(abc.Petrol.Where(x => x.ModelList.Contains(selectedService.Model)).Select(a => a.Price));
+                                    break;
+                                case "diesel":
+                                    price.AddRange(abc.Diesel.Where(x => x.ModelList.Contains(selectedService.Model)).Select(a => a.Price));
+                                    break;
+                                case "cng":
+                                    price.AddRange(abc.CNG.Where(x => x.ModelList.Contains(selectedService.Model)).Select(a => a.Price));
+                                    break;
+                                case "electric":
+                                    price.AddRange(abc.Electric.Where(x => x.ModelList.Contains(selectedService.Model)).Select(a => a.Price));
+                                    break;
+                            }
+                                serviceDetails.Add(new ServiceDetails { Name = abc.Name, Price = price[price.Count - 1] });
 
-                //        });
+                            }
 
-                //}
+                        }
+                    }
+
+                        if (selectedService.Name.Count == price.Count)
+                        selectedCentres.Add(new Centre
+                        {
+                            Name = centre.Name,
+                            Address = centre.Address,
+                            Latitude = centre.Latitude,
+                            Longitude = centre.Longitude,
+                            PhoneNo = centre.PhoneNo,
+                            TotalPrice = price.Sum(),
+                            // ServiceDetails = serviceDetails
+
+                        });
+
+                }
 
             }
 

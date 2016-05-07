@@ -96,7 +96,7 @@
                                                 I don't know
                                             </div>
                                             <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList">
-                                                <li ng-click="selectVarient(varient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-repeat="varient in carVarient" ng-bind="varient"></li>
+                                                <li ng-click="selectVarient(carVarient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-bind="carVarient"></li>
                                             </ul>
                                         </div>
                                     </div>

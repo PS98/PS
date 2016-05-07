@@ -14,19 +14,29 @@
         <div>
             <div class="row margin-top10">
                 <div class="form-group">
+                    <div class="col-lg-6" ng-show="!newCentre">
+                        <button type="button" class="btn btn-primary btn-effect" ng-click="newCentre = true; centreDetails.Id =''">Add New Centre</button>
+                    </div>
+                    <div class="col-lg-6" ng-show="newCentre">
+                        <button type="button" class="btn btn-primary btn-effect" ng-click="newCentre = false">Add To existing Centre</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top10" ng-if="newCentre">
+                <div class="form-group">
                     <div class="col-lg-6">
 
                         <label for="sublocality_level_2" class="">Area</label>
-                        <input class="form-control" placeholder="Area" ng-model="centreDetails.Area"  type="text"/>
+                        <input class="form-control" placeholder="Area" ng-model="centreDetails.Area" type="text" />
                     </div>
-                    <div class="col-lg-6">
+                    <!--<div class="col-lg-6">
                         <label for="sublocality_level_1" class="">Centre ID</label>
-                        <input class="form-control" placeholder="Centre ID" ng-model="centreDetails.Id"  type="number"/>
-                    </div>
+                        <input class="form-control" placeholder="Centre ID" ng-model="centreDetails.Id" type="number" />
+                    </div>-->
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="FirstName"> Centre Name</label>
-                    <input class="form-control" id="FirstName" name="firstName" placeholder="first name" type="text" ng-model="centreDetails.Name"  />
+                    <input class="form-control" id="FirstName" name="firstName" placeholder="first name" type="text" ng-model="centreDetails.Name" />
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="LastName"> Address line 1</label>
@@ -34,22 +44,34 @@
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="MobileNo"> Mobile No</label>
-                    <input class="form-control" id="MobileNo" name="mobile" type="number" ng-model="centreDetails.PhoneNo"  placeholder="Mobile Number" />
+                    <input class="form-control" id="MobileNo" name="mobile" type="number" ng-model="centreDetails.PhoneNo" placeholder="Mobile Number" />
                 </div>
 
                 <div class="form-group col-lg-6">
                     <label for="Email"> Address line 2</label>
-                    <input class="form-control" id="Email" name="email" placeholder="Address line 1" type="text" ng-model="centreDetails.Address.line2"/>
+                    <input class="form-control" id="Email" name="email" placeholder="Address line 1" type="text" ng-model="centreDetails.Address.line2" />
                 </div>
             </div>
-            <div class="row margin-top10" car="quote.car" ng-if="true" >
+
+            <div class="row margin-top10" ng-if="!newCentre">
+                <div class="col-lg-6">
+
+                    <label for="sublocality_level_2" class="">Area</label>
+                    <input class="form-control" placeholder="Area" ng-model="centreDetails.Area" type="text" />
+                </div>
+                <div class="col-lg-6">
+                    <label for="sublocality_level_1" class="">Centre ID</label>
+                    <input class="form-control" placeholder="Centre ID" ng-model="centreDetails.Id" type="number" />
+                </div>
+            </div>
+            <div class="row margin-top10">
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="car-selection-car-container" ng-show="true">
 
-                                <div class="car-option" ng-class="car-option-active" ng-click="editBrand()" ng-show="centreDetails.brand">
-                                    {{centreDetails.brand}}
+                                <div class="car-option" ng-class="car-option-active" ng-click="editBrand()" ng-show="brand">
+                                    {{brand}}
                                 </div>
 
                                 <div class="car-option" ng-class="" ng-show="centreDetails.model">
@@ -97,7 +119,7 @@
                     <div class="col-lg-6">
                         <!--<div class="form-group col-lg-6">-->
                         <label for="MobileNo"> Price </label>
-                        <input class="form-control" id="price" name="price" type="text" ng-model="centreDetails.Price"  />
+                        <input class="form-control" id="price" name="price" type="text" ng-model="centreDetails.Price" />
                         <!--</div>-->
                     </div>
                 </div>
@@ -145,7 +167,7 @@
                                 </ul>
 
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="form-group col-md-12 col-md-offset-2 pull-right" ng-if="(modelList || []).length>0">
