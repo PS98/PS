@@ -7,15 +7,23 @@ angular.module("psApp").directive("admin", function () {
             $('.jelect').jelect();
         },
         controller: ["$scope", "psDataServices", function ($scope, psDataServices) {
-            $scope.carList = {}; $scope.centreDetails = {}; $scope.showBrandName = true;
-            var obj = {
-                "ModelList": [],
-                "Price": 0
-            };
+            $scope.carList = {}; $scope.centreDetails = {}; $scope.showBrandName = true; var centreObject = {};
+            var obj = function(){
+                this["ModelList"] = [];
+                this["Price"] = 0;
+            }
+            var serviceObj = function () {
 
+                this["Name"] = "";
+                this["Petrol"] = [];
+                this["Diesel"] = [];
+                this["CNG"] = [];
+                this["Electric"] = [];
+            }
             psDataServices.geMockData().
                         success(function (data) {
-                        $scope.centreDetails = data;
+                            $scope.centreDetails = data;
+                            angular.extend(centreObject, data);
                         })
                         .error(function () {
                         });
@@ -29,8 +37,8 @@ angular.module("psApp").directive("admin", function () {
                               });
             $scope.selectBrand = function (brandName) {
                 $scope.showBrandName = false; $scope.showModel = true;
-                $scope.centreDetails.brand = brandName;
-                $scope.centreDetails.modelList = [];
+                $scope.brand = brandName;
+                $scope.modelList = [];
                 psDataServices.getCarType(brandName).
                  success(function (data) {
                      $scope.carList.carTypes = data;
@@ -38,35 +46,51 @@ angular.module("psApp").directive("admin", function () {
                  });
             }
             $scope.selectModel = function (type) {
-                $scope.centreDetails.modelList = $scope.centreDetails.modelList || [];
+                $scope.modelList = $scope.modelList || [];
 
-                if (!$scope.centreDetails.modelList.includes(type))
-                    $scope.centreDetails.modelList.push(type)
+                if (!$scope.modelList.includes(type))
+                    $scope.modelList.push(type)
                 else {
-                    $scope.centreDetails.modelList.splice($scope.centreDetails.modelList.indexOf(type), 1)
+                    $scope.modelList.splice($scope.modelList.indexOf(type), 1)
                 }
 
             }
             $scope.addCentreDetails = function () {
-                obj.ModelList = $scope.centreDetails.modelList;
-                obj.Price = $scope.centreDetails.Price;
-
+                $scope.centreDetails.ServiceDetails = [];
+                var services = new serviceObj();
+                var model = new obj();
+                model.ModelList = $scope.modelList;
+                model.Price = $scope.centreDetails.Price;
+                services.Name = $scope.centreDetails.ServiceDetails.Name;
+                //  $scope.centreDetails.ServiceDetails.Name = $scope.centreDetails.Service;
                 switch ($scope.centreDetails.type) {
                     case "Petrol":
-                        $scope.centreDetails.Petrol.push(obj);
+                        services.Petrol.push(model);
+                        $scope.centreDetails.ServiceDetails.push(services);
                         break;
                     case "Diesel":
-                        $scope.centreDetails.Diesel.push(obj);
+                        services.Diesel.push(model);
+                        $scope.centreDetails.ServiceDetails.push(services);
                         break;
                     case "CNG":
-                        $scope.centreDetails.CNG.push(obj);
+                        services.CNG.push(model);
+                        $scope.centreDetails.ServiceDetails.push(services);
                         break;
                     case "Electric":
-                       $scope.centreDetails.Electric.push(obj);
+                        services.Electric.push(model);
+                        $scope.centreDetails.ServiceDetails.push(services);
                         break;
                 }
                 console.log($scope.centreDetails);
-                psDataServices.saveCentreDetails($scope.centreDetails);
+                psDataServices.saveCentreDetails($scope.centreDetails).
+                            success(function (data) {
+                                alert(data.message);
+                                if (data.status === 0) {
+                                    $scope.centreDetails = {};
+                                    angular.extend($scope.centreDetails, centreObject);
+                                    $scope.centreDetails.Id = data.id;
+                                }
+                            });
             }
             $scope.editBrand = function () {
                 $scope.showBrandName = !$scope.showBrandName; $scope.showModel = !$scope.showModel;

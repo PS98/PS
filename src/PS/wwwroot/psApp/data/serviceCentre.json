@@ -8,11 +8,5 @@
   "PhoneNo": "",
   "Longitude": "",
   "Latitude": "",
-  "Service": "",
-  "Petrol": [ ],
-
-  "Diesel": [],
-  "CNG": [],
-  "Electric": []
-
+  "ServiceDetails": []
 }

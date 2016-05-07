@@ -91,7 +91,8 @@
     var _saveCentreDetails = function (centreDetails) {
         var list = [];
         list.push(centreDetails);
-        var data = { "Area": centreDetails.Area, "Centres":list}
+        var servicecs = {"Name":"", "Petrol":"","Diesel":""}
+        var data = { "Area": centreDetails.Area, "Centres": list }
         return $http(
        {
            url: "/api/ServiceCentre/save",

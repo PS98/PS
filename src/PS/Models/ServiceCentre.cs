@@ -14,18 +14,20 @@ namespace PS.Models
         public string Area { get; set; }
         public List<Centre> Centres { get; set; }
     }
-
+    [BsonIgnoreExtraElements]
     public class Centre
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public Address Address { get; set; }
         public string PhoneNo { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
         public int TotalPrice { get; set; }
-        public List<ServiceDetails> ServiceDetails { get; set; }
-    }
+       public List<ServiceDetails> ServiceDetails { get; set; }
 
+    }
+    [BsonIgnoreExtraElements]
     public class Address
     {
         [BsonElement("line1")]
@@ -34,35 +36,38 @@ namespace PS.Models
         public string Line2 { get; set; }
     }
 
+   
+    [BsonIgnoreExtraElements]
+    public class ServiceDetails
+    {
+        public string Name { get; set; }
+        public List<PriceDetails> Petrol { get; set; }
+        public List<PriceDetails> Diesel { get; set; }
+        public List<PriceDetails> CNG { get; set; }
+        public List<PriceDetails> Electric { get; set; }
+    }
+
+
+    [BsonIgnoreExtraElements]
+    public class PriceDetails
+    {
+        public List<string> ModelList { get; set; }
+        public int Price { get; set; }
+    }
+   
     public class SelectedService
 
     {
         public string City { get; set; }
         public string Area { get; set; }
         public string Model { get; set; }
-        public List<string> Name { get; set; } 
+        public List<string> Name { get; set; }
         public string Varient { get; set; }
 
     }
-    [BsonIgnoreExtraElements]
-    public class ServiceDetails
-    {
-        public string Name { get; set; }
-        public int Price { get; set; }
-        public List<PriceDetails> PriceDetails { get; set; }
-    }
-    [BsonIgnoreExtraElements]
-    public class PriceDetails
-    {
-        public List<string> ModelList { get; set; }
-        public List<VarientList> VarientList { get; set; }
-        public int Price { get; set; }
-    }
-    [BsonIgnoreExtraElements]
-    public class VarientList
-    {
-        public List<string> Varient { get; set; }
-        public int Price { get; set; }
-    }
+
+
+
+
 
 }

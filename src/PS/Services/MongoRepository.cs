@@ -177,5 +177,20 @@ namespace PS.Services
             var documentList = collection.Find(filter).ToListAsync().Result;
             return documentList;
         }
+        public static string RandomNumber(int length)
+        {
+            const string chars = "0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+    public string GenerateNewID()
+        {
+            var randomNumber = RandomNumber(4);
+            var date = DateTime.Now;
+            return randomNumber + date.ToString("MM") + date.ToString("dd");
+        }
+   
     }
 }
