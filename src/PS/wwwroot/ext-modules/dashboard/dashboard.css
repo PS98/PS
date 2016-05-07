@@ -12,6 +12,9 @@
     border-radius: 2px;
     position: relative;
 }
+.no-padding{
+    padding:0;
+}
 
 .widget:before, .widget:after {
     content: " ";
@@ -87,6 +90,9 @@
 .tr {
     top: 20px;
     right: 20px;
+}
+.no-top{
+    top:0;
 }
 .vd_info, .vd_info-menu {
     position: absolute;

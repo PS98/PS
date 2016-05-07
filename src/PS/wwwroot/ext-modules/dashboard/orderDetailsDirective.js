@@ -8,7 +8,8 @@ angular.module("psApp").directive("orderDetails", function () {
         },
         replace: true,
         scope: {
-            orders: '='
+            orders: '=',
+            review:'='
         }
     }
 });

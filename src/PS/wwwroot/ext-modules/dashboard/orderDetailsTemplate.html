@@ -1,13 +1,11 @@
 ﻿<div class="row row-fluid utilBoxDetails" ng-repeat="order in orders" style="margin-bottom: 20px;">
     <div class="col-md-12">
-        <div class="col-md-8">
+        <div class="col-md-8" ng-if="!review">
             <h3 class="override-exclude" style="color:black;">Appointment Details(OrderID: # {{ order.invoiceNo}})</h3>
         </div>
         <div class="col-md-4" ng-if="order.status =='Pending'">
             <div class="col-md-6">
-                <div class="vd_info tr" ng-click="isEdit = !isEdit">
-                    <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a>
-                </div>
+
             </div>
             <div class="col-md-6">
                 <div class="vd_info tr" ng-click="showDailog(order)">
@@ -16,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12" style="margin-bottom: 10px;">
+    <div class="col-md-12" style="margin-bottom: 10px;" ng-if="!review">
         <div class="order-status col-md-6">
             <span>Status: &nbsp;</span>
             <span ng-class="{'vd_bg-yellow':order.status =='Pending','vd_bg-green':order.status =='Success'}"><strong>{{order.status}}</strong></span>
@@ -33,12 +31,23 @@
     </div>
     <div class="col-md-12" style="margin-bottom: 10px;">
         <div class="order-status col-md-6">
-            <span>DropOff Date &amp; Time: &nbsp;</span>
-            <span><strong>{{order.selectedAppointment.dropOffDate.day}}{{order.selectedAppointment.dropOffDate.time}}</strong></span>
+            <div class="col-sm-6 no-padding">
+                <span>DropOff Date &amp; Time: &nbsp;</span><br />
+
+                <span><strong>{{order.selectedAppointment.dropOffDate.day}}{{order.selectedAppointment.dropOffDate.time}}</strong></span>
+            </div>
+            <div class="vd_info tr col-sm-6 no-top" ng-click="editDropDate()">
+                <a class="btn vd_btn btn-xs vd_bg-yellow pull-left"> <i class="fa fa-pencil append-icon"></i> Edit </a>
+            </div>
         </div>
         <div class="order-status col-md-6">
-            <span>Pickup Date &amp; Time: &nbsp;</span>
-            <span><strong>{{order.selectedAppointment.pickUpDate.day}}{{order.selectedAppointment.pickUpDate.time}}</strong></span>
+            <div class="col-sm-6 no-padding">
+                <span>Pickup Date &amp; Time: &nbsp;</span><br/>
+                <span><strong>{{order.selectedAppointment.pickUpDate.day}}{{order.selectedAppointment.pickUpDate.time}}</strong></span>
+            </div>
+            <div class="vd_info tr col-sm-6 no-top" ng-click="editPickupDate()">
+                <a class="btn vd_btn btn-xs vd_bg-yellow pull-left"> <i class="fa fa-pencil append-icon"></i> Edit </a>
+            </div>
         </div>
     </div>
     <div class="col-md-12">
@@ -80,11 +89,11 @@
     </div>
     <div class="col-md-12" style="margin-bottom: 15px;">
         <div class="col-md-6">
-                <h4 class="override-exclude">Vehicle Details</h4>
-                <strong>
-                    {{order.selectedCar.brand}}&nbsp;{{order.selectedCar.year}} &nbsp;
-                    {{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}
-                </strong>
+            <h4 class="override-exclude">Vehicle Details</h4>
+            <strong>
+                {{order.selectedCar.brand}}&nbsp;{{order.selectedCar.year}} &nbsp;
+                {{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}
+            </strong>
         </div>
         <div class="col-md-6">
             <h4 class="override-exclude">Service Details</h4>
@@ -93,5 +102,5 @@
             </div>
         </div>
     </div>
-   
+
 </div>
