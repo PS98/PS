@@ -359,7 +359,7 @@ img.pull-left {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 120%;
+	width: 45%;
 	height: 50%;
 	opacity: 0;
 	z-index: -1;
@@ -371,7 +371,9 @@ img.pull-left {
 	height: 350%;
 	opacity: 1;
 }
-
+.btn-effect-lrg:after {
+	width: 100% !important;
+}
 .block-title {
 	position: relative;
 	display: block;

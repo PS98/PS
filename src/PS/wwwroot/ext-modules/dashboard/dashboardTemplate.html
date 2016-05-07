@@ -60,7 +60,7 @@
                                     </div>
                                     <order-details orders="successOrders"></order-details>
                                 </div>
-                                <div id="settings" class="fade tab-pane">
+                                <div id="settings" class="fade">
 
                                     <div class="tabs"> 
                                         <ul class="nav nav-tabs">
@@ -70,7 +70,7 @@
                                         </ul>
                                         <div class="tab-content">
                                             <div id="profile-tab" class="tab-pane active">
-                                                <div class="vd_info tr" ng-click="isEdit = !isEdit">
+                                                <div class="vd_btn tr" ng-click="isEdit = !isEdit">
                                                     <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a>
                                                 </div>
                                                 <div class="alert alert-danger mgtp-30" role="alert" ng-show="(cngError && !cngSuccess) || (cngError && !cngSuccess)">
@@ -164,9 +164,9 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-4 col-sm-offset-3 mgtp-10 mgbt-10">
-                                                            <button type="submit" id="updateProfile_btn" class="btn buttonSubmit pull-left" ng-show="isEdit" ng-click="updateProfile()" ng-disabled="(profileForm.firstname.$invalid || profileForm.lastname.$invalid || profileForm.mobile.$invalid) || ((userData.phoneNo == oldNo || (!profileForm.addressOtp.$dirty || profileForm.addressOtp.$invalid )) && userData.firstName == oldFirstName && userData.lastName == oldLastName && profileForm.addressOtp.$invalid)">Update</button>
-                                                            <button type="submit" id="cancleProfile_btn" class="btn btn-default pull-right" ng-show="isEdit" ng-click="isEdit = !isEdit">Cancel</button>
+                                                        <div class="col-sm-5 col-sm-offset-2 mgtp-10 mgbt-10">
+                                                            <button type="submit" class="btn btn-primary pull-left" ng-show="isEdit" ng-click="updateProfile()" ng-class="!((profileForm.firstname.$invalid || profileForm.lastname.$invalid || profileForm.mobile.$invalid) || ((userData.phoneNo == oldNo || (!profileForm.addressOtp.$dirty || profileForm.addressOtp.$invalid )) && userData.firstName == oldFirstName && userData.lastName == oldLastName && profileForm.addressOtp.$invalid)) ? 'btn-effect' : ''" ng-disabled="(profileForm.firstname.$invalid || profileForm.lastname.$invalid || profileForm.mobile.$invalid) || ((userData.phoneNo == oldNo || (!profileForm.addressOtp.$dirty || profileForm.addressOtp.$invalid )) && userData.firstName == oldFirstName && userData.lastName == oldLastName && profileForm.addressOtp.$invalid)">Update</button>
+                                                            <button type="button" class="btn btn-primary btn-effect pull-right" ng-show="isEdit" ng-click="isEdit = !isEdit">Cancel</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -229,9 +229,9 @@
                                                                 <!-- col-sm-10 -->
                                                             </div>
                                                         </div>
-                                                        <div class="col-sm-4 col-sm-offset-3 mgtp-10 mgbt-10">
-                                                            <button type="submit" id="changePswd_btn" class="btn buttonSubmit pull-left" ng-disabled="changePassword.$invalid">Update</button>
-                                                            <button type="button" id="cancleProfile_btn" class="btn btn-default pull-right" ng-show="changePassword.$dirty" ng-click="resetAfterSubmit()">Cancel</button>
+                                                        <div class="col-sm-5 col-sm-offset-2 mgtp-10 mgbt-10">
+                                                            <button type="submit" class="btn btn-primary pull-left" ng-class="changePassword.$valid ? 'btn-effect' : ''" ng-disabled="changePassword.$invalid">Update</button>
+                                                            <button type="button" class="btn btn-primary btn-effect pull-right" ng-show="changePassword.$dirty" ng-click="resetAfterSubmit()">Cancel</button>
                                                         </div>
                                                     </div>
                                                 </form>

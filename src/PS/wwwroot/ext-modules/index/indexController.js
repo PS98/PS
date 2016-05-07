@@ -3,6 +3,9 @@
 angular.module("index").controller("indexController",
     ["$localStorage", "$location", "$scope", "$http", "indexDataService", "psLoginService", "$timeout",
         function indexController($localStorage, $location, $scope, $http, indexDataService, psLoginService, $timeout) {
+        $scope.go = function (path) {
+                $location.path(path);
+            };
             if (indexDataService) {
                 //      $scope.isBusy = true;
                 indexDataService.getHighlights()

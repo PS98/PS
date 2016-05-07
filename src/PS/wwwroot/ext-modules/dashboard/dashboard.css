@@ -106,7 +106,7 @@
     padding: 8px 8px;
 }
 .vd_btn {
-    background-color: #DDDDDD;
+    float: right;
     color: #FFFFFF;
 }
 .append-icon {

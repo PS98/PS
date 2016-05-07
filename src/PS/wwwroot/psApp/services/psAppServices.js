@@ -1,6 +1,6 @@
 ﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", "$localStorage", function ($http, $q, $localStorage) {
     var selectedCar, selectedService, serviceNameList;
-    var userServiceData = { selectedCar: '', selectedServices: '', selectedCentre: '', selectedAppointment: '', userDetails: {}};
+    var userServiceData = { selectedCar: {}, selectedServices: {}, selectedCentre: {}, selectedAppointment: {}, userDetails: {}};
     angular.extend(userServiceData.userDetails, $localStorage.userDetails);
     
     var _getSelectedService = function () {
