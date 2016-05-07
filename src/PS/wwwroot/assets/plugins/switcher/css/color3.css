@@ -28,8 +28,13 @@ blockquote:before,
 .package li::before,
 .comments-list .comment-datetime {color: #ffc73c;}
 
-.close-outline-color{
+.close-outline-color,
+.btn.btn-primary{
     border: 2px solid #ffc73c ;
+}
+
+.btn.btn-primary:hover{
+    background: #ffc73c;
 }
 
 
