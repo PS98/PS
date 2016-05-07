@@ -54,7 +54,7 @@ namespace PS
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
-            
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

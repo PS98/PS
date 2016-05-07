@@ -10,6 +10,7 @@
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
     "MongoDB.Driver": "2.0.0-rc0",
     "MongoDB.Driver.Core": "2.0.0-rc0",
     "MongoDB.Bson": "2.0.0-rc0",
