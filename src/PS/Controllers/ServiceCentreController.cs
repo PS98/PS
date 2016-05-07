@@ -114,7 +114,8 @@ namespace PS.Controllers
         }
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        [Route("save")]
+        public void Post([FromBody]ServiceCentre value)
         {
         }
 

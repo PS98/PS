@@ -719,10 +719,7 @@ color: white !important;
     font-weight: bold;
     text-transform: uppercase;
 }
-    .ct-iconBox .ct-iconBox-icon.ct-iconBox-icon--inverse i {
-    border-color: #e74c46;
-    color: #fff;
-}
+        
 .ct-iconBox.ct-iconBox--type3 .ct-iconBox-icon i {
     width: 2em;
     height: 2em;

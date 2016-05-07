@@ -79,6 +79,26 @@
            data: data
        });
     }
+    var _getMockData = function () {
+        return $http(
+      {
+          url: "/psApp/data/serviceCentre.json",
+          method: "get",
+      });
+
+    }
+
+    var _saveCentreDetails = function (centreDetails) {
+        var list = [];
+        list.push(centreDetails);
+        var data = { "Area": centreDetails.Area, "Centres":list}
+        return $http(
+       {
+           url: "/api/ServiceCentre/save",
+           method: "POST",
+           data: data
+       });
+    }
 
     return {
         getAllCarColletion: _getAllCarCollection,
@@ -96,7 +116,9 @@
         setPaymentMode:_setPaymentMode,
         getuserDetails: _getuserDetails,
         setuserDetails:_setuserDetails,
-        setUserPreference:_setUserPreference
+        setUserPreference:_setUserPreference,
+        geMockData: _getMockData,
+        saveCentreDetails: _saveCentreDetails
 }
           
     

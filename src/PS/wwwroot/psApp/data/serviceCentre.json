@@ -1,0 +1,18 @@
+﻿{
+  "Id": "",
+  "Name": "",
+  "Address": {
+    "line1": "",
+    "line2": ""
+  },
+  "PhoneNo": "",
+  "Longitude": "",
+  "Latitude": "",
+  "Service": "",
+  "Petrol": [ ],
+
+  "Diesel": [],
+  "CNG": [],
+  "Electric": []
+
+}

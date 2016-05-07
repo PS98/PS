@@ -110,7 +110,15 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                        template: "<div id='page-preloader'><img class='spinner' src='../assets/img/cool-loading-animated.gif' alt='MileMates'></div>",
                        controller: "loginDetailsController"
                    }
-               }
+               },
+                {
+                    state: "admin",
+                    config: {
+                        url: "/Admin",
+                        template: "<admin></admin>",
+                        controller: "loginDetailsController"
+                    }
+                }
         ];
 
         routes.forEach(function (route) {
