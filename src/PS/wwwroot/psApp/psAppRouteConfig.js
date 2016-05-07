@@ -39,7 +39,6 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                     state: "Dashboard",
                     config: {
                         url: "/Dashboard",
-                        requireLogin:true,
                         template: "<ps-dashboard></ps-dashboard>"
                     }
                 },
