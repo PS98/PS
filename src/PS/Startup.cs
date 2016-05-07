@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +24,6 @@ using System.Security.Claims;
 using Newtonsoft.Json.Serialization;
 using AutoMapper;
 using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Identity;
 using System.Net;
 using Microsoft.Extensions.WebEncoders;
 
@@ -42,7 +40,6 @@ namespace MessageBoard
 
             if (env.IsDevelopment())
             {
-                // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
                 builder.AddUserSecrets();
             }
 
@@ -56,36 +53,9 @@ namespace MessageBoard
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddEntityFramework()
-                .AddSqlServer();
-                //.AddDbContext<ApplicationDbContext>(options =>
-                //    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
             services.AddCaching(); // Adds a default in-memory implementation of IDistributedCache
             services.AddSession();
-
-            //services.AddIdentity<ApplicationUser, IdentityRole>(config =>
-            //{
-            //    config.User.RequireUniqueEmail = true;
-            //    config.Password.RequiredLength = 8;
-            //    config.Cookies.ApplicationCookie.LoginPath = "/Account/Login";
-            //    config.Cookies.ApplicationCookie.Events = new CookieAuthenticationEvents()
-            //    {
-            //        OnRedirectToLogin = ctx => {
-            //            if (ctx.Request.Path.StartsWithSegments("/api") && ctx.Response.StatusCode == (int)HttpStatusCode.OK)
-            //            {
-            //                ctx.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-            //            }
-            //            else
-            //            {
-            //                ctx.Response.Redirect(ctx.RedirectUri);
-            //            }
-            //            return Task.FromResult(0);
-            //        }
-            //    };
-            //})
-            //    .AddEntityFrameworkStores<ApplicationDbContext>()
-            //    .AddDefaultTokenProviders();
 
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.Configure<AuthSocialLoginOptions>(Configuration);
@@ -98,11 +68,6 @@ namespace MessageBoard
                 opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
 
-            services.Configure<IdentityOptions>(options =>
-            {
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
-                options.Lockout.MaxFailedAccessAttempts = 3;
-            });
 
             services.AddLogging();
 
