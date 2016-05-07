@@ -143,6 +143,12 @@ namespace PS.Controllers
 
                     var newCentre = serviceCentreObj.Centres.First();
 
+                    if (string.IsNullOrEmpty(newCentre.ServiceDetails.First().Name))
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "please select a service ", Status = 1 });
+                    }
+
                     if (string.IsNullOrEmpty(newCentre.Id))  // no id then new centre 
                     {
                         var id = repo.GenerateNewID();
@@ -160,23 +166,64 @@ namespace PS.Controllers
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "no centre found with given id", Status = 1 });
                     }
+                   
                     var data = exitingCentre.Select(y => y.ServiceDetails).First();
                     if (data.Any(x => x.Name == newCentre.ServiceDetails.First().Name))
                     {
+                        var newSericeDetails = newCentre.ServiceDetails;
+
                         foreach (var service in data.Where(x => x.Name == newCentre.ServiceDetails.First().Name))
                         {
 
+
                             if (newCentre.ServiceDetails.First().Petrol.Count() > 0)
+                            {
+                                int count = 0;
+                                foreach (var details in service.Petrol.Where( x =>newCentre.ServiceDetails.First().Petrol.Any(y=>y.Price == x.Price)))
+                                {
+                                    details.ModelList.AddRange(newSericeDetails.First().Petrol.First().ModelList);
+                                    count++;
+                                }
+                                if(count == 0)
                                 service.Petrol.AddRange(newCentre.ServiceDetails.First().Petrol);
 
+                            }
+
                             if (newCentre.ServiceDetails.First().Diesel.Count() > 0)
+                            {
+                                int count = 0;
+                                foreach (var details in service.Diesel.Where(x => newCentre.ServiceDetails.First().Diesel.Any(y => y.Price == x.Price)))
+                                {
+                                    details.ModelList.AddRange(newSericeDetails.First().Diesel.First().ModelList);
+                                    count++;
+                                }
+                                if (count == 0)
                                 service.Diesel.AddRange(newCentre.ServiceDetails.First().Diesel);
+                            }
 
                             if (newCentre.ServiceDetails.First().CNG.Count() > 0)
-                                service.CNG.AddRange(newCentre.ServiceDetails.First().CNG);
+                            {
+                                int count = 0;
+                                foreach (var details in service.CNG.Where(x => newCentre.ServiceDetails.First().CNG.Any(y => y.Price == x.Price)))
+                                {
+                                    details.ModelList.AddRange(newSericeDetails.First().CNG.First().ModelList);
+                                    count++;
+                                }
+                                if (count == 0)
+                                    service.CNG.AddRange(newCentre.ServiceDetails.First().CNG);
+                            }
 
                             if (newCentre.ServiceDetails.First().Electric.Count() > 0)
+                            {
+                                int count = 0;
+                                foreach (var details in service.Electric.Where(x => newCentre.ServiceDetails.First().Electric.Any(y => y.Price == x.Price)))
+                                {
+                                    details.ModelList.AddRange(newSericeDetails.First().Electric.First().ModelList);
+                                    count++;
+                                }
+                                if (count == 0)
                                 service.Electric.AddRange(newCentre.ServiceDetails.First().Electric);
+                            }
                         }
 
                         collection.UpdateOneAsync(filter, update);

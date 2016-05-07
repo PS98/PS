@@ -56,13 +56,12 @@ angular.module("psApp").directive("admin", function () {
 
             }
             $scope.addCentreDetails = function () {
-                $scope.centreDetails.ServiceDetails = [];
                 var services = new serviceObj();
                 var model = new obj();
                 model.ModelList = $scope.modelList;
                 model.Price = $scope.centreDetails.Price;
-                services.Name = $scope.centreDetails.ServiceDetails.Name;
-                //  $scope.centreDetails.ServiceDetails.Name = $scope.centreDetails.Service;
+                services.Name = $scope.service;
+                $scope.centreDetails.ServiceDetails = [];
                 switch ($scope.centreDetails.type) {
                     case "Petrol":
                         services.Petrol.push(model);

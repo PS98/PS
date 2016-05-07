@@ -191,6 +191,7 @@ namespace PS.Services
             var date = DateTime.Now;
             return randomNumber + date.ToString("MM") + date.ToString("dd");
         }
+       
    
     }
 }
