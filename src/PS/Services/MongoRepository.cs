@@ -191,7 +191,35 @@ namespace PS.Services
             var date = DateTime.Now;
             return randomNumber + date.ToString("MM") + date.ToString("dd");
         }
-       
-   
+
+        public void changeAppointmentDate(string invoiceNo, string changeDate, string changeTime,bool isdroffOff)
+        {
+            var collection = _database.GetCollection<OrderDetails>("Invoice");
+            Appointment appointment = new Appointment() { pickUpDate = new AppointmentDetails(), dropOffDate = new AppointmentDetails()};
+            if (isdroffOff)
+            {
+                appointment.dropOffDate.day = changeDate;
+                appointment.dropOffDate.time = changeTime;
+            }
+            else
+            {
+                appointment.pickUpDate.day = changeDate;
+                appointment.pickUpDate.time = changeTime;
+            }
+            var filterDic = new Dictionary<string, string>();
+            filterDic.Add("InvoiceNo", invoiceNo);
+
+            var updateDic = new Dictionary<string, object>();
+            if(isdroffOff)
+            {
+                updateDic.Add("selectedAppointment.dropOffDate", appointment.dropOffDate);
+            }
+            else
+            {
+                updateDic.Add("selectedAppointment.pickUpDate", appointment.pickUpDate);
+            }
+            UpdateDocumentWithFilter<OrderDetails>(filterDic, updateDic, collection);
+            
+        }
     }
 }

@@ -3,11 +3,12 @@
         scope: {
             show: '=',
             okay:'&',
-            cancelOrder: '='
+            informational:'=',
+            message:'='
         },
         replace: true, // Replace with the template below
         link: function (scope, element, attrs) {
-            //scope.dialogStyle = {};
+           //scope.dialogStyle = {};
             //if (attrs.width)
             //    scope.dialogStyle.width = attrs.width;
             //if (attrs.height)

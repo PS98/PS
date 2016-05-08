@@ -80,13 +80,42 @@
 
         return deferred.promise;
     }
+    var _editDateAndTime = function (invoiceNo, changedDate, isDropOff) {
+        var deferred = $q.defer();
+        $http(
+            {
+                url: "/api/OrderDetails/editOrder?invoiceNo=" + invoiceNo + "&changeDate=" + changedDate.dropOffDate.day + "&changeTime=" + changedDate.dropOffDate.time + "&isDropOff=" + isDropOff, method: "POST"
+            })
+       // var data;
+       // if (isdroffOff)
+       //     data = { 'invoiceNo': invoiceNo, 'changeDate': changedDate.dropOffDate.day, "changeTime": changedDate.dropOffDate.time, "isdroffOff": isdroffOff };
+       // else {
+       //     data = { 'invoiceNo': invoiceNo, 'changeDate': changedDate.pickUpDate.day, "changeTime": changedDate.pickUpDate.time, "isdroffOff": isdroffOff };
+       // }
+       // $http(
+       //{
+       //    url: "/api/OrderDetails/editOrder",
+       //    method: "POST",
+       //    data: data
+    //})
+    .then(function (result) {
+                //Success
+                deferred.resolve(result.data);
+            }, function (error) {
+                //Error
+                deferred.reject(error);
+            });
+
+        return deferred.promise;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
         submitOrder: _submitOrder,
         getsubmittedOrder: _getSubmittedOrder,
         getAllPendingOrder:_getAllPendingOrder,
-        cancelOrder: _cancelOrder
+        cancelOrder: _cancelOrder,
+        editDateAndTime: _editDateAndTime
     }
 
 }]);

@@ -94,6 +94,10 @@
 .no-top{
     top:0;
 }
+.no-border{
+    border:0;
+    background-color:#FFF
+}
 .vd_info, .vd_info-menu {
     position: absolute;
 }

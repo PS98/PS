@@ -1,9 +1,10 @@
-﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "$timeout", "psDataServices", "psLoginService","psOrderDetailsService",
-function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrderDetailsService) {
+﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "$timeout", "psDataServices", "psLoginService", "psOrderDetailsService",
+function ($scope, $localStorage, $timeout, psDataServices, psLoginService, psOrderDetailsService) {
 
-    $scope.userData = {};
+    $scope.userData = {}; $scope.changedDate = { pickUpDate: {}, dropOffDate: {} };
+    $scope.hideCalendar = false;
 
-    if (psDataServices.getuserDetails()){
+    if (psDataServices.getuserDetails()) {
         $scope.userDetails = psDataServices.getuserDetails();
         angular.extend($scope.userData, $scope.userDetails);
     }
@@ -11,46 +12,46 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrde
     $scope.oldNo = $scope.userData.phoneNo;
     $scope.oldFirstName = $scope.userData.firstName;
     $scope.oldLastName = $scope.userData.lastName;
-    
+
     $scope.isEdit = false;
 
 
 
     $scope.updateProfile = function () {
         var data = { "firstName": $scope.userData.firstName, "lastName": $scope.userData.lastName, "mobile": $scope.userData.phoneNo, "email": $scope.userData.email }
-        
-            psLoginService.updateProfile(data)
-             .then(function (result) {
-                 //Success
-                 if (result.status == 1) {
-                     $scope.cngSuccess = true;
-                     $scope.cngError = false;
-                     $scope.successMessage = result.result;
-                 } else if (result.status == 2) {
-                     $scope.cngError = true;
-                     $scope.cngSuccess = false;
-                     $scope.errorMessage = result.result;
-                     $timeout(function () {
-                         $scope.cngReset();
-                     }, 3000);
-                 }
-             }, function (error) {
-                 //Error
+
+        psLoginService.updateProfile(data)
+         .then(function (result) {
+             //Success
+             if (result.status == 1) {
+                 $scope.cngSuccess = true;
+                 $scope.cngError = false;
+                 $scope.successMessage = result.result;
+             } else if (result.status == 2) {
                  $scope.cngError = true;
                  $scope.cngSuccess = false;
                  $scope.errorMessage = result.result;
-             }).finally(function () {
-                 $scope.isEdit = false;
-                 $localStorage.userDetails = $scope.userData;
-                 $scope.oldNo = $scope.userData.phoneNo;
-                 $scope.oldFirstName = $scope.userData.firstName;
-                 $scope.oldLastName = $scope.userData.lastName;
-                 $scope.resetAfterSubmitProfile();
                  $timeout(function () {
                      $scope.cngReset();
                  }, 3000);
-             });
-               
+             }
+         }, function (error) {
+             //Error
+             $scope.cngError = true;
+             $scope.cngSuccess = false;
+             $scope.errorMessage = result.result;
+         }).finally(function () {
+             $scope.isEdit = false;
+             $localStorage.userDetails = $scope.userData;
+             $scope.oldNo = $scope.userData.phoneNo;
+             $scope.oldFirstName = $scope.userData.firstName;
+             $scope.oldLastName = $scope.userData.lastName;
+             $scope.resetAfterSubmitProfile();
+             $timeout(function () {
+                 $scope.cngReset();
+             }, 3000);
+         });
+
     }
 
 
@@ -90,7 +91,7 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrde
             $timeout(function () {
                 $scope.cngReset();
             }, 3000);
-}
+        }
     }
 
     $scope.cngReset = function () {
@@ -119,7 +120,7 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrde
     function getOrderOnStatus(status) {
         psOrderDetailsService.getAllPendingOrder(status).then(function (data) {
             if (status == "Pending")
-            $scope.pendingOrders = data;
+                $scope.pendingOrders = data;
             if (status == "Success")
                 $scope.successOrders = data;
         }, function () {
@@ -137,14 +138,40 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService,psOrde
     $scope.cancelOrder = function () {
         $scope.modalShown = false;
         psOrderDetailsService.cancelOrder($scope.cancelledOrder.invoiceNo, $scope.cancelledOrder.userDetails.email).then(function (data) {
-           $scope.pendingOrders = data;
-           getOrderOnStatus("Success");
+            $scope.pendingOrders = data;
+            getOrderOnStatus("Success");
         }, function () {
             alert("error");
         })
     }
-    $scope.editDropDate= function(){
-        $("#editOrder").modal('toggle');
-        $scope.dateType = "Drop Off Date & Time"
+    $scope.changeDateAndTime = function (editOrder) {
+
+
+        psOrderDetailsService.editDateAndTime(editOrder.invoiceNo, $scope.changedDate,!$scope.showPickUpCalendar).
+                        then(function (data) {
+                            if (data.status == 0) {
+                                if (!$scope.showPickUpCalendar) {
+                                    editOrder.selectedAppointment.dropOffDate = $scope.changedDate.dropOffDate;
+                                }
+                                else {
+                                    editOrder.selectedAppointment.pickUpDate = $scope.changedDate.pickUpDate;
+                                }
+                            }
+                            $scope.overlayMessage = data.Result;
+                            $scope.informational = true;
+
+                        }, function () {
+                            alert("error");
+                        })
+
     }
+    $scope.openDropCalender = function (order) {
+                $("#editOrder").modal('toggle');
+                $scope.dateType = "Drop Off Date & Time"
+                $scope.editOrder = order;
+                $scope.showPickUpCalendar = false;
+            }
+
+
+
 }]);

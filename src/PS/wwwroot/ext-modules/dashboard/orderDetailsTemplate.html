@@ -34,18 +34,18 @@
             <div class="col-sm-6 no-padding">
                 <span>DropOff Date &amp; Time: &nbsp;</span><br />
 
-                <span><strong>{{order.selectedAppointment.dropOffDate.day}}{{order.selectedAppointment.dropOffDate.time}}</strong></span>
+                <span><strong>{{order.selectedAppointment.dropOffDate.day}}::{{order.selectedAppointment.dropOffDate.time}}</strong></span>
             </div>
-            <div class="vd_info tr col-sm-6 no-top" ng-click="editDropDate()">
+            <div class="vd_info tr col-sm-6 no-top" ng-click="openCalender(order)">
                 <a class="btn vd_btn btn-xs vd_bg-yellow pull-left"> <i class="fa fa-pencil append-icon"></i> Edit </a>
             </div>
         </div>
         <div class="order-status col-md-6">
             <div class="col-sm-6 no-padding">
                 <span>Pickup Date &amp; Time: &nbsp;</span><br/>
-                <span><strong>{{order.selectedAppointment.pickUpDate.day}}{{order.selectedAppointment.pickUpDate.time}}</strong></span>
+                <span><strong>{{order.selectedAppointment.pickUpDate.day}}::{{order.selectedAppointment.pickUpDate.time}}</strong></span>
             </div>
-            <div class="vd_info tr col-sm-6 no-top" ng-click="editPickupDate()">
+            <div class="vd_info tr col-sm-6 no-top" ng-click="openPickUpCalender(order)">
                 <a class="btn vd_btn btn-xs vd_bg-yellow pull-left"> <i class="fa fa-pencil append-icon"></i> Edit </a>
             </div>
         </div>

@@ -19,13 +19,13 @@ namespace PS.Controllers
         // GET: api/values
         [Route("order")]
         //[HttpGet("{email}/{status}")]
-        public JsonResult Get(string email,string status)
+        public JsonResult Get(string email, string status)
         {
             try
             {
                 if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(status))
                 {
-                    var res = repo.GetOrderOnStatus(status,email);
+                    var res = repo.GetOrderOnStatus(status, email);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = res });
                 }
@@ -37,7 +37,7 @@ namespace PS.Controllers
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
-           // return new List<OrderDetails>();
+            // return new List<OrderDetails>();
         }
 
         [HttpGet]
@@ -61,6 +61,33 @@ namespace PS.Controllers
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
         }
+
+        [HttpPost]
+        [Route("editOrder")]
+        public JsonResult EditOrder(string invoiceNo, string changeDate, string changeTime, bool isDropOff)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(invoiceNo) && !string.IsNullOrEmpty(changeDate) && !string.IsNullOrEmpty(changeTime))
+                {
+                    repo.changeAppointmentDate(invoiceNo, changeDate, changeTime,isDropOff);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Status = 0, Result = "Update" });
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "We are unable to process your request.", Status = 1 });
+        }
+
+
+
+
+
 
         // POST api/values
         [HttpPost]

@@ -9,18 +9,25 @@
             </div>
             <div class="modal-body collapse-content" id="container">
 
-                <div class="subscriptionMessage">
+                <div class="subscriptionMessage" ng-if="!message">
                     Are you sure, you want to cancel this order?
                 </div>
-
+                <div class="subscriptionMessage" ng-if="message">
+                    {{ message}}
+                </div>
 
             </div>
             <div class="modal-footer">
                 <a class="main-slider__btn btn-effect pull-right" data-dismiss="modal">
-                    <span class="main-slider__btn_inner common-button-structure-inner">Close</span>
+                    <span class="main-slider__btn_inner common-button-structure-inner">No</span>
                 </a>
                 <a class="main-slider__btn btn-effect pull-right" data-dismiss="modal" ng-click="okayClick();" style="margin-right:15px">
                     <span class="main-slider__btn_inner common-button-structure-inner">Yes</span>
+                </a>
+            </div>
+            <div class="modal-footer" ng-if="informational">
+                <a class="main-slider__btn btn-effect pull-right" data-dismiss="modal">
+                    <span class="main-slider__btn_inner common-button-structure-inner">Close</span>
                 </a>
             </div>
         </div>
