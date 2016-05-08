@@ -8,6 +8,7 @@
 /// <reference path="assets/js/waypoints.min.js" />
 /// <reference path="assets/js/wow.js" />
 /// <reference path="assets/plugins/bootstrap/js/bootstrap.min.js" />
+/// <reference path="assets/plugins/jelect/jquery.jelect.js" />
 /// <reference path="assets/plugins/owl-carousel/owl.carousel.min.js" />
 /// <reference path="assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js" />
 /// <reference path="assets/plugins/sliderpro/js/jquery.sliderpro.min.js" />
