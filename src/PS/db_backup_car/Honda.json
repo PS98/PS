@@ -1,320 +1,542 @@
-{ 
-    "_id" : ObjectId("56eed460bc9bd93bf4faa34e"), 
-    "name" : "Brio", 
-    "varient" : [
-        {
-            "name" : "E MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "EX MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "V MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX AT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX (O) MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX (O) AT", 
-            "Price" : "", 
-            "Type" : ""
+{
+  "_id": ObjectId("56eed460bc9bd93bf4faa34e"),
+  "name": "Brio",
+  "varient": [
+    {
+      "name": "E MT",
+      "Price": "4.6 lakh",
+      "Type": "",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.2 kmpl",
+        "Mileage-Highway": "19.4 kmpl",
+        "Available Colors": "Alabaster Silver,Tefeta white,Crystal Black Pearl,Urbon Titenium ,Majestic blue ",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1198",
+        "Service Cost": "6,023/yr"
+      }
+    },
+    {
+      "name": "EX MT",
+      "Price": "4.8 lakh",
+      "Type": "",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.2 kmpl",
+        "Mileage-Highway": "19.4 kmpl",
+        "Available Colors": "Alabaster Silver,Tefeta white,Crystal Black Pearl,Urbon Titenium ,Majestic blue ",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1198",
+        "Service Cost": "6,023/yr"
+      }
+    },
+    {
+      "name": "S MT",
+      "Price": "5.2 lakh",
+      "Type": "",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.2 kmpl",
+        "Mileage-Highway": "19.4 kmpl",
+        "Available Colors": "Alabaster Silver,Tefeta white,Crystal Black Pearl,Urbon Titenium ,Majestic blue ",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1198",
+        "Service Cost": "6,023/yr"
+      }
+    },
+    {
+      "name": "V MT",
+      "Price": "",
+      "Type": "5.6 lakh",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.2 kmpl",
+        "Mileage-Highway": "19.4 kmpl",
+        "Available Colors": "Alabaster Silver,Tefeta white,Crystal Black Pearl,Rallye Red, Urbon Titenium ,Majestic blue ",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)": "1198",
+        "Service Cost": "6,023/yr"
+      },
+      {
+        "name": "VX AT",
+        "Price": "6.8 lakh",
+        "Type ": "",
+        "Overview": {
+          "Fuel Type": "petrol",
+          "Mileage-City": "12.5 kmpl",
+          "Mileage-Highway": "16.5 kmpl",
+          "Available Colors": "Alabaster Silver,Tefeta white,Crystal Black Pearl,Rallye Red, Urbon Titenium ,Majestic blue ",
+          "Fuel Tank Capacity": "35(Liters)",
+          "Seating Capacity": "5",
+          "Transmission Type": "Automatic",
+          "Engine Displacement (cc)": "1198",
+          "Service Cost": "6,343yr"
         }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed46abc9bd93bf4faa350"), 
-    "name" : "City", 
-    "varient" : [
-        {
-            "name" : "E MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SV MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "V MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SV CVT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX CVT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "E MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SV MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "V MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX (O) Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX (O) Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX(O) BL Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX(O) BL Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed474bc9bd93bf4faa352"), 
-    "name" : "Jazz", 
-    "varient" : [
-        {
-            "name" : "S Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "E Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SV Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SV Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "V Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "V Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S CVT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "V CVT", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed47ebc9bd93bf4faa354"), 
-    "name" : "CR-V", 
-    "varient" : [
-        {
-            "name" : "2L MT", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "2.4L AT AVN", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "2L AT", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed510bc9bd93bf4faa35a"), 
-    "name" : "Amaze", 
-    "varient" : [
-        {
-            "name" : "E MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S AT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX AT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "S MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "VX MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SX MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "SX MT Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "E MT Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
-}
-{ 
-    "_id" : ObjectId("56eed546bc9bd93bf4faa35e"), 
-    "name" : "Mobilio MPV", 
-    "varient" : [
-        {
-            "name" : "MPV E Petrol", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "MPV S Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "MPV V Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "MPV E Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "MPV S Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "MPV V Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "MPV RS Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "V Option Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "V Option Petrol", 
-            "Price" : "", 
-            "Type" : ""
-        }, 
-        {
-            "name" : "RS Option Diesel", 
-            "Price" : "", 
-            "Type" : ""
-        }
-    ]
+
+      }
+      },
+    {
+      "name": "VX (O)",
+      "Price": "6.5 lakh",
+      "Type ": "",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.2 kmpl",
+        "Mileage-Highway": "19.4 kmpl",
+        "Available Colors": "Alabaster Silver,Tefeta white,Crystal Black Pearl,Rallye Red, Urbon Titenium ,Majestic blue ",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)":"1198",
+        "Service Cost":"6,343yr"
+      }
+
+    },
+    {
+      "name": "VX (O) AT",
+      "Price": "7.3 lakh",
+      "Type": "",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "12.5 kmpl",
+        "Mileage-Highway": "16.5 kmpl",
+        "Available Colors": "Alabaster Silver,Tefeta white,Crystal Black Pearl,Rallye Red, Urbon Titenium ,Majestic blue ",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)": "1198",
+        "Service Cost": "6,343yr"
+      }
+    }
+      ]
+    } {
+  "_id": ObjectId("56eed46abc9bd93bf4faa350"),
+  "name": "City",
+  "varient": [
+    {
+      "name": "E MT Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "S MT Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "SV MT Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "V MT Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX MT Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "SV CVT Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX CVT Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "E MT Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "S MT Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "SV MT Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "V MT Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX MT Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX (O) Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX (O) Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX(O) BL Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX(O) BL Petrol",
+      "Price": "",
+      "Type": ""
+    }
+  ]
+} {
+  "_id": ObjectId("56eed474bc9bd93bf4faa352"),
+  "name": "Jazz",
+  "varient": [
+    {
+      "name": "S Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "S Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "E Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "SV Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "SV Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "V Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "V Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "VX Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "S CVT",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "V CVT",
+      "Price": "",
+      "Type": ""
+    }
+  ]
+} {
+  "_id": ObjectId("56eed47ebc9bd93bf4faa354"),
+  "name": "CR-V",
+  "varient": [
+    {
+      "name": "2L MT",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "2.4L AT AVN",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "2L AT",
+      "Price": "",
+      "Type": ""
+    }
+  ]
+} {
+  "_id": ObjectId("56eed510bc9bd93bf4faa35a"),
+  "name": "Amaze",
+  "varient": [
+    {
+      "name": "Ei DTEC(Diesel)",
+      "Price": "6.9 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "25.08 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)" 1498
+        ", "Service Cost"
+        10,
+        366/yr",
+      }
+
+    },
+    {
+
+      "name": "Si DTEC(Diesel)",
+      "Price": "7.7 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "25.08 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)" 1498
+        ", "Service Cost"
+        10,
+        366/yr",
+      }
+
+    },
+    {
+
+      "name": "SX i-DTEC(Diesel)",
+      "Price": "8.3 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "25.08 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)" 1498
+        ", "Service Cost"
+        10,
+        366/yr",
+      }
+
+    },
+    {
+
+      "name": "VX i-DTEC(Diesel)",
+      "Price": "8.6 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "Diesel",
+        "Mileage-City": "21.0 kmpl",
+        "Mileage-Highway": "25.08 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)" 1498
+        ", "Service Cost"
+        10,
+        366/yr",
+      }
+
+    },
+    {
+
+      "name": "Ei-VTEC(petrol)",
+      "Price": "5.6 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.0kmpl",
+        "Mileage-Highway": "17.8 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)" 1198
+        ", "Service Cost"
+        7,
+        067/yr",
+      }
+
+    },
+    {
+
+      "name": "Si-VTEC(petrol)",
+      "Price": "6.6 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.0kmpl",
+        "Mileage-Highway": "17.8 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)" 1198
+        ", "Service Cost"
+        6,
+        447/yr",
+      }
+
+    },
+    {
+
+      "name": "SXi-VTEC(petrol)",
+      "Price": "7.2 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.0kmpl",
+        "Mileage-Highway": "17.8 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)" 1198
+        ", "Service Cost"
+        6,
+        447/yr",
+      }
+
+    },
+    {
+
+      "name": "S CVTi-VTEC(petrol)",
+      "Price": "7.7 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "13.3 kmpl",
+        "Mileage-Highway": "18.1 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)" 1199
+        ", "Service Cost"
+        6,
+        447/yr",
+      }
+
+    },
+    {
+
+      "name": "VXi- VAEC(petrol)",
+      "Price": "7.7 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "15.0kmpl",
+        "Mileage-Highway": "17.8 kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Manual",
+        "Engine Displacement (cc)" 1198
+        ", "Service Cost"
+        6,
+        447/yr",
+      }
+
+    },
+    {
+
+      "name": "VX CVTi-VAEC(petrol)",
+      "Price": "8.7 lakh
+      "Type ": "-",
+      "Overview": {
+        "Fuel Type": "petrol",
+        "Mileage-City": "13.3kmpl",
+        "Mileage-Highway": "18.1kmpl",
+        "Available Colors": "Alabaster Silver Metallic,Tefeta white,Urbon Titenium Metallic,Golden Brown Metallic,White Orchid Pearl,Bluish Titenium,Camellan Red",
+        "Fuel Tank Capacity": "35(Liters)",
+        "Seating Capacity": "5",
+        "Transmission Type": "Automatic",
+        "Engine Displacement (cc)" 1199
+        ", "Service Cost"
+        6,
+        447/yr",
+      }
+    }
+  ]
+} {
+  "_id": ObjectId("56eed546bc9bd93bf4faa35e"),
+  "name": "Mobilio MPV",
+  "varient": [
+    {
+      "name": "MPV E Petrol",
+      "Type": ""
+    },
+    {
+      "name": "MPV S Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "MPV V Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "MPV E Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "MPV S Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "MPV V Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "MPV RS Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "V Option Diesel",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "V Option Petrol",
+      "Price": "",
+      "Type": ""
+    },
+    {
+      "name": "RS Option Diesel",
+      "Price": "",
+      "Type": ""
+    }
+  ]
 }
