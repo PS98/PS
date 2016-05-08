@@ -120,15 +120,6 @@ function makeSyickyHeader() {
 
 
 
-
-
-        $(".slider-product a").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
-
-
-        $("a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000 });
-
-
-
         $(".dropdown").hover(
         function () {
             $('.dropdown-menu', this).stop(true, true).slideDown("fast");
