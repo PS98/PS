@@ -64,7 +64,6 @@ blockquote:before,
 .progress-bar,
 .post .entry-date,
 .post:hover .entry-main__inner_mod-a:after,
-.btn-effect:after,
 .yamm .navbar-toggle,
 .ui-btn_mod-a,
 .jelect-option:hover,
@@ -77,6 +76,10 @@ blockquote:before,
 .service-panel-color:hover,
 .car-selection-container ul li.date:hover,
 .about-autor {background-color: #dc2d13 !important;}
+
+.btn-default:after,  .btn-effect:after{
+    background-color: #b22410!important;
+}
 
 .link-img__link,
 .add_notes,

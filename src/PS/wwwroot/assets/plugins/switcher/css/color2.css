@@ -34,7 +34,7 @@ blockquote:before,
 }
 
 .btn.btn-primary:hover{
-    background: #38abf1;
+    background: #38abf4;
 }
 
 .bg-color_primary,
@@ -53,7 +53,6 @@ blockquote:before,
 .border-section-top_mod-b:before,
 .border-section-top_mod-b:after,
 .slider-grid__price,
-.btn-default:after,
 .owl-theme_mod-c .owl-controls .owl-page.active span,
 .owl-theme_mod-c .owl-controls.clickable .owl-page:hover span,
 .owl-theme_mod-d .owl-controls .owl-page.active span,
@@ -63,7 +62,6 @@ blockquote:before,
 .progress-bar,
 .post .entry-date,
 .post:hover .entry-main__inner_mod-a:after,
-.btn-effect:after,
 .yamm .navbar-toggle,
 .ui-btn_mod-a,
 .jelect-option:hover,
@@ -76,6 +74,11 @@ blockquote:before,
 .service-panel-color:hover,
 .car-selection-container ul li.date:hover,
 .about-autor {background-color: #38abf4 !important;}
+
+
+.btn-default:after,  .btn-effect:after{
+    background-color: #0e99f1!important;
+}
 
 .link-img__link,
 .add_notes,
