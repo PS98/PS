@@ -1528,6 +1528,7 @@ img.pull-left {
 	margin-bottom: 25px;
 	font-family: Raleway;
 	font-size: 26px;
+    color: #fff;
 	font-weight: 500;
 }
 .main-slider__text {
@@ -1538,6 +1539,7 @@ img.pull-left {
 	display: inline-block;
 	font-size: 36px;
 	font-weight: 500;
+    color: #fff;
 	vertical-align: middle;
 }
 .main-slider__link {
@@ -1816,3 +1818,131 @@ transform: rotate(360deg);
 }
 
 
+.wrap-section-border {
+	padding-top: 30px;
+	overflow: hidden;
+}
+
+.bg-inner {
+	position: relative;
+	z-index: 10;
+}
+
+.section-bg {
+	position: relative;
+}
+.section-bg_second {
+	background-color: #181818;
+}
+.section-bg:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	opacity: 0.1;
+	content: '';
+}
+.section-bg-2:before {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 115%;
+	content: '';
+	opacity: 0.1;
+}
+
+.section_default {
+	position: relative;
+}
+.section_mod-a {
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 65px;
+}
+.section_mod-a:before {
+	bottom: -30px;
+	background: url('../img/background01.png') no-repeat bottom center;
+}
+.section_mod-a .ui-title-inner {
+	margin-top: 0;
+}
+.section_mod-a .brand-link {
+	margin-top: 55px;
+}
+
+.section_mod-c:after {
+	background-image: url('../img/1.jpg');
+}
+
+.section_mod-e:after {
+	background-image: url('../media/bg/5.jpg');
+}
+
+.section_mod-e:before {
+	bottom: -30px;
+	background: url('../img/page_heading_bg.jpg') no-repeat 0 100%;
+}
+
+.section_mod-q:before {
+	bottom: 0;
+	background: url('../img/Fixed-Price-Servicing.jpg') no-repeat 0 100%;
+}
+
+.section_mod-i {
+	padding-top: 50px;
+	padding-bottom: 45px;
+}
+
+.highlight-section {
+    padding-top : 0px;
+    padding-bottom : 0px;
+}
+
+.section_brands {
+	margin-top: 10px;
+	padding-bottom: 0;
+}
+.section_brands .ui-title-inner {
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+.section_list-post {
+	padding-top: 106px;
+	padding-bottom: 60px;
+}
+.section_list-post .ui-subtitle-block_mod-b {
+	margin-bottom: 56px;
+}
+.section_list-post .ui-title-block {
+	margin-top: 0;
+}
+
+.section_map {
+	position: relative;
+	padding-bottom: 50px;
+}
+.section_map:before {
+	bottom: -40px;
+	background: url('../../assets/img/contact-us.png') no-repeat 100% 100%;
+}
+.section_map .ui-title-inner {
+	margin-top: 43px;
+	margin-bottom: 25px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: scrollbar;
+}
+h2 small, .h2 small {
+    font-size: 40px;
+}
+p {
+    font-size: 14px;
+}
+h6, .h6 {
+    font-size: 15px;
+}   

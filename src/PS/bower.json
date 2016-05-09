@@ -3,13 +3,8 @@
   "private": true,
   "dependencies": {
     "jquery": "1.11.1",
-    "jquery-validation": "~1.14.0",
-    "jquery-validation-unobtrusive": "~3.2.5",
     "angular": "*",
-    "angular-route": "~1.4.8",
-    "underscore": "~1.8.3",
     "angular-ui-router": "~0.2.18",
-    "angular-cookies": "~1.5.3",
     "ionic": "~1.2.4"
   },
   "resolutions": {

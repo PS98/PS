@@ -28,8 +28,14 @@ blockquote:before,
 .package li::before,
 .comments-list .comment-datetime {color: #02cc8b;}
 
-.close-outline-color{
+.close-outline-color,
+.btn.btn-primary
+{
     border: 2px solid #02cc8b ;
+}
+
+.btn.btn-primary:hover{
+    background: #02cc8b;
 }
 
 .bg-color_primary,
@@ -58,7 +64,6 @@ blockquote:before,
 .progress-bar,
 .post .entry-date,
 .post:hover .entry-main__inner_mod-a:after,
-.btn-effect:after,
 .yamm .navbar-toggle,
 .ui-btn_mod-a,
 .jelect-option:hover,
@@ -71,6 +76,10 @@ blockquote:before,
 .service-panel-color:hover,
 .car-selection-container ul li.date:hover,
 .about-autor {background-color: #02cc8b!important;}
+
+.btn-default:after,  .btn-effect:after{
+    background-color: #029f6d!important;
+}
 
 .link-img__link,
 .add_notes,

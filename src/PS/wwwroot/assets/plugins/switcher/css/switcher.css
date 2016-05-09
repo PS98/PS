@@ -382,13 +382,7 @@ a.evo-hist {
     background-color: #49a2e7;
 }
 .btn.btn-primary:hover {
-    background: #ee3b24;
-}
-.btn.btn-primary:hover {
     color: #fff;
-}
-.btn.btn-primary {
-    border: 2px solid #ee3b24;
 }
 .btn.btn-primary {
     color: #323232;
@@ -443,13 +437,7 @@ a.evo-hist {
     background-color: #81c83c;
 }
 .btn.btn-primary:hover {
-    background: #ee3b24;
-}
-.btn.btn-primary:hover {
     color: #fff;
-}
-.btn.btn-primary {
-    border: 2px solid #ee3b24;
 }
 .btn.btn-primary {
     color: #323232;
