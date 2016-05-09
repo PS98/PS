@@ -108,8 +108,7 @@
     background-color: #1fae66 !important;
 }
 .order-status{
-    font-size:14px;
-    color:black;
+    display: flex;
 }
 .btn-xs {
     font-size: 13px;    
@@ -163,4 +162,16 @@
 .row-fluid [class*=span]:first-child {
     margin-left: 0;
     width: 100%;
+}
+.calendar-header {
+    font-size: 20px;
+    color: green;
+    margin-bottom: 20px;
+    margin-top: 0 !important;
+}
+.car-selection-container {
+    width: 100%;
+    display: block;
+    padding: 0 !important;
+    border: 0;
 }
