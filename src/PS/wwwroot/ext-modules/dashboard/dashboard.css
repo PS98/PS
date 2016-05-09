@@ -163,13 +163,13 @@
     margin-left: 0;
     width: 100%;
 }
-.calendar-header {
+.editOrder .calendar-header {
     font-size: 20px;
     color: green;
     margin-bottom: 20px;
     margin-top: 0 !important;
 }
-.car-selection-container {
+.editOrder .car-selection-container {
     width: 100%;
     display: block;
     padding: 0 !important;
