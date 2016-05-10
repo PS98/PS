@@ -1,10 +1,7 @@
 ﻿<div>
     <div class="row">
-        <div class="col-sm-4">
-            Order Id
-        </div>
-        <div class="col-sm-4">
-            {{editOrder.invoiceNo}}
+        <div class="col-sm-8" style="font-size: 20px;">
+            Order Id: #{{editOrder.invoiceNo}}
         </div>
         <div class="col-xs-4 pull-left">
             <button type="button" class="btn btn-primary pull-left" ng-class="!disablePrevBtn ? 'btn-effect' : ''" ng-click="nextDates('prev')" ng-disabled="disablePrevBtn"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Days</button>
@@ -13,31 +10,36 @@
     </div>
     <div class="row">
         <div class="col-sm-4">
-            <span>Previous PickUp Date</span><br />
-            <span><strong>{{editOrder.selectedAppointment.pickUpDate.day}}::{{editOrder.selectedAppointment.pickUpDate.time}}</strong></span><br />
-            <span>Previous DropOff Date</span><br/>
-            <span><strong>{{editOrder.selectedAppointment.dropOffDate.day}}::{{editOrder.selectedAppointment.dropOffDate.time}}</strong></span>
+            <div class="car-option" ng-class="car-option-active">
+                <div>Current Pick-Up</div>
+                {{editOrder.selectedAppointment.pickUpDate.day}}  {{editOrder.selectedAppointment.pickUpDate.time}}
+            </div><br />
+            <div class="car-option" ng-class="car-option-active">
+                <div>Current Drop-Off</div>
+                {{editOrder.selectedAppointment.dropOffDate.day}}  {{editOrder.selectedAppointment.dropOffDate.time}}
+            </div>
         </div>
         <div class="col-sm-8 bottom-padding10 top-padding10">
             <div class="pull-right">
-                <span>You have Changed </span>
-                <div>PickUp Date</div>
                 <div class="car-option" ng-class="car-option-active" ng-click="togglePickUp()" ng-if="changedDate.pickUpDate.time">
+                    <div>Updated Pick-Up</div>
                     {{changedDate.pickUpDate.day}}  {{ changedDate.pickUpDate.time}}
                 </div><br />
-                <div>DropOff Date</div>
                 <div class="car-option" ng-class="car-option-active" ng-click="toggleDropOff()" ng-if="changedDate.dropOffDate.time">
+                    <div>Updated Drop-Off</div>
                    {{changedDate.dropOffDate.day}}  {{ changedDate.dropOffDate.time}}
                 </div>
             </div>
 
         </div>
     </div>
-        <div class="row">
+        <div class="row editOrder">
             <div class="car-selection-container no-border" ng-show="showPickUpCalendar">
+                <div class="calendar-header col-xs-6 col-xs-offset-4"> Please choose new Pick-Up Time</div>
                 <calendar-directive data="centreWorkingHours" update="editPickupDate(selectedDateTime)"></calendar-directive>
             </div>
             <div class="car-selection-container"  ng-show="showDropCalendar">
+                <div class="calendar-header col-xs-6 col-xs-offset-4"> Please choose new Drop-off Time</div>
                 <calendar-directive data="availablePickUpTime" update="editDropDate(selectedDateTime)"></calendar-directive>
             </div>
         </div>
