@@ -17,7 +17,8 @@
     <script src="~/psapp/directives/psdashboarddirective.js"></script>
     <script src="~/psapp/directives/pspricing.js"></script>
     <script src="~/ext-modules/dashboard/editorderdirective.js"></script>
-
+    <script src="~/psapp/directives/psorderprocessing.js"></script>
+        
     <script src="~/psApp/headerContent/headerContentDirective.js"></script>
     <script src="~/psapp/headercontent/headercontentcontroller.js"></script>
     <script src="~/psapp/headercontent/collapsabledirective.js"></script>
@@ -67,6 +68,7 @@
     <script src="~/ext-modules/pricing/pricingdirective.js"></script>
     <script src="~/ext-modules/dashboard/orderdetailsdirective.js"></script>
     <script src="~/ext-modules/modaloverlay/modaloverlaydirective.js"></script>
+<script src="~/ext-modules/index/orderprocessingtermsdirective.js"></script>
 }
 
     <!-- Loader -->
@@ -76,5 +78,5 @@
     </div>
     <switcher-content></switcher-content>
     <header-content></header-content>
-    <div class="wrapper" ui-view></div>
+    <div class="wrapper" ui-view  autoscroll="true"></div>
     <footer-content></footer-content>

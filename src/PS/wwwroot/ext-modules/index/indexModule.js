@@ -208,7 +208,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                       ]
                   },
                    {
-                       "heading": "Cancellation of requested services:",
+                       "heading": "Cancellation of requested services",
                        "desc": [
                            {
                                "list": [
@@ -240,15 +240,66 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                                        "text": "In the case of cancellation of service by the customer, the customer will be refunded the amount paid by the customer after deducting the necessary cancellation charges."
                                    },
                                     {
-                                        "text": "2.	All refunds shall be made through NEFT / RTGS within a period of 7 days."
+                                        "text": "All refunds shall be made through NEFT / RTGS within a period of 7 days."
                                     }
                                ]
                            },
                            {
-                               "text": "These Terms of Use were last updated on 04th April 2016."
+                               "text": "These Terms of Use were last updated on 25th May 2016."
                            }
                        ]
                    },
+            ];
+
+            var orderProcessingTC = [
+                {
+                    "heading": "Order Processing Terms & Conditions",
+                    "desc": [
+                        {
+                            "list": [
+                                {
+                                    "text": "It is mandatory to cross check the order Id and other details related to appointment filled by service provider on the job card with the message received from MileMates containing the apponitment details to avail the MileMates services. If job card contains invalid order Id then user should not hand over his/her vehicle to MileMates service advisor and contact MileMates customer care helpline as soon as possible which in turn, help MileMates to detect fraud activities."
+                                },
+                                 {
+                                     "text": "It is mandatory to sign the job card provided by MileMates pick-up service advisor before handing over your vehicle to MileMates. If job card is not signed by customer then MileMates, under any circumstances will not have any responsibility or liability to user."
+                                 },
+                                 {
+                                     "text": "Please ensure the vehicle reaches the service provider at the selected time slot to avoid inconvenience or cancellations if user choose to drop-off his/her vehicle by its own."
+                                 },
+                                 {
+                                     "text": "Payment for the service availed to be paid directly to the service provider in cash in case of Cash on Delivery."
+                                 },
+                                 {
+                                     "text": "Service price is inclusive of all applicable taxes. Charges may vary in case of quotation for any part replacement if applicable."
+                                 },
+                                 {
+                                     "text": "Additional services availed (if any) or parts used other than those included in the offer will be charged as per the service provider's rate card. Applicable taxes will be applied in this case."
+                                 },
+                                  {
+                                      "text": "Cancellations will be considered only if the request is made at least 2 hours before the scheduled time of service or pick-up."
+                                  },
+                                   {
+                                       "text": "A cancellation is to be deemed accepted by MileMates only if the user receives a confirmation e-mail/sms on the contact details provided at the time of booking by the user."
+                                   },
+                                    {
+                                        "text": "Refund will be processed automatically on acceptance of the service order cancellation."
+                                    },
+                                     {
+                                         "text": "If cancellation is done with a notice of minimum 24 hours prior to the scheduled time of appointment, money will be refunded post deduction of 5% of the service fees."
+                                     },
+                                      {
+                                          "text": "Disputes if any shall be resolved between user and Service Provider. MileMates, under any circumstances will not have any responsibility or liability to user."
+                                      },
+                                 {
+                                     "text": "All other terms of use and privacy policy of milemates.com are also applicable in case of Order processing and Cancellation / Refund."
+                                 },
+                            ]
+                        },
+                        {
+                            "text": "These Terms of Use were last updated on 25th May 2016."
+                        }
+                    ]
+                }
             ];
 
             var privacyPolicy = [
@@ -452,6 +503,12 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
                 }, 0);
             };
 
+            var _orderProcessingTC = function () {
+                return $timeout(function () {
+                    return orderProcessingTC;
+                }, 0);
+            };
+
             var _getAboutUs = function () {
                 return $timeout(function () {
                     return aboutUs;
@@ -492,6 +549,7 @@ angular.module("index", ["ngStorage"]).factory("indexDataService",
 
             return {
                 getHighlights: _getHighlights,
+                orderProcessingTC: _orderProcessingTC,
                 getPrivacyPolicy: _getPrivacyPolicy,
                 getTerms: _getTerms,
                 getAboutUs: _getAboutUs,
