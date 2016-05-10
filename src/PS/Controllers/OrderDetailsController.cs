@@ -64,13 +64,13 @@ namespace PS.Controllers
 
         [HttpPost]
         [Route("editOrder")]
-        public JsonResult EditOrder(string invoiceNo, string changeDate, string changeTime, bool isDropOff)
+        public JsonResult EditOrder(string invoiceNo, [FromBody] Appointment appointment)
         {
             try
             {
-                if (!string.IsNullOrEmpty(invoiceNo) && !string.IsNullOrEmpty(changeDate) && !string.IsNullOrEmpty(changeTime))
+                if (!string.IsNullOrEmpty(invoiceNo) && !string.IsNullOrEmpty(appointment.dropOffDate.day) && !string.IsNullOrEmpty(appointment.pickUpDate.day))
                 {
-                    repo.changeAppointmentDate(invoiceNo, changeDate, changeTime,isDropOff);
+                    repo.changeAppointmentDate(invoiceNo, appointment);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = "Update" });
                 }

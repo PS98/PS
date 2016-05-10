@@ -80,11 +80,11 @@
 
         return deferred.promise;
     }
-    var _editDateAndTime = function (invoiceNo, changedDate, isDropOff) {
+    var _editDateAndTime = function (invoiceNo, changedDate) {
         var deferred = $q.defer();
         $http(
             {
-                url: "/api/OrderDetails/editOrder?invoiceNo=" + invoiceNo + "&changeDate=" + changedDate.dropOffDate.day + "&changeTime=" + changedDate.dropOffDate.time + "&isDropOff=" + isDropOff, method: "POST"
+                url: "/api/OrderDetails/editOrder?invoiceNo=" + invoiceNo + "&appointment=" + changedDate, method: "POST"
             })
        // var data;
        // if (isdroffOff)

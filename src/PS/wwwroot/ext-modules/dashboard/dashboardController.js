@@ -147,7 +147,7 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService, psOrd
     $scope.changeDateAndTime = function (editOrder) {
 
 
-        psOrderDetailsService.editDateAndTime(editOrder.invoiceNo, $scope.changedDate,!$scope.showPickUpCalendar).
+        psOrderDetailsService.editDateAndTime(editOrder.invoiceNo, $scope.changedDate).
                         then(function (data) {
                             if (data.status == 0) {
                                 if (!$scope.showPickUpCalendar) {
@@ -165,12 +165,7 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService, psOrd
                         })
 
     }
-    $scope.openDropCalender = function (order) {
-                $("#editOrder").modal('toggle');
-                $scope.dateType = "Drop Off Date & Time"
-                $scope.editOrder = order;
-                $scope.showPickUpCalendar = false;
-            }
+
 
 
 
