@@ -18,24 +18,36 @@ angular.module("psApp").directive("bookAppointment", function () {
             var today = new Date();
             var currentTime = today.getHours();
 
-            $scope.setFiveDay = function (date, type) {
+            $scope.setFiveDay = function (date, time) {
                 var day = date.getDate();
-                var nextDate;
-                for (var i = 0; i < 5; i++) {
+                var nextDate, centreWorkingHours = [];
+
+                for (var i = 0; i < 8; i++) {
                     var WH = [];
                     var tempDate = new Date(date);
                     tempDate.setDate(day);
                     nextDate = tempDate;
                     var datepart = nextDate.toDateString();
-                    for (var j = 0; j < $scope.timeToDisplay.length; j++) {
-
-                        var time = formatTime($scope.timeToDisplay[j]);
-                        var isAvailable = checkAvailibility($scope.timeToDisplay[j], nextDate);
-                        var obj = { time: time, isAvailable: isAvailable };
-
-                        WH.push(obj);
+                    if ($scope.selectedDate.pickUpDate.day == datepart && time) {
+                        $scope.timeToDisplay.splice(0, $scope.timeToDisplay.indexOf(parseInt(time.split(" ")[0]) + 6));
                     }
-                    $scope.centreWorkingHours.push({ day: datepart, WorkingHours: WH });
+                    else{
+                        $scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+                    }
+                    $.each($scope.timeToDisplay, function (i, v) {
+                        if (nextDate.toDateString() === today.toDateString() && checkAvailibility(v, nextDate)) {
+                            var obj = { time: formatTime(v) };
+                            WH.push(obj);
+                        }
+                        else {
+                            var obj = { time: formatTime(v) };
+                            WH.push(obj);
+                        }
+                    });
+
+                    if(WH.length>0)
+                    centreWorkingHours.push({ day: datepart, WorkingHours: WH });
                     day++;
                     if (i === 0) {
                         if (today.toDateString() === nextDate.toDateString()) {
@@ -44,8 +56,11 @@ angular.module("psApp").directive("bookAppointment", function () {
                             $scope.disablePrevBtn = false;
                         }
                     }
-
+                    if (centreWorkingHours.length == 5) {
+                        break;
+                    }
                 }
+                return centreWorkingHours;
             }
             $scope.selectedDate = { pickUpDate: {}, dropOffDate: {} };
 
@@ -109,16 +124,12 @@ angular.module("psApp").directive("bookAppointment", function () {
                 }
             }
             $scope.selectpickUpTime = function (dateTime) {
-                $.extend(true,$scope.availablePickUpTime, $scope.centreWorkingHours);
-
-                $.each($scope.availablePickUpTime, function (index, val) {
-                    $.each(val.WorkingHours, function (i, value) {
-                        value.isDisabled = disableDates(val.day, value.time, dateTime.day, dateTime.time);
-                    })
-                });
                 $scope.selectedDate.dropOffDate = {};
                 $scope.selectedDate.pickUpDate.day = dateTime.day;
                 $scope.selectedDate.pickUpDate.time = dateTime.time;
+                var date = new Date();
+                date.setDate(dateTime.day.split(" ")[2]);
+                $scope.availablePickUpTime = $scope.setFiveDay(date,dateTime.time);
                 $scope.showPickUpCalendar = false;
                 $scope.showDropCalendar = true;
                 psDataServices.setSelectedAppointment($scope.selectedDate);
@@ -133,14 +144,19 @@ angular.module("psApp").directive("bookAppointment", function () {
             }
 
             $scope.nextDates = function (type) {
-                var date = type === "prev" ? $scope.centreWorkingHours[0].day : $scope.centreWorkingHours[$scope.centreWorkingHours.length - 1].day;
+                var currentFiveDay = $scope.showPickUpCalendar ? $scope.centreWorkingHours :$scope.availablePickUpTime;
+                var date = type === "prev" ? currentFiveDay[0].day : currentFiveDay[$scope.centreWorkingHours.length - 1].day;
                 date = new Date(date);
                 var day = date.getDate();
                 type === "prev" ? date.setDate(day - 5) : date.setDate(day + 1);
-                $scope.centreWorkingHours = [];
-                $scope.setFiveDay(date, type);
+                // $scope.centreWorkingHours = [];
+                if ($scope.showPickUpCalendar)
+                    $scope.centreWorkingHours = $scope.setFiveDay(date);
+                else
+                    $scope.availablePickUpTime = $scope.setFiveDay(date, $scope.selectedDate.pickUpDate.time);
             }
-            $scope.setFiveDay(today);
+               
+            $scope.centreWorkingHours = $scope.setFiveDay(today);
             $scope.editPickUpDate = function () {
                 $scope.showPickUpCalendar = !$scope.showPickUpCalendar;
                 if ($scope.showPickUpCalendar) {
