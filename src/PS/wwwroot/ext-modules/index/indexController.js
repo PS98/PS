@@ -19,6 +19,17 @@ angular.module("index").controller("indexController",
                      //  $scope.isBusy = true;
                  });
 
+                indexDataService.orderProcessingTC()
+                 .then(function (result) {
+                     //Success
+                     $scope.optcList = result;
+                 }, function () {
+                     //Error
+                     console.log("Could not load order processing T&C data.");
+                 }).finally(function () {
+                     //  $scope.isBusy = true;
+                 });
+
                 indexDataService.getPrivacyPolicy()
                  .then(function (result) {
                      //Success

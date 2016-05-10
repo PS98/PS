@@ -8,6 +8,10 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
         }
     }
 
+    $scope.orderProcessingTC = function(url, name){
+        window.open(url, name);
+    }
+
     $scope.orderProcess = function () {
         if ($scope.payNow) {
             psDataServices.setPaymentMode("Online");
