@@ -51,6 +51,13 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                     }
                 },
                 {
+                    state: "OrderProcessingTerms",
+                    config: {
+                        url: "/OrderProcessingTerms",
+                        template: "<ps-order-processing></ps-order-processing>"
+                    }
+                },
+                {
                     state: "PrivacyPolicy",
                     config: {
                         url: "/PrivacyPolicy",

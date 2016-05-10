@@ -274,7 +274,7 @@
               
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal" ng-disabled="!changedDate.dropOffDate.time && !changedDate.pickUpDate.time" ng-click="changeDateAndTime(editOrder)">Update Appointment</button>
+                <button type="button" class="btn btn-primary" ng-class="(changedDate.dropOffDate.time && changedDate.pickUpDate.time) ? 'btn-effect' : ''" data-dismiss="modal" ng-disabled="(!changedDate.dropOffDate.time && !changedDate.pickUpDate.time)" ng-click="changeDateAndTime(editOrder)">Update</button>
             </div>
         </div>
         

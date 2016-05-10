@@ -1,38 +1,19 @@
-﻿<div class="row row-fluid utilBoxDetails" ng-repeat="order in orders" style="margin-bottom: 20px;">
-    <div class="col-md-12">
-        <div class="col-md-8" ng-if="!review">
-            <h3 class="override-exclude" style="color:black;">Appointment Details(OrderID: # {{ order.invoiceNo}})</h3>
-        </div>
-        <div class="col-md-4" ng-if="order.status =='Pending'">
-            <div class="col-md-6">
-
-            </div>
-            <div class="col-md-6">
-                <div class="vd_info tr" ng-click="showDailog(order)">
-                    <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-times append-icon"></i> Cancel </a>
-                </div>
-            </div>
-        </div>
-    </div>
+﻿<div class="row row-fluid" ng-repeat="order in orders">
     <div class="col-md-12" style="margin-bottom: 10px;">
         <div class="order-status col-md-6">
-            <div class="col-sm-6 no-padding">
-                <span>DropOff Date &amp; Time: &nbsp;</span><br />
-
-                <span><strong>{{order.selectedAppointment.dropOffDate.day}}::{{order.selectedAppointment.dropOffDate.time}}</strong></span>
-            </div>
-            <div class="vd_info tr col-sm-6 no-top" ng-click="openCalender(order)">
-                <a class="btn vd_btn btn-xs vd_bg-yellow pull-left"> <i class="fa fa-pencil append-icon"></i> Edit </a>
-            </div>
+            <span>DropOff Date &amp; Time: &nbsp;</span><br />
+            <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
         </div>
         <div class="order-status col-md-6">
-            <div class="col-sm-6 no-padding">
-                <span>Pickup Date &amp; Time: &nbsp;</span><br />
-                <span><strong>{{order.selectedAppointment.pickUpDate.day}}::{{order.selectedAppointment.pickUpDate.time}}</strong></span>
-            </div>
-            <div class="vd_info tr col-sm-6 no-top" ng-click="openPickUpCalender(order)">
-                <a class="btn vd_btn btn-xs vd_bg-yellow pull-left"> <i class="fa fa-pencil append-icon"></i> Edit </a>
-            </div>
+            <span>Pickup Date &amp; Time: &nbsp;</span><br />
+            <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
+        </div>
+        <div class="col-md-6">
+            <span class="override-exclude">Vehicle Details: &nbsp;</span>
+            <strong>
+                {{order.selectedCar.brand}}&nbsp;{{order.selectedCar.year}} &nbsp;
+                {{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}
+            </strong>
         </div>
     </div>
     <div class="col-md-12">
@@ -72,20 +53,25 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12" style="margin-bottom: 15px;">
-        <div class="col-md-6">
-            <h4 class="override-exclude">Vehicle Details</h4>
-            <strong>
-                {{order.selectedCar.brand}}&nbsp;{{order.selectedCar.year}} &nbsp;
-                {{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}
-            </strong>
-        </div>
-        <div class="col-md-6">
-            <h4 class="override-exclude">Service Details</h4>
-            <div ng-repeat="service in order.selectedCentre.serviceDetails">
-                <strong>{{service.name}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INR {{service.price}}<br />
-            </div>
-        </div>
+    <div class="row col-md-12">
+        <table class="table table-bordered" style="margin-left: 15px;">
+            <tbody>
+                <tr>
+                    <td style="text-align:center;"><b>Selected Services</b></td>
+                    <td style="text-align:center;"><b>Actual Price</b></td>
+                    <td style="text-align:center;"><b>MM Price</b></td>
+                </tr>
+                <tr ng-repeat="service in order.selectedCentre.serviceDetails">
+                    <td class="selected_service" style="text-align:center;">{{service.name}}</td>
+                    <td style="text-align:center;"><i class="fa fa-inr" style="font-size:11px;"></i>  2500</td>
+                    <td style="text-align:center;"><i class="fa fa-inr" style="font-size:11px;"></i>{{service.price}}</td>
+                </tr>
+                <tr class="total_estimate">
+                    <td style="text-align:center;"> Total Estimated Charges</td>
+                    <td style="text-align:center;font-weight:bold;"><i class="fa fa-inr" style="font-size:11px;"></i>  2500</td>
+                    <td style="text-align:center;font-weight:bold;"><i class="fa fa-inr" style="font-size:11px;"></i> 599</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
 </div>
