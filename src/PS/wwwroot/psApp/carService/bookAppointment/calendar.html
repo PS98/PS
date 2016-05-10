@@ -5,7 +5,7 @@
                 <div class="day">{{cwh.day}}</div>
 
             </li>
-            <li ng-click="updateTime(wh.time, cwh.day)" ng-repeat="wh in cwh.WorkingHours" ng-if="wh.isAvailable" class="date" ng-class="{selectedTime : cwh.day === selectedDate.day && wh.time === selectedDate.time, disabledLink: wh.isDisabled}">
+            <li ng-click="updateTime(wh.time, cwh.day)" ng-repeat="wh in cwh.WorkingHours"  class="date" ng-class="{selectedTime : cwh.day === selectedDate.day && wh.time === selectedDate.time, disabledLink: wh.isDisabled}">
                 <span>{{ wh.time}}</span>
                 <!--<i ng-if="cwh.day === selectedDate.day && wh.time === selectedDate.time" class="fa fa-check pull-right"></i>-->
             </li>
