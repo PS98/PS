@@ -65,7 +65,7 @@
                             </div>
                             <div class="col-xs-4">
                                 <button type="button" class="btn btn-primary pull-left" ng-class="!disablePrevBtn ? 'btn-effect' : ''" ng-click="nextDates('prev')" ng-disabled="disablePrevBtn"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Days</button>
-                                <button type="button" class="btn btn-primary btn-effect pull-right"  ng-click="nextDates('next')">Days<i class="fa fa-chevron-right" style="padding-left:5px;"></i><i class="fa fa-chevron-right"></i></button>
+                                <button type="button" class="btn btn-primary btn-effect pull-right"  ng-class="!disableNextBtn ? 'btn-effect' : ''"  ng-click="nextDates('next')"  ng-disabled="disableNextBtn">Days<i class="fa fa-chevron-right" style="padding-left:5px;"></i><i class="fa fa-chevron-right"></i></button>
                             </div>
                         </div>
                     </div>
