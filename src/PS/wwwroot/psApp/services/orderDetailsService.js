@@ -81,10 +81,17 @@
         return deferred.promise;
     }
     var _editDateAndTime = function (invoiceNo, changedDate) {
+
+        var date = { dropOffDate: '', pickUpDate: '' };
+        date.dropOffDate = changedDate.dropOffDate;
+       // var data = { 'InvoiceNo': invoiceNo, 'dropOffDate': changedDate.dropOffDate.day, "dropOffTime": changedDate.dropOffDate.time, "pickUpDate": changedDate.pickUpDate.day, "pickUpTime": changedDate.pickUpDate.time, };
+
         var deferred = $q.defer();
         $http(
             {
-                url: "/api/OrderDetails/editOrder?invoiceNo=" + invoiceNo + "&appointment=" + changedDate, method: "POST"
+                url: "/api/OrderDetails/editOrder?InvoiceNo=" + invoiceNo + "&dropOffDate=" + changedDate.dropOffDate.day + "&dropOffTime=" + changedDate.dropOffDate.time + "&pickUpDate=" + changedDate.pickUpDate.day + "&pickUpTime=" + changedDate.pickUpDate.time,
+                method: "POST",
+              // data: data
             })
        // var data;
        // if (isdroffOff)

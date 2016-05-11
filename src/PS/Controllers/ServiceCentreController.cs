@@ -97,6 +97,7 @@ namespace PS.Controllers
                                     price.AddRange(abc.Electric.Where(x => x.ModelList.Contains(selectedService.Model)).Select(a => a.Price));
                                     break;
                             }
+                                if(price.Count>0)
                                 serviceDetails.Add(new ServiceDetails { Name = abc.Name, Price = price[price.Count - 1] });
 
                             }

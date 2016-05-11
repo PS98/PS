@@ -150,15 +150,14 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService, psOrd
         psOrderDetailsService.editDateAndTime(editOrder.invoiceNo, $scope.changedDate).
                         then(function (data) {
                             if (data.status == 0) {
-                                if (!$scope.showPickUpCalendar) {
                                     editOrder.selectedAppointment.dropOffDate = $scope.changedDate.dropOffDate;
-                                }
-                                else {
                                     editOrder.selectedAppointment.pickUpDate = $scope.changedDate.pickUpDate;
-                                }
                             }
-                            $scope.overlayMessage = data.Result;
-                            $scope.informational = true;
+                            $scope.overlayMessage = data.result;
+                            $scope.showInformation = true;
+                            $timeout(function () {
+                                $("#modalOverlay").modal('toggle');
+                            }, 200);
 
                         }, function () {
                             alert("error");
