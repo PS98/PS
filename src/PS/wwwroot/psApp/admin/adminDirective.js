@@ -10,7 +10,10 @@ angular.module("psApp").directive("admin", function () {
             $scope.carList = {}; $scope.centreDetails = {}; $scope.showBrandName = true; var centreObject = {};
             var obj = function(){
                 this["ModelList"] = [];
-                this["Price"] = 0;
+                this["MilematePrice"] = 0;
+                this["ActualPrice"] = 0;
+                this["ServiceCentrePrice"] = 0;
+                
             }
             var serviceObj = function () {
 
@@ -59,7 +62,9 @@ angular.module("psApp").directive("admin", function () {
                 var services = new serviceObj();
                 var model = new obj();
                 model.ModelList = $scope.modelList;
-                model.Price = $scope.centreDetails.Price;
+                model.ActualPrice = $scope.centreDetails.TotalPrice;
+                model.MilematePrice = $scope.centreDetails.ActualPrice;
+                model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
                 services.Name = $scope.service;
                 $scope.centreDetails.ServiceDetails = [];
                 switch ($scope.centreDetails.type) {
