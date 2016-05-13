@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Newtonsoft.Json;
 
 namespace PS.Models
 {
@@ -24,7 +25,10 @@ namespace PS.Models
         public string Longitude { get; set; }
         public string Latitude { get; set; }
         public int TotalPrice { get; set; }
-       public List<ServiceDetails> ServiceDetails { get; set; }
+        public int ActualPrice { get; set; }
+        public string Review { get; set; }
+        public List<ServiceDetails> ServiceDetails { get; set; }
+        public List<string> ServiceList { get; set; }
 
     }
     [BsonIgnoreExtraElements]
@@ -36,13 +40,15 @@ namespace PS.Models
         public string Line2 { get; set; }
     }
 
-   
+
     [BsonIgnoreExtraElements]
     public class ServiceDetails
     {
         public string Name { get; set; }
         [BsonIgnore]
-        public int Price { get; set; }
+        public int MilematePrice { get; set; }
+        [BsonIgnore]
+        public int ActualPrice { get; set; }
         public List<PriceDetails> Petrol { get; set; }
         public List<PriceDetails> Diesel { get; set; }
         public List<PriceDetails> CNG { get; set; }
@@ -54,9 +60,12 @@ namespace PS.Models
     public class PriceDetails
     {
         public List<string> ModelList { get; set; }
-        public int Price { get; set; }
+        public int MilematePrice { get; set; }
+        public int ActualPrice { get; set; }
+    //    [JsonIgnore]
+        public int ServiceCentrePrice { get; set; }
     }
-   
+
     public class SelectedService
 
     {

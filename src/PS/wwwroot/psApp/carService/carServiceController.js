@@ -222,8 +222,8 @@
         }
     }
 
- $state.go("service.car");
-    $scope.state = $state;
+ //$state.go("service.car");
+ //   $scope.state = $state;
 
     $scope.search = function () {
         if (!prevMode) {

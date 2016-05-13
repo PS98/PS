@@ -64,15 +64,17 @@ namespace PS.Controllers
 
         [HttpPost]
         [Route("editOrder")]
-        public JsonResult EditOrder(string invoiceNo, [FromBody] Appointment appointment)
+        public JsonResult EditOrder(string invoiceNo,  string dropOffDate, string dropOffTime, string pickUpDate, string pickUpTime)
         {
             try
             {
-                if (!string.IsNullOrEmpty(invoiceNo) && !string.IsNullOrEmpty(appointment.dropOffDate.day) && !string.IsNullOrEmpty(appointment.pickUpDate.day))
+                if (!string.IsNullOrEmpty(invoiceNo) && !string.IsNullOrEmpty(dropOffDate) && !string.IsNullOrEmpty(pickUpDate))
                 {
+                    var appointment = new Appointment() { pickUpDate = new AppointmentDetails() {day = pickUpDate,time=pickUpTime },
+                        dropOffDate = new AppointmentDetails() { day = dropOffDate, time = dropOffTime } };
                     repo.changeAppointmentDate(invoiceNo, appointment);
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Status = 0, Result = "Update" });
+                    return Json(new { Status = 0, Result = "Your appointment details is updataed successfully" });
                 }
             }
             catch (Exception ex)
