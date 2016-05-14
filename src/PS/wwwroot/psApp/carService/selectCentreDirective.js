@@ -99,10 +99,12 @@ angular.module("psApp").directive("selectCentre", function () {
                     $scope.$apply();
                 }
             }
-            $scope.MapCallback = function (city, area) {
+            $scope.MapCallback = function (city, area,result) {
                 $scope.googleMapArea = area;
                 $localStorage.userData.area = area;
                 $localStorage.userData.city = city;
+                $localStorage.userData.lat = result.lat;
+                $localStorage.userData.lng = result.lng;
                 if ($scope.car.centreCity.includes(city)) {
                     $scope.city = city;
 

@@ -1,8 +1,12 @@
 ﻿<div class="featured-item">
     <div class="right-content">
         <h2>{{ centre.name }}</h2>
-        <span class="rupee"><i class="fa fa-inr" style="padding-right:5px;"></i>{{ centre.totalPrice }}</span>
+        <div class="pull-right price">
+            <strike>{{centre.totalActualPrice}}</strike>
+            <span class="rupee"><i class="fa fa-inr" style="padding-right:5px;">{{ centre.totalMMPrice }}</i></span>
+        </div>
         <div class="light-line"></div>
+        <span class="pull-right padding-top30"><i class="fa fa-map-o"></i>{{centre.distance}}KM</span>
         <p>{{ centre.address.line1 }},<br />{{ centre.address.line2 }}<br /><i class="fa fa-phone"></i>{{ centre.phoneNo }}</p>
         <div class="info-box clearfix">
             <strong class="rating">

@@ -90,9 +90,10 @@ angular.module("psApp").directive("admin", function () {
                             success(function (data) {
                                 alert(data.message);
                                 if (data.status === 0) {
-                                    $scope.centreDetails = {};
-                                    angular.extend($scope.centreDetails, centreObject);
+                                   // $scope.centreDetails = {};
+                                  //  angular.extend($scope.centreDetails, centreObject);
                                     $scope.centreDetails.Id = data.id;
+                                    $scope.newCentre = false;
                                 }
                             });
             }

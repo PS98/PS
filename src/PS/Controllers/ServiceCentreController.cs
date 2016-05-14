@@ -8,6 +8,7 @@ using MongoDB.Driver;
 using PS.Models;
 using PS.Services;
 using System.Net;
+using System.Device.Location;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -48,9 +49,11 @@ namespace PS.Controllers
         }
         [HttpPost]
         [Route("centerlist")]
-        public IEnumerable<Centre> Get([FromBody] SelectedService selectedService)
+        public IEnumerable<ServiceCentreViewModel> Get([FromBody] SelectedService selectedService)
         {
             var collection = repo.GetCollection<ServiceCentre>(selectedService.City);
+
+            //  var documentList1 =  collection.FindAsync<ServiceCentre>(Builders<ServiceCentre>.Filter.GeoWithinCenterSphere(p => p.Centres, 18.6005340690473, 73.6005340690473, 10));
             // var filter = Builders<BsonDocument>.Filter.Eq("area", selectedService.Area);
             var documentList = collection?.Find(new BsonDocument()).ToListAsync().Result;
             //var result = await collection.Find(filter).ToListAsync();
@@ -60,74 +63,103 @@ namespace PS.Controllers
 
             // select first because one area will have one document
             var centreList = list.First().Centres;
+            if (!string.IsNullOrEmpty(selectedService.Latitude) && !string.IsNullOrEmpty(selectedService.Longitude))
+                foreach (var area in list.First().NearAreas)
+            {
+                var nearAreaDoc = documentList?.Where(x => x.Area.ToLower() == area.ToLower());
+                if (!nearAreaDoc.Any()) continue;
+                centreList.AddRange(nearAreaDoc.First().Centres);
+            }
 
             // if no service selected then display all service centre list
             if (selectedService.Name.Count == 0)
-                return centreList;
+                return null;// Centre.ToViewModel(centreList.First());
 
             // select only those which are providing all selected services;
+            double lat;
+            double.TryParse(selectedService.Latitude, out lat);
 
-            var selectedCentres = new List<Centre>();
-            foreach (var centre in centreList)
-            {
-                var milematesPrice = new List<int>();
-                var actualPrice = new List<int>();
-                var serviceDetails = new List<ServiceDetails>();
-                PriceDetails priceObj = new PriceDetails();
+            double log;
+            double.TryParse(selectedService.Longitude, out log);
 
-                //  check if centre is providing all user selected service
-                if (selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
+            var userCordinates = new GeoCoordinate(lat, log);
+
+            var selectedCentres = new List<ServiceCentreViewModel>();
+                foreach (var centre in centreList)
                 {
+                    var milematesPrice = new List<int>();
+                    var actualPrice = new List<int>();
+                    var serviceDetails = new List<Detalis>();
+                    PriceDetails priceObj = new PriceDetails();
 
-                    foreach (var abc in centre.ServiceDetails)
+                    double.TryParse(centre.Longitude, out lat);
+                    double.TryParse(centre.Latitude, out log);
+
+                    var centreCoordinates = new GeoCoordinate(lat, log); ;
+
+                    var distance = userCordinates.GetDistanceTo(centreCoordinates) / 1000;
+
+                    //  check if centre is providing all user selected service
+                    if (distance <= 40 && selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
                     {
-                        if (selectedService.Name.Contains(abc.Name.Trim()))
+
+                        foreach (var abc in centre.ServiceDetails)
                         {
-                            if (!string.IsNullOrEmpty(selectedService.Type))
+                            if (selectedService.Name.Contains(abc.Name.Trim()))
                             {
-                                switch (selectedService.Type.ToLower().Trim())
+                                if (!string.IsNullOrEmpty(selectedService.Type))
                                 {
-                                    case "petrol":
-                                        priceObj = abc.Petrol.First(x => x.ModelList.Contains(selectedService.Model));
-                                        break;
-                                    case "diesel":
-                                        priceObj = abc.Diesel.First(x => x.ModelList.Contains(selectedService.Model));
-                                        break;
-                                    case "cng":
-                                        priceObj = abc.CNG.First(x => x.ModelList.Contains(selectedService.Model));
-                                        break;
-                                    case "electric":
-                                        priceObj = abc.Electric.First(x => x.ModelList.Contains(selectedService.Model));
-                                        break;
+                                    switch (selectedService.Type.ToLower().Trim())
+                                    {
+                                        case "petrol":
+                                            priceObj = abc.Petrol.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                            break;
+                                        case "diesel":
+                                            priceObj = abc.Diesel.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                            break;
+                                        case "cng":
+                                            priceObj = abc.CNG.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                            break;
+                                        case "electric":
+                                            priceObj = abc.Electric.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                            break;
+                                    }
+                                    if (priceObj != null)
+                                    {
+                                    double radius;
+                                    double.TryParse(abc.Radius, out radius);
+                                        milematesPrice.Add(priceObj.MilematePrice);
+                                        actualPrice.Add(priceObj.ActualPrice);
+                                        if (milematesPrice.Count > 0)
+                                            serviceDetails.Add(new Detalis { Name = abc.Name, IsFreePickUp = radius <= distance, MilematePrice = milematesPrice[milematesPrice.Count - 1], ActualPrice = actualPrice[actualPrice.Count - 1] });
+                                    }
+
                                 }
 
-                                milematesPrice.Add(priceObj.MilematePrice);
-                                actualPrice.Add(priceObj.ActualPrice);
-                                if (milematesPrice.Count > 0)
-                                    serviceDetails.Add(new ServiceDetails { Name = abc.Name, MilematePrice = milematesPrice[milematesPrice.Count - 1], ActualPrice = actualPrice[actualPrice.Count -1] });
-
                             }
-
                         }
-                    }
 
                     if (selectedService.Name.Count == milematesPrice.Count)
-                        selectedCentres.Add(new Centre
+                        selectedCentres.Add(new ServiceCentreViewModel
                         {
+                            Id = centre.Id,
                             Name = centre.Name,
                             Address = centre.Address,
                             Latitude = centre.Latitude,
                             Longitude = centre.Longitude,
                             PhoneNo = centre.PhoneNo,
-                            TotalPrice = milematesPrice.Sum(),
-                            ActualPrice = actualPrice.Sum(),
-                            ServiceDetails = serviceDetails
+                            TotalMMPrice = milematesPrice.Sum(),
+                            TotalActualPrice = actualPrice.Sum(),
+                            ServiceDetails = serviceDetails,
+                            Distance = distance,
+                            Review = centre.Review,
+                            Services = centre.Services,
+                            IsFreePickUp = serviceDetails.Any(x => x.IsFreePickUp)
+                            });
 
-                        });
+                    }
 
                 }
-
-            }
 
             return selectedCentres;
 
@@ -149,6 +181,7 @@ namespace PS.Controllers
                     var list = documentList?.Where(x => x.Area.ToLower() == serviceCentreObj.Area.ToLower());
                     if (!list.Any())
                     {
+                        // collection.Indexes.CreateOneAsync(Builders<ServiceCentre>.IndexKeys.Geo2D(p => p.Centres.First().Location));
                         var id = repo.GenerateNewID();
                         serviceCentreObj.Centres.First().Id = id;
                         repo.insertDocument(database, collectionName, serviceCentreObj);   // if new area then insert into db

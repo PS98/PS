@@ -24,7 +24,7 @@ var mapOptions = {
 }
 
 
-function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, currentLocation, locationCallBack, candrag) {
+function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, currentLocation, locationCallBack, candrag,saveLatLong) {
     googleMapHolder = "";
     googleMapHolder = mapHolderId;
     displayCurrentLocation = currentLocation;
@@ -110,9 +110,9 @@ function loadMap(lat, lng, zoom) {
     map = new google.maps.Map(document.getElementById(googleMapHolder), mapOptions);
 }
 
-function loadCurrentLocation(city, area) {
+function loadCurrentLocation(data) {
     if (locationCall)
-        locationCall(city.long_name, area.long_name);
+        locationCall(data.city.long_name, data.area.long_name, data);
 
 }
 function locateCityAndArea(latlng) {
@@ -120,7 +120,7 @@ function locateCityAndArea(latlng) {
     var geoType = { 'latLng': latlng };
 
     callGeoCoderApi(geoType).then(function (data) {
-        loadCurrentLocation(data.city, data.area);
+        loadCurrentLocation(data);
     });
 
     //return { city: result.city, area: result.area };
