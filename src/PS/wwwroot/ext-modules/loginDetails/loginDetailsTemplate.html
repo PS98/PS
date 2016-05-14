@@ -2,7 +2,7 @@
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="z-index: 10000;">
     <div class="modal-dialog">
         <div class="modal-content login-modal">
-            <div class="modal-body">
+         <div class="modal-body">
                 <div class="text-center">
                     <div role="tabpanel" class="login-tab">
                         <!-- Nav tabs -->
@@ -53,6 +53,7 @@
                                 </fieldset>
                                 <fieldset class="forgotLink forgetpass-tab"><a id="forgot" href="#">Help, I forgot my login details →</a></fieldset>
                                 <div class="forgotLink ready signup-tab" id="signupLinkWrapper"> <a href="/signup">← Sign up</a> </div>
+                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
                             </div>                            
                             <div role="tabpanel" class="tab-pan" id="profile">
                                 <h1>Connect with us</h1>
@@ -137,6 +138,7 @@
                                     </form>
                                 </fieldset>
                                 <div class="forgotLink signin-tab" id="loginLinkWrapper"> <a href="/login">Have an account? Log in →</a> </div>
+                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
                             </div>                            
                             <div role="tabpanel" class="tab-pan text-center" id="forget_password">
                                 <h1>Reset password</h1>
@@ -167,6 +169,7 @@
                                     </form>
                                 </fieldset>
                                 <fieldset class="forgotLink signin-tab"><a id="unForgot" href="#">← It's OK, I remembered</a></fieldset>
+                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
                             </div>
                         </div>
                     </div>

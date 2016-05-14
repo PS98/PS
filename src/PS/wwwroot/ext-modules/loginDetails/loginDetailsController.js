@@ -1,4 +1,4 @@
-﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService","psDataServices",
+﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService","psDataServices", "$window",
 function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService, psDataServices) {
     $scope.isBusy = true;
   //  $scope.isLoggedIn = false;
@@ -7,6 +7,10 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
     $scope.regSuccess = false;
     $scope.again = false;
     $scope.userDetails = {};
+
+    $scope.TCRedirection = function (url, name) {
+        window.open(url, name);
+    }
 
     $scope.loginSubmit = function () {     
         psLoginService.login($scope.Email, $scope.Password)
