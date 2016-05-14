@@ -63,13 +63,13 @@
                 </tr>
                 <tr ng-repeat="service in order.selectedCentre.serviceDetails">
                     <td class="selected_service" style="text-align:center;">{{service.name}}</td>
-                    <td style="text-align:center;"><i class="fa fa-inr" style="font-size:11px;"></i>  2500</td>
-                    <td style="text-align:center;"><i class="fa fa-inr" style="font-size:11px;"></i>{{service.price}}</td>
+                    <td style="text-align:center;"><i class="fa fa-inr" style="font-size:11px;"></i>  {{service.actualPrice}}</td>
+                    <td style="text-align:center;"><i class="fa fa-inr" style="font-size:11px;"></i>{{service.milematePrice}}</td>
                 </tr>
                 <tr class="total_estimate">
                     <td style="text-align:center;"> Total Estimated Charges</td>
-                    <td style="text-align:center;font-weight:bold;"><i class="fa fa-inr" style="font-size:11px;"></i>  2500</td>
-                    <td style="text-align:center;font-weight:bold;"><i class="fa fa-inr" style="font-size:11px;"></i> 599</td>
+                    <td style="text-align:center;font-weight:bold;"><i class="fa fa-inr" style="font-size:11px;"></i> {{order.selectedCentre.totalActualPrice}}</td>
+                    <td style="text-align:center;font-weight:bold;"><i class="fa fa-inr" style="font-size:11px;"></i> {{ order.selectedCentre.totalMMPrice }}</td>
                 </tr>
             </tbody>
         </table>
