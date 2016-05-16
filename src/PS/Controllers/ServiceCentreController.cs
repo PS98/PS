@@ -59,11 +59,12 @@ namespace PS.Controllers
             //var result = await collection.Find(filter).ToListAsync();
             // get document by area
             var list = documentList?.Where(x => x.Area.ToLower() == selectedService.Area.ToLower());
-            if (list == null) return null;
+            if (!list.Any()) return null;
 
             // select first because one area will have one document
             var centreList = list.First().Centres;
-            if (!string.IsNullOrEmpty(selectedService.Latitude) && !string.IsNullOrEmpty(selectedService.Longitude))
+          //  if (!string.IsNullOrEmpty(selectedService.Latitude) && !string.IsNullOrEmpty(selectedService.Longitude))
+
                 foreach (var area in list.First().NearAreas)
             {
                 var nearAreaDoc = documentList?.Where(x => x.Area.ToLower() == area.ToLower());

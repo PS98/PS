@@ -13,52 +13,53 @@ angular.module("psApp").directive("selectCentre", function () {
             };
             var infowindow = google.maps ? new google.maps.InfoWindow() : "";
             var geocoder = google.maps ? new google.maps.Geocoder() : "";
-            var autocomplete, latLng, userLocation = { "lat": '', "lng": '' };
+            var autocomplete, userLocation = { "lat": '', "lng": '' };
             $('.jelect').jelect();
-            $("#addressOverlay").modal('toggle');
-            $("#addressOverlay").modal('toggle');
-            getUserAddressMap();
-            function getUserAddressMap() {
+         //   $("#addressOverlay").modal('toggle');
+          //  $("#addressOverlay").modal('toggle');
+            getUserscurrentLocation();
+            function getUserscurrentLocation() {
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(successCall, handleError);
                 } else {
                     error('Google Map is not supported');
                 }
-                 autocomplete = new google.maps.places.Autocomplete(document.getElementById("formatted_address"),{ types: ['geocode'] });
-                    google.maps.event.addListener(autocomplete, 'place_changed', function () {
-                        setAutocomplete(autocomplete);
-                    });
+                
             }
             function successCall(position) {
                 var lat = position.coords.latitude;
                 var lng = position.coords.longitude;
-                 latLng = new google.maps.LatLng(lat, lng);
-                var geoType = { 'latLng': latLng };
-                callGeoCoderApi(geoType).then(function (data) {
-                    if (document.getElementById("formatted_address"))
-                         {
-                        document.getElementById("formatted_address").value = data.result.formatted_address;
-                         }
-                    latLng = new google.maps.LatLng(lat, lng);
-                });
-                mapOptions.center = latLng;
-                userMap = new google.maps.Map(document.getElementById("userAddressMap"), mapOptions);
-                var marker = new google.maps.Marker({ position: latLng, map: userMap, title: "You are here!", draggable: true });
-                infowindow.setContent("You are here!");
-                infowindow.open(userMap, marker);
-                    google.maps.event.addListener(marker, 'drag', function () {
-                        var latLng = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
-                        // locateCityAndArea(latLng);
-                        scope.setUserLocation(marker.position.lat(), marker.position.lng());
-                        latLng = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
-                        userLocation.lat = marker.position.lat();
-                        userLocation.lng = marker.position.lng();
-                    });
                     scope.setUserLocation(lat, lng);
                     userLocation.lat = lat;
                     userLocation.lng = lng;
                     scope.selectUserLocation();
 
+            }
+            function initialzeUserAddressMap() {
+                var userLatLng = new google.maps.LatLng(userLocation.lat, userLocation.lng);
+               var geoType = { 'latLng': userLatLng };
+                autocomplete = new google.maps.places.Autocomplete(document.getElementById("formatted_address"), { types: ['geocode'] });
+                google.maps.event.addListener(autocomplete, 'place_changed', function () {
+                    setAutocomplete(autocomplete);
+                });
+                callGeoCoderApi(geoType).then(function (data) {
+                    if (document.getElementById("formatted_address")) {
+                        document.getElementById("formatted_address").value = data.result.formatted_address;
+                    }
+                    var lat = data.result.geometry.location.lat();
+                    var lng = data.result.geometry.location.lng();
+                    userLatLng = new google.maps.LatLng(lat, lng);
+                });
+                mapOptions.center = userLatLng;
+               var  userMap = new google.maps.Map(document.getElementById("userAddressMap"), mapOptions);
+                var marker = new google.maps.Marker({ position: userLatLng, map: userMap, title: "You are here!", draggable: true });
+                infowindow.setContent("You are here!");
+                infowindow.open(userMap, marker);
+                google.maps.event.addListener(marker, 'drag', function () {
+                    scope.setUserLocation(marker.position.lat(), marker.position.lng());
+                    userLocation.lat = marker.position.lat();
+                    userLocation.lng = marker.position.lng();
+                });
             }
             function setAutocomplete(auto) {
                 var place = autocomplete.getPlace();
@@ -97,7 +98,7 @@ angular.module("psApp").directive("selectCentre", function () {
             });
             scope.selectUserLocation = function () {
                 //  initializeGoogleMap("", 'mapholder', "", false, scope.MapCallback);
-                latLng = new google.maps.LatLng(userLocation.lat, userLocation.lng);
+             var  latLng = new google.maps.LatLng(userLocation.lat, userLocation.lng);
                 function initialize() {
                     var mapProp = {
                         center: latLng,
@@ -105,7 +106,7 @@ angular.module("psApp").directive("selectCentre", function () {
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     };
                     var map = new google.maps.Map(document.getElementById("mapholder"), mapProp);
-                    var marker = new google.maps.Marker({ position: latLng, map: map, title: "here" });
+                 //   var marker = new google.maps.Marker({ position: latLng, map: map, title: "here" });
                     scope.map = map;
                 }
                 initialize();
@@ -118,9 +119,12 @@ angular.module("psApp").directive("selectCentre", function () {
 
                 })
             }
+            $('#addressOverlay').on('shown.bs.modal', function () {
+                initialzeUserAddressMap();
+            })
 
         },
-        controller: ["$scope", "psDataServices", "$state", "$localStorage", function ($scope, psDataServices, $state, $localStorage) {
+        controller: ["$scope", "psDataServices", "$state", "$localStorage", "$timeout", function ($scope, psDataServices, $state, $localStorage, $timeout) {
             $scope.state = $state;
            
           //  $scope.$parent.state = $state;
@@ -222,6 +226,9 @@ angular.module("psApp").directive("selectCentre", function () {
 
             $scope.changeArea = function () {
                 $("#addressOverlay").modal('toggle');
+                $timeout(function () {
+
+                },2000)
             }
 
             $scope.MapCallback = function (city, area) {
