@@ -39,7 +39,9 @@
     display: inline-block;
     vertical-align: middle;
 }
-
+.pac-container {
+    z-index: 2051 !important;
+}
 
 .rating .star {
     position: relative;
