@@ -1,7 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
+﻿
 @section Scripts{
 
 
@@ -71,12 +68,10 @@
 <script src="~/ext-modules/index/orderprocessingtermsdirective.js"></script>
 }
 
-    <!-- Loader -->
-    @*<div id="page-preloader"><span class="spinner"></span></div>*@
     <div id="page-preloader" ng-if="loading">
         <img class="spinner" src="~/assets/img/cool-loading-animated.gif" alt="MileMates">
     </div>
     <switcher-content></switcher-content>
     <header-content></header-content>
-    <div class="wrapper" ui-view  autoscroll="true"></div>
+    <div class="wrapper" ui-view autoscroll="true"></div>
     <footer-content></footer-content>

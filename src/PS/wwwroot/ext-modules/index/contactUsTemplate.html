@@ -4,8 +4,8 @@
             <div class="bg-inner">
                 <div class="decor-1-header center-block"></div>
                 <ol class="breadcrumb">
-                    <li><a href="/">Home</a></li>
-                    <li class="active">Connect With Us?</li>
+                    <li><a href="/" title="Car Servicing Online">Home</a></li>
+                    <li class="active" title="Contact us">Connect With Us?</li>
                 </ol>
             </div><!-- end bg-inner -->
         </div><!-- end block-title__inner -->
@@ -22,7 +22,7 @@
         <!-- end row -->
     </div>
     <!-- end container -->
-    <div class="map"><img class="img-responsive" src="assets/img/map.jpg" height="520" width="1600" alt="map"></div>
+    <div class="map"><img class="img-responsive" src="assets/img/map.jpg" height="520" width="1600" alt="MileMates Contact Us Static Map"></div>
     <div class="container text-center">
         <div class="row">
             <div class="col-xs-12">
@@ -40,13 +40,13 @@
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="alert alert-danger" role="alert" ng-show="(fError && !fSuccess) || (fError && !fSuccess)">
                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                    <a href="#" class="close" ng-click="fReset()" aria-label="close">&times;</a>
+                    <a href="#" class="close" ng-click="fReset()" aria-label="close" title="close">&times;</a>
                     <span class="sr-only">Error:</span>
                     {{errorMessage}}
                 </div>
                 <div class="alert alert-success" role="alert" ng-show="(fSuccess && !fError) || (fSuccess && !fError)">
                     <span class="fa fa-check-circle-o" aria-hidden="true"></span>
-                    <a href="#" class="close" ng-click="fReset()" aria-label="close">&times;</a>
+                    <a href="#" class="close" ng-click="fReset()" aria-label="close" title="close">&times;</a>
                     <span class="sr-only">Success:</span>
                     {{successMessage}}
                 </div>

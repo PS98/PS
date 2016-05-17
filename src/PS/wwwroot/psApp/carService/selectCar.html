@@ -42,7 +42,7 @@
                                         <div class="car-selection-flex-container">
                                             <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections">
                                                 <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
-                                                    <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" width="24" height="24">
+                                                    <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
                                                     <span ng-bind="carBrand" style="padding-left:10px"></span>
                                                 </li>
                                             </ul>

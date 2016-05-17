@@ -7,9 +7,9 @@
                     <div role="tabpanel" class="login-tab">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist" style="display:none;">
-                            <li role="presentation" class="active"><a id="signin-taba" href="#home" aria-controls="home" role="tab" data-toggle="tab">Sign In</a></li>
-                            <li role="presentation"><a id="signup-taba" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sign Up</a></li>
-                            <li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Reset Password</a></li>
+                            <li role="presentation" class="active"><a id="signin-taba" href="#home" aria-controls="home" title="Sign In" role="tab" data-toggle="tab">Sign In</a></li>
+                            <li role="presentation"><a id="signup-taba" href="#profile" aria-controls="profile" role="tab" title="Sign Up" data-toggle="tab">Sign Up</a></li>
+                            <li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" title="Reset Password" role="tab" data-toggle="tab">Reset Password</a></li>
                         </ul>
                         
                         <!-- Tab panes -->
@@ -18,7 +18,7 @@
                                 <h1>Log in</h1>
                                 <div class="alert alert-danger" role="alert" ng-show="loginError">
                                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                                    <a href="#" class="close" ng-click="logReset()" aria-label="close">&times;</a>
+                                    <a href="#" class="close" ng-click="logReset()" aria-label="close" title="close">&times;</a>
                                     <span class="sr-only">Error:</span>
                                     {{message}}
                                 </div>
@@ -51,21 +51,21 @@
                                         <button type="submit" id="login_btn" class="button buttonBlock buttonSubmit" ng-disabled="loginForm.$invalid" data-loading-text="Signing In....">Login</button>
                                     </form>
                                 </fieldset>
-                                <fieldset class="forgotLink forgetpass-tab"><a id="forgot" href="#">Help, I forgot my login details →</a></fieldset>
-                                <div class="forgotLink ready signup-tab" id="signupLinkWrapper"> <a href="/signup">← Sign up</a> </div>
-                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
+                                <fieldset class="forgotLink forgetpass-tab"><a id="forgot" href="#" title="Reset Password">Help, I forgot my login details →</a></fieldset>
+                                <div class="forgotLink ready signup-tab" id="signupLinkWrapper"> <a href="/signup" title="Sign Up">← Sign up</a> </div>
+                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" title="Terms of Use" ng-click="TCRedirection('https://www.milemates.com/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" title="Privacy Policy" ng-click="TCRedirection('https://www.milemates.com/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
                             </div>                            
                             <div role="tabpanel" class="tab-pan" id="profile">
                                 <h1>Connect with us</h1>
                                 <div class="alert alert-danger" role="alert" ng-show="(regError && !regSuccess) || (reqError && !reqSuccess)">
                                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                                    <a href="#" class="close" ng-click="regReset()" aria-label="close">&times;</a>
+                                    <a href="#" class="close" ng-click="regReset()" aria-label="close" title="close">&times;</a>
                                     <span class="sr-only">Error:</span>
                                     {{errorMessage}}
                                 </div>
                                 <div class="alert alert-success" role="alert" ng-show="(regSuccess && !regError) || (reqSuccess && !reqError)">
                                     <span class="fa fa-check-circle-o" aria-hidden="true"></span>
-                                    <a href="#" class="close" ng-click="regReset()" aria-label="close">&times;</a>
+                                    <a href="#" class="close" ng-click="regReset()" aria-label="close" title="close">&times;</a>
                                     <span class="sr-only">Success:</span>
                                     {{successMessage}}
                                 </div>
@@ -137,20 +137,20 @@
                                         <button type="submit" id="register_btn" class="button buttonBlock buttonSubmit" data-loading-text="Registering...." ng-disabled="regForm.$invalid">Register</button>
                                     </form>
                                 </fieldset>
-                                <div class="forgotLink signin-tab" id="loginLinkWrapper"> <a href="/login">Have an account? Log in →</a> </div>
-                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
+                                <div class="forgotLink signin-tab" id="loginLinkWrapper"> <a href="/login" title="Sign In">Have an account? Log in →</a> </div>
+                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" title="Terms of Use" ng-click="TCRedirection('https://www.milemates.com/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" title="Privacy Policy" ng-click="TCRedirection('https://www.milemates.com/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
                             </div>                            
                             <div role="tabpanel" class="tab-pan text-center" id="forget_password">
                                 <h1>Reset password</h1>
                                 <div class="alert alert-danger" role="alert" ng-show="frgError && !frgSuccess">
                                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                                    <a href="#" class="close" ng-click="frgReset()" aria-label="close">&times;</a>
+                                    <a href="#" class="close" ng-click="frgReset()" aria-label="close" title="close">&times;</a>
                                     <span class="sr-only">Error:</span>
                                     {{errorMessage}}
                                 </div>
                                 <div class="alert alert-success" role="alert" ng-show="frgSuccess && !frgError">
                                     <span class="fa fa-check-circle-o" aria-hidden="true"></span>
-                                    <a href="#" class="close" ng-click="frgReset()" aria-label="close">&times;</a>
+                                    <a href="#" class="close" ng-click="frgReset()" aria-label="close" title="close">&times;</a>
                                     <span class="sr-only">Success:</span>
                                     {{successMessage}}
                                 </div>
@@ -169,7 +169,7 @@
                                     </form>
                                 </fieldset>
                                 <fieldset class="forgotLink signin-tab"><a id="unForgot" href="#">← It's OK, I remembered</a></fieldset>
-                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" ng-click="TCRedirection('https://localhost:44380/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
+                                <div class="forgotLink">By using MileMates you agree to the <a style="cursor:pointer;" title="Terms of Use" ng-click="TCRedirection('https://www.milemates.com/Terms', 'Order Processing T&C')">Terms of Use</a> & <a style="cursor:pointer;" title="Privacy Policy" ng-click="TCRedirection('https://www.milemates.com/PrivacyPolicy', 'Order Processing T&C')">Privacy Policy</a></div>
                             </div>
                         </div>
                     </div>
