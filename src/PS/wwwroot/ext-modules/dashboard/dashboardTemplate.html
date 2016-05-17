@@ -4,12 +4,12 @@
             <div class="bg-inner">
                 <div class="decor-1-header center-block"></div>
                 <ol class="breadcrumb">
-                    <li><a href="/">Home</a></li>
-                    <li class="active">Dashboard</li>
+                    <li><a href="/" title="Car Servicing Online">Home</a></li>
+                    <li class="active" title="MileMates Dashboard">Dashboard</li>
                 </ol>
-            </div><!-- end bg-inner -->
-        </div><!-- end block-title__inner -->
-    </div><!-- end block-title -->
+            </div>
+        </div>
+    </div>
 </div>
 <section>
     <div class="container">
@@ -20,17 +20,17 @@
                         <div class="tab">
                             <ul class="nav nav-stacked">
                                 <li class="active">
-                                    <a data-toggle="tab" href="#booking" aria-expanded="true">
+                                    <a data-toggle="tab" href="#booking" aria-expanded="true" title="My Appointments">
                                         <span class="curve"><i class="fa fa-pencil-square-o"></i></span><span class="curve-text">My Appointments</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#history">
+                                    <a data-toggle="tab" href="#history" title="Appointment History">
                                         <span class="curve"><i class="fa fa-history"></i></span><span class="curve-text">Appointment History</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#settings">
+                                    <a data-toggle="tab" href="#settings" title="Update User Profile">
                                         <span class="curve"><i class="fa fa-cog"></i></span><span class="curve-text">Account Settings</span>
                                     </a>
                                 </li>
@@ -64,24 +64,24 @@
 
                                     <div class="tabs"> 
                                         <ul class="nav nav-tabs">
-                                            <li class="active"> <a data-toggle="tab" href="#profile-tab"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
-                                            <li class=""> <a data-toggle="tab" href="#password-tab"> Change Password <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
-                                            <!--<li class=""> <a data-toggle="tab" href="#vehicle-tab"> Add A Vehicle <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>-->
+                                            <li class="active"> <a data-toggle="tab" href="#profile-tab" title="User Profile"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                            <li class=""> <a data-toggle="tab" href="#password-tab" title="Change User Password"> Change Password <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                            <!--<li class=""> <a data-toggle="tab" href="#vehicle-tab" title="Add A Vehicle"> Add A Vehicle <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>-->
                                         </ul>
                                         <div class="tab-content">
                                             <div id="profile-tab" class="tab-pane active">
                                                 <div class="vd_btn tr" ng-click="isEdit = !isEdit">
-                                                    <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Edit </a>
+                                                    <a class="btn vd_btn btn-xs vd_bg-yellow" title="Edit User Profile"> <i class="fa fa-pencil append-icon"></i> Edit </a>
                                                 </div>
                                                 <div class="alert alert-danger mgtp-30" role="alert" ng-show="(cngError && !cngSuccess) || (cngError && !cngSuccess)">
                                                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                                                    <a href="#" class="close" ng-click="cngReset()" aria-label="close">&times;</a>
+                                                    <a href="#" class="close" ng-click="cngReset()" aria-label="close" title="close">&times;</a>
                                                     <span class="sr-only">Error:</span>
                                                     {{errorMessage}}
                                                 </div>
                                                 <div class="alert alert-success mgtp-30" role="alert" ng-show="(cngSuccess && !cngError) || (cngSuccess && !cngError)">
                                                     <span class="fa fa-check-circle-o" aria-hidden="true"></span>
-                                                    <a href="#" class="close" ng-click="cngReset()" aria-label="close">&times;</a>
+                                                    <a href="#" class="close" ng-click="cngReset()" aria-label="close" title="close">&times;</a>
                                                     <span class="sr-only">Success:</span>
                                                     {{successMessage}}
                                                 </div>
@@ -175,13 +175,13 @@
                                             <div id="password-tab" class="tab-pane">
                                                 <div class="alert alert-danger" role="alert" ng-show="(cngError && !cngSuccess) || (cngError && !cngSuccess)">
                                                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                                                    <a href="#" class="close" ng-click="cngReset()" aria-label="close">&times;</a>
+                                                    <a href="#" class="close" ng-click="cngReset()" aria-label="close" title="close">&times;</a>
                                                     <span class="sr-only">Error:</span>
                                                     {{errorMessage}}
                                                 </div>
                                                 <div class="alert alert-success" role="alert" ng-show="(cngSuccess && !cngError) || (cngSuccess && !cngError)">
                                                     <span class="fa fa-check-circle-o" aria-hidden="true"></span>
-                                                    <a href="#" class="close" ng-click="cngReset()" aria-label="close">&times;</a>
+                                                    <a href="#" class="close" ng-click="cngReset()" aria-label="close" title="close">&times;</a>
                                                     <span class="sr-only">Success:</span>
                                                     {{successMessage}}
                                                 </div>
@@ -238,8 +238,7 @@
                                             </div>
 
                                             <div id="vehicle-tab" class="tab-pane">
-                                                <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow"> <i class="fa fa-pencil append-icon"></i> Add </a> </div>
-
+                                                <div class="vd_info tr"> <a class="btn vd_btn btn-xs vd_bg-yellow" title="Add"> <i class="fa fa-pencil append-icon"></i> Add </a> </div>
                                             </div>
                                         </div>
                                     </div>

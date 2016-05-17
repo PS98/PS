@@ -53,23 +53,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-xs-12">
-                    <a href="/" class="logo"> <img class="logo__img img-responsive" src="assets/img/logo.png" height="50" width="200" alt="MM_Logo"> </a>
+                    <a href="/" class="logo"> <img class="logo__img img-responsive" src="assets/img/logo.png" height="50" width="200" alt="MileMates Logo"> </a>
                     <div class="navbar yamm">
                         <div class="navbar-header hidden-md hidden-lg hidden-sm">
-                            <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                            <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
+                                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                            </button>
                             <a href="javascript:void(0);" class="navbar-brand"></a>
                         </div>
                         <div id="navbar-collapse-1" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/About">Why Choose Us?</a></li>
-                                <li><a href="/Contact">Connect With Us?</a></li>
-                                <li><a href="/Pricing">Pricing?</a></li>
+                                <li><a href="/" title="Car Servicing Online">Home</a></li>
+                                <li><a href="/About" title="About Us">Why Choose Us?</a></li>
+                                <li><a href="/Contact" title="Contact Us">Connect With Us?</a></li>
+                                <li><a href="/Pricing" title="Car Service Prices">Pricing?</a></li>
                                 <li>
-                                    <a href="/Service/">Book Now</a>
+                                    <a href="/Service/" title="Car Service Book Appointment">Book Now</a>
                                 </li>
                                 <li>
-                                    <a href="" ng-if="!isLoggedIn" ng-click="openloginModal()">Login</a>
+                                    <a href="" ng-if="!isLoggedIn" ng-click="openloginModal()" title="MileMates Login">Login</a>
                                     <ps-user-profile ng-if="isLoggedIn"></ps-user-profile>
                                 </li>
                             </ul>
@@ -79,8 +81,6 @@
             </div>
         </div>
     </div>
-    <!-- end container -->
 </div>
-<!-- end header__inner -->
 <!-- end header -->
 <login-details ng-controller="loginDetailsController"></login-details>
