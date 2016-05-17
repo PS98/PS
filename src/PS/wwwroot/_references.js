@@ -60,6 +60,7 @@
 /// <reference path="psapp/carservice/selectaddresscontroller.js" />
 /// <reference path="psapp/carservice/selectaddressdirective.js" />
 /// <reference path="psapp/carservice/selectcardirective.js" />
+/// <reference path="psapp/carservice/selectcentrecontroller.js" />
 /// <reference path="psapp/carservice/selectcentredirective.js" />
 /// <reference path="psapp/directives/psaboutus.js" />
 /// <reference path="psapp/directives/pscontactus.js" />

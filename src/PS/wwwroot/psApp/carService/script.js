@@ -112,7 +112,7 @@ function loadMap(lat, lng, zoom) {
 
 function loadCurrentLocation(data) {
     if (locationCall)
-        locationCall(data.city.long_name, data.area.long_name);
+        locationCall(data.city, data.area);
 
 }
 function locateCityAndArea(latlng) {
@@ -128,22 +128,71 @@ function locateCityAndArea(latlng) {
     //return { city: result.city, area: result.area };
 }
 function getCityAreaFromAddressComponent(results) {
-    var city, area;
+    var route, street_number, neighborhood, sublocality_level_3, sublocality_level_2, city, area, locality, country, state, pinCode;
+
+    var addressLine1, addressLine2;
     for (var i = 0; i < results.address_components.length; i++) {
         for (var b = 0; b < results.address_components[i].types.length; b++) {
+            if (results.address_components[i].types[b] == "route") {
+                route = results.address_components[i].long_name;
+
+            }
+
+            if (results.address_components[i].types[b] == "street_number") {
+                street_number = results.address_components[i].long_name;
+
+            }
+
+            if (results.address_components[i].types[b] == "neighborhood") {
+                neighborhood = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "sublocality_level_3") {
+                sublocality_level_3 = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "sublocality_level_2") {
+                sublocality_level_2 = results.address_components[i].long_name;
+
+            }
 
             if (results.address_components[i].types[b] == "sublocality_level_1") {
-                area = results.address_components[i];
+                area = results.address_components[i].long_name;
 
             }
+           
+            if (results.address_components[i].types[b] == "locality") {
+                locality = results.address_components[i].long_name;
 
+            }
             if (results.address_components[i].types[b] == "administrative_area_level_2") {
-                city = results.address_components[i];
+                city = results.address_components[i].long_name;
+            }
+
+            if (results.address_components[i].types[b] == "administrative_area_level_1") {
+                state = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "country") {
+                country = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "postal_code") {
+                pinCode = results.address_components[i].long_name;
                 break;
             }
+           
         }
     }
-    return { "city": city, "area": area };
+    route = route ? route : '';
+    street_number = street_number ? street_number : "";
+    neighborhood = neighborhood ? neighborhood : "";
+    sublocality_level_3 = sublocality_level_3 ? sublocality_level_3 : "";
+    sublocality_level_2 = sublocality_level_2 ? sublocality_level_2 : "";
+    locality = locality ? locality : "";
+    addressLine1 = route + street_number + neighborhood;
+    addressLine2 = sublocality_level_3 + sublocality_level_2;
+    return { "city": city, "area": area, "locality": locality, "state": state, "country": country, 'pinCode': pinCode, "addressLine1":addressLine1 ,"addressLine2":addressLine2};
 }
 function getLatLng(place, zoom) {
     var address = { 'address': place };

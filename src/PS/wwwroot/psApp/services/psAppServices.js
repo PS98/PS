@@ -1,6 +1,6 @@
 ﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", "$localStorage", function ($http, $q, $localStorage) {
     var selectedCar, selectedService, serviceNameList;
-    var userServiceData = { selectedCar: {}, selectedServices: {}, selectedCentre: {}, selectedAppointment: {}, userDetails: {}};
+    var userServiceData = { selectedCar: {}, selectedServices: {}, selectedCentre: {}, selectedAppointment: {}, userDetails: {}, userAddress: {}};
     angular.extend(userServiceData.userDetails, $localStorage.userDetails);
     
     var _getSelectedService = function () {
@@ -29,6 +29,13 @@
     var _setuserDetails = function (user) {
         userServiceData.userDetails = user;
         $localStorage.userDetails = user;
+    }
+    var _getuserAddress = function () {
+        return userServiceData.userAddress;
+    }
+    var _setuserAddress = function (details) {
+        userServiceData.userAddress = details;
+        $localStorage.userAddress = details;
     }
     var _setSelectedCentre = function (centre) {
         userServiceData.selectedCentre = centre;
@@ -116,7 +123,9 @@
         setSelectedAppointment: _setSelectedAppointment,
         setPaymentMode:_setPaymentMode,
         getuserDetails: _getuserDetails,
-        setuserDetails:_setuserDetails,
+        setuserDetails: _setuserDetails,
+        getuserAddress: _getuserAddress,
+        setuserAddress: _setuserAddress,
         setUserPreference:_setUserPreference,
         geMockData: _getMockData,
         saveCentreDetails: _saveCentreDetails
