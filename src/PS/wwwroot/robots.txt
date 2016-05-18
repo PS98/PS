@@ -1,0 +1,13 @@
+User-Agent: *
+Disallow: 
+Allow: /
+Allow: /About
+Allow: /Contact
+Allow: /Pricing
+Allow: /Service/
+Allow: /Service
+Allow: /Terms
+Allow: /PrivacyPolicy
+Allow: /OrderProcessingTerms
+
+Sitemap: https://www.milemates.com/robots.txt

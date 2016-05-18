@@ -360,7 +360,7 @@ namespace PS.Controllers
                 {
                     var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile + 
                         "provided feedback regarding MileMates services.<br /><br />" + model.Message;
-                    _emailSender.SendSimpleMessage("feedback@milemates.com", model.Subject, message);
+                    _emailSender.SendSimpleMessage("care@milemates.com", model.Subject, message);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "Your message has been submitted successfully.", Status = 0 });
                 }
