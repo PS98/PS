@@ -15,6 +15,7 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
     $scope.orderProcess = function () {
         if ($scope.payNow) {
             psDataServices.setPaymentMode("Online");
+               $localStorage.userSelectionData = psDataServices.getSelectedService();
             $scope.response = psOrderDetailsService.payment()
                 .then(function (result) {
                     //Success
