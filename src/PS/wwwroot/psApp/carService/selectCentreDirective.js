@@ -40,7 +40,7 @@ angular.module("psApp").directive("selectCentre", function () {
 
                 getFullAddress(userLatLng);
                 mapOptions.center = userLatLng;
-
+                scope.setUserLocation(userLocation.lat, userLocation.lng);
                 userMap = new google.maps.Map(document.getElementById("userAddressMap"), mapOptions);
 
                 autocomplete = null;

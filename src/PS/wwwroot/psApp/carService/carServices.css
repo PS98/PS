@@ -664,11 +664,11 @@ pre                             { margin-bottom:20px; }
 .car-header .form-control {
     margin-bottom: 0px;
 }
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
      .container.service {
     margin-left: 100px
 }
-}
+}*/
 
 @media (min-width: 768px) {
   .dateContainer {
@@ -782,6 +782,9 @@ pre                             { margin-bottom:20px; }
      background-color:#d9d9d9 !important;
     color:#aaa !important;
     cursor: not-allowed;
+}
+.book .car-header{
+    min-height :250px
 }
 .user-address .form-group {
     margin: 15px 0 10px 0;
