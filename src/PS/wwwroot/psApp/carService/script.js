@@ -277,28 +277,32 @@ function setMarkers(googleMap, locations, callback) {
     var bounds = new google.maps.LatLngBounds();
     infowindow.close();
     $.each(locations, function (index, val) {
-        var lat = val.longitude;
-        var long = val.latitude;
+        var lat = val.latitude;
+        var long = val.longitude;
         latlngset = new google.maps.LatLng(lat, long);
 
         var marker = new google.maps.Marker({
             map: map,
             position: latlngset
         });
-        //  map.setCenter(marker.getPosition());
-        marker.setMap(map)
 
-        var content = val.name;
+        if(index === 0)
+        map.setCenter(marker.getPosition());
+       // marker.setMap(map)
+
+        var content = '<div><strong>' + val.name + '</strong><br>' +
+                 val.address.line1 + ',' + val.address.line2 + '<br>' +
+                val.phoneNo + '</div>';
 
         bounds.extend(marker.position);
 
-        google.maps.event.addListener(marker, 'click', (function (marker, infowindow, callback, val) {
+        google.maps.event.addListener(marker, 'click', (function (marker, infowindow, callback, val, content) {
             return function () {
-                infowindow.setContent(val.name);
+                infowindow.setContent(content);
                 infowindow.open(map, marker);
                 callback(val);
             };
-        })(marker, infowindow, callback, val));
+        })(marker, infowindow, callback,val, content));
         if (val.activeCentre) {
             infowindow.open(map, marker);
             infowindow.setContent(content);
@@ -308,7 +312,7 @@ function setMarkers(googleMap, locations, callback) {
 
     });
 
-    //map.fitBounds(bounds);
+   // map.fitBounds(bounds);
 }
 function myClick(id, markersLocations) {
     var mapMarkerIndex;

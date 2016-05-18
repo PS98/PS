@@ -1,750 +1,216 @@
-{
-  "_id": "ObjectId(\"56ff89b5f47380f1ab96d85f\")",
-  "Area": "Pimple Gurav",
-  "Centres": [
-    {
-      "Name": "ABC Corp",
-      "Address": {
-        "line1": "new road",
-        "line2": "near datt Mandir"
+
+  {
+    "Area": "Pimple Gurav",
+    "NearAreas": ["Pimple Saudagar", "Kasarwadi", "Sangvi"],
+    "Centres": [
+      {
+        "_id": "90450512",
+        "Name": "Admin centre",
+        "Address": {
+          "line1": "hjkhkk",
+          "line2": "gjhgjgjh"
+        },
+        "PhoneNo": "7899997888",
+        "Longitude": "73.80392074584961",
+        "Latitude": "18.598764754774557",
+        "Review": null,
+        "ServiceDetails": [
+          {
+            "Name": "Lite Car Care",
+            "Radius": null,
+            "Petrol": [
+              {
+                "ModelList": [
+                  "1-Series",
+                  "3-Series",
+                  "5-Series"
+                ],
+                "MilematePrice": 3000,
+                "ActualPrice": 5000,
+                "ServiceCentrePrice": 2500
+              }
+            ],
+            "Diesel": [ ],
+            "CNG": [ ],
+            "Electric": [ ]
+          }
+        ],
+        "Services": [
+          "Tyre Repair",
+          "Card Payment",
+          "Pick & Drop"
+        ]
       },
-      "PhoneNo": "123456987",
-      "Longitude": "18.600534069047335",
-      "Latitude": "73.80731105804443",
-      "ServiceDetails": [
-        {
-          "Name": "Essential Car Care",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 2300
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 3000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 2500
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 2700
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 2300
-            }
-          ]
+      {
+        "_id": "90450512",
+        "Name": "Sahil Car Care",
+        "Address": {
+          "line1": "Infront of Swaraj Garden",
+          "line2": "nashik road"
         },
-        {
-          "Name": "Full Car Care",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 1230
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 1500
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 2700
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 3000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 2300
-            }
-          ]
-        },
-        {
-          "Name": "Engine Performance",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 500
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 600
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 2050
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 2070
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 2300
-            }
-          ]
-        },
-        {
-          "Name": "Oil, Filters and Fluids",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 200
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 300
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 500
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 700
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 300
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "DEF Corp",
-      "Address": {
-        "line1": "old road",
-        "line2": "near abc Mandir"
+        "PhoneNo": "7899997888",
+        "Longitude": "73.8080620765686",
+        "Latitude": "18.598846102960476",
+        "Review": null,
+        "ServiceDetails": [
+          {
+            "Name": "Lite Car Care",
+            "Radius": null,
+            "Petrol": [
+              {
+                "ModelList": [
+                  "1-Series",
+                  "3-Series",
+                  "5-Series"
+                ],
+                "MilematePrice": 2000,
+                "ActualPrice": 3000,
+                "ServiceCentrePrice": 1800
+              }
+            ],
+            "Diesel": [ ],
+            "CNG": [ ],
+            "Electric": [ ]
+          }
+        ],
+        "Services": [
+          "Tyre Repair",
+          "Card Payment",
+          "Pick & Drop"
+        ]
       },
-      "PhoneNo": "46645645644",
-      "Longitude": "18.610864870248303",
-      "Latitude": "73.80636692047119",
-      "ServiceDetails": [
-        {
-          "Name": "Essential Car Care",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 5000
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 6000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 2000
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 3000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 4000
-            }
-          ]
+      {
+        "_id": "52100513",
+        "Name": "ABC Corp",
+        "Address": {
+          "line1": "new road",
+          "line2": "near datt Mandir"
         },
-        {
-          "Name": "Full Car Care",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 8000
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 3000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 2500
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 5000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 2300
-            }
-          ]
-        },
-        {
-          "Name": "Engine Performance",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 2300
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 3000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 2500
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 2700
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 5000
-            }
-          ]
-        },
-        {
-          "Name": "Oil, Filters and Fluids",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 300
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 400
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 600
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 700
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 200
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "GHI Corp",
-      "Address": {
-        "line1": "test1",
-        "line2": "test1 line 2"
+        "PhoneNo": "123456987",
+        "Longitude": "73.79832029342651",
+        "Latitude": "18.59860205828615",
+        "Review": null,
+        "ServiceDetails": [
+          {
+            "Name": "Lite Car Care",
+            "Radius": null,
+            "Petrol": [
+              {
+                "ModelList": [
+                  "1-Series",
+                  "3-Series",
+                  "M3",
+                  "i8",
+                  "X1",
+                  "X3",
+                  "X5 M",
+                  "Z4",
+                  "X6 M",
+                  "X6"
+                ],
+                "MilematePrice": 2000,
+                "ActualPrice": 3000,
+                "ServiceCentrePrice": 1500
+              }
+            ],
+            "Diesel": [ ],
+            "CNG": [ ],
+            "Electric": [ ]
+          }
+        ],
+        "Services": null
       },
-      "PhoneNo": "7655453454",
-      "Longitude": "18.6134678078517",
-      "Latitude": "73.82181644439697",
-      "ServiceDetails": [
-        {
-          "Name": "Essential Car Care",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 2500
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 3000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 2500
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 2700
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 2300
-            }
-          ]
+      {
+        "_id": "57870513",
+        "Name": "DEF Corp",
+        "Address": {
+          "line1": "old road",
+          "line2": "near abc Mandir"
         },
-        {
-          "Name": "Full Car Care",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 4000
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 3000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 6000
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 8000
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 2300
-            }
-          ]
+        "PhoneNo": "798764658798",
+        "Longitude": "73.80636692047119",
+        "Latitude": "18.610864870248303",
+        "Review": null,
+        "ServiceDetails": [
+          {
+            "Name": "Lite Car Care",
+            "Radius": null,
+            "Petrol": [
+              {
+                "ModelList": [
+                  "Bolero",
+                  "Scorpio",
+                  "Quanto",
+                  "TUV300",
+                  "Verito",
+                  "XUV500"
+                ],
+                "MilematePrice": 600,
+                "ActualPrice": 800,
+                "ServiceCentrePrice": 500
+              }
+            ],
+            "Diesel": [
+              {
+                "ModelList": [
+                  "Bolero",
+                  "Scorpio",
+                  "Quanto",
+                  "TUV300",
+                  "Verito",
+                  "XUV500"
+                ],
+                "MilematePrice": 2000,
+                "ActualPrice": 3000,
+                "ServiceCentrePrice": 2500
+              }
+            ],
+            "CNG": [ ],
+            "Electric": [ ]
+          }
+        ],
+        "Services": null
+      },
+      {
+        "_id": "24380513",
+        "Name": "GHI Corp",
+        "Address": {
+          "line1": "test1",
+          "line2": "test1asfaf"
         },
-        {
-          "Name": "Engine Performance",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 400
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 350
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 250
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 700
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 300
-            }
-          ]
-        },
-        {
-          "Name": "Oil, Filters and Fluids",
-          "PriceDetails": [
-            {
-              "ModelList": [
-                "Bolero",
-                "Scorpio"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "BS4",
-                    "S2"
-                  ],
-                  "Price": 400
-                },
-                {
-                  "Varient": [
-                    "SLE",
-                    "S4"
-                  ],
-                  "Price": 500
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "Cruze",
-                "Go"
-              ],
-              "VarientList": [
-                {
-                  "Varient": [
-                    "LT",
-                    "A"
-                  ],
-                  "Price": 200
-                },
-                {
-                  "Varient": [
-                    "LTZ",
-                    "D"
-                  ],
-                  "Price": 700
-                }
-              ]
-            },
-            {
-              "ModelList": [
-                "M3",
-                "M5"
-              ],
-              "Price": 200
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "JKL Corp",
-      "Address": {
-        "line1": "test2",
-        "line2": "test2 line2"
-      },
-      "PhoneNo": "1214765444",
-      "Longitude": "18.604438697544907",
-      "Latitude": "73.82130146026611",
-      "ServiceDetails": [ ]
-    },
-    {
-      "Name": "MNO Corp",
-      "Address": {
-        "line1": "test3",
-        "line2": "test3 line2"
-      },
-      "PhoneNo": "8708967859",
-      "Longitude": "18.610376815014273",
-      "Latitude": "73.79589557647705",
-      "ServiceDetails": [ ]
-    },
-    {
-      "Name": "PQR Corp",
-      "Address": {
-        "line1": "test5",
-        "line2": "test5 line 2"
-      },
-      "PhoneNo": "0987654321",
-      "Longitude": "18.601754275073823",
-      "Latitude": "73.82387638092041",
-      "ServiceDetails": [ ]
-    }
-  ]
-}
+        "PhoneNo": "798764658798",
+        "Longitude": "73.82181644439697",
+        "Latitude": "18.6134678078517",
+        "Review": null,
+        "ServiceDetails": [
+          {
+            "Name": "Essential Car Care",
+            "Radius": null,
+            "Petrol": [
+              {
+                "ModelList": [
+                  "Bolero",
+                  "Scorpio",
+                  "Quanto",
+                  "TUV300",
+                  "Verito",
+                  "XUV500"
+                ],
+                "MilematePrice": 3000,
+                "ActualPrice": 3500,
+                "ServiceCentrePrice": 2500
+              }
+            ],
+            "Diesel": [ ],
+            "CNG": [ ],
+            "Electric": [ ]
+          }
+        ],
+        "Services": null
+      }
+    ]
+  }
+
 
 
 {
