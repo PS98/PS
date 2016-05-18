@@ -36,6 +36,8 @@
     var _setuserAddress = function (details) {
         userServiceData.userAddress = details;
         $localStorage.userAddress = details;
+        $localStorage.userAddress.lat = $localStorage.userData.lat;
+        $localStorage.userAddress.lng = $localStorage.userData.lng;
     }
     var _setSelectedCentre = function (centre) {
         userServiceData.selectedCentre = centre;

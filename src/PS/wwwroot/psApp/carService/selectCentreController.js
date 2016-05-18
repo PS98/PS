@@ -35,6 +35,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
                         //$scope.centreList = $scope.centreList.slice(1);
                         $scope.centreList[$scope.centreList.indexOf($scope.selectedCentre)].activeCentre = true;
                         setMarkers($scope.map, $scope.centreList, $scope.markerClick);
+                        $scope.noCentreMatch = false;
                     } else {
                         $scope.noCentreMatch = true;
                         $scope.centreList = [];
@@ -101,6 +102,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     }
 
     $scope.changeArea = function () {
+        if ($scope.area && $scope.area.toLowerCase() !== "select area")
         $("#addressOverlay").modal('toggle');
     }
 

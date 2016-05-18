@@ -159,6 +159,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                 $scope.showDropCalendar = true;
                 psDataServices.setSelectedAppointment($scope.selectedDate);
                 $scope.userSelectedService = psDataServices.getSelectedService();
+                $scope.mapUrl = "http://maps.googleapis.com/maps/api/staticmap?&zoom=15&scale=false&size=500x300&maptype=roadmap&format=png&visual_refresh=true&markers=" + $scope.userSelectedService.userAddress.lat + "," + $scope.userSelectedService.userAddress.lng;
             }
             $scope.selectDropTime = function (dateTime) {
                 $scope.selectedDate.dropOffDate.day = dateTime.day;
@@ -192,6 +193,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                 if ($scope.showPickUpCalendar) {
                     $scope.hideCalendar = false;
                     $scope.showDropCalendar = false;
+                    enableDisableButton($scope.centreWorkingHours)
                 } else {
                     $scope.hideCalendar = true;
                 }
@@ -202,6 +204,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                 if ($scope.showDropCalendar) {
                     $scope.hideCalendar = false;
                     $scope.showPickUpCalendar = false;
+                    enableDisableButton($scope.availablePickUpTime, true)
                 }
                 else {
                     $scope.hideCalendar = true;

@@ -46,11 +46,11 @@
             <div class="row" ng-if="noCentreMatch">"There is no service centre"</div>
 
 
-            <div class="list-container" ng-if="selectedCentre.name">
+            <div class="list-container" ng-if="(selectedCentre.services || []).length >0">
                 <h4 class="header-text">Services</h4>
                 <div class="list-flex-container">
-                    <ul class="list-flex-column" ng-repeat="serviceList in center.services">
-                        <li ng-repeat="service in serviceList">{{ service }}</li>
+                    <ul class="list-flex-column">
+                        <li ng-repeat="service in selectedCentre.services">{{ service }}</li>
                     </ul>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                         <centre-details centre="recommendedCentre" add="selectServiceCentre(dirCentre)" ng-class="recommendedCentre.name == selectedCentre.name ?'active' :'non-active'"></centre-details>
                     </div>
                 </div>
-                <div ng-if="centreList">
+                <div ng-if="(centreList || [] ).length > 1">
                     <h4 class="centre-list_other-title">Other centres nearby</h4>
                     <div class="centre-list_other">
                         <centre-details centre="centre" ng-repeat="centre in centreList" add="selectServiceCentre(dirCentre)" ng-if="centre != recommendedCentre" ng-class="centre.name == selectedCentre.name ?'active' :'non-active'"></centre-details>
@@ -138,7 +138,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Select your Address</h4>
+                <h4 class="modal-title">Please select your address</h4>
             </div>
             <div class="modal-body collapse-content" id="container">
                 <div class="col-md-12">

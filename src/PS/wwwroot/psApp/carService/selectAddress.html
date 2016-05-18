@@ -1,7 +1,7 @@
 ﻿<div class="user-address">
     <div class="row top-padding10">
         <div class="col-md-6">
-            <div ng-show="userSelectedPickUp">
+            <div ng-show="pickUp">
                 <!--<div class="form-group">
                     <label for="autocompleteTextBox"> Start typing your address</label>
                     <input class="form-control" id="formatted_address" placeholder="Start typing your address" type="text" ng-model="userSelectedService.userDetails.formattedAddress" />
@@ -62,8 +62,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <!--<img id="googleMap" class="address-map" ng-show="userSelectedPickUp"></img>-->
+        <div class="col-md-6 margin-top10" ng-if="pickUp">
+            <img ng-src="{{mapUrl}}" alt="Your Address ">
         </div>
     </div>
 </div>
