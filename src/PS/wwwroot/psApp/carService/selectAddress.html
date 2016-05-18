@@ -2,34 +2,34 @@
     <div class="row top-padding10">
         <div class="col-md-6">
             <div ng-show="userSelectedPickUp">
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label for="autocompleteTextBox"> Start typing your address</label>
                     <input class="form-control" id="formatted_address" placeholder="Start typing your address" type="text" ng-model="userSelectedService.userDetails.formattedAddress" />
-                </div>
+                </div>-->
                 <div class="form-group">
                     <label for="sublocality_level_2" class="">ADDRESS LINE 1</label>
-                    <input class="form-control" id="sublocality_level_2" placeholder="address line 1" ng-model="userSelectedService.userDetails.addressLine1" />
+                    <input class="form-control" id="sublocality_level_2" placeholder="address line 1" ng-model="userSelectedService.userAddress.addressLine1" />
                     <br />
                     <label for="sublocality_level_1" class="">ADDRESS LINE 2</label>
-                    <input class="form-control" id="sublocality_level_1" placeholder="address line 2" ng-model="userSelectedService.userDetails.addressLine2" />
+                    <input class="form-control" id="sublocality_level_1" placeholder="address line 2" ng-model="userSelectedService.userAddress.addressLine2" />
                 </div>
                 <div class="form-group col-xs-6">
                     <label for="administrative_area_level_2" class="">City</label>
-                    <input class="form-control" id="administrative_area_level_2" placeholder="city" disabled="disabled" ng-model="userSelectedService.userDetails.city" />
+                    <input class="form-control" id="administrative_area_level_2" placeholder="city" disabled="disabled" ng-model="userSelectedService.userAddress.city" />
                 </div>
 
                 <div class="form-group col-xs-6">
                     <label for="administrative_area_level_1">State</label>
-                    <input class="form-control" id="administrative_area_level_1" placeholder="state" disabled="disabled" ng-model="userSelectedService.userDetails.state" />
+                    <input class="form-control" id="administrative_area_level_1" placeholder="state" disabled="disabled" ng-model="userSelectedService.userAddress.state" />
                 </div>
                 <div class="form-group col-xs-6">
                     <label for="country">Country</label>
-                    <input class="form-control" id="country" placeholder="country" disabled="disabled" ng-model="userSelectedService.userDetails.country" />
+                    <input class="form-control" id="country" placeholder="country" disabled="disabled" ng-model="userSelectedService.userAddress.country" />
                 </div>
 
                 <div class="form-group col-xs-6">
                     <label for="postal_code">Zip code</label>
-                    <input class="form-control" id="postal_code" placeholder="zip code" disabled="disabled" ng-model="userSelectedService.userDetails.zipCode" />
+                    <input class="form-control" id="postal_code" placeholder="zip code" disabled="disabled" ng-model="userSelectedService.userAddress.pinCode" />
                 </div>
             </div>
             <div>
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div id="googleMap" class="address-map" ng-show="userSelectedPickUp"></div>
+            <!--<img id="googleMap" class="address-map" ng-show="userSelectedPickUp"></img>-->
         </div>
     </div>
 </div>

@@ -7,8 +7,8 @@ angular.module("psApp").directive("selectAddress", function () {
         link: function (scope, element, attrs) {           
             var autocomplete
             scope.showMap = function () {
-                if (!autocomplete)
-                    autocomplete = initializeGoogleMap('formatted_address', 'googleMap', setAutocomplete, true, undefined, true);
+               // if (!autocomplete)
+                  //  autocomplete = initializeGoogleMap('formatted_address', 'googleMap', setAutocomplete, true, undefined, true);
             }
             function setAutocomplete(auto) {
              //  autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocompleteTextBox')), { types: ['geocode'] });
