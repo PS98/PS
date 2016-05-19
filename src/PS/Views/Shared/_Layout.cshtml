@@ -5,12 +5,12 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
-    <meta name="description" content="MileMates is a one stop solution for all kinds of car servicing needs at affordable price. 
+    <meta name="description" content="MileMates is a one stop solution for all kinds of car servicing needs at affordable price.
           MileMates strives to provide customers with the best car servicing in Pune.">
-    <meta name="keywords" content="servicing, car servicing, car care, online car servicing, online car care, car spa, car wash, online car wash, online car spa, 
-          car repairing, repairing, car repairing online, denting and paiting, car denting and painting, denting, painting, 
+    <meta name="keywords" content="servicing, car servicing, car care, online car servicing, online car care, car spa, car wash, online car wash, online car spa,
+          car repairing, repairing, car repairing online, denting and paiting, car denting and painting, denting, painting,
           cheap car servicing, car service, service car, service my car, service my car online, best car servicing, best car servicing online, affordable car servicing,
-          car maintenance, car maintenance online, online shop for car servicing, car servicing in pune, car servicing online in pune, online servicing in pune, 
+          car maintenance, car maintenance online, online shop for car servicing, car servicing in pune, car servicing online in pune, online servicing in pune,
           car service in pune, pune online car servicing">
     <meta name="author" content="https://plus.google.com/+ShobhitVarshney98/">
     <title>MileMates | One Stop Solution for Car Servicing</title>
@@ -18,8 +18,8 @@
     <link href="~/favicon.png" type="image/x-icon" rel="shortcut icon" title="shortcut icon">
     <link rel="alternate" href="https://www.milemates.com" hreflang="en-us" />
     <link href="~/assets/css/master.css" rel="stylesheet">
-   
-     <!-- SWITCHER -->
+
+    <!-- SWITCHER -->
     <link href="~/assets/plugins/switcher/css/switcher.css" rel="stylesheet" id="switcher-css" media="all">
     <link href="~/assets/plugins/switcher/css/color1.css" rel="alternate stylesheet" title="color1" media="all">
     <link href="~/assets/plugins/switcher/css/color2.css" rel="alternate stylesheet" title="color2" media="all">
@@ -28,23 +28,28 @@
     <link href="~/assets/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5" media="all">
 
     <!-- MileMates CSS -->
-    <link href="~/psapp/userprofile/userprofile.css" rel="stylesheet" />
-    <link href="~/psapp/headerContent/header.css" rel="stylesheet" />
-    <link href="~/psapp/carservice/carservices.css" rel="stylesheet" />
-    <link href="~/ext-modules/logindetails/logindetails.css" rel="stylesheet" />
-    <link href="~/psapp/headercontent/collapsablecontentcss.css" rel="stylesheet"/>
-    <link href="~/psapp/footercontent/footer.css" rel="stylesheet" />
-    <link href="~/ext-modules/index/index.css" rel="stylesheet" />
-    <link href="~/ext-modules/dashboard/dashboard.css" rel="stylesheet" />
-    <link href="~/ext-modules/pricing/pricing.css" rel="stylesheet" />
-    <link href="~/psapp/carservice/ordersummary/ordersummary.css" rel="stylesheet" />
+    <environment names="Development">
+        <link href="~/psapp/userprofile/userprofile.css" rel="stylesheet" />
+        <link href="~/psapp/headerContent/header.css" rel="stylesheet" />
+        <link href="~/psapp/carservice/carservices.css" rel="stylesheet" />
+        <link href="~/ext-modules/logindetails/logindetails.css" rel="stylesheet" />
+        <link href="~/psapp/headercontent/collapsablecontentcss.css" rel="stylesheet" />
+        <link href="~/psapp/footercontent/footer.css" rel="stylesheet" />
+        <link href="~/ext-modules/index/index.css" rel="stylesheet" />
+        <link href="~/ext-modules/dashboard/dashboard.css" rel="stylesheet" />
+        <link href="~/ext-modules/pricing/pricing.css" rel="stylesheet" />
+        <link href="~/psapp/carservice/ordersummary/ordersummary.css" rel="stylesheet" />
+    </environment>
 
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/angular/angular.min.js"></script>
-    <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="~/lib/ngStorage.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
-   
+    <environment names="Production">
+        <link href="mm.css" rel="stylesheet" />
+    </environment>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/angular/angular.min.js"></script>
+        <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="~/lib/ngStorage.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 </head>
 
 <body>
@@ -69,7 +74,7 @@
     <script src="~/assets/js/cssua.min.js"></script>
     <script src="~/assets/js/wow.js"></script>
     <script src="~/assets/js/custom.js"></script>
-    
+
     @RenderBody()
 
 </body>
