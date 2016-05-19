@@ -18,16 +18,16 @@
                          {{job.description}}
                      </div>
                  </div>
-                 <a class="top-padding10" ng-if="(job.description || []).length == 0" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'">
+                 <span class="top-padding10" ng-if="(job.description || []).length == 0" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'">
                      {{job.name}}
-                 </a>
+                 </span>
 
              </li>
              <li  ng-if="(commonServices | filter : searchedText:strict).length == 0"  class="panel row">
                  <!--</div>-->
-                 <a class="top-padding10 bottom-padding10 clickable col-xs-12" ng-click="changeView(); clearSearch();">
+                 <span class="top-padding10 bottom-padding10 clickable col-xs-12" ng-click="changeView(); clearSearch();">
                      {{searchedText.name}} did not match any services. Click here to describe your service.
-                 </a>
+                 </span>
 
              </li>
 
