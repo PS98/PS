@@ -783,9 +783,6 @@ pre                             { margin-bottom:20px; }
     color:#aaa !important;
     cursor: not-allowed;
 }
-.book .car-header{
-    min-height :250px
-}
 .user-address .form-group {
     margin: 15px 0 10px 0;
 }
