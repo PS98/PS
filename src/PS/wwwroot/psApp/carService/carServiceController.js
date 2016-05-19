@@ -201,12 +201,16 @@
         });
         psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
         psDataServices.setSelectedServiceName(jobName);
-        if (psDataServices.getuserDetails())
+        if (validateUserData())
             $state.go("service.centre");
-        else {
-            $("#loginModal").modal('toggle');
-        }
+        $timeout(function () {
+            $('html, body').animate({
+                scrollTop: $('.popover').offset().top - 100
+            }, 100);
+        })
+     
     }
+   
     $state.go("service.car");
     $scope.state = $state;
 
@@ -247,6 +251,58 @@
 
     $scope.setDefault = function () {
         psDataServices.setUserPreference();
+    }
+
+    function validateUserData() {
+        $scope.car.error = false;
+        $scope.car.jobError = false;
+        if (!$scope.selectedCar.brand || $scope.selectedCar.brand == "") {
+            $scope.errorMessage = "Please select your car's make.";
+            $scope.car.error = true;
+            return false;
+        }
+        if (!$scope.selectedCar.year || $scope.selectedCar.year == "") {
+            $scope.errorMessage = "Please select your car's year.";
+            $scope.car.error = true;
+            return false;
+        }
+        if (!$scope.selectedCar.model || $scope.selectedCar.model == "") {
+            $scope.errorMessage = "Please select your car's model.";
+            $scope.car.error = true;
+            return false;
+        }
+        if (!$scope.selectedCar.varient || $scope.selectedCar.varient == "") {
+            $scope.errorMessage = "Please select your car's engine type.";
+            $scope.car.error = true;
+            return false;
+        }
+        if ($scope.selectedJob.length === 0) {
+            $scope.errorMessage = "Please select a service.";
+            $scope.car.jobError = true;
+            return false;
+        }
+        if (!checkUnansweredQuestions()) {
+            $scope.errorMessage = "Please answer the below question('s)";
+            $scope.car.jobError = true;
+            return false;
+        }
+        return true;
+    }
+    function checkUnansweredQuestions() {
+        var count = 0;
+        $.each($scope.selectedJob, function (index, job) {
+            if (job.questions)
+            $.each(job.questions, function (i, que) {
+                if (que.answer && que.answer.length === 0) {
+                    count++;
+                }
+            });
+        });
+        if (count > 0) {
+            return false;
+        }
+        return true;
+        
     }
 
 }]);

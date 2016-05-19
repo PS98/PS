@@ -11,6 +11,30 @@
 .bottom-padding10 {
     padding-bottom: 10px;
 }
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 40%;
+     z-index: 1060; 
+    display: block;
+    max-width: 276px;
+    padding: 1px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: left;
+    white-space: normal;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
 .car-header{
         background: #fff;
     border: 1px solid #e7ebeb;

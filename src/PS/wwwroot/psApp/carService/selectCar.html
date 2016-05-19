@@ -10,12 +10,15 @@
             </div>
             <div>
                 <div>
+                    <div class="popover fade top in" role="tooltip" ng-if="car.error"><div class="arrow" style="left: 50%;"></div>
+                    <h3 class="popover-title">This is required Information</h3>
+                    <div class="popover-content">{{errorMessage}}</div></div>
+
                     <div class="row margin-top10">
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="car-selection-car-container">
-
                                         <div class="car-option" ng-class="car-option-active" ng-click="editBrand()" ng-if="true" ng-show="selectedCar.brand">
                                             {{selectedCar.brand}}
                                         </div>
@@ -155,7 +158,11 @@
 
 
                 </div>
-
+                <div class="popover fade top in" role="tooltip" ng-show="car.jobError">
+                    <div class="arrow" style="left: 50%;"></div>
+                    <h3 class="popover-title">This is required Information</h3>
+                    <div class="popover-content">{{errorMessage}}</div>
+                </div>
                 <div class="row select-service-box">
                     <div class="col-md-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length == 0 ">
                         <car-service-category ng-if="(searchedText.name || []).length == 0"></car-service-category>
