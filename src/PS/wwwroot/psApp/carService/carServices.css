@@ -772,6 +772,9 @@ pre                             { margin-bottom:20px; }
     margin-right: 5px;
     
 }
+.coming-soon{
+  background: url(../../assets/img/coming-soon.jpg) no-repeat center center;
+}
 .calendar-header {
     font-size: 20px;
     color: green;
