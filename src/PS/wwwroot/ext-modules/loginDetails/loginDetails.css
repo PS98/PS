@@ -65,7 +65,7 @@
 .buttonSubmit:active,.buttonSubmit:focus{border-color:#a5d92b;}
 .buttonSubmit:hover{background-color: #a5d92b;}
 .button:visited{color:#fff}
-.or{position:relative;margin:.8em 0 0;font-size:110%;font-family:Georgia,Times New Roman,serif;font-style:italic;text-align:center;opacity:.5;font-weight:300}
+.or{position:relative;margin-bottom:0;font-size:110%;font-family:Georgia,Times New Roman,serif;font-style:italic;text-align:center;font-weight:300}
 .or::before{content: "------- "; opacity: 0.5}
 .or::after{content: " -------"; opacity: 0.5}
 .clearfix{margin: 10px;}

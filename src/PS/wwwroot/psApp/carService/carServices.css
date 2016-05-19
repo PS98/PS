@@ -796,6 +796,9 @@ pre                             { margin-bottom:20px; }
     margin-right: 5px;
     
 }
+.coming-soon{
+  background: url(../../assets/img/coming-soon.jpg) no-repeat center center;
+}
 .calendar-header {
     font-size: 20px;
     color: green;
@@ -806,9 +809,6 @@ pre                             { margin-bottom:20px; }
      background-color:#d9d9d9 !important;
     color:#aaa !important;
     cursor: not-allowed;
-}
-.book .car-header{
-    min-height :250px
 }
 .user-address .form-group {
     margin: 15px 0 10px 0;
