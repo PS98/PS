@@ -1,7 +1,7 @@
 ﻿
 @section Scripts{
 
-
+<environment names="Development">
     <script src="~/psApp/psAppModule.js"></script>
     <script src="~/psApp/psAppConfig.js"></script>
     <script src="~/psApp/psAppRouteConfig.js"></script>
@@ -15,7 +15,7 @@
     <script src="~/psapp/directives/pspricing.js"></script>
     <script src="~/ext-modules/dashboard/editorderdirective.js"></script>
     <script src="~/psapp/directives/psorderprocessing.js"></script>
-        
+
     <script src="~/psApp/headerContent/headerContentDirective.js"></script>
     <script src="~/psapp/headercontent/headercontentcontroller.js"></script>
     <script src="~/psapp/headercontent/collapsabledirective.js"></script>
@@ -66,13 +66,17 @@
     <script src="~/ext-modules/pricing/pricingdirective.js"></script>
     <script src="~/ext-modules/dashboard/orderdetailsdirective.js"></script>
     <script src="~/ext-modules/modaloverlay/modaloverlaydirective.js"></script>
-<script src="~/ext-modules/index/orderprocessingtermsdirective.js"></script>
+    <script src="~/ext-modules/index/orderprocessingtermsdirective.js"></script>
+    </environment>
+<environment names="Production">
+    <script src="mm.js"></script>
+    </environment>
 }
 
-    <div id="page-preloader" ng-if="loading">
-        <img class="spinner" src="~/assets/img/cool-loading-animated.gif" alt="MileMates">
-    </div>
-    <switcher-content></switcher-content>
-    <header-content></header-content>
-    <div class="wrapper" ui-view autoscroll="true"></div>
-    <footer-content></footer-content>
+<div id="page-preloader" ng-if="loading">
+    <img class="spinner" src="~/assets/img/cool-loading-animated.gif" alt="MileMates">
+</div>
+<switcher-content></switcher-content>
+<header-content></header-content>
+<div class="wrapper" ui-view autoscroll="true"></div>
+<footer-content></footer-content>

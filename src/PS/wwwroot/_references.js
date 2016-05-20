@@ -50,6 +50,7 @@
 /// <reference path="lib/ionic/release/js/ionic.js" />
 /// <reference path="lib/ionic/release/js/ionic-angular.js" />
 /// <reference path="lib/jquery/dist/jquery.js" />
+/// <reference path="mm.js" />
 /// <reference path="psapp/admin/admindirective.js" />
 /// <reference path="psapp/carservice/bookappointment/bookappointmentdirective.js" />
 /// <reference path="psapp/carservice/bookappointment/calendardirective.js" />
