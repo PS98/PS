@@ -12,6 +12,9 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             centre.activeCentre = true;
             $scope.selectedCentre = centre;
             myClick(centre.$$hashKey, $scope.centreList);
+            $("html, body").animate({
+                scrollTop: 50
+            }, 'fast');
         } else {
             psDataServices.setSelectedCentre($scope.selectedCentre);
             $state.go("service.appointment");
@@ -37,7 +40,11 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
                         setMarkers($scope.map, $scope.centreList, $scope.markerClick);
                         $scope.noCentreMatch = false;
                     } else {
-                        $scope.noCentreMatch = true;
+                        if (!$scope.car.centreArea.includes($scope.area))
+                            $scope.noCentreMatch = true;
+                        else {
+                            $scope.noServiceMatch = true;
+                        }
                         $scope.centreList = [];
                         $scope.selectedCentre = {};
                         $scope.recommendedCentre = {};

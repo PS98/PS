@@ -42,6 +42,9 @@
     var _setSelectedCentre = function (centre) {
         userServiceData.selectedCentre = centre;
     }
+    var _getSelectedCentre = function () {
+       return userServiceData.selectedCentre;
+    }
     var _getAllCarCollection = function () {
      return  $http.get("/api/car");
     };
@@ -122,6 +125,7 @@
         getSelectedService: _getSelectedService,
         setSelectedServiceName: _setSelectedServiceName,
         setSelectedCentre: _setSelectedCentre,
+        getSelectedCentre:_getSelectedCentre,
         setSelectedAppointment: _setSelectedAppointment,
         setPaymentMode:_setPaymentMode,
         getuserDetails: _getuserDetails,

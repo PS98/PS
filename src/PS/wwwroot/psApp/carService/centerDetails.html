@@ -1,7 +1,7 @@
 ﻿<div class="featured-item">
     <div class="right-content">
         <h2>{{ centre.name }}</h2>
-        <div class="pull-right price">
+        <div class="pull-right price" ng-if="centre.totalActualPrice !== 0">
             <span class="rupee"><i class="fa fa-inr" style="padding-right:5px;"></i><strike>{{centre.totalActualPrice}}</strike></span>
             <span class="rupee"><i class="fa fa-inr" style="padding-right:5px;"></i>{{ centre.totalMMPrice }}</span>
         </div>
@@ -10,7 +10,7 @@
         <div style="float: right; padding-top: 15px;">
             <i class="fa fa-map-pin"></i><span class="pull-right" style="padding-right: 10px;" ng-show="centre.distance != 0">{{centre.distance}}KM</span>
             <br />
-            <span class="pull-right" style="padding-right: 10px;">
+            <span class="pull-right" style="padding-right: 10px;" ng-if="centre.totalActualPrice !== 0">
                 <span ng-if="centre.isFreePickUp && centre.distance != 0" style="padding-right:5px; color: green;">
                     <i class="fa fa-check"></i> Free Pick-up & Drop-off Available
                 </span>

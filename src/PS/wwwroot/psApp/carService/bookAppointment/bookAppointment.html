@@ -17,10 +17,13 @@
                         <i class="fa fa-check-circle" ng-click="pickUp = !pickUp; both = true;noPickUp = !pickUp" ng-class="{selected :pickUp}"></i> <span>Yes</span>
                         <i class="fa fa-check-circle" ng-click="noPickUp = !noPickUp;pickUp = !noPickUp" ng-class="{selected :noPickUp}"></i><span>No</span>
                     </div>
-                    <div class="col-xs-12" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;" ng-show="pickUp">
-                        <i class="fa fa-check-circle" ng-class="{selected :both}"></i> <span>Both</span>
+                    <div class="col-xs-6" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;" ng-show="pickUp">
+                        <i class="fa fa-check-circle" ng-click="both = true;onlyPickUP = false;onlyDropOff = false;" ng-class="{selected :both}"></i> <span>Both</span>
                         <i class="fa fa-check-circle" ng-click="onlyPickUP = !onlyPickUP;both = !onlyPickUP;onlyDropOff =false" ng-class="{selected :onlyPickUP}"></i><span>Only Pick-Up</span>
                         <i class="fa fa-check-circle" ng-click="onlyDropOff = !onlyDropOff;both = !onlyDropOff;onlyPickUP = false;" ng-class="{selected :onlyDropOff}"></i><span>Only Drop-Off</span>
+                    </div>
+                    <div class="col-xs-6 pull-right" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;" ng-if="!centre.isFreePickUp && pickUp">
+                        you will be charged <i class="fa fa-inr" ng-if="both">&nbsp;200</i> <i class="fa fa-inr" ng-if="noPickUp || onlyPickUP">&nbsp;100</i> extra for <span ng-if="both">both</span><span ng-if="onlyPickUP">only PickUP</span><span ng-if="onlyDropOff">only DropOff</span>.
                     </div>
                 </div>
                 <!--<div class="row" ng-if="selectedDate.pickUpDate.time" ">
@@ -44,7 +47,7 @@
                         </div>
 
                     </div>
-                    <div class="col-xs-6 bottom-padding10 top-padding10" ng-if="selectedDate.dropOffDate.time" >
+                    <div class="col-xs-6 bottom-padding10 top-padding10" ng-if="selectedDate.dropOffDate.time">
                         <div class="pull-right">
                             <div class="header-text"> {{ !pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
                             <div class="car-option" ng-class="car-option-active" ng-click="editDropDate()">

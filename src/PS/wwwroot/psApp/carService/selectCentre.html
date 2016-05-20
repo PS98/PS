@@ -47,7 +47,10 @@
                 <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
                 Currently No Service Centre Available in Your Selected Area
             </div>
-
+            <div class="alert alert-info" role="alert" ng-if="noServiceMatch">
+                <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                There is no service centre in your area who provides all the services that you have selected. Please modify your service request.
+            </div>
             <div class="list-container" ng-if="(selectedCentre.services || []).length >0">
                 <h4 class="header-text">Services</h4>
                 <div class="list-flex-container">

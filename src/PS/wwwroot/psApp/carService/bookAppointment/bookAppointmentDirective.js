@@ -210,7 +210,8 @@ angular.module("psApp").directive("bookAppointment", function () {
                     $scope.hideCalendar = true;
                 }
             }
-        }
+            $scope.centre = psDataServices.getSelectedCentre();
+            }
 
         ]
 

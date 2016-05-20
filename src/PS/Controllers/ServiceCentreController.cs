@@ -59,90 +59,55 @@ namespace PS.Controllers
             //var result = await collection.Find(filter).ToListAsync();
             // get document by area
             var list = documentList?.Where(x => x.Area.ToLower() == selectedService.Area.ToLower());
-            if (!list.Any()) return null;
-
-            // select first because one area will have one document
-            var centreList = list.First().Centres;
-            //  if (!string.IsNullOrEmpty(selectedService.Latitude) && !string.IsNullOrEmpty(selectedService.Longitude))
-
-            foreach (var area in list.First().NearAreas)
+            if (list == null) return null;
             {
-                var nearAreaDoc = documentList?.Where(x => x.Area.ToLower() == area.ToLower());
-                if (!nearAreaDoc.Any()) continue;
-                centreList.AddRange(nearAreaDoc.First().Centres);
-            }
+                var serviceCentres = list as IList<ServiceCentre> ?? list.ToList();
+                if (!serviceCentres.Any()) return null;
 
-            // if no service selected then display all service centre list
-            if (selectedService.Name.Count == 0)
-                return null;// Centre.ToViewModel(centreList.First());
+                // select first because one area will have one document
+                var centreList = serviceCentres.First().Centres;
+                //  if (!string.IsNullOrEmpty(selectedService.Latitude) && !string.IsNullOrEmpty(selectedService.Longitude))
 
-            // select only those which are providing all selected services;
-            double lat;
-            double.TryParse(selectedService.Latitude, out lat);
-
-            double log;
-            double.TryParse(selectedService.Longitude, out log);
-
-            var userCordinates = new GeoCoordinate(lat, log);
-
-            var selectedCentres = new List<ServiceCentreViewModel>();
-            foreach (var centre in centreList)
-            {
-                var milematesPrice = new List<int>();
-                var actualPrice = new List<int>();
-                var serviceDetails = new List<Detalis>();
-                PriceDetails priceObj = new PriceDetails();
-                double distance = 0;
-
-                if (!string.IsNullOrEmpty(selectedService.Latitude) && !string.IsNullOrEmpty(selectedService.Longitude))
+                foreach (var area in serviceCentres.First().NearAreas)
                 {
-                    double.TryParse(centre.Latitude, out lat);
-                    double.TryParse(centre.Longitude, out log);
-                    var centreCoordinates = new GeoCoordinate(lat, log); ;
-
-                    distance = userCordinates.GetDistanceTo(centreCoordinates) / 1000;
+                    var nearAreaDoc = documentList?.Where(x => Equals(x.Area.ToLower(), area.ToLower()));
+                    var areaDoc = nearAreaDoc as IList<ServiceCentre> ?? nearAreaDoc.ToList();
+                    var any = areaDoc.Any();
+                    if (!any) continue;
+                    centreList.AddRange(areaDoc.First().Centres);
                 }
-                //  check if centre is providing all user selected service
-                if (selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
+
+                
+                // select only those which are providing all selected services;
+                double lat;
+                double.TryParse(selectedService.Latitude, out lat);
+
+                double log;
+                double.TryParse(selectedService.Longitude, out log);
+
+                var userCordinates = new GeoCoordinate(lat, log);
+
+                var selectedCentres = new List<ServiceCentreViewModel>();
+                foreach (var centre in centreList)
                 {
-
-                    foreach (var abc in centre.ServiceDetails)
+                    var milematesPrice = new List<int>();
+                    var actualPrice = new List<int>();
+                    var serviceDetails = new List<Detalis>();
+                    var priceObj = new PriceDetails();
+                    double distance = 0;
+                   
+                    if (!string.IsNullOrEmpty(selectedService.Latitude) && !string.IsNullOrEmpty(selectedService.Longitude))
                     {
-                        if (selectedService.Name.Contains(abc.Name.Trim()))
-                        {
-                            if (!string.IsNullOrEmpty(selectedService.Type))
-                            {
-                                switch (selectedService.Type.ToLower().Trim())
-                                {
-                                    case "petrol":
-                                        priceObj = abc.Petrol.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
-                                        break;
-                                    case "diesel":
-                                        priceObj = abc.Diesel.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
-                                        break;
-                                    case "cng":
-                                        priceObj = abc.CNG.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
-                                        break;
-                                    case "electric":
-                                        priceObj = abc.Electric.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
-                                        break;
-                                }
-                                if (priceObj != null)
-                                {
-                                    double radius;
-                                    double.TryParse(abc.Radius, out radius);
-                                    milematesPrice.Add(priceObj.MilematePrice);
-                                    actualPrice.Add(priceObj.ActualPrice);
-                                    if (milematesPrice.Count > 0)
-                                        serviceDetails.Add(new Detalis { Name = abc.Name, IsFreePickUp = radius <= distance, MilematePrice = milematesPrice[milematesPrice.Count - 1], ActualPrice = actualPrice[actualPrice.Count - 1] });
-                                }
+                        double.TryParse(centre.Latitude, out lat);
+                        double.TryParse(centre.Longitude, out log);
+                        var centreCoordinates = new GeoCoordinate(lat, log); ;
 
-                            }
-
-                        }
+                        distance = userCordinates.GetDistanceTo(centreCoordinates) / 1000;
                     }
 
-                    if (selectedService.Name.Count == milematesPrice.Count)
+                    // if no service selected then display all service centre list
+                    if (selectedService.Name.Count == 0)
+                    {
                         selectedCentres.Add(new ServiceCentreViewModel
                         {
                             Id = centre.Id,
@@ -151,21 +116,69 @@ namespace PS.Controllers
                             Latitude = centre.Latitude,
                             Longitude = centre.Longitude,
                             PhoneNo = centre.PhoneNo,
-                            TotalMMPrice = milematesPrice.Sum(),
-                            TotalActualPrice = actualPrice.Sum(),
+                            TotalMMPrice = 0,
+                            TotalActualPrice = 0,
                             ServiceDetails = serviceDetails,
                             Distance = distance,
                             Review = centre.Review,
                             Services = centre.Services,
-                            IsFreePickUp = serviceDetails.Any(x => x.IsFreePickUp)
+                            IsFreePickUp = false
                         });
+                        continue;
+                    }
 
+                    //  check if centre is providing all user selected service
+                    if (!selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
+                        continue;
+                    {
+                        foreach (var abc in centre.ServiceDetails.Where(abc => selectedService.Name.Contains(abc.Name.Trim())).Where(abc => !string.IsNullOrEmpty(selectedService.Type)))
+                        {
+                            switch (selectedService.Type.ToLower().Trim())
+                            {
+                                case "petrol":
+                                    priceObj = abc.Petrol.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    break;
+                                case "diesel":
+                                    priceObj = abc.Diesel.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    break;
+                                case "cng":
+                                    priceObj = abc.CNG.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    break;
+                                case "electric":
+                                    priceObj = abc.Electric.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    break;
+                            }
+                            if (priceObj == null) continue;
+                            double radius;
+                            double.TryParse(abc.Radius, out radius);
+                            milematesPrice.Add(priceObj.MilematePrice);
+                            actualPrice.Add(priceObj.ActualPrice);
+                            if (milematesPrice.Count > 0)
+                                serviceDetails.Add(new Detalis { Name = abc.Name, IsFreePickUp = radius <= distance, MilematePrice = milematesPrice[milematesPrice.Count - 1], ActualPrice = actualPrice[actualPrice.Count - 1] });
+                        }
+
+                        if (selectedService.Name.Count == milematesPrice.Count)
+                            selectedCentres.Add(new ServiceCentreViewModel
+                            {
+                                Id = centre.Id,
+                                Name = centre.Name,
+                                Address = centre.Address,
+                                Latitude = centre.Latitude,
+                                Longitude = centre.Longitude,
+                                PhoneNo = centre.PhoneNo,
+                                TotalMMPrice = milematesPrice.Sum(),
+                                TotalActualPrice = actualPrice.Sum(),
+                                ServiceDetails = serviceDetails,
+                                Distance = distance,
+                                Review = centre.Review,
+                                Services = centre.Services,
+                                IsFreePickUp = serviceDetails.Any(x => x.IsFreePickUp)
+                            });
+                    }
                 }
 
+                return selectedCentres;
             }
-
-            return selectedCentres;
-
         }
         // POST api/values
         [HttpPost]
