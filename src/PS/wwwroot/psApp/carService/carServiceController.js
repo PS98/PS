@@ -9,7 +9,7 @@
     $scope.carList = {};
     $scope.selectBrand = function (brandName) {
         $scope.showBrandName = false; $scope.showMakeYears = true; $scope.showModel = false; $scope.showVarient = false;
-        if ($scope.selectedCar.brand != brandName) {
+        if ($scope.selectedCar.brand !== brandName) {
             $scope.selectedCar = {};
             $scope.carList.carTypes = {};
             $scope.carList.carVarientList = {};
@@ -37,7 +37,7 @@
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false;
         if (model !== "") {
             $scope.selectedCar.model = model;
-            $scope.selectedCar.varient = '';
+            $scope.selectedCar.varient = "";
             $scope.carList.carVarientList = ["Petrol", "Diesel", "CNG", "Electric"];
             $scope.showVarient = true;
         } else {
@@ -83,7 +83,7 @@
 
 
     $scope.commonServices = [];
-    $scope.changeView = function (event) {
+    $scope.changeView = function () {
         if (this.service)
             $scope.serviceOpts.viewMode = this.service;
         else {
@@ -164,14 +164,15 @@
                 $scope.commonServices = $scope.services.serviceDetails[0];
                 $scope.car.services = [];
                 if ($scope.selectedCar.brand) {
-                    getCarType($scope.selectedCar.brand).then(function () {
+                    getCarType($scope.selectedCar.brand).then(function() {
                         $scope.carList.carVarientList = ["Petrol", "Diesel", "CNG", "Electric"];
                         if ($scope.selectedCar.varient) {
-                            $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
+                            $scope.car.choose_a_service = true;
+                            $scope.car.showServiceType = true;
                             $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                             psDataServices.setSelectedCarAndService($scope.selectedCar);
                         }
-                    })
+                    });
                 }
                 else {
                     $scope.showBrandName = true;
@@ -196,21 +197,35 @@
     }
     $scope.setUserJob = function () {
         var jobName = [];
-        $.each($scope.selectedJob, function (index, value) {
-            jobName.push(value.name);
-        });
-        psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
-        psDataServices.setSelectedServiceName(jobName);
-        if (validateUserData())
+        if (validateUserData()) {
+            $.each($scope.selectedJob, function (index, value) {
+                if(!value.addText)
+                jobName.push(value.name);
+            });
+            psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
+            psDataServices.setSelectedServiceName(jobName);
             $state.go("service.centre");
-        $timeout(function () {
-            $('html, body').animate({
-                scrollTop: $('.popover').offset().top - 100
-            }, 100);
-        })
-     
+
+        }
+        else {
+            $timeout(function() {
+                $("html, body").animate({
+                    scrollTop: 50
+                }, 'fast');
+            });
+        }
+
     }
-   
+    $("body").click(function (event) {
+        if (event.target)
+            var id = event.target.id;
+        if (id === "btnNext") {
+            return false;
+        }
+        $scope.car.error = false;
+        $scope.car.jobError = false;
+        $scope.$apply();
+    });
     $state.go("service.car");
     $scope.state = $state;
 
@@ -244,10 +259,10 @@
            }).error(function () {
            });
     };
-    function getCarVarient(brand, model) {
-        //   return psDataServices.getCarVarient(brand, model);
+    //function getCarVarient(brand, model) {
+    //    //   return psDataServices.getCarVarient(brand, model);
 
-    }
+    //}
 
     $scope.setDefault = function () {
         psDataServices.setUserPreference();
@@ -256,22 +271,22 @@
     function validateUserData() {
         $scope.car.error = false;
         $scope.car.jobError = false;
-        if (!$scope.selectedCar.brand || $scope.selectedCar.brand == "") {
+        if (!$scope.selectedCar.brand || $scope.selectedCar.brand === "") {
             $scope.errorMessage = "Please select your car's make.";
             $scope.car.error = true;
             return false;
         }
-        if (!$scope.selectedCar.year || $scope.selectedCar.year == "") {
+        if (!$scope.selectedCar.year || $scope.selectedCar.year === "") {
             $scope.errorMessage = "Please select your car's year.";
             $scope.car.error = true;
             return false;
         }
-        if (!$scope.selectedCar.model || $scope.selectedCar.model == "") {
+        if (!$scope.selectedCar.model || $scope.selectedCar.model === "") {
             $scope.errorMessage = "Please select your car's model.";
             $scope.car.error = true;
             return false;
         }
-        if (!$scope.selectedCar.varient || $scope.selectedCar.varient == "") {
+        if (!$scope.selectedCar.varient || $scope.selectedCar.varient === "") {
             $scope.errorMessage = "Please select your car's engine type.";
             $scope.car.error = true;
             return false;
@@ -286,6 +301,11 @@
             $scope.car.jobError = true;
             return false;
         }
+        if ($scope.serviceOpts.addingNotes && (!$scope.selectedJob.notes || $scope.selectedJob.notes.trim() === "")) {
+            $scope.errorMessage = "Please enter notes";
+            $scope.car.jobError = true;
+            return false;
+        }
         return true;
     }
     function checkUnansweredQuestions() {
@@ -297,6 +317,9 @@
                     count++;
                 }
             });
+            if ($scope.selectedJob.length === 1 && job.addText && (!job.request || job.request === "")) {
+                count++;
+            }
         });
         if (count > 0) {
             return false;
