@@ -57,7 +57,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             $scope.centreDetails.cityList = data;
         });
     else {
-        $scope.area = "Select City";
+        $scope.city = "Select City";
         $scope.area = "Select Area";
         if ($scope.centreDetails.cityList.includes($scope.centreDetails.city)) {
             $scope.city = $scope.centreDetails.city;
