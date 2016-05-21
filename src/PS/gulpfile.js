@@ -13,15 +13,10 @@ var paths = {
     webroot: "./wwwroot/"
 };
 
-paths.extmJs = paths.webroot + "ext-modules/**/*.js";
 paths.psJs = paths.webroot + "psApp/**/*.js";
-paths.extmCss = paths.webroot + "ext-modules/**/*.css";
 paths.psCss = paths.webroot + "psApp/**/*.css";
-//paths.less = paths.webroot + "css/**/*.less";
-//paths.minLess = paths.webroot + "css/**/*.min.less";
-paths.concatJsDest = paths.webroot + "mm.js";
-paths.concatCssDest = paths.webroot + "mm.css";
-//paths.concatLessDest = paths.webroot + "mm12.min.css";
+paths.concatJsDest = paths.webroot + "dist/mm.js";
+paths.concatCssDest = paths.webroot + "dist/mm.css";
 
 gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
@@ -31,14 +26,10 @@ gulp.task("clean:css", function (cb) {
     rimraf(paths.concatCssDest, cb);
 });
 
-//gulp.task("clean:less", function (cb) {
-//    rimraf(paths.concatLessDest, cb);
-//});
-
 gulp.task("clean", ["clean:js", "clean:css"]);
 
 gulp.task("min:js", function () {
-    return gulp.src([paths.psJs, "!" + paths.extmJs], { base: "." })
+    return gulp.src([paths.psJs], { base: "." })
         .pipe(ngAnnotate())
         .pipe(concat(paths.concatJsDest))
         .pipe(uglify())
@@ -46,27 +37,10 @@ gulp.task("min:js", function () {
 });
 
 gulp.task("min:css", function () {
-    return gulp.src([paths.psCss, "!" + paths.extmCss])
+    return gulp.src([paths.psCss])
         .pipe(concat(paths.concatCssDest))
         .pipe(cssmin())
         .pipe(gulp.dest("."));
 });
 
-//gulp.task('min:less', function () {
-//    return gulp.src([paths.less, "!" + paths.minLess])
-//        .pipe(plumber())
-//        .pipe(concat(paths.concatLessDest))
-//        .pipe(less())
-//        .pipe(gulp.dest('.'));
-//});
-
 gulp.task("min", ["min:js", "min:css"]);
-
-//gulp.task('less:css', function () {
-//    return gulp.src([paths.less, "!" + paths.minLess])
-//        .pipe(plumber())
-//        .pipe(less())
-//        .pipe(gulp.dest('./wwwroot/css/'));
-//});
-
-//gulp.task("less", ["less:css"]);
