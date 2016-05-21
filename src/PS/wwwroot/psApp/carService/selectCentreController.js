@@ -157,6 +157,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     $scope.setCentreDetails = function () {
         psDataServices.setCentreDetails($scope.centreDetails);
     }
+  
     //if ($localStorage.userData.area) {
     //    $('.select.jelect').find('#cityDropDown').text($localStorage.userData.city);
     //    $('.select.jelect').find('#areaDropDown').text($localStorage.userData.area);

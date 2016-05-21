@@ -1,13 +1,5 @@
 ﻿<div class="row row-fluid" ng-repeat="order in orders">
     <div class="col-md-12" style="margin-bottom: 10px;">
-        <div class="order-status col-md-6">
-            <span>DropOff Date &amp; Time: &nbsp;</span><br />
-            <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
-        </div>
-        <div class="order-status col-md-6">
-            <span>Pickup Date &amp; Time: &nbsp;</span><br />
-            <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
-        </div>
         <div class="col-md-6">
             <span class="override-exclude">Vehicle Details: &nbsp;</span>
             <strong>
@@ -15,6 +7,22 @@
                 {{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}
             </strong>
         </div>
+        <div class="col-md-6">
+            <span>PickUp &amp; Drop: &nbsp;</span>
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp"><strong>No</strong></span>
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp"><strong>{{order.selectedAppointment.pickUpDetails.Type}}</strong></span>
+        </div>
+        <div class="order-status col-md-6">
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp" >DropOff Date &amp; Time: &nbsp;</span><br/>
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
+            <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
+        </div>
+        <div class="order-status col-md-6">
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
+            <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
+        </div>
+
     </div>
     <div class="col-md-12">
         <div class="col-md-6">
@@ -46,8 +54,8 @@
                     <p style="padding-top:5px; font-size: 14px; margin-bottom: 15px;">
                         {{order.userDetails.email}}<br>
                         {{order.userDetails.phoneNo}}<br>
-                        {{order.userDetails.addressLine1}}<br>
-                        {{order.userDetails.addressLine2}}<br>
+                        {{order.userAddress.addressLine1}}<br>
+                        {{order.userAddress.addressLine2}}<br>
                     </p>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 ﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", "$localStorage", function ($http, $q, $localStorage) {
     var selectedCar, selectedService, serviceNameList;
-    var userServiceData = { selectedCar: {}, selectedServices: {}, CentreDetails: {}, selectedAppointment: {}, userDetails: {}, userAddress: {}};
+    var userServiceData = { selectedCar: {}, selectedServices: {}, CentreDetails: {}, selectedAppointment: {}, userDetails: {}, userAddress: {}, selectedCentre : {} };
     angular.extend(userServiceData.userDetails, $localStorage.userDetails);
     
     var _getSelectedService = function () {
@@ -18,7 +18,8 @@
         serviceNameList = servicesName;
     }
     var _setSelectedAppointment = function (appointment) {
-        userServiceData.selectedAppointment = appointment;
+        userServiceData.selectedAppointment.pickUpDate = appointment.pickUpDate;
+        userServiceData.selectedAppointment.dropOffDate = appointment.dropOffDate;
     }
     var _setPaymentMode = function (mode) {
         userServiceData.PaymentMode = mode;
@@ -41,12 +42,20 @@
     }
     var _setCentreDetails = function (centre) {
         userServiceData.CentreDetails = centre;
+        if(centre)
+        userServiceData.selectedCentre = centre.selectedCentre;
     }
     var _getCentreDetails = function () {
        return userServiceData.CentreDetails;
     }
     var _getSelectedCentre = function () {
-        return userServiceData.CentreDetails.selectedCentre;
+        return userServiceData.selectedCentre;
+    }
+    var _getPickUpDetails = function () {
+        return userServiceData.pickUpDetails;
+    }
+    var _setPickUpDetails = function (pickUpDetails) {
+        return userServiceData.selectedAppointment.pickUpDetails = pickUpDetails;
     }
     var _getAllCarCollection = function () {
      return  $http.get("/api/car");
@@ -138,7 +147,9 @@
         setuserAddress: _setuserAddress,
         setUserPreference:_setUserPreference,
         geMockData: _getMockData,
-        saveCentreDetails: _saveCentreDetails
+        saveCentreDetails: _saveCentreDetails,
+        setPickUpDetails: _setPickUpDetails,
+        getPickUpDetails: _getPickUpDetails
 }
           
     

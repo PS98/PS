@@ -136,7 +136,7 @@
         if ($scope.selectedJob.indexOf(deletedJob) > -1)
             $scope.selectedJob.splice($scope.selectedJob.indexOf(deletedJob), 1);
         deletedJob.selected = !deletedJob.selected;
-
+        psDataServices.setCentreDetails(undefined);
         if ($scope.serviceOpts.viewMode === "consultation" && $scope.selectedJob.length === 0) {
             $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
             $scope.commonServices = $scope.services.serviceDetails[0];

@@ -15,7 +15,14 @@ angular.module("psApp").directive("centreDetails", function () {
            $scope.selectedCentre = function () {
                 $scope.add({ dirCentre: $scope.centre });
             }
-
+           $scope.getRatings = function (number) {
+               var ratings = [];
+               for (var i = 0; i < number; i++) {
+                   ratings.push(i);
+               }
+               return ratings;
+           }
+           
         }
 
     };

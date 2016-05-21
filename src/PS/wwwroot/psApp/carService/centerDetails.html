@@ -21,7 +21,7 @@
         </div>
         <div class="info-box clearfix">
             <strong class="rating">
-                <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star" ng-repeat="n in getRatings(centre.review)"></span>
             </strong>
             <div class="pull-right">
                 <button type="button" class="btn btn-primary btn-effect" data-ng-show="!centre.activeCentre" ng-click="selectedCentre(centre)">Show On Map</button>
