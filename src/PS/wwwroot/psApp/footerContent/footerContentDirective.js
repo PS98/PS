@@ -3,11 +3,15 @@
 angular.module("psApp").directive("footerContent", function () {
     return {
         templateUrl: "psApp/footerContent/footerContentTemplate.html",
-        link: function (scope, element, attrs) {
-
+        link: function () {
+            var mapOptions = {
+                center: new google.maps.LatLng("18.5204303", "73.85674369999992"),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+            }
+            var map = new google.maps.Map(document.getElementById("footer-map"), mapOptions);
             $(function () {
                 $('.scroll[href*=#]:not([href=#])').click(function () {
-                    debugger;
                   //  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                         var target = $(this.hash);
                         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
