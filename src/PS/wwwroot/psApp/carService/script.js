@@ -83,21 +83,20 @@ function showMap(position) {
 
 }
 
-function handleError(err) {
-    //switch (err.code) {
-    //    case error.PERMISSION_DENIED:
-    //        x.innerHTML = "User denied the request for Geolocation.";
-    ////    case error.POSITION_UNAVAILABLE:
-    //        x.innerHTML = "Location information is unavailable.";
-    //        break;
-    //    case error.TIMEOUT:
-    //        x.innerHTML = "The request to get user location timed out.";
-    //        break;
-    //    case error.UNKNOWN_ERROR:
-    //        x.innerHTML = "An unknown error occurred.";
-    //        break;
-   //}        break;
-
+function handleError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+    }
     getLatLng('India');
 
 }
@@ -283,7 +282,8 @@ function setMarkers(googleMap, locations, callback) {
 
         var marker = new google.maps.Marker({
             map: map,
-            position: latlngset
+            position: latlngset,
+            animation: google.maps.Animation.DROP
         });
 
         if(index === 0)

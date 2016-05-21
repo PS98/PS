@@ -23,7 +23,8 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         if (!area)
             area = $scope.centreDetails.area;
         $localStorage.userData.area = area;
-
+        $scope.noCentreMatch = false;
+        $scope.noServiceMatch = false;
         if (area && area.toLowerCase() !== "select area") {
             psDataServices.getServiceCentreList($scope.centreDetails.city, area).
                 success(function (data) {
@@ -40,22 +41,14 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
                         $scope.noCentreMatch = false;
                         $scope.noServiceMatch = false;
                     } else {
-                        if (!$scope.centreDetails.areaList.includes($scope.centreDetails.area))
-                            $scope.noCentreMatch = true;
-                        else {
-                            $scope.noServiceMatch = true;
-                        }
-                        $scope.centreDetails.centreList = [];
-                        $scope.centreDetails.selectedCentre = {};
-                        $scope.centreDetails.recommendedCentre = {};
+                        $scope.noServiceMatch = true;
+                        removeCentreDetails();
+
                     }
                 }).error(function () {
                 });
         } else {
-            removemarker();
-            $scope.centreDetails.centreList = [];
-            $scope.centreDetails.selectedCentre = {};
-            $scope.centreDetails.recommendedCentre = {};
+            removeCentreDetails();
         }
 
     }
@@ -64,11 +57,15 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             $scope.centreDetails.cityList = data;
         });
     else {
+        $scope.area = "Select City";
+        $scope.area = "Select Area";
         if ($scope.centreDetails.cityList.includes($scope.centreDetails.city)) {
+            $scope.city = $scope.centreDetails.city;
             $('.select.jelect').find('#cityDropDown').text($scope.centreDetails.city);
         }
         if ($scope.centreDetails.areaList.includes($scope.centreDetails.area)) {
             $('.select.jelect').find('#areaDropDown').text($scope.centreDetails.area);
+            $scope.area = $scope.centreDetails.area;
         }
     }
     $scope.setUserLocation = function (lat, lng) {
@@ -77,31 +74,45 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     }
 
     $scope.getServiceCentreArea = function () {
+        $scope.noCentreMatch = false;
+        $scope.noServiceMatch = false;
         $localStorage.userData.city = $scope.city;
         if ($scope.city.toLowerCase() !== "select city") {
             psDataServices.getServiceCentreArea($scope.city).success(function (data) {
                 removemarker();
                 $scope.centreDetails.areaList = data;
+                if ($scope.googleMapArea && $scope.googleMapArea !== "")
+                getNearerCentreList();
 
-                if ($scope.centreDetails.areaList.includes($scope.googleMapArea)) {
-                    $scope.centreDetails.area = $scope.googleMapArea;
-                    $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
-                    $scope.googleMapArea = "";
-                }
-                $scope.getCentreDetails($scope.googleMapArea);
             });
         }
         else {
             $scope.centreDetails.areaList = {};
-            removemarker();
+            removeCentreDetails();
             $('.select.jelect').find('#areaDropDown').text("Select Area");
-            $scope.centreDetails.centreList = [];
-            $scope.centreDetails.selectedCentre = {};
-            $scope.centreDetails.recommendedCentre = {};
-
+            $scope.area = "Select Area";
+        }
+    }
+    function getNearerCentreList() {
+        if ($scope.centreDetails.areaList.includes($scope.googleMapArea)) {
+            $scope.getCentreDetails($scope.googleMapArea);
+            $scope.centreDetails.area = $scope.googleMapArea;
+            $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
+            $scope.googleMapArea = "";
+        } else {
+            $scope.area = "Select Area";
+            $('.select.jelect').find('#areaDropDown').text($scope.area);
+            $scope.noCentreMatch = true;
+            removeCentreDetails();
         }
     }
 
+    function removeCentreDetails() {
+        removemarker();
+        $scope.centreDetails.centreList = [];
+        $scope.centreDetails.selectedCentre = {};
+        $scope.centreDetails.recommendedCentre = {};
+    }
     $scope.markerClick = function (centre) {
         if (centre.$$hashKey != $scope.centreDetails.selectedCentre.$$hashKey) {
             $scope.centreDetails.selectedCentre.activeCentre = false;
@@ -112,8 +123,11 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     }
 
     $scope.changeArea = function () {
-        if ($scope.area && $scope.area.toLowerCase() !== "select area")
-        $("#addressOverlay").modal('toggle');
+        if ($scope.area && $scope.area.toLowerCase() !== "select area") {
+            $("#addressOverlay").modal('toggle');
+        } else {
+            removeCentreDetails();
+        }
     }
 
     $scope.MapCallback = function (city, area) {
@@ -124,11 +138,18 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
 
         if ($scope.centreDetails.cityList.includes(city)) {
             $scope.centreDetails.city = city;
-
+            $scope.city = city;
             $('.select.jelect').find('#cityDropDown').text(city);
-            $scope.getServiceCentreArea();
+            if (!$scope.centreDetails.areaList || $scope.centreDetails.areaList.length === 0) {
+                $scope.getServiceCentreArea();
+            } else {
+                getNearerCentreList();
+            }
+        } else {
+            $scope.city = "Select City";
+            $scope.area = "Select Area";
         }
-       
+
     }
     function removemarker() {
         removeMarker();
