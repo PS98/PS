@@ -191,7 +191,7 @@ function getCityAreaFromAddressComponent(results) {
     sublocality_level_2 = sublocality_level_2 ? sublocality_level_2 : "";
     locality = locality ? locality : "";
     addressLine1 = route ;
-    addressLine2 = street_number + " " + neighborhood + ", " + sublocality_level_3 + " " + sublocality_level_2 + " ," + area + ", " + locality;
+    addressLine2 = street_number + " " + neighborhood + " " + sublocality_level_3 + " " + sublocality_level_2 + " " + area + " " + locality;
     return { "city": city, "area": area, "locality": locality, "state": state, "country": country, 'pinCode': pinCode, "addressLine1":addressLine1 ,"addressLine2":addressLine2};
 }
 function getLatLng(place, zoom) {

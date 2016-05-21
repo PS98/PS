@@ -3,9 +3,9 @@
 angular.module("psApp").directive("selectCentre", function () {
     return {
         templateUrl: "psApp/carService/selectCentre.html",
-        link: function (scope, element, attrs) {
-            //initializeGoogleMap("", 'mapholder', "", false, scope.MapCallback);
-            var userMap; var mapOptions = {
+        link: function (scope, element) {
+            var userMap, autocomplete, userLocation = { "lat": "", "lng": "" }, marker, userAddressComponent, userLatLng;
+            var mapOptions = {
                 zoom: 14,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControl: false,
@@ -13,11 +13,20 @@ angular.module("psApp").directive("selectCentre", function () {
             };
             var infowindow = google && google.maps ? new google.maps.InfoWindow() : "";
             var geocoder = google.maps ? new google.maps.Geocoder() : "";
-            var autocomplete, userLocation = { "lat": "", "lng": "" }, marker, user_address_component;
+
+
             $(".jelect").jelect();
-            //   $("#addressOverlay").modal('toggle');
-            //  $("#addressOverlay").modal('toggle');
-            getUserscurrentLocation();
+            if (!scope.centreDetails.area) {
+                getUserscurrentLocation();
+            } else {
+                var latLng = new google.maps.LatLng(scope.centreDetails.userAddress.lat, scope.centreDetails.userAddress.lng);
+                 initialize(latLng);
+                setTimeout(function() {
+                    setMarkers(scope.centreDetails.map, scope.centreDetails.centreList, scope.markerClick);
+                }, 20);
+
+            }
+
             function getUserscurrentLocation() {
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(successCall, handleError);
@@ -36,9 +45,7 @@ angular.module("psApp").directive("selectCentre", function () {
 
             }
             function initialzeUserAddressMap() {
-                var userLatLng = new google.maps.LatLng(userLocation.lat, userLocation.lng);
-
-                getFullAddress(userLatLng);
+                userLatLng = new google.maps.LatLng(userLocation.lat, userLocation.lng);
                 mapOptions.center = userLatLng;
                 scope.setUserLocation(userLocation.lat, userLocation.lng);
                 userMap = new google.maps.Map(document.getElementById("userAddressMap"), mapOptions);
@@ -68,7 +75,7 @@ angular.module("psApp").directive("selectCentre", function () {
 
                 });
             }
-            function setAutocomplete(auto) {
+            function setAutocomplete() {
                 infowindow.close();
                 marker.setVisible(false);
                 var place = autocomplete.getPlace();
@@ -85,9 +92,19 @@ angular.module("psApp").directive("selectCentre", function () {
                 scope.setUserLocation(userLocation.lat, userLocation.lng);
                 marker.setPosition(place.geometry.location);
                 marker.setVisible(true);
-                user_address_component = place;
+                userAddressComponent = place;
 
             }
+            function initialize(latLng) {
+                var mapProp = {
+                    center: latLng,
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("mapholder"), mapProp);
+                //  var marker = new google.maps.Marker({ position: latLng, map: map, title: "here" });
+                scope.centreDetails.map = map;
+            };
             element.delegate("#users_formatted_address", "focus", function geolocates() {
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function (position) {
@@ -104,20 +121,11 @@ angular.module("psApp").directive("selectCentre", function () {
             scope.selectUserLocation = function () {
                 var userCityArea;
                 var latLng = new google.maps.LatLng(userLocation.lat, userLocation.lng);
-                function initialize() {
-                    var mapProp = {
-                        center: latLng,
-                        zoom: 14,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    };
-                    var map = new google.maps.Map(document.getElementById("mapholder"), mapProp);
-                    //   var marker = new google.maps.Marker({ position: latLng, map: map, title: "here" });
-                    scope.map = map;
-                }
-                initialize();
-                if (user_address_component) {
-                    userCityArea = getCityAreaFromAddressComponent(user_address_component);
-                    scope.userAddress = userCityArea;
+               
+                initialize(latLng);
+                if (userAddressComponent) {
+                    userCityArea = getCityAreaFromAddressComponent(userAddressComponent);
+                    scope.centreDetails.userAddress = userCityArea;
                     scope.MapCallback(userCityArea.city, userCityArea.area);
 
                 }
@@ -126,7 +134,7 @@ angular.module("psApp").directive("selectCentre", function () {
 
                     callGeoCoderApi(geoType).then(function (data) {
                         userCityArea = getCityAreaFromAddressComponent(data.result);
-                        scope.userAddress = userCityArea;
+                        scope.centreDetails.userAddress = userCityArea;
                         scope.MapCallback(userCityArea.city, userCityArea.area);
 
                     });
@@ -135,14 +143,19 @@ angular.module("psApp").directive("selectCentre", function () {
             }
             $("#addressOverlay").on("shown.bs.modal", function() {
                 if (userLocation.lat !== "") {
-                    if (!userMap)
+                    if (!userMap) {
                         initialzeUserAddressMap();
+                        getFullAddress(userLatLng);
+                    }
                 } else {
                     var address = { 'address': scope.area };
                     callGeoCoderApi(address).then(function(data) {
                         userLocation.lat = data.result.geometry.location.lat();
                         userLocation.lng = data.result.geometry.location.lng();
                         initialzeUserAddressMap();
+                        if (document.getElementById("users_formatted_address")) {
+                            document.getElementById("users_formatted_address").value = data.result.formatted_address;
+                        }
                     });
                 }
             });

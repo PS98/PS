@@ -1,6 +1,6 @@
 ﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", "$localStorage", function ($http, $q, $localStorage) {
     var selectedCar, selectedService, serviceNameList;
-    var userServiceData = { selectedCar: {}, selectedServices: {}, selectedCentre: {}, selectedAppointment: {}, userDetails: {}, userAddress: {}};
+    var userServiceData = { selectedCar: {}, selectedServices: {}, CentreDetails: {}, selectedAppointment: {}, userDetails: {}, userAddress: {}};
     angular.extend(userServiceData.userDetails, $localStorage.userDetails);
     
     var _getSelectedService = function () {
@@ -39,11 +39,14 @@
         $localStorage.userAddress.lat = $localStorage.userData.lat;
         $localStorage.userAddress.lng = $localStorage.userData.lng;
     }
-    var _setSelectedCentre = function (centre) {
-        userServiceData.selectedCentre = centre;
+    var _setCentreDetails = function (centre) {
+        userServiceData.CentreDetails = centre;
+    }
+    var _getCentreDetails = function () {
+       return userServiceData.CentreDetails;
     }
     var _getSelectedCentre = function () {
-       return userServiceData.selectedCentre;
+        return userServiceData.CentreDetails.selectedCentre;
     }
     var _getAllCarCollection = function () {
      return  $http.get("/api/car");
@@ -124,8 +127,9 @@
         setSelectedCarAndService: _setSelectedCarAndService,
         getSelectedService: _getSelectedService,
         setSelectedServiceName: _setSelectedServiceName,
-        setSelectedCentre: _setSelectedCentre,
-        getSelectedCentre:_getSelectedCentre,
+        setCentreDetails: _setCentreDetails,
+        getCentreDetails: _getCentreDetails,
+        getSelectedCentre: _getSelectedCentre,
         setSelectedAppointment: _setSelectedAppointment,
         setPaymentMode:_setPaymentMode,
         getuserDetails: _getuserDetails,
