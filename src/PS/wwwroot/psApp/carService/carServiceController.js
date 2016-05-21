@@ -72,6 +72,7 @@
             $scope.car.choose_a_service = true;
             $scope.car.showServiceType = true;
             $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+            $scope.commonServices = $scope.services.serviceDetails[0];
             psDataServices.setSelectedCarAndService($scope.selectedCar);
             psDataServices.setCentreDetails(undefined);
         }
