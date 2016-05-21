@@ -19,6 +19,7 @@
                  $scope.carList.carTypes = data;
              }).error(function () {
              });
+            psDataServices.setCentreDetails(undefined);
         }
     }
     $scope.selectYear = function (year) {
@@ -34,33 +35,49 @@
         displayIncompleteModule();
     }
     $scope.selectModel = function (model) {
-        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false;
-        if (model !== "") {
-            $scope.selectedCar.model = model;
-            $scope.selectedCar.varient = "";
-            $scope.carList.carVarientList = ["Petrol", "Diesel", "CNG", "Electric"];
-            $scope.showVarient = true;
+        if ($scope.selectedCar.model !== model) {
+            $scope.showBrandName = false;
+            $scope.showMakeYears = false;
+            $scope.showModel = false;
+            if (model !== "") {
+                $scope.selectedCar.model = model;
+                $scope.selectedCar.varient = "";
+                $scope.carList.carVarientList = ["Petrol", "Diesel", "CNG", "Electric"];
+                $scope.showVarient = true;
+            } else {
+                $scope.selectedCar.model = "I Don't Know";
+                $scope.selectedCar.varient = "I Don't Know";
+                $scope.carList.carVarientList = {};
+
+            }
+            $localStorage.userData.car = $scope.selectedCar;
+            psDataServices.setCentreDetails(undefined);
         } else {
-            $scope.selectedCar.model = "I Don't Know";
-            $scope.selectedCar.varient = "I Don't Know";
-            $scope.carList.carVarientList = {};
-
+            $scope.showModel = false;
         }
-        $localStorage.userData.car = $scope.selectedCar;
-
     }
     $scope.selectVarient = function (varient) {
-        $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
-        if (varient !== "")
-            $scope.selectedCar.varient = varient;
-        else {
-            $scope.selectedCar.varient = "I Don't Know";
+        if ($scope.selectedCar.varient !== varient) {
+            $scope.showBrandName = false;
+            $scope.showMakeYears = false;
+            $scope.showModel = false;
+            $scope.showVarient = false;
+            if (varient !== "")
+                $scope.selectedCar.varient = varient;
+            else {
+                $scope.selectedCar.varient = "I Don't Know";
 
+            }
+            $localStorage.userData.car = $scope.selectedCar;
+            $scope.car.choose_a_service = true;
+            $scope.car.showServiceType = true;
+            $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+            psDataServices.setSelectedCarAndService($scope.selectedCar);
+            psDataServices.setCentreDetails(undefined);
         }
-        $localStorage.userData.car = $scope.selectedCar;
-        $scope.car.choose_a_service = true; $scope.car.showServiceType = true;
-        $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
-        psDataServices.setSelectedCarAndService($scope.selectedCar);
+        else {
+            $scope.showVarient = false;
+        }
     }
     $scope.editBrand = function () {
         $scope.showBrandName = !$scope.showBrandName; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
@@ -107,9 +124,10 @@
 
         }
         selectedJob.selected = !selectedJob.selected;
-        if (!$scope.selectedJob.includes(selectedJob))
+        if (!$scope.selectedJob.includes(selectedJob)) {
             $scope.selectedJob.push(selectedJob);
-        else {
+            psDataServices.setCentreDetails(undefined);
+        } else {
             $scope.selectedJob.splice($scope.selectedJob.indexOf(selectedJob), 1);
         }
     }
@@ -146,6 +164,7 @@
         }
 
     }
+    if ($scope.selectedCar.brand)
     displayIncompleteModule();
     psDataServices.getAllCarColletion().
        success(function (data) {
