@@ -17,15 +17,48 @@
     <base href="/">
     <link href="~/favicon.png" type="image/x-icon" rel="shortcut icon" title="shortcut icon">
     <link rel="alternate" href="https://www.milemates.com" hreflang="en-us" />
-    <link href="~/assets/css/master.css" rel="stylesheet">
+    <link href="~/assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
-    <!-- SWITCHER -->
-    <link href="~/assets/plugins/switcher/css/switcher.css" rel="stylesheet" id="switcher-css" media="all">
-    <link href="~/assets/plugins/switcher/css/color1.css" rel="alternate stylesheet" title="color1" media="all">
-    <link href="~/assets/plugins/switcher/css/color2.css" rel="alternate stylesheet" title="color2" media="all">
-    <link href="~/assets/plugins/switcher/css/color3.css" rel="alternate stylesheet" title="color3" media="all">
-    <link href="~/assets/plugins/switcher/css/color4.css" rel="alternate stylesheet" title="color4" media="all">
-    <link href="~/assets/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5" media="all">
+    <environment names="Development">
+        <link href="~/assets/css/master.css" rel="stylesheet">
+        <link href="~/assets/css/theme.css" rel="stylesheet">
+        <link href="~/assets/css/responsive.css" rel="stylesheet">
+        <link href="~/assets/css/color.css" rel="stylesheet">
+        <link href="~/assets/plugins/sliderpro/css/slider-pro.css" rel="stylesheet">
+        <link href="~/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="~/assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+        <link href="~/assets/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+        <link href="~/assets/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
+        <link href="~/assets/plugins/yamm/yamm.css" rel="stylesheet">
+        <link href="~/assets/plugins/animate/animate.css" rel="stylesheet">
+        <link href="~/assets/plugins/jelect/main.css" rel="stylesheet">
+        <link href="~/assets/plugins/switcher/css/switcher.css" rel="stylesheet" id="switcher-css" media="all">
+        <link href="~/assets/plugins/switcher/css/color1.css" rel="alternate stylesheet" title="color1" media="all">
+        <link href="~/assets/plugins/switcher/css/color2.css" rel="alternate stylesheet" title="color2" media="all">
+        <link href="~/assets/plugins/switcher/css/color3.css" rel="alternate stylesheet" title="color3" media="all">
+        <link href="~/assets/plugins/switcher/css/color4.css" rel="alternate stylesheet" title="color4" media="all">
+        <link href="~/assets/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5" media="all">
+    </environment>
+    <environment names="Production">
+        <link href="~/assetsDist/css/master.css" rel="stylesheet">
+        <link href="~/assetsDist/css/theme.css" rel="stylesheet">
+        <link href="~/assetsDist/css/responsive.css" rel="stylesheet">
+        <link href="~/assetsDist/css/color.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/sliderpro/css/slider-pro.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/yamm/yamm.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/animate/animate.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/jelect/main.css" rel="stylesheet">
+        <link href="~/assetsDist/plugins/switcher/css/switcher.css" rel="stylesheet" id="switcher-css" media="all">
+        <link href="~/assetsDist/plugins/switcher/css/color1.css" rel="alternate stylesheet" title="color1" media="all">
+        <link href="~/assetsDist/plugins/switcher/css/color2.css" rel="alternate stylesheet" title="color2" media="all">
+        <link href="~/assetsDist/plugins/switcher/css/color3.css" rel="alternate stylesheet" title="color3" media="all">
+        <link href="~/assetsDist/plugins/switcher/css/color4.css" rel="alternate stylesheet" title="color4" media="all">
+        <link href="~/assetsDist/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5" media="all">
+    </environment>
 
     <!-- MileMates CSS -->
     <environment names="Development">
@@ -45,34 +78,54 @@
         <link href="dist/mm.css" rel="stylesheet" />
     </environment>
 
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/angular/angular.min.js"></script>
-        <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <script src="~/lib/ngStorage.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="~/lib/ngStorage.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 </head>
 
 <body>
     @RenderSection("scripts", required: false)
 
-    <!-- SCRIPTS -->
-    <script src="~/assets/js/jquery-migrate-1.2.1.js"></script>
-    <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/assets/js/modernizr.custom.js"></script>
-    <script src="~/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
-    <script src="~/assets/js/waypoints.min.js"></script>
-    <script src="~/assets/js/jquery.easing.1.3.js"></script>
-    <script src="~/assets/plugins/switcher/js/bootstrap-select.js"></script>
-    <script src="~/assets/plugins/switcher/js/evol.colorpicker.min.js"></script>
-    <script src="~/assets/plugins/switcher/js/dmss.js"></script>
-    <script src="~/assets/plugins/jelect/jquery.jelect.js"></script>
-    <script src="~/assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-
-    <!--HOME SLIDER-->
-    <script src="~/assets/plugins/sliderpro/js/jquery.sliderPro.min.js"></script>
-    <script src="~/assets/js/cssua.min.js"></script>
-    <script src="~/assets/js/wow.js"></script>
-    <script src="~/assets/js/custom.js"></script>
+    <environment names="Development">
+        <!-- SCRIPTS -->
+        <script src="~/assets/js/jquery-migrate-1.2.1.js"></script>
+        <script src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/assets/js/modernizr.custom.js"></script>
+        <script src="~/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+        <script src="~/assets/js/waypoints.min.js"></script>
+        <script src="~/assets/js/jquery.easing.1.3.js"></script>
+        <script src="~/assets/plugins/switcher/js/bootstrap-select.js"></script>
+        <script src="~/assets/plugins/switcher/js/evol.colorpicker.min.js"></script>
+        <script src="~/assets/plugins/switcher/js/dmss.js"></script>
+        <script src="~/assets/plugins/jelect/jquery.jelect.js"></script>
+        <script src="~/assets/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+        <!--HOME SLIDER-->
+        <script src="~/assets/plugins/sliderpro/js/jquery.sliderPro.min.js"></script>
+        <script src="~/assets/js/cssua.min.js"></script>
+        <script src="~/assets/js/wow.js"></script>
+        <script src="~/assets/js/custom.js"></script>
+    </environment>
+    <environment names="Production">
+        <!-- SCRIPTS -->
+        <script src="~/assetsDist/js/jquery-migrate-1.2.1.js"></script>
+        <script src="~/assetsDist/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/assetsDist/js/modernizr.custom.js"></script>
+        <script src="~/assetsDist/plugins/owl-carousel/owl.carousel.min.js"></script>
+        <script src="~/assetsDist/js/waypoints.min.js"></script>
+        <script src="~/assetsDist/js/jquery.easing.1.3.js"></script>
+        <script src="~/assetsDist/plugins/switcher/js/bootstrap-select.js"></script>
+        <script src="~/assetsDist/plugins/switcher/js/evol.colorpicker.min.js"></script>
+        <script src="~/assetsDist/plugins/switcher/js/dmss.js"></script>
+        <script src="~/assetsDist/plugins/jelect/jquery.jelect.js"></script>
+        <script src="~/assetsDist/plugins/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+        <!--HOME SLIDER-->
+        <script src="~/assetsDist/plugins/sliderpro/js/jquery.sliderPro.min.js"></script>
+        <script src="~/assetsDist/js/cssua.min.js"></script>
+        <script src="~/assetsDist/js/wow.js"></script>
+        <script src="~/assetsDist/js/custom.js"></script>
+    </environment>
 
     @RenderBody()
 

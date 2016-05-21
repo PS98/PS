@@ -1,4 +1,4 @@
-/// <binding AfterBuild='clean, min' />
+/// <binding AfterBuild='clean, min, cleanAssets, minAssets' />
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
@@ -17,6 +17,9 @@ paths.psJs = paths.webroot + "psApp/**/*.js";
 paths.psCss = paths.webroot + "psApp/**/*.css";
 paths.concatJsDest = paths.webroot + "dist/mm.js";
 paths.concatCssDest = paths.webroot + "dist/mm.css";
+
+paths.assetsJs = paths.webroot + "assets/**/*.js";
+paths.assetsCss = paths.webroot + "assets/**/*.css";
 
 gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
@@ -44,3 +47,22 @@ gulp.task("min:css", function () {
 });
 
 gulp.task("min", ["min:js", "min:css"]);
+
+gulp.task("cleanAssets", function (cb) {
+    rimraf(paths.webroot + "/assetsDist", cb);
+});
+
+gulp.task("minAssets:js", function () {
+    return gulp.src([paths.assetsJs])
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.webroot + "/assetsDist"));
+});
+
+gulp.task("minAssets:css", function () {
+    return gulp.src([paths.assetsCss])
+        .pipe(cssmin())
+        .pipe(gulp.dest(paths.webroot + "/assetsDist"));
+});
+
+gulp.task("minAssets", ["minAssets:js", "minAssets:css"]);
