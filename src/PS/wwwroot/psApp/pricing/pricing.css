@@ -19,12 +19,11 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    width: 301px;
-    height: 380px;
+    width: 360px;
     border: 3px solid;
-    border-radius: 7px;
+    border-radius: 10px;
     display: inline-block;
-    padding: 24px;
+    padding: 20px;
     text-align: center;
     float: left;
     -webkit-transition: margin-top 0.5s linear;
@@ -32,7 +31,7 @@
     -o-transition: margin-top 0.5s linear;
     transition: margin-top 0.5s linear;
     position: relative;
-    margin-right: 11px;
+    margin-right: 20px;
     margin-bottom: 50px;
 }
 .package:hover {
@@ -41,6 +40,17 @@
     -moz-transition: margin-top 0.3s linear;
     -o-transition: margin-top 0.3s linear;
     transition: margin-top 0.3s linear;
+}
+.package .most-popular {
+    background-image: url(../../assets/img/most-popular.png);
+    height: 98px;
+    left: -7px;
+    overflow: hidden;
+    position: absolute;
+    text-indent: -999em;
+    top: -7px;
+    width: 126px;
+    z-index: 9;
 }
 .name {
   color: #565656;
@@ -87,6 +97,11 @@
   content: "\f00c";
   font-size: 1.3rem;
   margin-right: 3px;
+}
+.package p{
+    font-size: 19px;
+    font-weight: normal;
+    margin-bottom: inherit;
 }
 
 .brilliant::before {

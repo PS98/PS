@@ -22,11 +22,12 @@
 .header.sticky  .logo {
     display: inline-block;
     margin-top: 5px;
-	
+	width: 100px;
 }
 
 .header.sticky   .yamm .nav > li > a {
-    padding: 30px 13px 23px;	
+    padding: 10px 13px 13px;
+    margin-top: 5px;	
 }
 
 
