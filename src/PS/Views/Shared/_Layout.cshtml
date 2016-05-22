@@ -17,6 +17,12 @@
     <base href="/">
     <link href="~/favicon.png" type="image/x-icon" rel="shortcut icon" title="shortcut icon">
     <link rel="alternate" href="https://www.milemates.com" hreflang="en-us" />
+</head>
+
+<body>
+
+    @RenderBody()
+
     <link href="~/assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
     <environment names="Development">
@@ -39,6 +45,7 @@
         <link href="~/assets/plugins/switcher/css/color4.css" rel="alternate stylesheet" title="color4" media="all">
         <link href="~/assets/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5" media="all">
     </environment>
+
     <environment names="Production">
         <link href="~/assetsDist/css/master.css" rel="stylesheet">
         <link href="~/assetsDist/css/theme.css" rel="stylesheet">
@@ -60,33 +67,11 @@
         <link href="~/assetsDist/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5" media="all">
     </environment>
 
-    <!-- MileMates CSS -->
-    <environment names="Development">
-        <link href="~/psapp/userprofile/userprofile.css" rel="stylesheet" />
-        <link href="~/psapp/headerContent/header.css" rel="stylesheet" />
-        <link href="~/psapp/carservice/carservices.css" rel="stylesheet" />
-        <link href="~/psapp/logindetails/logindetails.css" rel="stylesheet" />
-        <link href="~/psapp/headercontent/collapsablecontentcss.css" rel="stylesheet" />
-        <link href="~/psapp/footercontent/footer.css" rel="stylesheet" />
-        <link href="~/psapp/index/index.css" rel="stylesheet" />
-        <link href="~/psapp/dashboard/dashboard.css" rel="stylesheet" />
-        <link href="~/psapp/pricing/pricing.css" rel="stylesheet" />
-        <link href="~/psapp/carservice/ordersummary/ordersummary.css" rel="stylesheet" />
-    </environment>
-
-    <environment names="Production">
-        <link href="dist/mm.css" rel="stylesheet" />
-    </environment>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/angular/angular.min.js"></script>
     <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="~/lib/ngStorage.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
-</head>
-
-<body>
-    @RenderSection("scripts", required: false)
 
     <environment names="Development">
         <!-- SCRIPTS -->
@@ -107,6 +92,7 @@
         <script src="~/assets/js/wow.js"></script>
         <script src="~/assets/js/custom.js"></script>
     </environment>
+
     <environment names="Production">
         <!-- SCRIPTS -->
         <script src="~/assetsDist/js/jquery-migrate-1.2.1.js"></script>
@@ -127,7 +113,25 @@
         <script src="~/assetsDist/js/custom.js"></script>
     </environment>
 
-    @RenderBody()
+    <!-- MileMates CSS -->
+    <environment names="Development">
+        <link href="~/psapp/userprofile/userprofile.css" rel="stylesheet" />
+        <link href="~/psapp/headerContent/header.css" rel="stylesheet" />
+        <link href="~/psapp/carservice/carservices.css" rel="stylesheet" />
+        <link href="~/psapp/logindetails/logindetails.css" rel="stylesheet" />
+        <link href="~/psapp/headercontent/collapsablecontentcss.css" rel="stylesheet" />
+        <link href="~/psapp/footercontent/footer.css" rel="stylesheet" />
+        <link href="~/psapp/index/index.css" rel="stylesheet" />
+        <link href="~/psapp/dashboard/dashboard.css" rel="stylesheet" />
+        <link href="~/psapp/pricing/pricing.css" rel="stylesheet" />
+        <link href="~/psapp/carservice/ordersummary/ordersummary.css" rel="stylesheet" />
+    </environment>
+
+    <environment names="Production">
+        <link href="dist/mm.css" rel="stylesheet" />
+    </environment>
+
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>
