@@ -152,6 +152,8 @@ angular.module("psApp").directive("selectCentre", function () {
                 if (userAddressComponent && userAddressComponent.address_components.length>3) {
                     userCityArea = getCityAreaFromAddressComponent(userAddressComponent);
                     scope.centreDetails.userAddress = userCityArea;
+                    scope.centreDetails.userAddress.lat = userLocation.lat;
+                    scope.centreDetails.userAddress.lng = userLocation.lng;
                     scope.MapCallback(userCityArea.city, userCityArea.area);
 
                 }
@@ -161,6 +163,8 @@ angular.module("psApp").directive("selectCentre", function () {
                     callGeoCoderApi(geoType).then(function (data) {
                         userCityArea = getCityAreaFromAddressComponent(data.result);
                         scope.centreDetails.userAddress = userCityArea;
+                        scope.centreDetails.userAddress.lat = userLocation.lat;
+                        scope.centreDetails.userAddress.lng = userLocation.lng;
                         scope.MapCallback(userCityArea.city, userCityArea.area);
 
                     });
@@ -168,10 +172,8 @@ angular.module("psApp").directive("selectCentre", function () {
 
             }
             $("#addressOverlay").on("shown.bs.modal", function() {
-                if (userLocation.lat !== "") {
-                    if (scope.area !== scope.userDetails.area) {
+                if (userLocation.lat !== "" && scope.area === scope.userDetails.area) {
                         initialzeUserAddressMap();
-                    }
                         getFullAddress(userLatLng);
                 } else {
                     var address = { 'address': scope.area };

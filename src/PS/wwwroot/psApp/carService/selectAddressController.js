@@ -67,7 +67,13 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
         $scope.reviewOrder = [];
         var order = psDataServices.getSelectedService();
         $scope.review = true;
+        $scope.custRequest = false;
         $scope.reviewOrder.push(order);
+        $.each(order.selectedServices, function (i, job) {
+            if (job.addText) {
+                $scope.custRequest = true;
+            }
+        });
         $("#ReviewOrder").modal();
     }
 
