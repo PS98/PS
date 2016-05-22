@@ -3,12 +3,13 @@
 angular.module("psApp").directive("bookAppointment", function () {
     return {
         templateUrl: "psApp/carService/bookAppointment/bookAppointment.html",
-        link: function (scope, element, attrs) {
+        link: function () {
 
         },
         scope: false,
         controller: ["$scope", "psDataServices", function ($scope, psDataServices) {
-            $scope.dateToDisplay = []; $scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+            $scope.dateToDisplay = [];
+            $scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
             $scope.hideCalendar = false;
             $scope.showPickUpCalendar = true;
             $scope.centreWorkingHours = [];
@@ -24,7 +25,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                 var nextDate, centreWorkingHours = [];
 
                 for (var i = 0; i < 8; i++) {
-                    var WH = [];
+                    var wh = [];
                     var tempDate = new Date(date);
                     tempDate.setDate(day);
                     nextDate = tempDate;
@@ -32,7 +33,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                     if ($scope.selectedDate.pickUpDate.day == datepart && time) {
                         var time1 = time.split(" ");
                         time1 = time1[1] === "AM" ? time1[0] : time1[0] !== 12 ? 12 + parseInt(time1[0]) : time1[0];
-                        var index = $scope.timeToDisplay.indexOf(parseInt(time1) + 6)
+                        var index = $scope.timeToDisplay.indexOf(parseInt(time1) + 6);
                         if (index > -1)
                             $scope.timeToDisplay.splice(0, index);
                         else {
@@ -40,26 +41,26 @@ angular.module("psApp").directive("bookAppointment", function () {
                         }
                     }
                     else {
-                        $scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+                        $scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
                     }
                     $.each($scope.timeToDisplay, function (i, v) {
                         if (nextDate.toDateString() === today.toDateString() && checkAvailibility(v, nextDate)) {
                             var obj = { time: formatTime(v) };
-                            WH.push(obj);
+                            wh.push(obj);
                         }
                         else {
                             var obj = { time: formatTime(v) };
-                            WH.push(obj);
+                            wh.push(obj);
                         }
                     });
 
-                    if (WH.length > 0)
-                        centreWorkingHours.push({ day: datepart, WorkingHours: WH });
+                    if (wh.length > 0)
+                        centreWorkingHours.push({ day: datepart, WorkingHours: wh });
                     day++;
                     // if (i === 0) {
 
                     //  }
-                    if (centreWorkingHours.length == 5 || maxDate.toDateString() == datepart) {
+                    if (centreWorkingHours.length === 5 || maxDate.toDateString() == datepart) {
                         break;
                     }
                 }
@@ -68,13 +69,13 @@ angular.module("psApp").directive("bookAppointment", function () {
             function enableDisableButton(workingHrsList, isPickUpDone) {
                 var nextAvailableDate = new Date();
                 if (isPickUpDone) {
-                    nextAvailableDate.setDate(parseInt($scope.selectedDate.pickUpDate.day.split(" ")[2]) +1);
+                    nextAvailableDate.setDate(parseInt($scope.selectedDate.pickUpDate.day.split(" ")[2]) + 1);
                 }
 
                 if (today.toDateString() === workingHrsList[0].day) {
                     $scope.disablePrevBtn = true;
                 }
-                else if (isPickUpDone && ($scope.selectedDate.pickUpDate.day === workingHrsList[0].day ||nextAvailableDate.toDateString() === workingHrsList[0].day)) {
+                else if (isPickUpDone && ($scope.selectedDate.pickUpDate.day === workingHrsList[0].day || nextAvailableDate.toDateString() === workingHrsList[0].day)) {
                     $scope.disablePrevBtn = true;
                 }
                 else {
@@ -97,7 +98,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                     h = hh - 12;
                     dd = "PM";
                 }
-                if (h == 0) {
+                if (h === 0) {
                     h = 12;
                 }
 
@@ -122,10 +123,38 @@ angular.module("psApp").directive("bookAppointment", function () {
                     else
                         return false;
                 } else {
-                    return true;;
+                    return true;
                 }
 
 
+            }
+            $scope.pickAndDrop = function (val) {
+                if (val === "y") {
+                    $scope.pickUp = !$scope.pickUp; $scope.both = true; $scope.noPickUp = !$scope.pickUp;
+                    $scope.onlyDropOff = false; $scope.onlyPickUP = false;
+                }
+                else if (val === 0) {
+                    $scope.noPickUp = !$scope.noPickUp; $scope.pickUp = !$scope.noPickUp; $scope.both = $scope.pickUp;
+                    $scope.onlyDropOff = false; $scope.onlyPickUP = false;
+                }
+                else if (val === 1) {
+                    $scope.both = true; $scope.onlyPickUP = false; $scope.onlyDropOff = false;
+                }
+                else if (val === 2) {
+                    $scope.onlyPickUP = !$scope.onlyPickUP;
+                    $scope.both = !$scope.onlyPickUP;
+                    $scope.onlyDropOff = false;
+                } else {
+                    $scope.onlyDropOff = !$scope.onlyDropOff; $scope.both = !$scope.onlyDropOff; $scope.onlyPickUP = false;
+                }
+                setPickUpDetails();
+            }
+
+            function setPickUpDetails() {
+                var type = $scope.both ? "both" : $scope.onlyPickUP ? "onlyPickUP" : "onlyDropOff";
+
+                var pickUpDetails = { "isPickUp": $scope.pickUp, "Type": type }
+                psDataServices.setPickUpDetails(pickUpDetails);
             }
             function disableDates(date, time, selectedDate, selectedTime) {
                 date = new Date(date);
@@ -154,11 +183,12 @@ angular.module("psApp").directive("bookAppointment", function () {
                 var date = new Date();
                 date.setDate(dateTime.day.split(" ")[2]);
                 $scope.availablePickUpTime = $scope.setFiveDay(date, dateTime.time);
-                enableDisableButton($scope.availablePickUpTime,true)
+                enableDisableButton($scope.availablePickUpTime, true);
                 $scope.showPickUpCalendar = false;
                 $scope.showDropCalendar = true;
-                psDataServices.setSelectedAppointment($scope.selectedDate);
+                psDataServices.setSelectedAppointment($scope.selectedDate, $scope.pickUp);
                 $scope.userSelectedService = psDataServices.getSelectedService();
+                setPickUpDetails();
                 $scope.mapUrl = "http://maps.googleapis.com/maps/api/staticmap?&zoom=15&scale=false&size=500x300&maptype=roadmap&format=png&visual_refresh=true&markers=" + $scope.userSelectedService.userAddress.lat + "," + $scope.userSelectedService.userAddress.lng;
             }
             $scope.selectDropTime = function (dateTime) {
@@ -178,22 +208,22 @@ angular.module("psApp").directive("bookAppointment", function () {
                 // $scope.centreWorkingHours = [];
                 if ($scope.showPickUpCalendar) {
                     $scope.centreWorkingHours = $scope.setFiveDay(date);
-                    enableDisableButton($scope.centreWorkingHours)
+                    enableDisableButton($scope.centreWorkingHours);
                 }
                 else {
                     $scope.availablePickUpTime = $scope.setFiveDay(date, $scope.selectedDate.pickUpDate.time);
-                    enableDisableButton($scope.availablePickUpTime,true)
+                    enableDisableButton($scope.availablePickUpTime, true);
                 }
             }
 
             $scope.centreWorkingHours = $scope.setFiveDay(today);
-            enableDisableButton($scope.centreWorkingHours)
+            enableDisableButton($scope.centreWorkingHours);
             $scope.editPickUpDate = function () {
                 $scope.showPickUpCalendar = !$scope.showPickUpCalendar;
                 if ($scope.showPickUpCalendar) {
                     $scope.hideCalendar = false;
                     $scope.showDropCalendar = false;
-                    enableDisableButton($scope.centreWorkingHours)
+                    enableDisableButton($scope.centreWorkingHours);
                 } else {
                     $scope.hideCalendar = true;
                 }
@@ -204,14 +234,14 @@ angular.module("psApp").directive("bookAppointment", function () {
                 if ($scope.showDropCalendar) {
                     $scope.hideCalendar = false;
                     $scope.showPickUpCalendar = false;
-                    enableDisableButton($scope.availablePickUpTime, true)
+                    enableDisableButton($scope.availablePickUpTime, true);
                 }
                 else {
                     $scope.hideCalendar = true;
                 }
             }
             $scope.centre = psDataServices.getSelectedCentre();
-            }
+        }
 
         ]
 

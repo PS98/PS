@@ -45,7 +45,7 @@ namespace PS.Controllers
 
             var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
 
-            return areaList.Select(x => x.Area).Distinct();
+            return areaList?.Select(x => x.Area).Distinct();
         }
         [HttpPost]
         [Route("centerlist")]
