@@ -222,6 +222,8 @@
                 if(!value.addText)
                 jobName.push(value.name);
             });
+            if ($scope.selectedJob.notes)
+                $scope.selectedJob[0].notes = $scope.selectedJob.notes;
             psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
             psDataServices.setSelectedServiceName(jobName);
             $state.go("service.centre");
@@ -232,7 +234,7 @@
                 $("html, body").animate({
                     scrollTop: 50
                 }, 'fast');
-            });
+            },50);
         }
 
     }

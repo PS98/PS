@@ -198,7 +198,7 @@ namespace PS.Controllers
                     if (!list.Any())
                     {
                         // collection.Indexes.CreateOneAsync(Builders<ServiceCentre>.IndexKeys.Geo2D(p => p.Centres.First().Location));
-                        var id = repo.GenerateNewID();
+                        var id = repo.GenerateNewId();
                         serviceCentreObj.Centres.First().Id = id;
                         repo.insertDocument(database, collectionName, serviceCentreObj);   // if new area then insert into db
                         Response.StatusCode = (int)HttpStatusCode.OK;
@@ -220,7 +220,7 @@ namespace PS.Controllers
 
                     if (string.IsNullOrEmpty(newCentre.Id))  // no id then new centre 
                     {
-                        var id = repo.GenerateNewID();
+                        var id = repo.GenerateNewId();
 
                         serviceCentreObj.Centres.First().Id = id;
                         centreList.Add(serviceCentreObj.Centres.First());

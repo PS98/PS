@@ -86,9 +86,25 @@
         </div>
         <div class="col-md-6">
             <h4 class="override-exclude">Service Details</h4>
-            <div ng-repeat="service in order.selectedCentre.serviceDetails">
-                <strong>{{service.name}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INR {{service.price}}<br />
+            <div ng-repeat="service in order.selectedCentre.serviceDetails" class="row">
+                <div class="col-xs-6 no-padding-right">
+                    <strong>{{service.name}}</strong>
+                </div>
+                <div class="col-xs-6">
+                    INR {{ service.actualPrice }}
+                </div>
             </div>
+            <div ng-repeat="service in order.selectedServices" ng-if="service.notes" class="row">
+                <div class="col-xs-4 no-padding-right">
+                    <strong>Notes</strong>
+                </div>
+                <div class="col-xs-8">{{service.notes}}</div>
+            </div>
+            <div ng-repeat="service in order.selectedServices" ng-if="service.request" class="row">
+                <div class="col-xs-4 no-padding-right"><strong>Your Request</strong></div>
+                <div class="col-xs-8">{{service.request}}</div>
+            </div>
+
         </div>
     </div>
 

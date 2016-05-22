@@ -13,17 +13,18 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
     }
 
     $scope.orderProcess = function () {
+        $("#ReviewOrder").modal("toggle");
         if ($scope.payNow) {
             psDataServices.setPaymentMode("Online");
                $localStorage.userSelectionData = psDataServices.getSelectedService();
             $scope.response = psOrderDetailsService.payment()
                 .then(function (result) {
                     //Success
-                    if (result.status == 0) {
+                    if (result.status === 0) {
                         if (result.result != null) {
                             $window.location.href = result.result.payment_request.longurl;
                         }
-                    } else if (result.status == 1 || result.status == 2) {
+                    } else if (result.status === 1 || result.status === 2) {
                         $scope.reqError = true;
                         $scope.errorMessage = result.message;
                     }
@@ -59,7 +60,7 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
             if(data.status == 0 && data.result.success == true)
                 $scope.orderSubmit(returnData.payment_id, returnData.payment_request_id, data.result);
         }).error(function () {
-            alert('error');
+            alert("error");
         })    
     }
 
@@ -72,6 +73,7 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
         $.each(order.selectedServices, function (i, job) {
             if (job.addText) {
                 $scope.custRequest = true;
+                $scope.request = job.request;
             }
         });
         $("#ReviewOrder").modal();
