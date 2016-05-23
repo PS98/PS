@@ -30,6 +30,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
                 success(function (data) {
                     if (data.length > 0) {
                         removemarker();
+                        $('#areaDropDown').setJelect(area);
                         $scope.centreDetails.centreList = [];
                         $scope.centreDetails.centreList = data;
                         $scope.centreDetails.selectedCentre = $scope.centreDetails.centreList[0];
@@ -61,11 +62,11 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         $scope.area = "Select Area";
         if ($scope.centreDetails.cityList.includes($scope.centreDetails.city)) {
             $scope.city = $scope.centreDetails.city;
-            $('.select.jelect').find('#cityDropDown').text($scope.centreDetails.city);
+            $('#cityDropDown').setJelect($scope.centreDetails.city);
         }
         if ($scope.centreDetails.areaList.includes($scope.centreDetails.area)) {
-            $('.select.jelect').find('#areaDropDown').text($scope.centreDetails.area);
             $scope.area = $scope.centreDetails.area;
+            $('#areaDropDown').setJelect($scope.centreDetails.area);
         }
     }
     $scope.setUserLocation = function (lat, lng) {
@@ -81,27 +82,30 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             psDataServices.getServiceCentreArea($scope.city).success(function (data) {
                 removemarker();
                 $scope.centreDetails.areaList = data;
-                if ($scope.googleMapArea && $scope.googleMapArea !== "")
+                if ($scope.googleMapArea && $scope.googleMapArea !== "") {
                     getNearerCentreList();
+                }
 
             });
         }
         else {
             $scope.centreDetails.areaList = {};
             removeCentreDetails();
-            $('.select.jelect').find('#areaDropDown').text("Select Area");
-            $scope.area = "Select Area";
+            //$('.select.jelect').find('#areaDropDown').text("Select Area");
+            //$scope.area = "Select Area";
+             $('#areaDropDown').setJelect("");
         }
     }
     function getNearerCentreList() {
         if ($scope.centreDetails.areaList.includes($scope.googleMapArea)) {
             $scope.getCentreDetails($scope.googleMapArea);
             $scope.centreDetails.area = $scope.googleMapArea;
-            $('.select.jelect').find('#areaDropDown').text($scope.googleMapArea);
+            $scope.area = $scope.googleMapArea;
+            $('#areaDropDown').setJelect($scope.googleMapArea);
             $scope.googleMapArea = "";
         } else {
-            $scope.area = "Select Area";
-            $('.select.jelect').find('#areaDropDown').text($scope.area);
+             $scope.area = "Select Area";
+             $('#areaDropDown').setJelect("");
             $scope.noCentreMatch = true;
             removeCentreDetails();
         }
@@ -125,6 +129,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     $scope.changeArea = function () {
         if ($scope.area && $scope.area.toLowerCase() !== "select area") {
             $("#addressOverlay").modal('toggle');
+            $scope.loadUserMap();
         } else {
             removeCentreDetails();
         }
@@ -139,7 +144,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         if ($scope.centreDetails.cityList.includes(city)) {
             $scope.centreDetails.city = city;
             $scope.city = city;
-            $('.select.jelect').find('#cityDropDown').text(city);
+            $('#cityDropDown').setJelect(city);
             if (!$scope.centreDetails.areaList || $scope.centreDetails.areaList.length === 0) {
                 $scope.getServiceCentreArea();
             } else {
@@ -147,6 +152,8 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             }
         } else {
             $scope.city = "Select City";
+            $('#cityDropDown').setJelect("");
+            $('#areaDropDown').setJelect("");
             $scope.area = "Select Area";
         }
 
