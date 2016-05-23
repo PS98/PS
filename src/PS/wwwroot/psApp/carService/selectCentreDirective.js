@@ -176,7 +176,7 @@ angular.module("psApp").directive("selectCentre", function () {
                         initialzeUserAddressMap();
                         getFullAddress(userLatLng);
                 } else {
-                    var address = { 'address': scope.area };
+                    var address = { 'address': scope.area + " " +scope.city +" India" };
                     callGeoCoderApi(address).then(function(data) {
                         userLocation.lat = data.result.geometry.location.lat();
                         userLocation.lng = data.result.geometry.location.lng();

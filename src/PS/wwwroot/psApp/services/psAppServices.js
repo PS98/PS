@@ -123,7 +123,10 @@
            data: data
        });
     }
-
+    var _resetAll = function() {
+        userServiceData = { selectedCar: {}, selectedServices: {}, selectedAppointment: {}, userDetails: {}, userAddress: {}, selectedCentre: {} };
+        angular.extend(userServiceData.userDetails, $localStorage.userDetails);
+    }
     return {
         getAllCarColletion: _getAllCarCollection,
         getCarType: _getCarType,
@@ -148,7 +151,8 @@
         geMockData: _getMockData,
         saveCentreDetails: _saveCentreDetails,
         setPickUpDetails: _setPickUpDetails,
-        getPickUpDetails: _getPickUpDetails
+        getPickUpDetails: _getPickUpDetails,
+        resetAll: _resetAll
 }
           
     
