@@ -24,10 +24,10 @@
         <div class="order-status col-md-6">
             <span>Payment Mode: &nbsp;</span>
             <span ng-if="order.paymentMode !=='COD'">
-                <span><strong>Online (Paid INR {{order.selectedCentre.totalPrice}})</strong></span>
+                <span><strong>Online (Paid INR {{order.selectedCentre.totalMMPrice}})</strong></span>
             </span>
             <span ng-if="order.paymentMode ==='COD'">
-                <span><strong>Cash On Delivery (INR {{order.selectedCentre.totalPrice}})</strong></span>
+                <span><strong>Cash On Delivery (INR {{order.selectedCentre.totalMMPrice}})</strong></span>
             </span>
         </div>
     </div>
