@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage", "psDataServices","psOrderDetailsService",
-function ($scope, $window, $state, $location, $localStorage, psDataServices,psOrderDetailsService) {
+﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage","$sessionStorage", "psDataServices","psOrderDetailsService",
+function ($scope, $window, $state, $location, $localStorage,$sessionStorage, psDataServices,psOrderDetailsService) {
     $scope.payNow = true;
     $scope.oldNumber = $localStorage.userDetails ? $localStorage.userDetails.phoneNo : undefined;
     $scope.checkMobileNumber = function () {
@@ -46,6 +46,8 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
                 $scope.receivedOrder = data.result;
                 psDataServices.resetAll();
                 $localStorage.userData = {};
+                $sessionStorage.orderId = data.result;
+
                 $state.go("orderSuccess");
             }
             else if (data.status === 1 || data.status === 2) {

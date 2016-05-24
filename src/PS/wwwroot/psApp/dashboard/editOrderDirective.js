@@ -6,56 +6,61 @@ angular.module("psApp").directive("editOrder", function () {
         replace: true,
         link: function (scope, el, attrs) {
             scope.dateToDisplay = [];
-            scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+            scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
             scope.hideCalendar = false;
             scope.showPickUpCalendar = true;
             scope.centreWorkingHours = [];
             scope.availableDropTime = [];
             var today = new Date();
             var currentTime = today.getHours();
+            var todayDay = today.getDate();
+            var maxDate = new Date();
+            maxDate.setDate(todayDay + 14);
             scope.setFiveDay = function (date) {
                 scope.centreWorkingHours = setDate(date);
             }
             scope.setFiveDay(today);
+            enableDisableButton(scope.centreWorkingHours);
             function setDate(date, time) {
                 var day = date.getDate();
                 var nextDate, centreWorkingHours = [];
 
                 for (var i = 0; i < 8; i++) {
-                    var WH = [];
+                    var wh = [];
                     var tempDate = new Date(date);
                     tempDate.setDate(day);
                     nextDate = tempDate;
                     var datepart = nextDate.toDateString();
-                    if (scope.changedDate.pickUpDate.day == datepart && time) {
-                        scope.timeToDisplay.splice(0, scope.timeToDisplay.indexOf(parseInt(time.split(" ")[0]) + 6));
+                    if (scope.changedDate.pickUpDate.day === datepart && time) {
+                        var time1 = time.split(" ");
+                        time1 = time1[1] === "AM" ? time1[0] : time1[0] !== 12 ? 12 + parseInt(time1[0]) : time1[0];
+                        var index = scope.timeToDisplay.indexOf(parseInt(time1) + 6);
+                        if (index > -1)
+                            scope.timeToDisplay.splice(0, index);
+                        else {
+                            scope.timeToDisplay = [];
+                        }
+                        
                     }
                     else {
-                        scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+                        scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
 
                     }
                     $.each(scope.timeToDisplay, function (i, v) {
                         if (nextDate.toDateString() === today.toDateString() && checkAvailibility(v, nextDate)) {
                             var obj = { time: formatTime(v) };
-                            WH.push(obj);
+                            wh.push(obj);
                         }
                         else {
                             var obj = { time: formatTime(v) };
-                            WH.push(obj);
+                            wh.push(obj);
                         }
                     });
 
-                    if (WH.length > 0)
-                        centreWorkingHours.push({ day: datepart, WorkingHours: WH });
+                    if (wh.length > 0)
+                        centreWorkingHours.push({ day: datepart, WorkingHours: wh });
                     day++;
-                    if (i === 0) {
-                        if (today.toDateString() === nextDate.toDateString()) {
-                            scope.disablePrevBtn = true;
-                        } else {
-                            scope.disablePrevBtn = false;
-                        }
-                    }
-                    if (centreWorkingHours.length == 5) {
+                    if (centreWorkingHours.length === 5 || maxDate.toDateString() == datepart) {
                         break;
                     }
                 }
@@ -75,17 +80,6 @@ angular.module("psApp").directive("editOrder", function () {
                 }
 
                 return h + " " + dd;
-                /* if you want 2 digit hours:
-                h = h<10?"0"+h:h; */
-
-                //var pattern = new RegExp("0?" + hh);
-
-                //var replacement = h;
-                ///* if you want to add seconds
-                //replacement += ":"+s;  */
-                //replacement += " " + dd;
-
-                //return time.replace(pattern, replacement);
             }
 
             function checkAvailibility(time, date) {
@@ -108,14 +102,19 @@ angular.module("psApp").directive("editOrder", function () {
                 scope.showDropCalendar = true;
                 var date = new Date();
                 date.setDate(dateTime.day.split(" ")[2]);
-                scope.availablePickUpTime = setDate(date, dateTime.time);;
+                scope.availablePickUpTime = setDate(date, dateTime.time);
+                enableDisableButton(scope.availablePickUpTime, true);
 
             }
             scope.togglePickUp = function () {
-                scope.showPickUpCalendar = !scope.showPickUpCalendar
+                scope.showPickUpCalendar = !scope.showPickUpCalendar;
+                scope.showDropCalendar = false;
+                enableDisableButton(scope.centreWorkingHours);
             }
             scope.toggleDropOff = function () {
+                scope.showPickUpCalendar = false;
                 scope.showDropCalendar = !scope.showDropCalendar;
+                enableDisableButton(scope.availablePickUpTime, true);
             }
             scope.editDropDate = function (dateTime) {
                 scope.changedDate.dropOffDate.day = dateTime.day;
@@ -137,10 +136,34 @@ angular.module("psApp").directive("editOrder", function () {
                 date = new Date(date);
                 var day = date.getDate();
                 type === "prev" ? date.setDate(day - 5) : date.setDate(day + 1);
-                if (scope.showPickUpCalendar)
+                if (scope.showPickUpCalendar) {
                     scope.centreWorkingHours = setDate(date);
-                else
+                    enableDisableButton(scope.centreWorkingHours);
+                } else {
                     scope.availablePickUpTime = setDate(date, scope.changedDate.pickUpDate.time);
+                    enableDisableButton(scope.availablePickUpTime, true);
+                }
+            }
+            function enableDisableButton(workingHrsList, isPickUpDone) {
+                var nextAvailableDate = new Date();
+                if (isPickUpDone) {
+                    nextAvailableDate.setDate(parseInt(scope.changedDate.pickUpDate.day.split(" ")[2]) + 1);
+                }
+
+                if (today.toDateString() === workingHrsList[0].day) {
+                    scope.disablePrevBtn = true;
+                }
+                else if (isPickUpDone && (scope.changedDate.pickUpDate.day === workingHrsList[0].day || nextAvailableDate.toDateString() === workingHrsList[0].day)) {
+                    scope.disablePrevBtn = true;
+                }
+                else {
+                    scope.disablePrevBtn = false;
+                }
+                if (maxDate.toDateString() === workingHrsList[workingHrsList.length - 1].day) {
+                    scope.disableNextBtn = true;
+                } else {
+                    scope.disableNextBtn = false;
+                }
             }
         }
 
