@@ -74,7 +74,7 @@ namespace PS.Controllers
                         DropOffDate = new AppointmentDetails() { Day = dropOffDate, Time = dropOffTime } };
                     repo.ChangeAppointmentDate(invoiceNo, appointment);
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Status = 0, Result = "Your appointment details updataed successfully" });
+                    return Json(new { Status = 0, Result = "Your Appointment Details Updated Successfully." });
                 }
             }
             catch (Exception ex)
