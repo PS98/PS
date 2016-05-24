@@ -1,12 +1,12 @@
-﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService","psDataServices", "$window",
-function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService, psDataServices) {
+﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService","psDataServices", "$state",
+function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService, psDataServices, $state) {
     $scope.isBusy = true;
   //  $scope.isLoggedIn = false;
     $scope.loginError = false;
     $scope.regError = false;
     $scope.regSuccess = false;
     $scope.again = false;
-    $scope.userDetails = {};
+    
 
     $scope.TCRedirection = function (url, name) {
         window.open(url, name);
@@ -16,6 +16,7 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
         psLoginService.login($scope.Email, $scope.Password)
             .then(function (result) {
                 //Success
+                $scope.userDetails = {};
                 if (result.status == 1 || result.status == 2) {
                     $scope.loginError = true;
                     $scope.message = result.message;
