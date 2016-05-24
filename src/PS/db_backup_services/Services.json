@@ -1,0 +1,217 @@
+{ 
+    "_id" : ObjectId("5700b0ffddc5778a2700cfb3"), 
+    "Name" : "Lite Car Care", 
+    "Description" : "Our Lite Car Care package combines a engine oil top up, coolant top up and oil filter replacement with a number of vehicle safety checks.", 
+    "Type" : [
+        {
+            "Name" : "Free Car Wash", 
+            "Description" : "Complete external Car wash"
+        }, 
+        {
+            "Name" : "Top Up Engine Oil", 
+            "Description" : "A substance that lubricates and cools the moving parts of the engine and reduces corrosion and the formation of rust.A cartridge-filled canister placed in an engine's lubricating system to strain dirt and abrasive materials out of the oil.\r\n\r\nThis service includes Engine oil drained, Replacement sump plug washer, Oil refill based on manufacturer’s recommendation, Replacement oil filter. Engine Oil Replacement Upto 400 ml."
+        }, 
+        {
+            "Name" : "Top up windscreen washer fluid", 
+            "Description" : "Raise the bonnet of your car and secure it in the raised position. Locate the screenwash filler cap – it is usually marked with a windscreen washer symbol but if in doubt, check your car's owner manual. Take the cap off and top up with a mixture of water and screenwash anti-freeze fluid."
+        }, 
+        {
+            "Name" : "Top up coolant levels", 
+            "Description" : "To keep the cooling system in good operating condition, it is important to check the level, strength and condition of the coolant on a regular basis - and to replace or recycle the coolant before the protective additives are entirely depleted."
+        }, 
+        {
+            "Name" : "Check front, rear, side and main lights", 
+            "Description" : "It is an offence in law not to have all obligatory lights working. Obligatory lights are side and tail lights, headlamps (main and dipped beams), direction indicators, stop lights and a rear number-plate light. Check Up if all the obligatory lights are functional or not."
+        }, 
+        {
+            "Name" : "Check indicators and hazard lights", 
+            "Description" : "It is an offence in law not to have all obligatory lights working.  Check Up if the rear, side and main lights are functional or not."
+        }, 
+        {
+            "Name" : "Check brake and reverse lights", 
+            "Description" : "Check Up if the brake , rear, side and main lights are functional or not."
+        }, 
+        {
+            "Name" : "Check fog and number plate lights", 
+            "Description" : "Check Up if the fog,  rear, side and main lights are functional or not."
+        }, 
+        {
+            "Name" : "Check horn", 
+            "Description" : "Check that the vehicle's horn is functioning properly or not."
+        }, 
+        {
+            "Name" : "Check\tMirrors", 
+            "Description" : "Check that all the mirrors are functioning properly or not"
+        }, 
+        {
+            "Name" : "Check tyres and Wheel Alignment", 
+            "Description" : "As it’s the only part of the vehicle that grips the road, the depth of tread on your tyres is a very important for the safety of your vehicle. It also signals the health of the tyre. Driving with low tread depth increases the potential for tyre failure and aquaplaning. Low tread depth in winter weather conditions can severely reduce grip and control."
+        }, 
+        {
+            "Name" : "Check instruments, gauges, warning lights", 
+            "Description" : "Vehicle instrument is an instrument that measures some parameters in the vehicle, often found on its control panel or dashboard. Dash lights are nothing new, but the messages are. The following list of warning lights are the most common lights used by auto manufacturers. Not all warning lights are universal. "
+        }, 
+        {
+            "Name" : "Test electrics (battery, alternator, starter motor)", 
+            "Description" : "A variety of possible catastrophic issues pass through your mind when your car will not start. But, before you panic, try to see if a faulty battery, alternator or starter is the problem. These three parts of a car closely work together, so it can be hard to tell which one has failed. "
+        }, 
+        {
+            "Name" : "Battery Water level", 
+            "Description" : "To check if the battery has sufficient water level or not, if not then add the requiste amount of water"
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5700b90eddc5778a2700cfb5"), 
+    "Name" : "Essential Car Care", 
+    "Description" : "Our Essential Service package is ideal for drivers who use their vehicle for regular, short journeys in and around town or for those drivers who have a high mileage and want peace of mind between annual Type.\r\n\r\nWe recommend having an Interim Service every 6,000 miles or 6 months (whichever is sooner) and includes checks on essentials such as lights, windscreen wipers and tyres plus a full brake, exhaust and suspension inspection.", 
+    "Type" : [
+        {
+            "Name" : "Replace Engine Oil", 
+            "Description" : "Replacing the engine oil based on customer's choice."
+        }, 
+        {
+            "Name" : "Change air, fuel and oil filters", 
+            "Description" : "Changing all the filters and repleacing them with new ones."
+        }, 
+        {
+            "Name" : "Top up power steering fluid", 
+            "Description" : "If your car has power steering you will need to make sure that the system is operating effectively on a regular basis. If you're not sure whether or not you have power steering, try and reverse into a space with just one hand on the wheel. If you can do it without dislocating your shoulder, then you have power steering. In a nutshell, power steering uses an external power source that reduces the amount of effort that you have to put into steering the car by helping the wheels to turn."
+        }, 
+        {
+            "Name" : "Top Up Clutch Fluid", 
+            "Description" : "Top Up the requiste amount of fluid required for Clutch to function properly."
+        }, 
+        {
+            "Name" : "Check Transmission Fluid", 
+            "Description" : "Transmission Fluid helps in smooth functioning of the vehicle for long durations. Checking if the fluid is in need of top up or replacement."
+        }, 
+        {
+            "Name" : " Check AC and Sanitization", 
+            "Description" : "Checking if the AC and all the sanitization points are working fine or not."
+        }, 
+        {
+            "Name" : "Full brake inspection (If Required)", 
+            "Description" : "What is a 'complete' brake job? It is a brake job that does not leave important things undone to save time and/or money. We are talking about things like rebuilding or replacing high mileage calipers and wheel cylinders, replacing disc and drum brake hardware, resurfacing or replacing drums and rotors, changing the brake fluid and bleeding all the lines, checking and adjusting the parking brake and even checking the ABS system."
+        }, 
+        {
+            "Name" : "Vehicle road test", 
+            "Description" : "The vehicle is tested by our trained professionals to find out whether all parts are working as expected."
+        }, 
+        {
+            "Name" : "Check windscreen wipers", 
+            "Description" : "Clean the blade by wiping it with a cloth soaked in a washer solution. Rinse the blade with clear water. If the windscreen is still not clear after cleaning blades and using the wiper, replace the blades. Push in the lock pin"
+        }, 
+        {
+            "Name" : "Check windscreen washers", 
+            "Description" : " Open the bonnet, identify the windscreen washer reservoir and explain that you would check the level of fluid was above the min mark on the side. Question 4: Open the bonnet, identify where the brake fluid reservoir is and tell me how you would check that you have a safe level of hydraulic fluid."
+        }, 
+        {
+            "Name" : "Check seat belts", 
+            "Description" : "In an accident a seat belt becomes a life saver. But wear & tear and abuse all cause the seat belt to deteriorate. Holes, cuts, fraying or fluffing weaken the belt (see image) , can obstruct its operation, and/or cause slackness."
+        }, 
+        {
+            "Name" : "Check diagnostic trouble codes", 
+            "Description" : "Check Engine Light On? That means the onboard diagnostic system on your vehicle has detected a problem that could increase emissions. When this happens, the OBD II system sets one or more diagnostic trouble codes that correspond to the problem detected. We check for this trouble codes to identify the problems in your vehicle"
+        }, 
+        {
+            "Name" : "Check hand brake Settings", 
+            "Description" : "In cars, the parking brake, also called[1] hand brake, emergency brake, or e-brake, is a latching brake usually used to keep the vehicle stationary. It is sometimes also used to prevent a vehicle from rolling when the operator needs both feet to operate the clutch and throttle pedals."
+        }, 
+        {
+            "Name" : "Check Spark Plug (Petrol)", 
+            "Description" : "Check if the spark plug is wokring as expected or not for Petrol vehicles only."
+        }, 
+        {
+            "Name" : "Greasing of Doors", 
+            "Description" : "Greasing all the doors in the vehicle, so that they function properly without any noise or problem"
+        }, 
+        {
+            "Name" : "Check drive shaft joints and gaiters", 
+            "Description" : "The CV Joint transmits the power of the engine to the wheels. Bearings are used in the CV Joint as it transmits rotation and absorbs vibration while driving or movement by steering the wheels. Drive shaft boots are an important part that protect the joint of the axle (CV Joint) from dirt, water and contaminants."
+        }, 
+        {
+            "Name" : "Check steering, suspension linkages", 
+            "Description" : "In an automobile, ball joints are spherical bearings that connect the control arms to the steering knuckles. They are used on virtually every automobile made [1] and work similarly to the ball-and-socket design of the human hip joint. Suspension is the system of tires, tire air, springs, shock absorbers and linkages that connects a vehicle to its wheels and allows relative motion between the two.[1] Suspension systems serve a dual purpose"
+        }, 
+        {
+            "Name" : "Check shock absorbers", 
+            "Description" : "A shock absorber (in reality, a shock 'damper') is a mechanical or hydraulic device designed to absorb and damp shock impulses. It does this by converting the kinetic energy of the shock into another form of energy (typically heat) which is then dissipated. A shock absorber is a type of dashpot"
+        }, 
+        {
+            "Name" : "Check exhaust system and mountings", 
+            "Description" : "An exhaust system is usually piping used to guide reaction exhaust gases away from a controlled combustion inside an engine or stove. The entire system conveys burnt gases from the engine and includes one or more exhaust pipes."
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5700b919ddc5778a2700cfb8"), 
+    "Name" : " Full Car Care", 
+    "Description" : "Our Full Service is ideal as an annual maintenance programme for your car. We recommend your car receives a Full Service every 12,000 miles or 12 months – whichever is sooner.\r\n\r\nA Full Service each year will reduce the risk of breakdown and can help maintain the value of the vehicle.\r\n\r\nOur Full Service includes all items included in the Interim Service package plus a thorough inspection of your engine, wheel alignment, wheel bearings and brake fluid condition.  A full car service also includes fuel filter (diesel vehicles), air filter, spark plugs (petrol vehicles)*  and free wheel balance replacements.", 
+    "Type" : [
+        {
+            "Name" : "Replace Engine Oil", 
+            "Description" : "Replacing the engine oil based on customer's choice."
+        }, 
+        {
+            "Name" : "Replace Coolant", 
+            "Description" : "Servicing the coolant involves draining and/or flushing your car's cooling system and then replacing the old coolant with fresh coolant."
+        }, 
+        {
+            "Name" : "Replace spark plugs (petrol)", 
+            "Description" : "A spark plug is a device for delivering electric current from an ignition system to the combustion chamber of a spark-ignition engine to ignite the compressed fuel/air mixture by an electric spark, while containing combustion pressure within the engine."
+        }, 
+        {
+            "Name" : "Replace fuel filter (diesel)", 
+            "Description" : "A fuel filter is a filter in the fuel line that screens out dirt and rust particles from the fuel, normally made into cartridges containing a filter paper. They are found in most internal combustion engines"
+        }, 
+        {
+            "Name" : "Replace air filter", 
+            "Description" : "A particulate air filter is a device composed of fibrous materials which removes solid particulates such as dust, pollen, mould, and bacteria from the air. A chemical air filter consists of an absorbent or catalyst for the removal of airborne molecular contaminants such as volatile organic compounds or ozone."
+        }, 
+        {
+            "Name" : "Replace Transmission Fluid", 
+            "Description" : "Automatic transmission fluid (ATF) is the fluid used in vehicles with self shifting or automatic transmissions. Complete replacement of the fluid is done"
+        }, 
+        {
+            "Name" : "Replace Chassis Lubrication", 
+            "Description" : "Drive shaft u-joints (universal joints) may also have grease fittings and although technically not part of the suspension system, drive shaft u-joints should be lubricated when the vehicle chassis is lubricated"
+        }, 
+        {
+            "Name" : "Check transmission and rear axle", 
+            "Description" : "An engine or motor is a machine designed to convert one form of energy into mechanical energy. Often the term transmission refers simply to the gearbox that uses gears and gear trains to provide speed and torque conversions from a rotating power source to another device. Rear axle is the last member of power train. In most of automobiles, real axle is the driving axle. It lies between the driving wheels and the differential gear and transmit power from the differential to the driving wheels."
+        }, 
+        {
+            "Name" : "Check radiator and coolant hoses", 
+            "Description" : " Radiator is an engine-cooling device in a motor vehicle or aircraft consisting of a bank of thin tubes in which circulating water is cooled by the surrounding air. radiator hose - a flexible hose between the radiator and the engine block. cooling system, engine cooling system - equipment in a motor vehicle that cools the engine. hosepipe, hose - a flexible pipe for conveying a liquid or gas."
+        }, 
+        {
+            "Name" : "Check auxiliary drive belt", 
+            "Description" : " The aux belt is the one that drives the alternator and power steering from the crankshaft. Used to be called the fan belt when they also used to drive the radiator fan. They do make a noise when they are damaged or worn out. Sometimes they can damage the pulleys or a pulley that they run on but this is unlikely."
+        }, 
+        {
+            "Name" : "Check wheel bearings", 
+            "Description" : "On most cars manufactured before 1997, there are two wheel bearings per front tire (1 inner and 1 outer). Most car manufacturers recommend wheel bearing cleaning, re-packing with grease, and having them inspected every 30,000 miles. This is normally done with a brake service."
+        }, 
+        {
+            "Name" : "Full wheel balancing", 
+            "Description" : "Wheel Balancing, on the other hand allows the tires and wheels to spin without causing any vibrations.  This is accomplished by checking for any heavy spots on the wheel-tire combination and compensating for it by placing a measured lead weight on the opposite site of the wheel from where the heavy spot is."
+        }, 
+        {
+            "Name" : "Full wheel alignment", 
+            "Description" : " wheel alignment consists of adjusting the angles of the wheels so that they are perpendicular to the ground and parallel to each other. The purpose of these adjustments is maximum tire life and a vehicle that tracks straight and true when driving along a straight and level road. "
+        }, 
+        {
+            "Name" : "Interior Vehicle Cleaning", 
+            "Description" : "Checking that all the Doors are opening and closing smoothely wihout any problem."
+        }, 
+        {
+            "Name" : "Check interior lights", 
+            "Description" : "Checking that all the lighting system inside the car are fucntioning as expected or not."
+        }, 
+        {
+            "Name" : "Check fuel pipes", 
+            "Description" : "A fuel line is a hose used to bring fuel from one point in a vehicle to another or from a storage tank to a vehicle. It is commonly made of reinforced rubber to prevent splitting and kinking."
+        }
+    ]
+}
