@@ -125,6 +125,9 @@ angular.module("psApp").directive("editOrder", function () {
                 //   psDataServices.setSelectedAppointment(scope.changedDate);
             }
             scope.openCalender = function (order) {
+                if (!scope.centreWorkingHours || scope.centreWorkingHours.length === 0) {
+                    scope.setFiveDay(today);
+                }
                 $("#editOrder").modal('toggle');
                 scope.editOrder = order;
                 scope.showPickUpCalendar = true;

@@ -161,9 +161,11 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService, psOrd
                 $timeout(function () {
                     $("#modalOverlay").modal('toggle');
                 }, 200);
-                $scope.changedDate = {};
             }, function () {
                 alert("error");
+            }).finally(function() {
+                $scope.centreWorkingHours = [];
+                $scope.availableDropTime = [];
                 $scope.changedDate = { "pickUpDate": {}, "dropOffDate": {} };
             });
 
