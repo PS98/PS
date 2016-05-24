@@ -30,7 +30,7 @@ namespace PS.Services
             //Multiple mobiles numbers separated by comma
             string mobileNumber = number;
             //Sender ID,While using route4 sender id should be 6 characters long.
-            string senderId = "102234";
+            string senderId = "VERIFY";
             //Your message to send, Add URL encoding here.
             string msg = HttpUtility.UrlEncode(message);
 
@@ -63,13 +63,13 @@ namespace PS.Services
 
                 //TODO: Uncomment below lines for sending the message
 
-                //HttpWebResponse response = (HttpWebResponse)httpWReq.GetResponse();
-                //StreamReader reader = new StreamReader(response.GetResponseStream());
-                //string responseString = reader.ReadToEnd();
+                HttpWebResponse response = (HttpWebResponse)httpWReq.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                string responseString = reader.ReadToEnd();
 
-                //Close the response
-                //reader.Close();
-                //response.Close();
+               // Close the response
+                reader.Close();
+                response.Close();
                 return true;
             }
             catch (SystemException ex)
