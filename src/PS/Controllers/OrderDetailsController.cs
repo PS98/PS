@@ -70,11 +70,11 @@ namespace PS.Controllers
             {
                 if (!string.IsNullOrEmpty(invoiceNo) && !string.IsNullOrEmpty(dropOffDate) && !string.IsNullOrEmpty(pickUpDate))
                 {
-                    var appointment = new Appointment() { pickUpDate = new AppointmentDetails() {day = pickUpDate,time=pickUpTime },
-                        dropOffDate = new AppointmentDetails() { day = dropOffDate, time = dropOffTime } };
-                    repo.changeAppointmentDate(invoiceNo, appointment);
+                    var appointment = new Appointment() { PickUpDate = new AppointmentDetails() {Day = pickUpDate,Time=pickUpTime },
+                        DropOffDate = new AppointmentDetails() { Day = dropOffDate, Time = dropOffTime } };
+                    repo.ChangeAppointmentDate(invoiceNo, appointment);
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Status = 0, Result = "Your appointment details is updataed successfully" });
+                    return Json(new { Status = 0, Result = "Your Appointment Details Updated Successfully." });
                 }
             }
             catch (Exception ex)

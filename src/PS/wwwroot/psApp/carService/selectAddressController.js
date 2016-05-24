@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage", "psDataServices","psOrderDetailsService",
-function ($scope, $window, $state, $location, $localStorage, psDataServices,psOrderDetailsService) {
+﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage","$sessionStorage", "psDataServices","psOrderDetailsService",
+function ($scope, $window, $state, $location, $localStorage,$sessionStorage, psDataServices,psOrderDetailsService) {
     $scope.payNow = true;
     $scope.oldNumber = $localStorage.userDetails ? $localStorage.userDetails.phoneNo : undefined;
     $scope.checkMobileNumber = function () {
@@ -13,16 +13,18 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
     }
 
     $scope.orderProcess = function () {
+        $("#ReviewOrder").modal("toggle");
         if ($scope.payNow) {
             psDataServices.setPaymentMode("Online");
+               $localStorage.userSelectionData = psDataServices.getSelectedService();
             $scope.response = psOrderDetailsService.payment()
                 .then(function (result) {
                     //Success
-                    if (result.status == 0) {
+                    if (result.status === 0) {
                         if (result.result != null) {
                             $window.location.href = result.result.payment_request.longurl;
                         }
-                    } else if (result.status == 1 || result.status == 2) {
+                    } else if (result.status === 1 || result.status === 2) {
                         $scope.reqError = true;
                         $scope.errorMessage = result.message;
                     }
@@ -42,6 +44,10 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
             then(function (data) {
             if (data.status === 0) {
                 $scope.receivedOrder = data.result;
+                psDataServices.resetAll();
+                $localStorage.userData = {};
+                $sessionStorage.orderId = data.result;
+
                 $state.go("orderSuccess");
             }
             else if (data.status === 1 || data.status === 2) {
@@ -58,7 +64,7 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
             if(data.status == 0 && data.result.success == true)
                 $scope.orderSubmit(returnData.payment_id, returnData.payment_request_id, data.result);
         }).error(function () {
-            alert('error');
+            alert("error");
         })    
     }
 
@@ -66,7 +72,14 @@ function ($scope, $window, $state, $location, $localStorage, psDataServices,psOr
         $scope.reviewOrder = [];
         var order = psDataServices.getSelectedService();
         $scope.review = true;
+        $scope.custRequest = false;
         $scope.reviewOrder.push(order);
+        $.each(order.selectedServices, function (i, job) {
+            if (job.addText) {
+                $scope.custRequest = true;
+                $scope.request = job.request;
+            }
+        });
         $("#ReviewOrder").modal();
     }
 

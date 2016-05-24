@@ -1,7 +1,7 @@
 
 var placeSearch, autocomplete, autocomplete_textarea, googleMapHolder, map, googleMapMarkers = [], displayCurrentLocation, latlon, userLocation = {}, locationCall, draggable;
 var infowindow = google.maps ? new google.maps.InfoWindow() : "";
-var geocoder = google.maps ? new google.maps.Geocoder(): "";
+var geocoder = google.maps ? new google.maps.Geocoder() : "";
 
 var componentForm = {
     //street_number: 'short_name',
@@ -19,8 +19,8 @@ var mapOptions = {
     center: latlon,
     zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    mapTypeControl: false,
-    navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+    //mapTypeControl: false,
+    //navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
 }
 
 
@@ -62,7 +62,7 @@ function showMap(position) {
     mapOptions.center = latlon;
     locateCityAndArea(latlon);
     if (displayCurrentLocation) {
-        mapOptions.zoom = 16;
+        mapOptions.zoom = 12;
     }
     map = new google.maps.Map(document.getElementById(googleMapHolder), mapOptions);
 
@@ -83,21 +83,20 @@ function showMap(position) {
 
 }
 
-function handleError(err) {
-    //switch (err.code) {
-    //    case error.PERMISSION_DENIED:
-    //        x.innerHTML = "User denied the request for Geolocation.";
-    ////    case error.POSITION_UNAVAILABLE:
-    //        x.innerHTML = "Location information is unavailable.";
-    //        break;
-    //    case error.TIMEOUT:
-    //        x.innerHTML = "The request to get user location timed out.";
-    //        break;
-    //    case error.UNKNOWN_ERROR:
-    //        x.innerHTML = "An unknown error occurred.";
-    //        break;
-    //}        break;
-
+function handleError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+    }
     getLatLng('India');
 
 }
@@ -110,9 +109,9 @@ function loadMap(lat, lng, zoom) {
     map = new google.maps.Map(document.getElementById(googleMapHolder), mapOptions);
 }
 
-function loadCurrentLocation(city, area) {
+function loadCurrentLocation(data) {
     if (locationCall)
-        locationCall(city.long_name, area.long_name);
+        locationCall(data.city, data.area);
 
 }
 function locateCityAndArea(latlng) {
@@ -120,17 +119,87 @@ function locateCityAndArea(latlng) {
     var geoType = { 'latLng': latlng };
 
     callGeoCoderApi(geoType).then(function (data) {
-        loadCurrentLocation(data.city, data.area);
+        var obj = getCityAreaFromAddressComponent(data.result);
+        loadCurrentLocation(obj);
+
     });
 
     //return { city: result.city, area: result.area };
 }
+function getCityAreaFromAddressComponent(results) {
+    var route, street_number, neighborhood, sublocality_level_3, sublocality_level_2, city, area, locality, country, state, pinCode;
 
+    var addressLine1, addressLine2;
+    for (var i = 0; i < results.address_components.length; i++) {
+        for (var b = 0; b < results.address_components[i].types.length; b++) {
+            if (results.address_components[i].types[b] == "route") {
+                route = results.address_components[i].long_name;
+
+            }
+
+            if (results.address_components[i].types[b] == "street_number") {
+                street_number = results.address_components[i].long_name;
+
+            }
+
+            if (results.address_components[i].types[b] == "neighborhood") {
+                neighborhood = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "sublocality_level_3") {
+                sublocality_level_3 = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "sublocality_level_2") {
+                sublocality_level_2 = results.address_components[i].long_name;
+
+            }
+
+            if (results.address_components[i].types[b] == "sublocality_level_1") {
+                area = results.address_components[i].long_name;
+
+            }
+           
+            if (results.address_components[i].types[b] == "locality") {
+                locality = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "administrative_area_level_2") {
+                city = results.address_components[i].long_name;
+            }
+
+            if (results.address_components[i].types[b] == "administrative_area_level_1") {
+                state = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "country") {
+                country = results.address_components[i].long_name;
+
+            }
+            if (results.address_components[i].types[b] == "postal_code") {
+                pinCode = results.address_components[i].long_name;
+                break;
+            }
+           
+        }
+    }
+    route = route ? route : '';
+    street_number = street_number ? street_number : "";
+    neighborhood = neighborhood ? neighborhood : "";
+    sublocality_level_3 = sublocality_level_3 ? sublocality_level_3 : "";
+    sublocality_level_2 = sublocality_level_2 ? sublocality_level_2 : "";
+    locality = locality ? locality : "";
+    addressLine1 = route ;
+    addressLine2 = street_number + " " + neighborhood + " " + sublocality_level_3 + " " + sublocality_level_2 + " " + area + " " + locality;
+    return { "city": city, "area": area, "locality": locality, "state": state, "country": country, 'pinCode': pinCode, "addressLine1":addressLine1 ,"addressLine2":addressLine2};
+}
 function getLatLng(place, zoom) {
     var address = { 'address': place };
 
     callGeoCoderApi(address).then(function (data) {
-        loadMap(data.lat, data.lng, zoom);
+        var lat = data.result.geometry.location.lat();
+        var lng = data.result.geometry.location.lng();
+        loadMap(lat, lng, zoom);
     });
 
     //return { lat: result.lat, lng: result.lng };
@@ -143,25 +212,7 @@ function callGeoCoderApi(type) {
     geocoder.geocode(type, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[0]) {
-                for (var i = 0; i < results[0].address_components.length; i++) {
-                    for (var b = 0; b < results[0].address_components[i].types.length; b++) {
-
-                        if (results[0].address_components[i].types[b] == "sublocality_level_1") {
-                            area = results[0].address_components[i];
-
-                        }
-
-                        if (results[0].address_components[i].types[b] == "administrative_area_level_2") {
-                            city = results[0].address_components[i];
-                            break;
-                        }
-                    }
-                }
-                if (draggable)
-                    fillInAddressToTextBox(results[0].address_components, results[0].formatted_address);
-                lat = results[0].geometry.location.lat();
-                lng = results[0].geometry.location.lng();
-                var obj = { city: city, area: area, lat: lat, lng: lng };
+                var obj = { 'result': results[0] };
                 defer.resolve(obj);
 
             } else {
@@ -183,10 +234,9 @@ function fillInAddress(autocomplete) {
     console.log(place.geometry.location.lng());
     for (var component in componentForm) {
         document.getElementById(component).value = '';
-        if (component != "administrative_area_level_2" && component != "administrative_area_level_1" && component != "country" && component != "postal_code")
-        {
+        if (component != "administrative_area_level_2" && component != "administrative_area_level_1" && component != "country" && component != "postal_code") {
             document.getElementById(component).disabled = false;
-        }        
+        }
         fillInAddressToTextBox(place.address_components);
     }
 }
@@ -226,33 +276,33 @@ function setMarkers(googleMap, locations, callback) {
     var bounds = new google.maps.LatLngBounds();
     infowindow.close();
     $.each(locations, function (index, val) {
-
-        //var lat = val.latitude;
-        //var long = val.longitute;
-
-
-        var lat = val.longitude;
-        var long = val.latitude;
+        var lat = val.latitude;
+        var long = val.longitude;
         latlngset = new google.maps.LatLng(lat, long);
 
         var marker = new google.maps.Marker({
             map: map,
-            position: latlngset
+            position: latlngset,
+            animation: google.maps.Animation.DROP
         });
-        //  map.setCenter(marker.getPosition());
-        marker.setMap(map)
 
-        var content = val.name;
+        if(index === 0)
+        map.setCenter(marker.getPosition());
+       // marker.setMap(map)
+
+        var content = '<div><strong>' + val.name + '</strong><br>' +
+                 val.address.line1 + ',' + val.address.line2 + '<br>' +
+                val.phoneNo + '</div>';
 
         bounds.extend(marker.position);
 
-        google.maps.event.addListener(marker, 'click', (function (marker, infowindow, callback, val) {
+        google.maps.event.addListener(marker, 'click', (function (marker, infowindow, callback, val, content) {
             return function () {
-                infowindow.setContent(val.name);
+                infowindow.setContent(content);
                 infowindow.open(map, marker);
                 callback(val);
             };
-        })(marker, infowindow, callback, val));
+        })(marker, infowindow, callback,val, content));
         if (val.activeCentre) {
             infowindow.open(map, marker);
             infowindow.setContent(content);
@@ -262,7 +312,7 @@ function setMarkers(googleMap, locations, callback) {
 
     });
 
-    map.fitBounds(bounds);
+   // map.fitBounds(bounds);
 }
 function myClick(id, markersLocations) {
     var mapMarkerIndex;

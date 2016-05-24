@@ -1,0 +1,116 @@
+﻿<div class="row row-fluid utilBoxDetails" ng-repeat="order in orders" style="margin-bottom: 20px;">
+    <div class="col-md-12">
+        <div class="col-md-8" ng-if="!review">
+            <h3 class="override-exclude" style="color:black;">Appointment Details(Order Id: #{{ order.invoiceNo}})</h3>
+        </div>
+        <div class="col-md-4" ng-if="order.status =='Pending'">
+            <div class="col-md-6">
+                <div class="vd_info tr" ng-click="openCalender(order)">
+                    <a class="btn vd_btn btn-xs vd_bg-yellow pull-left" title="Edit Order"> <i class="fa fa-pencil append-icon"></i> Edit </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="vd_info tr" ng-click="showDailog(order)">
+                    <a class="btn vd_btn btn-xs vd_bg-yellow" title="Cancel Order"> <i class="fa fa-times append-icon"></i> Cancel </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12" style="margin-bottom: 10px;" ng-if="!review">
+        <div class="order-status col-md-6">
+            <span>Status: &nbsp;</span>
+            <span ng-class="{'vd_bg-yellow':order.status =='Pending','vd_bg-green':order.status =='Success'}"><strong>{{order.status}}</strong></span>
+        </div>
+        <div class="order-status col-md-6">
+            <span>Payment Mode: &nbsp;</span>
+            <span ng-if="order.paymentMode !=='COD'">
+                <span><strong>Online (Paid INR {{order.selectedCentre.totalMMPrice}})</strong></span>
+            </span>
+            <span ng-if="order.paymentMode ==='COD'">
+                <span><strong>Cash On Delivery (INR {{order.selectedCentre.totalMMPrice}})</strong></span>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-12" style="margin-bottom: 10px;">
+        <div class="order-status col-md-6">
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br/>
+            <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
+        </div>
+        <div class="order-status col-md-6">
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br/>
+            <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <div style="min-height: 150px">
+                <h4 class="override-exclude">Centre Details</h4>
+                <div>
+                    <div style="color:black; font-size: 14px; font-weight:bold;">{{order.selectedCentre.name}}</div>
+                    <p style="padding-top:5px; font-size: 14px;margin-bottom: 0;">
+                        {{order.selectedCentre.phoneNo}}<br>
+                        {{order.selectedCentre.address.line1}},<br>
+                        {{order.selectedCentre.address.line2}}
+                    </p>
+                    <p style="margin-bottom:0">
+                        <a target="_blank" href="">
+                            <img src="../../assets/img/ViewMapIcon.gif" alt="MileMates Map Marker">&nbsp;View on Map
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div style="min-height: 150px">
+                <h4 class="override-exclude">Contact Information</h4>
+                <div>
+                    <div style="color:black; font-size: 14px; font-weight:bold;">{{order.userDetails.firstName}}&nbsp;{{order.userDetails.lastName}} </div>
+                    <p style="padding-top:5px; font-size: 14px; margin-bottom: 15px;">
+                        {{order.userDetails.email}}<br>
+                        {{order.userDetails.phoneNo}}<br>
+                        {{order.userDetails.addressLine1}}<br>
+                        {{order.userDetails.addressLine2}}<br>
+                        {{order.userDetails.zipCode}}{{order.userDetails.city}}<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12" style="margin-bottom: 15px;">
+        <div class="col-md-6">
+            <h4 class="override-exclude">Vehicle Details</h4>
+            <strong>
+                {{order.selectedCar.brand}}&nbsp;{{order.selectedCar.year}} &nbsp;
+                {{order.selectedCar.model}}&nbsp;{{order.selectedCar.varient}}
+            </strong>
+        </div>
+        <div class="col-md-6">
+            <h4 class="override-exclude">Service Details</h4>
+            <div ng-repeat="service in order.selectedCentre.serviceDetails" class="row">
+                <div class="col-xs-6 no-padding-right">
+                    <strong>{{service.name}}</strong>
+                </div>
+                <div class="col-xs-6">
+                    INR {{ service.actualPrice }}
+                </div>
+            </div>
+            <div ng-repeat="service in order.selectedServices" ng-if="service.notes" class="row">
+                <div class="col-xs-4 no-padding-right">
+                    <strong>Notes</strong>
+                </div>
+                <div class="col-xs-8">{{service.notes}}</div>
+            </div>
+            <div ng-repeat="service in order.selectedServices" ng-if="service.request" class="row">
+                <div class="col-xs-4 no-padding-right"><strong>Your Request</strong></div>
+                <div class="col-xs-8">{{service.request}}</div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

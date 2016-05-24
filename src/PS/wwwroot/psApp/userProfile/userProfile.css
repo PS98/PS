@@ -1,12 +1,12 @@
 ﻿.header .ps-user-profile-small{
     color:#333;
-    padding:50px 13px 0;
+    padding:44px 13px 0;
     cursor: pointer;
 }
 
 .sticky .ps-user-profile-small{
     color:#333;
-    padding:30px 13px 0;
+    padding:8px 13px 0;
     cursor: pointer;
 }
 
@@ -42,7 +42,7 @@
    background: no-repeat;
    background-size:cover;  
    border-radius: 150px;
-   margin-top: -15px;
+   margin-top: -5px;
 }
 
 .drpdwnLogin {
@@ -88,7 +88,7 @@
 
 .dropdown 
 {
-   padding-top: 10px;
+   padding-top: 5px;
 }
 
 .modal-left-half

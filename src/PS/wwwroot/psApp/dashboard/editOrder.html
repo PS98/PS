@@ -1,0 +1,48 @@
+﻿<div>
+    <div class="row">
+    </div>
+    <div class="row dashboard">
+        <div class="col-sm-4">
+            <div class="option" ng-class="car-option-active">
+                <div>Current Pick-Up</div>
+                {{editOrder.selectedAppointment.pickUpDate.day}} {{editOrder.selectedAppointment.pickUpDate.time}}
+            </div><br/>
+            <div class="option alert-success" ng-class="car-option-active" ng-click="togglePickUp()" ng-if="changedDate.pickUpDate.time">
+                <div>Updated Pick-Up</div>
+                {{changedDate.pickUpDate.day}} {{ changedDate.pickUpDate.time}}
+            </div>
+        </div>
+        <div class="col-sm-4" style="font-size: 20px;">
+            Order Id: #{{editOrder.invoiceNo}}
+        </div>
+        <div class="col-sm-4 bottom-padding10 top-padding10">
+
+            <div class="pull-right">
+                <div class="option" ng-class="car-option-active">
+                    <div>Current Drop-Off</div>
+                    {{editOrder.selectedAppointment.dropOffDate.day}} {{editOrder.selectedAppointment.dropOffDate.time}}
+                </div>
+                <br/>
+                <div class="option alert-success" ng-class="car-option-active" ng-click="toggleDropOff()" ng-if="changedDate.dropOffDate.time">
+                    <div>Updated Drop-Off</div>
+                    {{changedDate.dropOffDate.day}} {{ changedDate.dropOffDate.time}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row editOrder">
+        <div class="col-xs-12 pull-left" ng-show="showPickUpCalendar || showDropCalendar">
+            <button type="button" class="btn btn-primary pull-left" ng-class="!disablePrevBtn ? 'btn-effect' : ''" ng-click="nextDates('prev')" ng-disabled="disablePrevBtn"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Pre</button>
+            <button type="button" class="btn btn-primary btn-effect pull-right" ng-click="nextDates('next')" ng-disabled="disableNextBtn">Next<i class="fa fa-chevron-right" style="padding-left:5px;"></i><i class="fa fa-chevron-right"></i></button>
+        </div>
+        <div class="car-selection-container no-border" ng-show="showPickUpCalendar">
+            <div class="calendar-header col-xs-6 col-xs-offset-4"> Please choose new Pick-Up Time</div>
+            <calendar-directive data="centreWorkingHours" update="editPickupDate(selectedDateTime)"></calendar-directive>
+        </div>
+        <div class="car-selection-container" ng-show="showDropCalendar">
+            <div class="calendar-header col-xs-6 col-xs-offset-4"> Please choose new Drop-off Time</div>
+            <calendar-directive data="availablePickUpTime" update="editDropDate(selectedDateTime)"></calendar-directive>
+        </div>
+    </div>
+    </div>

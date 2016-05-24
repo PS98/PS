@@ -1,11 +1,11 @@
 ﻿<div class="user-address">
     <div class="row top-padding10">
         <div class="col-md-6">
-            <div ng-show="userSelectedPickUp">
-                <div class="form-group">
+            <div ng-show="pickUp">
+                <!--<div class="form-group">
                     <label for="autocompleteTextBox"> Start typing your address</label>
                     <input class="form-control" id="formatted_address" placeholder="Start typing your address" type="text" ng-model="userSelectedService.userDetails.formattedAddress" />
-                </div>
+                </div>-->
                 <div class="form-group">
                     <label for="sublocality_level_2" class="">ADDRESS LINE 1</label>
                     <input class="form-control" id="sublocality_level_2" placeholder="address line 1" ng-model="userSelectedService.userDetails.addressLine1" />
@@ -29,7 +29,7 @@
 
                 <div class="form-group col-xs-6">
                     <label for="postal_code">Zip code</label>
-                    <input class="form-control" id="postal_code" placeholder="zip code" disabled="disabled" ng-model="userSelectedService.userDetails.zipCode" />
+                    <input class="form-control" id="postal_code" placeholder="zip code" disabled="disabled" ng-model="userSelectedService.userDetails.pinCode" />
                 </div>
             </div>
             <div>
@@ -62,8 +62,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div id="googleMap" class="address-map" ng-show="userSelectedPickUp"></div>
+        <div class="col-md-6 margin-top10" ng-if="pickUp">
+            <img ng-src="{{mapUrl}}" alt="Your Address ">
         </div>
     </div>
 </div>
@@ -78,7 +78,7 @@
             </div>
             <div class="modal-body collapse-content" id="container">
                 <review-order orders="reviewOrder"></review-order>
-                <div class="row col-md-12">
+                <div class="row col-md-12 margin-top10">
                     <div style="font-size: 16px;">
                         <div class="col-md-6">
                             <i class="fa fa-check-circle" ng-click="payNow = !payNow" ng-class="{selected : payNow}"></i>
@@ -93,9 +93,9 @@
             </div>
             <div class="modal-footer" style="margin-top: 20px;">
                 <div style="text-align: left; display: block;">
-                    *By clicking on Submit Order button you agree to the <a style="cursor:pointer;" ng-click="orderProcessingTC('https://localhost:44380/OrderProcessingTerms', 'Order Processing T&C')">Order Processing T&C</a>.
+                    *By clicking on Submit Order button you agree to the <a style="cursor:pointer;" ng-click="orderProcessingTC('https://www.milemates.com/OrderProcessingTerms', 'Order Processing T&C')">Order Processing T&C</a>.
                     <div style="display: inline-block; float: right;">
-                        <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal" ng-click="orderSubmit()">Submit Order</button>
+                        <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal" ng-click="orderProcess()">Submit Order</button>
                         <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal">Edit</button>
                     </div>
                 </div>

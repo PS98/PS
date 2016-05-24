@@ -8,6 +8,7 @@
   "dependencies": {
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
@@ -15,7 +16,8 @@
     "MongoDB.Driver.Core": "2.0.0-rc0",
     "MongoDB.Bson": "2.0.0-rc0",
     "mongocsharpdriver": "2.2.0",
-    "ionic": "1.2.3"
+    "ionic": "1.2.3",
+    "System.Device.Location.Portable": "1.0.0"
   },
 
   "commands": {

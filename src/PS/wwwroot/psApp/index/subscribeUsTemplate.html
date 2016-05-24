@@ -1,0 +1,49 @@
+﻿<div class="ct-mediaSection ct-mediaSection--desktop" data-height="300" data-type="video" data-bg-image-mobile="../assets/img/bg-04-mobile.jpg" style="min-height: 300px;">
+    <div class="ct-mediaSection-video embed-responsive embed-responsive-16by9">
+        <img src="../../assets/img/bits.gif" alt="bits" style="width: 100%;" />
+    </div>
+    <div class="ct-u-displayTable" style="height: 300px;">
+        <div class="ct-mediaSection-inner">
+            <div class="container">
+                <form class="form-inline ct-newsletter" name="subForm" ng-submit="subscribe()">
+                    <div class="form-group">
+                        <div class="input-group">
+                            
+                            <input type="text" class="form-control ct-newsletter-name" id="rname" name="rname" placeholder="Your Name" ng-model="subName" ng-class="{'bckgrnd-clr': (subForm.rname.$error.pattern || subForm.rname.$dirty || subForm.rname.$error.minlength || subForm.rname.$error.maxlength),'bckgrnd-color-default' : (!subForm.rfirstname.$error.pattern && !subForm.rfirstname.$error.minlength && !subForm.rfirstname.$error.maxlength && !subForm.rfirstname.$error.required)}" ng-minlength="2" ng-maxlength="20" ng-pattern="/^[A-z][A-z]*$/" required>
+                            <input type="text" class="form-control ct-newsletter-email" placeholder="Your Email Address" name="remail" ng-model="subEmail" ng-class="{'bckgrnd-clr': (subForm.remail.$dirty || subForm.remail.$error.pattern) ,'bckgrnd-color-default' : (!subForm.remail.$error.email && !subForm.remail.$error.required && !subForm.remail.$error.pattern)} " ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" required>
+                            <button type="submit" class="btn ct-newsletter-button" data-loading-text="Subscribing...." ng-disabled="subForm.$invalid">Subscribe to newsletter</button>            
+                            </div>
+                         </div>
+                    <div id="subscribeModal" class="modal fade" role="dialog" style="z-index:9999">
+                        <div class="modal-dialog modal-lg">
+
+                            <!-- Modal content-->
+                            <div class="modal-content subscribeModal">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title" style="text-align:center;">Subscription Details</h4>
+                                </div>
+                                <div class="modal-body collapse-content" id="container">
+
+                                    <div class="subscriptionMessage"></div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary btn-effect pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+</div>

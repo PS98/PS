@@ -1,0 +1,37 @@
+﻿<div id="wrapper">
+    <div class="block-title">
+        <div class="block-title__inner section-bg section-bg_second">
+            <div class="bg-inner">
+                <div class="decor-1-header center-block"></div>
+                <ol class="breadcrumb">
+                    <li><a href="/" title="Car Servicing Online">Home</a></li>
+                    <li class="active">Order Processing Terms & Condition</li>
+                </ol>
+            </div><!-- end bg-inner -->
+        </div><!-- end block-title__inner -->
+    </div><!-- end block-title -->
+</div>
+<div class="section_default section-bg-2 wow bounceInRight" data-wow-duration="2s">
+    <section>
+        <div class="container">
+           <div class="row" style="padding-top: 50px;">
+                    <div class="col-md-12" ng-repeat="tc in optcList">
+                        <h3 class="ui-title-inner"><i class="decor-3 fa fa-caret-right"></i>{{tc.heading}}</h3>
+                        <div class="decor-1 decor-1_mod-c"></div>
+                        <div ng-repeat="desc in tc.desc">
+                            <p>{{desc.text}}</p>
+                            <ul ng-repeat="listItem in desc.list">
+                                <li>{{listItem.text}}</li>
+                            </ul>
+                            <p></p>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+    </section>
+    <!-- end section_mod-d -->
+</div>
+<!-- end section_default -->

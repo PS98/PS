@@ -3,34 +3,37 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.Attributes;
+using PS.Services;
 
 namespace PS.Models
 {
+    [BsonIgnoreExtraElements]
     public class OrderDetails
     {
-        public static int orderCount = 0;
+        public static int OrderCount = 0;
 
         public OrderDetails()
         {
-            orderCount++;
+            OrderCount++;
             var date = DateTime.Now;
-            InvoiceNo = orderCount.ToString() + date.ToString("MM") + date.ToString("dd");
+            InvoiceNo = "MM" + MongoRepository.RandomNumber(5) + date.ToString("MM") + date.ToString("dd");
         }
         [JsonIgnore]
-        public MongoDB.Bson.ObjectId _id { get; set; }
+        public MongoDB.Bson.ObjectId Id { get; set; }
         public string PaymentMode { get; set; }
         [JsonIgnore]
         public string PaymentId { get; set; }
         [JsonIgnore]
         public string PaymentRequestId { get; set; }
         [JsonIgnore]
-        public PaymentValidateResponseModel PaymentResponse { get; set; }        
-        public Centre selectedCentre { get; set; }
+        public PaymentValidateResponseModel PaymentResponse { get; set; }
+        public ServiceCentreViewModel SelectedCentre { get; set; }
         public string InvoiceNo { get; set; }
-        public List<Service> selectedServices { get; set; }
-        public CarDetails selectedCar { get; set; }
-        public Appointment selectedAppointment { get; set; }
-        public User userDetails { get; set; }
+        public List<Service> SelectedServices { get; set; }
+        public CarDetails SelectedCar { get; set; }
+        public Appointment SelectedAppointment { get; set; }
+        public User UserDetails { get; set; }
         public string Status { get; set; }
     }
 
@@ -38,35 +41,45 @@ namespace PS.Models
     //{
     //    public List<Service> service { get; set; }
     //}
-
+    [BsonIgnoreExtraElements]
     public class Service
     {
         public string Name { get; set; }
         public List<Questions> Questions { get; set; }
-        
+        [BsonIgnoreIfNull]
+        public string Request { get; set; }
+        [BsonIgnoreIfNull]
+        public string Notes { get; set; }
     }
 
-
+    [BsonIgnoreExtraElements]
     public class CarDetails
     {
         public string Brand { get; set; }
         public string Model { get; set; }
-        public string year { get; set; }
+        public string Year { get; set; }
         public string Varient { get; set; }
     }
-
+    [BsonIgnoreExtraElements]
     public class Appointment
     {
-        public AppointmentDetails dropOffDate { get; set; }
-        public AppointmentDetails pickUpDate { get; set; }
+        public AppointmentDetails DropOffDate { get; set; }
+        public AppointmentDetails PickUpDate { get; set; }
+        public PickUpDetails PickUpDetails { get; set; }
     }
-
+    [BsonIgnoreExtraElements]
     public class AppointmentDetails
     {
-        public string day { get; set; }
-        public string time { get; set; }
+        public string Day { get; set; }
+        public string Time { get; set; }
     }
-
+    [BsonIgnoreExtraElements]
+    public class PickUpDetails
+    {
+        public bool IsPickUp { get; set; }
+        public string Type { get; set; }
+    }
+    [BsonIgnoreExtraElements]
     public class User
     {
         public string FirstName { get; set; }

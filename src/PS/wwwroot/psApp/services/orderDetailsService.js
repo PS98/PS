@@ -12,6 +12,9 @@
     }
     var _submitOrder = function (payment_id, payment_request_id, response) {
         orderDetails = psDataServices.getSelectedService();
+        if (payment_id != "") {
+            orderDetails = $localStorage.userSelectionData;
+        }
         var deferred = $q.defer();
         orderDetails.PaymentId = payment_id;
         orderDetails.PaymentRequestId = payment_request_id;
@@ -23,6 +26,7 @@
             method: "POST",
             data: data
         }).then(function (result) {
+            $localStorage.userSelectionData = "";
             submittedOrder = result.data.result;
             deferred.resolve(result.data);
         }, function (error) {
@@ -35,7 +39,7 @@
         orderDetails = psDataServices.getSelectedService();
 
         var deferred = $q.defer();
-        $http.post("/api/Auth/ProcessPayment?name=" + orderDetails.userDetails.userName + "&purpose=" + "MileMates Service Payment" + "&amount=" + orderDetails.selectedCentre.totalPrice + "&email=" + orderDetails.userDetails.email + "&phone=" + orderDetails.userDetails.phoneNo + "&send_email=" + false + "&send_sms=" + false)
+        $http.post("/api/Auth/ProcessPayment?name=" + orderDetails.userDetails.userName + "&purpose=" + "MileMates Service Payment" + "&amount=" + orderDetails.selectedCentre.totalMMPrice + "&email=" + orderDetails.userDetails.email + "&phone=" + orderDetails.userDetails.phoneNo + "&send_email=" + false + "&send_sms=" + false)
          .then(function (result) {
              //Success
              deferred.resolve(result.data);

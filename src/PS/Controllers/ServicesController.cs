@@ -98,7 +98,7 @@ namespace PS.Controllers
                     model.Status = "Pending";
                     repo.insertDocument("orders", "Invoice", model);
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Status = 0, Result = model });
+                    return Json(new { Status = 0, Result = model.InvoiceNo });
                     
                 }
                 catch (Exception ex)

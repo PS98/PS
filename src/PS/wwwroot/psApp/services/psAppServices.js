@@ -1,24 +1,23 @@
 ﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", "$localStorage", function ($http, $q, $localStorage) {
-    var selectedCar, selectedService, serviceNameList;
-    var userServiceData = { selectedCar: {}, selectedServices: {}, selectedCentre: {}, selectedAppointment: {}, userDetails: {}};
+    var selectedCar, selectedService, centreDetails = {},serviceNameList;
+    var userServiceData = { selectedCar: {}, selectedServices: {},  selectedAppointment: {}, userDetails: {}, userAddress: {}, selectedCentre : {} };
     angular.extend(userServiceData.userDetails, $localStorage.userDetails);
     
     var _getSelectedService = function () {
         return userServiceData;
     }
-    var _setSelectedCarAndService = function (car, job,centre,appointment,user) {
+    var _setSelectedCarAndService = function (car, job) {
         selectedCar = car;
         selectedService = job;
         userServiceData.selectedCar = car;
         userServiceData.selectedServices = job;
-       // userServiceData.selectedCentre = centre;
-      //  userServiceData.selectedAppointment = appointment;
     }
     var _setSelectedServiceName = function(servicesName) {
         serviceNameList = servicesName;
     }
     var _setSelectedAppointment = function (appointment) {
-        userServiceData.selectedAppointment = appointment;
+        userServiceData.selectedAppointment.pickUpDate = appointment.pickUpDate;
+        userServiceData.selectedAppointment.dropOffDate = appointment.dropOffDate;
     }
     var _setPaymentMode = function (mode) {
         userServiceData.PaymentMode = mode;
@@ -30,8 +29,32 @@
         userServiceData.userDetails = user;
         $localStorage.userDetails = user;
     }
-    var _setSelectedCentre = function (centre) {
-        userServiceData.selectedCentre = centre;
+    var _getuserAddress = function () {
+        return userServiceData.userAddress;
+    }
+    var _setuserAddress = function (details) {
+        userServiceData.userAddress = details;
+        angular.extend(userServiceData.userDetails, details);
+        //$localStorage.userAddress = details;
+        // $localStorage.userAddress.lat = $localStorage.userData.lat;
+        //  $localStorage.userAddress.lng = $localStorage.userData.lng;
+    }
+    var _setCentreDetails = function (centre) {
+        centreDetails = centre;
+        if(centre)
+        userServiceData.selectedCentre = centre.selectedCentre;
+    }
+    var _getCentreDetails = function () {
+        return centreDetails;
+    }
+    var _getSelectedCentre = function () {
+        return userServiceData.selectedCentre;
+    }
+    var _getPickUpDetails = function () {
+        return userServiceData.pickUpDetails;
+    }
+    var _setPickUpDetails = function (pickUpDetails) {
+        return userServiceData.selectedAppointment.pickUpDetails = pickUpDetails;
     }
     var _getAllCarCollection = function () {
      return  $http.get("/api/car");
@@ -53,7 +76,7 @@
     }
     var _getServiceCentreList = function (city, area) {
         var serviceList = serviceNameList;
-        var data = { 'City': city, 'Area': area, 'Name': serviceList, 'Model': selectedCar.model, 'Type': selectedCar.varient }
+        var data = { 'City': city, 'Area': area, 'Name': serviceList, 'Model': selectedCar.model, 'Type': selectedCar.varient, "Latitude": $localStorage.userData.lat, "Longitude": $localStorage.userData.lng }
         return $http(
         {
             url: "/api/ServiceCentre/centerlist",
@@ -88,11 +111,11 @@
 
     }
 
-    var _saveCentreDetails = function (centreDetails) {
+    var _saveCentreDetails = function (centreData) {
         var list = [];
-        list.push(centreDetails);
+        list.push(centreData);
         var servicecs = {"Name":"", "Petrol":"","Diesel":""}
-        var data = { "Area": centreDetails.Area, "Centres": list }
+        var data = { "Area": centreData.Area, "Centres": list }
         return $http(
        {
            url: "/api/ServiceCentre/save",
@@ -100,7 +123,10 @@
            data: data
        });
     }
-
+    var _resetAll = function() {
+        userServiceData = { selectedCar: {}, selectedServices: {}, selectedAppointment: {}, userDetails: {}, userAddress: {}, selectedCentre: {} };
+        angular.extend(userServiceData.userDetails, $localStorage.userDetails);
+    }
     return {
         getAllCarColletion: _getAllCarCollection,
         getCarType: _getCarType,
@@ -112,14 +138,21 @@
         setSelectedCarAndService: _setSelectedCarAndService,
         getSelectedService: _getSelectedService,
         setSelectedServiceName: _setSelectedServiceName,
-        setSelectedCentre: _setSelectedCentre,
+        setCentreDetails: _setCentreDetails,
+        getCentreDetails: _getCentreDetails,
+        getSelectedCentre: _getSelectedCentre,
         setSelectedAppointment: _setSelectedAppointment,
         setPaymentMode:_setPaymentMode,
         getuserDetails: _getuserDetails,
-        setuserDetails:_setuserDetails,
+        setuserDetails: _setuserDetails,
+        getuserAddress: _getuserAddress,
+        setuserAddress: _setuserAddress,
         setUserPreference:_setUserPreference,
         geMockData: _getMockData,
-        saveCentreDetails: _saveCentreDetails
+        saveCentreDetails: _saveCentreDetails,
+        setPickUpDetails: _setPickUpDetails,
+        getPickUpDetails: _getPickUpDetails,
+        resetAll: _resetAll
 }
           
     

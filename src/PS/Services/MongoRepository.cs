@@ -153,10 +153,10 @@ namespace PS.Services
             FilterDefinition<OrderDetails> filter;
             if (status.Equals("Success"))
             {
-                filter = Builders<OrderDetails>.Filter.Where(x => x.userDetails.Email == email && (x.Status == status || x.Status == "Cancelled"));
+                filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email && (x.Status == status || x.Status == "Cancelled"));
             }
             else
-                filter = Builders<OrderDetails>.Filter.Where(x => x.userDetails.Email == email && (x.Status == status));
+                filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email && (x.Status == status));
             var collection = _database.GetCollection<OrderDetails>("Invoice");
             var documentList = collection.Find(filter).ToListAsync().Result;
             return documentList;
@@ -173,7 +173,7 @@ namespace PS.Services
             UpdateDocumentWithFilter<OrderDetails>(filterDic, updateDic, collection);
 
             // get remaining pending order list
-            var filter = Builders<OrderDetails>.Filter.Where(x => x.userDetails.Email == email && (x.Status == "Pending"));
+            var filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email && (x.Status == "Pending"));
             var documentList = collection.Find(filter).ToListAsync().Result;
             return documentList;
         }
@@ -185,14 +185,14 @@ namespace PS.Services
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-    public string GenerateNewID()
+    public string GenerateNewId()
         {
             var randomNumber = RandomNumber(4);
             var date = DateTime.Now;
             return randomNumber + date.ToString("MM") + date.ToString("dd");
         }
 
-        public void changeAppointmentDate(string invoiceNo, Appointment newAppointment)
+        public void ChangeAppointmentDate(string invoiceNo, Appointment newAppointment)
         {
             var collection = _database.GetCollection<OrderDetails>("Invoice");
             var filter = Builders<OrderDetails>.Filter.Eq("InvoiceNo", invoiceNo);
