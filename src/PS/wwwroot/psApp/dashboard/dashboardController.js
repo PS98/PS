@@ -132,36 +132,40 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService, psOrd
     getOrderOnStatus("Success");
     $scope.showDailog = function (order) {
         $scope.modalShown = true;
+        $scope.showInformation = false;
+        $scope.overlayMessage = undefined;
         $("#modalOverlay").modal('toggle');
         $scope.cancelledOrder = order;
     }
     $scope.cancelOrder = function () {
         $scope.modalShown = false;
+        ;
         psOrderDetailsService.cancelOrder($scope.cancelledOrder.invoiceNo, $scope.cancelledOrder.userDetails.email).then(function (data) {
             $scope.pendingOrders = data;
             getOrderOnStatus("Success");
         }, function () {
             alert("error");
-        })
+        });
     }
     $scope.changeDateAndTime = function (editOrder) {
 
 
         psOrderDetailsService.editDateAndTime(editOrder.invoiceNo, $scope.changedDate).
-                        then(function (data) {
-                            if (data.status == 0) {
-                                    editOrder.selectedAppointment.dropOffDate = $scope.changedDate.dropOffDate;
-                                    editOrder.selectedAppointment.pickUpDate = $scope.changedDate.pickUpDate;
-                            }
-                            $scope.overlayMessage = data.result;
-                            $scope.showInformation = true;
-                            $timeout(function () {
-                                $("#modalOverlay").modal('toggle');
-                            }, 200);
-
-                        }, function () {
-                            alert("error");
-                        })
+            then(function (data) {
+                if (data.status === 0) {
+                    editOrder.selectedAppointment.dropOffDate = $scope.changedDate.dropOffDate;
+                    editOrder.selectedAppointment.pickUpDate = $scope.changedDate.pickUpDate;
+                }
+                $scope.overlayMessage = data.result;
+                $scope.showInformation = true;
+                $timeout(function () {
+                    $("#modalOverlay").modal('toggle');
+                }, 200);
+                $scope.changedDate = {};
+            }, function () {
+                alert("error");
+                $scope.changedDate = { "pickUpDate": {}, "dropOffDate": {} };
+            });
 
     }
 

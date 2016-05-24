@@ -5,29 +5,31 @@
         </div>
         <div class="col-xs-4 pull-left">
             <button type="button" class="btn btn-primary pull-left" ng-class="!disablePrevBtn ? 'btn-effect' : ''" ng-click="nextDates('prev')" ng-disabled="disablePrevBtn"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Days</button>
-            <button type="button" class="btn btn-primary btn-effect pull-right" ng-click="nextDates('next')">Days<i class="fa fa-chevron-right" style="padding-left:5px;"></i><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="btn btn-primary btn-effect pull-right" ng-click="nextDates('next')" ng-disabled="disableNextBtn">Days<i class="fa fa-chevron-right" style="padding-left:5px;"></i><i class="fa fa-chevron-right"></i></button>
         </div>
     </div>
-    <div class="row">
+    <div class="row dashboard">
         <div class="col-sm-4">
-            <div class="car-option" ng-class="car-option-active">
+            <div class="option" ng-class="car-option-active">
                 <div>Current Pick-Up</div>
                 {{editOrder.selectedAppointment.pickUpDate.day}}  {{editOrder.selectedAppointment.pickUpDate.time}}
             </div><br />
-            <div class="car-option" ng-class="car-option-active">
-                <div>Current Drop-Off</div>
-                {{editOrder.selectedAppointment.dropOffDate.day}}  {{editOrder.selectedAppointment.dropOffDate.time}}
+            <div class="option alert-success" ng-class="car-option-active" ng-click="togglePickUp()" ng-if="changedDate.pickUpDate.time">
+                <div>Updated Pick-Up</div>
+                {{changedDate.pickUpDate.day}} {{ changedDate.pickUpDate.time}}
             </div>
         </div>
         <div class="col-sm-8 bottom-padding10 top-padding10">
+
             <div class="pull-right">
-                <div class="car-option" ng-class="car-option-active" ng-click="togglePickUp()" ng-if="changedDate.pickUpDate.time">
-                    <div>Updated Pick-Up</div>
-                    {{changedDate.pickUpDate.day}}  {{ changedDate.pickUpDate.time}}
-                </div><br />
-                <div class="car-option" ng-class="car-option-active" ng-click="toggleDropOff()" ng-if="changedDate.dropOffDate.time">
+                <div class="option" ng-class="car-option-active">
+                    <div>Current Drop-Off</div>
+                    {{editOrder.selectedAppointment.dropOffDate.day}}  {{editOrder.selectedAppointment.dropOffDate.time}}
+                </div>
+               <br/>
+                <div class="option alert-success" ng-class="car-option-active" ng-click="toggleDropOff()" ng-if="changedDate.dropOffDate.time">
                     <div>Updated Drop-Off</div>
-                   {{changedDate.dropOffDate.day}}  {{ changedDate.dropOffDate.time}}
+                    {{changedDate.dropOffDate.day}} {{ changedDate.dropOffDate.time}}
                 </div>
             </div>
 

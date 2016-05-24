@@ -33,12 +33,14 @@
     </div>
     <div class="col-md-12" style="margin-bottom: 10px;">
         <div class="order-status col-md-6">
-            <span>DropOff Date &amp; Time: &nbsp;</span><br />
-            <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br/>
+            <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
         </div>
         <div class="order-status col-md-6">
-            <span>Pickup Date &amp; Time: &nbsp;</span><br />
-            <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br/>
+            <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
         </div>
     </div>
     <div class="col-md-12">
@@ -49,7 +51,7 @@
                     <div style="color:black; font-size: 14px; font-weight:bold;">{{order.selectedCentre.name}}</div>
                     <p style="padding-top:5px; font-size: 14px;margin-bottom: 0;">
                         {{order.selectedCentre.phoneNo}}<br>
-                        {{order.selectedCentre.address.line1}}<br>
+                        {{order.selectedCentre.address.line1}},<br>
                         {{order.selectedCentre.address.line2}}
                     </p>
                     <p style="margin-bottom:0">
@@ -70,7 +72,10 @@
                     <div style="color:black; font-size: 14px; font-weight:bold;">{{order.userDetails.firstName}}&nbsp;{{order.userDetails.lastName}} </div>
                     <p style="padding-top:5px; font-size: 14px; margin-bottom: 15px;">
                         {{order.userDetails.email}}<br>
-                        Phone:&nbsp;{{order.userDetails.phoneNo}}<br>
+                        {{order.userDetails.phoneNo}}<br>
+                        {{order.userDetails.addressLine1}}<br>
+                        {{order.userDetails.addressLine2}}<br>
+                        {{order.userDetails.zipCode}}{{order.userDetails.city}}<br>
                     </p>
                 </div>
             </div>
