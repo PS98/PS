@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "$timeout", "psDataServices", "psLoginService", "psOrderDetailsService",
-function ($scope, $localStorage, $timeout, psDataServices, psLoginService, psOrderDetailsService) {
+﻿angular.module("psApp").controller("dashboardController", ["$scope", "$localStorage", "$timeout","$location", "psDataServices", "psLoginService", "psOrderDetailsService",
+function ($scope, $localStorage, $timeout,$location, psDataServices, psLoginService, psOrderDetailsService) {
 
     $scope.userData = {}; $scope.changedDate = { pickUpDate: {}, dropOffDate: {} };
     $scope.hideCalendar = false;
@@ -14,7 +14,7 @@ function ($scope, $localStorage, $timeout, psDataServices, psLoginService, psOrd
     $scope.oldLastName = $scope.userData.lastName;
 
     $scope.isEdit = false;
-
+    $scope.tab = $location.$$hash;    
 
 
     $scope.updateProfile = function () {
