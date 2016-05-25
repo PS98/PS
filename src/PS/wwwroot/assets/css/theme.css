@@ -381,7 +381,7 @@ img.pull-left {
 	text-align: center;
 }
 .block-title__inner:after {
-	background-image: url('../media/bg/11.jpg');
+	background-image: url('/assets/media/bg/11.jpg');
 }
 .block-title__inner {
 	padding-top: 120px;
@@ -411,7 +411,7 @@ img.pull-left {
 	margin-bottom: 30px;
 	padding-top: 20px;
 	padding-bottom: 10px;
-	background-image: url('../media/bg/texture-1.gif');
+	background-image: url('/assests/media/bg/texture-1.gif');
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 .sorting__inner {
@@ -512,7 +512,7 @@ img.pull-left {
 .wrap-nav-tabs {
 	margin-bottom: 15px;
 	padding: 14px 0 12px;
-	background-image: url('../media/bg/texture-1.gif');
+	background-image: url('/assests/media/bg/texture-1.gif');
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -886,7 +886,7 @@ img.pull-left {
 .list-services:hover {
 	margin-bottom: 0;
 	border-bottom: 5px solid #ddd;
-	background: url('../media/bg/texture-1.gif');
+	background: url('/assests/media/bg/texture-1.gif');
 }
 .list-services:hover:after {
 	content: none;
@@ -1331,7 +1331,7 @@ img.pull-left {
 	padding-top: 17px;
 	padding-right: 25px;
 	padding-bottom: 18px;
-	background-image: url('../media/bg/texture-1.gif');
+	background-image: url('/assests/media/bg/texture-1.gif');
 	overflow: hidden;
 }
 .car-details__title {
@@ -1863,7 +1863,7 @@ transform: rotate(360deg);
 }
 .section_mod-a:before {
 	bottom: -30px;
-	background: url('../img/background01.png') no-repeat bottom center;
+	background: url('/assets/img/background01.png') no-repeat bottom center;
 }
 .section_mod-a .ui-title-inner {
 	margin-top: 0;
@@ -1873,21 +1873,21 @@ transform: rotate(360deg);
 }
 
 .section_mod-c:after {
-	background-image: url('../img/1.jpg');
+	background-image: url('/assets/img/1.jpg');
 }
 
 .section_mod-e:after {
-	background-image: url('../media/bg/5.jpg');
+	background-image: url('/assests/media/bg/5.jpg');
 }
 
 .section_mod-e:before {
 	bottom: -30px;
-	background: url('../img/page_heading_bg.jpg') no-repeat 0 100%;
+	background: url('/assests/img/page_heading_bg.jpg') no-repeat 0 100%;
 }
 
 .section_mod-q:before {
 	bottom: 0;
-	background: url('../img/Fixed-Price-Servicing.jpg') no-repeat 0 100%;
+	background: url('/assests/img/Fixed-Price-Servicing.jpg') no-repeat 0 100%;
 }
 
 .section_mod-i {
