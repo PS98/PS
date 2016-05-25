@@ -1,10 +1,7 @@
 ﻿.service a{
     text-decoration:none;
 }
-.modal-body {
-    max-height: calc(100vh - 210px);
-    overflow-y: auto;
-}
+
 .service li {
     list-style: none;
 }
