@@ -40,7 +40,7 @@ namespace PS.Services
             sbPostData.AppendFormat("&mobiles={0}", mobileNumber);
             sbPostData.AppendFormat("&message={0}", msg);
             sbPostData.AppendFormat("&sender={0}", senderId);
-            sbPostData.AppendFormat("&route={0}", "default");
+            sbPostData.AppendFormat("&route={0}", "4");
 
             try
             {

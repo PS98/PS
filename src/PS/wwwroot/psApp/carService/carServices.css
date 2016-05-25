@@ -74,7 +74,7 @@
     display: inline-block;
     width: 20px;
     height: 16px;
-    background: url(../../assets/img/star-icon.png) center center no-repeat;
+    background: url(/assets/img/star-icon.png) center center no-repeat;
 }
 .b-step {
     display: block;
@@ -281,7 +281,7 @@
     overflow: hidden;
 }
 .cd-form .search {
-    background: url("/assets/icons/cd-icon-search.svg") no-repeat 16px center;
+    background: url("/assets/icons/cd-icon-search.png") no-repeat 16px center;
 }
 .cd-form input, .cd-form textarea, .cd-form select, .cd-form label {
     font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
@@ -366,7 +366,7 @@
     display: block;
     width: 42px;
     height: 42px;
-    background-image: url("../carService/icons/icon-common-services.svg");
+    background-image: url("/psApp/carService/icons/icon-common-services.png");
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0 auto;
@@ -374,31 +374,34 @@
     margin-top: 28px;
 }
 .icon-common-services-selected {
-    background-image: url("../carService/icons/icon-common-services-blue.svg");
+    background-image: url("/psApp/carService/icons/icon-common-services-blue.png");
 }
 .icon-common-services-selected:hover {
-    background-image: url("../carService/icons/icon-common-services-blue.svg");
+    background-image: url("/psApp/carService/icons/icon-common-services-blue.png");
 }
 .icon-repair-maintenance {
-    background-image: url("../carService/icons/icon-repair.svg");
+    background-image: url("/psApp/carService/icons/icon-repair.png");
 }
 .icon-repair-maintenance-selected {
-    background-image: url("../carService/icons/icon-repair-blue.svg");
+    background-image: url("/psApp/carService/icons/icon-repair-blue.png");
 }
 .icon-diagnostics {
-    background-image: url("../carService/icons/icon-diagnostics.svg");
+    background-image: url("/psApp/carService/icons/icon-diagnostics.png");
 }
 .icon-diagnostics-selected {
-    background-image: url("../carService/icons/icon-diagnostics-blue.svg");
+    background-image: url("/psApp/carService/icons/icon-diagnostics-blue.png");
 }
 .icon-scheduled-maintenance {
-    background-image: url("../carService/icons/icon-maintenance.svg");
+    background-image: url("/psApp/carService/icons/icon-maintenance.png");
 }
 .icon-scheduled-maintenance-selected {
-    background-image: url("../carService/icons/icon-maintenance-blue.svg");
+    background-image: url("/psApp/carService/icons/icon-maintenance-blue.png");
 }
 .icon-describe {
-    background-image: url("../carService/icons/icon-describe.svg");
+    background-image: url("/psApp/carService/icons/icon-describe.png");
+}
+.icon-describe-selected {
+    background-image: url("/psApp/carService/icons/icon-describe-blue.png");
 }
 .select-service-box ul {
     list-style: none;
@@ -469,7 +472,7 @@
     display: block;
     width: 22px;
     height: 22px;
-    background-image: url("../carService/icons/icon-service-plus.svg");
+    background-image: url("/psApp/carService/icons/icon-service-plus.png");
     background-repeat: no-repeat;
     margin-right: 13px;
 }
@@ -540,7 +543,7 @@
     display: inline-block;
     width: 30px;
     height: 20px;
-    background-image: url("../booking/icons/icon-remove-service.svg");
+    background-image: url("/psApp/booking/icons/icon-remove-service.png");
     background-repeat: no-repeat;
     background-position: center center;
 }
