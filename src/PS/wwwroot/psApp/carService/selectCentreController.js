@@ -108,6 +108,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
              $('#areaDropDown').setJelect("");
             $scope.noCentreMatch = true;
             removeCentreDetails();
+            $scope.loadCity($scope.city);
         }
     }
 
@@ -155,6 +156,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             $('#cityDropDown').setJelect("");
             $('#areaDropDown').setJelect("");
             $scope.area = "Select Area";
+            $scope.loadCity("India",4);
         }
 
     }
