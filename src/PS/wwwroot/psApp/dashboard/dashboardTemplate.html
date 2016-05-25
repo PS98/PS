@@ -19,8 +19,8 @@
                     <div class="col-md-3 col-sm-4">
                         <div class="tab">
                             <ul class="nav nav-stacked">
-                                <li class="active">
-                                    <a data-toggle="tab" href="#booking" aria-expanded="true" title="My Appointments">
+                                <li class="">
+                                    <a data-toggle="tab" href="#booking" aria-expanded="false" title="My Appointments">
                                         <span class="curve"><i class="fa fa-pencil-square-o"></i></span><span class="curve-text">My Appointments</span>
                                     </a>
                                 </li>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-9 col-sm-8">
                         <div class="tab-content">
-                            <div id="booking" class="tab-pane fade in active">
+                            <div id="booking" class="tab-pane fade">
                                 <h4>Appointments</h4>
                                 <div class="content-box" ng-if="(pendingOrders || []).length == 0">
                                     <i class="fa fa-anchor" aria-hidden="true"></i>
@@ -60,16 +60,16 @@
                                     </div>
                                     <order-details orders="successOrders"></order-details>
                                 </div>
-                                <div id="settings" class="fade">
+                                <div id="settings" class="tab-pane fade no-padding-left">
 
                                     <div class="tabs"> 
                                         <ul class="nav nav-tabs">
-                                            <li class="active"> <a data-toggle="tab" href="#profile-tab" title="User Profile"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
-                                            <li class=""> <a data-toggle="tab" href="#password-tab" title="Change User Password"> Change Password <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                            <li id="liProfile" class=""> <a data-toggle="tab" ng-click="loadTab('profile')" title="User Profile"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                                            <li class=""> <a data-toggle="tab" ng-click="loadTab()" title="Change User Password"> Change Password <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
                                             <!--<li class=""> <a data-toggle="tab" href="#vehicle-tab" title="Add A Vehicle"> Add A Vehicle <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>-->
                                         </ul>
                                         <div class="tab-content">
-                                            <div id="profile-tab" class="tab-pane active">
+                                            <div id="profile-tab" class="tab-pane">
                                                 <div class="vd_btn tr" ng-click="isEdit = !isEdit">
                                                     <a class="btn vd_btn btn-xs vd_bg-yellow" title="Edit User Profile"> <i class="fa fa-pencil append-icon"></i> Edit </a>
                                                 </div>
