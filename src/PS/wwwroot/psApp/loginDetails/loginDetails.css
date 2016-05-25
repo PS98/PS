@@ -51,10 +51,10 @@
     color: #7f7f7f;
     text-decoration: none;
 }
-.buttonFacebook{background:#3b5998 url(https://static.canva.com/static/images/facebook_button.svg) no-repeat 50%;background-position:18px,left;padding-left:40px}
+.buttonFacebook{background:#3b5998 url(../../assets/img/facebook_button.png) no-repeat 50%;background-position:18px,left;padding-left:40px}
 .buttonFacebook:active,.buttonFacebook:focus{border-color:#1c2b4c}
 .buttonFacebook:hover{background-color:#4562a1}
-.buttonGoogle{background:#dd4b39 url(https://static.canva.com/static/images/google_button.svg) no-repeat 50%;background-position:15px,left;padding-left:40px}
+.buttonGoogle{background:#dd4b39 url(../../assets/img/google_button.png) no-repeat 50%;background-position:15px,left;padding-left:40px}
 .buttonGoogle:active,.buttonGoogle:focus{border-color:#b12a1f}
 .buttonGoogle:hover{background-color:#ee503d}
 .buttonBlock{display:block;width:100%}
