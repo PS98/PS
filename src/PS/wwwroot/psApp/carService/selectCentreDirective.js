@@ -59,18 +59,26 @@ angular.module("psApp").directive("selectCentre", function () {
                         alert("An unknown error occurred.");
                         break;
                 }
-                var geoType = { 'address': "India" };
+                loadMapForArea("India",4);
+            }
+
+            function loadMapForArea(place,zoom) {
+                var geoType = { 'address': place };
                 callGeoCoderApi(geoType).then(function (data) {
                     var lat = data.result.geometry.location.lat();
                     var lng = data.result.geometry.location.lng();
                     latLng = new google.maps.LatLng(lat, lng);
                     var mapProp = {
                         center: latLng,
-                        zoom: 4,
+                        zoom: 12,
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     };
-                    var map = new google.maps.Map(document.getElementById("mapholder"), mapProp);
-                    scope.centreDetails.map = map;
+                    if (zoom) {
+                        mapProp.zoom = zoom;
+                    }
+                    scope.centreDetails.map = new google.maps.Map(document.getElementById("mapholder"), mapProp);
+                  //  var map =
+                   // scope.centreDetails.map = map;
                 });
             }
             scope.selectUserLocation = function (isUserLocated) {
@@ -172,9 +180,8 @@ angular.module("psApp").directive("selectCentre", function () {
                     zoom: 14,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-                var map = new google.maps.Map(document.getElementById("mapholder"), mapProp);
+                scope.centreDetails.map= new google.maps.Map(document.getElementById("mapholder"), mapProp);
                 //  var marker = new google.maps.Marker({ position: latLng, map: map, title: "here" });
-                scope.centreDetails.map = map;
             };
             scope.loadUserMap = function () {
                     if (scope.area !== userCurrentAddress.area) {
@@ -205,6 +212,9 @@ angular.module("psApp").directive("selectCentre", function () {
                     $("#areaDropDown").setJelect(oldVal);
                 }
             });
+            scope.loadCity=function(city) {
+                loadMapForArea(city);
+            }
         },
         controller: "selectCentreController"
     }
