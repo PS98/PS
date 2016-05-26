@@ -1,1075 +1,565 @@
-
-  {
-    "Area": "Pimple Gurav",
-    "NearAreas": ["Pimple Saudagar", "Kasarwadi", "Sangvi"],
-    "Centres": [
-      {
-        "_id": "90450512",
-        "Name": "Admin centre",
-        "Address": {
-          "line1": "hjkhkk",
-          "line2": "gjhgjgjh"
-        },
-        "PhoneNo": "7899997888",
-        "Longitude": "73.80392074584961",
-        "Latitude": "18.598764754774557",
-        "Review": null,
-        "ServiceDetails": [
-          {
-            "Name": "Lite Car Care",
-            "Radius": null,
-            "Petrol": [
-              {
-                "ModelList": [
-                  "1-Series",
-                  "3-Series",
-                  "5-Series"
-                ],
-                "MilematePrice": 3000,
-                "ActualPrice": 5000,
-                "ServiceCentrePrice": 2500
-              }
-            ],
-            "Diesel": [ ],
-            "CNG": [ ],
-            "Electric": [ ]
-          }
-        ],
-        "Services": [
-          "Tyre Repair",
-          "Card Payment",
-          "Pick & Drop"
-        ]
-      },
-      {
-        "_id": "90450512",
-        "Name": "Sahil Car Care",
-        "Address": {
-          "line1": "Infront of Swaraj Garden",
-          "line2": "nashik road"
-        },
-        "PhoneNo": "7899997888",
-        "Longitude": "73.8080620765686",
-        "Latitude": "18.598846102960476",
-        "Review": null,
-        "ServiceDetails": [
-          {
-            "Name": "Lite Car Care",
-            "Radius": null,
-            "Petrol": [
-              {
-                "ModelList": [
-                  "1-Series",
-                  "3-Series",
-                  "5-Series"
-                ],
-                "MilematePrice": 2000,
-                "ActualPrice": 3000,
-                "ServiceCentrePrice": 1800
-              }
-            ],
-            "Diesel": [ ],
-            "CNG": [ ],
-            "Electric": [ ]
-          }
-        ],
-        "Services": [
-          "Tyre Repair",
-          "Card Payment",
-          "Pick & Drop"
-        ]
-      },
-      {
-        "_id": "52100513",
-        "Name": "ABC Corp",
-        "Address": {
-          "line1": "new road",
-          "line2": "near datt Mandir"
-        },
-        "PhoneNo": "123456987",
-        "Longitude": "73.79832029342651",
-        "Latitude": "18.59860205828615",
-        "Review": null,
-        "ServiceDetails": [
-          {
-            "Name": "Lite Car Care",
-            "Radius": null,
-            "Petrol": [
-              {
-                "ModelList": [
-                  "1-Series",
-                  "3-Series",
-                  "M3",
-                  "i8",
-                  "X1",
-                  "X3",
-                  "X5 M",
-                  "Z4",
-                  "X6 M",
-                  "X6"
-                ],
-                "MilematePrice": 2000,
-                "ActualPrice": 3000,
-                "ServiceCentrePrice": 1500
-              }
-            ],
-            "Diesel": [ ],
-            "CNG": [ ],
-            "Electric": [ ]
-          }
-        ],
-        "Services": null
-      },
-      {
-        "_id": "57870513",
-        "Name": "DEF Corp",
-        "Address": {
-          "line1": "old road",
-          "line2": "near abc Mandir"
-        },
-        "PhoneNo": "798764658798",
-        "Longitude": "73.80636692047119",
-        "Latitude": "18.610864870248303",
-        "Review": null,
-        "ServiceDetails": [
-          {
-            "Name": "Lite Car Care",
-            "Radius": null,
-            "Petrol": [
-              {
-                "ModelList": [
-                  "Bolero",
-                  "Scorpio",
-                  "Quanto",
-                  "TUV300",
-                  "Verito",
-                  "XUV500"
-                ],
-                "MilematePrice": 600,
-                "ActualPrice": 800,
-                "ServiceCentrePrice": 500
-              }
-            ],
-            "Diesel": [
-              {
-                "ModelList": [
-                  "Bolero",
-                  "Scorpio",
-                  "Quanto",
-                  "TUV300",
-                  "Verito",
-                  "XUV500"
-                ],
-                "MilematePrice": 2000,
-                "ActualPrice": 3000,
-                "ServiceCentrePrice": 2500
-              }
-            ],
-            "CNG": [ ],
-            "Electric": [ ]
-          }
-        ],
-        "Services": null
-      },
-      {
-        "_id": "24380513",
-        "Name": "GHI Corp",
-        "Address": {
-          "line1": "test1",
-          "line2": "test1asfaf"
-        },
-        "PhoneNo": "798764658798",
-        "Longitude": "73.82181644439697",
-        "Latitude": "18.6134678078517",
-        "Review": null,
-        "ServiceDetails": [
-          {
-            "Name": "Essential Car Care",
-            "Radius": null,
-            "Petrol": [
-              {
-                "ModelList": [
-                  "Bolero",
-                  "Scorpio",
-                  "Quanto",
-                  "TUV300",
-                  "Verito",
-                  "XUV500"
-                ],
-                "MilematePrice": 3000,
-                "ActualPrice": 3500,
-                "ServiceCentrePrice": 2500
-              }
-            ],
-            "Diesel": [ ],
-            "CNG": [ ],
-            "Electric": [ ]
-          }
-        ],
-        "Services": null
-      }
-    ]
-  }
-
-
-
-{
-    "_id" : ObjectId("56ff8a13f47380f1ab96d860"),
-    "Area" : "Wakad",
-    "Centres" : [ 
+{ 
+    "_id" : ObjectId("5745fa733f0222277ccebfb7"), 
+    "Area" : "Pimple Saudagar", 
+    "Centres" : [
         {
-            "Name" : "AB Corp",
+            "_id" : "14750526", 
+            "Name" : "Platinum Car Service", 
             "Address" : {
-                "line1" : "line1",
-                "line2" : "line2"
-            },
-            "PhoneNo" : "0987654321",
-            "Longitude" : "18.590589063881723",
-            "Latitude" : "73.76061916351318",
-            "ServiceDetails" : [ 
+                "line1" : "Near Govind Garden Square", 
+                "line2" : "Nashik Phata Road"
+            }, 
+            "PhoneNo" : "7276550720", 
+            "Longitude" : "", 
+            "Latitude" : "", 
+            "Review" : null, 
+            "Services" : null, 
+            "ServiceDetails" : [
                 {
-                    "Name" : "Essential Car Care",
-                    "PriceDetails" : [ 
+                    "Name" : "Lite Car Care", 
+                    "Radius" : null, 
+                    "Petrol" : [
                         {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
+                            "ModelList" : [
+                                "Alto 800", 
+                                "Omni", 
+                                "Eeco", 
+                                "Alto K10", 
+                                "Celerio", 
+                                "Wagon R", 
+                                "i10", 
+                                "Grand i10", 
+                                "Indigo", 
+                                "Indica", 
+                                "Bolt", 
+                                "Zest", 
+                                "Venture", 
+                                "Xenon", 
+                                "Sumo Gold", 
+                                "Verito", 
+                                "TUV300", 
+                                "Xylo", 
+                                "Quanto"
+                            ], 
+                            "MilematePrice" : NumberInt(500), 
+                            "ActualPrice" : NumberInt(100), 
+                            "ServiceCentrePrice" : NumberInt(400)
                         }, 
                         {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
+                            "ModelList" : [
+                                "Ritz", 
+                                "Swift", 
+                                "Eon", 
+                                "Xcent", 
+                                "Elite i20", 
+                                "i20 Active", 
+                                "4S Fluidic Verna", 
+                                "Creta", 
+                                "KUV100", 
+                                "Thar", 
+                                "Scorpio", 
+                                "XUV500"
+                            ], 
+                            "MilematePrice" : NumberInt(550), 
+                            "ActualPrice" : NumberInt(100), 
+                            "ServiceCentrePrice" : NumberInt(450)
                         }, 
                         {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
+                            "ModelList" : [
+                                "Baleno", 
+                                "Ertiga", 
+                                "Gyspy", 
+                                "Ciaz", 
+                                "S-Cross", 
+                                "Santa Fe", 
+                                "Elantra", 
+                                "Etios Cross", 
+                                "Innova", 
+                                "Camry", 
+                                "Corolla Altis", 
+                                "Etios Liva", 
+                                "Land Cruiser", 
+                                "Fortuner", 
+                                "Etios ", 
+                                "Prius", 
+                                "Safari", 
+                                "Winger", 
+                                "Aria"
+                            ], 
+                            "MilematePrice" : NumberInt(600), 
+                            "ActualPrice" : NumberInt(100), 
+                            "ServiceCentrePrice" : NumberInt(500)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Nano", 
+                                "e2o"
+                            ], 
+                            "MilematePrice" : NumberInt(450), 
+                            "ActualPrice" : NumberInt(100), 
+                            "ServiceCentrePrice" : NumberInt(350)
                         }
+                    ], 
+                    "Diesel" : [
+                        {
+                            "ModelList" : [
+                                "Ritz", 
+                                "Swift", 
+                                "Eon", 
+                                "Xcent", 
+                                "Elite i20", 
+                                "i20 Active", 
+                                "4S Fluidic Verna", 
+                                "Creta", 
+                                "Eon", 
+                                "Xcent", 
+                                "Elite i20", 
+                                "i20 Active", 
+                                "4S Fluidic Verna", 
+                                "Creta", 
+                                "KUV100", 
+                                "Thar", 
+                                "Scorpio", 
+                                "XUV500"
+                            ], 
+                            "MilematePrice" : NumberInt(550), 
+                            "ActualPrice" : NumberInt(100), 
+                            "ServiceCentrePrice" : NumberInt(450)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Alto 800", 
+                                "Alto K10", 
+                                "Omni", 
+                                "Wagon R", 
+                                "Celerio", 
+                                "Eeco", 
+                                "i10", 
+                                "Grand i10", 
+                                "Indigo", 
+                                "Indica", 
+                                "Bolt", 
+                                "Zest", 
+                                "Venture", 
+                                "Xenon", 
+                                "Sumo Gold", 
+                                "Verito", 
+                                "TUV300", 
+                                "Xylo", 
+                                "Quanto"
+                            ], 
+                            "MilematePrice" : NumberInt(500), 
+                            "ActualPrice" : NumberInt(100), 
+                            "ServiceCentrePrice" : NumberInt(400)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Baleno", 
+                                "Ertiga", 
+                                "Gyspy", 
+                                "Ciaz", 
+                                "S-Cross", 
+                                "Santa Fe", 
+                                "Elantra", 
+                                "Etios Cross", 
+                                "Innova", 
+                                "Camry", 
+                                "Corolla Altis", 
+                                "Etios Liva", 
+                                "Land Cruiser", 
+                                "Fortuner", 
+                                "Etios ", 
+                                "Prius", 
+                                "Safari", 
+                                "Winger", 
+                                "Aria"
+                            ], 
+                            "MilematePrice" : NumberInt(600), 
+                            "ActualPrice" : NumberInt(100), 
+                            "ServiceCentrePrice" : NumberInt(500)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Nano", 
+                                "e2o"
+                            ], 
+                            "MilematePrice" : NumberInt(450), 
+                            "ActualPrice" : NumberInt(100), 
+                            "ServiceCentrePrice" : NumberInt(350)
+                        }
+                    ], 
+                    "CNG" : [
+
+                    ], 
+                    "Electric" : [
+
                     ]
                 }, 
                 {
-                    "Name" : "Full Car Care",
-                    "PriceDetails" : [ 
+                    "Name" : "Essential Car Care", 
+                    "Radius" : null, 
+                    "Petrol" : [
                         {
-                            "ModelList" : [ 
+                            "ModelList" : [
+                                "Alto 800", 
+                                "Ciaz", 
+                                "Omni", 
+                                "Wagon R", 
+                                "Ritz", 
+                                "Eeco", 
+                                "Alto K10", 
+                                "Baleno", 
+                                "Ertiga", 
+                                "S-Cross", 
+                                "Swift", 
+                                "Gyspy", 
+                                "Celerio", 
+                                "Eon", 
+                                "Elite i20", 
+                                "i10", 
+                                "Grand i10", 
+                                "Xcent", 
+                                "i20 Active", 
+                                "4S Fluidic Verna", 
+                                "Amaze", 
+                                "Jazz", 
+                                "Brio", 
+                                "KUV100", 
+                                "e2o"
+                            ], 
+                            "MilematePrice" : NumberInt(3700), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(3500)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Eon", 
+                                "Elite i20", 
+                                "i10", 
+                                "Grand i10", 
+                                "Xcent", 
+                                "i20 Active", 
+                                "4S Fluidic Verna", 
+                                "Creta", 
+                                "Elantra", 
+                                "Santa Fe", 
+                                "Etios Cross", 
+                                "Innova", 
+                                "Camry", 
+                                "Corolla Altis", 
+                                "Etios Liva", 
+                                "Land Cruiser", 
+                                "Fortuner", 
+                                "Etios ", 
+                                "Prius", 
+                                "Safari", 
+                                "Sumo Gold", 
+                                "Xenon"
+                            ], 
+                            "MilematePrice" : NumberInt(4700), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(4500)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Nano", 
+                                "Indica", 
+                                "Bolt", 
+                                "Indigo", 
+                                "Zest"
+                            ], 
+                            "MilematePrice" : NumberInt(2700), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(2500)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Aria", 
+                                "XUV500", 
                                 "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 7000
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 5000
-                                }
-                            ]
+                                "Scorpio", 
+                                "Thar", 
+                                "Xylo"
+                            ], 
+                            "MilematePrice" : NumberInt(5200), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(5000)
                         }, 
                         {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 3500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 3700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 3300
+                            "ModelList" : [
+                                "Verito", 
+                                "TUV300", 
+                                "Xylo", 
+                                "Quanto"
+                            ], 
+                            "MilematePrice" : NumberInt(4200), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(4000)
                         }
+                    ], 
+                    "Diesel" : [
+                        {
+                            "ModelList" : [
+                                "Alto 800", 
+                                "Ciaz", 
+                                "Omni", 
+                                "Wagon R", 
+                                "Ritz", 
+                                "Eeco", 
+                                "Alto K10", 
+                                "Baleno", 
+                                "Ertiga", 
+                                "S-Cross", 
+                                "Swift", 
+                                "Gyspy", 
+                                "Celerio", 
+                                "Eon", 
+                                "Elite i20", 
+                                "i10", 
+                                "Grand i10", 
+                                "Xcent", 
+                                "i20 Active", 
+                                "4S Fluidic Verna", 
+                                "Amaze", 
+                                "Jazz", 
+                                "Brio"
+                            ], 
+                            "MilematePrice" : NumberInt(4800), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(4600)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Creta", 
+                                "Elantra", 
+                                "Santa Fe", 
+                                "Etios Cross", 
+                                "Innova", 
+                                "Camry", 
+                                "Corolla Altis", 
+                                "Etios Liva", 
+                                "Land Cruiser", 
+                                "Fortuner", 
+                                "Etios ", 
+                                "Prius", 
+                                "Safari", 
+                                "Sumo Gold", 
+                                "Xenon"
+                            ], 
+                            "MilematePrice" : NumberInt(5800), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(5600)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Nano", 
+                                "Indica", 
+                                "Bolt", 
+                                "Indigo", 
+                                "Zest"
+                            ], 
+                            "MilematePrice" : NumberInt(3500), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(3300)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Aria", 
+                                "XUV500", 
+                                "Bolero", 
+                                "Scorpio", 
+                                "Thar", 
+                                "Xylo"
+                            ], 
+                            "MilematePrice" : NumberInt(6300), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(6100)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Verito", 
+                                "TUV300", 
+                                "Xylo", 
+                                "Quanto"
+                            ], 
+                            "MilematePrice" : NumberInt(5200), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(5000)
+                        }
+                    ], 
+                    "CNG" : [
+
+                    ], 
+                    "Electric" : [
+
                     ]
                 }, 
                 {
-                    "Name" : "Engine Performance",
-                    "PriceDetails" : [ 
+                    "Name" : "Comprehensive Car Care", 
+                    "Radius" : null, 
+                    "Petrol" : [
                         {
-                            "ModelList" : [ 
+                            "ModelList" : [
+                                "Alto 800", 
+                                "Ciaz", 
+                                "Omni", 
+                                "Wagon R", 
+                                "Ritz", 
+                                "Eeco", 
+                                "Alto K10", 
+                                "Baleno", 
+                                "Ertiga", 
+                                "S-Cross", 
+                                "Swift", 
+                                "Gyspy", 
+                                "Celerio"
+                            ], 
+                            "MilematePrice" : NumberInt(4700), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(4500)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Creta", 
+                                "Elantra", 
+                                "Santa Fe", 
+                                "Mobilio MPV", 
+                                "City", 
+                                "CR-V", 
+                                "Etios Cross", 
+                                "Innova", 
+                                "Camry", 
+                                "Corolla Altis", 
+                                "Etios Liva", 
+                                "Land Cruiser", 
+                                "Fortuner", 
+                                "Etios ", 
+                                "Prius"
+                            ], 
+                            "MilematePrice" : NumberInt(5800), 
+                            "ActualPrice" : NumberInt(300), 
+                            "ServiceCentrePrice" : NumberInt(5500)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "4S Fluidic Verna", 
+                                "Elite i20", 
+                                "i10", 
+                                "Xcent", 
+                                "Eon", 
+                                "i20 Active", 
+                                "Grand i10", 
+                                "Amaze", 
+                                "Jazz", 
+                                "Brio", 
+                                "e2o", 
+                                "Verito", 
+                                "Quanto", 
+                                "KUV100"
+                            ], 
+                            "MilematePrice" : NumberInt(4800), 
+                            "ActualPrice" : NumberInt(300), 
+                            "ServiceCentrePrice" : NumberInt(4500)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "XUV500", 
                                 "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 3300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 3500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 4700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 5000
+                                "Scorpio", 
+                                "Thar", 
+                                "Xylo"
+                            ], 
+                            "MilematePrice" : NumberInt(6200), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(6000)
                         }
-                    ]
-                }, 
-                {
-                    "Name" : "Oil, Filters and Fluids",
-                    "PriceDetails" : [ 
+                    ], 
+                    "Diesel" : [
                         {
-                            "ModelList" : [ 
+                            "ModelList" : [
+                                "Alto 800", 
+                                "Ciaz", 
+                                "Omni", 
+                                "Wagon R", 
+                                "Ritz", 
+                                "Eeco", 
+                                "Alto K10", 
+                                "Baleno", 
+                                "Ertiga", 
+                                "S-Cross", 
+                                "Swift", 
+                                "Gyspy", 
+                                "Celerio"
+                            ], 
+                            "MilematePrice" : NumberInt(5800), 
+                            "ActualPrice" : NumberInt(200), 
+                            "ServiceCentrePrice" : NumberInt(5600)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "Creta", 
+                                "Elantra", 
+                                "Santa Fe", 
+                                "Mobilio MPV", 
+                                "City", 
+                                "CR-V", 
+                                "Etios Cross", 
+                                "Innova", 
+                                "Camry", 
+                                "Corolla Altis", 
+                                "Etios Liva", 
+                                "Land Cruiser", 
+                                "Fortuner", 
+                                "Etios ", 
+                                "Prius"
+                            ], 
+                            "MilematePrice" : NumberInt(6900), 
+                            "ActualPrice" : NumberInt(300), 
+                            "ServiceCentrePrice" : NumberInt(6600)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "4S Fluidic Verna", 
+                                "Elite i20", 
+                                "i10", 
+                                "Xcent", 
+                                "Eon", 
+                                "i20 Active", 
+                                "Grand i10", 
+                                "Amaze", 
+                                "Jazz", 
+                                "Brio", 
+                                "e2o", 
+                                "Verito", 
+                                "Quanto", 
+                                "KUV100"
+                            ], 
+                            "MilematePrice" : NumberInt(5900), 
+                            "ActualPrice" : NumberInt(300), 
+                            "ServiceCentrePrice" : NumberInt(5600)
+                        }, 
+                        {
+                            "ModelList" : [
+                                "XUV500", 
                                 "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 1300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 1500
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2200
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2500
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2700
+                                "Scorpio", 
+                                "Thar", 
+                                "Xylo"
+                            ], 
+                            "MilematePrice" : NumberInt(7400), 
+                            "ActualPrice" : NumberInt(300), 
+                            "ServiceCentrePrice" : NumberInt(7100)
                         }
+                    ], 
+                    "CNG" : [
+
+                    ], 
+                    "Electric" : [
+
                     ]
                 }
             ]
-        }, 
-        {
-            "Name" : "DE Corp",
-            "Address" : {
-                "line1" : " t1 line1",
-                "line2" : "t1 line2"
-            },
-            "PhoneNo" : "1234567890",
-            "Longitude" : "18.593904130132692",
-            "Latitude" : "73.76235723495483",
-            "ServiceDetails" : [ 
-                {
-                    "Name" : "Essential Car Care",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 3300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3050
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 3500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 4700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 5000
-                        }
-                    ]
-                }, 
-                {
-                    "Name" : "Full Car Care",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 5300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3200
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 3500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 3700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 3300
-                        }
-                    ]
-                }, 
-                {
-                    "Name" : "Engine Performance",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
-                        }
-                    ]
-                }
-            ]
-        }, 
-        {
-            "Name" : "GH Corp",
-            "Address" : {
-                "line1" : "t2 line1",
-                "line2" : "t2 line2"
-            },
-            "PhoneNo" : "09876",
-            "Longitude" : "18.5938227795859",
-            "Latitude" : "73.76692771911621",
-            "ServiceDetails" : [ 
-                {
-                    "Name" : "Full Car Care",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
-                        }
-                    ]
-                }, 
-                {
-                    "Name" : "Engine Performance",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
-                        }
-                    ]
-                }, 
-                {
-                    "Name" : "Oil, Filters and Fluids",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
-                        }
-                    ]
-                }
-            ]
-        }, 
-        {
-            "Name" : "JK Corp",
-            "Address" : {
-                "line1" : "t3 line 1",
-                "line2" : "t3 line 2"
-            },
-            "PhoneNo" : "67890",
-            "Longitude" : "18.59662935099407",
-            "Latitude" : "73.76430988311768",
-            "ServiceDetails" : [ 
-                {
-                    "Name" : "Essential Car Care",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
-                        }
-                    ]
-                }, 
-                {
-                    "Name" : "Full Car Care",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
-                        }
-                    ]
-                }, 
-                {
-                    "Name" : "Engine Performance",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
-                        }
-                    ]
-                }, 
-                {
-                    "Name" : "Oil, Filters and Fluids",
-                    "PriceDetails" : [ 
-                        {
-                            "ModelList" : [ 
-                                "Bolero", 
-                                "Scorpio"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "BS4", 
-                                        "S2"
-                                    ],
-                                    "Price" : 2300
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "SLE", 
-                                        "S4"
-                                    ],
-                                    "Price" : 3000
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "Cruze", 
-                                "Go"
-                            ],
-                            "VarientList" : [ 
-                                {
-                                    "Varient" : [ 
-                                        "LT", 
-                                        "A"
-                                    ],
-                                    "Price" : 2500
-                                }, 
-                                {
-                                    "Varient" : [ 
-                                        "LTZ", 
-                                        "D"
-                                    ],
-                                    "Price" : 2700
-                                }
-                            ]
-                        }, 
-                        {
-                            "ModelList" : [ 
-                                "M3", 
-                                "M5"
-                            ],
-                            "Price" : 2300
-                        }
-                    ]
-                }
-            ]
-        }, 
-        {
-            "Name" : "MN Corp",
-            "Address" : {
-                "line1" : "t4 l1",
-                "line2" : "t4 l2"
-            },
-            "PhoneNo" : "54321",
-            "Longitude" : "18.596975084851625",
-            "Latitude" : "73.76126289367676",
-            "ServiceDetails" : []
-        }, 
-        {
-            "Name" : "PQ Corp",
-            "Address" : {
-                "line1" : "t5 l1",
-                "line2" : "t5 l2"
-            },
-            "PhoneNo" : "12345",
-            "Longitude" : "18.594636283305135",
-            "Latitude" : "73.75765800476074",
-            "ServiceDetails" : []
         }
-    ]
+    ], 
+    "NearAreas" : null
 }
