@@ -85,7 +85,7 @@
    };
 
    var _socialCallback = function (data) {
-      
+
        var deferred = $q.defer();
        $http.post("/api/Auth/Success?Code=" + data.code)
         .then(function (result) {

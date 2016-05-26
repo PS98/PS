@@ -283,6 +283,7 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
         psLoginService.socialCallback($location.search())
          .then(function (result) {
              // window.close();
+             $scope.userDetails = {};
                 $scope.userDetails.firstName = result.result.firstName;
                 $scope.userDetails.lastName = result.result.lastName;
                 $scope.userDetails.imageUrl = result.result.link;
