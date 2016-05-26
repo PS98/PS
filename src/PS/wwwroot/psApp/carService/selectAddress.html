@@ -8,10 +8,10 @@
                 </div>-->
                 <div class="form-group">
                     <label for="sublocality_level_2" class="">ADDRESS LINE 1</label>
-                    <input class="form-control" id="sublocality_level_2" placeholder="address line 1" ng-model="userSelectedService.userDetails.addressLine1" />
+                    <input class="form-control" id="sublocality_level_2" name="addressLine1" placeholder="address line 1" ng-model="userSelectedService.userDetails.addressLine1" ng-class="{'bckgrnd-clr': (addressForm.addressLine1.$dirty || addressForm.addressLine1.$error.minlength || addressForm.addressLine1.$error.maxlength),'bckgrnd-color-default' : (!addressForm.addressLine1.$error.minlength && !addressForm.addressLine1.$error.maxlength && !addressForm.addressLine1.$error.required)}" ng-minlength="5" ng-maxlength="50" required />
                     <br />
                     <label for="sublocality_level_1" class="">ADDRESS LINE 2</label>
-                    <input class="form-control" id="sublocality_level_1" placeholder="address line 2" ng-model="userSelectedService.userDetails.addressLine2" />
+                    <input class="form-control" id="sublocality_level_1" name="addressLine2" placeholder="address line 2" ng-model="userSelectedService.userDetails.addressLine2" ng-class="{'bckgrnd-clr': (addressForm.addressLine2.$dirty || addressForm.addressLine2.$error.minlength || addressForm.addressLine2.$error.maxlength),'bckgrnd-color-default' : (!addressForm.addressLine2.$error.minlength && !addressForm.addressLine2.$error.maxlength && !addressForm.addressLine2.$error.required)}" ng-minlength="5" ng-maxlength="50" required />
                 </div>
                 <div class="form-group col-xs-6">
                     <label for="administrative_area_level_2" class="">City</label>
@@ -22,7 +22,7 @@
                     <label for="administrative_area_level_1">State</label>
                     <input class="form-control" id="administrative_area_level_1" placeholder="state" disabled="disabled" ng-model="userSelectedService.userDetails.state" />
                 </div>
-                <div class="form-group col-xs-6">
+                <!--<div class="form-group col-xs-6">
                     <label for="country">Country</label>
                     <input class="form-control" id="country" placeholder="country" disabled="disabled" ng-model="userSelectedService.userDetails.country" />
                 </div>
@@ -30,7 +30,7 @@
                 <div class="form-group col-xs-6">
                     <label for="postal_code">Zip code</label>
                     <input class="form-control" id="postal_code" placeholder="zip code" disabled="disabled" ng-model="userSelectedService.userDetails.pinCode" />
-                </div>
+                </div>-->
             </div>
             <div>
                 <div class="form-group">
@@ -45,11 +45,22 @@
                     <label for="MobileNo"> Mobile No</label>
                     <input class="form-control" id="MobileNo" name="mobile" type="text" ng-model="userSelectedService.userDetails.phoneNo" ng-class="{'bckgrnd-clr': (addressForm.mobile.$error.pattern || addressForm.mobile.$dirty || addressForm.mobile.$error.minlength || addressForm.mobile.$error.maxlength),'bckgrnd-color-default' : (!addressForm.mobile.$error.pattern && !addressForm.mobile.$error.minlength && !addressForm.mobile.$error.maxlength && !addressForm.mobile.$error.required)}" placeholder="Mobile Number" required ng-minlength="10" ng-maxlength="10" ng-pattern="/^([\+([7-9][0-9]{9})$/" />
                 </div>
-
+                <div class="alert alert-danger" role="alert" ng-show="(otpError && !otpSuccess) || (reqError && !reqSuccess)">
+                    <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                    <a href="#" class="close" ng-click="otpReset()" aria-label="close" title="close">&times;</a>
+                    <span class="sr-only">Error:</span>
+                    {{errorMessage}}
+                </div>
+                <div class="alert alert-success" role="alert" ng-show="(otpSuccess && !otpError) || (reqSuccess && !reqError)">
+                    <span class="fa fa-check-circle-o" aria-hidden="true"></span>
+                    <a href="#" class="close" ng-click="otpReset()" aria-label="close" title="close">&times;</a>
+                    <span class="sr-only">Success:</span>
+                    {{successMessage}}
+                </div>
                 <div class="form-group mobile_validation" ng-show="addressForm.mobile.$valid && userSelectedService.userDetails.phoneNo !== oldNumber ">
                     <label for="MobileNo">OTP Code</label>
                     <input type="password" class="form-control" id="addressOtp" name="addressOtp" ng-model="addressOtp" ng-class="{'bckgrnd-clr': (addressForm.addressOtp.$dirty || addressForm.addressOtp.$error.minlength || addressForm.addressOtp.$error.maxlength),'bckgrnd-color-default' : (!addressForm.addressOtp.$error.minlength && !addressForm.addressOtp.$error.maxlength && !addressForm.addressOtp.$error.required)}" placeholder="Enter OTP code here" required ng-minlength="4" ng-maxlength="4" ng-pattern="/^([0-9]{4})$/">
-                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info col-md-offset-9" style="width: 25%; text-align: center;" ng-click="requestOtp(regMobile)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
+                    <button type="button" id="reqotp_btn" class="btn btn-block btn-info {{again ? 'col-md-offset-8' : 'col-md-offset-9'}}" style="width: auto; text-align: center;" ng-click="requestOtp(userSelectedService.userDetails.phoneNo)">{{again ? 'Request OTP Again' : 'Request OTP'}}</button>
                 </div>
                 <div class="form-group">
                     <label for="Email"> Email Address</label>
@@ -58,7 +69,13 @@
 
                 <div class="form-group col-md-12 col-md-offset-2">
                     <button type="button" class="btn btn-primary btn-effect" ui-sref="service.centre"><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Back</button>
-                    <button type="button" class="btn btn-primary btn-effect pull-right" ng-click="ReviewOrder()">Review</button>
+                    <button type="button" class="btn btn-primary pull-right" ng-click="ReviewOrder()"
+                            ng-class="!(addressForm.addressLine1.$invalid || addressForm.addressLine2.$invalid || addressForm.firstName.$invalid || 
+                            addressForm.lastName.$invalid || addressForm.mobile.$invalid || addressForm.email.$invalid) ? 'btn-effect' : ''"
+                            ng-disabled="(addressForm.addressLine1.$invalid || addressForm.addressLine2.$invalid || addressForm.firstName.$invalid || 
+                            addressForm.lastname.$invalid || addressForm.mobile.$invalid || addressForm.email.$invalid)">
+                        Review
+                    </button>
                 </div>
             </div>
         </div>

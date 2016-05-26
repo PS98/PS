@@ -19,7 +19,6 @@ var previousNextBrandDetails = function () {
 	    var brandCaro = $(".brand-carousel.owl-carousel");
 		brandCaro.owlCarousel({
 			autoPlay: true,
-			pagination: false,
 			items : 6,
 			itemsDesktop : [1000,6],
 			itemsDesktopSmall : [900,3],

@@ -23,7 +23,6 @@ var PrevNextFeedbackDetails = function () {
 		feedbackCaro.owlCarousel({
 		    autoPlay: true,
 		    autoplayTimeout: 1000,
-			pagination: false,
 			items : 3,
 			itemsDesktop : [1000,5],
 			itemsDesktopSmall : [900,3],
