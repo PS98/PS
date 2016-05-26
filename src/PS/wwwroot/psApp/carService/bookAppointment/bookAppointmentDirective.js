@@ -23,14 +23,14 @@ angular.module("psApp").directive("bookAppointment", function () {
             $scope.setFiveDay = function (date, time) {
                 var day = date.getDate();
                 var nextDate, centreWorkingHours = [];
-
+             
                 for (var i = 0; i < 8; i++) {
                     var wh = [];
                     var tempDate = new Date(date);
                     tempDate.setDate(day);
                     nextDate = tempDate;
                     var datepart = nextDate.toDateString();
-                    if ($scope.selectedDate.pickUpDate.day == datepart && time) {
+                    if ($scope.selectedDate.pickUpDate.day === datepart && time) {
                         var time1 = time.split(" ");
                         time1 = time1[1] === "AM" ? time1[0] : time1[0] !== 12 ? 12 + parseInt(time1[0]) : time1[0];
                         var index = $scope.timeToDisplay.indexOf(parseInt(time1) + 6);
@@ -39,7 +39,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                         else {
                             $scope.timeToDisplay = [];
                         }
-                    }
+                    } 
                     else {
                         $scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
                     }
@@ -60,14 +60,14 @@ angular.module("psApp").directive("bookAppointment", function () {
                     // if (i === 0) {
 
                     //  }
-                    if (centreWorkingHours.length === 5 || maxDate.toDateString() == datepart) {
+                    if (centreWorkingHours.length === 5 || maxDate.toDateString() === datepart) {
                         break;
                     }
                 }
                 return centreWorkingHours;
             }
             function enableDisableButton(workingHrsList, isPickUpDone) {
-                var nextAvailableDate = new Date();
+                var nextAvailableDate = new Date($scope.selectedDate.pickUpDate.day);
                 if (isPickUpDone) {
                     nextAvailableDate.setDate(parseInt($scope.selectedDate.pickUpDate.day.split(" ")[2]) + 1);
                 }
@@ -180,8 +180,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                 $scope.selectedDate.dropOffDate = {};
                 $scope.selectedDate.pickUpDate.day = dateTime.day;
                 $scope.selectedDate.pickUpDate.time = dateTime.time;
-                var date = new Date();
-                date.setDate(dateTime.day.split(" ")[2]);
+                var date = new Date(dateTime.day);
                 $scope.availablePickUpTime = $scope.setFiveDay(date, dateTime.time);
                 enableDisableButton($scope.availablePickUpTime, true);
                 $scope.showPickUpCalendar = false;
