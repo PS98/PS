@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage","$sessionStorage", "psDataServices","psOrderDetailsService",
-function ($scope, $window, $state, $location, $localStorage,$sessionStorage, psDataServices,psOrderDetailsService) {
+﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$timeout","$localStorage","$sessionStorage", "psDataServices","psOrderDetailsService",
+function ($scope, $window, $state, $location,$timeout, $localStorage,$sessionStorage, psDataServices,psOrderDetailsService) {
     $scope.payNow = true;
     $scope.oldNumber = $localStorage.userDetails ? $localStorage.userDetails.phoneNo : undefined;
     $scope.checkMobileNumber = function () {
@@ -14,29 +14,30 @@ function ($scope, $window, $state, $location, $localStorage,$sessionStorage, psD
 
     $scope.orderProcess = function () {
         $("#ReviewOrder").modal("toggle");
-        if ($scope.payNow) {
-            psDataServices.setPaymentMode("Online");
-               $localStorage.userSelectionData = psDataServices.getSelectedService();
-            $scope.response = psOrderDetailsService.payment()
-                .then(function (result) {
-                    //Success
-                    if (result.status === 0) {
-                        if (result.result != null) {
-                            $window.location.href = result.result.payment_request.longurl;
+        $timeout(function() {
+            if ($scope.payNow) {
+                psDataServices.setPaymentMode("Online");
+                $localStorage.userSelectionData = psDataServices.getSelectedService();
+                $scope.response = psOrderDetailsService.payment()
+                    .then(function(result) {
+                        //Success
+                        if (result.status === 0) {
+                            if (result.result != null) {
+                                $window.location.href = result.result.payment_request.longurl;
+                            }
+                        } else if (result.status === 1 || result.status === 2) {
+                            $scope.reqError = true;
+                            $scope.errorMessage = result.message;
                         }
-                    } else if (result.status === 1 || result.status === 2) {
-                        $scope.reqError = true;
-                        $scope.errorMessage = result.message;
-                    }
-                }, function (error) {
-                    //Error
-                }).finally(function () {
-                });
-        }
-        else {
-            psDataServices.setPaymentMode("COD");
-            $scope.orderSubmit("", "", "");
-        }
+                    }, function(error) {
+                        //Error
+                    }).finally(function() {
+                    });
+            } else {
+                psDataServices.setPaymentMode("COD");
+                $scope.orderSubmit("", "", "");
+            }
+        },200);
     }
 
     $scope.orderSubmit = function (payment_id, payment_request_id, result) {

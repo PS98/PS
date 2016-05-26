@@ -76,7 +76,7 @@
     }
     var _getServiceCentreList = function (city, area) {
         var serviceList = serviceNameList;
-        var data = { 'City': city, 'Area': area, 'Name': serviceList, 'Model': selectedCar.model, 'Type': selectedCar.varient, "Latitude": $localStorage.userData.lat, "Longitude": $localStorage.userData.lng }
+        var data = { 'City': city, 'Area': area, 'Name': serviceList, 'Model': selectedCar.model, 'Type': selectedCar.varient, "Latitude": userServiceData.userAddress.lat, "Longitude": userServiceData.userAddress.lng }
         return $http(
         {
             url: "/api/ServiceCentre/centerlist",

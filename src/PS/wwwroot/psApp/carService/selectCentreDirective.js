@@ -4,8 +4,7 @@ angular.module("psApp").directive("selectCentre", function () {
     return {
         templateUrl: "psApp/carService/selectCentre.html",
         link: function (scope, element) {
-            var userMap, autocomplete, userLocation = {}, tempLocation = {}, userCurrentAddress = {}, marker, userAddressComponent, userLatLng, radius, latLng, isSelectClick;
-            // var userCurrentAddress = userLocation = tempLocation = { "lat": "", "lng": "" };
+            var userMap, autocomplete, tempLocation = {}, userCurrentAddress = {}, marker, userAddressComponent, userLatLng, radius, latLng, isSelectClick;
             var mapOptions = {
                 zoom: 14,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -22,8 +21,16 @@ angular.module("psApp").directive("selectCentre", function () {
                 initialize(latLng);
                 setTimeout(function () {
                     setMarkers(scope.centreDetails.map, scope.centreDetails.centreList, scope.markerClick);
+                    if (scope.centreDetails.cityList.includes(scope.centreDetails.city)) {
+                        scope.city = scope.centreDetails.city;
+                        $('#cityDropDown').setJelect(scope.centreDetails.city);
+                    }
+                    if (scope.centreDetails.areaList.includes(scope.centreDetails.area)) {
+                        scope.area = scope.centreDetails.area;
+                        $('#areaDropDown').setJelect(scope.centreDetails.area);
+                    }
                 }, 20);
-
+              
             }
 
             function getUserscurrentLocation() {
@@ -84,10 +91,13 @@ angular.module("psApp").directive("selectCentre", function () {
             scope.selectUserLocation = function (isUserLocated) {
                 isSelectClick = true;
                 var userCityArea;
-                if (isUserLocated)
+                if (isUserLocated) {
                     latLng = new google.maps.LatLng(userCurrentAddress.lat, userCurrentAddress.lng);
-                else
+                    scope.setUserLocation(userCurrentAddress.lat, userCurrentAddress.lng);
+                } else {
                     latLng = new google.maps.LatLng(tempLocation.lat, tempLocation.lng);
+                    scope.setUserLocation(tempLocation.lat, tempLocation.lng);
+                }
 
                 initialize(latLng);
                 if (userAddressComponent && userAddressComponent.address_components.length > 3) {
@@ -107,7 +117,6 @@ angular.module("psApp").directive("selectCentre", function () {
                         scope.centreDetails.userAddress.lat = tempLocation.lat;
                         scope.centreDetails.userAddress.lng = tempLocation.lng;
                         scope.MapCallback(userCityArea.city, userCityArea.area);
-                        userLocation = tempLocation;
                         if (isUserLocated)
                             userCurrentAddress.area = userCityArea.area;
                     });
@@ -126,7 +135,7 @@ angular.module("psApp").directive("selectCentre", function () {
                 autocomplete = new google.maps.places.Autocomplete(document.getElementById("users_formatted_address"), { types: ["geocode"] });
                 radius = radius ? radius : 30;
                 var circle = new google.maps.Circle({
-                    center: userLocation,
+                    center: tempLocation,
                     radius: radius
                 });
                 autocomplete.setBounds(circle.getBounds());
@@ -137,7 +146,7 @@ angular.module("psApp").directive("selectCentre", function () {
 
 
                 google.maps.event.addListener(marker, "dragend", function () {
-                    scope.setUserLocation(marker.position.lat(), marker.position.lng());
+                  //  scope.setUserLocation(marker.position.lat(), marker.position.lng());
                     tempLocation.lat = marker.position.lat();
                     tempLocation.lng = marker.position.lng();
                     userLatLng = new google.maps.LatLng(tempLocation.lat, tempLocation.lng);
@@ -168,7 +177,6 @@ angular.module("psApp").directive("selectCentre", function () {
                 // }
                 tempLocation.lat = place.geometry.location.lat();
                 tempLocation.lng = place.geometry.location.lng();
-                scope.setUserLocation(userLocation.lat, userLocation.lng);
                 marker.setPosition(place.geometry.location);
                 marker.setVisible(true);
                 userAddressComponent = place;
