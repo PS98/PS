@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage","$sessionStorage", "psDataServices","psOrderDetailsService",
-function ($scope, $window, $state, $location, $localStorage,$sessionStorage, psDataServices,psOrderDetailsService) {
+﻿angular.module("psApp").controller("selectAddressController", ["$scope", "$window", "$state", "$location", "$localStorage", "$sessionStorage", "psDataServices", "psOrderDetailsService", "psLoginService", "$timeout",
+function ($scope, $window, $state, $location, $localStorage, $sessionStorage, psDataServices, psOrderDetailsService, psLoginService, $timeout) {
     $scope.payNow = true;
     $scope.oldNumber = $localStorage.userDetails ? $localStorage.userDetails.phoneNo : undefined;
     $scope.checkMobileNumber = function () {
@@ -69,18 +69,71 @@ function ($scope, $window, $state, $location, $localStorage,$sessionStorage, psD
     }
 
     $scope.ReviewOrder = function () {
-        $scope.reviewOrder = [];
-        var order = psDataServices.getSelectedService();
-        $scope.review = true;
-        $scope.custRequest = false;
-        $scope.reviewOrder.push(order);
-        $.each(order.selectedServices, function (i, job) {
-            if (job.addText) {
-                $scope.custRequest = true;
-                $scope.request = job.request;
+        if ($scope.otp == $scope.addressOtp) {
+            $scope.otp = undefined;
+            if ($scope.addressOtp)
+            $('.mobile_validation').hide();
+                $scope.reviewOrder = [];
+                var order = psDataServices.getSelectedService();
+                $scope.review = true;
+                $scope.custRequest = false;
+                $scope.reviewOrder.push(order);
+                $.each(order.selectedServices, function (i, job) {
+                    if (job.addText) {
+                        $scope.custRequest = true;
+                        $scope.request = job.request;
+                    }
+                });
+                $("#ReviewOrder").modal();
             }
-        });
-        $("#ReviewOrder").modal();
+            else {
+                $scope.otpError = true;
+                $scope.otpSuccess = false;
+                $scope.errorMessage = "You entered incorrect OTP.";
+                $timeout(function () {
+                    $scope.otpReset();
+                }, 3000);
+            }
+    }
+
+    $scope.requestOtp = function (Mobile) {
+        psLoginService.mobileVerification(Mobile)
+            .then(function (result) {
+                //Success
+                if (result.status == 0) {
+                    $scope.otp = result.result;
+                    console.log($scope.otp);
+                    $scope.again = true;
+                    $scope.reqSuccess = true;
+                    $scope.reqError = false;
+                    $scope.successMessage = result.message;
+                    $timeout(function () {
+                        $scope.otpReset();
+                    }, 3000);
+                } else if (result.status == 1 || result.status == 2) {
+                    $scope.reqError = true;
+                    $scope.reqSuccess = false;
+                    $scope.errorMessage = result.message;
+                    $timeout(function () {
+                        $scope.otpReset();
+                    }, 3000);
+                }
+            }, function (error) {
+                //Error
+                $scope.reqError = true;
+                $scope.reqSuccess = false;
+                $scope.errorMessage = error.message;
+                $timeout(function () {
+                    $scope.otpReset();
+                }, 3000);
+            });
+    }
+
+    $scope.otpReset = function () {
+        $scope.otpSuccess = false;
+        $scope.otpError = false;
+        $scope.reqSuccess = false;
+        $scope.reqError = false;
     }
 
 }]);
