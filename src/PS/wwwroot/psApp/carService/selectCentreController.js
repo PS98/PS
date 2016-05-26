@@ -57,18 +57,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         psDataServices.getServiceCentreCity().success(function (data) {
             $scope.centreDetails.cityList = data;
         });
-    else {
-        $scope.city = "Select City";
-        $scope.area = "Select Area";
-        if ($scope.centreDetails.cityList.includes($scope.centreDetails.city)) {
-            $scope.city = $scope.centreDetails.city;
-            $('#cityDropDown').setJelect($scope.centreDetails.city);
-        }
-        if ($scope.centreDetails.areaList.includes($scope.centreDetails.area)) {
-            $scope.area = $scope.centreDetails.area;
-            $('#areaDropDown').setJelect($scope.centreDetails.area);
-        }
-    }
+   
     $scope.setUserLocation = function (lat, lng) {
         $localStorage.userData.lat = lat;
         $localStorage.userData.lng = lng;
@@ -130,7 +119,6 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     $scope.changeArea = function () {
         if ($scope.area && $scope.area.toLowerCase() !== "select area") {
             $("#addressOverlay").modal('toggle');
-            $scope.loadUserMap();
         } else {
             removeCentreDetails();
         }
