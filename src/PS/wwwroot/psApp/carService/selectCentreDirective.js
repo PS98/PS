@@ -200,6 +200,7 @@ angular.module("psApp").directive("selectCentre", function () {
 
             $("#addressOverlay").on("shown.bs.modal", function () {
                 isSelectClick = false;
+                scope.loadUserMap();
                 if (scope.area === userCurrentAddress.area) {
                     initialzeUserAddressMap(userCurrentAddress.lat, userCurrentAddress.lng);
                     getFullAddress(userLatLng);

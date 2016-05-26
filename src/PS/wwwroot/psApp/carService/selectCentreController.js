@@ -130,7 +130,6 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     $scope.changeArea = function () {
         if ($scope.area && $scope.area.toLowerCase() !== "select area") {
             $("#addressOverlay").modal('toggle');
-            $scope.loadUserMap();
         } else {
             removeCentreDetails();
         }
