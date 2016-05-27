@@ -17,6 +17,10 @@
 .margin-left15 {
     margin-left: 15px
 }
+.admin .form-control {
+    font-size: 14px;
+    color: black;
+}
 .popover {
     position: absolute;
     top: 0;
@@ -671,7 +675,7 @@ pre                             { margin-bottom:20px; }
 
 /* ANIMATION STYLINGS
 ============================================================================= */
-#service-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
+#service-form            { position:relative; min-height:500px; overflow:hidden; padding:30px; }
 
 /* basic styling for entering and leaving */
 /* left and right added to ensure full width */

@@ -224,6 +224,9 @@ angular.module("psApp").directive("selectCentre", function () {
             scope.loadCity=function(city) {
                 loadMapForArea(city);
             }
+            $("html, body").animate({
+                scrollTop: 50
+            }, 'slow');
         },
         controller: "selectCentreController"
     }
