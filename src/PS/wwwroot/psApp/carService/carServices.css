@@ -17,6 +17,10 @@
 .margin-left15 {
     margin-left: 15px
 }
+.admin .form-control {
+    font-size: 14px;
+    color: black;
+}
 .popover {
     position: absolute;
     top: 0;

@@ -115,7 +115,7 @@
         var list = [];
         list.push(centreData);
         var servicecs = {"Name":"", "Petrol":"","Diesel":""}
-        var data = { "Area": centreData.Area, "Centres": list }
+        var data = { "Area": centreData.Area, "Centres": list, "nearAreas": centreData.nearAreas }
         return $http(
        {
            url: "/api/ServiceCentre/save",
