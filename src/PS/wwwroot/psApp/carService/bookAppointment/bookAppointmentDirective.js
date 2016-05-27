@@ -4,7 +4,9 @@ angular.module("psApp").directive("bookAppointment", function () {
     return {
         templateUrl: "psApp/carService/bookAppointment/bookAppointment.html",
         link: function () {
-
+            $("html, body").animate({
+                scrollTop: 50
+            }, 'slow');
         },
         scope: false,
         controller: ["$scope", "psDataServices", function ($scope, psDataServices) {
