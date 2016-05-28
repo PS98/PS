@@ -58,10 +58,10 @@
         var deferred = $q.defer();
         $http(
             {
-                url: "/api/OrderDetails/order?email="+ $localStorage.userDetails.email+"&status="+ status , method: "GET"
+                url: "/api/OrderDetails/order?email=" + $localStorage.userDetails.email + "&status=" + status, method: "GET", cache: false
             }).then(function (result) {
             //Success
-            deferred.resolve(result.data.result);
+            deferred.resolve(result.data);
         }, function (error) {
             //Error
             deferred.reject(error);
@@ -73,10 +73,10 @@
         var deferred = $q.defer();
         $http(
             {
-                url: "/api/OrderDetails/cancelorder?invoiceNo=" + invoiceNo + "&email=" + email, method: "GET"
+                url: "/api/OrderDetails/cancelorder?invoiceNo=" + invoiceNo + "&email=" + email, method: "GET", cache: false
             }).then(function (result) {
                 //Success
-                deferred.resolve(result.data.result);
+                deferred.resolve(result.data);
             }, function (error) {
                 //Error
                 deferred.reject(error);

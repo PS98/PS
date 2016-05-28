@@ -117,32 +117,42 @@ function ($scope, $localStorage, $timeout,$location, psDataServices, psLoginServ
         $scope.changePassword.newPwd.$dirty = false;
         $scope.changePassword.reNewPwd.$dirty = false;
     }
-    function getOrderOnStatus(status) {
-        psOrderDetailsService.getAllPendingOrder(status).then(function (data) {
+    $scope.getOrderOnStatus = function (status) {
+        psOrderDetailsService.getAllPendingOrder(status).then(function(data) {
             if (status == "Pending")
                 $scope.pendingOrders = data;
             if (status == "Success")
                 $scope.successOrders = data;
-        }, function () {
+            if (status === "All") {
+                if (data.status === 0) {
+                    $scope.pendingOrders = data.result && data.result.length > 0 ? data.result[0] : [];
+                    $scope.successOrders = data.result && data.result.length > 0 ? data.result[1] : [];
+                }
+            }
+        }, function() {
             alert("error");
-        })
+        });
     }
     $scope.modalShown = false;
-    getOrderOnStatus("Pending");
-    getOrderOnStatus("Success");
     $scope.showDailog = function (order) {
         $scope.modalShown = true;
         $scope.showInformation = false;
         $scope.overlayMessage = undefined;
-        $("#modalOverlay").modal('toggle');
         $scope.cancelledOrder = order;
+        $("#modalOverlay").modal('toggle');
     }
     $scope.cancelOrder = function () {
         $scope.modalShown = false;
-        ;
         psOrderDetailsService.cancelOrder($scope.cancelledOrder.invoiceNo, $scope.cancelledOrder.userDetails.email).then(function (data) {
-            $scope.pendingOrders = data;
-            getOrderOnStatus("Success");
+            if (data.status === 0) {
+                $scope.pendingOrders = data.result && data.result.length > 0 ? data.result[0] : [];
+                $scope.successOrders = data.result && data.result.length > 0 ? data.result[1] : [];
+            }
+            $scope.overlayMessage = data.message;
+            $scope.showInformation = true;
+            $timeout(function () {
+                $("#modalOverlay").modal('toggle');
+            }, 500);
         }, function () {
             alert("error");
         });
@@ -160,7 +170,7 @@ function ($scope, $localStorage, $timeout,$location, psDataServices, psLoginServ
                 $scope.showInformation = true;
                 $timeout(function () {
                     $("#modalOverlay").modal('toggle');
-                }, 200);
+                }, 400);
             }, function () {
                 alert("error");
             }).finally(function() {

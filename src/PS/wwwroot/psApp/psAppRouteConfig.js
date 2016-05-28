@@ -3,7 +3,16 @@
 angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider",
     function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
-        $httpProvider.interceptors.push('LoadingInterceptor');
+        $httpProvider.defaults.cache = false;
+    if (!$httpProvider.defaults.headers.get) {
+      $httpProvider.defaults.headers.get = {};
+    }
+        $httpProvider.interceptors.push("LoadingInterceptor");
+        $httpProvider.defaults.headers.get["Cache-Control"] = "no-cache";
+        $httpProvider.defaults.headers.get["Pragma"] = "no-cache";
+        $httpProvider.defaults.headers.get["If-Modified-Since"] = "0";
+
+        //$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 
         var routes = [
              {
@@ -134,7 +143,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
         });
 
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise("/");
 
         //TODO: don't forget to configure iis settings for html5 mode angular when deploying the code
         $locationProvider.html5Mode(true);
@@ -144,7 +153,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
         if (toState.requireLogin && !psLoginService.isAuthenticated()) {
             // User isn’t authenticated
             if (toState.name === "service.centre")
-                $("#loginModal").modal('toggle');
+                $("#loginModal").modal("toggle");
             else {
                 $state.go("home");
             }

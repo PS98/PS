@@ -134,14 +134,33 @@ namespace PS.Services
 
         }
 
-        public void UpdateDocumentWithFilter<T>(Dictionary<string, string> filterDic, Dictionary<string, object> updateDic, IMongoCollection<T> collection)
+        public async void  UpdateDocumentWithFilter<T>(Dictionary<string, string> filterDic, Dictionary<string, object> updateDic, IMongoCollection<T> collection)
         {
             try
             {
-               
-                    var filter = Builders<T>.Filter.Eq(filterDic.Keys.FirstOrDefault().ToString(), filterDic.Values.First());
-                    var update = Builders<T>.Update.Set(updateDic.Keys.FirstOrDefault().ToString(), updateDic.Values.First());
-                    collection.UpdateOneAsync(filter, update);
+                FilterDefinition<T> filter = null;
+                UpdateDefinition<T> update = null;
+                foreach (var fil in filterDic)
+                {
+                    if(filter == null)
+                    filter = Builders<T>.Filter.Eq(fil.Key, fil.Value);
+                    else
+                    {
+                        filter = filter & Builders<T>.Filter.Eq(fil.Key, fil.Value);
+                    }
+
+                }
+                foreach (var upDoc in updateDic)
+                {
+                    if(update == null)
+                        update = Builders<T>.Update.Set(upDoc.Key, upDoc.Value);
+                    else
+                    {
+                    update.Set(upDoc.Key, upDoc.Value);
+                    }
+                }
+
+                await collection.UpdateOneAsync(filter, update);
             }
             catch (Exception e)
             {
@@ -161,21 +180,46 @@ namespace PS.Services
             var documentList = collection.Find(filter).ToListAsync().Result;
             return documentList;
         }
-        public List<OrderDetails> CancelSelectedOrder(string invoiceNo, string email)
+        public List<List<OrderDetails>>  GetAllOrderWithStatus(string email)
+        {
+            try
+            {
+                var filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email);
+                var collection = _database.GetCollection<OrderDetails>("Invoice");
+                var orderList = collection.Find(filter).ToListAsync().Result;
+
+                var orders = new List<List<OrderDetails>>
+                {
+                    orderList.Where(x => x.Status.Equals("Pending")).OrderByDescending(x =>x.BookingDate).ToList(),
+                    orderList.Where(x => x.Status != "Pending").OrderByDescending(x =>x.BookingDate).ToList()
+                };
+                return orders;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<List<OrderDetails> >CancelSelectedOrder(string invoiceNo, string email)
         {
             var collection = _database.GetCollection<OrderDetails>("Invoice");
 
-            var filterDic = new Dictionary<string, string>();
-            filterDic.Add("InvoiceNo", invoiceNo);
+            var filterDic = new Dictionary<string, string> {{"InvoiceNo", invoiceNo}};
 
-            var updateDic = new Dictionary<string, object>();
-            updateDic.Add("Status", "Cancelled");
+            var updateDic = new Dictionary<string, object> {{"Status", "Cancelled"}, {"CancellationDate", DateTime.Now}};
+
             UpdateDocumentWithFilter<OrderDetails>(filterDic, updateDic, collection);
 
-            // get remaining pending order list
-            var filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email && (x.Status == "Pending"));
-            var documentList = collection.Find(filter).ToListAsync().Result;
-            return documentList;
+            //var orders = new List<List<OrderDetails>>
+            //{
+            //    GetOrderOnStatus("Pending", email),
+            //    GetOrderOnStatus("Success", email)
+            //};
+            //var filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email && (x.Status == "Pending"));
+
+            //var documentList = collection.Find(filter).ToListAsync().Result;
+            return GetAllOrderWithStatus(email);
         }
         public static string RandomNumber(int length)
         {

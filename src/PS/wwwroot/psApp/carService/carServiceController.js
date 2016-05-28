@@ -179,6 +179,7 @@
     function fetchServiceDetails() {
         psDataServices.getAllService().
             success(function (data) {
+                
                 $scope.services = data;
                 $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                 $scope.commonServices = $scope.services.serviceDetails[0];
@@ -205,11 +206,18 @@
                             $scope.car.services.push(value);
                         });
                     });
+                    var scroll = $scope.selectedCar.varient && $scope.selectedCar.varient !== "" ? 390 : 230;
+                    $scope.scrollContent(scroll);
                 }, 200);
             }).error(function () {
             });
     }
+    $scope.scrollContent = function (position) {
 
+                var scroll = position ? position : 230;
+                document.body.scrollTop = scroll;
+
+            }
     $scope.showDetails = function (types) {
         $scope.overlayData = types;
         $("#detailsModal").modal();
@@ -234,7 +242,7 @@
                 $("html, body").animate({
                     scrollTop: 50
                 }, 'fast');
-            },50);
+            },100);
         }
 
     }
@@ -339,7 +347,7 @@
                     count++;
                 }
             });
-            if ($scope.selectedJob.length === 1 && job.addText && (!job.request || job.request === "")) {
+            if (job.addText && (!job.request || job.request === "")) {
                 count++;
             }
         });

@@ -1,7 +1,8 @@
 ﻿<div class="row row-fluid utilBoxDetails" ng-repeat="order in orders" style="margin-bottom: 20px;">
     <div class="col-md-12">
         <div class="col-md-8" ng-if="!review">
-            <h3 class="override-exclude" style="color:black;">Appointment Details(Order Id: #{{ order.invoiceNo}})</h3>
+            <h3 class="override-exclude" style="color: black;">Appointment Details(Order Id: #{{ order.invoiceNo}})</h3>
+
         </div>
         <div class="col-md-4" ng-if="order.status =='Pending'">
             <div class="col-md-6">
@@ -16,30 +17,43 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12" style="margin-bottom: 10px;" ng-if="!review">
-        <div class="order-status col-md-6">
-            <span>Status: &nbsp;</span>
-            <span ng-class="{'vd_bg-yellow':order.status =='Pending','vd_bg-green':order.status =='Success'}"><strong>{{order.status}}</strong></span>
+    <div ng-if="!review" class="">
+        <div class="col-md-12 margin-top10 margin-bottom10">
+            <div class="order-status col-md-6">
+                <span>Booking Date: &nbsp;</span>
+                <strong>{{order.bookingDate |date:'mediumDate'}}</strong>
+            </div>
+            <div class="order-status col-md-6" ng-show="order.status !=='Pending'">
+                <span ng-show="order.status !=='Success'">Cancellation Date: &nbsp;</span> <span ng-show="order.status ==='Success'">Completed Date: &nbsp;</span>
+                <span><strong>{{order.cancellationDate |date:'mediumDate'}}</strong></span>
+            </div>
         </div>
-        <div class="order-status col-md-6">
-            <span>Payment Mode: &nbsp;</span>
-            <span ng-if="order.paymentMode !=='COD'">
-                <span><strong>Online (Paid INR {{order.selectedCentre.totalMMPrice}})</strong></span>
-            </span>
-            <span ng-if="order.paymentMode ==='COD'">
-                <span><strong>Cash On Delivery (INR {{order.selectedCentre.totalMMPrice}})</strong></span>
-            </span>
+        <div class="col-md-12 margin-bottom10">
+            <div class="order-status col-md-6">
+                <span>Status: &nbsp;</span>
+                <span ng-class="{'vd_bg-yellow':order.status =='Pending','vd_bg-green':order.status =='Success'}"><strong>{{order.status}}</strong></span>
+            </div>
+            <div class="order-status col-md-6">
+                <span>Payment Mode: &nbsp;</span>
+                <span ng-if="order.paymentMode !=='COD'">
+                    <span><strong>Online (Paid INR {{order.selectedCentre.totalMMPrice}})</strong></span>
+                </span>
+                <span ng-if="order.paymentMode ==='COD'">
+                    <span><strong>Cash On Delivery (INR {{order.selectedCentre.totalMMPrice}})</strong></span>
+                </span>
+            </div>
         </div>
+
     </div>
     <div class="col-md-12" style="margin-bottom: 10px;">
         <div class="order-status col-md-6">
             <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
-            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br/>
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
             <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
         </div>
         <div class="order-status col-md-6">
             <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
-            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br/>
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
             <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
         </div>
     </div>
@@ -54,11 +68,11 @@
                         {{order.selectedCentre.address.line1}},<br>
                         {{order.selectedCentre.address.line2}}
                     </p>
-                    <p style="margin-bottom:0">
+                    <!--<p style="margin-bottom:0">
                         <a target="_blank" href="">
                             <img src="../../assets/img/ViewMapIcon.gif" alt="MileMates Map Marker">&nbsp;View on Map
                         </a>
-                    </p>
+                    </p>-->
                 </div>
             </div>
 

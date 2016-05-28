@@ -35,6 +35,8 @@ namespace PS.Models
         public Appointment SelectedAppointment { get; set; }
         public User UserDetails { get; set; }
         public string Status { get; set; }
+        public DateTime BookingDate { get; set; }
+        public DateTime CancellationDate { get; set; }
     }
 
     //public class UserServices

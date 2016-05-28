@@ -25,9 +25,18 @@ namespace PS.Controllers
             {
                 if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(status))
                 {
-                    var res = repo.GetOrderOnStatus(status, email);
-                    Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Status = 0, Result = res });
+                    if (status.Equals("All"))
+                    {
+                        var res = repo.GetAllOrderWithStatus(email);
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new {Status = 0, Result = res});
+                    }
+                    else
+                    {
+                        var res = repo.GetOrderOnStatus(status, email);
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Status = 0, Result = res });
+                    }
                 }
             }
             catch (Exception ex)
@@ -50,13 +59,13 @@ namespace PS.Controllers
                 {
                     var res = repo.CancelSelectedOrder(invoiceNo, email);
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Status = 0, Result = res });
+                    return Json(new { Status = 0, Result = res,Message = "your order cancelled successfully"});
                 }
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message });
+                return Json(new { Message = "We are unable to process your request.", Status = 2 });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });

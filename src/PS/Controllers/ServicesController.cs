@@ -96,6 +96,7 @@ namespace PS.Controllers
                 try
                 {
                     model.Status = "Pending";
+                    model.BookingDate = DateTime.Now;
                     repo.insertDocument("orders", "Invoice", model);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = model.InvoiceNo });

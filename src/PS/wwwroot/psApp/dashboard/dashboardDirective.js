@@ -5,6 +5,7 @@ angular.module("index").directive("dashboard", function () {
         templateUrl: "psApp/dashboard/dashboardTemplate.html",
         controller: "dashboardController",
         link: function (scope, el, attrs) {
+            scope.getOrderOnStatus("All");
             var tab = scope.tab ? scope.tab : "booking";
                 el.find("#" + tab).addClass("active").addClass("in");
                 el.find('.nav a[href="#' + tab + '"]').attr("aria-expanded", "true");
