@@ -2,6 +2,8 @@
 function ($scope, $window, $state, $location, $localStorage, $sessionStorage, psDataServices, psOrderDetailsService, psLoginService, $timeout) {
     $scope.payNow = true;
     $scope.oldNumber = $localStorage.userDetails ? $localStorage.userDetails.phoneNo : undefined;
+    $scope.vaildatedNo = $localStorage.userDetails ? $localStorage.userDetails.phoneNo : undefined;
+    
     $scope.checkMobileNumber = function () {
         if ($localStorage.userDetails.phoneNo == $scope.oldNumber) {
             $('.mobile_validation').hide();
@@ -70,11 +72,13 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
         })
     }
 
+    $scope.changeNo = function() {
+        $scope.otp = undefined;
+        $scope.addressOtp = "";
+    }
     $scope.ReviewOrder = function () {
-        if ($scope.otp == $scope.addressOtp) {
-            $scope.otp = undefined;
-            if ($scope.addressOtp)
-                $('.mobile_validation').hide();
+        if ($scope.otp === $scope.addressOtp) {
+            $scope.vaildatedNo = $scope.userSelectedService.userDetails.phoneNo;
             $scope.reviewOrder = [];
             var order = psDataServices.getSelectedService();
             $scope.review = true;

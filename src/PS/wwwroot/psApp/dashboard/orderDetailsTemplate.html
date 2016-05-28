@@ -1,6 +1,6 @@
 ﻿<div class="row row-fluid utilBoxDetails" ng-repeat="order in orders" style="margin-bottom: 20px;">
     <div class="col-md-12">
-        <div class="col-md-8" ng-if="!review">
+        <div class="col-md-8">
             <h3 class="override-exclude" style="color: black;">Appointment Details(Order Id: #{{ order.invoiceNo}})</h3>
 
         </div>
@@ -17,7 +17,6 @@
             </div>
         </div>
     </div>
-    <div ng-if="!review" class="">
         <div class="col-md-12 margin-top10 margin-bottom10">
             <div class="order-status col-md-6">
                 <span>Booking Date: &nbsp;</span>
@@ -44,7 +43,6 @@
             </div>
         </div>
 
-    </div>
     <div class="col-md-12" style="margin-bottom: 10px;">
         <div class="order-status col-md-6">
             <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />

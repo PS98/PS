@@ -1,4 +1,4 @@
-﻿angular.module("psApp").factory("psOrderDetailsService", ["$http", "$q", "$localStorage", "psDataServices", function ($http, $q, $localStorage,psDataServices) {
+﻿angular.module("psApp").factory("psOrderDetailsService", ["$http", "$q", "$localStorage", "psDataServices", function ($http, $q, $localStorage, psDataServices) {
     var orderDetails, submittedOrder;
 
     var _validateOrder = function (payment_id, payment_request_id) {
@@ -24,7 +24,7 @@
         {
             url: "/api/services/order",
             method: "POST",
-            data: data
+            data:data
         }).then(function (result) {
             $localStorage.userSelectionData = "";
             submittedOrder = result.data.result;
@@ -60,16 +60,16 @@
             {
                 url: "/api/OrderDetails/order?email=" + $localStorage.userDetails.email + "&status=" + status, method: "GET", cache: false
             }).then(function (result) {
-            //Success
-            deferred.resolve(result.data);
-        }, function (error) {
-            //Error
-            deferred.reject(error);
-        });
+                //Success
+                deferred.resolve(result.data);
+            }, function (error) {
+                //Error
+                deferred.reject(error);
+            });
 
         return deferred.promise;
     }
-    var _cancelOrder = function (invoiceNo,email) {
+    var _cancelOrder = function (invoiceNo, email) {
         var deferred = $q.defer();
         $http(
             {
@@ -88,14 +88,14 @@
 
         var date = { dropOffDate: '', pickUpDate: '' };
         date.dropOffDate = changedDate.dropOffDate;
-       // var data = { 'InvoiceNo': invoiceNo, 'dropOffDate': changedDate.dropOffDate.day, "dropOffTime": changedDate.dropOffDate.time, "pickUpDate": changedDate.pickUpDate.day, "pickUpTime": changedDate.pickUpDate.time, };
+        // var data = { 'InvoiceNo': invoiceNo, 'dropOffDate': changedDate.dropOffDate.day, "dropOffTime": changedDate.dropOffDate.time, "pickUpDate": changedDate.pickUpDate.day, "pickUpTime": changedDate.pickUpDate.time, };
 
         var deferred = $q.defer();
         $http(
             {
                 url: "/api/OrderDetails/editOrder?InvoiceNo=" + invoiceNo + "&dropOffDate=" + changedDate.dropOffDate.day + "&dropOffTime=" + changedDate.dropOffDate.time + "&pickUpDate=" + changedDate.pickUpDate.day + "&pickUpTime=" + changedDate.pickUpDate.time,
                 method: "POST",
-              // data: data
+                // data: data
             })
        // var data;
        // if (isdroffOff)
@@ -110,12 +110,12 @@
        //    data: data
     //})
     .then(function (result) {
-                //Success
-                deferred.resolve(result.data);
-            }, function (error) {
-                //Error
-                deferred.reject(error);
-            });
+        //Success
+        deferred.resolve(result.data);
+    }, function (error) {
+        //Error
+        deferred.reject(error);
+    });
 
         return deferred.promise;
     }
@@ -124,7 +124,7 @@
         validateOrder: _validateOrder,
         submitOrder: _submitOrder,
         getsubmittedOrder: _getSubmittedOrder,
-        getAllPendingOrder:_getAllPendingOrder,
+        getAllPendingOrder: _getAllPendingOrder,
         cancelOrder: _cancelOrder,
         editDateAndTime: _editDateAndTime
     }

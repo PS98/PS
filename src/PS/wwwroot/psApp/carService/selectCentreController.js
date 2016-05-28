@@ -86,7 +86,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         }
     }
     function getNearerCentreList() {
-        if ($scope.centreDetails.areaList.includes($scope.googleMapArea)) {
+        if ($scope.centreDetails.areaList.indexOf($scope.googleMapArea) > -1) {
             $scope.getCentreDetails($scope.googleMapArea);
             $scope.centreDetails.area = $scope.googleMapArea;
             $scope.area = $scope.googleMapArea;
@@ -130,7 +130,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         $localStorage.userData.city = city;
         psDataServices.setuserAddress($scope.centreDetails.userAddress);
 
-        if ($scope.centreDetails.cityList.includes(city)) {
+        if ($scope.centreDetails.cityList.indexOf(city)> -1) {
             $scope.centreDetails.city = city;
             $scope.city = city;
             $('#cityDropDown').setJelect(city);

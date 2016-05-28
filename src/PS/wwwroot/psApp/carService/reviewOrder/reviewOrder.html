@@ -13,13 +13,13 @@
             <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp"><strong>{{order.selectedAppointment.pickUpDetails.Type}}</strong></span>
         </div>
         <div class="order-status col-md-6">
-            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
-            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span>
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span>
             <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
         </div>
         <div class="order-status col-md-6">
-            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
-            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
+            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span>
+            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span>
             <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
         </div>
 
@@ -35,11 +35,7 @@
                         {{order.selectedCentre.address.line1}}<br>
                         {{order.selectedCentre.address.line2}}
                     </p>
-                    <p style="margin-bottom:0">
-                        <a target="_blank" href="">
-                            <img src="../../../assets/img/ViewMapIcon.gif" alt="MileMates Map Marker">&nbsp;View on Map
-                        </a>
-                    </p>
+              
                 </div>
             </div>
 

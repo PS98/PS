@@ -116,7 +116,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.selectModel = function (type) {
                 $scope.modelList = $scope.modelList || [];
 
-                if (!$scope.modelList.includes(type))
+                if ($scope.modelList.indexOf(type) < 0)
                     $scope.modelList.push(type);
                 else {
                     $scope.modelList.splice($scope.modelList.indexOf(type), 1);
@@ -172,7 +172,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.AreaList = ["Pimpri", "Chinchwad", "Kothrud", "Aundh", "Pashan", "Baner", "Koregaon Park", "Shivaji Nagar", "Pune Railway", "Swargate", "Boat club", "Magarpatta", "Daund", "Chikhli", "Kalewadi", "Kasarwadi", "Phugewadi ", "Pimple Saudagar", "Narayan peth", "Talegaon", "Kasba peth", "Shirur", "Bhor", "Mulshi", "Wadgaon", "Welhe", "Ambegaon", "Junnar", "Rajgurunagar", "Baramati", "Indapur", "Purandhar", "Bhawani Peth", "Erandwana", "Ghorpuri Lines", "Kalyani Nagar", "Kondhwa", "Narayan Peth", "Hadapsar", "Akurdi"];
             $scope.addArea = function (area) {
                 $scope.nearAreas = $scope.nearAreas || [];
-                if (!$scope.nearAreas.includes(area))
+                if ($scope.nearAreas.indexOf(area) < 0)
                     $scope.nearAreas.push(area);
                 else {
                     $scope.nearAreas.splice($scope.nearAreas.indexOf(area), 1);
