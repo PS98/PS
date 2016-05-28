@@ -73,7 +73,7 @@
                             ng-class="!(addressForm.addressLine1.$invalid || addressForm.addressLine2.$invalid || addressForm.firstName.$invalid || 
                             addressForm.lastName.$invalid || addressForm.mobile.$invalid || addressForm.email.$invalid) ? 'btn-effect' : ''"
                             ng-disabled="(addressForm.addressLine1.$invalid || addressForm.addressLine2.$invalid || addressForm.firstName.$invalid || 
-                            addressForm.lastname.$invalid || addressForm.mobile.$invalid || addressForm.email.$invalid)">
+                            addressForm.lastname.$invalid || addressForm.mobile.$invalid || addressForm.email.$invalid || (addressForm.addressOtp.$invalid && userSelectedService.userDetails.phoneNo !== oldNumber))">
                         Review
                     </button>
                 </div>
