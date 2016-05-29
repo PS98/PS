@@ -1,16 +1,17 @@
 ﻿"use strict";
 
-angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider",
+angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider", 
     function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-
         $httpProvider.defaults.cache = false;
-    if (!$httpProvider.defaults.headers.get) {
-      $httpProvider.defaults.headers.get = {};
-    }
+        if (!$httpProvider.defaults.headers.get) {
+            $httpProvider.defaults.headers.get = {};
+        }
         $httpProvider.interceptors.push("LoadingInterceptor");
         $httpProvider.defaults.headers.get["Cache-Control"] = "no-cache";
         $httpProvider.defaults.headers.get["Pragma"] = "no-cache";
         $httpProvider.defaults.headers.get["If-Modified-Since"] = "0";
+        $httpProvider.defaults.xsrfCookieName = 'XSRF-TOKEN';
+        $httpProvider.defaults.xsrfHeaderName = 'X-XSRF-TOKEN';
 
         //$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 
@@ -99,7 +100,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                      state: "service.appointment",
                      config: {
                          url: "/",
-                         requireLogin:true,
+                         requireLogin: true,
                          template: "<book-appointment></book-appointment>"
                      }
                  },
@@ -147,17 +148,17 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
 
         //TODO: don't forget to configure iis settings for html5 mode angular when deploying the code
         $locationProvider.html5Mode(true);
-        
+
     }]).run(["$rootScope", "$state", "psLoginService", function ($rootScope, $state, psLoginService) {
-    $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
-        if (toState.requireLogin && !psLoginService.isAuthenticated()) {
-            // User isn’t authenticated
-            if (toState.name === "service.centre")
-                $("#loginModal").modal("toggle");
-            else {
-                $state.go("home");
+        $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
+            if (toState.requireLogin && !psLoginService.isAuthenticated()) {
+                // User isn’t authenticated
+                if (toState.name === "service.centre")
+                    $("#loginModal").modal("toggle");
+                else {
+                    $state.go("home");
+                }
+                event.preventDefault();
             }
-            event.preventDefault();
-        }
-    });
-}]);
+        });
+    }]);

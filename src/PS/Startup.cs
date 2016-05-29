@@ -3,6 +3,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNet.Antiforgery;
 using PS.Services;
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNet.Mvc;
@@ -27,6 +28,9 @@ namespace PS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAntiforgery();
+            services.AddSession();
+            services.AddCaching();
             // Add framework services.
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.Configure<AuthSocialLoginOptions>(Configuration);
@@ -53,6 +57,7 @@ namespace PS
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseSession();
             app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
             app.UseStaticFiles();
             app.UseMvc(routes =>

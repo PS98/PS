@@ -27,7 +27,7 @@ function ($scope, $localStorage, $timeout,$location, psDataServices, psLoginServ
                  $scope.cngSuccess = true;
                  $scope.cngError = false;
                  $scope.successMessage = result.result;
-             } else if (result.status == 2) {
+             } else{
                  $scope.cngError = true;
                  $scope.cngSuccess = false;
                  $scope.errorMessage = result.result;

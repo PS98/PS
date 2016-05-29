@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService","psDataServices", "$state",
-function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService, psDataServices, $state) {
+﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService","psDataServices", "$state", '$cookies','$cookieStore',
+function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService, psDataServices, $state, $cookies, $cookieStore) {
     $scope.isBusy = true;
   //  $scope.isLoggedIn = false;
     $scope.loginError = false;
@@ -25,6 +25,7 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                 }
                 else if (result.status == 0) {
                     $scope.resetAfterSubmit();
+                    $cookieStore.put("XSRF-TOKEN", result.access_Token);
                     $scope.userDetails.firstName = result.result[1];
                     $scope.userDetails.lastName = result.result[2];
                     $scope.userDetails.userName = $scope.userDetails.firstName + " " + $scope.userDetails.lastName;

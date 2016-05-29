@@ -12,6 +12,9 @@ using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Http.Features;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace PS.Controllers
 {
@@ -24,14 +27,22 @@ namespace PS.Controllers
         public AuthSocialLoginOptions Options { get; }
         private readonly ISmsSender _smsSender;
         private IPaymentProcessor _paymentProcessor;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private IMemoryCache _cache;
+        object res;
+        string key = "XSRF-TOKEN";
 
-        public AuthController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor)
+        private ISession _session => _httpContextAccessor.HttpContext.Session;
+
+        public AuthController(IMemoryCache cache, IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IHttpContextAccessor httpContextAccessor)
         {
+            _cache = cache;
             _auth = auth;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _paymentProcessor = paymentProcessor;
             Options = optionsAccessor.Value;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         // POST api/auth/login
@@ -45,13 +56,20 @@ namespace PS.Controllers
                     var result = _auth.login(model);
                     if (result != null)
                     {
-                        if(string.IsNullOrEmpty(result[1]))
+                        if (string.IsNullOrEmpty(result[1]))
                         {
                             Response.StatusCode = (int)HttpStatusCode.OK;
                             return Json(new { Message = "You Entered Incorrect Password.", Status = 1 });
                         }
+                        var accessToken = RandomStringAndNumber(256);
+                        if (!string.IsNullOrEmpty(accessToken))
+                        {
+                            _session.SetString(key, accessToken);
+                            res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
+                        }
+
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Result = result, Status = 0 });
+                        return Json(new { Result = result, Status = 0, Access_Token = accessToken });
                     }
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "Email address Not Registered.", Status = 1 });
@@ -81,13 +99,19 @@ namespace PS.Controllers
                     {
                         model.Created = DateTime.UtcNow;
                     }
-                    var result = _auth.register(model);                    
-                    if(result[0] == "0")
+                    var result = _auth.register(model);
+                    if (result[0] == "0")
                     {
+                        var accessToken = RandomStringAndNumber(256);
+                        if (!string.IsNullOrEmpty(accessToken))
+                        {
+                            _session.SetString(key, accessToken);
+                            res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
+                        }
                         Response.StatusCode = (int)HttpStatusCode.Created;
                         return Json(new { Message = "User registered Successfully.", Result = result, Status = 0 });
                     }
-                    else if(result[0] == "1")
+                    else if (result[0] == "1")
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "Your email address already registered with us.", Status = 1 });
@@ -97,7 +121,7 @@ namespace PS.Controllers
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "Error while processing your request. Please try again later.", Status = 2 });
                     }
-                    
+
                 }
             }
             catch (Exception ex)
@@ -227,18 +251,28 @@ namespace PS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var result = _auth.updateProfile(changeModel);
-                    Response.StatusCode = (int)HttpStatusCode.OK;
-                    if (result.Equals("S"))
+                    Microsoft.Extensions.Primitives.StringValues clientToken;
+                    HttpContext.Request.Headers.TryGetValue("X-XSRF-TOKEN", out clientToken);
+                    var clientAuthToken = JsonConvert.DeserializeObject(clientToken);
+                    bool found = _cache.TryGetValue(key, out res);
+                    if (clientAuthToken.ToString() == res.ToString())
+                    //if (clientAuthToken.ToString() == _session.GetString("XSRF-TOKEN"))
                     {
-                        return Json(new { Result = "Your Details updated successfully", Status = 1 });
+                        var result = _auth.updateProfile(changeModel);
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        if (result.Equals("S"))
+                        {
+                            return Json(new { Result = "Your Details updated successfully", Status = 1 });
+                        }
+                        else
+                        {
+                            return Json(new { Result = "Could not update Details", Status = 2 });
+                        }
                     }
                     else
                     {
-                        return Json(new { Result = "Could not update Details", Status = 2 });
-
+                        return Json(new { Result = "You are not Authorized to perform this Operation.", Status = 4 });
                     }
-
                 }
                 else
                 {
@@ -268,30 +302,38 @@ namespace PS.Controllers
                     if (result.Equals("S"))
                     {
                         return Json(new { Result = "Your password updated successfully", Status = 1 });
-                        }
+                    }
                     else
                     {
                         return Json(new { Result = "Old password doesn't match", Status = 2 });
 
-                        }
+                    }
 
                 }
                 else
                 {
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Result = "Please fill All Required Details",Status=3 });
-                } 
+                    return Json(new { Result = "Please fill All Required Details", Status = 3 });
+                }
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(new { Message = ex.Message });
             }
-          
+
         }
         private static string RandomString(int length)
         {
             const string chars = "0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        private static string RandomStringAndNumber(int length)
+        {
+            const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
@@ -337,8 +379,8 @@ namespace PS.Controllers
             {
                 var token = _context.RequestToken(code);
                 var result = _context.RequestProfile(token);
-               //var strResult = _context.Client.ProfileJsonString;
-               
+                //var strResult = _context.Client.ProfileJsonString;
+
 
                 var operation = _auth.SocialLogin(result);
 
@@ -358,7 +400,7 @@ namespace PS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile + 
+                    var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile +
                         "provided feedback regarding MileMates services.<br /><br />" + model.Message;
                     _emailSender.SendSimpleMessage("care@milemates.com", model.Subject, message);
                     Response.StatusCode = (int)HttpStatusCode.OK;
@@ -383,7 +425,7 @@ namespace PS.Controllers
                     var res = _paymentProcessor.OrderPayment(model.name, model.purpose, model.amount, model.email, model.phone, model.send_email, model.send_sms);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     var data = JsonConvert.DeserializeAnonymousType(res.Content, new PaymentResponseModel());
-                    return Json(new {Status = 0, Result = data });
+                    return Json(new { Status = 0, Result = data });
                 }
             }
             catch (Exception ex)
