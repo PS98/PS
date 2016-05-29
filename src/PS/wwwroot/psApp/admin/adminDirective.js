@@ -126,14 +126,15 @@ angular.module("psApp").directive("admin", function () {
             $scope.addCentreDetails = function () {
                 var services = new serviceObj();
                 var model = new obj();
-                model.ModelList = $scope.modelList;
-                $scope.centreDetails.nearAreas = $scope.nearAreas;
-                model.ActualPrice = $scope.centreDetails.ActualPrice;
-                model.MilematePrice = $scope.centreDetails.MilematePrice;
-                model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
-                services.Name = $scope.service;
-                $scope.centreDetails.ServiceDetails = [];
-                switch ($scope.centreDetails.type) {
+                if ($scope.modelList && $scope.modelList.length > 0) {
+                    model.ModelList = $scope.modelList;
+                    $scope.centreDetails.nearAreas = $scope.nearAreas;
+                    model.ActualPrice = $scope.centreDetails.ActualPrice;
+                    model.MilematePrice = $scope.centreDetails.MilematePrice;
+                    model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
+                    services.Name = $scope.service;
+                    $scope.centreDetails.ServiceDetails = [];
+                    switch ($scope.centreDetails.type) {
                     case "Petrol":
                         services.Petrol.push(model);
                         $scope.centreDetails.ServiceDetails.push(services);
@@ -150,6 +151,7 @@ angular.module("psApp").directive("admin", function () {
                         services.Electric.push(model);
                         $scope.centreDetails.ServiceDetails.push(services);
                         break;
+                    }
                 }
                 console.log($scope.centreDetails);
                 psDataServices.saveCentreDetails($scope.centreDetails).
@@ -158,7 +160,7 @@ angular.module("psApp").directive("admin", function () {
                                 if (data.status === 0) {
                                    // $scope.centreDetails = {};
                                   //  angular.extend($scope.centreDetails, centreObject);
-                                    $scope.centreDetails.Id = data.id;
+                                    $scope.centreDetails.Id = parseInt(data.id);
                                     $scope.newCentre = false;
                                 }
                             });
