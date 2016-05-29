@@ -2562,22 +2562,22 @@ output {
   color: #555555;
 }
 .form-control {
-  display: block;
-  width: 100%;
-  height: 42px;
-  font-size: 12px;
-  line-height: 1.42857143;
-  color: #999;
-  background-color: #ffffff;
-  background-image: none;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  border: none;
-  margin-bottom: 18px;
-  border-bottom: 1px solid transparent;
-  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-  padding: 20px;
-  border: 1px solid lightgray;
+    display: block;
+    width: 100%;
+    height: 42px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #999;
+    background-color: #ffffff;
+    background-image: none;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -moz-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    margin-bottom: 18px;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    padding-left: 20px;
+    border: 1px solid lightgray;
 }
 .form-control:focus {
   border-color: #66afe9;
