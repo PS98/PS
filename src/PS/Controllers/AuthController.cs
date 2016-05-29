@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Http.Features;
 using Microsoft.Extensions.Caching.Memory;
+using PS.Helper;
 
 namespace PS.Controllers
 {
@@ -226,8 +227,7 @@ namespace PS.Controllers
                     var pass = RandomString(4);
                     if (pass != null)
                     {
-                        var messge = smsProviderHelper.GenerateSmsMessages("type",pass);
-                        _smsSender.SendSmsAsync(model.MobileNumber, messge);
+                        SmsSender.SendOtpSms(model.MobileNumber,pass,_smsSender, smsProviderHelper);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Result = pass, Message = "OTP generated successfully.", Status = 0 });
                     }
