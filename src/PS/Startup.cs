@@ -30,6 +30,7 @@ namespace PS
             // Add framework services.
             services.Configure<AuthMessageSenderOptions>(Configuration);
             services.Configure<AuthSocialLoginOptions>(Configuration);
+            services.Configure<SmsMessageProvider>(Configuration);
 
             services.AddMvc(config => {
                 config.Filters.Add(new RequireHttpsAttribute());

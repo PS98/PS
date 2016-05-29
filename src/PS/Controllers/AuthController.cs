@@ -24,14 +24,17 @@ namespace PS.Controllers
         public AuthSocialLoginOptions Options { get; }
         private readonly ISmsSender _smsSender;
         private IPaymentProcessor _paymentProcessor;
+        private SmsProviderHelper smsProviderHelper;
 
-        public AuthController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor)
+        public AuthController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IOptions<SmsMessageProvider> valueOptions)
         {
             _auth = auth;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _paymentProcessor = paymentProcessor;
             Options = optionsAccessor.Value;
+           // MessageProvider = valueOptions.Value;
+           smsProviderHelper = new SmsProviderHelper(valueOptions);
         }
 
         // POST api/auth/login
@@ -199,7 +202,8 @@ namespace PS.Controllers
                     var pass = RandomString(4);
                     if (pass != null)
                     {
-                        _smsSender.SendSmsAsync(model.MobileNumber, "Your One Time Password is: " + pass);
+                        var messge = smsProviderHelper.GenerateSmsMessages("type",pass);
+                        _smsSender.SendSmsAsync(model.MobileNumber, messge);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Result = pass, Message = "OTP generated successfully.", Status = 0 });
                     }
