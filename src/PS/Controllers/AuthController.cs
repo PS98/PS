@@ -31,10 +31,11 @@ namespace PS.Controllers
         private IMemoryCache _cache;
         object res;
         string key = "XSRF-TOKEN";
+        private SmsProviderHelper smsProviderHelper;
 
         private ISession _session => _httpContextAccessor.HttpContext.Session;
 
-        public AuthController(IMemoryCache cache, IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IHttpContextAccessor httpContextAccessor)
+        public AuthController(IMemoryCache cache, IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IHttpContextAccessor httpContextAccessor, IOptions<SmsMessageProvider> valueOptions)
         {
             _cache = cache;
             _auth = auth;
@@ -42,6 +43,8 @@ namespace PS.Controllers
             _smsSender = smsSender;
             _paymentProcessor = paymentProcessor;
             Options = optionsAccessor.Value;
+           // MessageProvider = valueOptions.Value;
+           smsProviderHelper = new SmsProviderHelper(valueOptions);
             _httpContextAccessor = httpContextAccessor;
         }
 
@@ -99,7 +102,7 @@ namespace PS.Controllers
                     {
                         model.Created = DateTime.UtcNow;
                     }
-                    var result = _auth.register(model);
+                    var result = _auth.register(model);                    
                     if (result[0] == "0")
                     {
                         var accessToken = RandomStringAndNumber(256);
@@ -121,7 +124,7 @@ namespace PS.Controllers
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "Error while processing your request. Please try again later.", Status = 2 });
                     }
-
+                    
                 }
             }
             catch (Exception ex)
@@ -223,7 +226,8 @@ namespace PS.Controllers
                     var pass = RandomString(4);
                     if (pass != null)
                     {
-                        _smsSender.SendSmsAsync(model.MobileNumber, "Your One Time Password is: " + pass);
+                        var messge = smsProviderHelper.GenerateSmsMessages("type",pass);
+                        _smsSender.SendSmsAsync(model.MobileNumber, messge);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Result = pass, Message = "OTP generated successfully.", Status = 0 });
                     }
@@ -258,15 +262,15 @@ namespace PS.Controllers
                     if (clientAuthToken.ToString() == res.ToString())
                     //if (clientAuthToken.ToString() == _session.GetString("XSRF-TOKEN"))
                     {
-                        var result = _auth.updateProfile(changeModel);
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        if (result.Equals("S"))
-                        {
-                            return Json(new { Result = "Your Details updated successfully", Status = 1 });
-                        }
-                        else
-                        {
-                            return Json(new { Result = "Could not update Details", Status = 2 });
+                    var result = _auth.updateProfile(changeModel);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    if (result.Equals("S"))
+                    {
+                        return Json(new { Result = "Your Details updated successfully", Status = 1 });
+                    }
+                    else
+                    {
+                        return Json(new { Result = "Could not update Details", Status = 2 });
                         }
                     }
                     else
@@ -302,26 +306,26 @@ namespace PS.Controllers
                     if (result.Equals("S"))
                     {
                         return Json(new { Result = "Your password updated successfully", Status = 1 });
-                    }
+                        }
                     else
                     {
                         return Json(new { Result = "Old password doesn't match", Status = 2 });
 
-                    }
+                        }
 
                 }
                 else
                 {
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Result = "Please fill All Required Details", Status = 3 });
-                }
+                } 
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(new { Message = ex.Message });
             }
-
+          
         }
         private static string RandomString(int length)
         {
@@ -379,8 +383,8 @@ namespace PS.Controllers
             {
                 var token = _context.RequestToken(code);
                 var result = _context.RequestProfile(token);
-                //var strResult = _context.Client.ProfileJsonString;
-
+               //var strResult = _context.Client.ProfileJsonString;
+               
 
                 var operation = _auth.SocialLogin(result);
 
@@ -400,7 +404,7 @@ namespace PS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile +
+                    var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile + 
                         "provided feedback regarding MileMates services.<br /><br />" + model.Message;
                     _emailSender.SendSimpleMessage("care@milemates.com", model.Subject, message);
                     Response.StatusCode = (int)HttpStatusCode.OK;

@@ -21,11 +21,11 @@ angular.module("psApp").directive("selectCentre", function () {
                 initialize(latLng);
                 setTimeout(function () {
                     setMarkers(scope.centreDetails.map, scope.centreDetails.centreList, scope.markerClick);
-                    if (scope.centreDetails.cityList.includes(scope.centreDetails.city)) {
+                    if (scope.centreDetails.cityList.indexOf(scope.centreDetails.city) > -1) {
                         scope.city = scope.centreDetails.city;
                         $('#cityDropDown').setJelect(scope.centreDetails.city);
                     }
-                    if (scope.centreDetails.areaList.includes(scope.centreDetails.area)) {
+                    if (scope.centreDetails.areaList.indexOf(scope.centreDetails.area) >-1) {
                         scope.area = scope.centreDetails.area;
                         $('#areaDropDown').setJelect(scope.centreDetails.area);
                     }

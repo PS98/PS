@@ -110,7 +110,7 @@
         $scope.commonServices = $scope.services.serviceDetails[$scope.services.serviceName.indexOf(this.service)];
 
         if ($scope.serviceOpts.viewMode === "consultation") {
-            if (!$scope.selectedJob.includes(custRequest))
+            if ($scope.selectedJob.indexOf(custRequest) < 0)
                 $scope.selectedJob.push(custRequest);
         }
     }
@@ -125,7 +125,7 @@
 
         }
         selectedJob.selected = !selectedJob.selected;
-        if (!$scope.selectedJob.includes(selectedJob)) {
+        if ($scope.selectedJob.indexOf(selectedJob)< 0) {
             $scope.selectedJob.push(selectedJob);
             psDataServices.setCentreDetails(undefined);
         } else {
@@ -145,7 +145,7 @@
     $scope.chooseAnswer = function (job, question, option) {
         if (!question.answer)
             question.answer = [];
-        if (!question.answer.includes(option)) {
+        if (question.answer.indexOf(option) < 0) {
             if (!question.isMultiple)
                 question.answer = [];
             question.answer.push(option);

@@ -19,8 +19,8 @@ namespace PS.Controllers
     {
         // private IMongoRepository _mongoDb;
         private MongoRepository repo = new MongoRepository("serviceCentre");
-        const string database = "serviceCentre";
-        const string collectionName = "Pune";
+        const string _database = "serviceCentre";
+        const string _collectionName = "Pune";
 
 
 
@@ -136,16 +136,16 @@ namespace PS.Controllers
                             switch (selectedService.Type.ToLower().Trim())
                             {
                                 case "petrol":
-                                    priceObj = abc.Petrol.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj = abc.Petrol?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "diesel":
-                                    priceObj = abc.Diesel.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj = abc.Diesel?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "cng":
-                                    priceObj = abc.CNG.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj = abc.CNG?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "electric":
-                                    priceObj = abc.Electric.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj = abc.Electric?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                             }
                             if (priceObj == null) continue;
@@ -200,7 +200,7 @@ namespace PS.Controllers
                         // collection.Indexes.CreateOneAsync(Builders<ServiceCentre>.IndexKeys.Geo2D(p => p.Centres.First().Location));
                         var id = repo.GenerateNewId();
                         serviceCentreObj.Centres.First().Id = id;
-                        repo.insertDocument(database, collectionName, serviceCentreObj);   // if new area then insert into db
+                        repo.insertDocument(_database, _collectionName, serviceCentreObj);   // if new area then insert into db
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "new doc created in DataBase", Status = 0, Id = id });
                     }
@@ -211,12 +211,6 @@ namespace PS.Controllers
                     var update = Builders<ServiceCentre>.Update.Set("Centres", centreList);
 
                     var newCentre = serviceCentreObj.Centres.First();
-
-                    if (string.IsNullOrEmpty(newCentre.ServiceDetails.First().Name))
-                    {
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "please select a service ", Status = 1 });
-                    }
 
                     if (string.IsNullOrEmpty(newCentre.Id))  // no id then new centre 
                     {
@@ -229,7 +223,13 @@ namespace PS.Controllers
                         return Json(new { Message = "new centre added into centreList", Status = 0, Id = id });
                     }
 
-                    var exitingCentre = centreList.Where(c => c.Id == newCentre.Id);
+                    if (newCentre.ServiceDetails.Count > 0 && string.IsNullOrEmpty(newCentre.ServiceDetails.First().Name))
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "please select a service ", Status = 1 });
+                    }
+
+                    var exitingCentre = centreList.Where(c => c.Id == newCentre.Id).ToList();
                     if (!exitingCentre.Any())
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;
@@ -245,7 +245,7 @@ namespace PS.Controllers
                         {
 
 
-                            if (newCentre.ServiceDetails.First().Petrol.Count() > 0)
+                            if (newCentre.ServiceDetails.First().Petrol.Any())
                             {
                                 int count = 0;
                                 foreach (var details in service.Petrol.Where(x => newCentre.ServiceDetails.First().Petrol.Any(y => y.MilematePrice == x.MilematePrice)))
@@ -258,7 +258,7 @@ namespace PS.Controllers
 
                             }
 
-                            if (newCentre.ServiceDetails.First().Diesel.Count() > 0)
+                            if (newCentre.ServiceDetails.First().Diesel.Any())
                             {
                                 int count = 0;
                                 foreach (var details in service.Diesel.Where(x => newCentre.ServiceDetails.First().Diesel.Any(y => y.MilematePrice == x.MilematePrice)))
@@ -270,7 +270,7 @@ namespace PS.Controllers
                                     service.Diesel.AddRange(newCentre.ServiceDetails.First().Diesel);
                             }
 
-                            if (newCentre.ServiceDetails.First().CNG.Count() > 0)
+                            if (newCentre.ServiceDetails.First().CNG.Any())
                             {
                                 int count = 0;
                                 foreach (var details in service.CNG.Where(x => newCentre.ServiceDetails.First().CNG.Any(y => y.MilematePrice == x.MilematePrice)))
@@ -282,7 +282,7 @@ namespace PS.Controllers
                                     service.CNG.AddRange(newCentre.ServiceDetails.First().CNG);
                             }
 
-                            if (newCentre.ServiceDetails.First().Electric.Count() > 0)
+                            if (newCentre.ServiceDetails.First().Electric.Any())
                             {
                                 int count = 0;
                                 foreach (var details in service.Electric.Where(x => newCentre.ServiceDetails.First().Electric.Any(y => y.MilematePrice == x.MilematePrice)))
@@ -295,14 +295,14 @@ namespace PS.Controllers
                             }
                         }
 
-                        collection.UpdateOneAsync(filter, update);
+                        collection?.UpdateOneAsync(filter, update);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "new service details updated", Status = 1 });
                     }
                     else
                     {
                         data.AddRange(newCentre.ServiceDetails); // if deatils of service is not exist than add to collection
-                        collection.UpdateOneAsync(filter, update);
+                        collection?.UpdateOneAsync(filter, update);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "new service details updated", Status = 1 });
                     }

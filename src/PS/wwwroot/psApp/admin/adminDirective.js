@@ -83,6 +83,7 @@ angular.module("psApp").directive("admin", function () {
             var serviceObj = function () {
 
                 this["Name"] = "";
+                this["Radius"] = "";
                 this["Petrol"] = [];
                 this["Diesel"] = [];
                 this["CNG"] = [];
@@ -116,7 +117,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.selectModel = function (type) {
                 $scope.modelList = $scope.modelList || [];
 
-                if (!$scope.modelList.includes(type))
+                if ($scope.modelList.indexOf(type) < 0)
                     $scope.modelList.push(type);
                 else {
                     $scope.modelList.splice($scope.modelList.indexOf(type), 1);
@@ -126,14 +127,16 @@ angular.module("psApp").directive("admin", function () {
             $scope.addCentreDetails = function () {
                 var services = new serviceObj();
                 var model = new obj();
-                model.ModelList = $scope.modelList;
-                $scope.centreDetails.nearAreas = $scope.nearAreas;
-                model.ActualPrice = $scope.centreDetails.ActualPrice;
-                model.MilematePrice = $scope.centreDetails.MilematePrice;
-                model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
-                services.Name = $scope.service;
-                $scope.centreDetails.ServiceDetails = [];
-                switch ($scope.centreDetails.type) {
+                if ($scope.modelList && $scope.modelList.length > 0) {
+                    model.ModelList = $scope.modelList;
+                    $scope.centreDetails.nearAreas = $scope.nearAreas;
+                    model.ActualPrice = $scope.centreDetails.ActualPrice;
+                    model.MilematePrice = $scope.centreDetails.MilematePrice;
+                    model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
+                    services.Name = $scope.service;
+                    services.Radius = $scope.radius;
+                    $scope.centreDetails.ServiceDetails = [];
+                    switch ($scope.centreDetails.type) {
                     case "Petrol":
                         services.Petrol.push(model);
                         $scope.centreDetails.ServiceDetails.push(services);
@@ -150,6 +153,7 @@ angular.module("psApp").directive("admin", function () {
                         services.Electric.push(model);
                         $scope.centreDetails.ServiceDetails.push(services);
                         break;
+                    }
                 }
                 console.log($scope.centreDetails);
                 psDataServices.saveCentreDetails($scope.centreDetails).
@@ -158,7 +162,7 @@ angular.module("psApp").directive("admin", function () {
                                 if (data.status === 0) {
                                    // $scope.centreDetails = {};
                                   //  angular.extend($scope.centreDetails, centreObject);
-                                    $scope.centreDetails.Id = data.id;
+                                    $scope.centreDetails.Id = parseInt(data.id);
                                     $scope.newCentre = false;
                                 }
                             });
@@ -172,7 +176,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.AreaList = ["Pimpri", "Chinchwad", "Kothrud", "Aundh", "Pashan", "Baner", "Koregaon Park", "Shivaji Nagar", "Pune Railway", "Swargate", "Boat club", "Magarpatta", "Daund", "Chikhli", "Kalewadi", "Kasarwadi", "Phugewadi ", "Pimple Saudagar", "Narayan peth", "Talegaon", "Kasba peth", "Shirur", "Bhor", "Mulshi", "Wadgaon", "Welhe", "Ambegaon", "Junnar", "Rajgurunagar", "Baramati", "Indapur", "Purandhar", "Bhawani Peth", "Erandwana", "Ghorpuri Lines", "Kalyani Nagar", "Kondhwa", "Narayan Peth", "Hadapsar", "Akurdi"];
             $scope.addArea = function (area) {
                 $scope.nearAreas = $scope.nearAreas || [];
-                if (!$scope.nearAreas.includes(area))
+                if ($scope.nearAreas.indexOf(area) < 0)
                     $scope.nearAreas.push(area);
                 else {
                     $scope.nearAreas.splice($scope.nearAreas.indexOf(area), 1);
