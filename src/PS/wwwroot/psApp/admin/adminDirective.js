@@ -83,6 +83,7 @@ angular.module("psApp").directive("admin", function () {
             var serviceObj = function () {
 
                 this["Name"] = "";
+                this["Radius"] = "";
                 this["Petrol"] = [];
                 this["Diesel"] = [];
                 this["CNG"] = [];
@@ -133,6 +134,7 @@ angular.module("psApp").directive("admin", function () {
                     model.MilematePrice = $scope.centreDetails.MilematePrice;
                     model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
                     services.Name = $scope.service;
+                    services.Radius = $scope.radius;
                     $scope.centreDetails.ServiceDetails = [];
                     switch ($scope.centreDetails.type) {
                     case "Petrol":

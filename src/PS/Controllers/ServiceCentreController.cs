@@ -136,16 +136,16 @@ namespace PS.Controllers
                             switch (selectedService.Type.ToLower().Trim())
                             {
                                 case "petrol":
-                                    priceObj = abc.Petrol.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj = abc.Petrol?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "diesel":
-                                    priceObj = abc.Diesel.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj = abc.Diesel?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "cng":
-                                    priceObj = abc.CNG.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj = abc.CNG?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "electric":
-                                    priceObj = abc.Electric.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj = abc.Electric?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                             }
                             if (priceObj == null) continue;
