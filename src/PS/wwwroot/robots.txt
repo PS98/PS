@@ -10,4 +10,4 @@ Allow: /Terms
 Allow: /PrivacyPolicy
 Allow: /OrderProcessingTerms
 
-Sitemap: https://www.milemates.com/robots.txt
+Sitemap: https://www.milemates.com/sitemap.xml
