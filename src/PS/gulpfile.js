@@ -1,4 +1,4 @@
-/// <binding />
+/// <binding AfterBuild='clean, cleanAssets, min, minAssets' />
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
