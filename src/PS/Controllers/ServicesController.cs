@@ -6,7 +6,9 @@ using Microsoft.AspNet.Mvc;
 using PS.Services;
 using PS.Models;
 using System.Net;
+using Microsoft.Extensions.OptionsModel;
 using Newtonsoft.Json;
+using PS.Helper;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,13 +23,16 @@ namespace PS.Controllers
         public AuthSocialLoginOptions Options { get; }
         private readonly ISmsSender _smsSender;
         private IPaymentProcessor _paymentProcessor;
+        private SmsProviderHelper smsProviderHelper;
+        private SmsSender _sender;
 
-        public ServicesController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor)
+        public ServicesController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<SmsMessageProvider> valueOptions)
         {
             _auth = auth;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _paymentProcessor = paymentProcessor;
+            _sender = new SmsSender(_smsSender, new SmsProviderHelper(valueOptions));
         }
 
         // GET: api/values
@@ -98,6 +103,7 @@ namespace PS.Controllers
                     model.Status = "Pending";
                     model.BookingDate = DateTime.Now;
                     repo.insertDocument("orders", "Invoice", model);
+                    SmsSender.BookingSuccessfull(model);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = model.InvoiceNo });
                     

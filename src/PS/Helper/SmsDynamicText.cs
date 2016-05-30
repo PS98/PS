@@ -43,6 +43,24 @@ namespace PS.Helper
         public static readonly string DropOffTime = "DropOffTime";
         public static readonly string PaymentMode = "PaymentMode";
 
+
     }
- 
+
+    public static class SmsType
+    {
+        public const string RegistrationOtp = "RegistrationOtp";
+        public const string RegistrationCompleted = "RegistrationCompleted";
+        public const string BookingCancelled = "BookingCancelled";
+
+        public const string BookingSuccess = "BookingSuccess";
+        public const string DropOffInitiated = "DropOffInitiated";
+        public const string PaymentDone = "PaymentDone";
+        public const string PickUpDone = "PickUpDone";
+        public const string PickUpSuccess = "PickUpSuccess";
+        public const string ServiceCompleted = "ServiceCompleted";
+        public const string Offer = "Offer";
+
+        public const string ServicingConfirmation = "ServicingConfirmation";
+    }
+
 }

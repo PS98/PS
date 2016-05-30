@@ -22,11 +22,10 @@ namespace PS.Services
 
         //}
 
-        public string GenerateSmsMessages(string type, string value)
+        public string GenerateSmsMessages(string type)
         {
-            var val = new Dictionary<string, string>();
-             var messageString = CreateMessage(type, val);
-            return messageString;
+            var messageText = GetMessageText(type);
+            return messageText;
         }
         public string GenerateSmsMessages(string type, Dictionary<string, string> values)
         {
@@ -53,11 +52,38 @@ namespace PS.Services
             string messageString;
             switch (type)
             {
-                case "RegOtp":
+                case SmsType.RegistrationOtp:
                     messageString = MessageProvider.SmsMessages.User.RegistrationOtp;
                     break;
-                case "RegSuccess":
+                case SmsType.RegistrationCompleted:
                     messageString = MessageProvider.SmsMessages.User.RegistrationCompleted;
+                    break;
+                case SmsType.BookingSuccess:
+                    messageString = MessageProvider.SmsMessages.User.BookingSuccess;
+                    break;
+                case SmsType.BookingCancelled:
+                    messageString = MessageProvider.SmsMessages.User.BookingCancelled;
+                    break;
+                case SmsType.DropOffInitiated:
+                    messageString = MessageProvider.SmsMessages.User.DropOffInitiated;
+                    break;
+                case SmsType.PickUpDone:
+                    messageString = MessageProvider.SmsMessages.User.PickUpDone;
+                    break;
+                case SmsType.PickUpSuccess:
+                    messageString = MessageProvider.SmsMessages.User.PickUpSuccess;
+                    break;
+                case SmsType.PaymentDone:
+                    messageString = MessageProvider.SmsMessages.User.PaymentDone;
+                    break;
+                case SmsType.ServiceCompleted:
+                    messageString = MessageProvider.SmsMessages.User.ServiceCompleted;
+                    break;
+                case SmsType.ServicingConfirmation:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServicingConfirmation;
+                    break;
+                case SmsType.Offer:
+                    messageString = MessageProvider.SmsMessages.User.Offer;
                     break;
                 default:
                     messageString = "";

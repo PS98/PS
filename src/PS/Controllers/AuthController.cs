@@ -35,7 +35,7 @@ namespace PS.Controllers
         private SmsProviderHelper smsProviderHelper;
 
         private ISession _session => _httpContextAccessor.HttpContext.Session;
-
+        private SmsSender sender;
         public AuthController(IMemoryCache cache, IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IHttpContextAccessor httpContextAccessor, IOptions<SmsMessageProvider> valueOptions)
         {
             _cache = cache;
@@ -44,8 +44,7 @@ namespace PS.Controllers
             _smsSender = smsSender;
             _paymentProcessor = paymentProcessor;
             Options = optionsAccessor.Value;
-           // MessageProvider = valueOptions.Value;
-           smsProviderHelper = new SmsProviderHelper(valueOptions);
+            sender = new SmsSender(_smsSender, new SmsProviderHelper(valueOptions));
             _httpContextAccessor = httpContextAccessor;
         }
 
@@ -111,6 +110,7 @@ namespace PS.Controllers
                         {
                             _session.SetString(key, accessToken);
                             res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
+                            SmsSender.RegistrationSuccessfull(model.Mobile,model.FirstName);
                         }
                         Response.StatusCode = (int)HttpStatusCode.Created;
                         return Json(new { Message = "User registered Successfully.", Result = result, Status = 0 });
@@ -227,7 +227,7 @@ namespace PS.Controllers
                     var pass = RandomString(4);
                     if (pass != null)
                     {
-                        SmsSender.SendOtpSms(model.MobileNumber,pass,_smsSender, smsProviderHelper);
+                        SmsSender.SendOtpSms(model.MobileNumber,pass);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Result = pass, Message = "OTP generated successfully.", Status = 0 });
                     }
