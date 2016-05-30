@@ -74,6 +74,7 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                     .then(function (result) {
                         //Success
                         if (result.status == 0) {
+                            $scope.userDetails = {};
                             $scope.resetAfterSubmit();
                             $scope.userDetails.firstName = result.result[2];
                             $scope.userDetails.lastName = result.result[3];
