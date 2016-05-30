@@ -1,4 +1,10 @@
 ﻿<!--<div class="container service" style="margin-left: 100px">-->
+<div class="alert alert-success" role="alert" style="margin-bottom: 50px; font-size: 17px;">
+    <span class="fa fa-check-circle-o" aria-hidden="true"></span>
+    <span class="sr-only">Success:</span>
+    Currently MileMates is in Beta Phase. Website is open for Customer Experience and Testing Purpose Only and We will serve you with our services soon.
+    Be the first one to know when we are live by connecting with us at <a href="https://milemates.com/Contact">https://milemates.com/Contact</a> 
+</div>
 <div class="row">
     <div class="col-xs-12">
         <div class="car-header">
@@ -10,9 +16,11 @@
             </div>
             <div>
                 <div>
-                    <div class="popover fade top in" role="tooltip" ng-show="car.error"><div class="arrow" style="left: 50%;"></div>
-                    <h3 class="popover-title">This is required Information</h3>
-                    <div class="popover-content">{{errorMessage}}</div></div>
+                    <div class="popover fade top in" role="tooltip" ng-show="car.error">
+                        <div class="arrow" style="left: 50%;"></div>
+                        <h3 class="popover-title">This is required Information</h3>
+                        <div class="popover-content">{{errorMessage}}</div>
+                    </div>
 
                     <div class="row margin-top10">
                         <div class="col-md-12">
@@ -173,8 +181,7 @@
                     </div>
                     <div class="col-xs-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length == 0 && serviceOpts.viewMode =='Repair & Maintenance'">
                         <div class="select-service-box spacet-10">
-                            <ul class="coming-soon">
-                            </ul>
+                            <ul class="coming-soon"></ul>
                         </div>
 
                     </div>
