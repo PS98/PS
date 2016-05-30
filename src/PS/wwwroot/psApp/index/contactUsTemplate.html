@@ -69,14 +69,14 @@
                         </div>
                         <!-- end col -->
                         <div class="col-sm-6">
-                            <input class="form-control" type="text" placeholder="Subject" name="subject" ng-model="subject" ng-class="{'bckgrnd-clr': (feedbackForm.subject.$error.pattern || feedbackForm.subject.$dirty || feedbackForm.subject.$error.minlength || feedbackForm.subject.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.subject.$error.pattern && !feedbackForm.subject.$error.minlength && !feedbackForm.subject.$error.maxlength && !feedbackForm.subject.$error.required)}" ng-minlength="5" ng-maxlength="30" ng-pattern="/^[A-z][A-z]*$/" required>
+                            <input class="form-control" type="text" placeholder="Subject" name="subject" ng-model="subject" ng-class="{'bckgrnd-clr': (feedbackForm.subject.$dirty || feedbackForm.subject.$error.minlength || feedbackForm.subject.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.subject.$error.minlength && !feedbackForm.subject.$error.maxlength && !feedbackForm.subject.$error.required)}" ng-minlength="5" ng-maxlength="30" required>
                         </div>
                         <!-- end col -->
                     </div>
                     <!-- end row -->
                     <div class="row">
                         <div class="col-xs-12">
-                            <textarea class="form-control" placeholder="Message Details ..." required rows="7" name="message" ng-model="message" style="margin-bottom : 30px;" ng-class="{'bckgrnd-clr': (feedbackForm.message.$error.pattern || feedbackForm.message.$dirty || feedbackForm.message.$error.minlength || feedbackForm.message.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.message.$error.pattern && !feedbackForm.message.$error.minlength && !feedbackForm.message.$error.maxlength && !feedbackForm.message.$error.required)}" ng-minlength="5" ng-maxlength="1000" ng-pattern="/^[A-z][A-z]*$/"></textarea>
+                            <textarea class="form-control" placeholder="Message Details ..." required rows="7" name="message" ng-model="message" style="margin-bottom : 30px; padding-top: 20px;" ng-class="{'bckgrnd-clr': (feedbackForm.message.$dirty || feedbackForm.message.$error.minlength || feedbackForm.message.$error.maxlength),'bckgrnd-color-default' : (!feedbackForm.message.$error.minlength && !feedbackForm.message.$error.maxlength && !feedbackForm.message.$error.required)}" ng-minlength="5" ng-maxlength="1000"></textarea>
                             <button type="button" class="btn btn-primary" ng-class="feedbackForm.$valid ? 'btn-effect' : ''" ng-disabled="feedbackForm.$invalid" ng-click="contactUs()">Send</button>
                         </div>
                     </div>
