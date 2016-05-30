@@ -56,7 +56,7 @@ namespace PS.Helper
                                            + model.SelectedCentre.PhoneNo;
                 var date = model.SelectedAppointment.PickUpDate.Day + "(" + model.SelectedAppointment.PickUpDate.Time +
                            ")";
-                var vehical = model.SelectedCar.Model + model.SelectedCar.Model;
+                var vehical = model.SelectedCar.Brand + "-" + model.SelectedCar.Model + "-" + model.SelectedCar.Varient;
                 var messageText = new Dictionary<string, string>
                 {
                     {SmsDynamicText.BookingId, model.InvoiceNo},
