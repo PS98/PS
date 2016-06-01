@@ -61,6 +61,8 @@ namespace PS.Helper
         public const string Offer = "Offer";
 
         public const string ServicingConfirmation = "ServicingConfirmation";
+
+        public const string FirstOrder = "FirstOrder";
     }
 
 }

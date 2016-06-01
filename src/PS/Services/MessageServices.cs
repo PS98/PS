@@ -93,7 +93,7 @@ namespace PS.Services
             request.AddParameter("from", Options.EmailFrom);
             request.AddParameter("to", email);
             request.AddParameter("subject", subject);
-            request.AddParameter("text", message);
+            request.AddParameter("html", message);
             request.Method = Method.POST;
             var a = (RestResponse)client.Execute(request);
             return a;

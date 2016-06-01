@@ -15,7 +15,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Http.Features;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.PlatformAbstractions;
 using PS.Helper;
+using PS.Helper.Email;
 
 namespace PS.Controllers
 {
@@ -36,7 +38,9 @@ namespace PS.Controllers
 
         private ISession _session => _httpContextAccessor.HttpContext.Session;
         private SmsSender sender;
-        public AuthController(IMemoryCache cache, IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IHttpContextAccessor httpContextAccessor, IOptions<SmsMessageProvider> valueOptions)
+        private readonly IApplicationEnvironment _appEnvironment;
+        private readonly EmailSender emailBodyProvider;
+        public AuthController(IMemoryCache cache, IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IHttpContextAccessor httpContextAccessor, IOptions<SmsMessageProvider> valueOptions, IApplicationEnvironment appEnvironment)
         {
             _cache = cache;
             _auth = auth;
@@ -46,6 +50,8 @@ namespace PS.Controllers
             Options = optionsAccessor.Value;
             sender = new SmsSender(_smsSender, new SmsProviderHelper(valueOptions));
             _httpContextAccessor = httpContextAccessor;
+            _appEnvironment = appEnvironment;
+            emailBodyProvider = new EmailSender(_emailSender, new EmailBodyProvider(optionsAccessor,appEnvironment));
         }
 
         // POST api/auth/login
@@ -111,6 +117,7 @@ namespace PS.Controllers
                             _session.SetString(key, accessToken);
                             res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
                             SmsSender.RegistrationSuccessfull(model.Mobile,model.FirstName);
+                            EmailSender.RegistrationSuccess(model.Email,model.FirstName);
                         }
                         Response.StatusCode = (int)HttpStatusCode.Created;
                         return Json(new { Message = "User registered Successfully.", Result = result, Status = 0 });
