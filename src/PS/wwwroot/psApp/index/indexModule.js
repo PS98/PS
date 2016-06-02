@@ -292,6 +292,9 @@ indexApp.factory("indexDataService",
                                       {
                                           "text": "Disputes if any shall be resolved between user and Service Provider. MileMates, under any circumstances will not have any responsibility or liability to user."
                                       },
+                                      {
+                                          "text": "Customer will be penalized INR 300 if service booked by the customer is cancelled after the service station provides the quotation on necessary changes."
+                                      },
                                  {
                                      "text": "All other terms of use and privacy policy of milemates.com are also applicable in case of Order processing and Cancellation / Refund."
                                  },
