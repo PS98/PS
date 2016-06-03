@@ -47,6 +47,7 @@ namespace PS.Controllers
 
             return areaList?.Select(x => x.Area).Distinct();
         }
+
         [HttpPost]
         [Route("centerlist")]
         public IEnumerable<ServiceCentreViewModel> Get([FromBody] SelectedService selectedService)
@@ -77,7 +78,7 @@ namespace PS.Controllers
                     centreList.AddRange(areaDoc.First().Centres);
                 }
 
-                
+
                 // select only those which are providing all selected services;
                 double lat;
                 double.TryParse(selectedService.Latitude, out lat);
@@ -95,14 +96,16 @@ namespace PS.Controllers
                     var serviceDetails = new List<Detalis>();
                     var priceObj = new PriceDetails();
                     double distance = 0;
-                   
-                    if (!string.IsNullOrEmpty(selectedService.Latitude) && !string.IsNullOrEmpty(selectedService.Longitude))
+
+                    if (!string.IsNullOrEmpty(selectedService.Latitude) &&
+                        !string.IsNullOrEmpty(selectedService.Longitude))
                     {
                         double.TryParse(centre.Latitude, out lat);
                         double.TryParse(centre.Longitude, out log);
-                        var centreCoordinates = new GeoCoordinate(lat, log); ;
+                        var centreCoordinates = new GeoCoordinate(lat, log);
+                        ;
 
-                        distance = userCordinates.GetDistanceTo(centreCoordinates) / 1000;
+                        distance = userCordinates.GetDistanceTo(centreCoordinates)/1000;
                     }
 
                     // if no service selected then display all service centre list
@@ -128,24 +131,32 @@ namespace PS.Controllers
                     }
 
                     //  check if centre is providing all user selected service
-                    if (!selectedService.Name.All(x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
+                    if (
+                        !selectedService.Name.All(
+                            x => centre.ServiceDetails.Any(y => y.Name.Trim().ToLower() == x.Trim().ToLower())))
                         continue;
                     {
-                        foreach (var abc in centre.ServiceDetails.Where(abc => selectedService.Name.Contains(abc.Name.Trim())).Where(abc => !string.IsNullOrEmpty(selectedService.Type)))
+                        foreach (
+                            var abc in
+                                centre.ServiceDetails.Where(abc => selectedService.Name.Contains(abc.Name.Trim()))
+                                    .Where(abc => !string.IsNullOrEmpty(selectedService.Type)))
                         {
                             switch (selectedService.Type.ToLower().Trim())
                             {
                                 case "petrol":
-                                    priceObj = abc.Petrol?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj =
+                                        abc.Petrol?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "diesel":
-                                    priceObj = abc.Diesel?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj =
+                                        abc.Diesel?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "cng":
                                     priceObj = abc.CNG?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                                 case "electric":
-                                    priceObj = abc.Electric?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
+                                    priceObj =
+                                        abc.Electric?.FirstOrDefault(x => x.ModelList.Contains(selectedService.Model));
                                     break;
                             }
                             if (priceObj == null) continue;
@@ -154,7 +165,13 @@ namespace PS.Controllers
                             milematesPrice.Add(priceObj.MilematePrice);
                             actualPrice.Add(priceObj.ActualPrice);
                             if (milematesPrice.Count > 0)
-                                serviceDetails.Add(new Detalis { Name = abc.Name, IsFreePickUp = radius <= distance, MilematePrice = milematesPrice[milematesPrice.Count - 1], ActualPrice = actualPrice[actualPrice.Count - 1] });
+                                serviceDetails.Add(new Detalis
+                                {
+                                    Name = abc.Name,
+                                    IsFreePickUp = radius <= distance,
+                                    MilematePrice = milematesPrice[milematesPrice.Count - 1],
+                                    ActualPrice = actualPrice[actualPrice.Count - 1]
+                                });
                         }
 
                         if (selectedService.Name.Count == milematesPrice.Count)
@@ -180,10 +197,11 @@ namespace PS.Controllers
                 return selectedCentres;
             }
         }
+
         // POST api/values
         [HttpPost]
         [Route("save")]
-        public JsonResult Post([FromBody]ServiceCentre serviceCentreObj)
+        public JsonResult Post([FromBody] ServiceCentre serviceCentreObj)
         {
             try
             {
@@ -200,9 +218,10 @@ namespace PS.Controllers
                         // collection.Indexes.CreateOneAsync(Builders<ServiceCentre>.IndexKeys.Geo2D(p => p.Centres.First().Location));
                         var id = repo.GenerateNewId();
                         serviceCentreObj.Centres.First().Id = id;
-                        repo.insertDocument(_database, _collectionName, serviceCentreObj);   // if new area then insert into db
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "new doc created in DataBase", Status = 0, Id = id });
+                        repo.insertDocument(_database, _collectionName, serviceCentreObj);
+                            // if new area then insert into db
+                        Response.StatusCode = (int) HttpStatusCode.OK;
+                        return Json(new {Message = "new doc created in DataBase", Status = 0, Id = id});
                     }
 
                     // select first because one area will have one document
@@ -212,28 +231,29 @@ namespace PS.Controllers
 
                     var newCentre = serviceCentreObj.Centres.First();
 
-                    if (string.IsNullOrEmpty(newCentre.Id))  // no id then new centre 
+                    if (string.IsNullOrEmpty(newCentre.Id)) // no id then new centre 
                     {
                         var id = repo.GenerateNewId();
 
                         serviceCentreObj.Centres.First().Id = id;
                         centreList.Add(serviceCentreObj.Centres.First());
                         collection.UpdateOneAsync(filter, update);
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "new centre added into centreList", Status = 0, Id = id });
+                        Response.StatusCode = (int) HttpStatusCode.OK;
+                        return Json(new {Message = "new centre added into centreList", Status = 0, Id = id});
                     }
 
-                    if (newCentre.ServiceDetails.Count > 0 && string.IsNullOrEmpty(newCentre.ServiceDetails.First().Name))
+                    if (newCentre.ServiceDetails.Count > 0 &&
+                        string.IsNullOrEmpty(newCentre.ServiceDetails.First().Name))
                     {
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "please select a service ", Status = 1 });
+                        Response.StatusCode = (int) HttpStatusCode.OK;
+                        return Json(new {Message = "please select a service ", Status = 1});
                     }
 
                     var exitingCentre = centreList.Where(c => c.Id == newCentre.Id).ToList();
                     if (!exitingCentre.Any())
                     {
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "no centre found with given id", Status = 1 });
+                        Response.StatusCode = (int) HttpStatusCode.OK;
+                        return Json(new {Message = "no centre found with given id", Status = 1});
                     }
 
                     var data = exitingCentre.Select(y => y.ServiceDetails).First();
@@ -248,7 +268,12 @@ namespace PS.Controllers
                             if (newCentre.ServiceDetails.First().Petrol.Any())
                             {
                                 int count = 0;
-                                foreach (var details in service.Petrol.Where(x => newCentre.ServiceDetails.First().Petrol.Any(y => y.MilematePrice == x.MilematePrice)))
+                                foreach (
+                                    var details in
+                                        service.Petrol.Where(
+                                            x =>
+                                                newCentre.ServiceDetails.First()
+                                                    .Petrol.Any(y => y.MilematePrice == x.MilematePrice)))
                                 {
                                     details.ModelList.AddRange(newSericeDetails.First().Petrol.First().ModelList);
                                     count++;
@@ -261,7 +286,12 @@ namespace PS.Controllers
                             if (newCentre.ServiceDetails.First().Diesel.Any())
                             {
                                 int count = 0;
-                                foreach (var details in service.Diesel.Where(x => newCentre.ServiceDetails.First().Diesel.Any(y => y.MilematePrice == x.MilematePrice)))
+                                foreach (
+                                    var details in
+                                        service.Diesel.Where(
+                                            x =>
+                                                newCentre.ServiceDetails.First()
+                                                    .Diesel.Any(y => y.MilematePrice == x.MilematePrice)))
                                 {
                                     details.ModelList.AddRange(newSericeDetails.First().Diesel.First().ModelList);
                                     count++;
@@ -273,7 +303,12 @@ namespace PS.Controllers
                             if (newCentre.ServiceDetails.First().CNG.Any())
                             {
                                 int count = 0;
-                                foreach (var details in service.CNG.Where(x => newCentre.ServiceDetails.First().CNG.Any(y => y.MilematePrice == x.MilematePrice)))
+                                foreach (
+                                    var details in
+                                        service.CNG.Where(
+                                            x =>
+                                                newCentre.ServiceDetails.First()
+                                                    .CNG.Any(y => y.MilematePrice == x.MilematePrice)))
                                 {
                                     details.ModelList.AddRange(newSericeDetails.First().CNG.First().ModelList);
                                     count++;
@@ -285,7 +320,12 @@ namespace PS.Controllers
                             if (newCentre.ServiceDetails.First().Electric.Any())
                             {
                                 int count = 0;
-                                foreach (var details in service.Electric.Where(x => newCentre.ServiceDetails.First().Electric.Any(y => y.MilematePrice == x.MilematePrice)))
+                                foreach (
+                                    var details in
+                                        service.Electric.Where(
+                                            x =>
+                                                newCentre.ServiceDetails.First()
+                                                    .Electric.Any(y => y.MilematePrice == x.MilematePrice)))
                                 {
                                     details.ModelList.AddRange(newSericeDetails.First().Electric.First().ModelList);
                                     count++;
@@ -296,38 +336,27 @@ namespace PS.Controllers
                         }
 
                         collection?.UpdateOneAsync(filter, update);
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "new service details updated", Status = 1 });
+                        Response.StatusCode = (int) HttpStatusCode.OK;
+                        return Json(new {Message = "new service details updated", Status = 1});
                     }
                     else
                     {
-                        data.AddRange(newCentre.ServiceDetails); // if deatils of service is not exist than add to collection
+                        data.AddRange(newCentre.ServiceDetails);
+                            // if deatils of service is not exist than add to collection
                         collection?.UpdateOneAsync(filter, update);
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Message = "new service details updated", Status = 1 });
+                        Response.StatusCode = (int) HttpStatusCode.OK;
+                        return Json(new {Message = "new service details updated", Status = 1});
                     }
                 }
 
             }
             catch (Exception ex)
             {
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message });
+                Response.StatusCode = (int) HttpStatusCode.BadRequest;
+                return Json(new {Message = ex.Message});
             }
-            Response.StatusCode = (int)HttpStatusCode.OK;
-            return Json(new { Message = "Please enter Area Name", Status = 1 });
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            Response.StatusCode = (int) HttpStatusCode.OK;
+            return Json(new {Message = "Please enter Area Name", Status = 1});
         }
     }
 }

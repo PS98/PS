@@ -25,7 +25,6 @@ namespace PS.Controllers
     public class AuthController : Controller
     {
         private readonly IAuthService _auth;
-        private readonly IEmailSender _emailSender;
         private static Oauth2LoginContext _context;
         public AuthSocialLoginOptions Options { get; }
         private readonly ISmsSender _smsSender;
@@ -34,24 +33,22 @@ namespace PS.Controllers
         private IMemoryCache _cache;
         object res;
         string key = "XSRF-TOKEN";
-        private SmsProviderHelper smsProviderHelper;
 
         private ISession _session => _httpContextAccessor.HttpContext.Session;
         private SmsSender sender;
         private readonly IApplicationEnvironment _appEnvironment;
-        private readonly EmailSender emailBodyProvider;
+        private readonly EmailSender _emailSender;
         public AuthController(IMemoryCache cache, IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IHttpContextAccessor httpContextAccessor, IOptions<SmsMessageProvider> valueOptions, IApplicationEnvironment appEnvironment)
         {
             _cache = cache;
             _auth = auth;
-            _emailSender = emailSender;
             _smsSender = smsSender;
             _paymentProcessor = paymentProcessor;
             Options = optionsAccessor.Value;
             sender = new SmsSender(_smsSender, new SmsProviderHelper(valueOptions));
             _httpContextAccessor = httpContextAccessor;
             _appEnvironment = appEnvironment;
-            emailBodyProvider = new EmailSender(_emailSender, new EmailBodyProvider(optionsAccessor,appEnvironment));
+            _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor,appEnvironment));
         }
 
         // POST api/auth/login
@@ -117,7 +114,7 @@ namespace PS.Controllers
                             _session.SetString(key, accessToken);
                             res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
                             SmsSender.RegistrationSuccessfull(model.Mobile,model.FirstName);
-                            EmailSender.RegistrationSuccess(model.Email,model.FirstName);
+                            _emailSender.RegistrationSuccess(model.Email,model.FirstName);
                         }
                         Response.StatusCode = (int)HttpStatusCode.Created;
                         return Json(new { Message = "User registered Successfully.", Result = result, Status = 0 });
@@ -202,7 +199,7 @@ namespace PS.Controllers
                     if (pass != null)
                     {
                         //var callbackUrl = Url.Action("ForgotPassword", "Auth", new { userId = model.Email, code = pass }, protocol: HttpContext.Request.Scheme);
-                        _emailSender.SendSimpleMessage(model.Email, "Reset Password",
+                        _emailSender.SendEmail(model.Email, "Reset Password", 
                            "Your New Password is: " + pass);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "Password has been sent to registered email address.", Status = 0 });
@@ -413,7 +410,7 @@ namespace PS.Controllers
                 {
                     var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile + 
                         "provided feedback regarding MileMates services.<br /><br />" + model.Message;
-                    _emailSender.SendSimpleMessage("care@milemates.com", model.Subject, message);
+                    _emailSender.SendEmail("care@milemates.com", model.Subject, message);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "Your message has been submitted successfully.", Status = 0 });
                 }

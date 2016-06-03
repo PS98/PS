@@ -23,7 +23,14 @@ namespace PS.Helper
                 {"{pickAdd}", PickUpAddress},
                 {"{pickTime}", PickUpTime},
                 {"{dropTime}", DropOffTime},
-                {"{paymentMod}", PaymentMode}
+                {"{userPhoneNo}",UserPhoneNo },
+                 {"{email}", Email},
+                {"{paymentMod}", PaymentMode},
+                 {"{password}", Password},
+                {"{verificationLink}",VerificationLink },
+                {"{serviceCentreName}",ServiceCentreName },
+                {"{centreArea}",CentreArea },
+                 {"{centrePhoneNo}",CentrePhoneNo },
             };
         }
 
@@ -42,6 +49,14 @@ namespace PS.Helper
         public static readonly string PickUpTime = "PickUpTime";
         public static readonly string DropOffTime = "DropOffTime";
         public static readonly string PaymentMode = "PaymentMode";
+        public static readonly string Email = "Email";
+        public static readonly string Password = "Password";
+        public static readonly string VerificationLink = "VerificationLink";
+        public static readonly string ServiceCentreName = "ServiceCentreName";
+        public static readonly string CentreArea = "CentreArea";
+        public static readonly string UserPhoneNo = "UserPhoneNo";
+        public static readonly string CentrePhoneNo = "CentrePhoneNo";
+        // public static readonly string CentreArea = "CentreArea";
 
 
     }
@@ -63,6 +78,7 @@ namespace PS.Helper
         public const string ServicingConfirmation = "ServicingConfirmation";
 
         public const string FirstOrder = "FirstOrder";
+        public const string BookingConfirmed = "BookingConfirmed";
     }
 
 }

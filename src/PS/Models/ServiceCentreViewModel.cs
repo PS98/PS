@@ -10,6 +10,7 @@ namespace PS.Models
         public int TotalMMPrice { get; set; }
         public int TotalActualPrice { get; set; }
         public bool IsFreePickUp { get; set; }
+       
 
         private double _distance;
 

@@ -6,9 +6,12 @@ using Microsoft.AspNet.Mvc;
 using PS.Services;
 using PS.Models;
 using System.Net;
+using Microsoft.AspNet.Http;
 using Microsoft.Extensions.OptionsModel;
+using Microsoft.Extensions.PlatformAbstractions;
 using Newtonsoft.Json;
 using PS.Helper;
+using PS.Helper.Email;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,17 +22,17 @@ namespace PS.Controllers
     {
         private MongoRepository repo = new MongoRepository("services");
         private readonly IAuthService _auth;
-        private readonly IEmailSender _emailSender;
+        private readonly EmailSender _emailSender;
         public AuthSocialLoginOptions Options { get; }
         private readonly ISmsSender _smsSender;
         private IPaymentProcessor _paymentProcessor;
         private SmsProviderHelper smsProviderHelper;
         private SmsSender _sender;
 
-        public ServicesController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<SmsMessageProvider> valueOptions)
+        public ServicesController(IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<SmsMessageProvider> valueOptions, IOptions<AuthSocialLoginOptions> optionsAccessor,  IApplicationEnvironment appEnvironment)
         {
             _auth = auth;
-            _emailSender = emailSender;
+            _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor, appEnvironment)); ;
             _smsSender = smsSender;
             _paymentProcessor = paymentProcessor;
             _sender = new SmsSender(_smsSender, new SmsProviderHelper(valueOptions));
@@ -104,6 +107,7 @@ namespace PS.Controllers
                     model.BookingDate = DateTime.Now;
                     repo.insertDocument("orders", "Invoice", model);
                     SmsSender.BookingSuccessfull(model);
+                    _emailSender.BookingSuccess(model);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = model.InvoiceNo });
                     

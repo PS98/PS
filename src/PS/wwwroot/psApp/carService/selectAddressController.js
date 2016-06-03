@@ -52,7 +52,7 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
                     $localStorage.userData = {};
                     $sessionStorage.orderId = data.result;
 
-                    $state.go("orderSuccess");
+                  //  $state.go("orderSuccess");
                 }
                 else if (data.status === 1 || data.status === 2) {
                     $scope.orderErrorMessage = data.result;
