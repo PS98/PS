@@ -52,7 +52,7 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
                     $localStorage.userData = {};
                     $sessionStorage.orderId = data.result;
 
-                  //  $state.go("orderSuccess");
+                   $state.go("orderSuccess");
                 }
                 else if (data.status === 1 || data.status === 2) {
                     $scope.orderErrorMessage = data.result;
@@ -77,7 +77,7 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
         $scope.addressOtp = "";
     }
     $scope.ReviewOrder = function () {
-        if ($scope.otp === $scope.addressOtp) {
+        if ($scope.userSelectedService.userDetails.phoneNo === $scope.oldNumber || $scope.userSelectedService.userDetails.phoneNo === $scope.vaildatedNo || $scope.otp === $scope.addressOtp) {
             $scope.vaildatedNo = $scope.userSelectedService.userDetails.phoneNo;
             $scope.reviewOrder = [];
             var order = psDataServices.getSelectedService();
