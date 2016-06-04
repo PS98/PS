@@ -10,31 +10,11 @@
             </div><!-- end bg-inner -->
         </div><!-- end block-title__inner -->
     </div><!-- end block-title -->
+</div>
+<section>
 
-    <div class="row">
-
-        <div id="form-container">
-
-            <!--<div class="page-header text-center">
-                <h2>Complete Your Service Steps</h2>
-
-                <div id="status-buttons" class="text-center">
-                    <a ng-class="{active: state.current.name == 'service.car'}"><span>1</span> Select Car</a>
-                    <a ng-class="{active: state.current.name === service.centre}"><span>2</span> Select Centre</a>
-                    <a ng-class="{active: state.current.name === service.appointment}"><span>3</span> book Appointment</a>
-                    <a ng-class="{active: state.current.name === service.address}"><span>4</span>select Address</a>
-                </div>
-            </div>-->
-
-            <!-- use ng-submit to catch the form submission and use our Angular function -->
-            <form id="service-form" name="addressForm" ng-submit="processForm()">
                 <!-- our nested state views will be injected here -->
-                <div id="form-views" ui-view class="container service" ></div>
-            </form>
-
-        </div>
-
-    </div>
+                <div id="form-views" ui-view class="container service"></div>
 
     <div id="detailsModal" class="modal fade service" role="dialog" style="z-index:9999">
         <div class="modal-dialog modal-lg">
@@ -49,13 +29,13 @@
 
                     <collapsable data="overlayData"></collapsable>
 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal">Close</button>
-            </div>
-        </div>
 
+        </div>
     </div>
-</div>
-</div>
+</section>
 
