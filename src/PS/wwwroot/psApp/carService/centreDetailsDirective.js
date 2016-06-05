@@ -6,7 +6,9 @@ angular.module("psApp").directive("centreDetails", function () {
         replace:true,
         scope: {
             centre: '=',
-            add: '&'
+            add: '&',
+            serviceList: '=',
+            openInfo:'&'
           
         },
         controller: function ($scope) {
@@ -22,6 +24,10 @@ angular.module("psApp").directive("centreDetails", function () {
                }
                return ratings;
            }
+           $scope.showInfo = function (event) {
+               $scope.openInfo({ eventInfo: event });
+            }
+
            
         }
 

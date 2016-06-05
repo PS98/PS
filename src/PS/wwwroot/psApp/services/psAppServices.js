@@ -15,6 +15,9 @@
     var _setSelectedServiceName = function(servicesName) {
         serviceNameList = servicesName;
     }
+    var _getSelectedServiceName = function (servicesName) {
+       return  serviceNameList;
+    }
     var _setSelectedAppointment = function (appointment) {
         userServiceData.selectedAppointment.pickUpDate = appointment.pickUpDate;
         userServiceData.selectedAppointment.dropOffDate = appointment.dropOffDate;
@@ -138,6 +141,7 @@
         setSelectedCarAndService: _setSelectedCarAndService,
         getSelectedService: _getSelectedService,
         setSelectedServiceName: _setSelectedServiceName,
+        getSelectedServiceName: _getSelectedServiceName,
         setCentreDetails: _setCentreDetails,
         getCentreDetails: _getCentreDetails,
         getSelectedCentre: _getSelectedCentre,

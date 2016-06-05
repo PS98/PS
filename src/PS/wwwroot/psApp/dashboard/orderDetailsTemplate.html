@@ -108,7 +108,9 @@
                     <strong>{{service.name}}</strong>
                 </div>
                 <div class="col-xs-6">
-                    INR {{ service.actualPrice }}
+                     <span ng-if="service.actualPrice !== 0"> INR {{ service.actualPrice }}</span>
+                    <strong  ng-if="service.actualPrice === 0"> INR Pending</strong>
+                   
                 </div>
             </div>
             <div ng-repeat="service in order.selectedServices" ng-if="service.notes" class="row">

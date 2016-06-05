@@ -62,18 +62,18 @@
             <tbody>
                 <tr>
                     <td style="text-align: center;"><b>Selected Services</b></td>
-                    <td style="text-align: center;"><b>Actual Price</b></td>
+                    <td style="text-align: center;" ng-if="order.selectedCentre.totalActualPrice !== 0"><b>Actual Price</b></td>
                     <td style="text-align: center;"><b>MM Price</b></td>
                 </tr>
                 <tr ng-repeat="service in order.selectedCentre.serviceDetails">
                     <td class="selected_service" style="text-align: center;">{{service.name}}</td>
-                    <td style="text-align: center;"><i class="fa fa-inr" style="font-size: 11px;"></i> {{service.actualPrice}}</td>
-                    <td style="text-align: center;"><i class="fa fa-inr" style="font-size: 11px;"></i>{{service.milematePrice}}</td>
+                    <td style="text-align: center;" ng-if="order.selectedCentre.totalActualPrice !== 0"><i class="fa fa-inr" style="font-size: 11px;"></i> {{service.actualPrice}}</td>
+                    <td style="text-align: center;"><i class="fa fa-inr" style="font-size: 11px;"></i><span ng-if="order.selectedCentre.totalActualPrice === 0"> &nbsp;Pending</span> <span ng-if="order.selectedCentre.totalActualPrice !== 0"> {{ service.milematePrice}}</span></td>
                 </tr>
                 <tr class="total_estimate">
                     <td style="text-align: center;"> Total Estimated Charges</td>
-                    <td style="text-align: center; font-weight: bold;"><i class="fa fa-inr" style="font-size: 11px;"></i> {{order.selectedCentre.totalActualPrice}}</td>
-                    <td style="text-align: center; font-weight: bold;"><i class="fa fa-inr" style="font-size: 11px;"></i> {{ order.selectedCentre.totalMMPrice }}</td>
+                    <td style="text-align: center; font-weight: bold;" ng-if="order.selectedCentre.totalActualPrice !== 0"><i class="fa fa-inr" style="font-size: 11px;"></i> {{ order.selectedCentre.totalActualPrice}}</td>
+                    <td style="text-align: center; font-weight: bold;"><i class="fa fa-inr" style="font-size: 11px;"></i> <span ng-if="order.selectedCentre.totalActualPrice === 0"> &nbsp;Pending</span> <span ng-if="order.selectedCentre.totalActualPrice !== 0"> {{ order.selectedCentre.totalMMPrice }}</span></td>
                 </tr>
             </tbody>
         </table>
