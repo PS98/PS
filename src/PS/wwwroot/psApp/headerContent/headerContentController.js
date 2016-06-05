@@ -4,6 +4,10 @@ function ($scope, $localStorage, $location, $rootScope, $state, psLoginService) 
     $scope.isLoggedIn = $localStorage.userDetails ? true : false ;
     $scope.userDetails = $localStorage.userDetails ? $localStorage.userDetails : "";
 
+    $scope.windowOpen = function (url, name) {
+        window.open(url, name);
+    }
+
     $rootScope.$on("ps-user-profile-show", function (event,data) {
         $scope.isLoggedIn = data.isLoggedIn;
         $scope.userDetails = data.userDetails;
