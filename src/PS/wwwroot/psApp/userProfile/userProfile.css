@@ -1,6 +1,5 @@
 ﻿.header .ps-user-profile-small{
     color:#333;
-    padding:44px 13px 0;
     cursor: pointer;
 }
 
@@ -22,27 +21,15 @@
     margin-right: 10px;
 }
 
-.ps-user-profile-small span {
-    margin-right: 10px;
-    color: white;
-    padding-right: 15px;
-    position: relative;
-    font: 700 16px Raleway;
-    text-transform: capitalize;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    -webkit-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-}
 
 .ps-user-profile-small img{
     width:40px;
     height:40px;
-   margin-right:10px; 
+   margin-left:10px; 
    background: no-repeat;
    background-size:cover;  
    border-radius: 150px;
-   margin-top: -5px;
+   margin-top: -15px;
 }
 
 .drpdwnLogin {
@@ -103,3 +90,14 @@
     float:right !important;
 }
 
+@media(min-width: 480px) and (max-width: 991px) {
+      .ps-user-profile-small {
+         padding: 25px 0 0 0 !important;
+     }
+     .ps-user-profile-small :first-child > span {
+         display: none;
+     }
+     .header .ps-user-profile-small {
+        padding: 0 !important; 
+     }
+}

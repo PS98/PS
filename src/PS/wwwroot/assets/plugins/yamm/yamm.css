@@ -135,7 +135,12 @@
 
 }
 
-
+@media (min-width: 768px) and (max-width: 991px) {
+     .yamm .nav > li > a {
+      font-size: 14px;
+     padding: 39px 13px 0 0;
+    }
+ }
 
 @media (max-width:767px) {
 

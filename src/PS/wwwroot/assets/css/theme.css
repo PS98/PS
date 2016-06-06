@@ -563,11 +563,15 @@ img.pull-left {
 	margin-right: 30px;
 	color: #fff;
 }
+ .header-contacts {
+       text-align: right;
+       float: right;
+   }
 .header-contacts__item .icon {
 	margin-right: 10px;
 }
 .header .social-links {
-	float: right;
+	
 	margin-right: -12px;
 }
 .header .social-links > li > a {

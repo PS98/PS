@@ -4,42 +4,44 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <a id="scrollUp" class="back-to-top" href="#top" title="<i class='scroll-icon fa fa-chevron-up scroll-up'></i>" style="position: fixed; z-index: 2147483647; display:none;"><i class="scroll-icon fa fa-chevron-up scroll-up"></i></a>    
-                    <div class="pull-left">
-                        <ul class="social-links list-inline">
-                            <li><a class="icon fa fa-facebook" ng-click="windowOpen('https://www.facebook.com/milematescom-1074817592591303/', 'MileMates FB Page')"></a></li>
-                            <li><a class="icon fa fa-twitter" href="javascript:void(0);"></a></li>
-                            <li><a class="icon fa fa-linkedin" href="javascript:void(0);"></a></li>
-                            <li><a class="icon fa fa-google-plus" ng-click="windowOpen('https://plus.google.com/b/100230752972851063029/+MilematesTeam', 'MileMates Google Page')"></a></li>
-                        </ul>
+                    <a id="scrollUp" class="back-to-top" href="#top" title="<i class='scroll-icon fa fa-chevron-up scroll-up'></i>" style="position: fixed; z-index: 2147483647; display:none;"><i class="scroll-icon fa fa-chevron-up scroll-up"></i></a>
+                    <div class="row">
+                        <div class="col-md-6 header-socialLink">
+                            <ul class="social-links list-inline">
+                                <li><a class="icon fa fa-facebook" ng-click="windowOpen('https://www.facebook.com/milematescom-1074817592591303/', 'MileMates FB Page')"></a></li>
+                                <li><a class="icon fa fa-twitter" href="javascript:void(0);"></a></li>
+                                <li><a class="icon fa fa-linkedin" href="javascript:void(0);"></a></li>
+                                <li><a class="icon fa fa-google-plus" ng-click="windowOpen('https://plus.google.com/b/100230752972851063029/+MilematesTeam', 'MileMates Google Page')"></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 header-contacts">
+                            <span class="header-contacts__item">
+                                <i class="icon fa fa-phone"></i>+91 7276550720
+                            </span>
+                            <span class="header-contacts__item">
+                                <i class="icon fa fa-envelope"></i>care@milemates.com
+                            </span>
+                        </div>
                     </div>
-                    <div class="pull-right">
-                        <span class="header-contacts__item">
-                            <i class="icon fa fa-phone"></i>+91 7276550720
-                        </span>
-                        <span class="header-contacts__item">
-                            <i class="icon fa fa-envelope"></i>care@milemates.com
-                        </span>
+                        <!--<div class="bottom-bar" ng-if="isLoggedIn">
+            <div class="list-bottom-bar">
+                <i class="fa fa-car"></i>
+                <h6><a href="#">My Vehicles:</a></h6>
+                <a href="#" class="add">Add a Vehicle</a>
+            </div>
+
+            <div class="list-bottom-bar">
+                <i class="fa fa-map-marker"></i>
+                <h6><a href="#">My store:</a></h6>
+            </div>
+
+            <div class="list-bottom-bar">
+                <i class="fa fa-calendar"></i>
+                <h6><a href="#">My Appointments:</a></h6>
+                <a href="subpage-appointment.html" class="add">Make an appointment</a>
+            </div>
+        </div>-->
                     </div>
-                    <!--<div class="bottom-bar" ng-if="isLoggedIn">
-                        <div class="list-bottom-bar">
-                            <i class="fa fa-car"></i>
-                            <h6><a href="#">My Vehicles:</a></h6>
-                            <a href="#" class="add">Add a Vehicle</a>
-                        </div>
-
-                        <div class="list-bottom-bar">
-                            <i class="fa fa-map-marker"></i>
-                            <h6><a href="#">My store:</a></h6>
-                        </div>
-
-                        <div class="list-bottom-bar">
-                            <i class="fa fa-calendar"></i>
-                            <h6><a href="#">My Appointments:</a></h6>
-                            <a href="subpage-appointment.html" class="add">Make an appointment</a>
-                        </div>
-                    </div>-->
-                </div>
                 <!-- end col -->
             </div>
             <!-- end row -->
@@ -51,8 +53,8 @@
     <div class="header__inner">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-xs-12" style="height: 40px;">
-                    <a href="/" class="logo"> <img class="logo__img img-responsive" src="assets/img/logo.png" width="250" alt="MileMates Logo"> </a>
+                <div class="col-xs-3"><a href="/" class="logo"> <img class="logo__img img-responsive" src="assets/img/logo.png" width="250" alt="MileMates Logo"> </a></div>
+                <div class="col-xs-9 nav-bar-menu">
                     <div class="navbar yamm">
                         <div class="navbar-header hidden-md hidden-lg hidden-sm">
                             <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
@@ -69,10 +71,10 @@
                                 <li>
                                     <a href="/Service/" title="Book Appointment">Book Now</a>
                                 </li>
-                                <li>
+                                <li  ng-if="!isLoggedIn">
                                     <a href="" ng-if="!isLoggedIn" ng-click="openloginModal()" title="MileMates Login">Login</a>
-                                    <ps-user-profile ng-if="isLoggedIn"></ps-user-profile>
                                 </li>
+                                <li ps-user-profile  ng-if="isLoggedIn" ></li>
                             </ul>
                         </div>
                     </div>

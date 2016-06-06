@@ -301,7 +301,11 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                          });
                 psDataServices.setuserDetails($scope.userDetails);
                 psLoginService.setUserAuthenticated(true);
-                opener.location.reload(); 
+                if (opener) {
+                    opener.location.reload();
+                } else if (window || window.opener) {
+                    window.opener.location.reload();
+                }
                 window.close();
 
             }, function (error) {

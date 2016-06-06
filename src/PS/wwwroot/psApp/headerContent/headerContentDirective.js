@@ -120,16 +120,12 @@ function makeSyickyHeader() {
 
 
 
-        $(".dropdown").hover(
-        function () {
-            $('.dropdown-menu', this).stop(true, true).slideDown("fast");
-            $(this).toggleClass('open');
-        },
-        function () {
-            $('.dropdown-menu', this).stop(true, true).slideUp("fast");
-            $(this).toggleClass('open');
-        }
-    );
+        $('body').delegate(".dropdown","hover",
+            function() {
+                $('.dropdown-menu', this).stop(true, true).slideToggle("fast");
+                $(this).toggleClass('open');
+            }
+        );
 
 
              $(".yamm .navbar-nav>li").hover(
