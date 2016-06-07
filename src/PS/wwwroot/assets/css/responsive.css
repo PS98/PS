@@ -28,17 +28,18 @@
         font: 700 14px Raleway !important;   
     }
     .list-progress__item:nth-child(1),
-    .list-progress__item:nth-child(3) {
+    .list-progress__item:nth-child(3),
+    .list-progress__item:nth-child(5) {
         width: 290px;
     }
 
-    .list-progress__item:nth-child(2) {
+    /*.list-progress__item:nth-child(2) {
         width: 300px;
         background-position: 0 3px;
-    }
+    }*/
 
         .list-progress__item:nth-child(1) .icon,
-        .list-progress__item:nth-child(2) .icon,
+        .list-progress__item:nth-child(5) .icon,
         .list-progress__item:nth-child(3) .icon {
             font-size: 40px;
         }
@@ -86,25 +87,26 @@
     }
 
     .list-progress__item:nth-child(1),
-    .list-progress__item:nth-child(3) {
+    .list-progress__item:nth-child(3),
+    .list-progress__item:nth-child(5) {
         width: 350px;
         background-image: url('../media/figure/figure-2.svg');
     }
 
     .list-progress__item:nth-child(1),
-    .list-progress__item:nth-child(2),
+    .list-progress__item:nth-child(5),
     .list-progress__item:nth-child(3) {
         height: 120px;
         background-size: containh;
     }
 
-    .list-progress__item:nth-child(2) {
+    /*.list-progress__item:nth-child(2) {
         width: 350px;
         background-position: 0 0;
-    }
+    }*/
 
         .list-progress__item:nth-child(1) .icon,
-        .list-progress__item:nth-child(2) .icon,
+        .list-progress__item:nth-child(5) .icon,
         .list-progress__item:nth-child(3) .icon {
             font-size: 40px;
         }
@@ -235,7 +237,7 @@
 }
 }
 /* end max-width:991px and min-width:768px */
-@media(min-width: 641px) and (max-width: 991px) {
+@media(min-width: 64px) and (max-width: 991px) {
     .header-socialLink{
         float: left;
     }
@@ -396,8 +398,10 @@
     }
 
     .list-progress__item:nth-child(1),
-    .list-progress__item:nth-child(2),
-    .list-progress__item:nth-child(3) {
+    .list-progress__item:nth-child(3),
+    .list-progress__item:nth-child(5)
+   
+     {
         width: 270px;
     }
 
