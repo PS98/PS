@@ -24,6 +24,9 @@
 /* 768 x 1024 (Laptop) */
 
 @media (min-width:992px) and (max-width:1199px) {
+    .feedback-section {
+        padding: 0 55px;
+    }
   .yamm .nav > li > a {
         font: 700 14px Raleway !important;   
     }
@@ -220,6 +223,9 @@
     .list-type__link {
         width: 340px;
     }
+    .feedback-section {
+        padding: 0 20px;
+    }
    }
 
 @media (max-width: 767px) {
@@ -237,7 +243,7 @@
 }
 }
 /* end max-width:991px and min-width:768px */
-@media(min-width: 64px) and (max-width: 991px) {
+@media(min-width: 640px) and (max-width: 991px) {
     .header-socialLink{
         float: left;
     }
@@ -284,7 +290,9 @@
     .yamm .nav {
         margin-right: 0;
     }
-
+    .feedback-section {
+        padding: 0 20px;
+    }
     .link-img {
         position: relative;
         margin-bottom: 20px;

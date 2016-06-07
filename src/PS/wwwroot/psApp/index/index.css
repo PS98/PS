@@ -68,11 +68,7 @@
     top: 50%;
 }
 
-.feedback-section {
-    padding-left: 55px;
-    padding-right: 55px;
-    position: relative;
-}
+
 
 .feedback-section .feedback-controls .caro-prev {
     left: 0;
@@ -178,20 +174,11 @@
     top: 0;
     right: -12px;
 }
-@media (min-width: 768px) {
-    .tab-section .tab {
-        border-right: 2px solid #3f51b5;
-    }
-}
+
 .tab-section .tab {
     border-bottom: 2px solid #3f51b5;
 }
-@media (min-width: 1200px) {
-    .nav li {
-        font-family: montserrat-bold;
-        font-size: 14px;
-    }
-}
+
 .tab li {
     list-style: none;
     font-family: montserrat-regular;
@@ -431,10 +418,7 @@ ul.services-name {
 .column-carousel .owl-dots {
     display: none !important;
 }
-.column-carousel .owl-item {
-    width : 353px !important;
-    padding: 0 15px 0 15px;
-}
+
 
 .owl-theme .owl-dots .owl-dot {
     display: inline-block;
@@ -940,4 +924,46 @@ color: white !important;
 .subscriptionMessage{
     font-size: 20px;
     font-weight: 600;
+}
+@media (min-width: 640px) {
+    .feedback-section {
+        padding-left: 25px;
+        padding-right: 25px;
+        position: relative;
+    }
+}
+@media (min-width:300px) {
+    .feedback-section {
+        padding-left: 35px;
+        padding-right: 35px;
+        position: relative;
+    }
+
+    .column-carousel .owl-item {
+        padding: 0 5px;
+    }
+}
+     @media (min-width: 768px) {
+    .tab-section .tab {
+        border-right: 2px solid #3f51b5;
+    }
+    .column-carousel .owl-item {
+    padding: 0 5px;
+}
+}
+@media (min-width: 1200px) {
+    .nav li {
+        font-family: montserrat-bold;
+        font-size: 14px;
+    }
+
+    .feedback-section {
+        padding-left: 55px;
+        padding-right: 55px;
+        position: relative;
+    }
+
+    .column-carousel .owl-item {
+        padding: 0 15px;
+    }
 }
