@@ -12,7 +12,9 @@
 .yamm .dropdown-menu > li > a{
     text-transform: none;
 }
-
+  .header-contacts .spec {
+      padding-right: 30px;
+  }
 .fontChngRaleway{
     font: 700 14px Raleway;
 }

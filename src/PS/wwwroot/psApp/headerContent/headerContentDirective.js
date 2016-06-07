@@ -156,6 +156,11 @@ function makeSyickyHeader() {
             e.preventDefault();
             $('#forgetpass-taba').tab('show');
         });
-
+        $('body').delegate('.navbar-collapse li', 'click', function () {
+            $("#navbar-collapse-1").collapse("hide");
+        });
+        $(document).click(function() {
+            $("#navbar-collapse-1").collapse("hide");
+        });
     });
 }
