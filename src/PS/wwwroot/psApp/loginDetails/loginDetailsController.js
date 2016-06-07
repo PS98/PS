@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$rootScope","$timeout","psLoginService","psDataServices", "$state", '$cookies','$cookieStore',
-function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService, psDataServices, $state, $cookies, $cookieStore) {
+﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location","$window", "$rootScope","$timeout","psLoginService","psDataServices", "$state", '$cookies','$cookieStore',
+function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLoginService, psDataServices, $state, $cookies, $cookieStore) {
     $scope.isBusy = true;
   //  $scope.isLoggedIn = false;
     $scope.loginError = false;
@@ -9,7 +9,7 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
     
 
     $scope.TCRedirection = function (url, name) {
-        window.open(url, name);
+        $window.open(url, name);
     }
 
     $scope.loginSubmit = function () {     
@@ -267,8 +267,8 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
     }
     $scope.openwindow = function(url, name, iWidth, iHeight) {
         var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
-        var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
-        window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizeable=no,location=no,status=no');
+        var iLeft = ($window.screen.availWidth - 10 - iWidth) / 2;
+        $window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizeable=no,location=no,status=no');
 
         //window.onload = function () {
         //    var $preloader = $('#page-preloader'),
@@ -303,10 +303,10 @@ function ($scope, $localStorage, $location, $rootScope, $timeout, psLoginService
                 psLoginService.setUserAuthenticated(true);
                 if (opener) {
                     opener.location.reload();
-                } else if (window || window.opener) {
-                    window.opener.location.reload();
+                } else if ($window || $window.opener) {
+                    $window.opener.location.reload();
                 }
-                window.close();
+                $window.close();
 
             }, function (error) {
                 //Error
