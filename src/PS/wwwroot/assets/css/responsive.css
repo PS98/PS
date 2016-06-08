@@ -243,7 +243,7 @@
 }
 }
 /* end max-width:991px and min-width:768px */
-@media(min-width: 640px) and (max-width: 991px) {
+@media(min-width: 641px) and (max-width: 991px) {
     .header-socialLink{
         float: left;
     }

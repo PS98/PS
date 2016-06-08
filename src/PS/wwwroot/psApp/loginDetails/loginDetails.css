@@ -6,9 +6,7 @@
 	max-width: 380px;
 }
 
-.login-modal {
-	width: 80%;
-}
+
 
 .tab-pane form {
 	margin: 0 auto;
@@ -78,4 +76,27 @@
 }
 .footerPadding15px{
     padding-top : 15px;
+}
+@media(min-width: 768px) {
+    .login-modal {
+	width: 25%;
+    min-width: 350px
+}
+}
+@media(min-width: 500px) and (max-width: 767px) {
+    .login-modal {
+        margin: 80px;
+    }
+}
+@media(max-width: 340px) {
+  .login-modal  .modal-body {
+        padding: 0px;
+      padding-bottom: 10px;
+    }
+  
+}
+@media(min-width: 340px) and (max-width: 500px) {
+    .login-modal {
+      margin: 20px;
+  }
 }
