@@ -967,3 +967,16 @@ color: white !important;
         padding: 0 15px;
     }
 }
+@media(max-width: 767px) {
+   .ct-newsletter .input-group input {
+       border-radius: 10px !important;
+       margin-bottom: 5px;
+    }
+    .ct-newsletter .input-group button {
+       border-radius: 10px !important;
+        
+    }
+    .ct-newsletter .form-group {
+        text-align: center;
+    }
+}
