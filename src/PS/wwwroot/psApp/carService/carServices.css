@@ -678,7 +678,7 @@ pre                             { margin-bottom:20px; }
 
 /* ANIMATION STYLINGS
 ============================================================================= */
-#service-form            { position:relative; min-height:500px; overflow:hidden; padding:30px; }
+#service-form            { position:relative; min-height:500px; overflow:hidden;}
 
 /* basic styling for entering and leaving */
 /* left and right added to ensure full width */

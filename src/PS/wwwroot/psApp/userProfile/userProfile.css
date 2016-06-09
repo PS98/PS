@@ -96,9 +96,7 @@
       .ps-user-profile-small {
          padding: 25px 0 0 0 !important;
      }
-     .ps-user-profile-small :first-child > span {
-         display: none;
-     }
+ 
      .header .ps-user-profile-small {
         padding: 0 !important; 
      }

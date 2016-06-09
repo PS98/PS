@@ -80,15 +80,17 @@
         right: -60vw;
         text-align: right;
     }
-    /*.header .logo {
-		position: absolute;
-		left: 10px;
-		top: 50px;
-	}*/
+ .header.sticky .ps-user-profile-small img {
+    width: 30px;
+    height: 30px;
+}
+    .header.sticky .yamm .nav > li > a {
+        padding: 10px 15px 13px 0 !important;
+    }
  .yamm .nav > li > a {
         padding-top: 20px;
     }
-
+ 
     .list-progress__item:nth-child(1),
     .list-progress__item:nth-child(3),
     .list-progress__item:nth-child(5) {
@@ -207,11 +209,15 @@
 .sticky .ps-user-profile-small > a {
     padding: 2px 0px 23px !important;
 }
+#service-form {
+    padding:30px; 
+}
+
 }
 
 @media (max-width:991px) and (min-width:768px) {
     .ps-user-profile-small > a {
-        padding: 11px 13px 0 0 !important;
+        padding: 35px 13px 0 0 !important;
 }
     .nav-bar-menu {
         padding-right: 0 !important
@@ -234,20 +240,39 @@
         text-align: center;
          /*overflow: hidden;*/
     }
-        .nav-bar-menu .dropdown-menu li a {
+        .nav-bar-menu .dropdown-menu li a { 
             padding-left: 110px !important;
         }
         .header.sticky .yamm .nav > li > a {
     padding: 10px 7px 0;
     margin-top: 5px;
 }
+ .service {
+     padding: 0 !important;
+ }
+ .service .car-header {
+     padding: 15px 0 !important;
+    }
+ .service .car-selection-container {
+     min-width: 750px !important;
+     overflow: auto;
+ }
+ /*.book .small-padding {
+     padding: 0 5px !important;
+ }
+ .book .col-xs-offset-4 {
+     margin-left: 0 !important;
+ }*/
+
 }
 /* end max-width:991px and min-width:768px */
 @media(min-width: 641px) and (max-width: 991px) {
     .header-socialLink{
         float: left;
     }
-  
+  .service {
+      width: 100% !important;
+  }
 }
 
 @media (max-width: 640px) {
@@ -264,6 +289,10 @@
     .header-socialLink {
         text-align: right;
     }
+     /*#service-form {
+     min-width: 700px;
+     overflow-x: scroll;
+ }*/
 }
 /*480 x 640 (small tablet and iPhone)*/
 
@@ -410,7 +439,7 @@
     .list-progress__item:nth-child(5)
    
      {
-        width: 270px;
+        width: 250px;
     }
 
     .list-progress__item {
