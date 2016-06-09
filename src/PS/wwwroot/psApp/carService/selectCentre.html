@@ -9,136 +9,138 @@
     <div class="arrow" style="left: 50%;"></div>
     <div class="popover-content"> Quotation will be shared after inspection of your car.</div>
 </div>
-<div class="row centre-list mrgtop15">
-    <div class="col-xs-6">
-        <div class="car-header" style="min-height: 300px">
+<div class="row centre-list mrgtop15" style="overflow: auto">
+    <div style="min-width: 600px;">
+        <div class="col-xs-6">
+            <div class="car-header" style="min-height: 300px">
 
-            <!--<form class="form-horizontal">-->
-            <div class="header-text" error-message="Please select a service." require-info="quote.jobs[0]" data-original-title="" title="">
-                How Can We Reach You
-                <div class="b-step mrgtop15">
-                    3
-                </div>
-            </div>
-            <button type="button" class="btn btn-primary btn-effect" ui-sref="service.car" ng-click="setCentreDetails()"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Back</button>
-         
-            <div class="sorting">
-                <div class="sorting__inner">
-                    <div class="sorting__item">
-                        <span class="sorting__title">Select City</span>
-                        <div class="select jelect">
-                            <input ng-model="city" type="text" id="txtCity" class="jelect-input" ng-change="getServiceCentreArea()">
-                            <div tabindex="0" role="button" class="jelect-current" id="cityDropDown">Select City</div>
-                            <ul class="jelect-options" id="dropDownCity">
-                                <li class="jelect-option jelect-option_state_active">Select City</li>
-                                <li class="jelect-option" ng-repeat="city in centreDetails.cityList">{{city}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="sorting__item">
-                        <span class="sorting__title">Select Area</span>
-                        <div class="select jelect">
-                            <input id="txtArea" ng-model="area" type="text" class="jelect-input" ng-change="changeArea()">
-                            <div tabindex="0" role="button" class="jelect-current" id="areaDropDown">Select Area</div>
-                            <ul class="jelect-options" id="dropDownArea">
-                                <li class="jelect-option jelect-option_state_active">Select Area</li>
-                                <li class="jelect-option" ng-repeat="area in centreDetails.areaList">{{area}}</li>
-                            </ul>
-                        </div>
+                <!--<form class="form-horizontal">-->
+                <div class="header-text" error-message="Please select a service." require-info="quote.jobs[0]" data-original-title="" title="">
+                    How Can We Reach You
+                    <div class="b-step mrgtop15">
+                        3
                     </div>
                 </div>
-            </div>
-            <div>
-            </div>
-            <centre-details ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'" centre="centreDetails.selectedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" class="active"></centre-details>
+                <button type="button" class="btn btn-primary btn-effect" ui-sref="service.car" ng-click="setCentreDetails()"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Back</button>
 
-            <div class="alert alert-danger" role="alert" ng-if="noCentreMatch">
-                <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                Currently No Service Centre Available in Your Selected Area
-            </div>
-            <div class="alert alert-info" role="alert" ng-if="noServiceMatch">
-                <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                There is no service centre in your area who provides all the services that you have selected. Please modify your service request.
-            </div>
-            <div class="list-container" ng-if="(centreDetails.selectedCentre.services || []).length >0" ng-show="area !='Select Area'">
-                <h4 class="header-text">Services</h4>
-                <div class="list-flex-container">
-                    <ul class="list-flex-column">
-                        <li ng-repeat="service in centreDetails.selectedCentre.services">{{ service }}</li>
-                    </ul>
+                <div class="sorting">
+                    <div class="sorting__inner">
+                        <div class="sorting__item">
+                            <span class="sorting__title">Select City</span>
+                            <div class="select jelect">
+                                <input ng-model="city" type="text" id="txtCity" class="jelect-input" ng-change="getServiceCentreArea()">
+                                <div tabindex="0" role="button" class="jelect-current" id="cityDropDown">Select City</div>
+                                <ul class="jelect-options" id="dropDownCity">
+                                    <li class="jelect-option jelect-option_state_active">Select City</li>
+                                    <li class="jelect-option" ng-repeat="city in centreDetails.cityList">{{city}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sorting__item">
+                            <span class="sorting__title">Select Area</span>
+                            <div class="select jelect">
+                                <input id="txtArea" ng-model="area" type="text" class="jelect-input" ng-change="changeArea()">
+                                <div tabindex="0" role="button" class="jelect-current" id="areaDropDown">Select Area</div>
+                                <ul class="jelect-options" id="dropDownArea">
+                                    <li class="jelect-option jelect-option_state_active">Select Area</li>
+                                    <li class="jelect-option" ng-repeat="area in centreDetails.areaList">{{area}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'">
-                <h4 class="header-text">Working Hours</h4>
-                <table class="table table-bordered table-condensed table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th class="text-right">Opening Time</th>
-                            <th class="text-right">Closing Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Monday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Tuesday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Thursday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Friday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">6:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Saturday</td>
-                            <td class="text-right">8:30am</td>
-                            <td class="text-right">5:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Sunday</td>
-                            <td class="text-right">10:00am</td>
-                            <td class="text-right">4:00pm</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    <small>*Opening hours may vary due to public holidays.</small>
-                </p>
+                <div>
+                </div>
+                <centre-details ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'" centre="centreDetails.selectedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" class="active"></centre-details>
+
+                <div class="alert alert-danger" role="alert" ng-if="noCentreMatch">
+                    <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                    Currently No Service Centre Available in Your Selected Area
+                </div>
+                <div class="alert alert-info" role="alert" ng-if="noServiceMatch">
+                    <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                    There is no service centre in your area who provides all the services that you have selected. Please modify your service request.
+                </div>
+                <div class="list-container" ng-if="(centreDetails.selectedCentre.services || []).length >0" ng-show="area !='Select Area'">
+                    <h4 class="header-text">Services</h4>
+                    <div class="list-flex-container">
+                        <ul class="list-flex-column">
+                            <li ng-repeat="service in centreDetails.selectedCentre.services">{{ service }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'">
+                    <h4 class="header-text">Working Hours</h4>
+                    <table class="table table-bordered table-condensed table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th class="text-right">Opening Time</th>
+                                <th class="text-right">Closing Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">6:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td class="text-right">8:30am</td>
+                                <td class="text-right">5:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td class="text-right">10:00am</td>
+                                <td class="text-right">4:00pm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <small>*Opening hours may vary due to public holidays.</small>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-xs-6">
-        <div class="car-header" style="min-height: 300px">
-            <div class="row">
-                <div id="mapholder" class="col-md-12" style="height: 250px">
-                </div>
-            </div>
-            <div>
-                <div ng-if="centreDetails.recommendedCentre.name">
-                    <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
-                    <div class="centre-list_first">
-                        <centre-details centre="centreDetails.recommendedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" ng-class="centreDetails.recommendedCentre.name == centreDetails.selectedCentre.name ?'active' :'non-active'"></centre-details>
+        <div class="col-xs-6">
+            <div class="car-header" style="min-height: 300px">
+                <div class="row">
+                    <div id="mapholder" class="col-md-12" style="height: 250px">
                     </div>
                 </div>
-                <div ng-if="(centreDetails.centreList || [] ).length > 1">
-                    <h4 class="centre-list_other-title">Other centres nearby</h4>
-                    <div class="centre-list_other">
-                        <centre-details centre="centre" ng-repeat="centre in centreDetails.centreList" service-list="selectedService" add="selectServiceCentre(dirCentre)" open-info="openInformationPopup(eventInfo)" ng-if="centre != centreDetails.recommendedCentre" ng-class="centre.name == centreDetails.selectedCentre.name ?'active' :'non-active'"></centre-details>
+                <div>
+                    <div ng-if="centreDetails.recommendedCentre.name">
+                        <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
+                        <div class="centre-list_first">
+                            <centre-details centre="centreDetails.recommendedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" ng-class="centreDetails.recommendedCentre.name == centreDetails.selectedCentre.name ?'active' :'non-active'"></centre-details>
+                        </div>
+                    </div>
+                    <div ng-if="(centreDetails.centreList || [] ).length > 1">
+                        <h4 class="centre-list_other-title">Other centres nearby</h4>
+                        <div class="centre-list_other">
+                            <centre-details centre="centre" ng-repeat="centre in centreDetails.centreList" service-list="selectedService" add="selectServiceCentre(dirCentre)" open-info="openInformationPopup(eventInfo)" ng-if="centre != centreDetails.recommendedCentre" ng-class="centre.name == centreDetails.selectedCentre.name ?'active' :'non-active'"></centre-details>
+                        </div>
                     </div>
                 </div>
             </div>
