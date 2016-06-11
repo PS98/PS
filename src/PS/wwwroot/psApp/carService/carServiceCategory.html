@@ -6,19 +6,19 @@
                  <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
                  <i class="fa fa-check-circle" ng-class="job.selected ? 'selected' : ''" ng-click="addSelectedJob(job)"></i>
                  <!--<div class="col-xs-10">-->
-                 <div class="panel-heading service-panel-color" ng-if="job.description" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'">
+                 <div class="panel-heading service-panel-color fix-width col-xs-10" ng-if="job.description">
                      <div class="panel-title">
                          <a data-toggle="collapse" data-parent="#accordion" data-target="#{{job.name | makeId}}"> <!--aria-expanded="{{ $index === 0 ? 'true': false}}">-->
                              {{job.name}}
                          </a>
                      </div>
                  </div>
-                 <div id="{{job.name | makeId}}" class="panel-collapse collapse" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'" ng-if="job.description">
+                 <div id="{{job.name | makeId}}" class="panel-collapse collapse col-xs-10" ng-if="job.description">
                      <div class="panel-body">
                          {{job.description}}
                      </div>
                  </div>
-                 <span class="top-padding10" ng-if="(job.description || []).length == 0" ng-class="(selectedJob ||[]).length > 0 ? 'col-xs-9': 'col-xs-10'">
+                 <span class="top-padding10 fix-width col-xs-10" ng-if="(job.description || []).length == 0" >
                      {{job.name}}
                  </span>
 

@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="row margin-top10">
-                        <div class="col-md-12" style="overflow-x: auto">
+                        <div class="col-md-12">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="car-selection-car-container">
@@ -44,12 +44,23 @@
                                             YOUR MAKE
                                         </span>
                                         <div class="car-selection-flex-container">
-                                            <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections">
-                                                <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
-                                                    <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
-                                                    <span ng-bind="carBrand" style="padding-left:10px"></span>
-                                                </li>
-                                            </ul>
+                                            <div class="col-sm-6">
+                                                <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections | limitTo:2">
+                                                    <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
+                                                        <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
+                                                        <span ng-bind="carBrand" style="padding-left: 10px"></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections.slice(2,carList.carCollections.length)">
+                                                    <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
+                                                        <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
+                                                        <span ng-bind="carBrand" style="padding-left: 10px"></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -60,11 +71,19 @@
                                         <span class="car-selection-step-name">
                                             YOUR CAR'S YEAR
                                         </span>
-                                        <div class="car-selection-flex-container">
+                                        <div class="car-selection-flex-container col-sm-6">
                                             <!--<div class="btn-idk" ng-click="selectYear('')">
                                                 I don't know
                                             </div>-->
-                                            <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList">
+                                            <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList | limitTo:2">
+                                                <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
+                                            </ul>
+                                        </div>
+                                        <div class="car-selection-flex-container col-sm-6">
+                                            <!--<div class="btn-idk" ng-click="selectYear('')">
+                                                I don't know
+                                            </div>-->
+                                            <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList.slice(2,carList.carTypes.length)">
                                                 <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
                                             </ul>
                                         </div>
@@ -77,13 +96,21 @@
                                         <span class="car-selection-step-name">
                                             YOUR MODEL
                                         </span>
-                                        <div class="car-selection-flex-container">
+                                        <div class="">
                                             <!--<div class="btn-idk" ng-click="selectModel('')">
                                                 I don't know
                                             </div>-->
-                                            <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes">
-                                                <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
-                                            </ul>
+                                            <div class="col-sm-6 car-selection-flex-container">
+                                                <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes | limitTo:2">
+                                                    <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6 car-selection-flex-container">
+                                                <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes.slice(2,carList.carTypes.length)">
+                                                    <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
+                                                </ul>
+                                            </div>
+
 
                                         </div>
                                     </div>
@@ -95,27 +122,37 @@
                                         <span class="car-selection-step-name">
                                             ENGINE TYPE
                                         </span>
-                                        <div class="car-selection-flex-container">
-                                            <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList">
-                                                <li ng-click="selectVarient(carVarient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-bind="carVarient"></li>
-                                            </ul>
+                                        <div class="">
+                                            <div class="col-sm-6 car-selection-flex-container">
+                                                <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList  | limitTo:2">
+                                                    <li ng-click="selectVarient(carVarient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-bind="carVarient"></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-sm-6 car-selection-flex-container">
+                                                <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList.slice(2,carList.carVarientList.length)">
+                                                    <li ng-click="selectVarient(carVarient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-bind="carVarient"></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
 </div>
 
+
 <div class="row" id="slide-container" ng-if="car.choose_a_service">
     <div class="col-xs-12">
-        <div class="spacet-20" style="overflow: auto">
-            <div class="white-container" style="min-width: 600px;">
+        <div class="spacet-20">
+            <div class="white-container">
 
                 <div class="row">
                     <div class="col-md-12">
@@ -138,9 +175,19 @@
 
                         </div>
                         <div class="row" ng-if="(searchedText.name || []).length == 0">
-                            <div class="col-xs-12">
+                            <div class="col-sm-6">
                                 <div class="b-categories">
-                                    <a ng-click="changeView();" ng-repeat="service in services.serviceName">
+                                    <a ng-click="changeView();" ng-repeat="service in services.serviceName | limitTo:2">
+                                        <div class="content content" ng-class="serviceOpts.viewMode == '{{service}}' ? 'content-active' : null">
+                                            <div ng-class="serviceOpts.viewMode =='{{service}}' ? 'icon-{{service | lowercase |formatToCss }}-selected ' :'icon-{{service | lowercase | formatToCss}}'" class="icon-common-services"></div>
+                                            {{ service }}
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="b-categories">
+                                    <a ng-click="changeView();" ng-repeat="service in services.serviceName.slice(2,3)">
                                         <div class="content content" ng-class="serviceOpts.viewMode == '{{service}}' ? 'content-active' : null">
                                             <div ng-class="serviceOpts.viewMode =='{{service}}' ? 'icon-{{service | lowercase |formatToCss }}-selected ' :'icon-{{service | lowercase | formatToCss}}'" class="icon-common-services"></div>
                                             {{ service }}
@@ -152,6 +199,7 @@
                                             Describe <br>your service
                                         </div>
                                     </a>
+
                                 </div>
                             </div>
                         </div>
@@ -165,23 +213,23 @@
                     <div class="popover-content">{{errorMessage}}</div>
                 </div>
                 <div class="row select-service-box">
-                    <div class="col-md-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length == 0 ">
+                    <div class="col-sm-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length == 0 ">
                         <car-service-category ng-if="(searchedText.name || []).length == 0"></car-service-category>
                     </div>
-                    <div class="col-xs-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length>0">
+                    <div class="col-sm-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length>0 && (searchedText.name || []).length>0">
                         <car-service-category ng-if="(searchedText.name || []).length > 0"></car-service-category>
 
                     </div>
-                    <div class="col-xs-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length == 0 && serviceOpts.viewMode =='Repair & Maintenance'">
+                    <div class="col-sm-7" ng-class="(selectedJob || []).length == 0 ?'content-full-width' : ''" ng-show="(commonServices || []).length == 0 && serviceOpts.viewMode =='Repair & Maintenance'">
                         <div class="select-service-box spacet-10">
                             <ul class="coming-soon"></ul>
                         </div>
 
                     </div>
-                    <div class="col-md-5" ng-class="serviceOpts.viewMode === 'consultation' ? 'content-full-width' : '' ">
+                    <div class="col-sm-5" ng-class="serviceOpts.viewMode === 'consultation' ? 'content-full-width' : '' ">
                         <div>
                             <div class="row spacet-10" ng-class="animate-repeat" ng-repeat="job in selectedJob">
-                                <div class="col-md-12">
+                                <div class="col-sm-12">
 
                                     <div class="spacet-10" ng-class="job.addText ? 'b-service-textarea' : 'b-service-adds' ">
                                         <div class="b-service">
@@ -189,7 +237,7 @@
                                                 {{ job.name}}
                                             </p>
                                             <div class="b-service-option pull-right">
-                                                <p class="details" ng-click="showDetails(job.type)" ng-if="job.type" style="margin-right: 30px;">
+                                                <p class="details" ng-click="showDetails(job.type)" ng-if="(job.type || []).length>0" style="margin-right: 15px;">
                                                     Details
                                                 </p>
                                                 <i class="fa fa-times remove-icon" ng-click="deleteSelectedJob(job)"></i>
@@ -235,16 +283,19 @@
                             </div>
                         </div>
                         <div class="row spacet-10 ng-hide" ng-show="serviceOpts.addingNotes && (selectedJob || []).length >0">
-                            <div class="col-lg-12">
+                            <div class="col-sm-12">
                                 <div class="b-service-textarea">
 
-                                    <div class="b-service">
-                                        <p>
-                                            Add notes you would like the mechanic to see
-                                        </p>
-                                        <div class="b-service-option pull-right">
-                                            <div class="fa fa-times remove-icon" ng-click="serviceOpts.addingNotes = !serviceOpts.addingNotes;selectedJob.notes=''"></div>
+                                    <div class="b-service notes">
+                                        <div class="row">
+                                            <div class="col-xs-11">
+                                                Add notes you would like the mechanic to see
+                                            </div>
+                                            <div class="col-xs-1 remove-icon-div">
+                                                <i class="fa fa-times remove-icon" ng-click="serviceOpts.addingNotes = !serviceOpts.addingNotes;selectedJob.notes=''"></i>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <textarea ng-model="selectedJob.notes" placeholder="Enter notes here"></textarea>
                                 </div>

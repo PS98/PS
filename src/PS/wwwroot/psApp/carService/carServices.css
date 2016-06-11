@@ -650,9 +650,9 @@
 .steps.last-step::after {
     content: ""
 }
-@media only screen and (max-device-width: 480px)  {
-    .car-selection-flex-column img{
-        display:none;
+@media only screen and (max-device-width: 480px) {
+    .car-selection-container ul li {
+        padding: 10px 0 !important;
     }
 }
               
@@ -972,4 +972,51 @@ tbody td {
     margin-top: 20px;
     border-bottom: 2px solid #eeeeee;
     border-top: 2px solid #eeeeee;
+}
+@media(min-width: 640px) {
+    .remove-icon-div {
+        text-align: right;      
+    }
+}
+@media(min-width: 442px) and  (max-width: 680px) {
+     .fix-width {
+        width: 77% !important;
+    }
+}
+@media(max-width: 441px) {
+     .fix-width {
+        width: 64% !important;
+    }
+     
+    .select-service-box .panel-title a::before {	
+    margin-right: 0 !important;
+}
+    .select-service-box .panel-body {
+       padding: 10px 0 !important;
+       margin: 0 -10px 0 -35px !important
+   }
+}
+@media(max-width: 600px) {
+   
+    .select-service-box ul .panel-heading {
+        margin-left: 2px !important;  
+    }
+   
+    .select-service-box  .car-option {
+        padding:12px 14px !important;
+    }
+    .notes {
+        padding: 10px !important;
+    }
+    .remove-icon-div {
+        padding: 0 !important;
+    }
+    .service .popover {
+        left: 20%
+    }
+}
+@media(max-width: 360px) {
+    .notes {
+        height: 56px !important;
+    }
 }

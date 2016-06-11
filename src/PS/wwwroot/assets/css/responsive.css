@@ -253,10 +253,10 @@
  .service .car-header {
      padding: 15px 0 !important;
     }
- .service .car-selection-container {
+ /*.service .car-selection-container {
      min-width: 750px !important;
      overflow: auto;
- }
+ }*/
  /*.book .small-padding {
      padding: 0 5px !important;
  }
