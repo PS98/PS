@@ -1,6 +1,6 @@
 ﻿<div class="user-address">
     <div class="row top-padding10">
-        <div class="col-xs-6">
+        <div class="col-sm-6">
             <form id="address-form" name="addressForm" ng-submit="processForm()">
                 <div ng-show="pickUp">
                     <!--<div class="form-group">
@@ -80,7 +80,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-xs-6 margin-top10" ng-if="pickUp">
+        <div class="col-sm-6 margin-top10" ng-if="pickUp" style="overflow: hidden">
             <img ng-src="{{mapUrl}}" alt="Your Address ">
         </div>
     </div>

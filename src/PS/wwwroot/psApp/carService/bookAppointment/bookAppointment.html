@@ -1,41 +1,48 @@
-﻿<div class="container book">
+﻿<div class="book">
 
-    <div class="row" style="overflow-x: scroll">
-        <div class="col-md-12" style="min-width: 600px">
-            <div class="header-text" error-message="Please select a service." require-info="quote.jobs[0]" data-original-title="" title="">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="header-text">
+               Book Your Appoinment
                 <div class="b-step mrgtop15" style="margin-left: 20px;">
                     4
                 </div>
             </div>
             <div class="car-header car-selection-container white-container">
-                <div class="col-sm-8">
-                    <button type="button" class="btn btn-primary btn-effect" ng-click="setUserJob()"><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Back</button>
-                </div>
                 <div class="row">
-                    <div class="col-xs-12" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;">
-                        <span>Do you want us to Pick-up & Drop-off your vehicle</span>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary btn-effect" ng-click="setUserJob()"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Back</button>
+                    </div>
+                    <div class="col-sm-8"></div>
+                </div>
+
+                <div class="row icon-space" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;">
+                    <div class="col-xs-6" >
+                        Do you want us to Pick-up & Drop-off your vehicle
+                    </div>
+                    <div class="col-xs-6">
                         <i class="fa fa-check-circle" ng-click="pickAndDrop('y')" ng-class="{selected :pickUp}"></i> <span>Yes</span>
-                        <i class="fa fa-check-circle" ng-click="pickAndDrop(0)" ng-class="{selected :noPickUp}"></i><span>No</span>
+                        <i class="fa fa-check-circle margin-left15" ng-click="pickAndDrop(0)" ng-class="{selected :noPickUp}"></i><span>No</span>
                     </div>
-                    <div class="col-md-6" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;" ng-show="pickUp">
-                        <i class="fa fa-check-circle" ng-click="pickAndDrop(1)" ng-class="{selected :both}"></i> <span>Both</span>
-                        <i class="fa fa-check-circle" ng-click="pickAndDrop(2)" ng-class="{selected :onlyPickUP}"></i><span>Only Pick-Up</span>
-                        <i class="fa fa-check-circle" ng-click="pickAndDrop(3)" ng-class="{selected :onlyDropOff}"></i><span>Only Drop-Off</span>
+                </div>
+                <div class="row" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;">
+                    <div class="col-md-6" ng-show="pickUp">
+                        <div class="col-md-6 no-padding">
+                            <i class="fa fa-check-circle" ng-click="pickAndDrop(1)" ng-class="{selected :both}"></i> <span>Both</span>
+                            <i class="fa fa-check-circle margin-left15" ng-click="pickAndDrop(2)" ng-class="{selected :onlyPickUP}"></i><span>Only Pick-Up</span>
+                        </div>
+                        <div class="col-md-6 no-padding">
+                            <i class="fa fa-check-circle" ng-click="pickAndDrop(3)" ng-class="{selected :onlyDropOff}"></i><span>Only Drop-Off</span>
+                            
+                        </div>
+
+                        
                     </div>
-                    <div class="col-md-6 pull-right" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;" ng-if="!centre.isFreePickUp && pickUp">
+                    <div class="col-md-6 pull-right" ng-show="!centre.isFreePickUp && pickUp">
                         you will be charged <i class="fa fa-inr" ng-if="both">&nbsp;200</i> <i class="fa fa-inr" ng-if="onlyDropOff || onlyPickUP">&nbsp;100</i> extra for <span ng-if="both">both</span><span ng-if="onlyPickUP">only PickUP</span><span ng-if="onlyDropOff">only DropOff</span>.
                     </div>
                 </div>
-                <!--<div class="row" ng-if="selectedDate.pickUpDate.time" ">
-                    <div class="col-lg-6">
-                        <div class="header-text" ng-if="!pickUp"> Drop-Off Date & Time</div>
-                        <div class="header-text" ng-if="pickUp"> Pick-Up Date & Time</div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="header-text pull-right" ng-if="pickUp"> Drop-Off Date & Time</div>
-                        <div class="header-text pull-right" ng-if="!pickUp">Pick-Up Date & Time</div>
-                    </div>
-                </div>-->
+              
                 <div class="row" ng-if="selectedDate.pickUpDate.time">
                     <div class="col-xs-6 bottom-padding10 top-padding10">
                         <div class="header-text">{{ pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
@@ -84,7 +91,7 @@
                         </div>
                     </div>
                     <div class="row" ng-show="showPickUpCalendar">
-                        <div class="calendar-header col-xs-12 col-xs-offset-4"> Please choose {{ pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
+                        <div class="calendar-header col-xs-12 text-center"> Please choose {{ pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
                         <calendar-directive data="centreWorkingHours" update="selectpickUpTime(selectedDateTime)"></calendar-directive>
                     </div>
                     <div class="row" ng-show="showDropCalendar">
@@ -98,8 +105,8 @@
     </div>
     <div class="row" id="slide-container" ng-show="hideCalendar" >
         <div class="col-xs-12">
-            <div class="spacet-20" style="overflow-x: auto">
-                <div class="white-container margin-bottom10" style="min-width: 750px;overflow-x: auto">
+            <div class="spacet-20">
+                <div class="white-container margin-bottom10">
 
                     <div class="row">
                         <div class="col-md-12">
@@ -112,9 +119,7 @@
 
                         </div>
                     </div>
-                    <div>
                         <select-address isPickup="pickUp"></select-address>
-                    </div>
                 </div>
             </div>
         </div>

@@ -43,8 +43,8 @@
                                         <span class="car-selection-step-name">
                                             YOUR MAKE
                                         </span>
-                                        <div class="car-selection-flex-container">
-                                            <div class="col-sm-6">
+                                        <div class="row">
+                                            <div class="col-sm-6 car-selection-flex-container">
                                                 <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections | limitTo:2">
                                                     <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
                                                         <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
@@ -52,7 +52,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-6 car-selection-flex-container">
                                                 <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections.slice(2,carList.carCollections.length)">
                                                     <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
                                                         <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
@@ -71,21 +71,23 @@
                                         <span class="car-selection-step-name">
                                             YOUR CAR'S YEAR
                                         </span>
-                                        <div class="car-selection-flex-container col-sm-6">
-                                            <!--<div class="btn-idk" ng-click="selectYear('')">
-                                                I don't know
-                                            </div>-->
-                                            <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList | limitTo:2">
-                                                <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
-                                            </ul>
-                                        </div>
-                                        <div class="car-selection-flex-container col-sm-6">
-                                            <!--<div class="btn-idk" ng-click="selectYear('')">
-                                                I don't know
-                                            </div>-->
-                                            <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList.slice(2,carList.carTypes.length)">
-                                                <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
-                                            </ul>
+                                        <div class="row">
+                                            <div class="col-sm-6 car-selection-flex-container">
+                                                <!--<div class="btn-idk" ng-click="selectYear('')">
+                                                    I don't know
+                                                </div>-->
+                                                <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList | limitTo:2">
+                                                    <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6 car-selection-flex-container ">
+                                                <!--<div class="btn-idk" ng-click="selectYear('')">
+                                                    I don't know
+                                                </div>-->
+                                                <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList.slice(2,carList.carTypes.length)">
+                                                    <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +98,7 @@
                                         <span class="car-selection-step-name">
                                             YOUR MODEL
                                         </span>
-                                        <div class="">
+                                        <div class="row">
                                             <!--<div class="btn-idk" ng-click="selectModel('')">
                                                 I don't know
                                             </div>-->
@@ -122,7 +124,7 @@
                                         <span class="car-selection-step-name">
                                             ENGINE TYPE
                                         </span>
-                                        <div class="">
+                                        <div class="row">
                                             <div class="col-sm-6 car-selection-flex-container">
                                                 <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList  | limitTo:2">
                                                     <li ng-click="selectVarient(carVarient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-bind="carVarient"></li>

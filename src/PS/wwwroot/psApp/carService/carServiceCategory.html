@@ -6,7 +6,7 @@
                  <div class="service-details pull-right" ng-click="showDetails(job.type); $event.stopPropagation();" ng-if="(job.type || []).length > 0">Details</div>
                  <i class="fa fa-check-circle" ng-class="job.selected ? 'selected' : ''" ng-click="addSelectedJob(job)"></i>
                  <!--<div class="col-xs-10">-->
-                 <div class="panel-heading service-panel-color fix-width col-xs-10" ng-if="job.description">
+                 <div class="panel-heading service-panel-color fix-width col-xs-10" ng-if="job.description" ng-class="{'width-75' :(selectedJob ||[]).length > 0 }">
                      <div class="panel-title">
                          <a data-toggle="collapse" data-parent="#accordion" data-target="#{{job.name | makeId}}"> <!--aria-expanded="{{ $index === 0 ? 'true': false}}">-->
                              {{job.name}}

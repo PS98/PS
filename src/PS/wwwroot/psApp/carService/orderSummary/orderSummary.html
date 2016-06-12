@@ -10,32 +10,43 @@
             </div><!-- end bg-inner -->
         </div><!-- end block-title__inner -->
     </div><!-- end block-title -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12" style="margin-bottom:30px;">
+                <div class="car-header">
+                    <div style="text-align: center;">
+                        <h1><i class="fa fa-flag-checkered" aria-hidden="true" style="color:lightgreen; font-size: 50px;"></i></h1>
+                        <h1><span>Thank You.</span></h1>
+                        <h2><span>Your order was completed successfully.</span></h2>
+                        <h3>
+                            <button type="button" ng-click="go('/')" class="btn btn-primary btn-effect">Back to Home</button>
+                        </h3>
+                        <div style="margin-top: 20px;">
+                            <h3><span>Order Id: #{{invoiceNo}}</span></h3>
+                            <div class="row" style="padding: 25px;">
+                                <div class="col-xs-11 no-padding" style="font-size: 20px; display: inline-flex">
+                                    <img src="../../assets/img/email.png" alt="MileMates Thank You Image" />
+                                    <div style="font-size: 20px;">
+                                        An email receipt including the details about your order has been sent to the email
+                                        address provided. Please keep it for your records.
+                                    </div>
 
-    <div class="row" style="min-width: 750px">
-        <div class="col-xs-10 col-xs-offset-1" style="margin-bottom:30px;">
-            <div class="car-header">
-                <div style="text-align: center;">
-                    <h1><i class="fa fa-flag-checkered" aria-hidden="true" style="color:lightgreen; font-size: 50px;"></i></h1>
-                    <h1><span>Thank You.</span></h1>
-                    <h2><span>Your order was completed successfully.</span></h2>
-                    <h3>
-                        <button type="button" ng-click="go('/')" class="btn btn-primary btn-effect">Back to Home</button>                       
-                    </h3>
-                    <div style="margin-top: 20px;">
-                        <h3><span>Order Id: #{{invoiceNo}}</span></h3>
-                            <img src="../../assets/img/thankyou.png" alt="MileMates Thank You Image" />
-                    </div>
-                    <div style="margin-bottom: 100px;">
+                                </div>
+                            </div>
+                            </div>
+                        <div style="margin-bottom: 100px;">
                             <h3>
                                 You can visit My Appointments page at any time to check the status of your order.
                             </h3>
-                        <div class="col-xs-2 col-xs-offset-5">
-                            <button type="button" class="btn btn-primary btn-effect" ng-click="go('/Dashboard')">View Order</button>
+                            <h3>
+                                <button type="button" class="btn btn-primary btn-effect" ng-click="go('/Dashboard')">View Order</button>
+                            </h3>
+
                         </div>
-                             
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        </div>
+
+</div>
