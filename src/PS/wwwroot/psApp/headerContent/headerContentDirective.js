@@ -157,6 +157,7 @@ function makeSyickyHeader() {
             $('#forgetpass-taba').tab('show');
         });
         $('body').delegate('.navbar-collapse li', 'click', function () {
+           if(! $(this).hasClass("ps-user-profile-small"))
             $("#navbar-collapse-1").collapse("hide");
         });
         $(document).click(function() {

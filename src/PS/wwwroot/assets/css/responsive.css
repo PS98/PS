@@ -235,6 +235,9 @@
    }
 
 @media (max-width: 767px) {
+    .map-holder {
+        margin: 0 !important;
+    }
      .nav-bar-menu {
         width: 100% !important;
         text-align: center;
@@ -253,6 +256,9 @@
  .service .car-header {
      padding: 15px 0 !important;
     }
+ .service .centre-list .car-header {
+     padding: 15px 20px !important;
+ }
  /*.service .car-selection-container {
      min-width: 750px !important;
      overflow: auto;

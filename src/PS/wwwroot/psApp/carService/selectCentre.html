@@ -1,22 +1,14 @@
-﻿<!--<div class="container" style="margin-top: 60px;">-->
-<div class="alert alert-success" role="alert" style="margin-bottom: 50px; font-size: 17px;">
-    <span class="fa fa-check-circle-o" aria-hidden="true"></span>
-    <span class="sr-only">Success:</span>
-    Currently MileMates is in Beta Phase. Website is open for Customer Experience and Testing Purpose Only and We will serve you with our services soon.
-    Be the first one to know when we are live by connecting with us at <a href="https://milemates.com/Contact">https://milemates.com/Contact</a>
-</div>
-<div class="popover fade top in" role="tooltip" ng-show="style.top" ng-style="style">
+﻿<div class="popover fade top in" role="tooltip" ng-show="style.top" ng-style="style">
     <div class="arrow" style="left: 50%;"></div>
     <div class="popover-content"> Quotation will be shared after inspection of your car.</div>
 </div>
-<div class="row centre-list mrgtop15" style="overflow: auto">
-    <div style="min-width: 750px;">
-        <div class="col-xs-6">
-            <div class="car-header" style="min-height: 600px">
+<div class="centre-list mrgtop15">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="car-header" style="min-height: 280px">
 
-                <!--<form class="form-horizontal">-->
-                <div class="header-text" error-message="Please select a service." require-info="quote.jobs[0]" data-original-title="" title="">
-                    How Can We Reach You
+                <div class="header-text">
+                    Select Your Service Station
                     <div class="b-step mrgtop15">
                         3
                     </div>
@@ -49,8 +41,20 @@
                         </div>
                     </div>
                 </div>
-                <div>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row car-header map-holder">
+                <div id="mapholder" class="col-md-12" style="height: 250px">
                 </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6" ng-show="centreDetails.selectedCentre.name || noCentreMatch || noServiceMatch ">
+            <div class="car-header">
                 <centre-details ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'" centre="centreDetails.selectedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" class="active"></centre-details>
 
                 <div class="alert alert-danger" role="alert" ng-if="noCentreMatch">
@@ -121,31 +125,27 @@
                         <small>*Opening hours may vary due to public holidays.</small>
                     </p>
                 </div>
+
             </div>
         </div>
-        <div class="col-xs-6">
-            <div class="car-header" style="min-height: 300px">
-                <div class="row">
-                    <div id="mapholder" class="col-md-12" style="height: 250px">
+        <div class="col-sm-6" ng-if="(centreDetails.centreList || [] ).length > 0">
+            <div class="row car-header map-holder">
+                <div ng-if="centreDetails.recommendedCentre.name">
+                    <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
+                    <div class="centre-list_first">
+                        <centre-details centre="centreDetails.recommendedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" ng-class="centreDetails.recommendedCentre.name == centreDetails.selectedCentre.name ?'active' :'non-active'"></centre-details>
                     </div>
                 </div>
-                <div>
-                    <div ng-if="centreDetails.recommendedCentre.name">
-                        <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
-                        <div class="centre-list_first">
-                            <centre-details centre="centreDetails.recommendedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" ng-class="centreDetails.recommendedCentre.name == centreDetails.selectedCentre.name ?'active' :'non-active'"></centre-details>
-                        </div>
-                    </div>
-                    <div ng-if="(centreDetails.centreList || [] ).length > 1">
-                        <h4 class="centre-list_other-title">Other centres nearby</h4>
-                        <div class="centre-list_other">
-                            <centre-details centre="centre" ng-repeat="centre in centreDetails.centreList" service-list="selectedService" add="selectServiceCentre(dirCentre)" open-info="openInformationPopup(eventInfo)" ng-if="centre != centreDetails.recommendedCentre" ng-class="centre.name == centreDetails.selectedCentre.name ?'active' :'non-active'"></centre-details>
-                        </div>
+                <div ng-if="(centreDetails.centreList || [] ).length > 1">
+                    <h4 class="centre-list_other-title">Other centres nearby</h4>
+                    <div class="centre-list_other">
+                        <centre-details centre="centre" ng-repeat="centre in centreDetails.centreList" service-list="selectedService" add="selectServiceCentre(dirCentre)" open-info="openInformationPopup(eventInfo)" ng-if="centre != centreDetails.recommendedCentre" ng-class="centre.name == centreDetails.selectedCentre.name ?'active' :'non-active'"></centre-details>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 <div id="addressOverlay" class="modal fade" role="dialog" style="z-index:2000">
     <div class="modal-dialog modal-lg">
@@ -157,11 +157,11 @@
                 <h4 class="modal-title">Please select your address</h4>
             </div>
             <div class="modal-body collapse-content" id="container">
-                    <div style="position:absolute;z-index:1; width: 85%;">
-                        <i class="fa fa-search" style="position:absolute;padding:5px;top:5px"></i>
-                        <input class="form-control" style="padding:0 20px" id="users_formatted_address" placeholder="Start typing your address" type="text" ng-model="userSelectedService.userDetails.formattedAddress" />
-                    </div>
-                    <div id="userAddressMap" class="address-map" style="height:400px;"></div>
+                <div style="position:absolute;z-index:1; width: 85%;">
+                    <i class="fa fa-search" style="position:absolute;padding:5px;top:5px"></i>
+                    <input class="form-control" style="padding:0 20px" id="users_formatted_address" placeholder="Start typing your address" type="text" ng-model="userSelectedService.userDetails.formattedAddress" />
+                </div>
+                <div id="userAddressMap" class="address-map" style="height:400px;"></div>
             </div>
             <div class="modal-footer" style="margin-top: 20px;">
                 <div style="text-align: left; display: block;">

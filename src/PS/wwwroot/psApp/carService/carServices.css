@@ -993,7 +993,7 @@ tbody td {
 }
     .select-service-box .panel-body {
        padding: 10px 0 !important;
-       margin: 0 -10px 0 -35px !important
+       /*margin: 0 -10px 0 -35px !important*/
    }
 }
 @media(max-width: 600px) {
@@ -1013,6 +1013,9 @@ tbody td {
     }
     .service .popover {
         left: 20%
+    }
+    #detailsModal .modal-body {
+        padding: 0 !important;
     }
 }
 @media(max-width: 360px) {
