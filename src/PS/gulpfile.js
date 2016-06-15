@@ -20,6 +20,7 @@ paths.concatCssDest = paths.webroot + "dist/mm.css";
 
 paths.assetsJs = paths.webroot + "assets/**/*.js";
 paths.assetsCss = paths.webroot + "assets/**/*.css";
+paths.concatAssetsJsDest = "dist/assets.js";
 
 gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
@@ -56,6 +57,7 @@ gulp.task("minAssets:js", function () {
     return gulp.src([paths.assetsJs])
         .pipe(ngAnnotate())
         .pipe(uglify())
+        .pipe(concat(paths.concatAssetsJsDest))
         .pipe(gulp.dest(paths.webroot + "/assetsDist"));
 });
 
