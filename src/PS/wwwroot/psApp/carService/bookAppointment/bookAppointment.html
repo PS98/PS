@@ -2,13 +2,13 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <div class="header-text">
-               Book Your Appoinment
-                <div class="b-step mrgtop15" style="margin-left: 20px;">
-                    4
-                </div>
-            </div>
             <div class="car-header car-selection-container white-container">
+                <div class="header-text">
+                    Book Your Appoinment
+                    <div class="b-step mrgtop15">
+                        4
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-sm-4">
                         <button type="button" class="btn btn-primary btn-effect" ng-click="setUserJob()"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Back</button>
@@ -45,15 +45,16 @@
               
                 <div class="row" ng-if="selectedDate.pickUpDate.time">
                     <div class="col-xs-6 bottom-padding10 top-padding10">
-                        <div class="header-text">{{ pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
-                        <div class="car-option" ng-class="car-option-active" ng-click="editPickUpDate()">
-                            {{selectedDate.pickUpDate.day}}
+                        <div class="pull-left">
+                            <div class="header-text">{{ pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
+                            <div class="car-option" ng-class="car-option-active" ng-click="editPickUpDate()">
+                                {{selectedDate.pickUpDate.day}}
+                            </div>
+                            <div class="car-option" ng-class="car-option-active" ng-click="editPickUpDate()">
+                                {{ selectedDate.pickUpDate.time}}
+                            </div>
+                            </div>
                         </div>
-                        <div class="car-option" ng-class="car-option-active" ng-click="editPickUpDate()">
-                            {{ selectedDate.pickUpDate.time}}
-                        </div>
-
-                    </div>
                     <div class="col-xs-6 bottom-padding10 top-padding10" ng-if="selectedDate.dropOffDate.time">
                         <div class="pull-right">
                             <div class="header-text"> {{ !pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
