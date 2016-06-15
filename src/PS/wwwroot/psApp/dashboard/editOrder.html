@@ -2,12 +2,12 @@
     <div class="row">
     </div>
     <div class="row dashboard">
-        <div class="col-sm-4">
+        <div class="col-sm-4 bottom-padding10 top-padding10">
             <div class="option" ng-class="car-option-active">
                 <div>Current Pick-Up</div>
                 {{editOrder.selectedAppointment.pickUpDate.day}} {{editOrder.selectedAppointment.pickUpDate.time}}
             </div><br/>
-            <div class="option alert-success" ng-class="car-option-active" ng-click="togglePickUp()" ng-if="changedDate.pickUpDate.time">
+            <div class="option alert alert-success" ng-class="car-option-active" ng-click="togglePickUp()" ng-if="changedDate.pickUpDate.time">
                 <div>Updated Pick-Up</div>
                 {{changedDate.pickUpDate.day}} {{ changedDate.pickUpDate.time}}
             </div>
@@ -23,7 +23,7 @@
                     {{editOrder.selectedAppointment.dropOffDate.day}} {{editOrder.selectedAppointment.dropOffDate.time}}
                 </div>
                 <br/>
-                <div class="option alert-success" ng-class="car-option-active" ng-click="toggleDropOff()" ng-if="changedDate.dropOffDate.time">
+                <div class="option alert alert-success" ng-class="car-option-active" ng-click="toggleDropOff()" ng-if="changedDate.dropOffDate.time">
                     <div>Updated Drop-Off</div>
                     {{changedDate.dropOffDate.day}} {{ changedDate.dropOffDate.time}}
                 </div>
