@@ -1949,3 +1949,6 @@ p {
 h6, .h6 {
     font-size: 15px;
 }   
+.sp-layer {
+    min-width: 850px !important;
+}
