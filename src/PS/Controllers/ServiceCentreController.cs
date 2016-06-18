@@ -40,12 +40,17 @@ namespace PS.Controllers
         public IEnumerable<string> Get(string city)
         {
 
+            try {
+                var collection = repo.GetCollection<ServiceCentre>(city);
 
-            var collection = repo.GetCollection<ServiceCentre>(city);
+                var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
 
-            var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
-
-            return areaList?.Select(x => x.Area).Distinct();
+                return areaList?.Select(x => x.Area).Distinct();
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
 
         [HttpPost]
@@ -168,7 +173,7 @@ namespace PS.Controllers
                                 serviceDetails.Add(new Detalis
                                 {
                                     Name = abc.Name,
-                                    IsFreePickUp = radius <= distance,
+                                    IsFreePickUp = radius >= distance,
                                     MilematePrice = milematesPrice[milematesPrice.Count - 1],
                                     ActualPrice = actualPrice[actualPrice.Count - 1]
                                 });
