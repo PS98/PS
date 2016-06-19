@@ -49,9 +49,12 @@
                     </div>
                     <div class="form-group col-lg-6">
                         <label for="MobileNo"> Mobile No</label>
-                        <input class="form-control" id="MobileNo" name="mobile" type="number" ng-model="centreDetails.PhoneNo" placeholder="Mobile Number" />
+                        <input class="form-control" id="MobileNo" name="mobile" type="tel" ng-model="centreDetails.PhoneNo" placeholder="Mobile Number" />
                     </div>
-
+                    <div class="form-group col-lg-12">
+                        <label for="MobileNo"> Other Phone Nos</label>
+                        <input class="form-control" id="AlternatePhoneNo" name="mobile" type="tel" ng-model="centreDetails.AlternatePhoneNo" placeholder="comma seprated" />
+                    </div>
                     <div class="form-group col-lg-6">
                         <label for="Email"> Address line 2</label>
                         <input class="form-control" id="Email" name="email" placeholder="Address line 1" type="text" ng-model="centreDetails.Address.line2" />
@@ -59,11 +62,19 @@
 
                     <div class="form-group col-lg-6">
                         <label for="Email"> Review </label>
-                        <input class="form-control" id="Review" name="formattedAddress" placeholder="Review" type="text" ng-model="centreDetails.review" />
+                        <input class="form-control" id="Review" name="formattedAddress" placeholder="Review" type="text" ng-model="centreDetails.review"/>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="Email"> Opening Hours </label>
+                        <input class="form-control" id="openingHours" name="openingHours" placeholder="Opening Hours  with AM/PM" type="text" ng-model="centreDetails.OpeningHours"/>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="Email"> Closing Hours </label>
+                        <input class="form-control" id="closingHours" name="closingHours" placeholder="Closing Hours with AM/PM" type="text" ng-model="centreDetails.ClosingHours" />
                     </div>
                     <div class="form-group col-lg-6">
                         <label for="Email"> Email Address </label>
-                        <input class="form-control" id="email" name="email" placeholder="email Address" type="text" ng-model="centreDetails.Email" />
+                        <input class="form-control" id="email" name="email" placeholder="email Address" type="email" ng-model="centreDetails.Email" />
                     </div>
                     <div class="form-group col-lg-6">
                         <div class="car-header">

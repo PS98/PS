@@ -83,18 +83,21 @@ namespace PS.Models
         [JsonIgnore]
         public BsonObjectId _id { get; set; }
         public string Area { get; set; }
-        [JsonIgnore]
-        public Location Location { get; set; }
-        public string Email { get; set; }
         public string CentreId { get; set; }
         public string Name { get; set; }
         public Address Address { get; set; }
         public string PhoneNo { get; set; }
+        public string AlternatePhoneNo { get; set; }
+        public string Email { get; set; }
+        public string Review { get; set; }
+        public string OpeningHours { get; set; }
+        public string ClosingHours { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
-        public string Review { get; set; }
         public List<string> Services { get; set; }
         public List<ServiceDetails> ServiceDetails { get; set; }
+        [JsonIgnore]
+        public Location Location { get; set; }
     }
     [BsonIgnoreExtraElements]
     public class Location

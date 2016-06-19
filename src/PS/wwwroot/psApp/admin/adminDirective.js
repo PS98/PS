@@ -129,7 +129,7 @@ angular.module("psApp").directive("admin", function () {
                 var model = new obj();
                 if ($scope.modelList && $scope.modelList.length > 0) {
                     model.ModelList = $scope.modelList;
-                    $scope.centreDetails.nearAreas = $scope.nearAreas;
+                    $scope.centreDetails.Services = $scope.Services;
                     model.ActualPrice = $scope.centreDetails.ActualPrice;
                     model.MilematePrice = $scope.centreDetails.MilematePrice;
                     model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
