@@ -26,6 +26,10 @@
     color: #3c763d;
     cursor: pointer;
 }
+.dashboard .modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
 
 .widget {
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
