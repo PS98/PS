@@ -28,11 +28,11 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         if (area && area.toLowerCase() !== "select area") {
             psDataServices.getServiceCentreList($scope.centreDetails.city, area).
                 success(function (data) {
-                    if (data.length > 0) {
+                    if (data.list.length > 0) {
                         removemarker();
                         $('#areaDropDown').setJelect(area);
                         $scope.centreDetails.centreList = [];
-                        $scope.centreDetails.centreList = data;
+                        $scope.centreDetails.centreList = data.list;
                         $scope.centreDetails.selectedCentre = $scope.centreDetails.centreList[0];
                         $scope.centreDetails.selectedCentre.activeCentre = true;
                         $scope.centreDetails.recommendedCentre = $scope.centreDetails.centreList[0];
@@ -82,23 +82,23 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             removeCentreDetails();
             //$('.select.jelect').find('#areaDropDown').text("Select Area");
             //$scope.area = "Select Area";
-             $('#areaDropDown').setJelect("");
+            // $('#areaDropDown').setJelect("");
         }
     }
     function getNearerCentreList() {
-        if ($scope.centreDetails.areaList.indexOf($scope.googleMapArea) > -1) {
+        //if ($scope.centreDetails.areaList.indexOf($scope.googleMapArea) > -1) {
             $scope.getCentreDetails($scope.googleMapArea);
             $scope.centreDetails.area = $scope.googleMapArea;
             $scope.area = $scope.googleMapArea;
-            $('#areaDropDown').setJelect($scope.googleMapArea);
+         //   $('#areaDropDown').setJelect($scope.googleMapArea);
             $scope.googleMapArea = "";
-        } else {
-             $scope.area = "Select Area";
-             $('#areaDropDown').setJelect("");
-            $scope.noCentreMatch = true;
-            removeCentreDetails();
-            $scope.loadCity($scope.city);
-        }
+        //} else {
+        //     $scope.area = "Select Area";
+        //     $('#areaDropDown').setJelect("");
+        //    $scope.noCentreMatch = true;
+        //    removeCentreDetails();
+        //    $scope.loadCity($scope.city);
+        //}
     }
 
     function removeCentreDetails() {
@@ -117,11 +117,11 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     }
 
     $scope.changeArea = function () {
-        if ($scope.area && $scope.area.toLowerCase() !== "select area") {
-            $("#addressOverlay").modal('toggle');
-        } else {
-            removeCentreDetails();
-        }
+        //  if ($scope.area && $scope.area.toLowerCase() !== "select area") {
+       $("#addressOverlay").modal('toggle');
+        //} else {
+        //    removeCentreDetails();
+        //}
     }
 
     $scope.MapCallback = function (city, area) {

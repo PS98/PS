@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -9,6 +8,7 @@ using PS.Models;
 using PS.Services;
 using System.Net;
 using System.Device.Location;
+using PS.DTO;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,12 +17,12 @@ namespace PS.Controllers
     [Route("api/[controller]")]
     public class ServiceCentreController : Controller
     {
-        // private IMongoRepository _mongoDb;
-        private MongoRepository repo = new MongoRepository("serviceCentre");
-        const string _database = "serviceCentre";
-        const string _collectionName = "Pune";
 
+        private readonly MongoRepository _repo = new MongoRepository("Test");
+        private const string Database = "serviceCentre";
+        public readonly string CollectionName = "Pune";
 
+        private readonly ServiceCentreDto _serviceCentreDto = new ServiceCentreDto();
 
 
         // GET: api/values
@@ -30,7 +30,7 @@ namespace PS.Controllers
         public IEnumerable<string> Get()
         {
 
-            var collection = repo.GetAllCollectionName();
+            var collection = _repo.GetAllCollectionName();
 
             return collection;
         }
@@ -41,7 +41,7 @@ namespace PS.Controllers
         {
 
 
-            var collection = repo.GetCollection<ServiceCentre>(city);
+            var collection = _repo.GetCollection<ServiceCentre>(city);
 
             var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
 
@@ -49,12 +49,16 @@ namespace PS.Controllers
         }
 
         [HttpPost]
-        [Route("centerlist")]
+        [Route("centerlist/geo")]
         public IEnumerable<ServiceCentreViewModel> Get([FromBody] SelectedService selectedService)
         {
-            var collection = repo.GetCollection<ServiceCentre>(selectedService.City);
-
-            //  var documentList1 =  collection.FindAsync<ServiceCentre>(Builders<ServiceCentre>.Filter.GeoWithinCenterSphere(p => p.Centres, 18.6005340690473, 73.6005340690473, 10));
+            var collection = _repo.GetCollection<ServiceCentre>(selectedService.City);
+            //var builder = Builders<BsonDocument>.Filter;
+            //var filter = builder.Eq("location", "Italian");
+            //var tcord = new GeoJson2DCoordinates(14, 14);
+            //var jk = new GeoJsonPoint<GeoJson2DCoordinates>(tcord);
+            //Query.Near("geometry", jk, 5);
+            //var documentList1 = collection.FindAsync<ServiceCentre>(Builders<ServiceCentre>.Filter.NearSphere(p => p.Centres, 18.6005340690473, 73.6005340690473, 10));
             // var filter = Builders<BsonDocument>.Filter.Eq("area", selectedService.Area);
             var documentList = collection?.Find(new BsonDocument()).ToListAsync().Result;
             //var result = await collection.Find(filter).ToListAsync();
@@ -71,7 +75,7 @@ namespace PS.Controllers
 
                 foreach (var area in serviceCentres.First().NearAreas)
                 {
-                    var nearAreaDoc = documentList?.Where(x => Equals(x.Area.ToLower(), area.ToLower()));
+                    var nearAreaDoc = documentList.Where(x => Equals(x.Area.ToLower(), area.ToLower()));
                     var areaDoc = nearAreaDoc as IList<ServiceCentre> ?? nearAreaDoc.ToList();
                     var any = areaDoc.Any();
                     if (!any) continue;
@@ -103,9 +107,9 @@ namespace PS.Controllers
                         double.TryParse(centre.Latitude, out lat);
                         double.TryParse(centre.Longitude, out log);
                         var centreCoordinates = new GeoCoordinate(lat, log);
-                        ;
 
-                        distance = userCordinates.GetDistanceTo(centreCoordinates)/1000;
+
+                        distance = userCordinates.GetDistanceTo(centreCoordinates) / 1000;
                     }
 
                     // if no service selected then display all service centre list
@@ -207,21 +211,22 @@ namespace PS.Controllers
             {
                 if (!string.IsNullOrEmpty(serviceCentreObj.Area))
                 {
-                    var collection = repo.GetCollection<ServiceCentre>("Pune");
+                    var collection = _repo.GetCollection<ServiceCentre>("Pune");
 
                     var documentList = collection?.Find(new BsonDocument()).ToListAsync().Result;
 
                     // get document by area
                     var list = documentList?.Where(x => x.Area.ToLower() == serviceCentreObj.Area.ToLower());
+                    // ReSharper disable once PossibleMultipleEnumeration
                     if (!list.Any())
                     {
                         // collection.Indexes.CreateOneAsync(Builders<ServiceCentre>.IndexKeys.Geo2D(p => p.Centres.First().Location));
-                        var id = repo.GenerateNewId();
+                        var id = _repo.GenerateNewId();
                         serviceCentreObj.Centres.First().Id = id;
-                        repo.insertDocument(_database, _collectionName, serviceCentreObj);
-                            // if new area then insert into db
-                        Response.StatusCode = (int) HttpStatusCode.OK;
-                        return Json(new {Message = "new doc created in DataBase", Status = 0, Id = id});
+                        _repo.insertDocument(Database, CollectionName, serviceCentreObj);
+                        // if new area then insert into db
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "new doc created in DataBase", Status = 0, Id = id });
                     }
 
                     // select first because one area will have one document
@@ -233,27 +238,27 @@ namespace PS.Controllers
 
                     if (string.IsNullOrEmpty(newCentre.Id)) // no id then new centre 
                     {
-                        var id = repo.GenerateNewId();
+                        var id = _repo.GenerateNewId();
 
                         serviceCentreObj.Centres.First().Id = id;
                         centreList.Add(serviceCentreObj.Centres.First());
-                        collection.UpdateOneAsync(filter, update);
-                        Response.StatusCode = (int) HttpStatusCode.OK;
-                        return Json(new {Message = "new centre added into centreList", Status = 0, Id = id});
+                        collection?.UpdateOneAsync(filter, update);
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "new centre added into centreList", Status = 0, Id = id });
                     }
 
                     if (newCentre.ServiceDetails.Count > 0 &&
                         string.IsNullOrEmpty(newCentre.ServiceDetails.First().Name))
                     {
-                        Response.StatusCode = (int) HttpStatusCode.OK;
-                        return Json(new {Message = "please select a service ", Status = 1});
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "please select a service ", Status = 1 });
                     }
 
                     var exitingCentre = centreList.Where(c => c.Id == newCentre.Id).ToList();
                     if (!exitingCentre.Any())
                     {
-                        Response.StatusCode = (int) HttpStatusCode.OK;
-                        return Json(new {Message = "no centre found with given id", Status = 1});
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "no centre found with given id", Status = 1 });
                     }
 
                     var data = exitingCentre.Select(y => y.ServiceDetails).First();
@@ -336,27 +341,80 @@ namespace PS.Controllers
                         }
 
                         collection?.UpdateOneAsync(filter, update);
-                        Response.StatusCode = (int) HttpStatusCode.OK;
-                        return Json(new {Message = "new service details updated", Status = 1});
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "new service details updated", Status = 1 });
                     }
                     else
                     {
                         data.AddRange(newCentre.ServiceDetails);
-                            // if deatils of service is not exist than add to collection
+                        // if deatils of service is not exist than add to collection
                         collection?.UpdateOneAsync(filter, update);
-                        Response.StatusCode = (int) HttpStatusCode.OK;
-                        return Json(new {Message = "new service details updated", Status = 1});
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "new service details updated", Status = 1 });
                     }
                 }
 
             }
             catch (Exception ex)
             {
-                Response.StatusCode = (int) HttpStatusCode.BadRequest;
-                return Json(new {Message = ex.Message});
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new {ex.Message });
             }
-            Response.StatusCode = (int) HttpStatusCode.OK;
-            return Json(new {Message = "Please enter Area Name", Status = 1});
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Message = "Please enter Area Name", Status = 1 });
+        }
+
+        [HttpPost]
+        [Route("savecentre")]
+        public JsonResult SaveCentreDetails([FromBody] ServiceCentreGeo serviceCentreObj)
+        {
+            try
+            {
+                if (serviceCentreObj == null)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json(new { Message = "Please Select Centre", Status = 1 });
+                }
+                if (serviceCentreObj.ServiceDetails.Count > 0 &&
+                        string.IsNullOrEmpty(serviceCentreObj.ServiceDetails.First().Name))
+                {
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Message = "please select a service ", Status = 1 });
+                }
+                
+               var message =  _serviceCentreDto.SaveCentreDetails(serviceCentreObj);
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = message, Status = 0});
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Json(new { ex.Message, Status = 2 });
+            }
+           
+        }
+        [HttpPost]
+        [Route("centerlist")]
+        public JsonResult GetCentreList([FromBody] SelectedService selectedService)
+        {
+          try
+          {
+              if (selectedService == null)
+              {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json(new {Message = "Please Choose a Service", Status = 1});
+                }
+
+              var centreList = _serviceCentreDto.ListServiceCentres(selectedService);
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = "success", Status = 0 , List = centreList});
+          }
+          catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Json(new {ex.Message, Status = 2 });
+
+            }
         }
     }
 }

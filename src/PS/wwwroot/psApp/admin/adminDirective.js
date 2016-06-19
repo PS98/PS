@@ -107,7 +107,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.selectBrand = function (brandName) {
                 $scope.showBrandName = false; $scope.showModel = true;
                 $scope.brand = brandName;
-                $scope.modelList = [];
+                $scope.modelList = $scope.modelList || [];
                 psDataServices.getCarType(brandName).
                  success(function (data) {
                      $scope.carList.carTypes = data;
@@ -173,7 +173,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.openOverlay = function() {
                 $("#centreAddressOverlay").modal("toggle");
             }
-            $scope.AreaList = ["Pimpri", "Chinchwad", "Kothrud", "Aundh", "Pashan", "Baner", "Koregaon Park", "Shivaji Nagar", "Pune Railway", "Swargate", "Boat club", "Magarpatta", "Daund", "Chikhli", "Kalewadi", "Kasarwadi", "Phugewadi ", "Pimple Saudagar", "Narayan peth", "Talegaon", "Kasba peth", "Shirur", "Bhor", "Mulshi", "Wadgaon", "Welhe", "Ambegaon", "Junnar", "Rajgurunagar", "Baramati", "Indapur", "Purandhar", "Bhawani Peth", "Erandwana", "Ghorpuri Lines", "Kalyani Nagar", "Kondhwa", "Narayan Peth", "Hadapsar", "Akurdi"];
+          //  $scope.AreaList = ["Pimpri", "Chinchwad", "Kothrud", "Aundh", "Pashan", "Baner", "Koregaon Park", "Shivaji Nagar", "Pune Railway", "Swargate", "Boat club", "Magarpatta", "Daund", "Chikhli", "Kalewadi", "Kasarwadi", "Phugewadi ", "Pimple Saudagar", "Narayan peth", "Talegaon", "Kasba peth", "Shirur", "Bhor", "Mulshi", "Wadgaon", "Welhe", "Ambegaon", "Junnar", "Rajgurunagar", "Baramati", "Indapur", "Purandhar", "Bhawani Peth", "Erandwana", "Ghorpuri Lines", "Kalyani Nagar", "Kondhwa", "Narayan Peth", "Hadapsar", "Akurdi"];
             $scope.addArea = function (area) {
                 $scope.nearAreas = $scope.nearAreas || [];
                 if ($scope.nearAreas.indexOf(area) < 0)

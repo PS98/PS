@@ -29,19 +29,13 @@
                             </div>
                         </div>
                         <div class="sorting__item">
-                            <span class="sorting__title">Select Area</span>
-                            <div class="select jelect">
-                                <input id="txtArea" ng-model="area" type="text" class="jelect-input" ng-change="changeArea()">
-                                <div tabindex="0" role="button" class="jelect-current" id="areaDropDown">Select Area</div>
-                                <ul class="jelect-options" id="dropDownArea">
-                                    <li class="jelect-option jelect-option_state_active">Select Area</li>
-                                    <li class="jelect-option" ng-repeat="area in centreDetails.areaList">{{area}}</li>
-                                </ul>
-                            </div>
+                            <a ng-click="changeArea()">Select Your Location</a>
                         </div>
                     </div>
+                    <div class="sorting__inner">
+                        <span ng-bind ="centreDetails.userAddress.formattedAddress"></span>
+                    </div>
                 </div>
-
             </div>
         </div>
         <div class="col-sm-6">

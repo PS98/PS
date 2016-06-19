@@ -244,5 +244,12 @@ namespace PS.Services
             collection.UpdateOneAsync(filter, update);
 
         }
+
+        public List<T> GetFilterList<T>(FilterDefinition<T> filterDefinition, string collectionName)
+        {
+            var collection = _database.GetCollection<T>(collectionName);
+            var documentList = collection.Find(filterDefinition).ToListAsync().Result;
+            return documentList;
+        }
     }
 }

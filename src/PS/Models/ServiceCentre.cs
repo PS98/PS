@@ -17,7 +17,7 @@ namespace PS.Models
         public List<string> NearAreas { get; set; }
     }
     [BsonIgnoreExtraElements]
-    public class Centre: ServiceCentreBaseModel
+    public class Centre : ServiceCentreBaseModel
     {
         public List<ServiceDetails> ServiceDetails { get; set; }
         public static ServiceCentreViewModel ToViewModel(Centre centre)
@@ -32,7 +32,7 @@ namespace PS.Models
                 PhoneNo = centre.PhoneNo,
                 Review = centre.PhoneNo,
                 Services = centre.Services,
-               // ServiceDetails = new ServiceDetails();
+                // ServiceDetails = new ServiceDetails();
 
             };
 
@@ -41,7 +41,7 @@ namespace PS.Models
         }
 
     }
- 
+
     [BsonIgnoreExtraElements]
     public class Address
     {
@@ -61,7 +61,7 @@ namespace PS.Models
         public List<PriceDetails> Diesel { get; set; }
         public List<PriceDetails> CNG { get; set; }
         public List<PriceDetails> Electric { get; set; }
-        
+
     }
 
 
@@ -75,15 +75,47 @@ namespace PS.Models
         public string Longitude { get; set; }
         public string Latitude { get; set; }
     }
-    //public class Location
-    //{
-    //    public Location()
-    //    {
-    //        type = "Point";
-    //    }
-    //    public string type { get; set; }
-    //    public List<Double> coordinates { get; set; }
-    //}
+  
 
-    
+    [BsonIgnoreExtraElements]
+    public class ServiceCentreGeo
+    {
+        [JsonIgnore]
+        public BsonObjectId _id { get; set; }
+        public string Area { get; set; }
+        [JsonIgnore]
+        public Location Location { get; set; }
+        public string Email { get; set; }
+        public string CentreId { get; set; }
+        public string Name { get; set; }
+        public Address Address { get; set; }
+        public string PhoneNo { get; set; }
+        public string Longitude { get; set; }
+        public string Latitude { get; set; }
+        public string Review { get; set; }
+        public List<string> Services { get; set; }
+        public List<ServiceDetails> ServiceDetails { get; set; }
+    }
+    [BsonIgnoreExtraElements]
+    public class Location
+    {
+        public Location(string lat, string lng)
+        {
+            double lat1;
+            double lng1;
+            Type = "Point";
+            double.TryParse(lat, out lat1);
+            double.TryParse(lng, out lng1);
+            Coordinates = new List<double> {lng1, lat1};
+        }
+        [BsonElement("coordinates")]
+        public List<double> Coordinates { get; set; }
+        [BsonElement("type")]
+        public string Type { get; set; }
+    }
+
+
+
+
+
 }

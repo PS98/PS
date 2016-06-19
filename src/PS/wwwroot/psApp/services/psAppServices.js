@@ -115,15 +115,14 @@
     }
 
     var _saveCentreDetails = function (centreData) {
-        var list = [];
-        list.push(centreData);
-        var servicecs = {"Name":"", "Petrol":"","Diesel":""}
-        var data = { "Area": centreData.Area, "Centres": list, "nearAreas": centreData.nearAreas }
+      //  var list = [];
+       // list.push(centreData);
+       // var data = { "Area": centreData.Area, "Centres": list, "nearAreas": centreData.nearAreas }
         return $http(
        {
-           url: "/api/ServiceCentre/save",
+           url: "/api/ServiceCentre/savecentre",
            method: "POST",
-           data: data
+           data: centreData
        });
     }
     var _resetAll = function() {

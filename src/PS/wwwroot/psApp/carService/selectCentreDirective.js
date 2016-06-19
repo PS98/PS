@@ -103,6 +103,7 @@ angular.module("psApp").directive("selectCentre", function () {
                 if (userAddressComponent && userAddressComponent.address_components.length > 3) {
                     userCityArea = getCityAreaFromAddressComponent(userAddressComponent);
                     scope.centreDetails.userAddress = userCityArea;
+                    scope.centreDetails.userAddress.formattedAddress = userAddressComponent.formatted_address;
                     scope.centreDetails.userAddress.lat = tempLocation.lat;
                     scope.centreDetails.userAddress.lng = tempLocation.lng;
                     scope.MapCallback(userCityArea.city, userCityArea.area);
@@ -192,8 +193,13 @@ angular.module("psApp").directive("selectCentre", function () {
                 //  var marker = new google.maps.Marker({ position: latLng, map: map, title: "here" });
             };
             scope.loadUserMap = function () {
-                    if (scope.area !== userCurrentAddress.area) {
-                        var address = { 'address': scope.area + " " + scope.city };
+                if (!scope.area || scope.area !== userCurrentAddress.area) {
+                    var address;
+                    if (scope.area)
+                        address = { 'address': scope.area + " " + scope.city };
+                    else {
+                        address = { 'address': scope.city };
+                    }
                         callGeoCoderApi(address).then(function (data) {
                             // userLocation.lat = data.result.geometry.location.lat();
                             // userLocation.lng = data.result.geometry.location.lng();
@@ -208,19 +214,20 @@ angular.module("psApp").directive("selectCentre", function () {
 
             $("#addressOverlay").on("shown.bs.modal", function () {
                 isSelectClick = false;
+                if (!scope.area)
                 scope.loadUserMap();
                 if (scope.area === userCurrentAddress.area) {
                     initialzeUserAddressMap(userCurrentAddress.lat, userCurrentAddress.lng);
                     getFullAddress(userLatLng);
                 }
             });
-            $("#addressOverlay").on("hidden.bs.modal", function () {
-                if (!isSelectClick) {
-                    var oldVal = $("#areaDropDown").siblings(".jelect-input").attr("data-old");
-                    scope.area = oldVal;
-                    $("#areaDropDown").setJelect(oldVal);
-                }
-            });
+            //$("#addressOverlay").on("hidden.bs.modal", function () {
+            //    if (!isSelectClick) {
+            //        var oldVal = $("#areaDropDown").siblings(".jelect-input").attr("data-old");
+            //        scope.area = oldVal;
+            //        $("#areaDropDown").setJelect(oldVal);
+            //    }
+            //});
             scope.loadCity=function(city) {
                 loadMapForArea(city);
             }
