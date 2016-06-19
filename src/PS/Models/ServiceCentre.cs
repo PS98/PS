@@ -84,7 +84,7 @@ namespace PS.Models
         [JsonIgnore]
         public BsonObjectId _id { get; set; }
         public string Area { get; set; }
-        public string OwnerNane { get; set; }
+        public string OwnerName { get; set; }
         public string CentreId { get; set; }
         public string Name { get; set; }
         public Address Address { get; set; }
