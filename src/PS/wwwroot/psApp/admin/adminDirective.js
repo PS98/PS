@@ -127,9 +127,9 @@ angular.module("psApp").directive("admin", function () {
             $scope.addCentreDetails = function () {
                 var services = new serviceObj();
                 var model = new obj();
+                $scope.centreDetails.Services = $scope.Services;
                 if ($scope.modelList && $scope.modelList.length > 0) {
                     model.ModelList = $scope.modelList;
-                    $scope.centreDetails.Services = $scope.Services;
                     model.ActualPrice = $scope.centreDetails.ActualPrice;
                     model.MilematePrice = $scope.centreDetails.MilematePrice;
                     model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
@@ -162,8 +162,9 @@ angular.module("psApp").directive("admin", function () {
                                 if (data.status === 0) {
                                    // $scope.centreDetails = {};
                                   //  angular.extend($scope.centreDetails, centreObject);
-                                    $scope.centreDetails.Id = parseInt(data.id);
+                                    $scope.centreDetails.CentreId = parseInt(data.id);
                                     $scope.newCentre = false;
+                                    $scope.Services = [];
                                 }
                             });
             }

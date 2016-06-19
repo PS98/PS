@@ -212,94 +212,70 @@ namespace PS.DTO
         {
             var collection = _repo.GetCollection<ServiceCentreGeo>("Pune");
             var filter = Builders<ServiceCentreGeo>.Filter.Where(x => x.CentreId.Equals(newCentre.CentreId));
-
-            if (existingCentre.ServiceDetails.Any(x => x.Name == newCentre.ServiceDetails.First().Name))
+            var isDetalilsUpdate = false;
+           if (newCentre.ServiceDetails != null && newCentre.ServiceDetails.Count > 0)
             {
-                var newSericeDetails = newCentre.ServiceDetails;
-                foreach (
-                    var service in
-                        existingCentre.ServiceDetails.Where(x => x.Name == newCentre.ServiceDetails.First().Name)
-                    )
+                if (existingCentre.ServiceDetails.Any(x => x.Name == newCentre.ServiceDetails.First().Name))
                 {
-                    if (newCentre.ServiceDetails.First().Petrol.Any())
+                    foreach (var service in existingCentre.ServiceDetails.Where(x => x.Name == newCentre.ServiceDetails.First().Name))
                     {
-                        int count = 0;
-                        foreach (
-                            var details in
-                                service.Petrol.Where(
-                                    x =>
-                                        newCentre.ServiceDetails.First()
-                                            .Petrol.Any(y => y.MilematePrice == x.MilematePrice)))
+                        if (newCentre.ServiceDetails.First().Petrol.Any())
                         {
-                            details.ModelList.AddRange(newSericeDetails.First().Petrol.First().ModelList);
-                            count++;
+                            UpdatePriceAndModelList(service.Petrol, newCentre.ServiceDetails.First().Petrol);
                         }
-                        if (count == 0)
-                            service.Petrol.AddRange(newCentre.ServiceDetails.First().Petrol);
 
-                    }
-
-                    if (newCentre.ServiceDetails.First().Diesel.Any())
-                    {
-                        int count = 0;
-                        foreach (
-                            var details in
-                                service.Diesel.Where(
-                                    x =>
-                                        newCentre.ServiceDetails.First()
-                                            .Diesel.Any(y => y.MilematePrice == x.MilematePrice)))
+                        if (newCentre.ServiceDetails.First().Diesel.Any())
                         {
-                            details.ModelList.AddRange(newSericeDetails.First().Diesel.First().ModelList);
-                            count++;
+                            UpdatePriceAndModelList(service.Diesel, newCentre.ServiceDetails.First().Diesel);
                         }
-                        if (count == 0)
-                            service.Diesel.AddRange(newCentre.ServiceDetails.First().Diesel);
-                    }
 
-                    if (newCentre.ServiceDetails.First().CNG.Any())
-                    {
-                        int count = 0;
-                        foreach (
-                            var details in
-                                service.CNG.Where(
-                                    x =>
-                                        newCentre.ServiceDetails.First()
-                                            .CNG.Any(y => y.MilematePrice == x.MilematePrice)))
+                        if (newCentre.ServiceDetails.First().CNG.Any())
                         {
-                            details.ModelList.AddRange(newSericeDetails.First().CNG.First().ModelList);
-                            count++;
+                            UpdatePriceAndModelList(service.CNG, newCentre.ServiceDetails.First().CNG);
                         }
-                        if (count == 0)
-                            service.CNG.AddRange(newCentre.ServiceDetails.First().CNG);
-                    }
 
-                    if (newCentre.ServiceDetails.First().Electric.Any())
-                    {
-                        int count = 0;
-                        foreach (
-                            var details in
-                                service.Electric.Where(
-                                    x =>
-                                        newCentre.ServiceDetails.First()
-                                            .Electric.Any(y => y.MilematePrice == x.MilematePrice)))
+                        if (newCentre.ServiceDetails.First().Electric.Any())
                         {
-                            details.ModelList.AddRange(newSericeDetails.First().Electric.First().ModelList);
-                            count++;
+                            UpdatePriceAndModelList(service.Electric, newCentre.ServiceDetails.First().Electric);
                         }
-                        if (count == 0)
-                            service.Electric.AddRange(newCentre.ServiceDetails.First().Electric);
                     }
+                    isDetalilsUpdate = true;
                 }
-                collection?.ReplaceOneAsync(filter, existingCentre);
-
+                else
+                {
+                   existingCentre.ServiceDetails.AddRange(newCentre.ServiceDetails);
+                        // if deatils of service is not exist than add to collection var 
+                        var update = Builders<ServiceCentreGeo>.Update.Set("ServiceDetails",
+                            existingCentre.ServiceDetails);
+                        collection.UpdateOneAsync(filter, update);
+                        return;
+                  }
+               
             }
-            else
+            if (newCentre.Services != null && newCentre.Services.Count > 0)
             {
-                existingCentre.ServiceDetails.AddRange(newCentre.ServiceDetails);
-                // if deatils of service is not exist than add to collection var 
-                var update = Builders<ServiceCentreGeo>.Update.Set("ServiceDetails", existingCentre.ServiceDetails);
-                collection.UpdateOneAsync(filter, update);
+                if (existingCentre.Services == null)
+                    existingCentre.Services = new List<string>();
+                existingCentre.Services.AddRange(newCentre.Services);
+                existingCentre.Services = existingCentre.Services.Distinct().ToList();
+                isDetalilsUpdate = true;
             }
+            if(isDetalilsUpdate)
+            collection?.ReplaceOneAsync(filter, existingCentre);
+
+        }
+
+        public void UpdatePriceAndModelList(List<PriceDetails> priceDetails, List<PriceDetails> newPriceList)
+        {
+            var count = 0;
+            foreach (var priceDetail in priceDetails.Where( x=> newPriceList.Any( y=>y.MilematePrice == x.MilematePrice)))
+            {
+                priceDetail.ModelList.AddRange(newPriceList.First().ModelList);
+                priceDetail.ModelList = priceDetail.ModelList.Distinct().ToList();
+                count++;
+            }
+            if (count == 0)
+                priceDetails.AddRange(newPriceList);
         }
 
     }
