@@ -156,7 +156,7 @@ namespace PS.DTO
                             serviceDetails.Add(new Detalis
                             {
                                 Name = abc.Name,
-                                IsFreePickUp = radius <= distance,
+                                IsFreePickUp = radius >= distance,
                                 MilematePrice = milematesPrice[milematesPrice.Count - 1],
                                 ActualPrice = actualPrice[actualPrice.Count - 1]
                             });
