@@ -40,12 +40,17 @@ namespace PS.Controllers
         public IEnumerable<string> Get(string city)
         {
 
-
-            var collection = _repo.GetCollection<ServiceCentre>(city);
+            try {
+                var collection = _repo.GetCollection<ServiceCentre>(city);
 
             var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
 
             return areaList?.Select(x => x.Area).Distinct();
+        }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
 
         [HttpPost]
@@ -172,7 +177,7 @@ namespace PS.Controllers
                                 serviceDetails.Add(new Detalis
                                 {
                                     Name = abc.Name,
-                                    IsFreePickUp = radius <= distance,
+                                    IsFreePickUp = radius >= distance,
                                     MilematePrice = milematesPrice[milematesPrice.Count - 1],
                                     ActualPrice = actualPrice[actualPrice.Count - 1]
                                 });
@@ -224,7 +229,7 @@ namespace PS.Controllers
                         var id = _repo.GenerateNewId();
                         serviceCentreObj.Centres.First().Id = id;
                         _repo.insertDocument(Database, CollectionName, serviceCentreObj);
-                        // if new area then insert into db
+                            // if new area then insert into db
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "new doc created in DataBase", Status = 0, Id = id });
                     }
@@ -347,7 +352,7 @@ namespace PS.Controllers
                     else
                     {
                         data.AddRange(newCentre.ServiceDetails);
-                        // if deatils of service is not exist than add to collection
+                            // if deatils of service is not exist than add to collection
                         collection?.UpdateOneAsync(filter, update);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "new service details updated", Status = 1 });
@@ -392,7 +397,7 @@ namespace PS.Controllers
                 return Json(new { ex.Message, Status = 2 });
             }
            
-        }
+                    }
         [HttpPost]
         [Route("centerlist")]
         public JsonResult GetCentreList([FromBody] SelectedService selectedService)
@@ -408,8 +413,8 @@ namespace PS.Controllers
               var centreList = _serviceCentreDto.ListServiceCentres(selectedService);
                 Response.StatusCode = (int)HttpStatusCode.OK;
                 return Json(new { Message = "success", Status = 0 , List = centreList});
-          }
-          catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 return Json(new {ex.Message, Status = 2 });

@@ -107,7 +107,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.selectBrand = function (brandName) {
                 $scope.showBrandName = false; $scope.showModel = true;
                 $scope.brand = brandName;
-                $scope.modelList = $scope.modelList || [];
+                $scope.modelList =  $scope.modelList || [];
                 psDataServices.getCarType(brandName).
                  success(function (data) {
                      $scope.carList.carTypes = data;
