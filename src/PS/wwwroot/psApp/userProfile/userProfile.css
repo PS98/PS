@@ -5,7 +5,7 @@
 
 .sticky .ps-user-profile-small{
     color:#333;
-    padding:8px 13px 0;
+    padding:0 13px 0;
     cursor: pointer;
 }
 
@@ -31,7 +31,7 @@
    background: no-repeat;
    background-size:cover;  
    border-radius: 150px;
-   margin-top: -15px;
+   margin-top: -5px;
 }
 
 .drpdwnLogin {
