@@ -94,6 +94,8 @@ angular.module("psApp").directive("selectCentre", function () {
                 if (isUserLocated) {
                     latLng = new google.maps.LatLng(userCurrentAddress.lat, userCurrentAddress.lng);
                     scope.setUserLocation(userCurrentAddress.lat, userCurrentAddress.lng);
+                    tempLocation.lat = userCurrentAddress.lat;
+                    tempLocation.lng = userCurrentAddress.lng;
                 } else {
                     latLng = new google.maps.LatLng(tempLocation.lat, tempLocation.lng);
                     scope.setUserLocation(tempLocation.lat, tempLocation.lng);
@@ -117,6 +119,7 @@ angular.module("psApp").directive("selectCentre", function () {
                         scope.centreDetails.userAddress = userCityArea;
                         scope.centreDetails.userAddress.lat = tempLocation.lat;
                         scope.centreDetails.userAddress.lng = tempLocation.lng;
+                        scope.centreDetails.userAddress.formattedAddress = data.result.formatted_address;
                         scope.MapCallback(userCityArea.city, userCityArea.area);
                         if (isUserLocated)
                             userCurrentAddress.area = userCityArea.area;

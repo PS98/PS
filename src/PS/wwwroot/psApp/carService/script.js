@@ -291,7 +291,7 @@ function setMarkers(googleMap, locations, callback) {
        // marker.setMap(map)
 
         var content = '<div><strong>' + val.name + '</strong><br>' +
-                 val.address.line1 + ',' + val.address.line2 + '<br>' +
+                 val.address.line1 + ',<br/>' + val.address.line2 + '<br/>' +
                 val.phoneNo + '</div>';
 
         bounds.extend(marker.position);

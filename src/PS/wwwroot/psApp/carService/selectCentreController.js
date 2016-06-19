@@ -30,7 +30,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
                 success(function (data) {
                     if (data.list.length > 0) {
                         removemarker();
-                        $('#areaDropDown').setJelect(area);
+                      //  $('#areaDropDown').setJelect(area);
                         $scope.centreDetails.centreList = [];
                         $scope.centreDetails.centreList = data.list;
                         $scope.centreDetails.selectedCentre = $scope.centreDetails.centreList[0];
@@ -70,7 +70,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         if ($scope.city.toLowerCase() !== "select city") {
             psDataServices.getServiceCentreArea($scope.city).success(function (data) {
                 removemarker();
-                $scope.centreDetails.areaList = data;
+              //  $scope.centreDetails.areaList = data;
                 if ($scope.googleMapArea && $scope.googleMapArea !== "") {
                     getNearerCentreList();
                 }
@@ -78,7 +78,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             });
         }
         else {
-            $scope.centreDetails.areaList = {};
+         //   $scope.centreDetails.areaList = {};
             removeCentreDetails();
             //$('.select.jelect').find('#areaDropDown').text("Select Area");
             //$scope.area = "Select Area";
@@ -134,11 +134,11 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             $scope.centreDetails.city = city;
             $scope.city = city;
             $('#cityDropDown').setJelect(city);
-            if (!$scope.centreDetails.areaList || $scope.centreDetails.areaList.length === 0) {
-                $scope.getServiceCentreArea();
-            } else {
+           // if (!$scope.centreDetails.areaList || $scope.centreDetails.areaList.length === 0) {
+             //   $scope.getServiceCentreArea();
+            //} else {
                 getNearerCentreList();
-            }
+           // }
         } else {
             $scope.city = "Select City";
             $('#cityDropDown').setJelect("");
