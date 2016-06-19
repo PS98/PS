@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -83,6 +84,7 @@ namespace PS.Models
         [JsonIgnore]
         public BsonObjectId _id { get; set; }
         public string Area { get; set; }
+        public string OwnerNane { get; set; }
         public string CentreId { get; set; }
         public string Name { get; set; }
         public Address Address { get; set; }
@@ -92,6 +94,8 @@ namespace PS.Models
         public string Review { get; set; }
         public string OpeningHours { get; set; }
         public string ClosingHours { get; set; }
+        public string Holiday { get; set; }
+        public string Capacity { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
         public List<string> Services { get; set; }
