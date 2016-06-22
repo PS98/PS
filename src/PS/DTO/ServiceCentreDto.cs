@@ -8,6 +8,7 @@ using PS.Services;
 using System.Device.Location;
 using System.Net;
 using Microsoft.AspNet.Mvc;
+using MongoDB.Driver.Builders;
 
 namespace PS.DTO
 {
@@ -186,6 +187,9 @@ namespace PS.DTO
 
         public string SaveCentreDetails(ServiceCentreGeo newCentre)
         {
+            // create index if not exixt
+            CheckOrCreateIndex();
+
             // if No id then create new Centre doc
 
             if (newCentre != null && string.IsNullOrWhiteSpace(newCentre?.CentreId))
@@ -276,6 +280,41 @@ namespace PS.DTO
             }
             if (count == 0)
                 priceDetails.AddRange(newPriceList);
+        }
+
+        public async void  CheckOrCreateIndex()
+        {
+            try
+            {
+                var collection = _repo.GetCollection<ServiceCentreGeo>("Pune");
+           //     var keys = Builders<BsonDocument>.IndexKeys.Ascending("cuisine");
+               IndexKeysBuilder Key = IndexKeys.GeoSpatialSpherical("location");
+                IndexKeysDefinitionBuilder<ServiceCentreGeo> key = new IndexKeysDefinitionBuilder<ServiceCentreGeo>();
+                var option = IndexOptions.SetName("Location_2dsphere");
+
+                key.Geo2DSphere(x => x.Location);
+                IndexKeysDefinition<ServiceCentreGeo> jk = new JsonIndexKeysDefinition<ServiceCentreGeo>("{Location : \"2dsphere\" }");
+                jk.Geo2DSphere(x=>x.Location);
+                CreateIndexOptions options = new CreateIndexOptions();
+                options.Name = "Location_2dsphere";
+                bool isIndexExist = false;
+              
+                using (var cursor = await collection.Indexes.ListAsync())
+                {
+                    var indexes = await cursor.ToListAsync();
+                    isIndexExist = indexes.Any(x => x["name"] == "Location_2dsphere");
+                }
+
+                if (!isIndexExist)
+                {
+                    await collection.Indexes.CreateOneAsync(jk, options); 
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
     }
