@@ -71,7 +71,7 @@ angular.module("psApp").directive("admin", function () {
                 scope.centreDetails.Area = centreCityArea.area;
             }
         },
-        controller: ["$scope", "psDataServices", function ($scope, psDataServices) {
+        controller: ["$scope", "psDataServices", "psOrderDetailsService", function ($scope, psDataServices, psOrderDetailsService) {
             $scope.carList = {}; $scope.centreDetails = {}; $scope.showBrandName = true; var centreObject = {};
             var obj = function(){
                 this["ModelList"] = [];
@@ -184,7 +184,18 @@ angular.module("psApp").directive("admin", function () {
                 }
             }
             $scope.serviceList = [["Denting & Painting", "Accidental Repair", "Interior Car Spa", "Regular Service", "Wheel Alignment & Balancing", "Pick & Drop", "Battery Services"]
-                ,["Exterior Car Spa", "Accidental Insurance", "A/c Repairing", "Spare Parts", "Complete Engine Scanning", "Cards Accepted", "Breakdown"]];
+                , ["Exterior Car Spa", "Accidental Insurance", "A/c Repairing", "Spare Parts", "Complete Engine Scanning", "Cards Accepted", "Breakdown"]];
+
+
+            $scope.getOrderById = function (id) {
+                if (id)
+                psOrderDetailsService.getOrderById(id).then(function (data) {
+                    $scope.activeOrder = [];
+                    $scope.activeOrder.push(data.order);
+                },function() {
+                    console.log(data.message);
+                });
+            }
         }]
 
     };

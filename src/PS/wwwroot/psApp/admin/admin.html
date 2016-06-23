@@ -272,9 +272,20 @@
 
                 </div>
             </div>
-            <div id="menu1" class="tab-pane fade">
-                <h3>Menu 1</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div id="menu1" class="tab-pane fade white-container">
+            <div class="row">
+                <div class="col-lg-12 form-group">
+                    <div class="col-lg-6">
+                        <input class="form-control" id="OrderId" name="closingHours" placeholder="OrderId" type="text" ng-model="Id" />
+                    </div>
+                    <div class="col-lg-6">
+                        <a  class="btn btn-primary btn-effect" ng-click="getOrderById(Id)">Serach</a>
+                    </div>
+                </div>
+               
+            </div>
+                
+                <order-details orders="activeOrder"></order-details>
             </div>
             <div id="menu2" class="tab-pane fade">
                 <h3>Menu 2</h3>

@@ -119,6 +119,21 @@
 
         return deferred.promise;
     }
+    var _getOrderById = function (invoiceNo) {
+        var deferred = $q.defer();
+        $http(
+            {
+                url: "/api/OrderDetails/getorder?id=" + invoiceNo, method: "GET", cache: false
+            }).then(function (result) {
+                //Success
+                deferred.resolve(result.data);
+            }, function (error) {
+                //Error
+                deferred.reject(error);
+            });
+
+        return deferred.promise;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
@@ -126,7 +141,9 @@
         getsubmittedOrder: _getSubmittedOrder,
         getAllPendingOrder: _getAllPendingOrder,
         cancelOrder: _cancelOrder,
-        editDateAndTime: _editDateAndTime
+        editDateAndTime: _editDateAndTime,
+        getOrderById: _getOrderById
+
     }
 
 }]);
