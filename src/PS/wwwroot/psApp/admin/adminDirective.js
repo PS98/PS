@@ -156,6 +156,7 @@ angular.module("psApp").directive("admin", function () {
                     }
                 }
                 console.log($scope.centreDetails);
+                if ($scope.centreDetails.Id || $scope.newCentre)
                 psDataServices.saveCentreDetails($scope.centreDetails).
                             success(function (data) {
                                 alert(data.message);
