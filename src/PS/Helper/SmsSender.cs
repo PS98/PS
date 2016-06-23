@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using PS.Models;
 using PS.Services;
 
@@ -25,9 +24,9 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.RegistrationOtp, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
         }
 
@@ -39,9 +38,9 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.RegistrationCompleted, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
         }
 
@@ -71,9 +70,9 @@ namespace PS.Helper
                 _smsSender.SendSmsAsync(model.UserDetails.PhoneNo, customerMessge);
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
 
             finally
@@ -109,9 +108,9 @@ namespace PS.Helper
                 var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.ServicingConfirmation, messageText);
                 _smsSender.SendSmsAsync(model.SelectedCentre.PhoneNo, centreMessage);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
 
         }
@@ -127,9 +126,9 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.BookingCancelled, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
 
         }
@@ -145,9 +144,9 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.PickUpDone, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
 
         }
@@ -163,9 +162,9 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.PickUpSuccess, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
 
         }
@@ -180,9 +179,9 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.DropOffInitiated, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
 
         }
@@ -198,9 +197,9 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.ServiceCompleted, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
 
         }
@@ -216,11 +215,10 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.PaymentDone, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
-
         }
         public static void OfferSms(string mobileNo)
         {
@@ -229,9 +227,9 @@ namespace PS.Helper
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.PaymentDone);
                 _smsSender.SendSmsAsync(mobileNo, messge);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                // ignored
             }
 
         }

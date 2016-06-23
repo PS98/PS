@@ -228,7 +228,7 @@ namespace PS.Controllers
                         // collection.Indexes.CreateOneAsync(Builders<ServiceCentre>.IndexKeys.Geo2D(p => p.Centres.First().Location));
                         var id = _repo.GenerateNewId();
                         serviceCentreObj.Centres.First().Id = id;
-                        _repo.insertDocument(Database, CollectionName, serviceCentreObj);
+                        _repo.InsertDocument(Database, CollectionName, serviceCentreObj);
                             // if new area then insert into db
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "new doc created in DataBase", Status = 0, Id = id });

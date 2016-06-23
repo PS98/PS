@@ -7,6 +7,7 @@ using PS.Models;
 using PS.Services;
 using System.Net;
 using Newtonsoft.Json;
+using PS.DTO;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,7 +17,9 @@ namespace PS.Controllers
     public class OrderDetailsController : Controller
     {
         private MongoRepository repo = new MongoRepository("orders");
-        // GET: api/values
+
+        OrderDetailsDomainManager domainManager = new OrderDetailsDomainManager();
+
         [Route("order")]
         //[HttpGet("{email}/{status}")]
         public JsonResult Get(string email, string status)
@@ -95,27 +98,87 @@ namespace PS.Controllers
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
         }
 
-
-
-
-
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpGet]
+        [Route("list")]
+        public JsonResult ListAllOrders()
         {
+            try
+            {
+              var orderList =   domainManager.GetAllOrders();
+                if (!orderList.Any())
+                {
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Message = "We are unable to process your request.", Status = 1 });
+                }
+                var pendingOrder = orderList.Where(x => x.Status.Equals("Pending")).ToList();
+                var cancelOrder = orderList.Where(x => x.Status.Equals("Cancelled")).ToList();
+                var successorder = orderList.Where(x => x.Status.Equals("Success")).ToList();
+                var result = new
+                {
+                    totalOrder = orderList.Count(), 
+                    pendingOrderCount = pendingOrder.Count(),
+                    cancelOrderCount = cancelOrder.Count(),
+                    successorderCount = successorder.Count(),
+                    pendingOrder,
+                    cancelOrder,
+                    successorder
+                };
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = "success.", Status = 0, result = result });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpGet]
+        [Route("getorder")]
+        public JsonResult GetOrderById(string id)
         {
-        }
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(id))
+                {
+                    var order = domainManager.GetOrder(id);
+                    Response.StatusCode = (int) HttpStatusCode.OK;
+                    return Json(new {Message = "Success", Status = 0, Order = order});
+                }
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = "please provide OrderId", Status = 0 });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message , Status = 0 });
+            }
+           
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        }
+        [HttpGet]
+        [Route("updateorder")]
+        public JsonResult UpdateOrderDetails(OrderDetails order)
         {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(order.InvoiceNo))
+                {
+                    domainManager.UpdateOrderDetails(order);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Message = "Success", Status = 0 });
+                }
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = "error", Status = 0 });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message, Status = 0 });
+            }
+
+
         }
     }
 }

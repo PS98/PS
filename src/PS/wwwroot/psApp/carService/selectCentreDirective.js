@@ -25,10 +25,10 @@ angular.module("psApp").directive("selectCentre", function () {
                         scope.city = scope.centreDetails.city;
                         $('#cityDropDown').setJelect(scope.centreDetails.city);
                     }
-                    if (scope.centreDetails.areaList.indexOf(scope.centreDetails.area) >-1) {
+                 //   if (scope.centreDetails.areaList.indexOf(scope.centreDetails.area) >-1) {
                         scope.area = scope.centreDetails.area;
-                        $('#areaDropDown').setJelect(scope.centreDetails.area);
-                    }
+                     //   $('#areaDropDown').setJelect(scope.centreDetails.area);
+                  //  }
                 }, 20);
               
             }

@@ -42,7 +42,7 @@ namespace PS.DTO
             {
                 // ignored
             }
-            return null;
+            return new List<ServiceCentreViewModel>();
         }
 
         private static BsonDocument GetGeoNearQuery(double lat, double lng)
@@ -112,8 +112,8 @@ namespace PS.DTO
                         Distance = distance,
                         Review = centre.Review,
                         Services = centre.Services,
-                        IsFreePickUp = false
-                    });
+                        IsFreePickUp = false,
+                        }); 
                     continue;
                 }
 
@@ -197,7 +197,7 @@ namespace PS.DTO
                 var id = _repo.GenerateNewId();
                 newCentre.CentreId = id;
                 newCentre.Location = new Location(newCentre.Latitude,newCentre.Longitude);
-                _repo.insertDocument(Database, Collection, newCentre);
+                _repo.InsertDocument(Database, Collection, newCentre);
                 return "new doc is created";
             }
            

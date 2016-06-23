@@ -97,7 +97,7 @@ namespace PS.Services
 
             return listAll;
         }
-        public async void insertDocument<T>(string databaseName, string collectionName, T data)
+        public async void InsertDocument<T>(string databaseName, string collectionName, T data)
         {
 
             _database = _client.GetDatabase(databaseName);
