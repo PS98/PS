@@ -1,4 +1,5 @@
-﻿"use strict";
+﻿/// <reference path="admin/addcentredetails/addcentredetails.html" />
+"use strict";
 
 angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider", 
     function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
@@ -135,6 +136,22 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                         url: "/Admin",
                         template: "<admin></admin>",
                         controller: "loginDetailsController"
+                    }
+                },
+                {
+                    state: "admin.addCentre",
+                    config: {
+                        url: "/",
+                        templateUrl: "psapp/admin/addCentreDetails/addCentreDetails.html",
+                        controller: "loginDetailsController"
+                    }
+                },
+                {
+                    state: "admin.editOrder",
+                    config: {
+                        url: "/edit",
+                        templateUrl: "psapp/admin/editOrder/editOrderDetails.html",
+                        controller: "editOrderController"
                     }
                 }
         ];

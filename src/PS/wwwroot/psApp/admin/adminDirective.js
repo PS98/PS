@@ -71,16 +71,19 @@ angular.module("psApp").directive("admin", function () {
                 scope.centreDetails.Area = centreCityArea.area;
             }
         },
-        controller: ["$scope", "psDataServices", "psOrderDetailsService", function ($scope, psDataServices, psOrderDetailsService) {
-            $scope.carList = {}; $scope.centreDetails = {}; $scope.showBrandName = true; var centreObject = {};
-            var obj = function(){
+        controller: ["$scope","$state", "psDataServices", "psOrderDetailsService", function($scope, $state, psDataServices, psOrderDetailsService) {
+            $scope.carList = {};
+            $scope.centreDetails = {};
+            $scope.showBrandName = true;
+            var centreObject = {};
+            var obj = function() {
                 this["ModelList"] = [];
                 this["MilematePrice"] = 0;
                 this["ActualPrice"] = 0;
                 this["ServiceCentrePrice"] = 0;
-                
+
             }
-            var serviceObj = function () {
+            var serviceObj = function() {
 
                 this["Name"] = "";
                 this["Radius"] = "";
@@ -90,31 +93,32 @@ angular.module("psApp").directive("admin", function () {
                 this["Electric"] = [];
             }
             psDataServices.geMockData().
-                        success(function (data) {
-                            $scope.centreDetails = data;
-                            angular.extend(centreObject, data);
-                        })
-                        .error(function () {
-                        });
+                success(function(data) {
+                    $scope.centreDetails = data;
+                    angular.extend(centreObject, data);
+                })
+                .error(function() {
+                });
 
 
             psDataServices.getAllCarColletion().
-                              success(function (data) {
-                                  $scope.carList.carCollections = data.carList;
+                success(function(data) {
+                    $scope.carList.carCollections = data.carList;
 
-                              }).error(function () {
-                              });
-            $scope.selectBrand = function (brandName) {
-                $scope.showBrandName = false; $scope.showModel = true;
+                }).error(function() {
+                });
+            $scope.selectBrand = function(brandName) {
+                $scope.showBrandName = false;
+                $scope.showModel = true;
                 $scope.brand = brandName;
-                $scope.modelList =  $scope.modelList || [];
+                $scope.modelList = $scope.modelList || [];
                 psDataServices.getCarType(brandName).
-                 success(function (data) {
-                     $scope.carList.carTypes = data;
-                 }).error(function () {
-                 });
+                    success(function(data) {
+                        $scope.carList.carTypes = data;
+                    }).error(function() {
+                    });
             }
-            $scope.selectModel = function (type) {
+            $scope.selectModel = function(type) {
                 $scope.modelList = $scope.modelList || [];
 
                 if ($scope.modelList.indexOf(type) < 0)
@@ -124,7 +128,7 @@ angular.module("psApp").directive("admin", function () {
                 }
 
             }
-            $scope.addCentreDetails = function () {
+            $scope.addCentreDetails = function() {
                 var services = new serviceObj();
                 var model = new obj();
                 $scope.centreDetails.Services = $scope.Services;
@@ -157,26 +161,27 @@ angular.module("psApp").directive("admin", function () {
                 }
                 console.log($scope.centreDetails);
                 if ($scope.centreDetails.Id || $scope.newCentre)
-                psDataServices.saveCentreDetails($scope.centreDetails).
-                            success(function (data) {
-                                alert(data.message);
-                                if (data.status === 0) {
-                                   // $scope.centreDetails = {};
-                                  //  angular.extend($scope.centreDetails, centreObject);
-                                    $scope.centreDetails.CentreId = parseInt(data.id);
-                                    $scope.newCentre = false;
-                                    $scope.Services = [];
-                                }
-                            });
+                    psDataServices.saveCentreDetails($scope.centreDetails).
+                        success(function(data) {
+                            alert(data.message);
+                            if (data.status === 0) {
+                                // $scope.centreDetails = {};
+                                //  angular.extend($scope.centreDetails, centreObject);
+                                $scope.centreDetails.CentreId = parseInt(data.id);
+                                $scope.newCentre = false;
+                                $scope.Services = [];
+                            }
+                        });
             }
-            $scope.editBrand = function () {
-                $scope.showBrandName = !$scope.showBrandName; $scope.showModel = !$scope.showModel;
+            $scope.editBrand = function() {
+                $scope.showBrandName = !$scope.showBrandName;
+                $scope.showModel = !$scope.showModel;
             }
             $scope.openOverlay = function() {
                 $("#centreAddressOverlay").modal("toggle");
             }
-          //  $scope.AreaList = ["Pimpri", "Chinchwad", "Kothrud", "Aundh", "Pashan", "Baner", "Koregaon Park", "Shivaji Nagar", "Pune Railway", "Swargate", "Boat club", "Magarpatta", "Daund", "Chikhli", "Kalewadi", "Kasarwadi", "Phugewadi ", "Pimple Saudagar", "Narayan peth", "Talegaon", "Kasba peth", "Shirur", "Bhor", "Mulshi", "Wadgaon", "Welhe", "Ambegaon", "Junnar", "Rajgurunagar", "Baramati", "Indapur", "Purandhar", "Bhawani Peth", "Erandwana", "Ghorpuri Lines", "Kalyani Nagar", "Kondhwa", "Narayan Peth", "Hadapsar", "Akurdi"];
-            $scope.addArea = function (area) {
+            //  $scope.AreaList = ["Pimpri", "Chinchwad", "Kothrud", "Aundh", "Pashan", "Baner", "Koregaon Park", "Shivaji Nagar", "Pune Railway", "Swargate", "Boat club", "Magarpatta", "Daund", "Chikhli", "Kalewadi", "Kasarwadi", "Phugewadi ", "Pimple Saudagar", "Narayan peth", "Talegaon", "Kasba peth", "Shirur", "Bhor", "Mulshi", "Wadgaon", "Welhe", "Ambegaon", "Junnar", "Rajgurunagar", "Baramati", "Indapur", "Purandhar", "Bhawani Peth", "Erandwana", "Ghorpuri Lines", "Kalyani Nagar", "Kondhwa", "Narayan Peth", "Hadapsar", "Akurdi"];
+            $scope.addArea = function(area) {
                 $scope.Services = $scope.Services || [];
                 if ($scope.Services.indexOf(area) < 0)
                     $scope.Services.push(area);
@@ -184,18 +189,22 @@ angular.module("psApp").directive("admin", function () {
                     $scope.Services.splice($scope.Services.indexOf(area), 1);
                 }
             }
-            $scope.serviceList = [["Denting & Painting", "Accidental Repair", "Interior Car Spa", "Regular Service", "Wheel Alignment & Balancing", "Pick & Drop", "Battery Services"]
-                , ["Exterior Car Spa", "Accidental Insurance", "A/c Repairing", "Spare Parts", "Complete Engine Scanning", "Cards Accepted", "Breakdown"]];
+            $scope.serviceList = [
+                ["Denting & Painting", "Accidental Repair", "Interior Car Spa", "Regular Service", "Wheel Alignment & Balancing", "Pick & Drop", "Battery Services"], ["Exterior Car Spa", "Accidental Insurance", "A/c Repairing", "Spare Parts", "Complete Engine Scanning", "Cards Accepted", "Breakdown"]
+            ];
 
 
-            $scope.getOrderById = function (id) {
+            $scope.getOrderById = function(id) {
                 if (id)
-                psOrderDetailsService.getOrderById(id).then(function (data) {
-                    $scope.activeOrder = [];
-                    $scope.activeOrder.push(data.order);
-                },function() {
-                    console.log(data.message);
-                });
+                    psOrderDetailsService.getOrderById(id).then(function(data) {
+                        $scope.activeOrder = [];
+                        $scope.activeOrder.push(data.order);
+                    }, function() {
+                        console.log(data.message);
+                    });
+            }
+            $scope.changeState = function(state) {
+                $state.go(state);
             }
         }]
 
