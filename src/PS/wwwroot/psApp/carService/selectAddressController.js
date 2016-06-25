@@ -79,18 +79,19 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
     $scope.ReviewOrder = function () {
         if ($scope.userSelectedService.userDetails.phoneNo === $scope.oldNumber || $scope.userSelectedService.userDetails.phoneNo === $scope.vaildatedNo || $scope.otp === $scope.addressOtp) {
             $scope.vaildatedNo = $scope.userSelectedService.userDetails.phoneNo;
-            $scope.reviewOrder = [];
-            var order = psDataServices.getSelectedService();
+              $scope.reviewOrder =[];
+              var order = psDataServices.getSelectedService();
             $scope.review = true;
             $scope.custRequest = false;
-            $scope.reviewOrder.push(order);
+               $scope.reviewOrder.push(order);
+            $scope.setPickUpPrice(order);
             $.each(order.selectedServices, function (i, job) {
                 if (job.addText) {
                     $scope.custRequest = true;
                     $scope.request = job.request;
                 }
             });
-            $("#ReviewOrder").modal();
+          $("#ReviewOrder").modal();
         }
         else {
             $scope.otpError = true;
@@ -140,6 +141,19 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
         $scope.otpError = false;
         $scope.reqSuccess = false;
         $scope.reqError = false;
+    }
+
+    $scope.setPickUpPrice = function (order) {
+        var pickUpDetails = psDataServices.getPickUpDetails();
+        if (!order.selectedCentre.isFreePickUp && pickUpDetails.isPickUp) {
+            order.isPickUpSelected = true;
+            order.pickUpCharges = 200;
+            if (pickUpDetails.Type !== "both")
+                order.pickUpCharges = 100;
+        } else {
+            order.isPickUpSelected = false;
+            order.pickUpCharges = 0;
+        }
     }
 
 }]);

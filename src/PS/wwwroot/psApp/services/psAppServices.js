@@ -15,7 +15,7 @@
     var _setSelectedServiceName = function(servicesName) {
         serviceNameList = servicesName;
     }
-    var _getSelectedServiceName = function (servicesName) {
+    var _getSelectedServiceName = function () {
        return  serviceNameList;
     }
     var _setSelectedAppointment = function (appointment) {
@@ -54,7 +54,7 @@
         return userServiceData.selectedCentre;
     }
     var _getPickUpDetails = function () {
-        return userServiceData.pickUpDetails;
+        return userServiceData.selectedAppointment.pickUpDetails;
     }
     var _setPickUpDetails = function (pickUpDetails) {
         return userServiceData.selectedAppointment.pickUpDetails = pickUpDetails;

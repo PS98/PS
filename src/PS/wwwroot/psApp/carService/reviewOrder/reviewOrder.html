@@ -65,15 +65,28 @@
                     <td style="text-align: center;" ng-if="order.selectedCentre.totalActualPrice !== 0"><b>Actual Price</b></td>
                     <td style="text-align: center;"><b>MM Price</b></td>
                 </tr>
-                <tr ng-repeat="service in order.selectedCentre.serviceDetails">
-                    <td class="selected_service" style="text-align: center;">{{service.name}}</td>
-                    <td style="text-align: center;" ng-if="order.selectedCentre.totalActualPrice !== 0"><i class="fa fa-inr" style="font-size: 11px;"></i> {{service.actualPrice}}</td>
-                    <td style="text-align: center;"><i class="fa fa-inr" style="font-size: 11px;"></i><span ng-if="order.selectedCentre.totalActualPrice === 0"> &nbsp;Pending</span> <span ng-if="order.selectedCentre.totalActualPrice !== 0"> {{ service.milematePrice}}</span></td>
+            <tr ng-repeat="service in order.selectedCentre.serviceDetails">
+                <td class="selected_service" style="text-align: center;">{{service.name}}</td>
+                <td style="text-align: center;" ng-if="order.selectedCentre.totalActualPrice !== 0"><i class="fa fa-inr" style="font-size: 11px;"></i> {{service.actualPrice}}</td>
+                <td style="text-align: center;"><i class="fa fa-inr" style="font-size: 11px;"></i><span ng-if="order.selectedCentre.totalActualPrice === 0"> &nbsp;Pending</span> <span ng-if="order.selectedCentre.totalActualPrice !== 0"> {{ service.milematePrice}}</span></td>
+            </tr>
+                <tr ng-if="!order.selectedCentre.isFreePickUp && order.isPickUpSelected && order.selectedCentre.totalActualPrice !== 0">
+                    <td class="selected_service" style="text-align: center;"> Pick and drop</td>
+                    <td style="text-align: center;" ><i class="fa fa-inr" style="font-size: 11px;"></i> {{order.pickUpCharges}}</td>
+                    <td style="text-align: center;"><i class="fa fa-inr" style="font-size: 11px;"></i> {{order.pickUpCharges}} </td>
                 </tr>
                 <tr class="total_estimate">
                     <td style="text-align: center;"> Total Estimated Charges</td>
-                    <td style="text-align: center; font-weight: bold;" ng-if="order.selectedCentre.totalActualPrice !== 0"><i class="fa fa-inr" style="font-size: 11px;"></i> {{ order.selectedCentre.totalActualPrice}}</td>
-                    <td style="text-align: center; font-weight: bold;"><i class="fa fa-inr" style="font-size: 11px;"></i> <span ng-if="order.selectedCentre.totalActualPrice === 0"> &nbsp;Pending</span> <span ng-if="order.selectedCentre.totalActualPrice !== 0"> {{ order.selectedCentre.totalMMPrice }}</span></td>
+                    <td style="text-align: center; font-weight: bold;">
+                        <i class="fa fa-inr" style="font-size: 11px;"></i>
+                        <span ng-if="order.selectedCentre.totalActualPrice === 0"> &nbsp;Pending</span> 
+                        <span ng-if="order.selectedCentre.totalActualPrice !== 0 ">{{ order.selectedCentre.totalActualPrice + order.pickUpCharges}}</span>
+                    </td>
+                    
+                    <td style="text-align: center; font-weight: bold;" ng-if="order.selectedCentre.totalActualPrice !== 0">
+                        <i class="fa fa-inr" style="font-size: 11px;"></i>
+                        <span> {{ order.selectedCentre.totalMMPrice + order.pickUpCharges }}</span>
+                    </td>
                 </tr>
             </tbody>
         </table>
