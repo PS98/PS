@@ -134,6 +134,21 @@
 
         return deferred.promise;
     }
+    var _updateSelectedOrder  = function(order) {
+        var deferred = $q.defer();
+        $http(
+            {
+                url: "/api/OrderDetails/updateorder", method: "POST", cache: false, data: order
+            }).then(function (result) {
+                //Success
+                deferred.resolve(result.data);
+            }, function (error) {
+                //Error
+                deferred.reject(error);
+            });
+
+        return deferred.promise;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
@@ -142,7 +157,8 @@
         getAllPendingOrder: _getAllPendingOrder,
         cancelOrder: _cancelOrder,
         editDateAndTime: _editDateAndTime,
-        getOrderById: _getOrderById
+        getOrderById: _getOrderById,
+        updateSelectedOrder:_updateSelectedOrder
 
     }
 

@@ -157,7 +157,7 @@ namespace PS.Controllers
            
 
         }
-        [HttpGet]
+        [HttpPost]
         [Route("updateorder")]
         public JsonResult UpdateOrderDetails(OrderDetails order)
         {

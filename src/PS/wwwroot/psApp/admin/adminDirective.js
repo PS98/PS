@@ -192,20 +192,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.serviceList = [
                 ["Denting & Painting", "Accidental Repair", "Interior Car Spa", "Regular Service", "Wheel Alignment & Balancing", "Pick & Drop", "Battery Services"], ["Exterior Car Spa", "Accidental Insurance", "A/c Repairing", "Spare Parts", "Complete Engine Scanning", "Cards Accepted", "Breakdown"]
             ];
-
-
-            $scope.getOrderById = function(id) {
-                if (id)
-                    psOrderDetailsService.getOrderById(id).then(function(data) {
-                        $scope.activeOrder = [];
-                        $scope.activeOrder.push(data.order);
-                    }, function() {
-                        console.log(data.message);
-                    });
-            }
-            $scope.changeState = function(state) {
-                $state.go(state);
-            }
+            
         }]
 
     };
