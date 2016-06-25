@@ -18,19 +18,19 @@ app.directive('script', function () {
         };
 });
 app.controller('psController', function ($rootScope) {
-    $rootScope.$on("$routeChangeStart",
-                 function (event, current, previous, rejection) {
-                     var $preloader = $('#page-preloader'),
-                        $spinner = $preloader.find('.spinner-loader');
-                     $preloader.show();
-                    $spinner.fadeOut();
-                    $preloader.delay(50).fadeOut('slow');
-                    $preloader.hide();
-                 });
+    //$rootScope.$on("$routeChangeStart",
+    //             function (event, current, previous, rejection) {
+    //                 var $preloader = $('#page-preloader'),
+    //                    $spinner = $preloader.find('.spinner-loader');
+    //                 $preloader.show();
+    //                $spinner.fadeOut();
+    //                $preloader.delay(50).fadeOut('slow');
+    //                $preloader.hide();
+    //             });
 });
 
-app.service('LoadingInterceptor', ['$q', '$rootScope', '$log',
-function ($q, $rootScope, $log) {
+app.service('LoadingInterceptor', ['$q', '$rootScope', '$log', '$timeout',
+function ($q, $rootScope, $log, $timeout) {
     'use strict';
 
     var xhrCreations = 0;
@@ -47,23 +47,31 @@ function ($q, $rootScope, $log) {
     return {
         request: function (config) {
             xhrCreations++;
-            updateStatus();
+            $timeout(function () {
+                updateStatus();
+            }, 1000);
             return config;
         },
         requestError: function (rejection) {
             xhrResolutions++;
-            updateStatus();
+            $timeout(function () {
+                updateStatus();
+            }, 1000);
             $log.error('Request error:', rejection);
             return $q.reject(rejection);
         },
         response: function (response) {
             xhrResolutions++;
-            updateStatus();
+            $timeout(function () {
+                updateStatus();
+            }, 1000);
             return response;
         },
         responseError: function (rejection) {
             xhrResolutions++;
-            updateStatus();
+            $timeout(function () {
+                updateStatus();
+            }, 1000);
             $log.error('Response error:', rejection);
             return $q.reject(rejection);
         }
