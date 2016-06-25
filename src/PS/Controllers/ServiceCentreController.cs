@@ -411,7 +411,12 @@ namespace PS.Controllers
                 }
 
               var centreList = _serviceCentreDto.ListServiceCentres(selectedService);
-                Response.StatusCode = (int)HttpStatusCode.OK;
+              if (centreList == null)
+              {
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Message = "success", Status = 1, List = new List<string>()});
+                }
+              Response.StatusCode = (int)HttpStatusCode.OK;
                 return Json(new { Message = "success", Status = 0 , List = centreList});
             }
             catch (Exception ex)

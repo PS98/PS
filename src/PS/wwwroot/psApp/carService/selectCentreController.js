@@ -3,7 +3,7 @@
 angular.module("psApp").controller("selectCentreController", ["$scope", "psDataServices", "$state", "$localStorage", function ($scope, psDataServices, $state, $localStorage) {
     $scope.state = $state;
     $scope.centreDetails = psDataServices.getCentreDetails() ? psDataServices.getCentreDetails() : {};
-    $scope.selectedService = {};
+  //  $scope.selectedService = {};
     $scope.selectedService = psDataServices.getSelectedServiceName() || [];
     $scope.selectServiceCentre = function (centre) {
         if (!centre.activeCentre) {
@@ -42,7 +42,14 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
                         $scope.noCentreMatch = false;
                         $scope.noServiceMatch = false;
                     } else {
-                        $scope.noServiceMatch = true;
+                        if (data.status === 0) {
+                            $scope.noServiceMatch = true;
+                            $scope.noCentreMatch = false;
+                        }
+                        if (data.status === 1) {
+                            $scope.noCentreMatch = true;
+                            $scope.noServiceMatch = false;
+                        }
                         removeCentreDetails();
 
                     }

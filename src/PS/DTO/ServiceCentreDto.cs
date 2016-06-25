@@ -31,7 +31,7 @@ namespace PS.DTO
                 var userCordinates = new GeoCoordinate(_lat, _lng);
                 var geoNearQuery = GetGeoNearQuery(_lat, _lng);
                 var centreList = collection?.Find(geoNearQuery).ToListAsync().Result;
-                if (centreList != null)
+                if (centreList != null && centreList.Any())
                 {
                     var matchingCentre = GetMatchingServiceCentre(centreList, selectedService, userCordinates);
                     return matchingCentre.OrderByDescending(x => x.Review).ToList();
@@ -42,7 +42,7 @@ namespace PS.DTO
             {
                 // ignored
             }
-            return new List<ServiceCentreViewModel>();
+            return null;
         }
 
         private static BsonDocument GetGeoNearQuery(double lat, double lng)

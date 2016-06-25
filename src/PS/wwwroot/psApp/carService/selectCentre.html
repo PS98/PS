@@ -29,7 +29,8 @@
                             </div>
                         </div>
                         <div class="sorting__item">
-                            <a ng-click="changeArea()">Select Your Location</a>
+                            <a ng-show="!centreDetails.userAddress.formattedAddress" ng-click="changeArea()">Select Your Location</a>
+                            <a ng-show="centreDetails.userAddress.formattedAddress" ng-click="changeArea()">Change Your Location</a>
                         </div>
                     </div>
                     <div class="sorting__inner">
