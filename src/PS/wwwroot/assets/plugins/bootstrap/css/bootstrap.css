@@ -6022,7 +6022,7 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 425px;
+    width: 500px;
     margin: 30px auto;
   }
   .modal-content {

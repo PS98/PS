@@ -35,7 +35,8 @@
                 <span><strong>Online (Paid INR {{order.selectedCentre.totalMMPrice}})</strong></span>
             </span>
             <span ng-if="order.paymentMode ==='COD'">
-                <span><strong>Cash On Delivery (INR {{order.selectedCentre.totalMMPrice}})</strong></span>
+                <span><strong ng-if="order.selectedCentre.totalMMPrice !== 0">Cash On Delivery (INR {{order.selectedCentre.totalMMPrice}})</strong></span>
+                <span><strong ng-if="order.selectedCentre.totalMMPrice === 0">Cash On Delivery (INR Pending)</strong></span>
             </span>
         </div>
     </div>
