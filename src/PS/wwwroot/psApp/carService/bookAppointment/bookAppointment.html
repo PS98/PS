@@ -26,20 +26,15 @@
                     </div>
                 </div>
                 <div class="row" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;">
-                    <div class="col-md-6" ng-show="pickUp">
-                        <div class="col-md-6 no-padding">
+                    <div class="col-md-12 col-md-offset-6" ng-show="pickUp">
+                        <div class="no-padding">
                             <i class="fa fa-check-circle" ng-click="pickAndDrop(1)" ng-class="{selected :both}"></i> <span>Both</span>
                             <i class="fa fa-check-circle margin-left15" ng-click="pickAndDrop(2)" ng-class="{selected :onlyPickUP}"></i><span>Only Pick-Up</span>
-                        </div>
-                        <div class="col-md-6 no-padding">
-                            <i class="fa fa-check-circle" ng-click="pickAndDrop(3)" ng-class="{selected :onlyDropOff}"></i><span>Only Drop-Off</span>
-                            
-                        </div>
-
-                        
+                            <i class="fa fa-check-circle margin-left15" ng-click="pickAndDrop(3)" ng-class="{selected :onlyDropOff}"></i><span>Only Drop-Off</span>
+                        </div>                        
                     </div>
-                    <div class="col-md-6 pull-right" ng-show="!centre.isFreePickUp && pickUp">
-                        you will be charged <i class="fa fa-inr" ng-if="both">&nbsp;200</i> <i class="fa fa-inr" ng-if="onlyDropOff || onlyPickUP">&nbsp;100</i> extra for <span ng-if="both">both</span><span ng-if="onlyPickUP">only PickUP</span><span ng-if="onlyDropOff">only DropOff</span>.
+                    <div class="col-md-6 pull-right" style="padding-top: 20px;" ng-show="!centre.isFreePickUp && pickUp">
+                        you will be charged <i class="fa fa-inr" ng-if="both">&nbsp;200</i> <i class="fa fa-inr" ng-if="onlyDropOff || onlyPickUP">&nbsp;100</i> extra for <span ng-if="both">both</span><span ng-if="onlyPickUP">only Pick-Up</span><span ng-if="onlyDropOff">only Drop-Off</span>.
                     </div>
                 </div>
               

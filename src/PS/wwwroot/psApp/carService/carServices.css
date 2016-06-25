@@ -1,5 +1,6 @@
 ﻿.service a{
     text-decoration:none;
+    cursor: pointer;
 }
 .service .modal-body {
     max-height: calc(100vh - 210px);
