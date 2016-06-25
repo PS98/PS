@@ -112,7 +112,7 @@ namespace PS.DTO
                         Distance = distance,
                         Review = centre.Review,
                         Services = centre.Services,
-                        IsFreePickUp = false,
+                        IsFreePickUp = distance< 5
                         }); 
                     continue;
                 }
