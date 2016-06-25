@@ -7,7 +7,7 @@ using PS.Models;
 using PS.Services;
 using System.Device.Location;
 using System.Net;
-using Microsoft.AspNet.Mvc;
+using PS.Helper;
 using MongoDB.Driver.Builders;
 
 namespace PS.DTO
@@ -112,7 +112,10 @@ namespace PS.DTO
                         Distance = distance,
                         Review = centre.Review,
                         Services = centre.Services,
-                        IsFreePickUp = distance< 5
+                        IsFreePickUp = distance< 5,
+                        OpeningHours = centre.OpeningHours,
+                        ClosingHours = centre.ClosingHours,
+                        Holiday = Utility.GetDay(centre.Holiday)
                         }); 
                     continue;
                 }
@@ -178,7 +181,10 @@ namespace PS.DTO
                             Distance = distance,
                             Review = centre.Review,
                             Services = centre.Services,
-                            IsFreePickUp = serviceDetails.Any(x => x.IsFreePickUp)
+                            IsFreePickUp = serviceDetails.Any(x => x.IsFreePickUp),
+                            OpeningHours = centre.OpeningHours,
+                            ClosingHours = centre.ClosingHours,
+                            Holiday = Utility.GetDay(centre.Holiday)
                         });
                 }
             }

@@ -28,6 +28,9 @@ namespace PS.Models
             }
         }
         public List<Detalis> ServiceDetails { get; set; }
+        public string OpeningHours { get; set; }
+        public string ClosingHours { get; set; }
+        public int Holiday { get; set; }
     }
     public class Detalis
     {
