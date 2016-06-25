@@ -163,8 +163,9 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     }
     $scope.openInformationPopup = function (eventInfo) {
         try {
-            var left = (parseInt(eventInfo.screenX) - 100) + "px";
-            var top = (parseInt(eventInfo.currentTarget.offsetTop) + 100) + "px";
+            var left = (parseInt(eventInfo.screenX) - 102) + "px";
+            //var top = (parseInt(eventInfo.currentTarget.offsetTop) + 100) + "px";
+            var top = (parseInt(eventInfo.pageY) - 330) + "px";
             $scope.style =
             {
                 'top': top,

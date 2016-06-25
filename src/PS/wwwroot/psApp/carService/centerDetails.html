@@ -5,7 +5,7 @@
             <span class="rupee"><i class="fa fa-inr" style="padding-right: 5px;"></i><strike>{{centre.totalActualPrice}}</strike></span>
             <span class="rupee"><i class="fa fa-inr" style="padding-right: 5px;"></i>{{ centre.totalMMPrice }}</span>
         </div>
-        <div class="pull-right price" ng-if="centre.totalActualPrice === 0 && (serviceList || []).length > 0">
+        <div class="pull-right price" ng-if="centre.totalActualPrice === 0">
             <span class="rupee"> <i class="fa fa-inr" style="padding-right: 5px;"></i>Pending Estimation <i class="fa fa-lg fa-info-circle" aria-hidden="true" style="padding-left: 5px;" ng-click="showInfo($event)" id="informationPopup"></i></span>
         </div>
         <div class="light-line"></div>

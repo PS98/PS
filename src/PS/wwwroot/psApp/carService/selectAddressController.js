@@ -91,7 +91,14 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
                     $scope.request = job.request;
                 }
             });
-          $("#ReviewOrder").modal();
+            $scope.hidePayOption = false;
+            $scope.payNow = true;
+            if (($scope.custRequest && order.selectedServices.length === 1) || order.selectedCentre.totalActualPrice === 0) { // code will execute when user choose only describe your service or pending estimation 
+                $scope.payNow = false;
+                $scope.hidePayOption = true;
+            }
+            
+            $("#ReviewOrder").modal();
         }
         else {
             $scope.otpError = true;
