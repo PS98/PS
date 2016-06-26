@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using PS.Services;
 
@@ -11,16 +12,9 @@ namespace PS.Models
     [BsonIgnoreExtraElements]
     public class OrderDetails
     {
-        public static int OrderCount = 0;
 
-        public OrderDetails()
-        {
-            OrderCount++;
-            var date = DateTime.Now;
-            InvoiceNo = "MM" + MongoRepository.RandomNumber(5) + date.ToString("MM") + date.ToString("dd");
-        }
         [JsonIgnore]
-        public MongoDB.Bson.ObjectId Id { get; set; }
+        public ObjectId Id { get; set; }
         public string PaymentMode { get; set; }
         [JsonIgnore]
         public string PaymentId { get; set; }
@@ -29,7 +23,20 @@ namespace PS.Models
         [JsonIgnore]
         public PaymentValidateResponseModel PaymentResponse { get; set; }
         public ServiceCentreViewModel SelectedCentre { get; set; }
-        public string InvoiceNo { get; set; }
+        private string _invoiceNo;
+
+        public string InvoiceNo
+        {
+            get { return _invoiceNo; }
+            set
+            {
+                var date = DateTime.Now;
+                _invoiceNo = !string.IsNullOrEmpty(value)
+                    ? value
+                    : "MM" + MongoRepository.RandomNumber(5) + date.ToString("MM") + date.ToString("dd");
+            }
+        }
+
         public List<Service> SelectedServices { get; set; }
         public CarDetails SelectedCar { get; set; }
         public Appointment SelectedAppointment { get; set; }

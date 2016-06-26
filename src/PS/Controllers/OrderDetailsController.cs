@@ -159,15 +159,15 @@ namespace PS.Controllers
         }
         [HttpPost]
         [Route("updateorder")]
-        public JsonResult UpdateOrderDetails(OrderDetails order)
+        public JsonResult UpdateOrderDetails([FromBody] OrderDetails order)
         {
             try
             {
                 if (!string.IsNullOrWhiteSpace(order.InvoiceNo))
                 {
-                    domainManager.UpdateOrderDetails(order);
+                   var updateOrder =  domainManager.UpdateOrderDetails(order);
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Message = "Success", Status = 0 });
+                    return Json(new { Message = "Success", Status = 0, Order = updateOrder });
                 }
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(new { Message = "error", Status = 0 });

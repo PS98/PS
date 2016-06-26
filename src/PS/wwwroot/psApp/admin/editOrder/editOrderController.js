@@ -18,15 +18,17 @@ angular.module("psApp").controller("editOrderController", [
             $scope.updateOrder = function () {
                
                 console.log($scope.order);
-                psOrderDetailsService.updateSelectedOrder($scope.order).then(function() {
-                    alert("success");
+                psOrderDetailsService.updateSelectedOrder($scope.order).then(function(data) {
+                    alert("your order details updated successfully");
+                    $scope.isEdit = false;
+                    $scope.order = data.order;
                 }, function() {
                     alert("error");
                 });
 
             }
             $scope.changeSelectedService = function(service) {
-               $scope.order.selectedServices.name = service;
+               $scope.order.selectedServices[0].name = service;
             }
 
          
