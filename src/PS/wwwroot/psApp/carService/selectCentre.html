@@ -48,14 +48,14 @@
 
     </div>
     <div class="row">
-        <div class="col-sm-6" ng-show="centreDetails.selectedCentre.name || noCentreMatch || noServiceMatch ">
+        <div class="col-sm-6" ng-show="centreDetails.selectedCentre.name || noCentreMatch || noServiceMatch || noAreaLocated">
             <div class="car-header">
                 <centre-details ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'" centre="centreDetails.selectedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" class="active"></centre-details>
 
                 <div class="alert alert-danger" role="alert" ng-if="noCentreMatch">
                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
-                    Currently No Service Centre Available in Your Selected Area
-                </div>
+                    Currently No Service Centre Available in selected area.We will be servicing you soon.
+              </div>
                 <div class="alert alert-info" role="alert" ng-if="noServiceMatch">
                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
                     There is no service centre in your area who provides all the services that you have selected. Please modify your service request.

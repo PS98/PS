@@ -20,12 +20,12 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         }
     }
     $scope.getCentreDetails = function (area) {
-        if (!area)
+      //  if (!area)
             area = $scope.centreDetails.area;
         $localStorage.userData.area = area;
         $scope.noCentreMatch = false;
         $scope.noServiceMatch = false;
-        if (area && area.toLowerCase() !== "select area") {
+      //  if (area && area.toLowerCase() !== "select area") {
             psDataServices.getServiceCentreList($scope.centreDetails.city, area).
                 success(function (data) {
                     if (data.list.length > 0) {
@@ -55,9 +55,9 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
                     }
                 }).error(function () {
                 });
-        } else {
-            removeCentreDetails();
-        }
+        //} else {
+        //    removeCentreDetails();
+        //}
 
     }
     if (!$scope.centreDetails.cityList || $scope.centreDetails.cityList.length === 0)
@@ -137,7 +137,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         $localStorage.userData.city = city;
         psDataServices.setuserAddress($scope.centreDetails.userAddress);
 
-        if ($scope.centreDetails.cityList.indexOf(city)> -1) {
+        if ($scope.centreDetails.cityList.indexOf(city) > -1) {
             $scope.centreDetails.city = city;
             $scope.city = city;
             $('#cityDropDown').setJelect(city);
