@@ -26,7 +26,7 @@ namespace PS.DTO
             {
                 var collection = _repo.GetCollection<ServiceCentreGeo>(selectedService.City);
                 double.TryParse(selectedService.Latitude, out _lat);
-
+                selectedService.Name = GetMappedServiceName(selectedService.Name);
                 double.TryParse(selectedService.Longitude, out _lng);
                 var userCordinates = new GeoCoordinate(_lat, _lng);
                 var geoNearQuery = GetGeoNearQuery(_lat, _lng);
@@ -323,5 +323,34 @@ namespace PS.DTO
             
         }
 
+        private List<string> GetMappedServiceName( List<string> list )
+        {
+            return list.Select(GetEquivalentServiceName).ToList();
+        }
+
+        private static string GetEquivalentServiceName(string service)
+        {
+            if (string.IsNullOrEmpty(service))
+            {
+                return string.Empty;
+            }
+            switch (service)
+            {
+
+                case "Every 3 months or 3,000 miles":
+                case "Lite Car Care":
+                    service = "Lite Car Care";
+                    break;
+                case "Every 6 months or 6,000 miles":
+                case "Essential Car Care":
+                    service = "Essential Car Care";
+                    break;
+                case "Every 12 months or 12,000 miles":
+                case "Comprehensive Car Care":
+                    service = "Comprehensive Car Care";
+                    break;
+            }
+            return service;
+        }
     }
 }
