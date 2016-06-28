@@ -140,6 +140,7 @@ namespace PS.Services
             {
                 FilterDefinition<T> filter = null;
                 UpdateDefinition<T> update = null;
+                var updates = new List<UpdateDefinition<T>>();
                 foreach (var fil in filterDic)
                 {
                     if(filter == null)
@@ -152,15 +153,16 @@ namespace PS.Services
                 }
                 foreach (var upDoc in updateDic)
                 {
-                    if(update == null)
-                        update = Builders<T>.Update.Set(upDoc.Key, upDoc.Value);
-                    else
-                    {
-                    update.Set(upDoc.Key, upDoc.Value);
-                    }
+                    //if(update == null)
+                    //    update = Builders<T>.Update.Set(upDoc.Key, upDoc.Value);
+                    //else
+                    //{
+                    //update.A(upDoc.Key, upDoc.Value);
+                    //}
+                    updates.Add(Builders<T>.Update.Set(upDoc.Key, upDoc.Value));
                 }
 
-                await collection.UpdateOneAsync(filter, update);
+                await collection.UpdateOneAsync(filter, Builders<T>.Update.Combine(updates.ToArray()));
             }
             catch (Exception e)
             {
@@ -201,7 +203,7 @@ namespace PS.Services
                 throw ex;
             }
         }
-        public List<List<OrderDetails> >CancelSelectedOrder(string invoiceNo, string email)
+        public List<List<OrderDetails> >CancelSelectedOrder(string invoiceNo, string email, bool listOrder)
         {
             var collection = _database.GetCollection<OrderDetails>("Invoice");
 
@@ -210,16 +212,7 @@ namespace PS.Services
             var updateDic = new Dictionary<string, object> {{"Status", "Cancelled"}, {"CancellationDate", DateTime.Now}};
 
             UpdateDocumentWithFilter<OrderDetails>(filterDic, updateDic, collection);
-
-            //var orders = new List<List<OrderDetails>>
-            //{
-            //    GetOrderOnStatus("Pending", email),
-            //    GetOrderOnStatus("Success", email)
-            //};
-            //var filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email && (x.Status == "Pending"));
-
-            //var documentList = collection.Find(filter).ToListAsync().Result;
-            return GetAllOrderWithStatus(email);
+            return listOrder ? GetAllOrderWithStatus(email) : new List<List<OrderDetails>>();
         }
         public static string RandomNumber(int length)
         {

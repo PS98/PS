@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-12 form-group">
             <div class="col-lg-6">
-                <input class="form-control" id="OrderId" name="closingHours" placeholder="OrderId" type="text" ng-model="Id" />
+                <input class="form-control" id="OrderId" name="closingHours" placeholder="OrderId" type="text" ng-model="Id"/>
             </div>
             <div class="col-lg-6">
                 <a class="btn btn-primary btn-effect" ng-click="getOrderById(Id)">Serach</a>
@@ -35,7 +35,12 @@
                         <span ng-show="order.status !=='Success'">Cancellation Date: &nbsp;</span> <span ng-show="order.status ==='Success'">Completed Date: &nbsp;</span>
                         <span><strong>{{order.cancellationDate |date:'mediumDate'}}</strong></span>
                     </div>
-
+                    <div class="order-status col-sm-6">
+                        <div class="pull-left">
+                            <a class="btn vd_btn btn-xs vd_bg-yellow specl-15" title="Cancel Order" ng-click="confirmAlert(order)"> <i class="fa fa-times append-icon"></i> Cancel </a>
+                            <a class="btn vd_btn btn-xs vd_bg-yellow" title="Edit Order" ng-click="editAppointment(order)"> <i class="fa fa-pencil append-icon"></i> Edit </a>
+                        </div>
+                    </div>
                 </div>
                 <form id="editOrderDetails" novalidate="" name="editOrderDetails" ng-submit="updateOrder()">
                     <div class="col-sm-12 margin-bottom10">
@@ -62,13 +67,13 @@
 
                     <div class="col-sm-12" style="margin-bottom: 10px;">
                         <div class="order-status col-sm-6">
-                            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
-                            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
+                            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br/>
+                            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br/>
                             <span><strong>{{order.selectedAppointment.pickUpDate.day}}  {{order.selectedAppointment.pickUpDate.time}}</strong></span>
                         </div>
                         <div class="order-status col-sm-6">
-                            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br />
-                            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br />
+                            <span ng-if="order.selectedAppointment.pickUpDetails.isPickUp">DropOff Date &amp; Time: &nbsp;</span><br/>
+                            <span ng-if="!order.selectedAppointment.pickUpDetails.isPickUp">Pickup Date &amp; Time: &nbsp;</span><br/>
                             <span><strong>{{order.selectedAppointment.dropOffDate.day}}  {{order.selectedAppointment.dropOffDate.time}}</strong></span>
                         </div>
                     </div>
@@ -77,11 +82,11 @@
                             <div style="min-height: 150px">
                                 <h4 class="override-exclude">Centre Details</h4>
                                 <div>
-                                    <div style="color:black; font-size: 14px; font-weight:bold;">{{order.selectedCentre.name}}</div>
+                                    <div style="color: black; font-size: 14px; font-weight: bold;">{{order.selectedCentre.name}}</div>
                                     <p style="padding-top: 5px; font-size: 14px; margin-bottom: 0;">
-                                        <input class="form-control" placeholder="entre phone No" id="centrePhone" name="editOrderDetails.centrePhoneNo" ng-model="order.selectedCentre.phoneNo" required type="text" /><br>
-                                        <input class="form-control" placeholder="entre address line one" id="centreaddressLine1" name="editOrderDetails.centreAddressLine1" ng-model="order.selectedCentre.address.line1" required type="text" /> <br>
-                                        <input class="form-control" placeholder="entre address line two" id="centreaddressLine2" name="editOrderDetails.centreAddressLine2" ng-model="order.selectedCentre.address.line2" required type="text" /><br>
+                                        <input class="form-control" placeholder="entre phone No" id="centrePhone" name="editOrderDetails.centrePhoneNo" ng-model="order.selectedCentre.phoneNo" required type="text"/><br>
+                                        <input class="form-control" placeholder="entre address line one" id="centreaddressLine1" name="editOrderDetails.centreAddressLine1" ng-model="order.selectedCentre.address.line1" required type="text"/> <br>
+                                        <input class="form-control" placeholder="entre address line two" id="centreaddressLine2" name="editOrderDetails.centreAddressLine2" ng-model="order.selectedCentre.address.line2" required type="text"/><br>
                                     </p>
                                     <!--<p style="margin-bottom:0">
                                         <a target="_blank" href="">
@@ -99,23 +104,23 @@
                                 <h4 class="override-exclude">Contact Information</h4>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <input class="form-control" placeholder="entre first Name" id="firstName" ng-model="order.userDetails.firstName" name="editOrderDetails.firstName" type="text" requireds />
+                                        <input class="form-control" placeholder="entre first Name" id="firstName" ng-model="order.userDetails.firstName" name="editOrderDetails.firstName" type="text" requireds/>
                                     </div>
                                     <div class="col-sm-6 no-padding-left">
-                                        <input class="form-control" placeholder="entre lastName Name" id="lastName" ng-model="order.userDetails.lastName" name="editOrderDetails.lastName" type="text" requireds />
+                                        <input class="form-control" placeholder="entre lastName Name" id="lastName" ng-model="order.userDetails.lastName" name="editOrderDetails.lastName" type="text" requireds/>
                                     </div>
                                 </div>
-                                    <div>
-                                        <input class="form-control" placeholder="entre email address" id="email" ng-model="order.userDetails.email" name="editOrderDetails.userEmail" type="email" requireds /><br>
-                                        <input class="form-control" placeholder="entre phone No" id="phoneNo" ng-model="order.userDetails.phoneNo" name="editOrderDetails.userPhoneNo" type="tel" required /><br>
-                                        <input class="form-control" placeholder="entre address line one" id="addressLine1" ng-model="order.userDetails.addressLine1" name="editOrderDetails.userAddressLine1" type="text" required /> <br>
-                                        <input class="form-control" placeholder="entre address line two" id="addressLine2" ng-model="order.userDetails.addressLine2" name="editOrderDetails.userAddressLine2" type="text" required /><br>
-                                        <input class="form-control" placeholder="entre city" id="city" ng-model="order.userDetails.city" type="text" name="editOrderDetails.userCity" required/><br>
-                                        <input class="form-control" placeholder="entre state" id="state" ng-model="order.userDetails.state" type="text" name="editOrderDetails.userState" /><br>
-                                        <input class="form-control" placeholder="entre zipcode" id="zipCode" ng-model="order.userDetails.zipCode" type="text" name="editOrderDetails.userZipCode"/><br>
-                                        <input class="form-control" placeholder="entre country" id="country" ng-model="order.userDetails.country" type="text" name="editOrderDetails.userCountry" /><br>
-                                    </div>
-                                
+                                <div>
+                                    <input class="form-control" placeholder="entre email address" id="email" ng-model="order.userDetails.email" name="editOrderDetails.userEmail" type="email" requireds/><br>
+                                    <input class="form-control" placeholder="entre phone No" id="phoneNo" ng-model="order.userDetails.phoneNo" name="editOrderDetails.userPhoneNo" type="tel" required/><br>
+                                    <input class="form-control" placeholder="entre address line one" id="addressLine1" ng-model="order.userDetails.addressLine1" name="editOrderDetails.userAddressLine1" type="text" required/> <br>
+                                    <input class="form-control" placeholder="entre address line two" id="addressLine2" ng-model="order.userDetails.addressLine2" name="editOrderDetails.userAddressLine2" type="text" required/><br>
+                                    <input class="form-control" placeholder="entre city" id="city" ng-model="order.userDetails.city" type="text" name="editOrderDetails.userCity" required/><br>
+                                    <input class="form-control" placeholder="entre state" id="state" ng-model="order.userDetails.state" type="text" name="editOrderDetails.userState"/><br>
+                                    <input class="form-control" placeholder="entre zipcode" id="zipCode" ng-model="order.userDetails.zipCode" type="text" name="editOrderDetails.userZipCode"/><br>
+                                    <input class="form-control" placeholder="entre country" id="country" ng-model="order.userDetails.country" type="text" name="editOrderDetails.userCountry"/><br>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -138,17 +143,20 @@
                                     </select>
                                 </div>
                                 <div class="col-xs-6">
-                                    <input class="form-control" placeholder="entre country" id="price" ng-model="service.actualPrice" type="text" name="editOrderDetails.price" required />
+                                    <input class="form-control" placeholder="entre country" id="price" ng-model="service.actualPrice" type="text" name="editOrderDetails.price" required/>
                                 </div>
                             </div>
                             <div ng-repeat="service in order.selectedServices" class="row">
                                 <div class="col-xs-4 no-padding-right">
                                     <strong>Notes</strong>
                                 </div>
-                                <div class="col-xs-8"><input class="form-control" placeholder="entre notes" id="notes" ng-model="service.notes" type="text" name="editOrderDetails.notes" /></div>
-                            
-                                <div class="col-xs-4 no-padding-right"><strong>Your Request</strong></div>
-                                <div class="col-xs-8"><input class="form-control" placeholder="entre request" id="request" ng-model="service.request" type="text" name="editOrderDetails.request" /></div>
+                                <div class="col-xs-8"><input class="form-control" placeholder="entre notes" id="notes" ng-model="service.notes" type="text" name="editOrderDetails.notes"/>
+                                </div>
+
+                                <div class="col-xs-4 no-padding-right"><strong>Your Request</strong>
+                                </div>
+                                <div class="col-xs-8"><input class="form-control" placeholder="entre request" id="request" ng-model="service.request" type="text" name="editOrderDetails.request"/>
+                                </div>
                             </div>
 
                         </div>
@@ -161,6 +169,30 @@
 
         </div>
 
+
+    </div>
+</div>
+<modal-dialog width='750px' height='60%' okay="cancel(order)" informational="showInformation" message="overlayMessage">
+
+</modal-dialog>
+<div id="editAppointment" class="modal fade dashboard" role="dialog" style="z-index:9999">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Your Appointment</h4>
+            </div>
+            <div class="modal-body text-center" id="container">
+
+                <edit-order></edit-order>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-class="(changedDate.dropOffDate.time && changedDate.pickUpDate.time) ? 'btn-effect' : ''" data-dismiss="modal" ng-disabled="(!changedDate.dropOffDate.time && !changedDate.pickUpDate.time)" ng-click="changeAppointment(editOrder)">Update</button>
+            </div>
+        </div>
 
     </div>
 </div>

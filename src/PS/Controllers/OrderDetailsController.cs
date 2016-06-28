@@ -6,8 +6,12 @@ using Microsoft.AspNet.Mvc;
 using PS.Models;
 using PS.Services;
 using System.Net;
+using Microsoft.Extensions.OptionsModel;
+using Microsoft.Extensions.PlatformAbstractions;
 using Newtonsoft.Json;
 using PS.DTO;
+using PS.Helper;
+using PS.Helper.Email;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,13 +20,25 @@ namespace PS.Controllers
     [Route("api/[controller]")]
     public class OrderDetailsController : Controller
     {
-        private MongoRepository repo = new MongoRepository("orders");
+        private readonly MongoRepository _repo = new MongoRepository("orders");
+        private readonly EmailSender _emailSender;
+        public AuthSocialLoginOptions Options { get; }
+        private SmsProviderHelper _smsProviderHelper;
+        private SmsSender _sender;
 
-        OrderDetailsDomainManager domainManager = new OrderDetailsDomainManager();
+        readonly OrderDetailsDomainManager _domainManager = new OrderDetailsDomainManager();
+
+        public OrderDetailsController(IEmailSender emailSender, ISmsSender smsSender, IOptions<SmsMessageProvider> valueOptions, IOptions<AuthSocialLoginOptions> optionsAccessor, IApplicationEnvironment appEnvironment, AuthSocialLoginOptions options, SmsProviderHelper smsProviderHelper)
+        {
+            _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor, appEnvironment)); ;
+            Options = options;
+            this._smsProviderHelper = smsProviderHelper;
+            _sender = new SmsSender(smsSender, new SmsProviderHelper(valueOptions));
+        }
+
 
         [Route("order")]
-        //[HttpGet("{email}/{status}")]
-        public JsonResult Get(string email, string status)
+       public JsonResult Get(string email, string status)
         {
             try
             {
@@ -30,13 +46,13 @@ namespace PS.Controllers
                 {
                     if (status.Equals("All"))
                     {
-                        var res = repo.GetAllOrderWithStatus(email);
+                        var res = _repo.GetAllOrderWithStatus(email);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new {Status = 0, Result = res});
                     }
                     else
                     {
-                        var res = repo.GetOrderOnStatus(status, email);
+                        var res = _repo.GetOrderOnStatus(status, email);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Status = 0, Result = res });
                     }
@@ -54,13 +70,13 @@ namespace PS.Controllers
 
         [HttpGet]
         [Route("cancelorder")]
-        public JsonResult CancelOrder(string email, string invoiceNo)
+        public JsonResult CancelOrder(string email, string invoiceNo, bool listOrder)
         {
             try
             {
                 if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(invoiceNo))
                 {
-                    var res = repo.CancelSelectedOrder(invoiceNo, email);
+                    var res = _repo.CancelSelectedOrder(invoiceNo, email, listOrder);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = res,Message = "your order cancelled successfully"});
                 }
@@ -84,7 +100,7 @@ namespace PS.Controllers
                 {
                     var appointment = new Appointment() { PickUpDate = new AppointmentDetails() {Day = pickUpDate,Time=pickUpTime },
                         DropOffDate = new AppointmentDetails() { Day = dropOffDate, Time = dropOffTime } };
-                    repo.ChangeAppointmentDate(invoiceNo, appointment);
+                    _repo.ChangeAppointmentDate(invoiceNo, appointment);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = "Your Appointment Details Updated Successfully." });
                 }
@@ -104,7 +120,7 @@ namespace PS.Controllers
         {
             try
             {
-              var orderList =   domainManager.GetAllOrders();
+              var orderList =   _domainManager.GetAllOrders();
                 if (!orderList.Any())
                 {
                     Response.StatusCode = (int)HttpStatusCode.OK;
@@ -142,7 +158,7 @@ namespace PS.Controllers
             {
                 if (!string.IsNullOrWhiteSpace(id))
                 {
-                    var order = domainManager.GetOrder(id);
+                    var order = _domainManager.GetOrder(id);
                     Response.StatusCode = (int) HttpStatusCode.OK;
                     return Json(new {Message = "Success", Status = 0, Order = order});
                 }
@@ -165,7 +181,7 @@ namespace PS.Controllers
             {
                 if (!string.IsNullOrWhiteSpace(order.InvoiceNo))
                 {
-                   var updateOrder =  domainManager.UpdateOrderDetails(order);
+                   var updateOrder =  _domainManager.UpdateOrderDetails(order);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "Success", Status = 0, Order = updateOrder });
                 }

@@ -5,8 +5,8 @@ angular.module("psApp").directive("editOrder", function () {
         controller: "dashboardController",
         replace: true,
         link: function (scope, el, attrs) {
+            var openingHours,closingHours; 
             scope.dateToDisplay = [];
-            scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
             scope.hideCalendar = false;
             scope.showPickUpCalendar = true;
             scope.centreWorkingHours = [];
@@ -17,10 +17,15 @@ angular.module("psApp").directive("editOrder", function () {
             var maxDate = new Date();
             maxDate.setDate(todayDay + 14);
             scope.setFiveDay = function (date) {
+                scope.centre = scope.order.selectedCentre;
+                openingHours = amPmToHours(scope.centre.openingHours);
+                closingHours = amPmToHours(scope.centre.closingHours);
+                setAvailableTime();
                 scope.centreWorkingHours = setDate(date);
+                enableDisableButton(scope.centreWorkingHours);
             }
-            scope.setFiveDay(today);
-            enableDisableButton(scope.centreWorkingHours);
+           // scope.setFiveDay(today);
+          //  enableDisableButton(scope.centreWorkingHours);
             function setDate(date, time) {
                 var day = date.getDate();
                 var nextDate, centreWorkingHours = [];
@@ -43,21 +48,22 @@ angular.module("psApp").directive("editOrder", function () {
                         
                     }
                     else {
-                        scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+                        setAvailableTime();
 
                     }
                     $.each(scope.timeToDisplay, function (i, v) {
-                        if (nextDate.toDateString() === today.toDateString() && checkAvailibility(v, nextDate)) {
-                            var obj = { time: formatTime(v) };
+                        var obj;
+                        if (checkAvailibility(v, nextDate)) {
+                            obj = { time: formatTime(v) };
                             wh.push(obj);
                         }
-                        else {
-                            var obj = { time: formatTime(v) };
-                            wh.push(obj);
-                        }
+                        //else {
+                        //    obj = { time: formatTime(v) };
+                        //    wh.push(obj);
+                        //}
                     });
 
-                    if (wh.length > 0)
+                    if (wh.length > 0 && tempDate.getDay() !== scope.centre.holidays)
                         centreWorkingHours.push({ day: datepart, WorkingHours: wh });
                     day++;
                     if (centreWorkingHours.length === 5 || maxDate.toDateString() == datepart) {
@@ -94,6 +100,20 @@ angular.module("psApp").directive("editOrder", function () {
 
 
             }
+            function amPmToHours(time) {
+                console.log(time);
+                if (time) {
+                    var hours = Number(time.match(/^(\d+)/)[1]);
+                    var minutes = Number(time.match(/:(\d+)/)[1]);
+                    var ampm = time.match(/\s(.*)$/)[1];
+                    ampm = ampm.toLowerCase();
+                    if (ampm === "pm" && hours < 12) hours = hours + 12;
+                    if (ampm === "am" && hours === 12) hours = hours - 12;
+                    hours = minutes !== 0 ? hours + 1 : hours;
+                    var sHours = hours.toString();
+                    return (sHours);
+                }
+            }
             scope.editPickupDate = function (dateTime) {
                 scope.changedDate.dropOffDate = {};
                 scope.changedDate.pickUpDate.day = dateTime.day;
@@ -125,9 +145,9 @@ angular.module("psApp").directive("editOrder", function () {
                 //   psDataServices.setSelectedAppointment(scope.changedDate);
             }
             scope.openCalender = function (order) {
-                if (!scope.centreWorkingHours || scope.centreWorkingHours.length === 0) {
+              //  if (!scope.centreWorkingHours || scope.centreWorkingHours.length === 0) {
                     scope.setFiveDay(today);
-                }
+               // }
                 $("#editOrder").modal('toggle');
                 scope.editOrder = order;
                 scope.showPickUpCalendar = true;
@@ -138,7 +158,8 @@ angular.module("psApp").directive("editOrder", function () {
                 var date = type === "prev" ? currentFiveDay[0].day : currentFiveDay[scope.centreWorkingHours.length - 1].day;
                 date = new Date(date);
                 var day = date.getDate();
-                type === "prev" ? date.setDate(day - 5) : date.setDate(day + 1);
+                var backDayNo = scope.centre.holiday === 0 ? 5 : 6;
+                type === "prev" ? date.setDate(day - backDayNo) : date.setDate(day + 1);
                 if (scope.showPickUpCalendar) {
                     scope.centreWorkingHours = setDate(date);
                     enableDisableButton(scope.centreWorkingHours);
@@ -152,8 +173,11 @@ angular.module("psApp").directive("editOrder", function () {
                 if (isPickUpDone) {
                     nextAvailableDate.setDate(parseInt(scope.changedDate.pickUpDate.day.split(" ")[2]) + 1);
                 }
-
-                if (today.toDateString() === workingHrsList[0].day) {
+                var tomorrow = new Date();
+                tomorrow.setDate(today.getDate() + 1);    // check for tomorrow if no date available today
+                var dayAfterTomorrow = new Date();
+                dayAfterTomorrow.setDate(today.getDate() + 2);   // check for dayAfterTomorrow if tomorrow is holiday of service centre
+                if (today.toDateString() === workingHrsList[0].day || tomorrow.toDateString() === workingHrsList[0].day || dayAfterTomorrow.toDateString() === workingHrsList[0].day) {
                     scope.disablePrevBtn = true;
                 }
                 else if (isPickUpDone && (scope.changedDate.pickUpDate.day === workingHrsList[0].day || nextAvailableDate.toDateString() === workingHrsList[0].day)) {
@@ -166,6 +190,16 @@ angular.module("psApp").directive("editOrder", function () {
                     scope.disableNextBtn = true;
                 } else {
                     scope.disableNextBtn = false;
+                }
+            }
+            function setAvailableTime() {
+                scope.timeToDisplay = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+                if (openingHours && scope.timeToDisplay.indexOf(parseInt(openingHours)) > -1) {
+                    scope.timeToDisplay = scope.timeToDisplay.slice(scope.timeToDisplay.indexOf(parseInt(openingHours)), scope.timeToDisplay.length);
+                }
+                if (closingHours && scope.timeToDisplay.indexOf(parseInt(closingHours)) > -1) {
+                    closingHours = closingHours === "12" ? "24" : closingHours;
+                    scope.timeToDisplay.splice(scope.timeToDisplay.indexOf(parseInt(closingHours)), scope.timeToDisplay.length);
                 }
             }
         }

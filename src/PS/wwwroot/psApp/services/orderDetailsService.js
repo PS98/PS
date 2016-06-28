@@ -69,11 +69,12 @@
 
         return deferred.promise;
     }
-    var _cancelOrder = function (invoiceNo, email) {
+    var _cancelOrder = function (invoiceNo, email, isOrder) {
         var deferred = $q.defer();
+        isOrder = isOrder ? isOrder : false;
         $http(
             {
-                url: "/api/OrderDetails/cancelorder?invoiceNo=" + invoiceNo + "&email=" + email, method: "GET", cache: false
+                url: "/api/OrderDetails/cancelorder?invoiceNo=" + invoiceNo + "&email=" + email + "&listOrder=" + isOrder, method: "GET", cache: false
             }).then(function (result) {
                 //Success
                 deferred.resolve(result.data);
