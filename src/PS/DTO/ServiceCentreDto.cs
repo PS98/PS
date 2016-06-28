@@ -6,9 +6,12 @@ using MongoDB.Driver;
 using PS.Models;
 using PS.Services;
 using System.Device.Location;
+using System.Globalization;
+using System.IO;
 using System.Net;
 using PS.Helper;
 using MongoDB.Driver.Builders;
+using Newtonsoft.Json;
 
 namespace PS.DTO
 {
@@ -16,10 +19,13 @@ namespace PS.DTO
     {
         private const string Collection = "Pune";
         private const string Database = "serviceCentre";
+        private const string GoogleMapDistanceMatixApi = "http://maps.googleapis.com/maps/api/distancematrix/json?";
+        private const string Origin = "origins=";
+        private const string Destination = "&destinations=";
         private readonly MongoRepository _repo = new MongoRepository(Database);
         private double _lat;
         private double _lng;
-
+        private GeoCoordinate userCordinates;
         public List<ServiceCentreViewModel> ListServiceCentres(SelectedService selectedService)
         {
             try
@@ -28,7 +34,7 @@ namespace PS.DTO
                 double.TryParse(selectedService.Latitude, out _lat);
                 selectedService.Name = GetMappedServiceName(selectedService.Name);
                 double.TryParse(selectedService.Longitude, out _lng);
-                var userCordinates = new GeoCoordinate(_lat, _lng);
+                 userCordinates = new GeoCoordinate(_lat, _lng);
                 var geoNearQuery = GetGeoNearQuery(_lat, _lng);
                 var centreList = collection?.Find(geoNearQuery).ToListAsync().Result;
                 if (centreList != null && centreList.Any())
@@ -73,11 +79,12 @@ namespace PS.DTO
 
         }
 
-        private IEnumerable<ServiceCentreViewModel> GetMatchingServiceCentre(IEnumerable<ServiceCentreGeo> centreList,
+        private IEnumerable<ServiceCentreViewModel> GetMatchingServiceCentre(List<ServiceCentreGeo> centreList,
             SelectedService selectedService, GeoCoordinate userCordinates)
         {
             var selectedCentres = new List<ServiceCentreViewModel>();
 
+            var distanceList = GetDistanceFromUser(centreList);
             foreach (var centre in centreList)
             {
                 var milematesPrice = new List<int>();
@@ -85,15 +92,23 @@ namespace PS.DTO
                 var serviceDetails = new List<Detalis>();
                 var priceObj = new PriceDetails();
                 double distance = 0;
+                if (distanceList != null && distanceList.rows.Any() && distanceList.rows.FirstOrDefault().elements.Any())
+                {
 
-                if (!string.IsNullOrEmpty(selectedService.Latitude) &&
+                    double.TryParse(distanceList.rows.First().elements.First().distance.value.ToString(), out distance);
+                    distance = distance > 0 ? distance/1000 : 0;
+                    distanceList.rows.First().elements.Remove(distanceList.rows.First().elements.FirstOrDefault());
+                }
+
+                else if (!string.IsNullOrEmpty(selectedService.Latitude) &&
                     !string.IsNullOrEmpty(selectedService.Longitude))
                 {
                     double.TryParse(centre.Latitude, out _lat);
                     double.TryParse(centre.Longitude, out _lng);
                     var centreCoordinates = new GeoCoordinate(_lat, _lng);
-                    distance = userCordinates.GetDistanceTo(centreCoordinates)/1000;
+                    distance = userCordinates.GetDistanceTo(centreCoordinates)/1000;    
                 }
+               
 
                 // if no service selected then display all service centre list
                 if (selectedService.Name.Count == 0)
@@ -351,6 +366,71 @@ namespace PS.DTO
                     break;
             }
             return service;
+        }
+
+        public ServiceCentreGeo GetCentreDetailsById(string centreId)
+        {
+          var collection =   _repo.GetCollection<ServiceCentreGeo>("Pune");
+            var list = collection.Find(x => x.CentreId.Equals(centreId)).ToListAsync().Result;
+            if (list != null && list.Any())
+            {
+                return list.FirstOrDefault();
+            }
+            return null;
+
+        }
+
+        public GoogleDistanceMatix GetDistanceFromUser(List<ServiceCentreGeo> centreList)
+        {
+            var origin = $"{userCordinates.Latitude.ToString(CultureInfo.InvariantCulture)},{userCordinates.Longitude.ToString(CultureInfo.InvariantCulture)}";
+            var destinationList = ListToCommaSepratedString(centreList.Select(x => x.Location).ToList());
+            return GetDrivingDistance(origin, destinationList);
+        }
+
+        public string ListToCommaSepratedString(List<Location> locationsList)
+        {
+            var latLngString = "";
+            foreach (var location in locationsList)
+            {
+                foreach (var coordinate in location.Coordinates.OrderBy(x=>x).Select((value, index) => new { value, index }))
+                {
+                 latLngString += coordinate.value.ToString(CultureInfo.InvariantCulture);
+                    if (coordinate.index == 0)
+                        latLngString += ",";
+
+                }
+                latLngString += "|";
+            }
+            return latLngString;
+        }
+
+
+        public GoogleDistanceMatix GetDrivingDistance(string originCoordiates, string destinationCoordinates)
+        {
+            var url = $"{GoogleMapDistanceMatixApi}{Origin}{originCoordiates}{Destination}{destinationCoordinates}";
+            GoogleDistanceMatix calucatedDistance = new GoogleDistanceMatix();
+            var request =(HttpWebRequest)WebRequest.Create(url);
+            try
+            {
+                var response = (HttpWebResponse)request.GetResponse();
+              using (var streamReader = new StreamReader(response.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        calucatedDistance = JsonConvert.DeserializeObject<GoogleDistanceMatix>(result);
+                    }
+                }
+                return calucatedDistance;
+            }
+            catch (Exception)
+            {
+
+                return null;
+                //;
+            }
+
         }
     }
 }
