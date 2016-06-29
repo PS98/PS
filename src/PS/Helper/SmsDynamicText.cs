@@ -63,6 +63,7 @@ namespace PS.Helper
 
     public static class SmsType
     {
+        #region Customer
         public const string RegistrationOtp = "RegistrationOtp";
         public const string RegistrationCompleted = "RegistrationCompleted";
         public const string BookingCancelled = "BookingCancelled";
@@ -74,11 +75,28 @@ namespace PS.Helper
         public const string PickUpSuccess = "PickUpSuccess";
         public const string ServiceCompleted = "ServiceCompleted";
         public const string Offer = "Offer";
+        public const string BookingUpdate = "BookingUpdate";
+        public const string BookingRemainder = "BookingRemainder";
+        public const string DropOffDone = "DropOffDone";
+        public const string QuotationAccepted = "QuotationAccepted";
+        public const string QuotationRejected = "QuotationRejected";
+        public const string ExtraAmount = "ExtraAmount";
+        #endregion
 
+        #region Service Centre
         public const string ServicingConfirmation = "ServicingConfirmation";
-
+        public const string ServicingQuotationAccepted = "ServicingQuotationAccepted";
+        public const string ServicingQuotationRejected = "ServicingQuotationRejected";
+        public const string ServiceCodPayment = "ServiceCodPayment";
+        public const string ServiceOnlinePayment = "ServiceOnlinePayment";
+        public const string ServicePickRemainder = "ServicePickRemainder";
+        public const string ServiceDropRemainder = "ServiceDropRemainder";
+        public const string ServiceOrderUpdate = "ServiceOrderUpdate";
+        public const string ServiceOrderCancel = "ServiceOrderCancel";
         public const string FirstOrder = "FirstOrder";
         public const string BookingConfirmed = "BookingConfirmed";
+
+        #endregion
     }
 
 }

@@ -27,10 +27,26 @@ namespace PS.Services
         public string RegistrationOtp { get; set; }
         public string ServiceCompleted { get; set; }
         public string Offer { get; set; }
+        public string BookingRemainder { get; set; }
+        public string DropOffDone { get; set; }
+        public string QuotationAccepted { get; set; }
+        public string QuotationRejected { get; set; }
+        public string ExtraAmount { get; set; }
     }
 
     public class Servicecentre
     {
         public string ServicingConfirmation { get; set; }
+        public string ServicingQuotationAccepted { get; set; }
+        public string ServiceCodPayment { get; set; }
+        public string ServicingQuotationRejected { get; set; }
+        public string ServiceOnlinePayment { get; set; }
+        public string ServicePickRemainder { get; set; }
+        public string ServiceDropRemainder { get; set; }
+        public string ServiceOrderUpdate { get; set; }
+        public string ServiceOrderCancel { get; set; }
+        public bool SendServiceCentreSms { get; set; }
+
+
     }
 }

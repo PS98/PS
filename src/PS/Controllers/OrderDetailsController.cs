@@ -77,6 +77,8 @@ namespace PS.Controllers
                 if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(invoiceNo))
                 {
                     var res = _repo.CancelSelectedOrder(invoiceNo, email, listOrder);
+                    var order = _domainManager.GetOrder(invoiceNo);
+                    SmsSender.BookingCancelled(order);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = res,Message = "your order cancelled successfully"});
                 }

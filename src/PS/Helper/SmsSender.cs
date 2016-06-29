@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.OptionsModel;
 using PS.Models;
 using PS.Services;
 
@@ -10,6 +11,8 @@ namespace PS.Helper
     {
         private static ISmsSender _smsSender;
         private static SmsProviderHelper _smsProviderHelper;
+
+#region Customer 
         public SmsSender(ISmsSender smsSender, SmsProviderHelper messageProvider)
         {
             _smsSender = smsSender;
@@ -77,60 +80,36 @@ namespace PS.Helper
 
             finally
             {
+                if(_smsProviderHelper.MessageProvider.SmsMessages.ServiceCentre.SendServiceCentreSms)
                 BookingConfirmationToServiceCentre(model);
             }
 
         }
 
-        public static void BookingConfirmationToServiceCentre(OrderDetails model)
-        {
-            try
-            {
-                var serviceList = model.SelectedServices.Select(x => x.Name).ToArray();
-                var serviceName = string.Join(",", serviceList);
-                var userNameAndAddress = string.Format(model.UserDetails.FirstName + ", " + model.UserDetails.AddressLine1 +
-                                           model.UserDetails.AddressLine2 + " "
-                                           + model.UserDetails.PhoneNo);
-                var pickUpdate = string.Format(model.SelectedAppointment.PickUpDate.Day + "(" + model.SelectedAppointment.PickUpDate.Time + ")");
-                var dropOffdate = string.Format(model.SelectedAppointment.DropOffDate.Day + "(" + model.SelectedAppointment.DropOffDate.Time + ")");
-                var vehical = model.SelectedCar.Model + model.SelectedCar.Model;
-                var messageText = new Dictionary<string, string>
-                {
-                    {SmsDynamicText.BookingId, model.InvoiceNo},
-                    {SmsDynamicText.ServiceName, serviceName},
-                    {SmsDynamicText.PickUpDate, pickUpdate},
-                    {SmsDynamicText.Vehical, vehical},
-                    {SmsDynamicText.PickUpAddress, userNameAndAddress},
-                    {SmsDynamicText.DropOffDate, dropOffdate},
-                    {SmsDynamicText.PaymentMode, model.PaymentMode}
-
-                };
-                var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.ServicingConfirmation, messageText);
-                _smsSender.SendSmsAsync(model.SelectedCentre.PhoneNo, centreMessage);
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
-
-        }
-        public static void BookingCancelled(string mobileNo, string name, string bookingId)
+        
+        public static void BookingCancelled(OrderDetails model)
         {
             try
             {
                 var values = new Dictionary<string, string>
                 {
-                    {SmsDynamicText.UserName, name},
-                    {SmsDynamicText.BookingId, bookingId},
+                    {SmsDynamicText.UserName, model.UserDetails.FirstName},
+                    {SmsDynamicText.BookingId, model.InvoiceNo},
                 };
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.BookingCancelled, values);
-                _smsSender.SendSmsAsync(mobileNo, messge);
+                _smsSender.SendSmsAsync(model.UserDetails.PhoneNo, messge);
             }
             catch (Exception)
             {
                 // ignored
             }
-
+            finally
+            {
+                if (_smsProviderHelper.MessageProvider.SmsMessages.ServiceCentre.SendServiceCentreSms)
+                {
+                    ServiceOrderCancel(model);
+                }
+            }
         }
 
         public static void PickUpDone(string mobileNo, string name)
@@ -233,5 +212,74 @@ namespace PS.Helper
             }
 
         }
+
+        #endregion
+
+        #region Service Centre
+        public static void BookingConfirmationToServiceCentre(OrderDetails model)
+        {
+            try
+            {
+                Dictionary<string, string> messageText;
+                GetMessageTextDictionary(model, out messageText);
+                var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.ServicingConfirmation, messageText);
+                _smsSender.SendSmsAsync(model.SelectedCentre.PhoneNo, centreMessage);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+           
+        }
+
+        public static void ServiceOrderCancel(OrderDetails model)
+        {
+            try
+            {
+                Dictionary<string, string> messageText;
+                GetMessageTextDictionary(model, out messageText);
+                var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.ServiceOrderCancel, messageText);
+                _smsSender.SendSmsAsync(model.SelectedCentre.PhoneNo, centreMessage);
+            }
+            catch (Exception)
+            {
+
+                // throw;
+            }
+         
+
+        }
+        #endregion
+
+
+
+        #region Common 
+
+        private static void GetMessageTextDictionary(OrderDetails model, out Dictionary<string, string> messageText )
+        {
+            var serviceList = model.SelectedServices.Select(x => x.Name).ToArray();
+            var serviceName = string.Join(",", serviceList);
+            var userNameAndAddress = string.Format(model.UserDetails.FirstName + ", " + model.UserDetails.AddressLine1 +
+                                       model.UserDetails.AddressLine2 + " "
+                                       + model.UserDetails.PhoneNo);
+            var pickUpdate = string.Format(model.SelectedAppointment.PickUpDate.Day + "(" + model.SelectedAppointment.PickUpDate.Time + ")");
+            var dropOffdate = string.Format(model.SelectedAppointment.DropOffDate.Day + "(" + model.SelectedAppointment.DropOffDate.Time + ")");
+            var vehical = model.SelectedCar.Brand + model.SelectedCar.Model + model.SelectedCar.Year + model.SelectedCar.Varient;
+             messageText = new Dictionary<string, string>
+                {
+                    {SmsDynamicText.BookingId, model.InvoiceNo},
+                    {SmsDynamicText.ServiceName, serviceName},
+                    {SmsDynamicText.PickUpDate, pickUpdate},
+                    {SmsDynamicText.Vehical, vehical},
+                    {SmsDynamicText.PickUpAddress, userNameAndAddress},
+                    {SmsDynamicText.DropOffDate, dropOffdate},
+                    {SmsDynamicText.PaymentMode, model.PaymentMode},
+                    {SmsDynamicText.TotalAmount, model.SelectedCentre.TotalMMPrice.ToString()}
+
+                };
+        }
+#endregion
+
+
     }
 }

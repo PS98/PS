@@ -21,7 +21,7 @@ namespace PS.Services
         //  var message =  GenerateSmsMessages(smsType);
 
         //}
-
+         
         public string GenerateSmsMessages(string type)
         {
             var messageText = GetMessageText(type);
@@ -85,7 +85,46 @@ namespace PS.Services
                 case SmsType.Offer:
                     messageString = MessageProvider.SmsMessages.User.Offer;
                     break;
-                default:
+                case SmsType.BookingRemainder:
+                    messageString = MessageProvider.SmsMessages.User.BookingRemainder;
+                    break;
+                case SmsType.QuotationAccepted:
+                    messageString = MessageProvider.SmsMessages.User.QuotationAccepted;
+                    break;
+                case SmsType.QuotationRejected:
+                    messageString = MessageProvider.SmsMessages.User.QuotationRejected;
+                    break;
+                case SmsType.ServicingQuotationAccepted:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServicingQuotationAccepted;
+                    break;
+                case SmsType.ExtraAmount:
+                    messageString = MessageProvider.SmsMessages.User.ExtraAmount;
+                    break;
+                case SmsType.DropOffDone:
+                    messageString = MessageProvider.SmsMessages.User.DropOffDone;
+                    break;
+                case SmsType.ServicingQuotationRejected:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServicingQuotationRejected;
+                    break;
+                case SmsType.ServiceCodPayment:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServiceCodPayment;
+                    break;
+                case SmsType.ServiceOnlinePayment:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServiceOnlinePayment;
+                    break;
+                case SmsType.ServicePickRemainder:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServicePickRemainder;
+                    break;
+                case SmsType.ServiceDropRemainder:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServiceDropRemainder;
+                    break;
+                case SmsType.ServiceOrderUpdate:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServiceOrderUpdate;
+                    break;
+                case SmsType.ServiceOrderCancel:
+                    messageString = MessageProvider.SmsMessages.ServiceCentre.ServiceOrderCancel;
+                    break;
+              default:
                     messageString = "";
                     break;
 
