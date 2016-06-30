@@ -17,6 +17,7 @@ namespace PS.Helper
                 {"{user}", UserName},
                 {"{bookingId}", BookingId},
                 {"{pickDate}", PickUpDate},
+                 {"{dropDate}", DropOffDate},
                 {"{vehical}", Vehical},
                 {"{service}", ServiceName},
                 {"{centre}", CentreNameAddress},

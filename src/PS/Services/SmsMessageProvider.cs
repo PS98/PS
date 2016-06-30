@@ -19,6 +19,7 @@ namespace PS.Services
     {
         public string BookingCancelled { get; set; }
         public string BookingSuccess { get; set; }
+        public string BookingUpdate { get; set; }
         public string DropOffInitiated { get; set; }
         public string PaymentDone { get; set; }
         public string PickUpDone { get; set; }

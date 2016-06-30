@@ -103,6 +103,9 @@ namespace PS.Services
                 case SmsType.DropOffDone:
                     messageString = MessageProvider.SmsMessages.User.DropOffDone;
                     break;
+                case SmsType.BookingUpdate:
+                    messageString = MessageProvider.SmsMessages.User.BookingUpdate;
+                    break;
                 case SmsType.ServicingQuotationRejected:
                     messageString = MessageProvider.SmsMessages.ServiceCentre.ServicingQuotationRejected;
                     break;
@@ -124,7 +127,7 @@ namespace PS.Services
                 case SmsType.ServiceOrderCancel:
                     messageString = MessageProvider.SmsMessages.ServiceCentre.ServiceOrderCancel;
                     break;
-              default:
+                default:
                     messageString = "";
                     break;
 

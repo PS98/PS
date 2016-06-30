@@ -16,8 +16,12 @@ angular.module("psApp").directive("editOrder", function () {
             var todayDay = today.getDate();
             var maxDate = new Date();
             maxDate.setDate(todayDay + 14);
-            scope.setFiveDay = function (date) {
-                scope.centre = scope.order.selectedCentre;
+            scope.setFiveDay = function (date, order) {
+                if(!order)
+                    scope.centre = scope.order.selectedCentre;
+                else {
+                    scope.centre = order.selectedCentre;
+                }
                 openingHours = amPmToHours(scope.centre.openingHours);
                 closingHours = amPmToHours(scope.centre.closingHours);
                 setAvailableTime();
@@ -120,7 +124,7 @@ angular.module("psApp").directive("editOrder", function () {
                 scope.changedDate.pickUpDate.time = dateTime.time;
                 scope.showPickUpCalendar = false;
                 scope.showDropCalendar = true;
-                var date = new Date();
+                var date = new Date(dateTime.day);
                 date.setDate(dateTime.day.split(" ")[2]);
                 scope.availablePickUpTime = setDate(date, dateTime.time);
                 enableDisableButton(scope.availablePickUpTime, true);
@@ -146,7 +150,7 @@ angular.module("psApp").directive("editOrder", function () {
             }
             scope.openCalender = function (order) {
               //  if (!scope.centreWorkingHours || scope.centreWorkingHours.length === 0) {
-                    scope.setFiveDay(today);
+                    scope.setFiveDay(today,order);
                // }
                 $("#editOrder").modal('toggle');
                 scope.editOrder = order;
@@ -169,7 +173,7 @@ angular.module("psApp").directive("editOrder", function () {
                 }
             }
             function enableDisableButton(workingHrsList, isPickUpDone) {
-                var nextAvailableDate = new Date();
+                var nextAvailableDate = new Date(scope.changedDate.pickUpDate.day);
                 if (isPickUpDone) {
                     nextAvailableDate.setDate(parseInt(scope.changedDate.pickUpDate.day.split(" ")[2]) + 1);
                 }
@@ -200,6 +204,9 @@ angular.module("psApp").directive("editOrder", function () {
                 if (closingHours && scope.timeToDisplay.indexOf(parseInt(closingHours)) > -1) {
                     closingHours = closingHours === "12" ? "24" : closingHours;
                     scope.timeToDisplay.splice(scope.timeToDisplay.indexOf(parseInt(closingHours)), scope.timeToDisplay.length);
+                }
+                if (!openingHours || !closingHours) {
+                    scope.timeToDisplay = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
                 }
             }
         }

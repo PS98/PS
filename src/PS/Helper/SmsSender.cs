@@ -112,6 +112,33 @@ namespace PS.Helper
             }
         }
 
+        public static void BookingUpdate(OrderDetails order)
+        {
+            try
+            {
+                var values = new Dictionary<string, string>
+                {
+                    {SmsDynamicText.UserName, order.UserDetails.FirstName},
+                    {SmsDynamicText.BookingId, order.InvoiceNo},
+                    {SmsDynamicText.PickUpDate,order.SelectedAppointment.PickUpDate.Day +"-"+ order.SelectedAppointment.PickUpDate.Time },
+                    {SmsDynamicText.DropOffDate,order.SelectedAppointment.DropOffDate.Day +"-"+ order.SelectedAppointment.DropOffDate.Time }
+                };
+                var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.BookingUpdate, values);
+                _smsSender.SendSmsAsync(order.UserDetails.PhoneNo, messge);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+            finally
+            {
+                if (_smsProviderHelper.MessageProvider.SmsMessages.ServiceCentre.SendServiceCentreSms)
+                {
+                    ServiceOrderUpdate(order);
+                }
+            }
+        }
+
         public static void PickUpDone(string mobileNo, string name)
         {
             try
@@ -249,6 +276,22 @@ namespace PS.Helper
          
 
         }
+
+        public static void ServiceOrderUpdate(OrderDetails order)
+        {
+            try
+            {
+                Dictionary<string, string> messageText;
+                GetMessageTextDictionary(order, out messageText);
+                var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.ServiceOrderUpdate, messageText);
+                _smsSender.SendSmsAsync(order.SelectedCentre.PhoneNo, centreMessage);
+            }
+            catch (Exception)
+            {
+
+                // throw;
+            }
+        }
         #endregion
 
 
@@ -264,7 +307,7 @@ namespace PS.Helper
                                        + model.UserDetails.PhoneNo);
             var pickUpdate = string.Format(model.SelectedAppointment.PickUpDate.Day + "(" + model.SelectedAppointment.PickUpDate.Time + ")");
             var dropOffdate = string.Format(model.SelectedAppointment.DropOffDate.Day + "(" + model.SelectedAppointment.DropOffDate.Time + ")");
-            var vehical = model.SelectedCar.Brand + model.SelectedCar.Model + model.SelectedCar.Year + model.SelectedCar.Varient;
+            var vehical = model.SelectedCar.Brand +"-" + model.SelectedCar.Model + "-" + model.SelectedCar.Year + "-" + model.SelectedCar.Varient;
              messageText = new Dictionary<string, string>
                 {
                     {SmsDynamicText.BookingId, model.InvoiceNo},

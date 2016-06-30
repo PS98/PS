@@ -97,6 +97,8 @@ namespace PS.Controllers
                     var appointment = new Appointment() { PickUpDate = new AppointmentDetails() {Day = pickUpDate,Time=pickUpTime },
                         DropOffDate = new AppointmentDetails() { Day = dropOffDate, Time = dropOffTime } };
                     _repo.ChangeAppointmentDate(invoiceNo, appointment);
+                    var order = _domainManager.GetOrder(invoiceNo);
+                    SmsSender.BookingUpdate(order);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = "Your Appointment Details Updated Successfully." });
                 }
