@@ -14,6 +14,8 @@ namespace PS.Services
     {
         public User User { get; set; }
         public Servicecentre ServiceCentre { get; set; }
+        public string MilematesNo { get; set; }
+        public string MilematesEmail { get; set; }
     }
     public class User
     {

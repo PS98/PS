@@ -71,6 +71,8 @@ namespace PS.Helper
                 var customerMessge = _smsProviderHelper.GenerateSmsMessages(SmsType.BookingSuccess, messageText);
 
                 _smsSender.SendSmsAsync(model.UserDetails.PhoneNo, customerMessge);
+                if(!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, customerMessge);
             }
 
             catch (Exception)
@@ -98,6 +100,8 @@ namespace PS.Helper
                 };
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.BookingCancelled, values);
                 _smsSender.SendSmsAsync(model.UserDetails.PhoneNo, messge);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, messge);
             }
             catch (Exception)
             {
@@ -125,6 +129,8 @@ namespace PS.Helper
                 };
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.BookingUpdate, values);
                 _smsSender.SendSmsAsync(order.UserDetails.PhoneNo, messge);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, messge);
             }
             catch (Exception)
             {
@@ -251,6 +257,8 @@ namespace PS.Helper
                 GetMessageTextDictionary(model, out messageText);
                 var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.ServicingConfirmation, messageText);
                 _smsSender.SendSmsAsync(model.SelectedCentre.PhoneNo, centreMessage);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, centreMessage);
             }
             catch (Exception)
             {
@@ -267,6 +275,8 @@ namespace PS.Helper
                 GetMessageTextDictionary(model, out messageText);
                 var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.ServiceOrderCancel, messageText);
                 _smsSender.SendSmsAsync(model.SelectedCentre.PhoneNo, centreMessage);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, centreMessage);
             }
             catch (Exception)
             {
@@ -285,6 +295,8 @@ namespace PS.Helper
                 GetMessageTextDictionary(order, out messageText);
                 var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.ServiceOrderUpdate, messageText);
                 _smsSender.SendSmsAsync(order.SelectedCentre.PhoneNo, centreMessage);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, centreMessage);
             }
             catch (Exception)
             {
