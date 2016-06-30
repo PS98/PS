@@ -6,8 +6,11 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
     $scope.regError = false;
     $scope.regSuccess = false;
     $scope.again = false;
-    
 
+    var authToken = $cookieStore.get("XSRF-TOKEN");
+    if (!authToken) {
+        $cookieStore.put("XSRF-TOKEN", $localStorage.token);
+    }
     $scope.TCRedirection = function (url, name) {
         $window.open(url, name);
     }
@@ -26,6 +29,7 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
                 else if (result.status == 0) {
                     $scope.resetAfterSubmit();
                     $cookieStore.put("XSRF-TOKEN", result.access_Token);
+                    $localStorage.token = result.access_Token;
                     $scope.userDetails.firstName = result.result[1];
                     $scope.userDetails.lastName = result.result[2];
                     $scope.userDetails.userName = $scope.userDetails.firstName + " " + $scope.userDetails.lastName;
