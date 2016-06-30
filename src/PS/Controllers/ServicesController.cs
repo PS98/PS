@@ -103,8 +103,10 @@ namespace PS.Controllers
             {
                 try
                 {
+                    var date = DateTime.Now;
                     model.Status = "Pending";
                     model.BookingDate = DateTime.Now;
+                    model.InvoiceNo = "MM" + MongoRepository.RandomNumber(5) + date.ToString("MM") + date.ToString("dd");
                     repo.InsertDocument("orders", "Invoice", model);
                     SmsSender.BookingSuccessfull(model);
                     _emailSender.BookingSuccess(model);

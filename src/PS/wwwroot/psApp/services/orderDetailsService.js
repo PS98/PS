@@ -58,7 +58,7 @@
         var deferred = $q.defer();
         $http(
             {
-                url: "/api/OrderDetails/order?email=" + $localStorage.userDetails.email + "&status=" + status, method: "GET", cache: false
+                url: "/api/orderdetails/order?email=" + $localStorage.userDetails.email + "&status=" + status, method: "GET", cache: false
             }).then(function (result) {
                 //Success
                 deferred.resolve(result.data);

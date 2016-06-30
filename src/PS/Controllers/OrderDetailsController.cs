@@ -22,23 +22,20 @@ namespace PS.Controllers
     {
         private readonly MongoRepository _repo = new MongoRepository("orders");
         private readonly EmailSender _emailSender;
-        public AuthSocialLoginOptions Options { get; }
         private SmsProviderHelper _smsProviderHelper;
         private SmsSender _sender;
 
         readonly OrderDetailsDomainManager _domainManager = new OrderDetailsDomainManager();
 
-        public OrderDetailsController(IEmailSender emailSender, ISmsSender smsSender, IOptions<SmsMessageProvider> valueOptions, IOptions<AuthSocialLoginOptions> optionsAccessor, IApplicationEnvironment appEnvironment, AuthSocialLoginOptions options, SmsProviderHelper smsProviderHelper)
+        public OrderDetailsController(IEmailSender emailSender, ISmsSender smsSender, IOptions<SmsMessageProvider> valueOptions, IOptions<AuthSocialLoginOptions> optionsAccessor, IApplicationEnvironment appEnvironment)
         {
             _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor, appEnvironment)); ;
-            Options = options;
-            this._smsProviderHelper = smsProviderHelper;
-            _sender = new SmsSender(smsSender, new SmsProviderHelper(valueOptions));
+            _smsProviderHelper = new SmsProviderHelper(valueOptions);
+            _sender = new SmsSender(smsSender, _smsProviderHelper);
         }
 
-
         [Route("order")]
-       public JsonResult Get(string email, string status)
+        public JsonResult Get(string email, string status)
         {
             try
             {

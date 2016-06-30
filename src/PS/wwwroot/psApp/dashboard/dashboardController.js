@@ -143,7 +143,7 @@ function ($scope, $localStorage, $timeout,$location, psDataServices, psLoginServ
     }
     $scope.cancelOrder = function () {
         $scope.modalShown = false;
-        psOrderDetailsService.cancelOrder($scope.cancelledOrder.invoiceNo, $scope.cancelledOrder.userDetails.email).then(function (data) {
+        psOrderDetailsService.cancelOrder($scope.cancelledOrder.invoiceNo, $scope.cancelledOrder.userDetails.email,true).then(function (data) {
             if (data.status === 0) {
                 $scope.pendingOrders = data.result && data.result.length > 0 ? data.result[0] : [];
                 $scope.successOrders = data.result && data.result.length > 0 ? data.result[1] : [];
