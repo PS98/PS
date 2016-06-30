@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using PS.Models;
 using PS.Services;
 using System.Net;
 using Microsoft.Extensions.OptionsModel;
 using Microsoft.Extensions.PlatformAbstractions;
-using Newtonsoft.Json;
 using PS.DTO;
 using PS.Helper;
 using PS.Helper.Email;
@@ -22,14 +19,14 @@ namespace PS.Controllers
     {
         private readonly MongoRepository _repo = new MongoRepository("orders");
         private readonly EmailSender _emailSender;
-        private SmsProviderHelper _smsProviderHelper;
+        private readonly SmsProviderHelper _smsProviderHelper;
         private SmsSender _sender;
 
         readonly OrderDetailsDomainManager _domainManager = new OrderDetailsDomainManager();
 
         public OrderDetailsController(IEmailSender emailSender, ISmsSender smsSender, IOptions<SmsMessageProvider> valueOptions, IOptions<AuthSocialLoginOptions> optionsAccessor, IApplicationEnvironment appEnvironment)
         {
-            _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor, appEnvironment)); ;
+            _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor, appEnvironment));
             _smsProviderHelper = new SmsProviderHelper(valueOptions);
             _sender = new SmsSender(smsSender, _smsProviderHelper);
         }
@@ -58,7 +55,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message });
+                return Json(new {ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
@@ -83,7 +80,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = "We are unable to process your request.", Status = 2 });
+                return Json(new { Message = "We are unable to process your request.", Status = 2,error =ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
@@ -107,7 +104,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message });
+                return Json(new {ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
@@ -139,12 +136,12 @@ namespace PS.Controllers
                     successorder
                 };
                 Response.StatusCode = (int)HttpStatusCode.OK;
-                return Json(new { Message = "success.", Status = 0, result = result });
+                return Json(new { Message = "success.", Status = 0, result });
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message });
+                return Json(new {ex.Message });
             }
             
         }
@@ -167,7 +164,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message , Status = 0 });
+                return Json(new {ex.Message , Status = 0 });
             }
            
 
@@ -190,7 +187,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = ex.Message, Status = 0 });
+                return Json(new {ex.Message, Status = 0 });
             }
 
 
