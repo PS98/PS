@@ -14,6 +14,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             $("html, body").animate({
                 scrollTop: 50
             }, 'slow');
+            $scope.setWorkingHours($scope.centreDetails.selectedCentre);
         } else {
             psDataServices.setCentreDetails($scope.centreDetails);
             $state.go("service.appointment");
@@ -41,6 +42,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
                         setMarkers($scope.centreDetails.map, $scope.centreDetails.centreList, $scope.markerClick);
                         $scope.noCentreMatch = false;
                         $scope.noServiceMatch = false;
+                        $scope.setWorkingHours($scope.centreDetails.selectedCentre);
                     } else {
                         if (data.status === 0) {
                             $scope.noServiceMatch = true;
@@ -193,5 +195,91 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     //    $scope.getServiceCentreArea();
     //   // $scope.getCentreDetails($localStorage.userData.area);
     //}
+    $scope.setWorkingHours = function (centre) {
+        $scope.centreWorkingHours = [];
+        var today = new Date();
+        var weekDays = [0, 1, 2, 3, 4, 5, 6];
+        var day = today.getDay();
+        var d1 = new Date();
+        var d2 = new Date();
+        var startingFrom = weekDays.splice(weekDays.indexOf(day), weekDays.length);
+        weekDays = startingFrom.concat(weekDays);
 
+        $.each(weekDays, function(i, v) {
+            var obj = { day: "", time: "" };
+
+            obj.day = getDay(v);
+            obj.time = getTime(centre, v);
+
+            $scope.centreWorkingHours.push(obj);
+        });
+
+        var openingTime = amPmToHours(centre.openingHours);
+        var closingTime = amPmToHours(centre.closingHours);
+
+        if (openingTime)
+            openingTime = openingTime.split(":");
+        if (closingTime)
+            closingTime = closingTime.split(":");
+
+        d1.setHours(openingTime[0], openingTime[1], 0);
+        d2.setHours(closingTime[0], closingTime[1], 0);
+
+        $scope.opneNow = d2.getTime() > today.getTime() && today.getTime() > d1.getTime();
+    }
+    function amPmToHours(time) {
+        console.log(time);
+        if (time) {
+            var hours = Number(time.match(/^(\d+)/)[1]);
+            var minutes = Number(time.match(/:(\d+)/)[1]);
+            var ampm = time.match(/\s(.*)$/)[1];
+            ampm = ampm.toLowerCase();
+            if (ampm === "pm" && hours < 12) hours = hours + 12;
+            if (ampm === "am" && hours === 12) hours = hours - 12;
+            var sHours = hours.toString() +":" + minutes.toString();
+            return (sHours);
+        }
+    }
+    function getDay(day) {
+        var weekday;
+        switch (day) {
+        case 0:
+            weekday = "Sun";
+            break;
+        case 1:
+            weekday = "Mon";
+            break;
+        case 2:
+            weekday = "Tue";
+            break;
+        case 3:
+            weekday = "Wed";
+            break;
+        case 4:
+            weekday = "Thus";
+            break;
+        case 5:
+            weekday = "Fri";
+            break;
+        case 6:
+            weekday = "Sat";
+            break;
+        }
+        return weekday;
+
+    }
+
+    function getTime(centre,day) {
+        if (day === centre.holiday) {
+            return "holiday";
+        }
+        if (!centre.openingHours)
+            centre.openingHours = "9:30 AM";
+        if (!centre.closingHours)
+        centre.closingHours = "8:00 PM";
+        return centre.openingHours + " to " + centre.closingHours;
+    }
+    if ($scope.centreDetails.selectedCentre) {
+        $scope.setWorkingHours($scope.centreDetails.selectedCentre);
+    }
 }]);

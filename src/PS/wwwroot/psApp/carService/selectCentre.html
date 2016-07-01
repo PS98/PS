@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="sorting__inner">
-                        <span ng-bind ="centreDetails.userAddress.formattedAddress"></span>
+                        <span ng-bind="centreDetails.userAddress.formattedAddress"></span>
                     </div>
                 </div>
             </div>
@@ -55,10 +55,40 @@
                 <div class="alert alert-danger" role="alert" ng-if="noCentreMatch">
                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
                     Currently No Service Centre Available in selected area.We will be servicing you soon.
-              </div>
+                </div>
                 <div class="alert alert-info" role="alert" ng-if="noServiceMatch">
                     <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
                     There is no service centre in your area who provides all the services that you have selected. Please modify your service request.
+                </div>
+                <div ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'">
+                    <div class="accordion" id="workingHours" style="max-width: 300px">
+                        <div class="accordion-group panel">
+                            <div class="accordion-heading row" data-toggle="collapse" data-parent="#" href="#workingHoursData">
+                                <a class="header-text" data-toggle="collapse" data-parent="#" style="padding: 0px;">
+                                    Working Hours
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </div>
+                            <div class="row panel-default font-semibold">
+                                <div class="col-xs-2 no-padding-left">Today</div>
+                                <div class="col-xs-10 no-padding-left">
+                                    <span class="label label-danger" ng-if="!opneNow">Closed Now</span>
+                                    <span class="label alert-success" ng-if="opneNow">Open Now</span>
+                                </div>
+                            </div>
+
+                            <div id="workingHoursData" class="collapsing row" aria-expanded="false">
+                                <div ng-repeat="centreHours in centreWorkingHours" class="margin-top10 font-semibold" >
+                                    <div class="col-xs-2 no-padding-left">{{centreHours.day}}</div>
+                                    <div class="col-xs-10 no-padding-left">
+                                        <span ng-class="{'label label-info text-capitalize': centreHours.time ==='holiday'}">{{centreHours.time}}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
                 <div class="list-container" ng-if="(centreDetails.selectedCentre.services || []).length >0" ng-show="area !='Select Area'">
                     <h4 class="header-text">Services</h4>
@@ -71,58 +101,7 @@
                         </ul>
                     </div>
                 </div>
-                <div ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'">
-                    <h4 class="header-text">Working Hours</h4>
-                    <table class="table table-bordered table-condensed table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Day</th>
-                                <th class="text-right">Opening Time</th>
-                                <th class="text-right">Closing Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Monday</td>
-                                <td class="text-right">9:00am</td>
-                                <td class="text-right">8:00pm</td>
-                            </tr>
-                            <tr>
-                                <td>Tuesday</td>
-                                <td class="text-right">9:00am</td>
-                                <td class="text-right">8:00pm</td>
-                            </tr>
-                            <tr>
-                                <td>Wednesday</td>
-                                <td class="text-right">9:00am</td>
-                                <td class="text-right">8:00pm</td>
-                            </tr>
-                            <tr>
-                                <td>Thursday</td>
-                                <td class="text-right">9:00am</td>
-                                <td class="text-right">8:00pm</td>
-                            </tr>
-                            <tr>
-                                <td>Friday</td>
-                                <td class="text-right">9:00am</td>
-                                <td class="text-right">8:00pm</td>
-                            </tr>
-                            <tr>
-                                <td>Saturday</td>
-                                <td class="text-right">9:00am</td>
-                                <td class="text-right">8:00pm</td>
-                            </tr>
-                            <tr>
-                                <td>Sunday</td>
-                                <td class="text-right">9:00am</td>
-                                <td class="text-right">8:00pm</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>
-                        <small>*Opening hours may vary due to public holidays.</small>
-                    </p>
-                </div>
+              
 
             </div>
         </div>
