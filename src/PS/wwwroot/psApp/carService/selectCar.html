@@ -84,7 +84,7 @@
                                                 <!--<div class="btn-idk" ng-click="selectYear('')">
                                                     I don't know
                                                 </div>-->
-                                                <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList.slice(2,carList.carTypes.length)">
+                                                <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList.slice(2,carList.yearsList.length)">
                                                     <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
                                                 </ul>
                                             </div>
