@@ -918,7 +918,6 @@ tbody td {
     text-transform: uppercase;
     color: #222222;
     font-weight: 700;
-    width: 70%;
 }
 
 .featured-item .right-content .rupee {
@@ -927,7 +926,6 @@ tbody td {
     line-height: 36px;
     padding: 0px 12px;
     display: inline-block;
-    margin-top: -37px;
     margin-right: 0px;
     background-color: #f4c23d;
     font-size: 13px;
@@ -936,7 +934,7 @@ tbody td {
     font-weight: 700;
 }
 .featured-item .price{
-    margin-top:-30px;
+    margin-top:0;
     font-size:15px;
     margin-right: -1px;
 }

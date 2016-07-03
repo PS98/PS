@@ -1,35 +1,53 @@
 ﻿<div class="featured-item">
     <div class="right-content">
-        <h2>{{ centre.name }}</h2>
-        <div class="pull-right price" ng-if="centre.totalActualPrice !== 0">
-            <span class="rupee"><i class="fa fa-inr" style="padding-right: 5px;"></i><strike>{{centre.totalActualPrice}}</strike></span>
-            <span class="rupee"><i class="fa fa-inr" style="padding-right: 5px;"></i>{{ centre.totalMMPrice }}</span>
-        </div>
-        <div class="pull-right price" ng-if="centre.totalActualPrice === 0">
-            <span class="rupee"> <i class="fa fa-inr" style="padding-right: 5px;"></i>Pending Estimation <i class="fa fa-lg fa-info-circle" aria-hidden="true" style="padding-left: 5px;" ng-click="showInfo($event)" id="informationPopup"></i></span>
-        </div>
-        <div class="light-line"></div>
-        <div style="display: inline-block; padding-top: 15px; width: 50%;">{{ centre.address.line1 }},<br />{{ centre.address.line2 }}<br /><i class="fa fa-phone"></i>{{ centre.phoneNo }}</div>
-        <div style="float: right; padding-top: 15px; width: 50%;">
-            <i class="fa fa-map-pin"></i><span class="pull-right" style="padding-right: 10px;" ng-show="centre.distance != 0">{{centre.distance}}KM</span>
-            <br />
-            <span class="pull-right" style="padding-right: 10px;">
-                <span ng-if="centre.isFreePickUp && centre.distance != 0" style="padding-right:5px; color: green;">
-                    <i class="fa fa-check"></i> Free Pick-up & Drop-off Available
-                </span>
-                <span ng-if="!centre.isFreePickUp" style="padding-right:5px; color: red;">
-                    <i class="fa fa-times"></i> Free Pick-up & Drop-off not Available
-                </span>
-            </span>
-        </div>
-        <div class="info-box clearfix">
-            <strong class="rating">
-                <span class="star" ng-repeat="n in getRatings(centre.review)"></span>
-            </strong>
-            <div class="pull-right">
-                <button type="button" class="btn btn-primary btn-effect" data-ng-show="!centre.activeCentre" ng-click="selectedCentre(centre)">Show On Map</button>
-                <button type="button" class="btn btn-primary btn-effect" data-ng-show="centre.activeCentre" ng-click="selectedCentre(centre)">Select<i class="fa fa-chevron-right" style="padding-left:5px;"></i></button>
+        <div class="row centre-details-header">
+            <div class="col-xs-6">
+                <h2>{{ centre.name }}</h2>
+                <div class="light-line"></div>
+            </div>
+            <div class="col-xs-6 no-padding-left">
+                <div class="pull-right price" ng-if="centre.totalActualPrice !== 0">
+                    <span class="rupee"><i class="fa fa-inr" style="padding-right: 3px;"></i><strike>{{centre.totalActualPrice}}</strike></span>
+                    <span class="rupee"><i class="fa fa-inr" style="padding-right: 3px;"></i>{{ centre.totalMMPrice }}</span>
+                </div>
+                <div class="pull-right price" ng-if="centre.totalActualPrice === 0">
+                    <span class="rupee"> <i class="fa fa-inr" style="padding-right: 5px;"></i>Pending Estimation <i class="fa fa-lg fa-info-circle" aria-hidden="true" style="padding-left: 5px;" ng-click="showInfo($event)" id="informationPopup"></i></span>
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div style="display: inline-block; padding-top: 15px;">{{ centre.address.line1 }},<br />{{ centre.address.line2 }}<br /><i class="fa fa-phone"></i>{{ centre.phoneNo }}</div>
+                
+            </div>
+            <div class="col-sm-6 no-padding-left">
+                <div style="padding-top: 15px;" class="pull-right">
+                    <i class="fa fa-map-pin"></i><span class="pull-right" style="padding-right: 10px;" ng-show="centre.distance != 0">{{centre.distance}}KM</span>
+                    <br />
+                    <span class="pull-right" style="padding-right: 10px;">
+                        <span ng-if="centre.isFreePickUp && centre.distance != 0" style="padding-right:5px; color: green;">
+                            <i class="fa fa-check"></i> Free Pick-up & Drop-off Available
+                        </span>
+                        <span ng-if="!centre.isFreePickUp" style="padding-right:5px; color: red;">
+                            <i class="fa fa-times"></i> Free Pick-up & Drop-off not Available
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row info-box clearfix centre-detaills-footer">
+            <div class="col-xs-6">
+                <strong class="rating">
+                    <span class="star" ng-repeat="n in getRatings(centre.review)"></span>
+                </strong>
+            </div>
+            <div class="col-xs-6 no-padding-left">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-primary btn-effect" data-ng-show="!centre.activeCentre" ng-click="selectedCentre(centre)">Show On Map</button>
+                    <button type="button" class="btn btn-primary btn-effect" data-ng-show="centre.activeCentre" ng-click="selectedCentre(centre)">Select<i class="fa fa-chevron-right" style="padding-left:5px;"></i></button>
+                </div>
+            </div>
+        </div>
+       
     </div>
 </div>

@@ -431,6 +431,16 @@
 /*320 x 480 (iPhone)*/
 
 @media (max-width:480px) {
+    .centre-details-header> div {
+        width: 100%
+    }
+      .centre-detaills-footer {
+        margin-top: 10px !important;
+        margin: 0 !important;
+    }
+      .centre-detaills-footer> div {
+          width: 100%
+      }
     .link-img__item {
         width: 40%;
     }
