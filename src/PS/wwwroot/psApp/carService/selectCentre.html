@@ -61,24 +61,28 @@
                     There is no service centre in your area who provides all the services that you have selected. Please modify your service request.
                 </div>
                 <div ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'">
+                    <h4 class="header-text">Working Hours</h4>
                     <div class="accordion" id="workingHours" style="max-width: 300px">
                         <div class="accordion-group panel">
-                            <div class="accordion-heading row" data-toggle="collapse" data-parent="#" href="#workingHoursData">
+                            <!--<div class="accordion-heading row" data-toggle="collapse" data-parent="#" href="#workingHoursData">
                                 <a class="header-text" data-toggle="collapse" data-parent="#" style="padding: 0px;">
-                                    Working Hours
+                                    Expand/Collapse
                                     <i class="fa fa-angle-down"></i>
                                 </a>
-                            </div>
-                            <div class="row panel-default font-semibold">
+                            </div>-->
+                            <div class="row panel-default font-semibold"  data-toggle="collapse" data-parent="#" href="#workingHoursData" ng-click="expand = !expand">
                                 <div class="col-xs-2 no-padding-left">Today</div>
                                 <div class="col-xs-10 no-padding-left">
                                     <span class="label label-danger" ng-if="!opneNow">Closed Now</span>
                                     <span class="label alert-success" ng-if="opneNow">Open Now</span>
+                                    <span ng-show="expand"><i class="fa fa-minus icon-working-hour"></i></span> 
+                                    <span ng-show="!expand"><i class="fa fa-plus icon-working-hour"></i></span> 
                                 </div>
+                               
                             </div>
 
                             <div id="workingHoursData" class="collapsing row" aria-expanded="false">
-                                <div ng-repeat="centreHours in centreWorkingHours" class="margin-top10 font-semibold" >
+                                <div ng-repeat="centreHours in centreWorkingHours" class="margin-top10 font-semibold">
                                     <div class="col-xs-2 no-padding-left">{{centreHours.day}}</div>
                                     <div class="col-xs-10 no-padding-left">
                                         <span ng-class="{'label label-info text-capitalize': centreHours.time ==='holiday'}">{{centreHours.time}}</span>
