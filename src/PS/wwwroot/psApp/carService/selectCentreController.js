@@ -3,7 +3,7 @@
 angular.module("psApp").controller("selectCentreController", ["$scope", "psDataServices", "$state", "$localStorage", function ($scope, psDataServices, $state, $localStorage) {
     $scope.state = $state;
     $scope.centreDetails = psDataServices.getCentreDetails() ? psDataServices.getCentreDetails() : {};
-  //  $scope.selectedService = {};
+    //  $scope.selectedService = {};
     $scope.selectedService = psDataServices.getSelectedServiceName() || [];
     $scope.selectServiceCentre = function (centre) {
         if (!centre.activeCentre) {
@@ -21,42 +21,42 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         }
     }
     $scope.getCentreDetails = function (area) {
-      //  if (!area)
-            area = $scope.centreDetails.area;
+        //  if (!area)
+        area = $scope.centreDetails.area;
         $localStorage.userData.area = area;
         $scope.noCentreMatch = false;
         $scope.noServiceMatch = false;
-      //  if (area && area.toLowerCase() !== "select area") {
-            psDataServices.getServiceCentreList($scope.centreDetails.city, area).
-                success(function (data) {
-                    if (data.list.length > 0) {
-                        removemarker();
-                      //  $('#areaDropDown').setJelect(area);
-                        $scope.centreDetails.centreList = [];
-                        $scope.centreDetails.centreList = data.list;
-                        $scope.centreDetails.selectedCentre = $scope.centreDetails.centreList[0];
-                        $scope.centreDetails.selectedCentre.activeCentre = true;
-                        $scope.centreDetails.recommendedCentre = $scope.centreDetails.centreList[0];
-                        //$scope.centreDetails.centreList = $scope.centreDetails.centreList.slice(1);
-                        $scope.centreDetails.centreList[$scope.centreDetails.centreList.indexOf($scope.centreDetails.selectedCentre)].activeCentre = true;
-                        setMarkers($scope.centreDetails.map, $scope.centreDetails.centreList, $scope.markerClick);
+        //  if (area && area.toLowerCase() !== "select area") {
+        psDataServices.getServiceCentreList($scope.centreDetails.city, area).
+            success(function (data) {
+                if (data.list.length > 0) {
+                    removemarker();
+                    //  $('#areaDropDown').setJelect(area);
+                    $scope.centreDetails.centreList = [];
+                    $scope.centreDetails.centreList = data.list;
+                    $scope.centreDetails.selectedCentre = $scope.centreDetails.centreList[0];
+                    $scope.centreDetails.selectedCentre.activeCentre = true;
+                    $scope.centreDetails.recommendedCentre = $scope.centreDetails.centreList[0];
+                    //$scope.centreDetails.centreList = $scope.centreDetails.centreList.slice(1);
+                    $scope.centreDetails.centreList[$scope.centreDetails.centreList.indexOf($scope.centreDetails.selectedCentre)].activeCentre = true;
+                    setMarkers($scope.centreDetails.map, $scope.centreDetails.centreList, $scope.markerClick);
+                    $scope.noCentreMatch = false;
+                    $scope.noServiceMatch = false;
+                    $scope.setWorkingHours($scope.centreDetails.selectedCentre);
+                } else {
+                    if (data.status === 0) {
+                        $scope.noServiceMatch = true;
                         $scope.noCentreMatch = false;
-                        $scope.noServiceMatch = false;
-                        $scope.setWorkingHours($scope.centreDetails.selectedCentre);
-                    } else {
-                        if (data.status === 0) {
-                            $scope.noServiceMatch = true;
-                            $scope.noCentreMatch = false;
-                        }
-                        if (data.status === 1) {
-                            $scope.noCentreMatch = true;
-                            $scope.noServiceMatch = false;
-                        }
-                        removeCentreDetails();
-
                     }
-                }).error(function () {
-                });
+                    if (data.status === 1) {
+                        $scope.noCentreMatch = true;
+                        $scope.noServiceMatch = false;
+                    }
+                    removeCentreDetails();
+
+                }
+            }).error(function () {
+            });
         //} else {
         //    removeCentreDetails();
         //}
@@ -66,7 +66,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         psDataServices.getServiceCentreCity().success(function (data) {
             $scope.centreDetails.cityList = data;
         });
-   
+
     $scope.setUserLocation = function (lat, lng) {
         $localStorage.userData.lat = lat;
         $localStorage.userData.lng = lng;
@@ -79,7 +79,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         if ($scope.city.toLowerCase() !== "select city") {
             psDataServices.getServiceCentreArea($scope.city).success(function (data) {
                 removemarker();
-              //  $scope.centreDetails.areaList = data;
+                //  $scope.centreDetails.areaList = data;
                 if ($scope.googleMapArea && $scope.googleMapArea !== "") {
                     getNearerCentreList();
                 }
@@ -87,7 +87,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             });
         }
         else {
-         //   $scope.centreDetails.areaList = {};
+            //   $scope.centreDetails.areaList = {};
             removeCentreDetails();
             //$('.select.jelect').find('#areaDropDown').text("Select Area");
             //$scope.area = "Select Area";
@@ -96,11 +96,11 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     }
     function getNearerCentreList() {
         //if ($scope.centreDetails.areaList.indexOf($scope.googleMapArea) > -1) {
-            $scope.getCentreDetails($scope.googleMapArea);
-            $scope.centreDetails.area = $scope.googleMapArea;
-            $scope.area = $scope.googleMapArea;
-         //   $('#areaDropDown').setJelect($scope.googleMapArea);
-            $scope.googleMapArea = "";
+        $scope.getCentreDetails($scope.googleMapArea);
+        $scope.centreDetails.area = $scope.googleMapArea;
+        $scope.area = $scope.googleMapArea;
+        //   $('#areaDropDown').setJelect($scope.googleMapArea);
+        $scope.googleMapArea = "";
         //} else {
         //     $scope.area = "Select Area";
         //     $('#areaDropDown').setJelect("");
@@ -127,7 +127,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
 
     $scope.changeArea = function () {
         //  if ($scope.area && $scope.area.toLowerCase() !== "select area") {
-       $("#addressOverlay").modal('toggle');
+        $("#addressOverlay").modal('toggle');
         //} else {
         //    removeCentreDetails();
         //}
@@ -139,21 +139,24 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         $localStorage.userData.city = city;
         psDataServices.setuserAddress($scope.centreDetails.userAddress);
 
-        if ($scope.centreDetails.cityList.indexOf(city) > -1) {
+        if ($scope.centreDetails.cityList && $scope.centreDetails.cityList.indexOf(city) > -1) {
             $scope.centreDetails.city = city;
             $scope.city = city;
             $('#cityDropDown').setJelect(city);
-           // if (!$scope.centreDetails.areaList || $scope.centreDetails.areaList.length === 0) {
-             //   $scope.getServiceCentreArea();
-            //} else {
-                getNearerCentreList();
-           // }
+            getNearerCentreList();
+        } else if (!$scope.isDataLoaded) {
+            psDataServices.getServiceCentreCity().success(function (data) {
+                $scope.centreDetails.cityList = data;
+                $scope.isDataLoaded = true;
+                $scope.MapCallback(city, area);
+                return;
+            });
         } else {
             $scope.city = "Select City";
             $('#cityDropDown').setJelect("");
             $('#areaDropDown').setJelect("");
             $scope.area = "Select Area";
-            $scope.loadCity("India",4);
+            $scope.loadCity("India", 4);
         }
 
     }
@@ -172,7 +175,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             {
                 'top': top,
                 'left': left,
-                'width':"210px"
+                'width': "210px"
             }
         } catch (ex) {
             console.log(ex);
@@ -185,7 +188,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             $scope.style = {};
             $scope.$apply();
         }
-       
+
     });
     //if ($localStorage.userData.area) {
     //    $('.select.jelect').find('#cityDropDown').text($localStorage.userData.city);
@@ -205,7 +208,7 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         var startingFrom = weekDays.splice(weekDays.indexOf(day), weekDays.length);
         weekDays = startingFrom.concat(weekDays);
 
-        $.each(weekDays, function(i, v) {
+        $.each(weekDays, function (i, v) {
             var obj = { day: "", time: "" };
 
             obj.day = getDay(v);
@@ -236,47 +239,47 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             ampm = ampm.toLowerCase();
             if (ampm === "pm" && hours < 12) hours = hours + 12;
             if (ampm === "am" && hours === 12) hours = hours - 12;
-            var sHours = hours.toString() +":" + minutes.toString();
+            var sHours = hours.toString() + ":" + minutes.toString();
             return (sHours);
         }
     }
     function getDay(day) {
         var weekday;
         switch (day) {
-        case 0:
-            weekday = "Sun";
-            break;
-        case 1:
-            weekday = "Mon";
-            break;
-        case 2:
-            weekday = "Tue";
-            break;
-        case 3:
-            weekday = "Wed";
-            break;
-        case 4:
-            weekday = "Thus";
-            break;
-        case 5:
-            weekday = "Fri";
-            break;
-        case 6:
-            weekday = "Sat";
-            break;
+            case 0:
+                weekday = "Sun";
+                break;
+            case 1:
+                weekday = "Mon";
+                break;
+            case 2:
+                weekday = "Tue";
+                break;
+            case 3:
+                weekday = "Wed";
+                break;
+            case 4:
+                weekday = "Thus";
+                break;
+            case 5:
+                weekday = "Fri";
+                break;
+            case 6:
+                weekday = "Sat";
+                break;
         }
         return weekday;
 
     }
 
-    function getTime(centre,day) {
+    function getTime(centre, day) {
         if (day === centre.holiday) {
             return "holiday";
         }
         if (!centre.openingHours)
             centre.openingHours = "9:30 AM";
         if (!centre.closingHours)
-        centre.closingHours = "8:00 PM";
+            centre.closingHours = "8:00 PM";
         return centre.openingHours + " to " + centre.closingHours;
     }
     if ($scope.centreDetails.selectedCentre) {
