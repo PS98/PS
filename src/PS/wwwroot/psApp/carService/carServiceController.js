@@ -165,21 +165,30 @@
         }
 
     }
-    if ($scope.selectedCar.brand)
-    displayIncompleteModule();
-    psDataServices.getAllCarColletion().
+
+    if ($scope.selectedCar.brand) {
+        displayIncompleteModule();
+        fetchServiceDetails();
+    } else {
+        fetchCarCollection();
+    }
+    function fetchCarCollection() {
+        psDataServices.getAllCarColletion().
        success(function (data) {
            $scope.carList.carCollections = data.carList;
            $scope.carList.yearsList = data.yearsList;
+           if (!$scope.selectedCar.brand)
            fetchServiceDetails();
-
-       }).error(function () {
+            }).error(function () {
        });
-
+    }
+   
     function fetchServiceDetails() {
         psDataServices.getAllService().
             success(function (data) {
-                
+                if ($scope.selectedCar.brand) {
+                    fetchCarCollection();
+                }
                 $scope.services = data;
                 $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                 $scope.commonServices = $scope.services.serviceDetails[0];
