@@ -9,7 +9,11 @@ angular.module("psApp").directive("selectCentre", function () {
                 zoom: 14,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 mapTypeControl: false,
-                navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+                navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL },
+                scaleControl: false,
+                streetViewControl: false,
+                rotateControl: false,
+                fullscreenControl: false
             };
             $(".jelect").jelect();
             var infowindow = google && google.maps ? new google.maps.InfoWindow() : "";
@@ -78,7 +82,12 @@ angular.module("psApp").directive("selectCentre", function () {
                     var mapProp = {
                         center: latLng,
                         zoom: 12,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        mapTypeControl: false,
+                        scaleControl: false,
+                        streetViewControl: false,
+                        rotateControl: false,
+                        fullscreenControl: false,
                     };
                     if (zoom) {
                         mapProp.zoom = zoom;
@@ -190,7 +199,12 @@ angular.module("psApp").directive("selectCentre", function () {
                 var mapProp = {
                     center: latLngobj,
                     zoom: 14,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    streetViewControl: false,
+                    rotateControl: false,
+                    fullscreenControl: false,
                 };
                 scope.centreDetails.map= new google.maps.Map(document.getElementById("mapholder"), mapProp);
                 //  var marker = new google.maps.Marker({ position: latLng, map: map, title: "here" });
