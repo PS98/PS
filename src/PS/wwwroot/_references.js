@@ -26,6 +26,7 @@
 /// <reference path="lib/jquery/dist/jquery.js" />
 /// <reference path="psapp/admin/admindirective.js" />
 /// <reference path="psapp/admin/editorder/editordercontroller.js" />
+/// <reference path="psapp/admin/pricedetails/servicecentrepricedetailscontroller.js" />
 /// <reference path="psapp/carservice/bookappointment/bookappointmentdirective.js" />
 /// <reference path="psapp/carservice/bookappointment/calendardirective.js" />
 /// <reference path="psapp/carservice/carservicecategorydirective.js" />

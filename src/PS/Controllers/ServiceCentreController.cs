@@ -426,5 +426,28 @@ namespace PS.Controllers
 
             }
         }
+
+        [HttpGet]
+        [Route("priceList")]
+        public JsonResult GetPriceDetails(string id)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(id))
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json(new { Message = "Please Choose a Service", Status = 1 });
+                }
+                var list = _serviceCentreDto.GetCarPriceList(id);
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = "success", Status = 0, List = list });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Json(new { ex.Message, Status = 2 });
+
+            }
+        }
     }
 }

@@ -20,13 +20,21 @@ namespace PS.DTO
         private const string Collection = "Pune";
         private const string Database = "serviceCentre";
         private const string GoogleMapDistanceMatixApi = "http://maps.googleapis.com/maps/api/distancematrix/json?";
+        private readonly MongoRepository _repo;
         private const string Origin = "origins=";
         private const string Destination = "&destinations=";
-        private readonly MongoRepository _repo = new MongoRepository(Database);
+        private const string LiteCarCare = "Lite Car Care";
+        private const string EssentialCarCare = "Essential Car Care";
+        private const string ComprehensiveCarCare = "Comprehensive Car Care";
         private double _lat;
         private double _lng;
         private GeoCoordinate userCordinates;
-        public List<ServiceCentreViewModel> ListServiceCentres(SelectedService selectedService)
+
+        public ServiceCentreDto()
+        {
+            _repo = new MongoRepository(Database);
+        }
+    public List<ServiceCentreViewModel> ListServiceCentres(SelectedService selectedService)
         {
             try
             {
@@ -432,5 +440,88 @@ namespace PS.DTO
             }
 
         }
+
+        public  List<ServiceDetails> GetCentrePriceDetails(string centreId)
+        {
+            var serviceCentre = GetCentreDetailsById(centreId);
+            return serviceCentre?.ServiceDetails;
+        }
+        #region Admin 
+
+        public List<CarVerientPrice> GetCarPriceList(string centreId)
+        {
+            var serviceCentre = GetCentreDetailsById(centreId);
+            var varientList = new List<CarVerientPrice>();
+            var carBrandAndModel = new Dictionary<string, List<string>>();
+            var price = new CentrePriceDetails();
+            var repo = new MongoRepository("car");
+            var carList = repo.GetAllCollectionName();
+            foreach (var docName in carList)
+            {
+                var modelList = repo.GetDocumentList<Car>(docName);
+                // varientList.AddRange(modelList.Select(x => x.name).ToList());
+                carBrandAndModel.Add(docName, modelList.Select(x => x.name).ToList());
+            }
+
+            foreach (var dicObj in carBrandAndModel)
+            {
+                price.BrandName = dicObj.Key;
+
+                //foreach (var priceDetails in dicObj.Value.Select(model => serviceCentre.ServiceDetails.Where(x => x.Name.Equals("Lite") && x.Petrol.Any(y => y.ModelList.Contains(model)))).Select(priceList => priceList.FirstOrDefault()).Where(firstOrDefault => firstOrDefault != null).Select(firstOrDefault => firstOrDefault.Petrol.FirstOrDefault()).Where(priceDetails => priceDetails != null))
+                //{
+                //    vp.LiteServicePrice =  priceDetails.ServiceCentrePrice; 
+                //}
+
+                //foreach (var serviceDetail in serviceCentre.ServiceDetails.Where(x=>x.Petrol.Any(priceDetails=> priceDetails.ModelList.All(model=> dicObj.Value.Any(selected=>string.Equals(selected,model, StringComparison.CurrentCultureIgnoreCase))))))
+                //{
+
+                //}
+
+                foreach (var modelName in dicObj.Value)
+                {
+                    var modelVarient = dicObj.Key + "-" + modelName;
+                    var petrolObject = GteCarVerientPrice(serviceCentre.ServiceDetails, modelName, "Petrol");
+                    petrolObject.VarientName = modelVarient;
+                    var dieselObject = GteCarVerientPrice(serviceCentre.ServiceDetails, modelName, "Deisel");
+                    dieselObject.VarientName = modelVarient;
+                    varientList.Add(petrolObject);
+                    varientList.Add(dieselObject);
+                }
+            }
+            return varientList;
+        }
+
+        public CarVerientPrice GteCarVerientPrice(List<ServiceDetails> details, string modelName, string type)
+        {
+            var isPetrolPrice = type.Equals("Petrol");
+            var priceobject = new CarVerientPrice
+            {
+                VarientName = modelName,
+                LiteServicePrice = GetServicePrice(details, LiteCarCare, modelName, isPetrolPrice),
+                EssentialServicePrice =
+                            GetServicePrice(details, EssentialCarCare, modelName, isPetrolPrice),
+                ComprehensiveServicePrice =
+                            GetServicePrice(details, ComprehensiveCarCare, modelName, isPetrolPrice),
+                EngineType = type
+            };
+            return priceobject;
+        }
+        public int GetServicePrice(List<ServiceDetails> details, string serviceName, string modelName, bool type)
+        {
+            if (type)
+            {
+                var petrolPriceList = from serviceDetail in details
+                                      where serviceDetail.Name == serviceName
+                                      from source in serviceDetail.Petrol.Where(x => x.ModelList.Contains(modelName))
+                                      select source.ServiceCentrePrice;
+                return petrolPriceList.FirstOrDefault();
+            }
+            var diselPriceList = from serviceDetail in details
+                                 where serviceDetail.Name == serviceName
+                                 from source in serviceDetail.Diesel.Where(x => x.ModelList.Contains(modelName))
+                                 select source.ServiceCentrePrice;
+            return diselPriceList.FirstOrDefault();
+        }
+        #endregion
     }
 }

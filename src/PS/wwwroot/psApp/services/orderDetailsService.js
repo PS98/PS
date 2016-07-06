@@ -150,6 +150,21 @@
 
         return deferred.promise;
     }
+    var _getPriceList = function(id) {
+        var deferred = $q.defer();
+        $http(
+            {
+                url: "/api/ServiceCentre/priceList?id="+id, method: "Get", cache: false
+            }).then(function (result) {
+                //Success
+                deferred.resolve(result.data);
+            }, function (error) {
+                //Error
+                deferred.reject(error);
+            });
+
+        return deferred.promise;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
@@ -159,7 +174,8 @@
         cancelOrder: _cancelOrder,
         editDateAndTime: _editDateAndTime,
         getOrderById: _getOrderById,
-        updateSelectedOrder:_updateSelectedOrder
+        updateSelectedOrder:_updateSelectedOrder,
+        getPriceList:_getPriceList
 
     }
 
