@@ -165,6 +165,24 @@
 
         return deferred.promise;
     }
+    var updateSingleRow = function(updatedRow) {
+        var deferred = $q.defer();
+        $http(
+        {
+            url: "/api/ServiceCentre/price/update",
+            method: "POST",
+            cache: false,
+            data: updatedRow
+    }).then(function (result) {
+                //Success
+                deferred.resolve(result.data);
+            }, function (error) {
+                //Error
+                deferred.reject(error);
+            });
+
+        return deferred.promise;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
@@ -175,7 +193,8 @@
         editDateAndTime: _editDateAndTime,
         getOrderById: _getOrderById,
         updateSelectedOrder:_updateSelectedOrder,
-        getPriceList:_getPriceList
+        getPriceList:_getPriceList,
+        updateRow:updateSingleRow
 
     }
 

@@ -8,11 +8,12 @@ namespace PS.Models
 
     public class CarVerientPrice
     {
+        public string CentreId { get; set; }
         public string VarientName { get; set; }
         public string EngineType { get; set; }
-        public int LiteServicePrice { get; set; }
-        public int EssentialServicePrice { get; set; }
-        public int ComprehensiveServicePrice { get; set; }
+        public string LiteServicePrice { get; set; }
+        public string EssentialServicePrice { get; set; }
+        public string ComprehensiveServicePrice { get; set; }
 
     }
     public class CentrePriceDetails

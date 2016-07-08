@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 var indexApp = angular.module("index", ["ngStorage"]);
-var app = angular.module("psApp", ["index", "ui.router", "ngStorage", "ngCookies", "ui.grid", "ui.grid.edit", "ui.grid.grouping",'ui.grid.rowEdit']);
+var app = angular.module("psApp", ["index", "ui.router", "ngStorage", "ngCookies", "ui.grid", "ui.grid.edit", "ui.grid.grouping", "ui.grid.rowEdit", "ui.grid.selection"]);
 
 
 app.directive('script', function () {

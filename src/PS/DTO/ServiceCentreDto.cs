@@ -23,9 +23,7 @@ namespace PS.DTO
         private readonly MongoRepository _repo;
         private const string Origin = "origins=";
         private const string Destination = "&destinations=";
-        private const string LiteCarCare = "Lite Car Care";
-        private const string EssentialCarCare = "Essential Car Care";
-        private const string ComprehensiveCarCare = "Comprehensive Car Care";
+       
         private double _lat;
         private double _lng;
         private GeoCoordinate userCordinates;
@@ -243,8 +241,6 @@ namespace PS.DTO
 
         public void UpdateExistingCentreDetails(ServiceCentreGeo existingCentre, ServiceCentreGeo newCentre)
         {
-            var collection = _repo.GetCollection<ServiceCentreGeo>("Pune");
-            var filter = Builders<ServiceCentreGeo>.Filter.Where(x => x.CentreId.Equals(newCentre.CentreId));
             var isDetalilsUpdate = false;
            if (newCentre.ServiceDetails != null && newCentre.ServiceDetails.Count > 0)
             {
@@ -277,10 +273,8 @@ namespace PS.DTO
                 else
                 {
                    existingCentre.ServiceDetails.AddRange(newCentre.ServiceDetails);
-                        // if deatils of service is not exist than add to collection var 
-                        var update = Builders<ServiceCentreGeo>.Update.Set("ServiceDetails",
-                            existingCentre.ServiceDetails);
-                        collection.UpdateOneAsync(filter, update);
+                    // if deatils of service is not exist than add to collection var 
+                    UpdateCentreDataInMongo(existingCentre, true);
                         return;
                   }
                
@@ -294,10 +288,24 @@ namespace PS.DTO
                 isDetalilsUpdate = true;
             }
             if(isDetalilsUpdate)
-            collection?.ReplaceOneAsync(filter, existingCentre);
+                UpdateCentreDataInMongo(existingCentre);
 
         }
 
+        public void UpdateCentreDataInMongo(ServiceCentreGeo centreDetails,bool isUpdateOnlyServiceDetails = false)
+        {
+            var collection = _repo.GetCollection<ServiceCentreGeo>("Pune");
+            var filter = Builders<ServiceCentreGeo>.Filter.Where(x => x.CentreId.Equals(centreDetails.CentreId));
+            if (!isUpdateOnlyServiceDetails)
+            {
+                collection?.ReplaceOneAsync(filter, centreDetails);
+                return;
+            }
+            var update = Builders<ServiceCentreGeo>.Update.Set("ServiceDetails",
+                           centreDetails.ServiceDetails);
+            collection.UpdateOneAsync(filter, update);
+
+        }
         public void UpdatePriceAndModelList(List<PriceDetails> priceDetails, List<PriceDetails> newPriceList)
         {
             var count = 0;
@@ -482,8 +490,10 @@ namespace PS.DTO
                     var modelVarient = dicObj.Key + "-" + modelName;
                     var petrolObject = GteCarVerientPrice(serviceCentre.ServiceDetails, modelName, "Petrol");
                     petrolObject.VarientName = modelVarient;
+                    petrolObject.CentreId = centreId;
                     var dieselObject = GteCarVerientPrice(serviceCentre.ServiceDetails, modelName, "Deisel");
                     dieselObject.VarientName = modelVarient;
+                    dieselObject.CentreId = centreId;
                     varientList.Add(petrolObject);
                     varientList.Add(dieselObject);
                 }
@@ -497,30 +507,147 @@ namespace PS.DTO
             var priceobject = new CarVerientPrice
             {
                 VarientName = modelName,
-                LiteServicePrice = GetServicePrice(details, LiteCarCare, modelName, isPetrolPrice),
+                LiteServicePrice = GetServiceCentrePrice(details, Utility.LiteCarCare, modelName, isPetrolPrice),
                 EssentialServicePrice =
-                            GetServicePrice(details, EssentialCarCare, modelName, isPetrolPrice),
+                            GetServiceCentrePrice(details, Utility.EssentialCarCare, modelName, isPetrolPrice),
                 ComprehensiveServicePrice =
-                            GetServicePrice(details, ComprehensiveCarCare, modelName, isPetrolPrice),
+                            GetServiceCentrePrice(details, Utility.ComprehensiveCarCare, modelName, isPetrolPrice),
                 EngineType = type
             };
             return priceobject;
         }
-        public int GetServicePrice(List<ServiceDetails> details, string serviceName, string modelName, bool type)
+        public string GetServiceCentrePrice(List<ServiceDetails> details, string serviceName, string modelName, bool type)
+        {
+            var priceData = GetPriceDetailsForModel(details, serviceName, modelName, type);
+            return priceData?.ServiceCentrePrice.ToString();
+        }
+
+        public PriceDetails GetPriceDetailsForModel(List<ServiceDetails> details, string serviceName, string modelName,bool type)
         {
             if (type)
             {
                 var petrolPriceList = from serviceDetail in details
                                       where serviceDetail.Name == serviceName
                                       from source in serviceDetail.Petrol.Where(x => x.ModelList.Contains(modelName))
-                                      select source.ServiceCentrePrice;
+                                      select source;
                 return petrolPriceList.FirstOrDefault();
             }
             var diselPriceList = from serviceDetail in details
                                  where serviceDetail.Name == serviceName
                                  from source in serviceDetail.Diesel.Where(x => x.ModelList.Contains(modelName))
-                                 select source.ServiceCentrePrice;
+                                 select source;
             return diselPriceList.FirstOrDefault();
+        }
+        public void UpdateServiceCentrePriceData(CarVerientPrice updatedPrice)
+        {
+                var serviceCentre = GetCentreDetailsById(updatedPrice.CentreId);
+                UpdatePriceDetails(updatedPrice,serviceCentre);
+                UpdateCentreDataInMongo(serviceCentre);
+        }
+
+        public void UpdatePriceDetails(CarVerientPrice updatedPrice,ServiceCentreGeo serviceCentre)
+        {
+            var model = updatedPrice.VarientName.Split('-')[1];
+            var isEngineTypePetrol = updatedPrice.EngineType.ToLower().Equals("petrol");
+            int liteServicePrice, essentialServicePrice, comprehensiveServicePrice;
+
+            int.TryParse(updatedPrice.LiteServicePrice, out liteServicePrice);
+            int.TryParse(updatedPrice.EssentialServicePrice, out essentialServicePrice);
+            int.TryParse(updatedPrice.ComprehensiveServicePrice, out comprehensiveServicePrice);
+
+            var dic = new Dictionary<string, int>
+            {
+                {Utility.LiteCarCare, liteServicePrice},
+                {Utility.EssentialCarCare, essentialServicePrice},
+                {Utility.ComprehensiveCarCare, comprehensiveServicePrice}
+            };
+            var dic1 = new Dictionary<string, string>
+            {
+                {Utility.LiteCarCare, updatedPrice.LiteServicePrice},
+                {Utility.EssentialCarCare, updatedPrice.EssentialServicePrice},
+                {Utility.ComprehensiveCarCare, updatedPrice.ComprehensiveServicePrice}
+            };
+            foreach (var val in dic)
+            {
+                string price;
+                dic1.TryGetValue(val.Key, out price);
+
+                if (!string.IsNullOrEmpty(price))
+                    UpdateServicePrice(serviceCentre.ServiceDetails, val.Key, model, val.Value, isEngineTypePetrol);
+                else
+                {
+                    RemoveModelFromModelList(serviceCentre.ServiceDetails,val.Key,model,isEngineTypePetrol);
+                }
+            }
+        }
+        public void UpdateServicePrice(List<ServiceDetails> details, string serviceName, string modelName, int price,bool type)
+        {
+            var exitingPriceData = GetExistingPriceDetailsFromPrice(details, serviceName, price, type);
+            if (exitingPriceData != null)
+            {
+                RemoveModelFromModelList(details, serviceName, modelName, type); // remove model name 
+                exitingPriceData.ModelList.Add(modelName);
+            }
+            else
+            {
+                UpdatePriceForService(details.FirstOrDefault(x => x.Name.Equals(serviceName)), serviceName,
+                    modelName, price, type);
+            }
+        }
+
+        public PriceDetails GetExistingPriceDetailsFromPrice(List<ServiceDetails> details, string serviceName, int price, bool type)
+        {
+            price = price + Utility.GetMileMatesMargin(serviceName);
+            if (type)
+            {
+              var  petrolPriceObject = from serviceDetail in details
+                                      where serviceDetail.Name == serviceName
+                                      from source in serviceDetail.Petrol.Where(x => x.MilematePrice.Equals(price))
+                                      select source;
+            return petrolPriceObject.FirstOrDefault();
+            }
+           var dieselPriceObject = from serviceDetail in details
+                                 where serviceDetail.Name == serviceName
+                                 from source in serviceDetail.Diesel.Where(x => x.MilematePrice.Equals(price))
+                                 select source;
+           return dieselPriceObject.FirstOrDefault();
+        }
+
+        public ServiceDetails UpdatePriceForService(ServiceDetails details, string serviceName, string modelName, int price, bool type)
+        {
+            var pricedetails = new PriceDetails
+            {
+                MilematePrice = price + Utility.GetMileMatesMargin(serviceName),
+                ServiceCentrePrice = price,
+                ActualPrice = Utility.GenerateRandomNo(price,serviceName),
+                ModelList = new List<string>
+                {
+                    modelName
+                }
+            };
+            if (details == null)
+            {
+                details = new ServiceDetails
+                {
+                    Name = serviceName,
+                    Petrol = new List<PriceDetails>(),
+                    Diesel = new List<PriceDetails>()
+                };
+            }
+            if (type)
+            {
+              
+               details.Petrol.Add(pricedetails);
+                return details;
+            }
+            details.Diesel.Add(pricedetails);
+            return details;
+        }
+
+        public void RemoveModelFromModelList(List<ServiceDetails> details, string serviceName, string modelName, bool type)
+        {
+            var priceDetails = GetPriceDetailsForModel(details, serviceName, modelName, type);
+            priceDetails?.ModelList.Remove(modelName);
         }
         #endregion
     }

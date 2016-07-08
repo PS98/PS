@@ -449,5 +449,30 @@ namespace PS.Controllers
 
             }
         }
+        [HttpPost]
+        [Route("price/update")]
+        public JsonResult UpdateSelectedRow([FromBody] CarVerientPrice updatedPrice)
+        {
+            try
+            {
+                if (updatedPrice == null || string.IsNullOrEmpty(updatedPrice.VarientName))
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json(new { Message = "model is not valid", Status = 2 });
+                }
+
+            _serviceCentreDto.UpdateServiceCentrePriceData(updatedPrice);
+
+               
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = "success", Status = 0 });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Json(new { ex.Message, Status = 2 });
+
+            }
+        }
     }
 }
