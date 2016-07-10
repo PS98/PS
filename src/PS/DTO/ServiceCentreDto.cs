@@ -488,10 +488,10 @@ namespace PS.DTO
                 foreach (var modelName in dicObj.Value)
                 {
                     var modelVarient = dicObj.Key + "-" + modelName;
-                    var petrolObject = GteCarVerientPrice(serviceCentre.ServiceDetails, modelName, "Petrol");
+                    var petrolObject = GetCarVerientPrice(serviceCentre.ServiceDetails, modelName, "Petrol");
                     petrolObject.VarientName = modelVarient;
                     petrolObject.CentreId = centreId;
-                    var dieselObject = GteCarVerientPrice(serviceCentre.ServiceDetails, modelName, "Deisel");
+                    var dieselObject = GetCarVerientPrice(serviceCentre.ServiceDetails, modelName, "Diesel");
                     dieselObject.VarientName = modelVarient;
                     dieselObject.CentreId = centreId;
                     varientList.Add(petrolObject);
@@ -501,7 +501,7 @@ namespace PS.DTO
             return varientList;
         }
 
-        public CarVerientPrice GteCarVerientPrice(List<ServiceDetails> details, string modelName, string type)
+        public CarVerientPrice GetCarVerientPrice(List<ServiceDetails> details, string modelName, string type)
         {
             var isPetrolPrice = type.Equals("Petrol");
             var priceobject = new CarVerientPrice
@@ -615,32 +615,8 @@ namespace PS.DTO
 
         public ServiceDetails UpdatePriceForService(ServiceDetails details, string serviceName, string modelName, int price, bool type)
         {
-            var pricedetails = new PriceDetails
-            {
-                MilematePrice = price + Utility.GetMileMatesMargin(serviceName),
-                ServiceCentrePrice = price,
-                ActualPrice = Utility.GenerateRandomNo(price,serviceName),
-                ModelList = new List<string>
-                {
-                    modelName
-                }
-            };
-            if (details == null)
-            {
-                details = new ServiceDetails
-                {
-                    Name = serviceName,
-                    Petrol = new List<PriceDetails>(),
-                    Diesel = new List<PriceDetails>()
-                };
-            }
-            if (type)
-            {
-              
-               details.Petrol.Add(pricedetails);
-                return details;
-            }
-            details.Diesel.Add(pricedetails);
+            var modelList = new List<string> {modelName};
+            AddNewPriceDetails(details,serviceName,modelList,price,type);
             return details;
         }
 
@@ -649,6 +625,151 @@ namespace PS.DTO
             var priceDetails = GetPriceDetailsForModel(details, serviceName, modelName, type);
             priceDetails?.ModelList.Remove(modelName);
         }
+
+        public void SaveUpdatedRow(List<CarVerientPrice> updatedList)
+        {
+
+            var serviceCentre = GetCentreDetailsById(updatedList.First().CentreId);
+            UpdateCentreDetails(serviceCentre,updatedList);
+            UpdateCentreDataInMongo(serviceCentre);
+        }
+
+        public void AddNewPriceDetails(ServiceDetails existingServiceDetails,  string serviceName, List<string> modelList, int price, bool type)
+        {
+            var pricedetails = new PriceDetails
+            {
+                MilematePrice = price + Utility.GetMileMatesMargin(serviceName),
+                ServiceCentrePrice = price,
+                ActualPrice = Utility.GenerateRandomNo(price, serviceName),
+                ModelList = modelList
+            };
+            if (existingServiceDetails == null)
+            {
+                existingServiceDetails = new ServiceDetails
+                {
+                    Name = serviceName,
+                    Petrol = new List<PriceDetails>(),
+                    Diesel = new List<PriceDetails>()
+                };
+            }
+            if (type)
+            {
+                existingServiceDetails.Petrol.Add(pricedetails);
+                return;
+            }
+            existingServiceDetails.Diesel.Add(pricedetails);
+        }
+
+        public void UpdateCentreDetails(ServiceCentreGeo serviceCentre, List<CarVerientPrice> updatePriceList)
+        {
+           var serviceNameList = new List<string>
+            {
+                Utility.LiteCarCare,
+                Utility.EssentialCarCare,
+                Utility.ComprehensiveCarCare
+            };
+
+            foreach (var service in serviceNameList)
+            {
+                var petrolPriceDic = new Dictionary<int, List<string>>();
+                var dieselPriceDic = new Dictionary<int, List<string>>();
+                IEnumerable<string> uniqePriceList;
+                switch (service)
+                {
+                    case Utility.LiteCarCare:
+                        uniqePriceList = updatePriceList.Select(x => x.LiteServicePrice).Distinct();
+                        break;
+                    case Utility.ComprehensiveCarCare:
+                        uniqePriceList = updatePriceList.Select(x => x.ComprehensiveServicePrice).Distinct();
+                        break;
+                    default:
+                        uniqePriceList = updatePriceList.Select(x => x.EssentialServicePrice).Distinct();
+                        break;
+                }
+                GetPriceModelDictionary(uniqePriceList, service, updatePriceList, petrolPriceDic, dieselPriceDic);
+                UpdateOrAddPriceDetails(serviceCentre.ServiceDetails, petrolPriceDic, service, true);
+                UpdateOrAddPriceDetails(serviceCentre.ServiceDetails, dieselPriceDic, service, false);
+
+            }
+        }
+
+        public void GetPriceModelDictionary(IEnumerable<string> priceList, string serviceName, List<CarVerientPrice> updatePriceList, Dictionary<int, List<string>> petrolPriceDic, Dictionary<int, List<string>> dieselPriceDic)
+        {
+            foreach (var price in priceList.Where(price => !string.IsNullOrEmpty(price)))
+            {
+                int value;
+                int.TryParse(price, out value);
+                switch (serviceName)
+                {
+                    case Utility.LiteCarCare:
+                        if(updatePriceList.Any(x => x.LiteServicePrice == price && x.EngineType.Equals("Petrol")))
+
+                        petrolPriceDic.Add(value,
+                            updatePriceList.Where(x => x.LiteServicePrice == price && x.EngineType.Equals("Petrol"))
+                                .Select(y => GetVarientName(y.VarientName))
+                                .ToList());
+
+                        if (updatePriceList.Any(x => x.LiteServicePrice == price && x.EngineType.Equals("Diesel")))
+
+                            dieselPriceDic.Add(value,
+                            updatePriceList.Where(x => x.LiteServicePrice == price && x.EngineType.Equals("Diesel"))
+                                .Select(y => GetVarientName(y.VarientName))
+                                .ToList());
+                        break;
+                    case Utility.EssentialCarCare:
+                        if (updatePriceList.Any(x => x.EssentialServicePrice == price && x.EngineType.Equals("Petrol")))
+
+                            petrolPriceDic.Add(value,
+                            updatePriceList.Where(x => x.EssentialServicePrice == price && x.EngineType.Equals("Petrol"))
+                                .Select(y => GetVarientName(y.VarientName))
+                                .ToList());
+
+                        if (updatePriceList.Any(x => x.EssentialServicePrice == price && x.EngineType.Equals("Diesel")))
+
+                            dieselPriceDic.Add(value,
+                            updatePriceList.Where(x => x.EssentialServicePrice == price && x.EngineType.Equals("Diesel"))
+                                .Select(y => GetVarientName(y.VarientName))
+                                .ToList());
+                        break;
+                    case Utility.ComprehensiveCarCare:
+                        if (updatePriceList.Any(x => x.ComprehensiveServicePrice == price && x.EngineType.Equals("Petrol")))
+
+                            petrolPriceDic.Add(value,
+                            updatePriceList.Where(x => x.ComprehensiveServicePrice == price && x.EngineType.Equals("Petrol"))
+                                .Select(y => GetVarientName(y.VarientName))
+                                .ToList());
+
+                        if (updatePriceList.Any(x => x.ComprehensiveServicePrice == price && x.EngineType.Equals("Diesel")))
+                            dieselPriceDic.Add(value,
+                            updatePriceList.Where(x => x.ComprehensiveServicePrice == price && x.EngineType.Equals("Diesel"))
+                                .Select(y => GetVarientName(y.VarientName))
+                                .ToList());
+                        break;
+                }
+            }
+        }
+
+        public string GetVarientName(string name)
+        {
+            return name.Contains('-') ? name.Split('-')[1] : name;
+        }
+        public List<ServiceDetails> UpdateOrAddPriceDetails(List<ServiceDetails> existingServiceDetails, Dictionary<int, List<string>> priceModelDictionary,string serviceName, bool type)
+        {
+            foreach (var data in priceModelDictionary)
+            {
+                var serviceDetails = GetExistingPriceDetailsFromPrice(existingServiceDetails,serviceName, data.Key, type);
+                if (serviceDetails != null)
+                {
+                    serviceDetails.ModelList.AddRange(data.Value);
+                }
+                else
+                {
+                    AddNewPriceDetails(existingServiceDetails.FirstOrDefault(x => x.Name.Equals(serviceName)), serviceName, data.Value, data.Key, type);
+                }
+            }
+
+            return existingServiceDetails;
+        } 
         #endregion
     }
 }

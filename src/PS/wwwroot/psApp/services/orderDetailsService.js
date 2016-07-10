@@ -183,6 +183,24 @@
 
         return deferred.promise;
     }
+    var saveUpdatedlist = function (updatedList) {
+        var deferred = $q.defer();
+        $http(
+        {
+            url: "/api/ServiceCentre/price/savelist",
+            method: "POST",
+            cache: false,
+            data: updatedList
+        }).then(function(result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function(error) {
+            //Error
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
@@ -194,7 +212,8 @@
         getOrderById: _getOrderById,
         updateSelectedOrder:_updateSelectedOrder,
         getPriceList:_getPriceList,
-        updateRow:updateSingleRow
+        updateRow:updateSingleRow,
+        updateChangedRow:saveUpdatedlist
 
     }
 

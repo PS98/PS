@@ -474,5 +474,30 @@ namespace PS.Controllers
 
             }
         }
+        [HttpPost]
+        [Route("price/savelist")]
+        public JsonResult SaveUpdatedRow([FromBody] List<CarVerientPrice> updatedList)
+        {
+            try
+            {
+                if (updatedList == null || updatedList.Count == 0)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Message = "No row found to update", Status = 1 });
+                }
+
+                _serviceCentreDto.SaveUpdatedRow(updatedList);
+
+
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = "success", Status = 0 });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Json(new { ex.Message, Status = 2 });
+
+            }
+        }
     }
 }

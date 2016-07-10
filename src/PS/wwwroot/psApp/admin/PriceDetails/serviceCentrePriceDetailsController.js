@@ -4,6 +4,13 @@ angular.module("psApp").controller("serviceCentrePriceDetailsController", ["$sco
 
     $scope.getPriceList = function (id) {
         psOrderDetailsService.getPriceList(id).then(function (data) {
+            var updatedRows = $scope.gridApi.rowEdit.getDirtyRows();
+            if (updatedRows.length > 0) {
+                var dataRows = updatedRows.map(function(row) {
+                    return row.entity;
+                });
+                $scope.gridApi.rowEdit.setRowsClean(dataRows);
+            }
             $scope.gridOptions.data = data.list;
             $scope.data = [];
             $scope.data = data.list;
@@ -108,7 +115,22 @@ angular.module("psApp").controller("serviceCentrePriceDetailsController", ["$sco
     }
     $scope.updateAll = function () {
         var updatedRows = $scope.gridApi.rowEdit.getDirtyRows();
-        alert(updatedRows.length);
+        $scope.UpdatedData = updatedRows.map(function(row) {
+            return row.entity;
+        });
+        if ($scope.UpdatedData && $scope.UpdatedData.length > 0) {
+            psOrderDetailsService.updateChangedRow($scope.UpdatedData).then(function (data) {
+                if (data.status === 0) {
+                    $scope.gridOptions.data = data.list;
+                    $scope.successMessage = data.message;
+                    $scope.gridApi.rowEdit.setRowsClean($scope.UpdatedData);
+                } else
+                    $scope.errorMessage = data.message;
+            }, function() {
+
+            });
+        }
+        $scope.errorMessage = "No Row is updated";
     }
     $scope.cancelAll = function () {
         var updatedRows = $scope.gridApi.rowEdit.getDirtyRows();
