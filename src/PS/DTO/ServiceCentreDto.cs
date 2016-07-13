@@ -674,21 +674,32 @@ namespace PS.DTO
                 var petrolPriceDic = new Dictionary<int, List<string>>();
                 var dieselPriceDic = new Dictionary<int, List<string>>();
                 IEnumerable<string> uniqePriceList;
+                IEnumerable<string> petrolModelWithoutPrice;
+                IEnumerable<string> dieselModelWithoutPrice;
                 switch (service)
                 {
                     case Utility.LiteCarCare:
                         uniqePriceList = updatePriceList.Select(x => x.LiteServicePrice).Distinct();
+                        petrolModelWithoutPrice = updatePriceList.Where(x => string.IsNullOrEmpty(x.LiteServicePrice) && x.EngineType.Equals("Petrol")).Select(y => y.VarientName);
+                        dieselModelWithoutPrice = updatePriceList.Where(x => string.IsNullOrEmpty(x.LiteServicePrice) && x.EngineType.Equals("Diesel")).Select(y => y.VarientName);
                         break;
                     case Utility.ComprehensiveCarCare:
                         uniqePriceList = updatePriceList.Select(x => x.ComprehensiveServicePrice).Distinct();
+                        petrolModelWithoutPrice = updatePriceList.Where(x => string.IsNullOrEmpty(x.ComprehensiveServicePrice) && x.EngineType.Equals("Petrol")).Select(y => y.VarientName);
+                        dieselModelWithoutPrice = updatePriceList.Where(x => string.IsNullOrEmpty(x.ComprehensiveServicePrice) && x.EngineType.Equals("Diesel")).Select(y => y.VarientName);
                         break;
                     default:
                         uniqePriceList = updatePriceList.Select(x => x.EssentialServicePrice).Distinct();
+                        petrolModelWithoutPrice = updatePriceList.Where(x => string.IsNullOrEmpty(x.EssentialServicePrice) && x.EngineType.Equals("Petrol")).Select(y => y.VarientName);
+                        dieselModelWithoutPrice = updatePriceList.Where(x => string.IsNullOrEmpty(x.EssentialServicePrice) && x.EngineType.Equals("Diesel")).Select(y => y.VarientName);
                         break;
                 }
                 GetPriceModelDictionary(uniqePriceList, service, updatePriceList, petrolPriceDic, dieselPriceDic);
+                RemoveModelWithoutPrice(serviceCentre.ServiceDetails.Where(x => x.Name.Equals(service)).ToList(), service, petrolModelWithoutPrice, true);
+                RemoveModelWithoutPrice(serviceCentre.ServiceDetails.Where(x => x.Name.Equals(service)).ToList(), service, dieselModelWithoutPrice, false);
                 UpdateOrAddPriceDetails(serviceCentre.ServiceDetails, petrolPriceDic, service, true);
                 UpdateOrAddPriceDetails(serviceCentre.ServiceDetails, dieselPriceDic, service, false);
+
 
             }
         }
@@ -769,7 +780,15 @@ namespace PS.DTO
             }
 
             return existingServiceDetails;
-        } 
+        }
+
+        public void RemoveModelWithoutPrice(List<ServiceDetails> details, string serviceName, IEnumerable<string> modelList, bool type)
+        {
+            foreach (var model in modelList)
+            {
+                RemoveModelFromModelList(details, serviceName, GetVarientName(model), type);
+            }
+        }
         #endregion
     }
 }
