@@ -36,6 +36,7 @@ namespace PS.DTO
         {
             try
             {
+                CheckOrCreateIndex();
                 var collection = _repo.GetCollection<ServiceCentreGeo>(selectedService.City);
                 double.TryParse(selectedService.Latitude, out _lat);
                 selectedService.Name = GetMappedServiceName(selectedService.Name);
