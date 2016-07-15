@@ -39,7 +39,7 @@ function ($scope, $localStorage, $timeout,$location, psDataServices, psLoginServ
              //Error
              $scope.cngError = true;
              $scope.cngSuccess = false;
-             $scope.errorMessage = result.result;
+             $scope.errorMessage = error;
          }).finally(function () {
              $scope.isEdit = false;
              $localStorage.userDetails = $scope.userData;
@@ -75,7 +75,7 @@ function ($scope, $localStorage, $timeout,$location, psDataServices, psLoginServ
                  //Error
                  $scope.cngError = true;
                  $scope.cngSuccess = false;
-                 $scope.errorMessage = result.result;
+                 $scope.errorMessage = error;
              }).finally(function () {
                  $scope.resetAfterSubmit();
                  $timeout(function () {

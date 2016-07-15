@@ -1,21 +1,17 @@
 ﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location","$window", "$rootScope","$timeout","psLoginService","psDataServices", "$state", '$cookies','$cookieStore',
 function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLoginService, psDataServices, $state, $cookies, $cookieStore) {
     $scope.isBusy = true;
-  //  $scope.isLoggedIn = false;
+    //  $scope.isLoggedIn = false;
     $scope.loginError = false;
     $scope.regError = false;
     $scope.regSuccess = false;
     $scope.again = false;
 
-    var authToken = $cookieStore.get("XSRF-TOKEN");
-    if (!authToken) {
-        $cookieStore.put("XSRF-TOKEN", $localStorage.token);
-    }
     $scope.TCRedirection = function (url, name) {
         $window.open(url, name);
     }
 
-    $scope.loginSubmit = function () {     
+    $scope.loginSubmit = function () {
         psLoginService.login($scope.Email, $scope.Password)
             .then(function (result) {
                 //Success
@@ -28,8 +24,7 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
                 }
                 else if (result.status == 0) {
                     $scope.resetAfterSubmit();
-                    $cookieStore.put("XSRF-TOKEN", result.access_Token);
-                    $localStorage.token = result.access_Token;
+                    window.localStorage.token = result.access_Token;
                     $scope.userDetails.firstName = result.result[1];
                     $scope.userDetails.lastName = result.result[2];
                     $scope.userDetails.userName = $scope.userDetails.firstName + " " + $scope.userDetails.lastName;
@@ -87,23 +82,21 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
                             $scope.userDetails.email = result.result[1];
                             $scope.userDetails.phoneNo = result.result[4];
                             $scope.userDetails.customerType = "M";
-                    $scope.isLoggedIn = true;
-                    $scope.loginError = false;
-                    psDataServices.setuserDetails($scope.userDetails);
-                    psLoginService.setUserAuthenticated(true);
-                    $rootScope.$broadcast("ps-user-profile-show",
-                       {
-                           isLoggedIn: $scope.isLoggedIn,
-                           userDetails: $scope.userDetails
-                       });
-                    $("#loginModal").modal('toggle');
-
-
-                           
+                            $scope.isLoggedIn = true;
+                            $scope.loginError = false;
+                            psDataServices.setuserDetails($scope.userDetails);
+                            psLoginService.setUserAuthenticated(true);
+                            $rootScope.$broadcast("ps-user-profile-show",
+                               {
+                                   isLoggedIn: $scope.isLoggedIn,
+                                   userDetails: $scope.userDetails
+                               });
+                            $("#loginModal").modal('toggle');
                             $scope.regSuccess = true;
                             $scope.regError = false;
                             $scope.successMessage = result.message;
-                        } else if(result.status == 1 || result.status == 2) {
+                            window.localStorage.token = result.result[5];
+                        } else if (result.status == 1 || result.status == 2) {
                             $scope.regError = true;
                             $scope.regSuccess = false;
                             $scope.again = false;
@@ -250,7 +243,7 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
         $scope.regForm.rcnfpassword.$dirty = false;
     }
 
-    $scope.socialSubmit = function (name) {         
+    $scope.socialSubmit = function (name) {
         var fbHeight = /facebook/ig.test(name) ? 340 : 520;
         fbHeight = /paypal/ig.test(name) ? 550 : fbHeight;
         var w = /paypal/ig.test(name) ? 400 : 680;
@@ -267,7 +260,7 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
                }).finally(function () {
                    $scope.isBusy = false;
                });
-        } 
+        }
     }
     $scope.openwindow = function(url, name, iWidth, iHeight) {
         var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
@@ -290,31 +283,31 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
          .then(function (result) {
              // window.close();
              $scope.userDetails = {};
-                $scope.userDetails.firstName = result.result.firstName;
-                $scope.userDetails.lastName = result.result.lastName;
-                $scope.userDetails.imageUrl = result.result.link;
-                $scope.userDetails.email = result.result.email;
-                $scope.userDetails.customerType = result.result.customerType;
-                $scope.userDetails.carDetails = result.result.carDetails;
-                $scope.userDetails.phoneNo = result.result.mobile;
-                $scope.userDetails.userName = result.result.name;
-                $rootScope.$broadcast("ps-user-profile-show",
-                         {
-                             isLoggedIn: $scope.isLoggedIn,
-                             userDetails: $scope.userDetails
-                         });
-                psDataServices.setuserDetails($scope.userDetails);
-                psLoginService.setUserAuthenticated(true);
-                if (opener) {
-                    opener.location.reload();
-                } else if ($window || $window.opener) {
-                    $window.opener.location.reload();
-                }
-                $window.close();
+             $scope.userDetails.firstName = result.result.firstName;
+             $scope.userDetails.lastName = result.result.lastName;
+             $scope.userDetails.imageUrl = result.result.link;
+             $scope.userDetails.email = result.result.email;
+             $scope.userDetails.customerType = result.result.customerType;
+             $scope.userDetails.carDetails = result.result.carDetails;
+             $scope.userDetails.phoneNo = result.result.mobile;
+             $scope.userDetails.userName = result.result.name;
+             $rootScope.$broadcast("ps-user-profile-show",
+                      {
+                          isLoggedIn: $scope.isLoggedIn,
+                          userDetails: $scope.userDetails
+                      });
+             psDataServices.setuserDetails($scope.userDetails);
+             psLoginService.setUserAuthenticated(true);
+             if (opener) {
+                 opener.location.reload();
+             } else if ($window || $window.opener) {
+                 $window.opener.location.reload();
+             }
+             $window.close();
 
-            }, function (error) {
-                //Error
-                psLoginService.setUserAuthenticated(false);
+         }, function (error) {
+             //Error
+             psLoginService.setUserAuthenticated(false);
          }).finally(function () {
              $scope.isBusy = false;
          });
@@ -322,8 +315,8 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
 
 
 
-    
-    
 
-   
+
+
+
 }]);

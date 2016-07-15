@@ -9,11 +9,13 @@ using Microsoft.Extensions.PlatformAbstractions;
 using PS.DTO;
 using PS.Helper;
 using PS.Helper.Email;
+using PS.Filters;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace PS.Controllers
 {
+    [MmAuthorize]
     [Route("api/[controller]")]
     public class OrderDetailsController : Controller
     {
