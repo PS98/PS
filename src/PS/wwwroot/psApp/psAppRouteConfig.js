@@ -24,64 +24,35 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                  config: {
                      url: "/",
                      controller: "indexController",
-                     template: "<ps-index></ps-index>"
+                     templateUrl: "/views/Home/home.html",
                  }
              },
                {
                    state: "Contact",
                    config: {
                        url: "/Contact",
-                       template: "<ps-contact-us></ps-contact-us>"
+                       templateUrl: "/views/ConnectWithUs/connectWithUs.html"
                    }
                },
                 {
                     state: "About",
                     config: {
                         url: "/About",
-                        template: "<ps-about-us></ps-about-us>"
+                        templateUrl: "/views/WhyChooseUs/whyChooseUs.html"
                     }
                 },
                 {
                     state: "Pricing",
                     config: {
                         url: "/Pricing",
-                        template: "<ps-pricing></ps-pricing>"
-                    }
-                },
-                {
-                    state: "Dashboard",
-                    config: {
-                        url: "/Dashboard",
-                        requireLogin: true,
-                        template: "<ps-dashboard></ps-dashboard>"
-                    }
-                },
-                {
-                    state: "Terms",
-                    config: {
-                        url: "/Terms",
-                        template: "<ps-terms></ps-terms>"
-                    }
-                },
-                {
-                    state: "PrivacyPolicy",
-                    config: {
-                        url: "/PrivacyPolicy",
-                        template: "<ps-privacy-policy></ps-privacy-policy>"
-                    }
-                },
-                {
-                    state: "/OrderProcessingTerms",
-                    config: {
-                        url: "/OrderProcessingTerms",
-                        template: "<ps-order-processing></ps-order-processing>"
+                        templateUrl: "/views/Pricing/pricing.html"
                     }
                 },
                {
                    state: "service",
                    config: {
                        url: "/Service",
-                       template: "<car-service></car-service>"
+                       templateUrl: "/views/BookNow/bookNow.html"
                    }
                },
                {
@@ -115,6 +86,35 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                        template: "<select-address></select-address>"
                    }
                },
+                {
+                    state: "Dashboard",
+                    config: {
+                        url: "/Dashboard",
+                        requireLogin: true,
+                        template: "<ps-dashboard></ps-dashboard>"
+                    }
+                },
+                {
+                    state: "Terms",
+                    config: {
+                        url: "/Terms",
+                        template: "<ps-terms></ps-terms>"
+                    }
+                },
+                {
+                    state: "PrivacyPolicy",
+                    config: {
+                        url: "/PrivacyPolicy",
+                        template: "<ps-privacy-policy></ps-privacy-policy>"
+                    }
+                },
+                {
+                    state: "/OrderProcessingTerms",
+                    config: {
+                        url: "/OrderProcessingTerms",
+                        template: "<ps-order-processing></ps-order-processing>"
+                    }
+                },
                {
                    state: "orderSuccess",
                    config: {
@@ -188,4 +188,10 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                 event.preventDefault();
             }
         });
+    //$rootScope.$on("$viewContentLoaded", function() {
+    //    $rootScope.isViewLoaded = true;
+    //});
+    //    $rootScope.$on('$viewContentLoading', function () {
+    //        $rootScope.isViewLoaded = false;
+    //    });
     }]);
