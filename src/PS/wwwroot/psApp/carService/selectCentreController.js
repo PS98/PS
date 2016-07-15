@@ -222,8 +222,12 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
 
         if (openingTime)
             openingTime = openingTime.split(":");
-        if (closingTime)
+        if (closingTime) {
             closingTime = closingTime.split(":");
+            if (closingTime[0] === "0") {
+                d2.setDate(today.getDate() + 1);
+            }
+        }
 
         d1.setHours(openingTime[0], openingTime[1], 0);
         d2.setHours(closingTime[0], closingTime[1], 0);
@@ -231,7 +235,6 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         $scope.opneNow = d2.getTime() > today.getTime() && today.getTime() > d1.getTime();
     }
     function amPmToHours(time) {
-        console.log(time);
         if (time) {
             var hours = Number(time.match(/^(\d+)/)[1]);
             var minutes = Number(time.match(/:(\d+)/)[1]);
