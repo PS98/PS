@@ -18,6 +18,8 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.PlatformAbstractions;
 using PS.Helper;
 using PS.Helper.Email;
+using PS.Filters;
+using PS.DTO;
 
 namespace PS.Controllers
 {
@@ -67,15 +69,18 @@ namespace PS.Controllers
                             Response.StatusCode = (int)HttpStatusCode.OK;
                             return Json(new { Message = "You Entered Incorrect Password.", Status = 1 });
                         }
-                        var accessToken = RandomStringAndNumber(256);
-                        if (!string.IsNullOrEmpty(accessToken))
+                        string Database = "UserSessionDetails";
+                        MongoRepository _repo = new MongoRepository(Database);
+                        var data = _repo.GetDocumentList<UserSession>("TokenDetails");
+                        var accessToken = data.Where(r => r.UserId == model.Email).FirstOrDefault();
+                        if (accessToken != null && !string.IsNullOrEmpty(accessToken.Token))
                         {
-                            _session.SetString(key, accessToken);
-                            res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
+                            _session.SetString(key, accessToken.Token);
+                            //res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
                         }
 
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Result = result, Status = 0, Access_Token = accessToken });
+                        return Json(new { Result = result, Status = 0, Access_Token = accessToken.Token });
                     }
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "Email address Not Registered.", Status = 1 });
@@ -105,16 +110,20 @@ namespace PS.Controllers
                     {
                         model.Created = DateTime.UtcNow;
                     }
-                    var result = _auth.register(model);                    
+                    var result = _auth.register(model);
                     if (result[0] == "0")
                     {
                         var accessToken = RandomStringAndNumber(256);
                         if (!string.IsNullOrEmpty(accessToken))
                         {
+                            string Database = "UserSessionDetails";
+                            MongoRepository _repo = new MongoRepository(Database);
+                            _repo.InsertDocument(Database, "TokenDetails", new UserSession() { UserId = model.Email, Token = accessToken });
                             _session.SetString(key, accessToken);
-                            res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
-                            SmsSender.RegistrationSuccessfull(model.Mobile,model.FirstName);
-                            _emailSender.RegistrationSuccess(model.Email,model.FirstName);
+                            //res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
+                            SmsSender.RegistrationSuccessfull(model.Mobile, model.FirstName);
+                            _emailSender.RegistrationSuccess(model.Email, model.FirstName);
+                            result.Add(accessToken);
                         }
                         Response.StatusCode = (int)HttpStatusCode.Created;
                         return Json(new { Message = "User registered Successfully.", Result = result, Status = 0 });
@@ -129,7 +138,7 @@ namespace PS.Controllers
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "Error while processing your request. Please try again later.", Status = 2 });
                     }
-                    
+
                 }
             }
             catch (Exception ex)
@@ -199,7 +208,7 @@ namespace PS.Controllers
                     if (pass != null)
                     {
                         //var callbackUrl = Url.Action("ForgotPassword", "Auth", new { userId = model.Email, code = pass }, protocol: HttpContext.Request.Scheme);
-                        _emailSender.SendEmail(model.Email, "Reset Password", 
+                        _emailSender.SendEmail(model.Email, "Reset Password",
                            "Your New Password is: " + pass);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "Password has been sent to registered email address.", Status = 0 });
@@ -251,7 +260,7 @@ namespace PS.Controllers
             return Json(new { Message = "We are unable to process your request.", Status = 2 });
         }
 
-
+        [MmAuthorize]
         [HttpPost]
         public JsonResult UpdateProfile(UpdateUserProfileViewModel changeModel)
         {
@@ -259,13 +268,6 @@ namespace PS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Microsoft.Extensions.Primitives.StringValues clientToken;
-                    HttpContext.Request.Headers.TryGetValue("X-XSRF-TOKEN", out clientToken);
-                    var clientAuthToken = JsonConvert.DeserializeObject(clientToken);
-                    bool found = _cache.TryGetValue(key, out res);
-                    if (clientAuthToken.ToString() == res.ToString())
-                    //if (clientAuthToken.ToString() == _session.GetString("XSRF-TOKEN"))
-                    {
                     var result = _auth.updateProfile(changeModel);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     if (result.Equals("S"))
@@ -275,12 +277,8 @@ namespace PS.Controllers
                     else
                     {
                         return Json(new { Result = "Could not update Details", Status = 2 });
-                        }
                     }
-                    else
-                    {
-                        return Json(new { Result = "You are not Authorized to perform this Operation.", Status = 4 });
-                    }
+
                 }
                 else
                 {
@@ -310,26 +308,26 @@ namespace PS.Controllers
                     if (result.Equals("S"))
                     {
                         return Json(new { Result = "Your password updated successfully", Status = 1 });
-                        }
+                    }
                     else
                     {
                         return Json(new { Result = "Old password doesn't match", Status = 2 });
 
-                        }
+                    }
 
                 }
                 else
                 {
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Result = "Please fill All Required Details", Status = 3 });
-                } 
+                }
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(new { Message = ex.Message });
             }
-          
+
         }
         private static string RandomString(int length)
         {
@@ -387,8 +385,8 @@ namespace PS.Controllers
             {
                 var token = _context.RequestToken(code);
                 var result = _context.RequestProfile(token);
-               //var strResult = _context.Client.ProfileJsonString;
-               
+                //var strResult = _context.Client.ProfileJsonString;
+
 
                 var operation = _auth.SocialLogin(result);
 
@@ -408,7 +406,7 @@ namespace PS.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile + 
+                    var message = model.FirstName + " " + model.LastName + "<br />Contact Number: " + model.Mobile +
                         "provided feedback regarding MileMates services.<br /><br />" + model.Message;
                     _emailSender.SendEmail("care@milemates.com", model.Subject, message);
                     Response.StatusCode = (int)HttpStatusCode.OK;

@@ -1,13 +1,15 @@
 ﻿/// <reference path="admin/addcentredetails/addcentredetails.html" />
 "use strict";
 
-angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider", 
+angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider",
     function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-        $httpProvider.defaults.cache = false;
+        $httpProvider.defaults.cache = false;   
         if (!$httpProvider.defaults.headers.get) {
             $httpProvider.defaults.headers.get = {};
         }
         $httpProvider.interceptors.push("LoadingInterceptor");
+        $httpProvider.defaults.headers.get["X-XSRF-TOKEN"] = window.localStorage.token;
+        $httpProvider.defaults.headers.post["X-XSRF-TOKEN"] = window.localStorage.token;
         $httpProvider.defaults.headers.get["Cache-Control"] = "no-cache";
         $httpProvider.defaults.headers.get["Pragma"] = "no-cache";
         $httpProvider.defaults.headers.get["If-Modified-Since"] = "0";

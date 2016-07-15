@@ -12,6 +12,7 @@ using Microsoft.Extensions.PlatformAbstractions;
 using Newtonsoft.Json;
 using PS.Helper;
 using PS.Helper.Email;
+using PS.Filters;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -72,6 +73,7 @@ namespace PS.Controllers
             return serviceList;
         }
 
+        [MmAuthorize]
         [HttpPost]
         [Route("validateOrder")]
         public JsonResult Post([FromBody] PaymentValidateModel model)
@@ -95,6 +97,7 @@ namespace PS.Controllers
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
         }
 
+        [MmAuthorize]
         [HttpPost]
         [Route("order")]
         public JsonResult Post([FromBody] OrderDetails model)

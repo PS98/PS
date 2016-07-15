@@ -9,11 +9,13 @@ using PS.Services;
 using System.Net;
 using System.Device.Location;
 using PS.DTO;
+using PS.Filters;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace PS.Controllers
 {
+    [MmAuthorize]
     [Route("api/[controller]")]
     public class ServiceCentreController : Controller
     {
@@ -426,7 +428,7 @@ namespace PS.Controllers
 
             }
         }
-
+        
         [HttpGet]
         [Route("priceList")]
         public JsonResult GetPriceDetails(string id)
