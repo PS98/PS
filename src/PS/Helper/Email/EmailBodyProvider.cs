@@ -22,7 +22,7 @@ namespace PS.Helper.Email
 
         public string GenerateEmailBody(string emailType, Dictionary<string, string> values)
         {
-            var templetPath = _appEnvironment.ApplicationBasePath + @"\\Views\\EmailTemplate\\" +emailType+".html";
+            var templetPath = _appEnvironment.ApplicationBasePath + @"\\Views\\EmailTemplate\\User\\" +emailType+".html";
             var message = GetEmailBody(templetPath);
             var emailBody = CreateEmailBody(values, message);
             return emailBody;
