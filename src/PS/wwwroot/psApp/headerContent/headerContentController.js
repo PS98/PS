@@ -21,9 +21,18 @@ function ($scope, $localStorage, $location, $rootScope, $state, psLoginService) 
     $scope.logout = function () {
         $scope.isLoggedIn = false;
         psLoginService.setUserAuthenticated(false);
-        $localStorage.userDetails = undefined;
+        delete  $localStorage.userDetails;
         //$state.reload();
+        delete window.localStorage.token;
         $state.go("home");
     }
 
+    $rootScope.$on("authenticationError", function () {
+        $scope.showInformation = true;
+        $scope.authenticationError = "Your session is timed out. Please login again to proceed";
+        $("#sessionError").modal('toggle');
+        $("#sessionError").on("hidden.bs.modal", function() {
+            $scope.logout();
+        });
+    })
 }]);

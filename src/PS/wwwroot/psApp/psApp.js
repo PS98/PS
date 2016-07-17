@@ -46,6 +46,7 @@ function ($q, $rootScope, $log, $timeout) {
 
     return {
         request: function (config) {
+            config.headers["X-XSRF-TOKEN"] = window.localStorage.token;
             xhrCreations++;
             $timeout(function () {
                 updateStatus();
@@ -65,6 +66,9 @@ function ($q, $rootScope, $log, $timeout) {
             $timeout(function () {
                 updateStatus();
             }, 1000);
+            if (response.status === 203) {
+                $rootScope.$emit("authenticationError");
+            }
             return response;
         },
         responseError: function (rejection) {

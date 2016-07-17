@@ -16,33 +16,36 @@ namespace PS.Services
 {
     public class MongoRepository : IMongoRepository
     {
-        protected static IMongoClient _client;
-        protected static IMongoDatabase _database;
-        private const string conString = "mongodb://localhost:27017";
+        public IMongoDatabase Database { get; private set; }
+        private const string ConString = "mongodb://localhost:27017";
+
+        public IMongoClient Client { get; set; }
 
         public MongoRepository(string database)
         {
-            _client = new MongoClient(conString);
-            _database = _client.GetDatabase(database);
+            Client = new MongoClient(ConString);
+            Database = Client.GetDatabase(database);
         }
+
+
 
         public IMongoCollection<T> GetCollection<T>(string collectionName)
         {
-            var collection = _database.GetCollection<T>(collectionName);
+            var collection = Database.GetCollection<T>(collectionName);
             return collection;
         }
 
 
         public List<T> GetDocumentList<T>(string collectionName)
         {
-            var collection = _database.GetCollection<T>(collectionName);
+            var collection = Database.GetCollection<T>(collectionName);
             var documentList = collection.Find(new BsonDocument()).ToListAsync().Result;
             return documentList;
         }
 
         public List<string> GetAllCollectionName()
         {
-            var list = _database.ListCollectionsAsync().Result.ToListAsync().Result;
+            var list = Database.ListCollectionsAsync().Result.ToListAsync().Result;
             var bson = (BsonExtensionMethods.ToJson(list));
             var bsonDictionary = JsonConvert.DeserializeObject<List<Dictionary<string, dynamic>>>(bson);
 
@@ -100,8 +103,8 @@ namespace PS.Services
         public async void InsertDocument<T>(string databaseName, string collectionName, T data)
         {
 
-            _database = _client.GetDatabase(databaseName);
-            var collection = _database.GetCollection<T>(collectionName);
+            Database = Client.GetDatabase(databaseName);
+            var collection = Database.GetCollection<T>(collectionName);
             await collection.InsertOneAsync(data);
         }
 
@@ -178,7 +181,7 @@ namespace PS.Services
             }
             else
                 filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email && (x.Status == status));
-            var collection = _database.GetCollection<OrderDetails>("Invoice");
+            var collection = Database.GetCollection<OrderDetails>("Invoice");
             var documentList = collection.Find(filter).ToListAsync().Result;
             return documentList;
         }
@@ -187,7 +190,7 @@ namespace PS.Services
             try
             {
                 var filter = Builders<OrderDetails>.Filter.Where(x => x.UserDetails.Email == email);
-                var collection = _database.GetCollection<OrderDetails>("Invoice");
+                var collection = Database.GetCollection<OrderDetails>("Invoice");
                 var orderList = collection.Find(filter).ToListAsync().Result;
 
                 var orders = new List<List<OrderDetails>>
@@ -205,7 +208,7 @@ namespace PS.Services
         }
         public List<List<OrderDetails> >CancelSelectedOrder(string invoiceNo, string email, bool listOrder)
         {
-            var collection = _database.GetCollection<OrderDetails>("Invoice");
+            var collection = Database.GetCollection<OrderDetails>("Invoice");
 
             var filterDic = new Dictionary<string, string> {{"InvoiceNo", invoiceNo}};
 
@@ -231,7 +234,7 @@ namespace PS.Services
 
         public void ChangeAppointmentDate(string invoiceNo, Appointment newAppointment)
         {
-            var collection = _database.GetCollection<OrderDetails>("Invoice");
+            var collection = Database.GetCollection<OrderDetails>("Invoice");
             var filter = Builders<OrderDetails>.Filter.Eq("InvoiceNo", invoiceNo);
             var update = Builders<OrderDetails>.Update.Set("selectedAppointment", newAppointment);
             collection.UpdateOneAsync(filter, update);
@@ -240,7 +243,7 @@ namespace PS.Services
 
         public List<T> GetFilterList<T>(FilterDefinition<T> filterDefinition, string collectionName)
         {
-            var collection = _database.GetCollection<T>(collectionName);
+            var collection = Database.GetCollection<T>(collectionName);
             var documentList = collection.Find(filterDefinition).ToListAsync().Result;
             return documentList;
         }

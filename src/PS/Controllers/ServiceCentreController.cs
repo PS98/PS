@@ -20,7 +20,7 @@ namespace PS.Controllers
     public class ServiceCentreController : Controller
     {
 
-        private readonly MongoRepository _repo = new MongoRepository("Test");
+        private readonly MongoRepository _repo = new MongoRepository("serviceCentre");
         private const string Database = "serviceCentre";
         public readonly string CollectionName = "Pune";
 

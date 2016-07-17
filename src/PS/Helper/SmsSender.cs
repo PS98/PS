@@ -40,6 +40,8 @@ namespace PS.Helper
                 var values = new Dictionary<string, string> { { SmsDynamicText.UserName, name } };
                 var messge = _smsProviderHelper.GenerateSmsMessages(SmsType.RegistrationCompleted, values);
                 _smsSender.SendSmsAsync(mobileNo, messge);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, messge);
             }
             catch (Exception)
             {

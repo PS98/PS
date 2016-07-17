@@ -298,6 +298,7 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
                       });
              psDataServices.setuserDetails($scope.userDetails);
              psLoginService.setUserAuthenticated(true);
+             window.localStorage.token = result.accessToken;
              if (opener) {
                  opener.location.reload();
              } else if ($window || $window.opener) {
@@ -308,7 +309,8 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
          }, function (error) {
              //Error
              psLoginService.setUserAuthenticated(false);
-         }).finally(function () {
+                delete window.localStorage.token;
+            }).finally(function () {
              $scope.isBusy = false;
          });
     }

