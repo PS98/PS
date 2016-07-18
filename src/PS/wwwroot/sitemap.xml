@@ -7,8 +7,32 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
   <loc>https://www.milemates.com/</loc>
-  <lastmod>2016-05-31</lastmod>
+  <lastmod>2016-07-18</lastmod>
   <changefreq>monthly</changefreq>
   <priority>1.0</priority>
+</url>
+<url>
+  <loc>https://www.milemates.com/Service</loc>
+  <lastmod>2016-07-18</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://www.milemates.com/About</loc>
+  <lastmod>2016-07-18</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.4</priority>
+</url>
+<url>
+  <loc>https://www.milemates.com/Contact</loc>
+  <lastmod>2016-07-18</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
+</url>
+<url>
+  <loc>https://www.milemates.com/Pricing</loc>
+  <lastmod>2016-07-18</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.6</priority>
 </url>
 </urlset>
