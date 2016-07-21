@@ -5,13 +5,9 @@ using Microsoft.Extensions.OptionsModel;
 using Newtonsoft.Json;
 using PS.Services;
 using PS.Models;
-using RestSharp.Extensions.MonoHttp;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Http.Features;
 using Microsoft.Extensions.Caching.Memory;
@@ -20,6 +16,7 @@ using PS.Helper;
 using PS.Helper.Email;
 using PS.Filters;
 using PS.DTO;
+using System.Collections.Generic;
 
 namespace PS.Controllers
 {
@@ -51,8 +48,47 @@ namespace PS.Controllers
             sender = new SmsSender(_smsSender, new SmsProviderHelper(valueOptions));
             _httpContextAccessor = httpContextAccessor;
             _appEnvironment = appEnvironment;
-            _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor,appEnvironment));
+            _emailSender = new EmailSender(emailSender, new EmailBodyProvider(optionsAccessor, appEnvironment));
             _authenticationDomainManager = new AuthenticationDomainManager();
+        }
+
+        /// <summary>
+        /// status = 0 - Super Admin
+        /// Status = 1 - Admin
+        /// Status = 2 - No session Available
+        /// Status = 3 - Not authorize
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public JsonResult CheckAdminAccess()
+        {
+            var data = _session.GetString("UserData");
+            if (data == null)
+            {
+                return Json(new { Message = "Please Login", Status = 2 });
+            }
+            else
+            {
+                var sessionData = JsonConvert.DeserializeObject<List<string>>(data);
+                if (Convert.ToBoolean(sessionData[4]) == true)
+                {
+                    if (sessionData[5] == "0")
+                        return Json(new { Message = "Super Admin", Status = 0 });
+                    else
+                        return Json(new { Message = "Success", Status = 1 });
+                }
+                else
+                {
+                    return Json(new { Message = "Invalid User", Status = 3 });
+                }
+            }
+        }
+
+        [HttpGet]
+        public JsonResult killSession()
+        {
+            HttpContext.Session.Clear();
+            return Json("Success");
         }
 
         // POST api/auth/login
@@ -68,14 +104,16 @@ namespace PS.Controllers
                     {
                         if (string.IsNullOrEmpty(result[1]))
                         {
-                            Response.StatusCode = (int) HttpStatusCode.OK;
-                            return Json(new {Message = "You Entered Incorrect Password.", Status = 1});
+                            Response.StatusCode = (int)HttpStatusCode.OK;
+                            return Json(new { Message = "You Entered Incorrect Password.", Status = 1 });
                         }
                         var accessToken = _authenticationDomainManager.GetOrGenerateAuthToken(model.Email);
 
                         _session.SetString(key, accessToken);
-                        Response.StatusCode = (int) HttpStatusCode.OK;
-                        return Json(new {Result = result, Status = 0, Access_Token = accessToken});
+                        _session.SetString("UserData", JsonConvert.SerializeObject(result));
+                        result.RemoveRange(4, 2);
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Result = result, Status = 0, Access_Token = accessToken });
                     }
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "Email address Not Registered.", Status = 1 });
@@ -231,7 +269,7 @@ namespace PS.Controllers
                     var pass = RandomString(4);
                     if (pass != null)
                     {
-                        SmsSender.SendOtpSms(model.MobileNumber,pass);
+                        SmsSender.SendOtpSms(model.MobileNumber, pass);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Result = pass, Message = "OTP generated successfully.", Status = 0 });
                     }
@@ -328,7 +366,7 @@ namespace PS.Controllers
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-      #region Social Login
+        #region Social Login
         public ActionResult SocialLogin(string id = "", string bindpage = "")
         {
             string url = "";
@@ -377,7 +415,7 @@ namespace PS.Controllers
                 _emailSender.RegistrationSuccess(operation.Email, operation.FirstName);
                 //  _session.SetString(key,accessToken);
                 Response.StatusCode = (int)HttpStatusCode.OK;
-                return Json(new { Result = operation,accessToken });
+                return Json(new { Result = operation, accessToken });
             }
             catch (Exception ex)
             {

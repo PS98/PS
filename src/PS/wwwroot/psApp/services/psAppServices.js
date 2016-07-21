@@ -77,6 +77,11 @@
     var _getServiceCentreArea = function (city) {
         return $http.get("/api/ServiceCentre/" + city);
     }
+
+    var _checkAccess = function () {
+        return $http.get("/api/Auth/CheckAdminAccess/");
+    }
+
     var _getServiceCentreList = function (city, area) {
         var serviceList = serviceNameList;
         var data = { 'City': city, 'Area': area, 'Name': serviceList, 'Model': selectedCar.model, 'Type': selectedCar.varient, "Latitude": userServiceData.userAddress.lat, "Longitude": userServiceData.userAddress.lng }
@@ -155,7 +160,8 @@
         saveCentreDetails: _saveCentreDetails,
         setPickUpDetails: _setPickUpDetails,
         getPickUpDetails: _getPickUpDetails,
-        resetAll: _resetAll
+        resetAll: _resetAll,
+        checkAccess: _checkAccess
 }
           
     

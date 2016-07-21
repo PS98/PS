@@ -48,6 +48,16 @@ namespace PS.Services
                                 res.Add(m.FirstName);
                                 res.Add(m.LastName);
                                 res.Add(m.Mobile);
+                                res.Add(m.IsAdmin.ToString());
+                                res.Add(m.CentreId);
+                                if(m.IsAdmin && m.CentreId == "0")
+                                {
+                                    res.Add("0");
+                                }
+                                else if(m.IsAdmin)
+                                {
+                                    res.Add("1");
+                                }
                                 return res;
                             }
                             else

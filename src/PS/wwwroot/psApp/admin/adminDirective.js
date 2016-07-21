@@ -71,7 +71,8 @@ angular.module("psApp").directive("admin", function () {
                 scope.centreDetails.Area = centreCityArea.area;
             }
         },
-        controller: ["$scope","$state", "psDataServices", "psOrderDetailsService", function($scope, $state, psDataServices, psOrderDetailsService) {
+        controller: ["$scope", "$state", "psDataServices", "psOrderDetailsService", "psLoginService","$rootScope",
+        function ($scope, $state, psDataServices, psOrderDetailsService, psLoginService,$rootScope) {
             $scope.carList = {};
             $scope.centreDetails = {};
             $scope.showBrandName = true;
@@ -176,6 +177,31 @@ angular.module("psApp").directive("admin", function () {
             $scope.editBrand = function() {
                 $scope.showBrandName = !$scope.showBrandName;
                 $scope.showModel = !$scope.showModel;
+            }
+            $rootScope.$on("updateStatus", function (event,data) {
+                $scope.status = parseInt(data.status);
+            });
+
+            $scope.checkAccess = function () {
+                psDataServices.checkAccess().
+                success(function (data) {
+                    if (data.status == 2) {
+                        $("#loginModal").modal("toggle");
+                        $scope.$parent.isLoggedIn = false;
+                        psLoginService.setUserAuthenticated(false);
+                        delete window.localStorage.userDetails;
+                        //$state.reload();
+                        delete window.localStorage.token;
+                    }
+                    else if (data.status == 3) {
+                        $state.go("home");
+                    }
+                    else {
+                        $scope.status = data.status;
+                    }
+                })
+                .error(function () {
+                });
             }
             $scope.openOverlay = function() {
                 $("#centreAddressOverlay").modal("toggle");

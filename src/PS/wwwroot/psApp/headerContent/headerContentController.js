@@ -24,7 +24,7 @@ function ($scope, $localStorage, $location, $rootScope, $state, psLoginService) 
         delete  $localStorage.userDetails;
         //$state.reload();
         delete window.localStorage.token;
-        $state.go("home");
+        psLoginService.killSession().success(function (data) { $state.go("home"); }).error(function () { });
     }
 
     $rootScope.$on("authenticationError", function () {

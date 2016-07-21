@@ -13,7 +13,10 @@
 
         return deferred.promise;
    };
-
+   var _killSession = function()
+   {
+       return $http.get("/api/Auth/killSession");
+   }
    var _register = function (Firstname, Lastname, Email, Mobile, Password) {
        var deferred = $q.defer();
        $http.post("/api/Auth/Register?FirstName=" + Firstname + "&LastName=" + Lastname + "&Email=" + Email + "&Mobile=" + Mobile + "&Password=" + Password)
@@ -146,6 +149,7 @@
        updatePassword: _updatePassword,
        updateProfile: _updateProfile,
        setUserAuthenticated: _setUserAuthenticated,
-       isAuthenticated: _isAuthenticated
+       isAuthenticated: _isAuthenticated,
+       killSession: _killSession
    };   
 }])

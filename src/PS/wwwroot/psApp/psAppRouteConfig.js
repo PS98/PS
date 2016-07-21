@@ -3,7 +3,7 @@
 
 angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider",
     function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-        $httpProvider.defaults.cache = false;   
+        $httpProvider.defaults.cache = false;
         if (!$httpProvider.defaults.headers.get) {
             $httpProvider.defaults.headers.get = {};
         }
@@ -158,12 +158,12 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                 },
                  {
                      state: "admin.priceDetails",
-                    config: {
-                        url: "/pricelist",
-                        templateUrl: "psapp/admin/PriceDetails/serviceCentrePriceDetails.html",
-                        controller: "serviceCentrePriceDetailsController"
-                    }
-                }
+                     config: {
+                         url: "/pricelist",
+                         templateUrl: "psapp/admin/PriceDetails/serviceCentrePriceDetails.html",
+                         controller: "serviceCentrePriceDetailsController"
+                     }
+                 }
         ];
 
         routes.forEach(function (route) {
@@ -188,10 +188,10 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                 event.preventDefault();
             }
         });
-    //$rootScope.$on("$viewContentLoaded", function() {
-    //    $rootScope.isViewLoaded = true;
-    //});
-    //    $rootScope.$on('$viewContentLoading', function () {
-    //        $rootScope.isViewLoaded = false;
-    //    });
+        //$rootScope.$on("$viewContentLoaded", function() {
+        //    $rootScope.isViewLoaded = true;
+        //});
+        //    $rootScope.$on('$viewContentLoading', function () {
+        //        $rootScope.isViewLoaded = false;
+        //    });
     }]);

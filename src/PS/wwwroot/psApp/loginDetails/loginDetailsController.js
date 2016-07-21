@@ -1,5 +1,5 @@
-﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location","$window", "$rootScope","$timeout","psLoginService","psDataServices", "$state", '$cookies','$cookieStore',
-function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLoginService, psDataServices, $state, $cookies, $cookieStore) {
+﻿angular.module("psApp").controller("loginDetailsController", ["$scope", "$localStorage", "$location", "$window", "$rootScope", "$timeout", "psLoginService", "psDataServices", "$state", '$cookies', '$cookieStore',
+function ($scope, $localStorage, $location, $window, $rootScope, $timeout, psLoginService, psDataServices, $state, $cookies, $cookieStore) {
     $scope.isBusy = true;
     //  $scope.isLoggedIn = false;
     $scope.loginError = false;
@@ -37,6 +37,8 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
                     psDataServices.setuserDetails($scope.userDetails);
                     psLoginService.setUserAuthenticated(true);
                     $("#loginModal").modal('toggle');
+                    if ($state.$current.toString().indexOf('admin') > -1)
+                        $rootScope.$broadcast("updateStatus", { status: result.result[4] });
                 }
             }, function (error) {
                 //Error
@@ -262,7 +264,7 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
                });
         }
     }
-    $scope.openwindow = function(url, name, iWidth, iHeight) {
+    $scope.openwindow = function (url, name, iWidth, iHeight) {
         var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
         var iLeft = ($window.screen.availWidth - 10 - iWidth) / 2;
         $window.open(url, name, 'height=' + iHeight + ',innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizeable=no,location=no,status=no');
@@ -309,8 +311,8 @@ function ($scope, $localStorage, $location,$window, $rootScope, $timeout, psLogi
          }, function (error) {
              //Error
              psLoginService.setUserAuthenticated(false);
-                delete window.localStorage.token;
-            }).finally(function () {
+             delete window.localStorage.token;
+         }).finally(function () {
              $scope.isBusy = false;
          });
     }

@@ -25,7 +25,7 @@ namespace PS.Controllers
         public readonly string CollectionName = "Pune";
 
         private readonly ServiceCentreDto _serviceCentreDto = new ServiceCentreDto();
-
+        
 
         // GET: api/values
         [HttpGet]
@@ -371,6 +371,7 @@ namespace PS.Controllers
             return Json(new { Message = "Please enter Area Name", Status = 1 });
         }
 
+        [AdminAuthorize]
         [HttpPost]
         [Route("savecentre")]
         public JsonResult SaveCentreDetails([FromBody] ServiceCentreGeo serviceCentreObj)
@@ -451,6 +452,8 @@ namespace PS.Controllers
 
             }
         }
+
+        [AdminAuthorize]
         [HttpPost]
         [Route("price/update")]
         public JsonResult UpdateSelectedRow([FromBody] CarVerientPrice updatedPrice)
