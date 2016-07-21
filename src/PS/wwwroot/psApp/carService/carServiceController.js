@@ -131,6 +131,10 @@
         } else {
             $scope.selectedJob.splice($scope.selectedJob.indexOf(selectedJob), 1);
         }
+        var pos = $("#divDescribe").offset().top;
+       // pos = pos - 90;
+        if($scope.selectedJob.length >0)
+        $scope.scrollContent(pos);
     }
     $scope.deleteSelectedJob = function (deletedJob) {
         if ($scope.selectedJob.indexOf(deletedJob) > -1)
@@ -224,8 +228,10 @@
     $scope.scrollContent = function (position) {
 
                 var scroll = position ? position : 230;
-                document.body.scrollTop = scroll;
-
+              //  document.body.scrollTop = scroll;
+                $("html, body").animate({
+                    scrollTop: scroll
+                }, 'slow');
             }
     $scope.showDetails = function (types) {
         $scope.overlayData = types;

@@ -18,7 +18,7 @@
                 <div class="sorting">
                     <div class="sorting__inner">
                         <div class="sorting__item">
-                            <span class="sorting__title">Select City</span>
+                            <span class="sorting__title" style="font-size: 14px">Select City</span>
                             <div class="select jelect">
                                 <input ng-model="city" type="text" id="txtCity" class="jelect-input" ng-change="getServiceCentreArea()">
                                 <div tabindex="0" role="button" class="jelect-current" id="cityDropDown">Select City</div>
@@ -34,14 +34,21 @@
                         </div>
                     </div>
                     <div class="sorting__inner">
-                        <span ng-bind="centreDetails.userAddress.formattedAddress"></span>
+                        <div class="sorting__item" style="display: flex">
+                            <div class="sorting__title" style="min-width: 96px;font-size: 14px">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Your Location
+                            </div>
+                            <div ng-bind="centreDetails.userAddress.formattedAddress" style="font-family: 'Montserrat', sans-serif; padding-top: 3px;font-weight: 700">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="row car-header map-holder">
-                <div id="mapholder" class="col-md-12" style="height: 250px">
+                <div id="mapholder" class="col-md-12" style="height: 250px"> 
                 </div>
             </div>
         </div>
@@ -70,15 +77,15 @@
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                             </div>-->
-                            <div class="row panel-default font-semibold clickable"  data-toggle="collapse" data-parent="#" href="#workingHoursData" ng-click="expand = !expand">
+                            <div class="row panel-default font-semibold clickable" data-toggle="collapse" data-parent="#" href="#workingHoursData" ng-click="expand = !expand">
                                 <div class="col-xs-2 no-padding-left">Today</div>
                                 <div class="col-xs-10 no-padding-left">
                                     <span class="label label-danger" ng-if="!opneNow">Closed Now</span>
                                     <span class="label alert-success" ng-if="opneNow">Open Now</span>
-                                    <span ng-show="expand"><i class="fa fa-minus icon-working-hour"></i></span> 
-                                    <span ng-show="!expand"><i class="fa fa-plus icon-working-hour"></i></span> 
+                                    <span ng-show="expand"><i class="fa fa-minus icon-working-hour"></i></span>
+                                    <span ng-show="!expand"><i class="fa fa-plus icon-working-hour"></i></span>
                                 </div>
-                               
+
                             </div>
 
                             <div id="workingHoursData" class="collapsing row" aria-expanded="false">
@@ -105,7 +112,7 @@
                         </ul>
                     </div>
                 </div>
-              
+
 
             </div>
         </div>
