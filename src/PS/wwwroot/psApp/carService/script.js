@@ -14,25 +14,31 @@
 
     var mapOptions;
 
-function initializeGlobalVariable() {
-    if (google) {
-        if (!infowindow)
-            infowindow = new google.maps.InfoWindow();
-        if (!geocoder)
-            geocoder = new google.maps.Geocoder();
-        mapOptions = {
-            center: latlon,
-            zoom: 14,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            //mapTypeControl: false,
-            //navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+    function initializeGlobalVariable() {
+        try {
+            if (google) {
+                if (!infowindow)
+                    infowindow = new google.maps.InfoWindow();
+                if (!geocoder)
+                    geocoder = new google.maps.Geocoder();
+                mapOptions = {
+                    center: latlon,
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    //mapTypeControl: false,
+                    //navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+                }
+            } else {
+                setTimeout(function() {
+                    initializeGlobalVariable();
+                }, 500);
+            }
+        } catch (ex) {
+                setTimeout(function() {
+                    initializeGlobalVariable();
+                }, 500);
         }
-    } else {
-        setTimeout(function() {
-            initializeGlobalVariable();
-        }, 500);
     }
-}
 
 initializeGlobalVariable();
 function initializeGoogleMap(textBoxId, mapHolderId, autocompleteCallback, currentLocation, locationCallBack, candrag) {
