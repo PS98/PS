@@ -10,6 +10,8 @@ using System.Net;
 using System.Device.Location;
 using PS.DTO;
 using PS.Filters;
+using Microsoft.AspNet.Http;
+using Newtonsoft.Json;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -429,21 +431,26 @@ namespace PS.Controllers
 
             }
         }
-        
+
         [HttpGet]
         [Route("priceList")]
         public JsonResult GetPriceDetails(string id)
         {
             try
             {
+                var userData = HttpContext.Session.GetString("UserData");
+                var sessionData = JsonConvert.DeserializeObject<List<string>>(userData);
+                if (Convert.ToInt64(sessionData[5]) > 0)
+                    id = sessionData[5];
                 if (string.IsNullOrEmpty(id))
                 {
                     Response.StatusCode = (int)HttpStatusCode.BadRequest;
                     return Json(new { Message = "Please Choose a Service", Status = 1 });
                 }
                 var list = _serviceCentreDto.GetCarPriceList(id);
+                var serviceCentre = _serviceCentreDto.GetCentreDetailsById(id);
                 Response.StatusCode = (int)HttpStatusCode.OK;
-                return Json(new { Message = "success", Status = 0, List = list });
+                return Json(new { Message = "success", Status = 0, List = list , ServiceCentre = serviceCentre });
             }
             catch (Exception ex)
             {

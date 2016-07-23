@@ -11,12 +11,11 @@ angular.module("psApp").controller("serviceCentrePriceDetailsController", ["$sco
                 });
                 $scope.gridApi.rowEdit.setRowsClean(dataRows);
             }
+            $scope.$parent.$parent.CentredDetails = data.serviceCentre;
             $scope.gridOptions.data = data.list;
             $scope.data = [];
             $scope.data = data.list;
             $scope.serveData = [];
-            //  angular.extend($scope.serveData,$scope.data);
-
         }, function () {
             alert("error");
         });

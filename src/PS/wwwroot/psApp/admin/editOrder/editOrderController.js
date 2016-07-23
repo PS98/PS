@@ -2,12 +2,19 @@
 
 angular.module("psApp").controller("editOrderController", [
         "$scope", "psDataServices", "$state", "psOrderDetailsService", "$timeout", function ($scope, psDataServices, $state, psOrderDetailsService, $timeout) {
+            $scope.$parent.$parent.CentredDetails = "";
             $scope.getOrderById = function (id) {
                 if (id)
                     psOrderDetailsService.getOrderById(id).then(function (data) {
-                        $scope.activeOrder = [];
-                        $scope.order = data.order;
-                        $scope.activeOrder.push(data.order);
+                        if (data.status != 1) {
+                            $scope.error = '';
+                            $scope.activeOrder = [];
+                            $scope.order = data.order;
+                            $scope.activeOrder.push(data.order);
+                        }
+                        else {
+                            $scope.error = data.message;
+                        }
                     }, function () {
                         console.log(data.message);
                     });

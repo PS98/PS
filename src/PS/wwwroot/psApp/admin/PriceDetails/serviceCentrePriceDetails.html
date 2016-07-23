@@ -1,5 +1,5 @@
 ﻿<div class="tab-pane fade in active">
-    <div class="row">
+    <div class="row" ng-if="status == 0">
         <div class="col-lg-12 form-group">
             <div class="col-lg-6">
                 <input class="form-control" id="centreId" name="centreId" placeholder="centreId" type="text" ng-model="id"/>
@@ -8,8 +8,19 @@
                 <a class="btn btn-primary btn-effect" ng-click="getPriceList(id)">Serach</a>
             </div>
         </div>
-
-
+    </div>
+    <div ng-if="status == 1" ng-init="getPriceList('')"></div>
+    <div class="row">
+        <div class="col-sm-6 pull-right text-right margin-bottom10" ng-if="(serveData || []).length >0">
+            <button class="btn btn-primary btn-effect" ng-click="updateAll()">Update All Row </button>
+            <button class="btn btn-primary btn-effect" ng-click="cancelAll()">Cancel All Update </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 pull-right text-right margin-bottom10" ng-if="(serveData || []).length >0">
+            <button class="btn btn-primary btn-effect" ng-click="updateAll()">Update All Row </button>
+            <button class="btn btn-primary btn-effect" ng-click="cancelAll()">Cancel All Update </button>
+        </div>
     </div>
     <div class="row">
         <div class="col-sm-6 pull-right text-right margin-bottom10" ng-if="(serveData || []).length >0">

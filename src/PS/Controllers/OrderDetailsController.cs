@@ -44,7 +44,7 @@ namespace PS.Controllers
                     {
                         var res = _repo.GetAllOrderWithStatus(email);
                         Response.StatusCode = (int)HttpStatusCode.OK;
-                        return Json(new {Status = 0, Result = res});
+                        return Json(new { Status = 0, Result = res });
                     }
                     else
                     {
@@ -57,7 +57,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new {ex.Message });
+                return Json(new { ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
@@ -77,13 +77,13 @@ namespace PS.Controllers
                     SmsSender.BookingCancelled(order);
                     _emailSender.BookingCancelled(order);
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Status = 0, Result = res,Message = "your order cancelled successfully"});
+                    return Json(new { Status = 0, Result = res, Message = "your order cancelled successfully" });
                 }
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new { Message = "We are unable to process your request.", Status = 2,error =ex.Message });
+                return Json(new { Message = "We are unable to process your request.", Status = 2, error = ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
@@ -91,14 +91,17 @@ namespace PS.Controllers
 
         [HttpPost]
         [Route("editOrder")]
-        public JsonResult EditOrder(string invoiceNo,  string dropOffDate, string dropOffTime, string pickUpDate, string pickUpTime)
+        public JsonResult EditOrder(string invoiceNo, string dropOffDate, string dropOffTime, string pickUpDate, string pickUpTime)
         {
             try
             {
                 if (!string.IsNullOrEmpty(invoiceNo) && !string.IsNullOrEmpty(dropOffDate) && !string.IsNullOrEmpty(pickUpDate))
                 {
-                    var appointment = new Appointment() { PickUpDate = new AppointmentDetails() {Day = pickUpDate,Time=pickUpTime },
-                        DropOffDate = new AppointmentDetails() { Day = dropOffDate, Time = dropOffTime } };
+                    var appointment = new Appointment()
+                    {
+                        PickUpDate = new AppointmentDetails() { Day = pickUpDate, Time = pickUpTime },
+                        DropOffDate = new AppointmentDetails() { Day = dropOffDate, Time = dropOffTime }
+                    };
                     _repo.ChangeAppointmentDate(invoiceNo, appointment);
                     var order = _domainManager.GetOrder(invoiceNo);
                     SmsSender.BookingUpdate(order);
@@ -109,7 +112,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new {ex.Message });
+                return Json(new { ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
@@ -121,7 +124,7 @@ namespace PS.Controllers
         {
             try
             {
-              var orderList =   _domainManager.GetAllOrders();
+                var orderList = _domainManager.GetAllOrders();
                 if (!orderList.Any())
                 {
                     Response.StatusCode = (int)HttpStatusCode.OK;
@@ -132,7 +135,7 @@ namespace PS.Controllers
                 var successorder = orderList.Where(x => x.Status.Equals("Success")).ToList();
                 var result = new
                 {
-                    totalOrder = orderList.Count(), 
+                    totalOrder = orderList.Count(),
                     pendingOrderCount = pendingOrder.Count(),
                     cancelOrderCount = cancelOrder.Count(),
                     successorderCount = successorder.Count(),
@@ -146,11 +149,11 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new {ex.Message });
+                return Json(new { ex.Message });
             }
-            
-        }
 
+        }
+        [AdminAuthorize]
         [HttpGet]
         [Route("getorder")]
         public JsonResult GetOrderById(string id)
@@ -160,8 +163,13 @@ namespace PS.Controllers
                 if (!string.IsNullOrWhiteSpace(id))
                 {
                     var order = _domainManager.GetOrder(id);
-                    Response.StatusCode = (int) HttpStatusCode.OK;
-                    return Json(new {Message = "Success", Status = 0, Order = order});
+                    if(order == null)
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.OK;
+                        return Json(new { Message = "No Order Found", Status = 1});
+                    }
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                    return Json(new { Message = "Success", Status = 0, Order = order });
                 }
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(new { Message = "please provide OrderId", Status = 0 });
@@ -169,9 +177,9 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new {ex.Message , Status = 0 });
+                return Json(new { ex.Message, Status = 0 });
             }
-           
+
 
         }
         [HttpPost]
@@ -182,7 +190,7 @@ namespace PS.Controllers
             {
                 if (!string.IsNullOrWhiteSpace(order.InvoiceNo))
                 {
-                   var updateOrder =  _domainManager.UpdateOrderDetails(order);
+                    var updateOrder = _domainManager.UpdateOrderDetails(order);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "Success", Status = 0, Order = updateOrder });
                 }
@@ -192,7 +200,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new {ex.Message, Status = 0 });
+                return Json(new { ex.Message, Status = 0 });
             }
 
 

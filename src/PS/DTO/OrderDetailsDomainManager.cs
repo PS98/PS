@@ -39,7 +39,7 @@ namespace PS.DTO
             var collection = _repo.GetCollection<OrderDetails>("Invoice");
             var orderList = collection.Find(filter).ToListAsync().Result;
 
-            var order = orderList.Any() ? orderList.FirstOrDefault() : new OrderDetails();
+            var order = orderList.Any() ? orderList.FirstOrDefault() : null;
             return order;
         }
 

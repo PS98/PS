@@ -72,7 +72,11 @@ angular.module("psApp").directive("admin", function () {
             }
         },
         controller: ["$scope", "$state", "psDataServices", "psOrderDetailsService", "psLoginService","$rootScope",
-        function ($scope, $state, psDataServices, psOrderDetailsService, psLoginService,$rootScope) {
+        function ($scope, $state, psDataServices, psOrderDetailsService, psLoginService, $rootScope) {
+
+            $scope.clearCustomerDetails = function () {
+                $scope.CentredDetails = "";
+            }
             $scope.carList = {};
             $scope.centreDetails = {};
             $scope.showBrandName = true;

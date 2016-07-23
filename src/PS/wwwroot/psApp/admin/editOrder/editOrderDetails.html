@@ -12,7 +12,7 @@
         </div>
 
     </div>
-
+    <div ng-if="error">{{error}}</div>
     <order-details orders="activeOrder" ng-hide="isEdit"></order-details>
 
     <div class="row editOrderDetails" ng-show="isEdit">
