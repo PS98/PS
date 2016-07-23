@@ -16,6 +16,7 @@
 /// <reference path="assets/plugins/switcher/js/dmss.js" />
 /// <reference path="assets/plugins/switcher/js/evol.colorpicker.min.js" />
 /// <reference path="assetsdist/dist/assets.js" />
+/// <reference path="dist/mm.js" />
 /// <reference path="lib/angular/angular.js" />
 /// <reference path="lib/angular-animate/angular-animate.js" />
 /// <reference path="lib/angular-cookies/angular-cookies.js" />

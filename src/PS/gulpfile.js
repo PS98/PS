@@ -10,9 +10,17 @@ var plumber = require('gulp-plumber');
 
 
 var paths = {
-    webroot: "./wwwroot/"
+    webroot: "./wwwroot/",
+    librariesPath: "./wwwroot/lib/"
 };
+paths.jquryLibraryPath = paths.librariesPath + "jquery/dist/jquery.min.js";
+paths.angularLibraryPath = paths.librariesPath + "angular/angular.min.js";
+paths.uiRouterLibraryPath = paths.librariesPath + "angular-ui-router/release/angular-ui-router.min.js";
+paths.ngStorageLibraryPath = paths.librariesPath + "ngStorage.min.js";
+paths.angularCookiesLibraryPath = paths.librariesPath + "angular-cookies/angular-cookies.min.js";
+paths.uiGridLibraryPath = paths.librariesPath + "ui-grid/ui-grid.min.js";
 
+paths.concatLibDest = paths.librariesPath + "externalLib.js";
 paths.psJs = paths.webroot + "psApp/**/*.js";
 paths.psCss = paths.webroot + "psApp/**/*.css";
 paths.concatJsDest = paths.webroot + "dist/mm.js";
@@ -21,7 +29,6 @@ paths.concatCssDest = paths.webroot + "dist/mm.css";
 paths.assetsJs = paths.webroot + "assets/**/*.js";
 paths.assetsCss = paths.webroot + "assets/**/*.css";
 paths.concatAssetsJsDest = "dist/assets.js";
-
 gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
 });
@@ -29,17 +36,32 @@ gulp.task("clean:js", function (cb) {
 gulp.task("clean:css", function (cb) {
     rimraf(paths.concatCssDest, cb);
 });
-
 gulp.task("clean", ["clean:js", "clean:css"]);
 
+/* never change library path sequence*/
+var libjsSrc = [
+    paths.jquryLibraryPath,
+    paths.angularLibraryPath,
+    paths.uiRouterLibraryPath,
+    paths.ngStorageLibraryPath,
+    paths.angularCookiesLibraryPath,
+    paths.uiGridLibraryPath
+];
+
+var jsSrc = libjsSrc.concat(paths.assetsJs).concat(paths.psJs);
 gulp.task("min:js", function () {
-    return gulp.src([paths.psJs], { base: "." })
+    return gulp.src(jsSrc, { base: "." })
         .pipe(ngAnnotate())
         .pipe(concat(paths.concatJsDest))
         .pipe(uglify())
         .pipe(gulp.dest("."));
 });
-
+//gulp.task("min:libjs", function () {
+//    return gulp.src(jsSrc)
+//        .pipe(ngAnnotate())
+//        .pipe(concat(paths.concatLibDest))
+//        .pipe(gulp.dest("."));
+//});
 gulp.task("min:css", function () {
     return gulp.src([paths.psCss])
         .pipe(concat(paths.concatCssDest))
@@ -49,22 +71,17 @@ gulp.task("min:css", function () {
 
 gulp.task("min", ["min:js", "min:css"]);
 
-gulp.task("cleanAssets", function (cb) {
-    rimraf(paths.webroot + "/assetsDist", cb);
-});
+//gulp.task("cleanAssets", function (cb) {
+//    rimraf(paths.concatAssetsJsDest, cb);
+//});
 
-gulp.task("minAssets:js", function () {
-    return gulp.src([paths.assetsJs])
-        .pipe(ngAnnotate())
-        .pipe(uglify())
-        .pipe(concat(paths.concatAssetsJsDest))
-        .pipe(gulp.dest(paths.webroot + "/assetsDist"));
-});
-
-gulp.task("minAssets:css", function () {
-    return gulp.src([paths.assetsCss])
-        .pipe(cssmin())
-        .pipe(gulp.dest(paths.webroot + "/assetsDist"));
-});
-
-gulp.task("minAssets", ["minAssets:js", "minAssets:css"]);
+//gulp.task("cleanLib", function (cb) {
+//    rimraf(paths.concatLibDest, cb);
+//});
+//gulp.task("minAssets:js", function () {
+//    return gulp.src([paths.assetsJs])
+//        .pipe(ngAnnotate())
+//        .pipe(uglify())
+//        .pipe(concat(paths.concatAssetsJsDest))
+//        .pipe(gulp.dest(paths.webroot + "/assetsDist"));
+//});
