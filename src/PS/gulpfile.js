@@ -22,13 +22,25 @@ paths.uiGridLibraryPath = paths.librariesPath + "ui-grid/ui-grid.min.js";
 
 paths.concatLibDest = paths.librariesPath + "externalLib.js";
 paths.psJs = paths.webroot + "psApp/**/*.js";
-paths.psCss = paths.webroot + "psApp/**/*.css";
-paths.concatJsDest = paths.webroot + "dist/mm.js";
-paths.concatCssDest = paths.webroot + "dist/mm.css";
-
 paths.assetsJs = paths.webroot + "assets/**/*.js";
-paths.assetsCss = paths.webroot + "assets/**/*.css";
-paths.concatAssetsJsDest = "dist/assets.js";
+
+paths.concatJsDest = paths.webroot + "dist/mm.js";
+paths.concatCssDest = paths.webroot + "dist/css/mm.css";
+paths.switcherMinCssDest = paths.webroot + "dist/css/switcher.min.css";
+
+
+paths.psCss = paths.webroot + "psApp/**/*.css";
+paths.assetsCss = paths.webroot + "assets/css/*.css";
+paths.owlCarouselCss = paths.webroot + "assets/plugins/owl-carousel/**/*.css";
+paths.fontAwesoneCss = paths.webroot + "assets/fonts/font-awesome/css/font-awesome.min.css";
+paths.bootstrapCss = paths.webroot + "assets/plugins/bootstrap/css/bootstrap.css";
+paths.sliderProCss = paths.webroot + "assets/plugins/sliderpro/css/slider-pro.css";
+paths.yammCss = paths.webroot + "assets/plugins/yamm/yamm.css";
+paths.animateCss = paths.webroot + "assets/plugins/animate/animate.css";
+paths.jelectCss = paths.webroot + "assets/plugins/jelect/main.css";
+paths.switcherCss = paths.webroot + "assets/plugins/switcher/css/switcher.css";
+paths.uiGridCss = paths.webroot + "lib/ui-grid/ui-grid.min.css";
+
 gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
 });
@@ -36,7 +48,12 @@ gulp.task("clean:js", function (cb) {
 gulp.task("clean:css", function (cb) {
     rimraf(paths.concatCssDest, cb);
 });
-gulp.task("clean", ["clean:js", "clean:css"]);
+
+gulp.task("cleanSwitcherCss", function (cb) {
+    rimraf(paths.switcherMinCssDest, cb);
+});
+
+gulp.task("clean", ["clean:js", "clean:css", "cleanSwitcherCss"]);
 
 /* never change library path sequence*/
 var libjsSrc = [
@@ -56,32 +73,22 @@ gulp.task("min:js", function () {
         .pipe(uglify())
         .pipe(gulp.dest("."));
 });
-//gulp.task("min:libjs", function () {
-//    return gulp.src(jsSrc)
-//        .pipe(ngAnnotate())
-//        .pipe(concat(paths.concatLibDest))
-//        .pipe(gulp.dest("."));
-//});
+
+var assestCssSrc = [paths.fontAwesoneCss];
+var css = [paths.yammCss, paths.animateCss, paths.jelectCss, paths.uiGridCss];
+var bootstrapSliderProCss = [paths.bootstrapCss, paths.sliderProCss];
+var cssSrc = assestCssSrc.concat(paths.assetsCss).concat(bootstrapSliderProCss).concat(paths.owlCarouselCss).concat(css).concat(paths.psCss);
 gulp.task("min:css", function () {
-    return gulp.src([paths.psCss])
+    return gulp.src(cssSrc)
         .pipe(concat(paths.concatCssDest))
         .pipe(cssmin())
         .pipe(gulp.dest("."));
 });
+gulp.task("minSwitcherCss", function () {
+    return gulp.src(paths.switcherCss)
+.pipe(concat(paths.switcherMinCssDest))
+        .pipe(cssmin())
+        .pipe(gulp.dest("."));
+});
+gulp.task("min", ["min:js", "min:css", "minSwitcherCss"]);
 
-gulp.task("min", ["min:js", "min:css"]);
-
-//gulp.task("cleanAssets", function (cb) {
-//    rimraf(paths.concatAssetsJsDest, cb);
-//});
-
-//gulp.task("cleanLib", function (cb) {
-//    rimraf(paths.concatLibDest, cb);
-//});
-//gulp.task("minAssets:js", function () {
-//    return gulp.src([paths.assetsJs])
-//        .pipe(ngAnnotate())
-//        .pipe(uglify())
-//        .pipe(concat(paths.concatAssetsJsDest))
-//        .pipe(gulp.dest(paths.webroot + "/assetsDist"));
-//});
