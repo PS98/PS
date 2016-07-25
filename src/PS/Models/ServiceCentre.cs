@@ -16,6 +16,7 @@ namespace PS.Models
         public string Area { get; set; }
         public List<Centre> Centres { get; set; }
         public List<string> NearAreas { get; set; }
+        public List<ServiceDetails> ServiceDetails { get;set;}
     }
     [BsonIgnoreExtraElements]
     public class Centre : ServiceCentreBaseModel

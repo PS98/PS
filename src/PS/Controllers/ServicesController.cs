@@ -110,6 +110,7 @@ namespace PS.Controllers
                     model.Status = "Pending";
                     model.BookingDate = DateTime.Now;
                     model.InvoiceNo = "MM" + MongoRepository.RandomNumber(5) + date.ToString("MM") + date.ToString("dd");
+                    model.GetPriceForSelectedService();
                     repo.InsertDocument("orders", "Invoice", model);
                     SmsSender.BookingSuccessfull(model);
                     _emailSender.BookingSuccess(model);

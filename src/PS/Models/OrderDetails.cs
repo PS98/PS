@@ -1,11 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using PS.Services;
+using MongoDB.Driver;
 
 namespace PS.Models
 {
@@ -41,6 +40,51 @@ namespace PS.Models
         public string Status { get; set; }
         public DateTime BookingDate { get; set; }
         public DateTime CancellationDate { get; set; }
+        
+        public void GetPriceForSelectedService()
+        {
+            var queryForPriceDetails = new BsonDocument
+            {
+                {"CentreId", SelectedCentre.Id }
+            };
+            var _repo = new MongoRepository("serviceCentre");
+            var collection = _repo.GetCollection<ServiceCentre>("Pune");
+            var centreDetails = collection?.Find(queryForPriceDetails).SingleOrDefaultAsync().Result;
+            var serviceDetails = centreDetails.ServiceDetails;
+            foreach (var services in serviceDetails)
+            {
+                foreach(var selectedService in SelectedCentre.ServiceDetails)
+                {
+                    if(services.Name == selectedService.Name)
+                    {
+                        if (SelectedCar.Varient == "Diesel")
+                        {
+                            var model = services.Diesel.Find(r => r.ModelList.Contains(SelectedCar.Model));
+                            selectedService.ActualPrice = model.ActualPrice;
+                            selectedService.MilematePrice = model.MilematePrice;
+                        }
+                        if (SelectedCar.Varient == "Petrol")
+                        {
+                            var model = services.Diesel.Find(r => r.ModelList.Contains(SelectedCar.Model));
+                            selectedService.ActualPrice = model.ActualPrice;
+                            selectedService.MilematePrice = model.MilematePrice;
+                        }
+                        if (SelectedCar.Varient == "CNG")
+                        {
+                            var model = services.Diesel.Find(r => r.ModelList.Contains(SelectedCar.Model));
+                            selectedService.ActualPrice = model.ActualPrice;
+                            selectedService.MilematePrice = model.MilematePrice;
+                        }
+                        if (SelectedCar.Varient == "Electric")
+                        {
+                            var model = services.Diesel.Find(r => r.ModelList.Contains(SelectedCar.Model));
+                            selectedService.ActualPrice = model.ActualPrice;
+                            selectedService.MilematePrice = model.MilematePrice;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     //public class UserServices
