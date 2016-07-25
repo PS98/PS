@@ -224,10 +224,11 @@ namespace PS.Services
                 if (customerList?.Where(e => e.Email == model.Email).ToList().Count == 0)
                 {
                     collection.InsertOneAsync(model);
-
+                    model.NewCustomer = true;
                    // return (object)model;
                 }
                 else {
+                    model.NewCustomer = false;
                     foreach (var i in customerList?.Where(e => e.Email == model.Email).ToList())
                     {
                         //data.Add(i.Given_Name);

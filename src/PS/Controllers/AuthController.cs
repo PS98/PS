@@ -407,12 +407,13 @@ namespace PS.Controllers
                 var token = _context.RequestToken(code);
                 var result = _context.RequestProfile(token);
                 //var strResult = _context.Client.ProfileJsonString;
-
-
                 var operation = _auth.SocialLogin(result);
                 var accessToken = _authenticationDomainManager.GetOrGenerateAuthToken(operation.Email);
-                SmsSender.RegistrationSuccessfull(operation.Mobile, operation.FirstName);
-                _emailSender.RegistrationSuccess(operation.Email, operation.FirstName);
+                if (result.NewCustomer)
+                {
+                    SmsSender.RegistrationSuccessfull(operation.Mobile, operation.FirstName);
+                    _emailSender.RegistrationSuccess(operation.Email, operation.FirstName);
+                }
                 //  _session.SetString(key,accessToken);
                 Response.StatusCode = (int)HttpStatusCode.OK;
                 return Json(new { Result = operation, accessToken });
