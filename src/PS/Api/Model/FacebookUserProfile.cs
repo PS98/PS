@@ -13,7 +13,9 @@ namespace PS.Api.Model
         }
         public string Id { get; set; }
         public string Name { get; set; }
+        // ReSharper disable once InconsistentNaming
         public string First_Name { get; set; }
+        // ReSharper disable once InconsistentNaming
         public string Last_Name { get; set; }
         public string Link { get; set; }
         public string Gender { get; set; }
@@ -24,15 +26,17 @@ namespace PS.Api.Model
 
         public static ResultUserDto ToResultObject(FacebookUserProfile model)
         {
-            ResultUserDto jk = new ResultUserDto();
+            var jk = new ResultUserDto
+            {
+                Email = model.Email,
+                FirstName = model.First_Name,
+                LastName = model.Last_Name,
+                Link = model.Picture.Data.Url,
+                CustomerType = model.CustomerType,
+                CarDetails = model.CarDetails,
+                Name = model.Name
+            };
 
-            jk.Email = model.Email;
-            jk.FirstName = model.First_Name;
-            jk.LastName = model.Last_Name;
-            jk.Link= model.Picture.Data.Url;
-            jk.CustomerType = model.CustomerType;
-            jk.CarDetails = model.CarDetails;
-            jk.Name = model.Name;
             return jk;
         }
     }
@@ -47,6 +51,7 @@ namespace PS.Api.Model
 
     public class Data
     {
+        // ReSharper disable once InconsistentNaming
         public bool Is_Silhouette { get; set; }
         public string Url { get; set; }
     }

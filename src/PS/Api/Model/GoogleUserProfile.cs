@@ -13,7 +13,9 @@ namespace PS.Api.Model
         }
         public string Id { get; set; }
         public string Name { get; set; }
+        // ReSharper disable once InconsistentNaming
         public string Given_Name { get; set; }
+        // ReSharper disable once InconsistentNaming
         public string Family_Name { get; set; }
         public string Link { get; set; }
         public string Gender { get; set; }
@@ -25,15 +27,17 @@ namespace PS.Api.Model
 
         public static ResultUserDto ToResultObject(GoogleUserProfile model)
         {
-            ResultUserDto jk = new ResultUserDto();
+            var jk = new ResultUserDto
+            {
+                Email = model.Email,
+                FirstName = model.Given_Name,
+                LastName = model.Family_Name,
+                Link = model.Picture,
+                CustomerType = model.CustomerType,
+                CarDetails = model.CarDetails,
+                Name = model.Name
+            };
 
-            jk.Email = model.Email;
-            jk.FirstName = model.Given_Name;
-            jk.LastName = model.Family_Name;
-            jk.Link = model.Picture;
-            jk.CustomerType = model.CustomerType;
-            jk.CarDetails = model.CarDetails;
-            jk.Name = model.Name;
             return jk;
         }
     }
@@ -47,6 +51,7 @@ namespace PS.Api.Model
         public CarDetails CarDetails { get; set; }
         public string Link { get; set; }
         public string Name { get; set; }
+        public bool IsNewCustomer { get; set; }
     }
 
    

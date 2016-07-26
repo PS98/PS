@@ -214,6 +214,7 @@ namespace PS.Services
         public ResultUserDto SocialLogin(dynamic model)
         {
             var rep = new MongoRepository("auth");
+            var isNewCustomer = false;
            var  data = new ResultUserDto();
             if (model is GoogleUserProfile)
             {
@@ -224,11 +225,10 @@ namespace PS.Services
                 if (customerList?.Where(e => e.Email == model.Email).ToList().Count == 0)
                 {
                     collection.InsertOneAsync(model);
-                    model.NewCustomer = true;
+                    isNewCustomer = true;
                    // return (object)model;
                 }
                 else {
-                    model.NewCustomer = false;
                     foreach (var i in customerList?.Where(e => e.Email == model.Email).ToList())
                     {
                         //data.Add(i.Given_Name);
@@ -238,7 +238,7 @@ namespace PS.Services
                         //return data;
                     }
                 }
-                return GoogleUserProfile.ToResultObject(model);
+                data = GoogleUserProfile.ToResultObject(model);
             }
             if (model is FacebookUserProfile)
             {
@@ -247,11 +247,10 @@ namespace PS.Services
                 if (customerList?.Where(e => e.Email == model.Email).ToList().Count == 0)
                 {
                     collection.InsertOneAsync(model);
-
-                   // return model.ToJson();
+                    isNewCustomer = true;
                 }
                 else {
-                    foreach(var i in customerList?.Where(e => e.Email == model.Email).ToList())
+                    foreach (var i in customerList?.Where(e => e.Email == model.Email).ToList())
                     {
                         //data.Add(i.First_Name);
                         //data.Add(i.Name);
@@ -260,9 +259,10 @@ namespace PS.Services
                         //return data;
                     } 
                 }
-                return FacebookUserProfile.ToResultObject(model);
+                data = FacebookUserProfile.ToResultObject(model);
             }
-            return null;
+                data.IsNewCustomer = isNewCustomer;
+            return data;
         }
 
 

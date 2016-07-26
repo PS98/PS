@@ -409,7 +409,7 @@ namespace PS.Controllers
                 //var strResult = _context.Client.ProfileJsonString;
                 var operation = _auth.SocialLogin(result);
                 var accessToken = _authenticationDomainManager.GetOrGenerateAuthToken(operation.Email);
-                if (result.NewCustomer)
+                if (operation.IsNewCustomer)
                 {
                     SmsSender.RegistrationSuccessfull(operation.Mobile, operation.FirstName);
                     _emailSender.RegistrationSuccess(operation.Email, operation.FirstName);
