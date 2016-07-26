@@ -20,14 +20,14 @@ paths.ngStorageLibraryPath = paths.librariesPath + "ngStorage.min.js";
 paths.angularCookiesLibraryPath = paths.librariesPath + "angular-cookies/angular-cookies.min.js";
 paths.uiGridLibraryPath = paths.librariesPath + "ui-grid/ui-grid.min.js";
 
-paths.concatLibDest = paths.librariesPath + "externalLib.js";
+paths.concatLibDest = paths.webroot + "dist/externalLib.js";
 paths.psJs = paths.webroot + "psApp/**/*.js";
 paths.assetsJs = paths.webroot + "assets/**/*.js";
 
 paths.concatJsDest = paths.webroot + "dist/mm.js";
 paths.concatCssDest = paths.webroot + "dist/css/mm.css";
-paths.switcherMinCssDest = paths.webroot + "dist/css/switcher.min.css";
-
+paths.assetsCssDest = paths.webroot + "dist/css/assets.css";
+paths.concatAssetsJsDest = "dist/assets.js";
 
 paths.psCss = paths.webroot + "psApp/**/*.css";
 paths.assetsCss = paths.webroot + "assets/css/*.css";
@@ -49,11 +49,10 @@ gulp.task("clean:css", function (cb) {
     rimraf(paths.concatCssDest, cb);
 });
 
-gulp.task("cleanSwitcherCss", function (cb) {
-    rimraf(paths.switcherMinCssDest, cb);
+gulp.task("clean:ExternalLibjs", function (cb) {
+    rimraf(paths.webroot + "dist/css", cb);
 });
-
-gulp.task("clean", ["clean:js", "clean:css", "cleanSwitcherCss"]);
+gulp.task("clean", ["clean:js", "clean:css","clean:ExternalLibjs"]);
 
 /* never change library path sequence*/
 var libjsSrc = [
@@ -65,11 +64,18 @@ var libjsSrc = [
     paths.uiGridLibraryPath
 ];
 
-var jsSrc = libjsSrc.concat(paths.assetsJs).concat(paths.psJs);
-gulp.task("min:js", function () {
+var jsSrc = [].concat(paths.assetsJs).concat(paths.psJs);
+gulp.task("min:mmjs", function () {
     return gulp.src(jsSrc, { base: "." })
         .pipe(ngAnnotate())
         .pipe(concat(paths.concatJsDest))
+        .pipe(uglify())
+        .pipe(gulp.dest("."));
+});
+gulp.task("min:ExternalLibjs", function () {
+    return gulp.src(libjsSrc, { base: "." })
+        .pipe(ngAnnotate())
+        .pipe(concat(paths.concatLibDest))
         .pipe(uglify())
         .pipe(gulp.dest("."));
 });
@@ -77,18 +83,33 @@ gulp.task("min:js", function () {
 var assestCssSrc = [paths.fontAwesoneCss];
 var css = [paths.yammCss, paths.animateCss, paths.jelectCss, paths.uiGridCss];
 var bootstrapSliderProCss = [paths.bootstrapCss, paths.sliderProCss];
-var cssSrc = assestCssSrc.concat(paths.assetsCss).concat(bootstrapSliderProCss).concat(paths.owlCarouselCss).concat(css).concat(paths.psCss);
-gulp.task("min:css", function () {
-    return gulp.src(cssSrc)
+var cssSrc = assestCssSrc.concat(paths.assetsCss).concat(bootstrapSliderProCss).concat(paths.owlCarouselCss).concat(css);
+gulp.task("min:mmCss", function () {
+    return gulp.src(paths.psCss)
         .pipe(concat(paths.concatCssDest))
         .pipe(cssmin())
         .pipe(gulp.dest("."));
 });
-gulp.task("minSwitcherCss", function () {
-    return gulp.src(paths.switcherCss)
-.pipe(concat(paths.switcherMinCssDest))
-        .pipe(cssmin())
-        .pipe(gulp.dest("."));
-});
-gulp.task("min", ["min:js", "min:css", "minSwitcherCss"]);
+gulp.task("min", ["min:mmjs", "min:mmCss", "min:ExternalLibjs"]);
 
+
+gulp.task("cleanAssets", function (cb) {
+    rimraf(paths.webroot + "/assetsDist", cb);
+});
+
+gulp.task("minAssets:js", function () {
+    return gulp.src([paths.assetsJs])
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(concat(paths.concatAssetsJsDest))
+        .pipe(gulp.dest(paths.webroot + "/assetsDist"));
+});
+paths.assetsCss = paths.webroot + "assets/**/*.css";
+
+gulp.task("minAssets:css", function () {
+    return gulp.src([paths.assetsCss])
+        .pipe(cssmin())
+        .pipe(gulp.dest(paths.webroot + "/assetsDist"));
+});
+
+gulp.task("minAssets", ["minAssets:js", "minAssets:css"]);
