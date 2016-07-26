@@ -50,14 +50,14 @@ function ($q, $rootScope, $log, $timeout) {
             xhrCreations++;
             $timeout(function () {
                 updateStatus();
-            }, 1000);
+            }, 2000);
             return config;
         },
         requestError: function (rejection) {
             xhrResolutions++;
             $timeout(function () {
                 updateStatus();
-            }, 1000);
+            }, 2000);
             $log.error('Request error:', rejection);
             return $q.reject(rejection);
         },
@@ -65,7 +65,7 @@ function ($q, $rootScope, $log, $timeout) {
             xhrResolutions++;
             $timeout(function () {
                 updateStatus();
-            }, 1000);
+            }, 2000);
             if (response.status === 203) {
                 $rootScope.$emit("authenticationError");
             }
@@ -75,7 +75,7 @@ function ($q, $rootScope, $log, $timeout) {
             xhrResolutions++;
             $timeout(function () {
                 updateStatus();
-            }, 1000);
+            }, 2000);
             $log.error('Response error:', rejection);
             return $q.reject(rejection);
         }
