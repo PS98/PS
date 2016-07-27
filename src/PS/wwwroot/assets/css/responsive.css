@@ -287,8 +287,16 @@
       width: 100% !important;
   }
 }
-
+  .mobile-content {
+       display: none;
+   }
 @media (max-width: 640px) {
+   .mobile-content {
+       display: block !important;
+   }
+   .slider-pro {
+        display: none !important;
+    }
     .header-contacts {
         text-align: right;
         float: none;
