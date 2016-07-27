@@ -1,5 +1,5 @@
 ﻿angular.module("psApp").factory("psDataServices", ["$http", "$q", "$localStorage", function ($http, $q, $localStorage) {
-    var selectedCar, selectedService, centreDetails = {},serviceNameList;
+    var selectedCar, selectedService, centreDetails = {},serviceNameList,isNextButtonClicked = false;
     var userServiceData = { selectedCar: {}, selectedServices: {},  selectedAppointment: {}, userDetails: {}, userAddress: {}, selectedCentre : {} };
     angular.extend(userServiceData.userDetails, $localStorage.userDetails);
     
@@ -134,6 +134,13 @@
         userServiceData = { selectedCar: {}, selectedServices: {}, selectedAppointment: {}, userDetails: {}, userAddress: {}, selectedCentre: {} };
         angular.extend(userServiceData.userDetails, $localStorage.userDetails);
     }
+    var _setNextButtonStatus = function (status) {
+        isNextButtonClicked = status;
+    }
+    var _getNextButtonStatus = function() {
+        return isNextButtonClicked;
+    }
+
     return {
         getAllCarColletion: _getAllCarCollection,
         getCarType: _getCarType,
@@ -161,7 +168,10 @@
         setPickUpDetails: _setPickUpDetails,
         getPickUpDetails: _getPickUpDetails,
         resetAll: _resetAll,
-        checkAccess: _checkAccess
+        checkAccess: _checkAccess,
+        setNextButtonStatus: _setNextButtonStatus,
+        getNextButtonStatus: _getNextButtonStatus
+
 }
           
     
