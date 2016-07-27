@@ -33,12 +33,13 @@ namespace PS.DTO
             }
         }
 
-        public OrderDetails GetOrder(string id)
+        public OrderDetails GetOrder(string id , string userId)
         {
-            var filter = Builders<OrderDetails>.Filter.Where(x => x.InvoiceNo.Equals(id));
+            var filter = userId != "0" ? 
+                Builders<OrderDetails>.Filter.Where(x => x.InvoiceNo.Equals(id) && x.UserDetails.Email == userId) :
+                Builders<OrderDetails>.Filter.Where(x => x.InvoiceNo.Equals(id));
             var collection = _repo.GetCollection<OrderDetails>("Invoice");
             var orderList = collection.Find(filter).ToListAsync().Result;
-
             var order = orderList.Any() ? orderList.FirstOrDefault() : null;
             return order;
         }
@@ -46,7 +47,7 @@ namespace PS.DTO
         public OrderDetails UpdateOrderDetails(OrderDetails updateOrder)
         {
             var collection = _repo.GetCollection<OrderDetails>("Invoice");
-            var order = GetOrder(updateOrder.InvoiceNo);
+            var order = GetOrder(updateOrder.InvoiceNo , updateOrder.UserDetails.Email);
             UpdateOrder(order, updateOrder);
             var filter = Builders<OrderDetails>.Filter.Where(x => x.Id == order.Id);
             collection.ReplaceOneAsync(filter,order);

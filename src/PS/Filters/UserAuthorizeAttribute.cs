@@ -17,14 +17,14 @@ namespace PS.Filters
             const string key = "XSRF-TOKEN";
             const string database = "userSessionDetails";
             const string collectionName = "TokenDetails";
-            var repo = new MongoRepository(database);
-
+            
             Microsoft.Extensions.Primitives.StringValues clientToken;
             filterContext.HttpContext.Request.Headers.TryGetValue("X-XSRF-TOKEN", out clientToken);
             var clientAuthToken = !string.IsNullOrWhiteSpace(clientToken) ? clientToken[0] : "";
             filterContext.HttpContext.Session.TryGetValue(key, out res);
             if (res == null)
             {
+                var repo = new MongoRepository(database);
                 var data = repo.GetDocumentList<UserSession>(collectionName);
                 if (data.All(r => r.Token != clientAuthToken))
                 {
@@ -52,10 +52,6 @@ namespace PS.Filters
         {
             byte[] res;
             const string key = "XSRF-TOKEN";
-            const string database = "userSessionDetails";
-            const string collectionName = "TokenDetails";
-            var repo = new MongoRepository(database);
-
             Microsoft.Extensions.Primitives.StringValues clientToken;
             filterContext.HttpContext.Request.Headers.TryGetValue("X-XSRF-TOKEN", out clientToken);
             var clientAuthToken = !string.IsNullOrWhiteSpace(clientToken) ? clientToken[0] : "";

@@ -19,7 +19,7 @@ using PS.Filters;
 namespace PS.Controllers
 {
     [Route("api/[controller]")]
-    public class ServicesController : Controller
+    public class ServicesController : BaseController
     {
         private MongoRepository repo = new MongoRepository("services");
         private readonly IAuthService _auth;
