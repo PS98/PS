@@ -17,7 +17,7 @@ namespace PS.Controllers
 {
     [MmAuthorize]
     [Route("api/[controller]")]
-    public class OrderDetailsController : Controller
+    public class OrderDetailsController : BaseController
     {
         private readonly MongoRepository _repo = new MongoRepository("orders");
         private readonly EmailSender _emailSender;
@@ -38,6 +38,11 @@ namespace PS.Controllers
         {
             try
             {
+                if(email != userDetails.UserId)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json("Invalid Request");
+                }
                 if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(status))
                 {
                     if (status.Equals("All"))
@@ -70,10 +75,15 @@ namespace PS.Controllers
         {
             try
             {
+                if (email != userDetails.UserId)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json("Invalid Request");
+                }
                 if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(invoiceNo))
                 {
                     var res = _repo.CancelSelectedOrder(invoiceNo, email, listOrder);
-                    var order = _domainManager.GetOrder(invoiceNo);
+                    var order = _domainManager.GetOrder(invoiceNo, email);
                     SmsSender.BookingCancelled(order);
                     _emailSender.BookingCancelled(order);
                     Response.StatusCode = (int)HttpStatusCode.OK;
@@ -103,7 +113,7 @@ namespace PS.Controllers
                         DropOffDate = new AppointmentDetails() { Day = dropOffDate, Time = dropOffTime }
                     };
                     _repo.ChangeAppointmentDate(invoiceNo, appointment);
-                    var order = _domainManager.GetOrder(invoiceNo);
+                    var order = _domainManager.GetOrder(invoiceNo, userDetails.UserId);
                     SmsSender.BookingUpdate(order);
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Status = 0, Result = "Your Appointment Details Updated Successfully." });
@@ -118,6 +128,7 @@ namespace PS.Controllers
             return Json(new { Message = "We are unable to process your request.", Status = 1 });
         }
 
+        [AdminAuthorize]
         [HttpGet]
         [Route("list")]
         public JsonResult ListAllOrders()
@@ -162,7 +173,7 @@ namespace PS.Controllers
             {
                 if (!string.IsNullOrWhiteSpace(id))
                 {
-                    var order = _domainManager.GetOrder(id);
+                    var order = _domainManager.GetOrder(id , userDetails.CentreId != "0" ? userDetails.UserId : "0");
                     if(order == null)
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;
@@ -182,12 +193,18 @@ namespace PS.Controllers
 
 
         }
+
         [HttpPost]
         [Route("updateorder")]
         public JsonResult UpdateOrderDetails([FromBody] OrderDetails order)
         {
             try
             {
+                if(order.UserDetails.Email != userDetails.UserId)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json(new { Message = "Invalid Request", Status = 0 });
+                }
                 if (!string.IsNullOrWhiteSpace(order.InvoiceNo))
                 {
                     var updateOrder = _domainManager.UpdateOrderDetails(order);

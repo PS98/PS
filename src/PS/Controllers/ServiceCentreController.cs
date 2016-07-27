@@ -19,7 +19,7 @@ namespace PS.Controllers
 {
     [MmAuthorize]
     [Route("api/[controller]")]
-    public class ServiceCentreController : Controller
+    public class ServiceCentreController : BaseController
     {
 
         private readonly MongoRepository _repo = new MongoRepository("serviceCentre");
@@ -438,10 +438,8 @@ namespace PS.Controllers
         {
             try
             {
-                var userData = HttpContext.Session.GetString("UserData");
-                var sessionData = JsonConvert.DeserializeObject<List<string>>(userData);
-                if (Convert.ToInt64(sessionData[5]) > 0)
-                    id = sessionData[5];
+                if (Convert.ToInt64(userDetails.CentreId) > 0)
+                    id = userDetails.CentreId;
                 if (string.IsNullOrEmpty(id))
                 {
                     Response.StatusCode = (int)HttpStatusCode.BadRequest;
@@ -467,7 +465,7 @@ namespace PS.Controllers
         {
             try
             {
-                if (updatedPrice == null || string.IsNullOrEmpty(updatedPrice.VarientName))
+                if (updatedPrice == null || string.IsNullOrEmpty(updatedPrice.VarientName) || userDetails.CentreId != "0")
                 {
                     Response.StatusCode = (int)HttpStatusCode.BadRequest;
                     return Json(new { Message = "model is not valid", Status = 2 });
@@ -492,7 +490,7 @@ namespace PS.Controllers
         {
             try
             {
-                if (updatedList == null || updatedList.Count == 0)
+                if (updatedList == null || updatedList.Count == 0 || userDetails.CentreId != "0")
                 {
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "No row found to update", Status = 1 });
