@@ -137,3 +137,6 @@ blockquote:before,
 .centre-list .active {
     background-color : lightcyan;
 }
+.book-now-icon, .book-icon {
+     background-color : #02cc8b !important;
+}

@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-angular.module("index").directive("index", function () {
+angular.module("index").directive("index",["$location", function ($location) {
     return {
         //Not defining the scope because now we want the inherited scope(default scope for angular) for psDashboard 
         //instead of isolated scope
@@ -8,9 +8,11 @@ angular.module("index").directive("index", function () {
     // controller: "indexController",
         link: function (scope, el, attrs) {
             new WOW().init();
-        
+            scope.go = function (path) {
+                $location.path(path);
+            };
         }
     };
-});
+}]);
 
 
