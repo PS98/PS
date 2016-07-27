@@ -131,7 +131,7 @@
         } else {
             $scope.selectedJob.splice($scope.selectedJob.indexOf(selectedJob), 1);
         }
-        var pos = $("#divDescribe").offset().top;
+        var pos = $("#searchBox").offset().top;
        // pos = pos - 90;
         if($scope.selectedJob.length >0)
         $scope.scrollContent(pos);
@@ -199,7 +199,7 @@
                 $scope.car.services = [];
                 if ($scope.selectedCar.brand) {
                     getCarType($scope.selectedCar.brand).then(function() {
-                        $scope.carList.carVarientList = ["Petrol", "Diesel", "CNG", "Electric"];
+                        $scope.carList.carVarientList = ["Petrol", "Diesel"];
                         if ($scope.selectedCar.varient) {
                             $scope.car.choose_a_service = true;
                             $scope.car.showServiceType = true;
@@ -249,6 +249,7 @@
                 $scope.selectedJob[0].notes = $scope.selectedJob.notes;
             psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
             psDataServices.setSelectedServiceName(jobName);
+            psDataServices.setNextButtonStatus(true);
             $state.go("service.centre");
 
         }
@@ -373,6 +374,9 @@
         
     }
 
+    $rootScope.$on("userLoginSuccessfull", function() {
+        $state.go("service.centre");
+    });
 }]);
 
 

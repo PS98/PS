@@ -39,6 +39,7 @@ function ($scope, $localStorage, $location, $window, $rootScope, $timeout, psLog
                     $("#loginModal").modal('toggle');
                     if ($state.$current.toString().indexOf('admin') > -1)
                         $rootScope.$broadcast("updateStatus", { status: result.result[4] });
+                    $scope.notifyUserLoggedIn();
                 }
             }, function (error) {
                 //Error
@@ -65,7 +66,12 @@ function ($scope, $localStorage, $location, $window, $rootScope, $timeout, psLog
         $scope.loginError = false;
     }
 
-
+    $scope.notifyUserLoggedIn = function() {
+        if (psDataServices.getNextButtonStatus()) {
+            $rootScope.$broadcast("userLoginSuccessfull");
+            psDataServices.setNextButtonStatus(false);
+        }
+    }
 
     $scope.registerSubmit = function () {
         if ($scope.regPassword == $scope.cnfPassword) {
@@ -94,6 +100,7 @@ function ($scope, $localStorage, $location, $window, $rootScope, $timeout, psLog
                                    userDetails: $scope.userDetails
                                });
                             $("#loginModal").modal('toggle');
+                            $scope.notifyUserLoggedIn();
                             $scope.regSuccess = true;
                             $scope.regError = false;
                             $scope.successMessage = result.message;
