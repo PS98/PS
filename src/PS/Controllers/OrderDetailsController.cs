@@ -200,7 +200,7 @@ namespace PS.Controllers
         {
             try
             {
-                if(order.UserDetails.Email != userDetails.UserId)
+                if(userDetails.CentreId != "0")
                 {
                     Response.StatusCode = (int)HttpStatusCode.BadRequest;
                     return Json(new { Message = "Invalid Request", Status = 0 });
