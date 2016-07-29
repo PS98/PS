@@ -162,7 +162,7 @@ angular.module("psApp").directive("editOrder", function () {
                 var date = type === "prev" ? currentFiveDay[0].day : currentFiveDay[scope.centreWorkingHours.length - 1].day;
                 date = new Date(date);
                 var day = date.getDate();
-                var backDayNo = scope.centre.holiday === 0 ? 5 : 6;
+                var backDayNo = scope.centre.holiday === 7 ? 5 : 6;
                 type === "prev" ? date.setDate(day - backDayNo) : date.setDate(day + 1);
                 if (scope.showPickUpCalendar) {
                     scope.centreWorkingHours = setDate(date);

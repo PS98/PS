@@ -42,7 +42,7 @@
             if (model !== "") {
                 $scope.selectedCar.model = model;
                 $scope.selectedCar.varient = "";
-                $scope.carList.carVarientList = ["Petrol", "Diesel", "CNG", "Electric"];
+                $scope.carList.carVarientList = ["Petrol", "Diesel"];
                 $scope.showVarient = true;
             } else {
                 $scope.selectedCar.model = "I Don't Know";
