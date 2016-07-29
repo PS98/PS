@@ -35,6 +35,7 @@ namespace PS.Services
         public string QuotationAccepted { get; set; }
         public string QuotationRejected { get; set; }
         public string ExtraAmount { get; set; }
+        public string BookingStatusUpdate { get; set; }
     }
 
     public class Servicecentre

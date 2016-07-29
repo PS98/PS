@@ -7,12 +7,17 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using PS.Models;
 using PS.Services;
+using PS.Helper;
+using PS.Helper.Email;
 
 namespace PS.DTO
 {
     public class OrderDetailsDomainManager
     {
         private MongoRepository _repo;
+        private readonly EmailSender _emailSender;
+        private readonly SmsProviderHelper _smsProviderHelper;
+        private SmsSender _sender;
 
         public OrderDetailsDomainManager()
         {
@@ -56,6 +61,14 @@ namespace PS.DTO
 
         private void UpdateOrder(OrderDetails existingOrderDetails, OrderDetails updatedOrderDetails)
         {
+            if (existingOrderDetails.Status != updatedOrderDetails.Status)
+            {
+                SmsSender.OrderStatusUpdate(updatedOrderDetails);
+            }
+            else if(existingOrderDetails.Changed(updatedOrderDetails))
+            {
+                SmsSender.ServiceOrderUpdate(updatedOrderDetails);
+            }
             existingOrderDetails.SelectedAppointment = updatedOrderDetails.SelectedAppointment;
 
             existingOrderDetails.SelectedCentre.PhoneNo = updatedOrderDetails.SelectedCentre.PhoneNo;

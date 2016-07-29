@@ -40,7 +40,26 @@ namespace PS.Models
         public string Status { get; set; }
         public DateTime BookingDate { get; set; }
         public DateTime CancellationDate { get; set; }
-        
+
+        public bool Changed(OrderDetails other)
+        {
+            if (other == null)
+                return false;
+
+            return (SelectedAppointment.DropOffDate != other.SelectedAppointment.DropOffDate ||
+                SelectedAppointment.PickUpDate != other.SelectedAppointment.PickUpDate ||
+                SelectedCentre.PhoneNo != other.SelectedCentre.PhoneNo ||
+                SelectedCentre.TotalActualPrice != other.SelectedCentre.TotalActualPrice ||
+                SelectedCentre.Address != other.SelectedCentre.Address ||
+                SelectedCar.Brand != other.SelectedCar.Brand ||
+                SelectedCar.Model != other.SelectedCar.Model ||
+                SelectedCar.Year != other.SelectedCar.Year ||
+                SelectedCar.Varient != other.SelectedCar.Varient ||
+                UserDetails.FirstName != other.UserDetails.FirstName ||
+                UserDetails.AddressLine1 != other.UserDetails.AddressLine1 ||
+                UserDetails.AddressLine2 != other.UserDetails.AddressLine2);
+        }
+
         public void GetPriceForSelectedService()
         {
             var queryForPriceDetails = new BsonDocument
