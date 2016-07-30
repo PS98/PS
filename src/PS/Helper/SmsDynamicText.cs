@@ -32,7 +32,8 @@ namespace PS.Helper
                 {"{serviceCentreName}",ServiceCentreName },
                 {"{centreArea}",CentreArea },
                  {"{centrePhoneNo}",CentrePhoneNo },
-{"{status}",Status }
+{"{status}",Status },
+{"{make}",Make }
             };
         }
 
@@ -59,6 +60,7 @@ namespace PS.Helper
         public static readonly string UserPhoneNo = "UserPhoneNo";
         public static readonly string CentrePhoneNo = "CentrePhoneNo";
         public static readonly string Status = "Status";
+        public static readonly string Make = "Make";
         // public static readonly string CentreArea = "CentreArea";
 
 

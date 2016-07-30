@@ -32,6 +32,7 @@ namespace PS.Models
                     : "MM" + MongoRepository.RandomNumber(5) + date.ToString("MM") + date.ToString("dd");
             }
         }
+        public QuotationRevision QuotationRevision { get; set; }
 
         public List<Service> SelectedServices { get; set; }
         public CarDetails SelectedCar { get; set; }
@@ -72,9 +73,9 @@ namespace PS.Models
             var serviceDetails = centreDetails.ServiceDetails;
             foreach (var services in serviceDetails)
             {
-                foreach(var selectedService in SelectedCentre.ServiceDetails)
+                foreach (var selectedService in SelectedCentre.ServiceDetails)
                 {
-                    if(services.Name == selectedService.Name)
+                    if (services.Name == selectedService.Name)
                     {
                         if (SelectedCar.Varient == "Diesel")
                         {
@@ -168,5 +169,12 @@ namespace PS.Models
 
         public string ZipCode { get; set; }
 
+    }
+
+    [BsonIgnoreExtraElements]
+    public class QuotationRevision
+    {
+        public List<Detalis> ServiceDetails { get; set; }
+        public string Status { get; set; }
     }
 }
