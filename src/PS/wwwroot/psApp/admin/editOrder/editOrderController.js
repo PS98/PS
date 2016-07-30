@@ -10,6 +10,7 @@ angular.module("psApp").controller("editOrderController", [
                             $scope.error = '';
                             $scope.activeOrder = [];
                             $scope.order = data.order;
+                            $scope.order.quotationRevision.status = "Select";
                             $scope.activeOrder.push(data.order);
                         }
                         else {

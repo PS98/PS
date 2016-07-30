@@ -308,6 +308,32 @@ namespace PS.Helper
             }
         }
 
+        public static void QuotationUpdates(OrderDetails order)
+        {
+            try
+            {
+                var serviceList = order.SelectedServices.Select(x => x.Name).ToArray();
+                var serviceName = string.Join(",", serviceList);
+                Dictionary<string, string> messageText = new Dictionary<string, string>{
+                    { SmsDynamicText.UserName, order.UserDetails.FirstName },
+                    {SmsDynamicText.TotalAmount, order.SelectedCentre.TotalMMPrice.ToString()},
+                    {SmsDynamicText.BookingId, order.InvoiceNo},
+                    {SmsDynamicText.Make, order.SelectedCar.Year},
+                    {SmsDynamicText.Vehical, order.SelectedCar.Model},
+                    {SmsDynamicText.ServiceName, serviceName} };
+                var type = order.QuotationRevision.Status == "Accepted" ? SmsType.QuotationAccepted : SmsType.QuotationRejected;
+                var centreMessage = _smsProviderHelper.GenerateSmsMessages(type, messageText);
+                _smsSender.SendSmsAsync(order.UserDetails.PhoneNo, centreMessage);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, centreMessage);
+            }
+            catch (Exception)
+            {
+
+                // throw;
+            }
+        }
+
         public static void OrderStatusUpdate(OrderDetails order)
         {
             try

@@ -38,9 +38,9 @@ namespace PS.DTO
             }
         }
 
-        public OrderDetails GetOrder(string id , string userId)
+        public OrderDetails GetOrder(string id, string userId)
         {
-            var filter = userId != "0" ? 
+            var filter = userId != "0" ?
                 Builders<OrderDetails>.Filter.Where(x => x.InvoiceNo.Equals(id) && x.UserDetails.Email == userId) :
                 Builders<OrderDetails>.Filter.Where(x => x.InvoiceNo.Equals(id));
             var collection = _repo.GetCollection<OrderDetails>("Invoice");
@@ -52,10 +52,10 @@ namespace PS.DTO
         public OrderDetails UpdateOrderDetails(OrderDetails updateOrder)
         {
             var collection = _repo.GetCollection<OrderDetails>("Invoice");
-            var order = GetOrder(updateOrder.InvoiceNo , updateOrder.UserDetails.Email);
+            var order = GetOrder(updateOrder.InvoiceNo, updateOrder.UserDetails.Email);
             UpdateOrder(order, updateOrder);
             var filter = Builders<OrderDetails>.Filter.Where(x => x.Id == order.Id);
-            collection.ReplaceOneAsync(filter,order);
+            collection.ReplaceOneAsync(filter, order);
             return order;
         }
 
@@ -65,9 +65,14 @@ namespace PS.DTO
             {
                 SmsSender.OrderStatusUpdate(updatedOrderDetails);
             }
-            else if(existingOrderDetails.Changed(updatedOrderDetails))
+            else if (existingOrderDetails.Changed(updatedOrderDetails))
             {
                 SmsSender.ServiceOrderUpdate(updatedOrderDetails);
+            }
+            if (updatedOrderDetails.QuotationRevision.Status != "Select")
+            {
+                SmsSender.QuotationUpdates(updatedOrderDetails);
+                existingOrderDetails.QuotationRevision.ServiceDetails.AddRange(existingOrderDetails.SelectedCentre.ServiceDetails);
             }
             existingOrderDetails.SelectedAppointment = updatedOrderDetails.SelectedAppointment;
 
@@ -75,7 +80,7 @@ namespace PS.DTO
             existingOrderDetails.SelectedCentre.TotalActualPrice = updatedOrderDetails.SelectedCentre.TotalActualPrice;
             existingOrderDetails.SelectedCentre.ServiceDetails = updatedOrderDetails.SelectedCentre.ServiceDetails;
             existingOrderDetails.SelectedCentre.Address = updatedOrderDetails.SelectedCentre.Address;
-           // existingOrderDetails.SelectedCentre.Email = updatedOrderDetails.SelectedCentre.Email;
+            // existingOrderDetails.SelectedCentre.Email = updatedOrderDetails.SelectedCentre.Email;
 
             existingOrderDetails.Status = updatedOrderDetails.Status;
 
@@ -84,7 +89,7 @@ namespace PS.DTO
             existingOrderDetails.UserDetails = updatedOrderDetails.UserDetails;
 
             existingOrderDetails.SelectedServices = updatedOrderDetails.SelectedServices;
-          
+
 
         }
     }
