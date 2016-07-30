@@ -1,0 +1,64 @@
+﻿<style>
+   .admin .centre-list-header {
+       font-size: 16px; font-weight: 700;font-family: robotMedium;  padding: 30px;
+   }
+.admin .centre-list-result {
+  background-color: #e0dddd;   
+    color: black; margin-bottom: 20px; font-size: 14px; font-family: robotoRegular;
+}
+.admin .centre-list-container {
+    padding: 20px 30px 10px;
+}
+.admin .centre-list-container > div {
+    padding:10px;
+}
+.admin .centre-list-text {
+    font-size: 20px;text-transform: uppercase;
+}
+.admin .centre-list-secondary-text {
+    font-size: 13px;
+}
+
+</style>
+<div class="row centre-list-header">
+    <div class="col-lg-3">
+        Service Centre Name
+    </div>
+    <div class="col-lg-3">
+        Owner Name
+    </div>
+    <div class="col-lg-3">
+        Area
+    </div>
+    <div class="col-lg-3">
+        Contact Deatils
+    </div>
+</div>
+
+<div>
+
+    <div class="centre-list-result" ng-repeat="centre in serviceCentreList">
+        <div class="row centre-list-container">
+            <div class="col-lg-3">
+                <div class="centre-list-text ">{{centre.name}},</div>
+                <div class="centre-list-secondary-text">{{centre.address.line1}}
+                    {{centre.address.line2}}</div>
+            </div>
+            <div class="col-lg-3">
+                {{centre.owner}}
+            </div>
+            <div class="col-lg-3">
+                {{centre.email}}
+            </div>
+            <div class="col-lg-3">
+                <div>{{centre.phoneNo}}</div>
+                <div>{{centre.email}}</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <order-list ng-if="displayOrderList"></order-list>
+</div>

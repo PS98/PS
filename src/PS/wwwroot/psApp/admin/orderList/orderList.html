@@ -1,0 +1,81 @@
+﻿<style>
+    .admin .order-list-header {
+        font-size: 16px;
+        font-weight: 700;
+        font-family: robotMedium;
+        padding: 30px;
+    }
+
+    .admin .order-list-result {
+        background-color: #e0dddd;
+        color: black;
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-family: robotoRegular;
+    }
+
+    .admin .order-list-container {
+        padding: 20px 30px 10px;
+    }
+
+        .admin .order-list-container > div {
+            padding: 10px;
+        }
+
+    .admin .order-list-text {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .admin .order-list-secondary-text {
+        font-size: 13px;
+    }
+</style>
+<div class="row order-list-header">
+    <div class="col-lg-3">
+       Customer/Car Details
+    </div>
+    <div class="col-lg-3">
+      Service Package
+    </div>
+    <div class="col-lg-3">
+       Price
+    </div>
+    <div class="col-lg-3">
+       Status
+    </div>
+</div>
+
+<div>
+
+    <div class="order-list-result" ng-repeat="order in orderList">
+        <div class="row order-list-container">
+            <div class="col-lg-3">
+                <div class="order-list-text ">{{order.userDetails.firstName}}&nbsp;{{order.userDetails.lastName}}</div>
+                <div class="order-list-secondary-text">
+                    {{order.userDetails.phoneNo}}
+                </div>
+                <div class="order-list-secondary-text">
+                    {{order.selectedCar.brand}}-{{order.selectedCar.model}}-{{order.selectedCar.year}}-{{order.selectedCar.varient}}
+                </div>
+            </div>
+            <div class="col-lg-3" ng-repeat="service in order.selectedService">
+                {{service.name}}
+            </div>
+            <div class="col-lg-3">
+                <div class="order-list-secondary-text">
+                    {{order.selectedCentre.totalMMPrice}}
+                </div>
+                <div class="order-list-secondary-text">
+                   {{order.paymentMode}}
+                </div>
+               
+                
+            </div>
+            <div class="col-lg-3">
+                <div>{{order.status}}</div>
+            </div>
+        </div>
+
+    </div>
+</div>
