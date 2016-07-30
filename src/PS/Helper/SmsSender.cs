@@ -12,7 +12,7 @@ namespace PS.Helper
         private static ISmsSender _smsSender;
         private static SmsProviderHelper _smsProviderHelper;
 
-#region Customer 
+        #region Customer 
         public SmsSender(ISmsSender smsSender, SmsProviderHelper messageProvider)
         {
             _smsSender = smsSender;
@@ -73,8 +73,8 @@ namespace PS.Helper
                 var customerMessge = _smsProviderHelper.GenerateSmsMessages(SmsType.BookingSuccess, messageText);
 
                 _smsSender.SendSmsAsync(model.UserDetails.PhoneNo, customerMessge);
-                if(!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
-                _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, customerMessge);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, customerMessge);
             }
 
             catch (Exception)
@@ -84,13 +84,13 @@ namespace PS.Helper
 
             finally
             {
-                if(_smsProviderHelper.MessageProvider.SmsMessages.ServiceCentre.SendServiceCentreSms)
-                BookingConfirmationToServiceCentre(model);
+                if (_smsProviderHelper.MessageProvider.SmsMessages.ServiceCentre.SendServiceCentreSms)
+                    BookingConfirmationToServiceCentre(model);
             }
 
         }
 
-        
+
         public static void BookingCancelled(OrderDetails model)
         {
             try
@@ -266,7 +266,7 @@ namespace PS.Helper
             {
                 // ignored
             }
-           
+
         }
 
         public static void ServiceOrderCancel(OrderDetails model)
@@ -285,11 +285,30 @@ namespace PS.Helper
 
                 // throw;
             }
-         
+
 
         }
 
         public static void ServiceOrderUpdate(OrderDetails order)
+        {
+            try
+            {
+                Dictionary<string, string> messageText = new Dictionary<string, string>{
+                    { SmsDynamicText.UserName, order.UserDetails.FirstName },
+                    { SmsDynamicText.Status, order.Status } };
+                var centreMessage = _smsProviderHelper.GenerateSmsMessages(SmsType.BookingStatusUpdate, messageText);
+                _smsSender.SendSmsAsync(order.SelectedCentre.PhoneNo, centreMessage);
+                if (!string.IsNullOrEmpty(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo))
+                    _smsSender.SendSmsAsync(_smsProviderHelper.MessageProvider.SmsMessages.MilematesNo, centreMessage);
+            }
+            catch (Exception)
+            {
+
+                // throw;
+            }
+        }
+
+        public static void OrderStatusUpdate(OrderDetails order)
         {
             try
             {
@@ -312,7 +331,7 @@ namespace PS.Helper
 
         #region Common 
 
-        private static void GetMessageTextDictionary(OrderDetails model, out Dictionary<string, string> messageText )
+        private static void GetMessageTextDictionary(OrderDetails model, out Dictionary<string, string> messageText)
         {
             var serviceList = model.SelectedServices.Select(x => x.Name).ToArray();
             var serviceName = string.Join(",", serviceList);
@@ -321,8 +340,8 @@ namespace PS.Helper
                                        + model.UserDetails.PhoneNo);
             var pickUpdate = string.Format(model.SelectedAppointment.PickUpDate.Day + "(" + model.SelectedAppointment.PickUpDate.Time + ")");
             var dropOffdate = string.Format(model.SelectedAppointment.DropOffDate.Day + "(" + model.SelectedAppointment.DropOffDate.Time + ")");
-            var vehical = model.SelectedCar.Brand +"-" + model.SelectedCar.Model + "-" + model.SelectedCar.Year + "-" + model.SelectedCar.Varient;
-             messageText = new Dictionary<string, string>
+            var vehical = model.SelectedCar.Brand + "-" + model.SelectedCar.Model + "-" + model.SelectedCar.Year + "-" + model.SelectedCar.Varient;
+            messageText = new Dictionary<string, string>
                 {
                     {SmsDynamicText.BookingId, model.InvoiceNo},
                     {SmsDynamicText.ServiceName, serviceName},
@@ -335,7 +354,7 @@ namespace PS.Helper
 
                 };
         }
-#endregion
+        #endregion
 
 
     }

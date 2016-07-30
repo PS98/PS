@@ -32,6 +32,7 @@ namespace PS.Helper
                 {"{serviceCentreName}",ServiceCentreName },
                 {"{centreArea}",CentreArea },
                  {"{centrePhoneNo}",CentrePhoneNo },
+{"{status}",Status }
             };
         }
 
@@ -57,6 +58,7 @@ namespace PS.Helper
         public static readonly string CentreArea = "CentreArea";
         public static readonly string UserPhoneNo = "UserPhoneNo";
         public static readonly string CentrePhoneNo = "CentrePhoneNo";
+        public static readonly string Status = "Status";
         // public static readonly string CentreArea = "CentreArea";
 
 
@@ -82,6 +84,7 @@ namespace PS.Helper
         public const string QuotationAccepted = "QuotationAccepted";
         public const string QuotationRejected = "QuotationRejected";
         public const string ExtraAmount = "ExtraAmount";
+        public const string BookingStatusUpdate = "BookingStatusUpdate";
         #endregion
 
         #region Service Centre
