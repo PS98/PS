@@ -5,6 +5,9 @@ angular.module("psApp").directive("orderList", function() {
         templateUrl: "psapp/admin/orderList/orderList.html",
         link: function(scope, element, attrs) {
         },
+        scope: {
+            orders:"="
+        },
         controller:"orderListController"
     }
 });

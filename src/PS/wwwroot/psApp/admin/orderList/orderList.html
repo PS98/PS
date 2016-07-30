@@ -18,9 +18,9 @@
         padding: 20px 30px 10px;
     }
 
-        .admin .order-list-container > div {
-            padding: 10px;
-        }
+    .admin .order-list-container > div {
+        padding: 10px;
+    }
 
     .admin .order-list-text {
         font-size: 20px;
@@ -30,52 +30,113 @@
     .admin .order-list-secondary-text {
         font-size: 13px;
     }
+
+    .admin .order-status-details {
+        padding: 30px 14%;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .admin .order-status-details .status {
+        text-align: center;
+        margin: 10px;
+        padding-top: 10px;
+        min-width: 250px;
+        background-color: rgba(0, 0, 0, 0.2);
+        font-size: 30px;
+        min-height: 160px;
+    }
+
+    .admin .order-status-details > div {
+        display: inline-flex;
+    }
+
+    .admin .status .fa {
+        font-size: 80px;
+        margin-bottom: 10px;
+    }
+
+    .admin .order-status-details .fa-cog {
+        color: goldenrod;
+    }
+
+    .admin .order-status-details .fa-check-circle {
+        color: green;
+    }
+
+    .admin .order-status-details .fa-remove {
+        color: red;
+    }
 </style>
-<div class="row order-list-header">
-    <div class="col-lg-3">
-       Customer/Car Details
-    </div>
-    <div class="col-lg-3">
-      Service Package
-    </div>
-    <div class="col-lg-3">
-       Price
-    </div>
-    <div class="col-lg-3">
-       Status
-    </div>
-</div>
+<div ng-if="!editOrder">
+    <div class="order-status-details">
+        <div>
+            <div class="status">
+                <i class="fa fa-cog"></i>
+                <div> 4 Pending </div>
+            </div>
+            <div class="status">
+                <i class="fa fa-check-circle"></i>
+                <div> 4 Completed </div>
 
-<div>
+            </div>
 
-    <div class="order-list-result" ng-repeat="order in orderList">
-        <div class="row order-list-container">
-            <div class="col-lg-3">
-                <div class="order-list-text ">{{order.userDetails.firstName}}&nbsp;{{order.userDetails.lastName}}</div>
-                <div class="order-list-secondary-text">
-                    {{order.userDetails.phoneNo}}
-                </div>
-                <div class="order-list-secondary-text">
-                    {{order.selectedCar.brand}}-{{order.selectedCar.model}}-{{order.selectedCar.year}}-{{order.selectedCar.varient}}
-                </div>
+            <div class="status">
+                <i class="fa fa-remove"></i>
+                <div> 4 Cancelled </div>
             </div>
-            <div class="col-lg-3" ng-repeat="service in order.selectedService">
-                {{service.name}}
+
+        </div>
+    </div>
+    <div>
+        <div class="row order-list-header">
+            <div class="col-lg-3">
+                Customer/Car Details
             </div>
             <div class="col-lg-3">
-                <div class="order-list-secondary-text">
-                    {{order.selectedCentre.totalMMPrice}}
-                </div>
-                <div class="order-list-secondary-text">
-                   {{order.paymentMode}}
-                </div>
-               
-                
+                Service Package
             </div>
             <div class="col-lg-3">
-                <div>{{order.status}}</div>
+                Price
+            </div>
+            <div class="col-lg-3">
+                Status
             </div>
         </div>
 
+        <div class="order-list-result clickable" ng-repeat="order in orders" ng-click="orderDetails(order.invoiceNo)">
+            <div class="row order-list-container">
+                <div class="col-lg-3">
+                    <div class="order-list-text ">{{order.userDetails.firstName}}&nbsp;{{order.userDetails.lastName}}</div>
+                    <div class="order-list-secondary-text">
+                        {{order.userDetails.phoneNo}}
+                    </div>
+                    <div class="order-list-secondary-text">
+                        {{order.selectedCar.brand}}-{{order.selectedCar.model}}-{{order.selectedCar.year}}-{{order.selectedCar.varient}}
+                    </div>
+                </div>
+                <div class="col-lg-3" ng-repeat="service in order.selectedService">
+                    {{service.name}}
+                </div>
+                <div class="col-lg-3">
+                    <div class="order-list-secondary-text">
+                        {{order.selectedCentre.totalMMPrice}}
+                    </div>
+                    <div class="order-list-secondary-text">
+                        {{order.paymentMode}}
+                    </div>
+
+
+                </div>
+                <div class="col-lg-3">
+                    <div>{{order.status}}</div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+</div>
+<div ng-if="editOrder">
+    <edit-order-details active-order="order"></edit-order-details>
 </div>

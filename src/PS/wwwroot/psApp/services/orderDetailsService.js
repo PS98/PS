@@ -1,5 +1,5 @@
 ﻿angular.module("psApp").factory("psOrderDetailsService", ["$http", "$q", "$localStorage", "psDataServices", function ($http, $q, $localStorage, psDataServices) {
-    var orderDetails, submittedOrder;
+    var orderDetails, submittedOrder,orderId;
 
     var _validateOrder = function (payment_id, payment_request_id) {
         var data = { 'PaymentId': payment_id, 'PaymentRequestId': payment_request_id }
@@ -201,6 +201,33 @@
 
         return deferred.promise;
     }
+
+    var _getOrderList = function(centreId) {
+        var deferred = $q.defer();
+          $http(
+        {
+           // url: "/api/ServiceCentre/price/savelist?centreId="+centreId,
+           url:"/",
+            method: "GET",
+            cache: false
+        }).then(function(result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function(error) {
+            //Error
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+    }
+
+    var _setOrderId = function(id) {
+        orderId = id;
+    }
+      var _getOrderId = function(id) {
+      return orderId;
+    }
+
     return {
         payment: _payment,
         validateOrder: _validateOrder,
@@ -213,7 +240,10 @@
         updateSelectedOrder:_updateSelectedOrder,
         getPriceList:_getPriceList,
         updateRow:updateSingleRow,
-        updateChangedRow:saveUpdatedlist
+        updateChangedRow:saveUpdatedlist,
+        getOrderList:_getOrderList,
+        setOrderId:_setOrderId,
+        getOrderId:_getOrderId
 
     }
 

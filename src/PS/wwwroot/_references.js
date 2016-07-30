@@ -26,6 +26,7 @@
 /// <reference path="psapp/admin/admindirective.js" />
 /// <reference path="psapp/admin/centrelist/servicecentrelistcontroller.js" />
 /// <reference path="psapp/admin/editorder/editordercontroller.js" />
+/// <reference path="psapp/admin/editorder/editorderdirective.js" />
 /// <reference path="psapp/admin/orderlist/orderlistcontroller.js" />
 /// <reference path="psapp/admin/orderlist/orderlistdirective.js" />
 /// <reference path="psapp/admin/pricedetails/servicecentrepricedetailscontroller.js" />
