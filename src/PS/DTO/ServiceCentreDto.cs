@@ -617,6 +617,15 @@ namespace PS.DTO
         public ServiceDetails UpdatePriceForService(ServiceDetails details, string serviceName, string modelName, int price, bool type)
         {
             var modelList = new List<string> {modelName};
+            if (details == null)
+            {
+                details = new ServiceDetails
+                {
+                    Name = serviceName,
+                    Petrol = new List<PriceDetails>(),
+                    Diesel = new List<PriceDetails>()
+                };
+            }
             AddNewPriceDetails(details,serviceName,modelList,price,type);
             return details;
         }

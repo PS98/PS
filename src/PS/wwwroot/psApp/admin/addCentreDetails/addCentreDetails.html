@@ -180,9 +180,9 @@
                                         <div class="sorting__item col-lg-12">
                                             <span class="sorting__title">Select Service</span><br />
                                             <div class="select jelect">
-                                                <input ng-model="service" type="text" id="txtServiceName" class="jelect-input">
-                                                <div tabindex="0" role="button" class="jelect-current" id="cityDropDown">Select Service</div>
-                                                <ul class="jelect-options" id="dropDownCity">
+                                                <input ng-model="centreDetails.service" type="text" id="txtServiceName" class="jelect-input">
+                                                <div tabindex="0" role="button" class="jelect-current" id="serviceList">Select Service</div>
+                                                <ul class="jelect-options" id="dropDownServiceList">
                                                     <li class="jelect-option jelect-option_state_active">Select Service</li>
                                                     <li class="jelect-option">Lite Car Care</li>
                                                     <li class="jelect-option">Essential Car Care</li>
@@ -194,7 +194,7 @@
                                             <span class="sorting__title">Select Type</span><br />
                                             <div class="select jelect">
                                                 <input ng-model="centreDetails.type" type="text" id="txtType" class="jelect-input">
-                                                <div tabindex="0" role="button" class="jelect-current" id="cityDropDown">Select Type</div>
+                                                <div tabindex="0" role="button" class="jelect-current" id="varientList">Select Type</div>
                                                 <ul class="jelect-options" id="dropDownType">
                                                     <li class="jelect-option jelect-option_state_active">Select Type</li>
                                                     <li class="jelect-option">Petrol</li>
@@ -214,7 +214,7 @@
                                     <label for="ServiceCentrePrice"> Service Centre Price </label>
                                     <input class="form-control" id="ServiceCentrePrice" name="ServiceCentrePrice" type="text" ng-model="centreDetails.ServiceCentrePrice" />
                                     <label for="Email"> Radius </label>
-                                    <input class="form-control" id="Radius" name="Radius" placeholder="Radius" type="text" ng-model="radius" />
+                                    <input class="form-control" id="Radius" name="Radius" placeholder="Radius" type="text" ng-model="centreDetails.radius" />
                                     <!--</div>-->
                                 </div>
                             </div>

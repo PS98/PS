@@ -73,6 +73,7 @@ angular.module("psApp").directive("admin", function () {
         },
         controller: ["$scope", "$state", "psDataServices", "psOrderDetailsService", "psLoginService","$rootScope",
         function ($scope, $state, psDataServices, psOrderDetailsService, psLoginService, $rootScope) {
+                $('.jelect').jelect();
 
             $scope.clearCustomerDetails = function () {
                 $scope.CentredDetails = "";
@@ -114,6 +115,8 @@ angular.module("psApp").directive("admin", function () {
                 });
             $scope.selectBrand = function(brandName) {
                 $scope.showBrandName = false;
+                $('.jelect').jelect();
+
                 $scope.showModel = true;
                 $scope.brand = brandName;
                 $scope.modelList = $scope.modelList || [];
@@ -142,8 +145,8 @@ angular.module("psApp").directive("admin", function () {
                     model.ActualPrice = $scope.centreDetails.ActualPrice;
                     model.MilematePrice = $scope.centreDetails.MilematePrice;
                     model.ServiceCentrePrice = $scope.centreDetails.ServiceCentrePrice;
-                    services.Name = $scope.service;
-                    services.Radius = $scope.radius;
+                    services.Name = $scope.centreDetails.service;
+                    services.Radius = $scope.centreDetails.radius;
                     $scope.centreDetails.ServiceDetails = [];
                     switch ($scope.centreDetails.type) {
                     case "Petrol":
@@ -165,7 +168,7 @@ angular.module("psApp").directive("admin", function () {
                     }
                 }
                 console.log($scope.centreDetails);
-                if ($scope.centreDetails.Id || $scope.newCentre)
+                if ($scope.centreDetails.CentreId || $scope.newCentre)
                     psDataServices.saveCentreDetails($scope.centreDetails).
                         success(function(data) {
                             alert(data.message);
