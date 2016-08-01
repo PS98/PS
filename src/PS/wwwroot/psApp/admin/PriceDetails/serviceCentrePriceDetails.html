@@ -10,13 +10,13 @@
         </div>
     </div>
     <div ng-if="status == 1" ng-init="getPriceList('')"></div>
-    <div class="row">
+    <div class="row" style="height: 40px">
         <div class="col-sm-6 pull-right text-right margin-bottom10" ng-if="(serveData || []).length >0">
             <button class="btn btn-primary btn-effect" ng-click="updateAll()">Update All Row </button>
             <button class="btn btn-primary btn-effect" ng-click="cancelAll()">Cancel All Update </button>
         </div>
     </div>
-    <div id="grid1" ui-grid="gridOptions" ui-grid-edit ui-grid-row-edit ui-grid-selection style="height: 600px;"></div>
+    <div id="grid1" ui-grid="gridOptions" ui-grid-edit ui-grid-row-edit ui-grid-selection ui-grid-cellNav style="height: 600px;"></div>
     <div class="row">
         <div class="col-sm-6 pull-right text-right padding-top30" ng-if="(serveData || []).length >0">
             <button class="btn btn-primary btn-effect" ng-click="updateAll()">Update All Row </button>
