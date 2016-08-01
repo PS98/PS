@@ -1,13 +1,19 @@
 ﻿<style>
-    .admin .centre-list-header {
-        font-size: 16px;font-weight: 700;font-family: robotMedium;padding: 30px;
-    }
+   .admin .centre-list-header {
+         font-size: 16px;font-weight: 700;font-family: robotMedium;padding: 30px;text-align: center
+     }
     .admin .centre-list-result {
-        background-color: #e0dddd;
-        color: black;margin-bottom: 20px;font-size: 14px;font-family: robotoRegular;
+        color: black;margin: 0 0 30px;font-size: 14px;font-family: robotoRegular;text-align: center
     }
     .admin .centre-list-container {
-        padding: 20px 30px 10px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background: #f5f5f5;
+        border-radius: 2px;
+        box-shadow: 0 2px 4px 0 #fff;
+        margin-bottom: 10px;
+        padding: 20px;
     }
     .admin .centre-list-container > div {
         padding: 10px;
@@ -18,7 +24,6 @@
     .admin .centre-list-secondary-text {
         font-size: 13px;
     }
-
 </style>
 <div ng-show="!displayOrderList">
     <div class="row centre-list-header">
@@ -37,8 +42,8 @@
     </div>
 
     <div>
-        <div class="centre-list-result clickable" ng-repeat="centre in serviceCentreList" ng-click="changeView(centre.centreId)">
-            <div class="row centre-list-container">
+        <div class="row centre-list-result clickable" ng-repeat="centre in serviceCentreList" ng-click="changeView(centre.centreId)">
+            <div class="centre-list-container">
                 <div class="col-lg-3">
                     <div class="centre-list-text ">{{centre.name}},</div>
                     <div class="centre-list-secondary-text">
@@ -69,5 +74,5 @@
         </div>
     </div>
 
-    <order-list orders="orders"></order-list>
+        <order-list orders="orders"></order-list>
 </div>
