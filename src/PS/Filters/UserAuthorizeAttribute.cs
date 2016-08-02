@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Filters;
 using Newtonsoft.Json;
 using PS.DTO;
@@ -28,8 +29,7 @@ namespace PS.Filters
                 var data = repo.GetDocumentList<UserSession>(collectionName);
                 if (data.All(r => r.Token != clientAuthToken))
                 {
-                    filterContext.HttpContext.Response.Clear();
-                    filterContext.HttpContext.Response.StatusCode = 203;
+                    filterContext.Result = new HttpStatusCodeResult(203);
                 }
                 else
                 {
@@ -40,8 +40,7 @@ namespace PS.Filters
             {
                 var result = System.Text.Encoding.UTF8.GetString(res);
                 if (result.ToString() == clientAuthToken.ToString()) return;
-                filterContext.HttpContext.Response.Clear();
-                filterContext.HttpContext.Response.StatusCode = 203;
+                filterContext.Result = new HttpStatusCodeResult(203);
             }
         }
     }
@@ -50,31 +49,36 @@ namespace PS.Filters
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            byte[] res;
-            const string key = "XSRF-TOKEN";
-            Microsoft.Extensions.Primitives.StringValues clientToken;
-            filterContext.HttpContext.Request.Headers.TryGetValue("X-XSRF-TOKEN", out clientToken);
-            var clientAuthToken = !string.IsNullOrWhiteSpace(clientToken) ? clientToken[0] : "";
-            filterContext.HttpContext.Session.TryGetValue(key, out res);
-            if (res == null)
-            {
-                filterContext.HttpContext.Response.Clear();
-                filterContext.HttpContext.Response.StatusCode = 203;
-            }
-            else
-            {
-                var result = System.Text.Encoding.UTF8.GetString(res);
-                if (result.ToString() == clientAuthToken.ToString())
+            try {
+                byte[] res;
+                const string key = "XSRF-TOKEN";
+                Microsoft.Extensions.Primitives.StringValues clientToken;
+                filterContext.HttpContext.Request.Headers.TryGetValue("X-XSRF-TOKEN", out clientToken);
+                var clientAuthToken = !string.IsNullOrWhiteSpace(clientToken) ? clientToken[0] : "";
+                filterContext.HttpContext.Session.TryGetValue(key, out res);
+                if (res == null)
                 {
-                    var userData = filterContext.HttpContext.Session.GetString("UserData");
-                    var sessionData = JsonConvert.DeserializeObject<List<string>>(userData);
-                    if (Convert.ToBoolean(sessionData[4]) == true)
+                    filterContext.Result = new HttpStatusCodeResult(203);
+                }
+                else
+                {
+                    var result = System.Text.Encoding.UTF8.GetString(res);
+                    if (result.ToString() == clientAuthToken.ToString())
                     {
-                        return;
-                    }
-                };
-                filterContext.HttpContext.Response.Clear();
-                filterContext.HttpContext.Response.StatusCode = 203;
+                        var userData = filterContext.HttpContext.Session.GetString("UserData");
+                        var sessionData = JsonConvert.DeserializeObject<List<string>>(userData);
+                        if (Convert.ToBoolean(sessionData[4]) == true)
+                        {
+                            return;
+                        }
+                    };
+                    filterContext.Result = new HttpStatusCodeResult(203);
+                }
+            }
+            catch(Exception ex)
+            {
+                filterContext.Result = new HttpStatusCodeResult(203);
+
             }
         }
     }

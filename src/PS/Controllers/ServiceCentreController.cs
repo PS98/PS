@@ -41,6 +41,7 @@ namespace PS.Controllers
 
         [Route("centerlist")]
         [HttpGet]
+        [AdminAuthorize]
         public List<ServiceCentreGeo> GetCenterList()
         {
             var collection = _repo.GetCollection<ServiceCentreGeo>("Pune");
@@ -443,6 +444,7 @@ namespace PS.Controllers
         }
 
         [HttpGet]
+        [AdminAuthorize]
         [Route("priceList")]
         public JsonResult GetPriceDetails(string id)
         {

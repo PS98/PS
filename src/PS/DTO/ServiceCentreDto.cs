@@ -548,12 +548,7 @@ namespace PS.DTO
 
         public void UpdatePriceDetails(CarVerientPrice updatedPrice,ServiceCentreGeo serviceCentre)
         {
-            var nameList = updatedPrice.VarientName.Split('-');
-            string model = null;
-            for (var i = 1; i < nameList.Length; i++)
-            {
-                model = model== null ? nameList[i] : model +"-" + nameList[i];
-            }
+            var model = updatedPrice.VarientName.Split('-')[1];
             var isEngineTypePetrol = updatedPrice.EngineType.ToLower().Equals("petrol");
             int liteServicePrice, essentialServicePrice, comprehensiveServicePrice;
 
@@ -593,7 +588,6 @@ namespace PS.DTO
             {
                 RemoveModelFromModelList(details, serviceName, modelName, type); // remove model name 
                 exitingPriceData.ModelList.Add(modelName);
-                exitingPriceData.ModelList= exitingPriceData.ModelList.Distinct().ToList();
             }
             else
             {
