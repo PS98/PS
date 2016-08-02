@@ -18,6 +18,9 @@ angular.module("psApp").controller("orderListController", [
                 console.log(data.message);
             });
         }
+        $scope.toggleView = function() {
+            $scope.editOrder = false;
+        }
       
     }
 ]);

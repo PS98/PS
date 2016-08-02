@@ -3,19 +3,25 @@
         font-size: 16px;
         font-weight: 700;
         font-family: robotMedium;
-        padding: 30px;
+        padding: 30px;text-align: center
     }
 
     .admin .order-list-result {
-        background-color: #e0dddd;
         color: black;
-        margin-bottom: 20px;
+        margin: 0 0 30px;
         font-size: 14px;
-        font-family: robotoRegular;
+        font-family: robotoRegular;text-align: center
     }
 
     .admin .order-list-container {
-        padding: 20px 30px 10px;
+          display: flex;
+        align-items: center;
+        width: 100%;
+        background: #f5f5f5;
+        border-radius: 2px;
+        box-shadow: 0 2px 4px 0 #fff;
+        margin-bottom: 10px;
+        padding: 20px;
     }
 
     .admin .order-list-container > div {
@@ -32,23 +38,25 @@
     }
 
     .admin .order-status-details {
-        padding: 30px 14%;
+        /*padding: 30px 14%;*/
         margin-top: 20px;
         width: 100%;
     }
 
     .admin .order-status-details .status {
-        text-align: center;
-        margin: 10px;
-        padding-top: 10px;
-        min-width: 250px;
-        background-color: rgba(0, 0, 0, 0.2);
-        font-size: 30px;
-        min-height: 160px;
+       background: #ECECEC;
+    display: inline-block;
+    margin: 10px;
+    width: 198px;
+    height: 190px;
+    text-align: center;
+    padding: 35px 15px 15px;
+
     }
 
     .admin .order-status-details > div {
-        display: inline-flex;
+           width: 100%;
+    text-align: center;
     }
 
     .admin .status .fa {
@@ -104,8 +112,8 @@
             </div>
         </div>
 
-        <div class="order-list-result clickable" ng-repeat="order in orders" ng-click="orderDetails(order.invoiceNo)">
-            <div class="row order-list-container">
+        <div class="row order-list-result clickable" ng-repeat="order in orders" ng-click="orderDetails(order.invoiceNo)">
+            <div class="order-list-container">
                 <div class="col-lg-3">
                     <div class="order-list-text ">{{order.userDetails.firstName}}&nbsp;{{order.userDetails.lastName}}</div>
                     <div class="order-list-secondary-text">
@@ -138,5 +146,10 @@
 
 </div>
 <div ng-if="editOrder">
+    <div class="row">
+        <div class="col-lg-5">
+            <button type="button" class="btn btn-primary btn-effect" ng-click="toggleView()">Back to order List</button>
+        </div>
+    </div>
     <edit-order-details active-order="order"></edit-order-details>
 </div>
