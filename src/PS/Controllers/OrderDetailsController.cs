@@ -158,9 +158,7 @@ namespace PS.Controllers
                     pendingOrderCount = pendingOrder.Count(),
                     cancelOrderCount = cancelOrder.Count(),
                     successorderCount = successorder.Count(),
-                    pendingOrder,
-                    cancelOrder,
-                    successorder
+                   orderList
                 };
                 Response.StatusCode = (int)HttpStatusCode.OK;
                 return Json(new { Message = "success.", Status = 0, result });

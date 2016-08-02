@@ -137,5 +137,11 @@ angular.module("psApp").controller("serviceCentrePriceDetailsController", ["$sco
             $scope.cancelEdit(val, true);
         })
     }
+      var centreid = psOrderDetailsService.getCentreId();
+      if (centreid) {
+          $scope.centreId = centreid;
+          $scope.getPriceList(centreid);
+           psOrderDetailsService.setCentreId(undefined);
+      }
 }
 ]);
