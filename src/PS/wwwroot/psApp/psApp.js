@@ -50,22 +50,18 @@ function ($q, $rootScope, $log, $timeout) {
             xhrCreations++;
             $timeout(function () {
                 updateStatus();
-            }, 2000);
+            }, 1000);
             return config;
         },
         requestError: function (rejection) {
             xhrResolutions++;
-            $timeout(function () {
                 updateStatus();
-            }, 2000);
             $log.error('Request error:', rejection);
             return $q.reject(rejection);
         },
         response: function (response) {
             xhrResolutions++;
-            $timeout(function () {
                 updateStatus();
-            }, 2000);
             if (response.status === 203) {
                 $rootScope.$emit("authenticationError");
             }
@@ -73,9 +69,7 @@ function ($q, $rootScope, $log, $timeout) {
         },
         responseError: function (rejection) {
             xhrResolutions++;
-            $timeout(function () {
                 updateStatus();
-            }, 2000);
             $log.error('Response error:', rejection);
             return $q.reject(rejection);
         }
