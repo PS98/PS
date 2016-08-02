@@ -27,7 +27,7 @@ namespace PS.Controllers
         public readonly string CollectionName = "Pune";
 
         private readonly ServiceCentreDto _serviceCentreDto = new ServiceCentreDto();
-        
+
 
         // GET: api/values
         [HttpGet]
@@ -39,19 +39,29 @@ namespace PS.Controllers
             return collection;
         }
 
+        [Route("centerlist")]
+        [HttpGet]
+        public List<ServiceCentreGeo> GetCenterList()
+        {
+            var collection = _repo.GetCollection<ServiceCentreGeo>("Pune");
+            if (userDetails.CentreId == "0")
+                return collection?.Find(new BsonDocument()).ToListAsync().Result;
+            else
+                return collection.Find(e => e.CentreId == userDetails.CentreId).ToListAsync().Result;
+        }
+
         // GET api/values/5
         [HttpGet("{city}")]
         public IEnumerable<string> Get(string city)
         {
 
-            try {
+            try
+            {
                 var collection = _repo.GetCollection<ServiceCentre>(city);
-
-            var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
-
-            return areaList?.Select(x => x.Area).Distinct();
-        }
-            catch(Exception ex)
+                var areaList = collection?.Find(new BsonDocument()).ToListAsync().Result;
+                return areaList?.Select(x => x.Area).Distinct();
+            }
+            catch (Exception ex)
             {
                 return null;
             }
@@ -233,7 +243,7 @@ namespace PS.Controllers
                         var id = _repo.GenerateNewId();
                         serviceCentreObj.Centres.First().Id = id;
                         _repo.InsertDocument(Database, CollectionName, serviceCentreObj);
-                            // if new area then insert into db
+                        // if new area then insert into db
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "new doc created in DataBase", Status = 0, Id = id });
                     }
@@ -356,7 +366,7 @@ namespace PS.Controllers
                     else
                     {
                         data.AddRange(newCentre.ServiceDetails);
-                            // if deatils of service is not exist than add to collection
+                        // if deatils of service is not exist than add to collection
                         collection?.UpdateOneAsync(filter, update);
                         Response.StatusCode = (int)HttpStatusCode.OK;
                         return Json(new { Message = "new service details updated", Status = 1 });
@@ -367,7 +377,7 @@ namespace PS.Controllers
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new {ex.Message });
+                return Json(new { ex.Message });
             }
             Response.StatusCode = (int)HttpStatusCode.OK;
             return Json(new { Message = "Please enter Area Name", Status = 1 });
@@ -391,43 +401,43 @@ namespace PS.Controllers
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "please select a service ", Status = 1 });
                 }
-                
-               var message =  _serviceCentreDto.SaveCentreDetails(serviceCentreObj);
+
+                var message = _serviceCentreDto.SaveCentreDetails(serviceCentreObj);
                 Response.StatusCode = (int)HttpStatusCode.OK;
-                return Json(new { Message = message, Status = 0});
+                return Json(new { Message = message, Status = 0 });
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 return Json(new { ex.Message, Status = 2 });
             }
-           
-                    }
+
+        }
         [HttpPost]
         [Route("centerlist")]
         public JsonResult GetCentreList([FromBody] SelectedService selectedService)
         {
-          try
-          {
-              if (selectedService == null)
-              {
+            try
+            {
+                if (selectedService == null)
+                {
                     Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    return Json(new {Message = "Please Choose a Service", Status = 1});
+                    return Json(new { Message = "Please Choose a Service", Status = 1 });
                 }
 
-              var centreList = _serviceCentreDto.ListServiceCentres(selectedService);
-              if (centreList == null)
-              {
+                var centreList = _serviceCentreDto.ListServiceCentres(selectedService);
+                if (centreList == null)
+                {
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Message = "success", Status = 1, List = new List<string>()});
+                    return Json(new { Message = "success", Status = 1, List = new List<string>() });
                 }
-              Response.StatusCode = (int)HttpStatusCode.OK;
-                return Json(new { Message = "success", Status = 0 , List = centreList});
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = "success", Status = 0, List = centreList });
             }
             catch (Exception ex)
             {
                 Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                return Json(new {ex.Message, Status = 2 });
+                return Json(new { ex.Message, Status = 2 });
 
             }
         }
@@ -448,7 +458,7 @@ namespace PS.Controllers
                 var list = _serviceCentreDto.GetCarPriceList(id);
                 var serviceCentre = _serviceCentreDto.GetCentreDetailsById(id);
                 Response.StatusCode = (int)HttpStatusCode.OK;
-                return Json(new { Message = "success", Status = 0, List = list , ServiceCentre = serviceCentre });
+                return Json(new { Message = "success", Status = 0, List = list, ServiceCentre = serviceCentre });
             }
             catch (Exception ex)
             {
@@ -471,9 +481,9 @@ namespace PS.Controllers
                     return Json(new { Message = "model is not valid", Status = 2 });
                 }
 
-            _serviceCentreDto.UpdateServiceCentrePriceData(updatedPrice);
+                _serviceCentreDto.UpdateServiceCentrePriceData(updatedPrice);
 
-               
+
                 Response.StatusCode = (int)HttpStatusCode.OK;
                 return Json(new { Message = "success", Status = 0 });
             }

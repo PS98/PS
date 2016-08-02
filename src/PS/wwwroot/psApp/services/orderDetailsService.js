@@ -1,5 +1,5 @@
 ﻿angular.module("psApp").factory("psOrderDetailsService", ["$http", "$q", "$localStorage", "psDataServices", function ($http, $q, $localStorage, psDataServices) {
-    var orderDetails, submittedOrder,orderId;
+    var orderDetails, submittedOrder, orderId;
 
     var _validateOrder = function (payment_id, payment_request_id) {
         var data = { 'PaymentId': payment_id, 'PaymentRequestId': payment_request_id }
@@ -24,7 +24,7 @@
         {
             url: "/api/services/order",
             method: "POST",
-            data:data
+            data: data
         }).then(function (result) {
             $localStorage.userSelectionData = "";
             submittedOrder = result.data.result;
@@ -135,7 +135,7 @@
 
         return deferred.promise;
     }
-    var _updateSelectedOrder  = function(order) {
+    var _updateSelectedOrder = function (order) {
         var deferred = $q.defer();
         $http(
             {
@@ -150,11 +150,11 @@
 
         return deferred.promise;
     }
-    var _getPriceList = function(id) {
+    var _getPriceList = function (id) {
         var deferred = $q.defer();
         $http(
             {
-                url: "/api/ServiceCentre/priceList?id="+id, method: "Get", cache: false
+                url: "/api/ServiceCentre/priceList?id=" + id, method: "Get", cache: false
             }).then(function (result) {
                 //Success
                 deferred.resolve(result.data);
@@ -165,7 +165,7 @@
 
         return deferred.promise;
     }
-    var updateSingleRow = function(updatedRow) {
+    var updateSingleRow = function (updatedRow) {
         var deferred = $q.defer();
         $http(
         {
@@ -173,13 +173,13 @@
             method: "POST",
             cache: false,
             data: updatedRow
-    }).then(function (result) {
-                //Success
-                deferred.resolve(result.data);
-            }, function (error) {
-                //Error
-                deferred.reject(error);
-            });
+        }).then(function (result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
 
         return deferred.promise;
     }
@@ -191,10 +191,10 @@
             method: "POST",
             cache: false,
             data: updatedList
-        }).then(function(result) {
+        }).then(function (result) {
             //Success
             deferred.resolve(result.data);
-        }, function(error) {
+        }, function (error) {
             //Error
             deferred.reject(error);
         });
@@ -202,30 +202,47 @@
         return deferred.promise;
     }
 
-    var _getOrderList = function(centreId) {
+    var _getOrderList = function (centreId) {
         var deferred = $q.defer();
-          $http(
-        {
-           // url: "/api/ServiceCentre/price/savelist?centreId="+centreId,
-           url:"/",
-            method: "GET",
-            cache: false
-        }).then(function(result) {
-            //Success
-            deferred.resolve(result.data);
-        }, function(error) {
-            //Error
-            deferred.reject(error);
-        });
+        $http(
+      {
+          // url: "/api/ServiceCentre/price/savelist?centreId="+centreId,
+          url: "/api/OrderDetails/list?centreId=" + centreId,
+          method: "GET",
+          cache: false
+      }).then(function (result) {
+          //Success
+          deferred.resolve(result.data);
+      }, function (error) {
+          //Error
+          deferred.reject(error);
+      });
+        return deferred.promise;
+    }
+    var _getServiceCentre = function () {
+        var deferred = $q.defer();
+        $http(
+      {
+          // url: "/api/ServiceCentre/price/savelist?centreId="+centreId,
+          url: "/api/ServiceCentre/centerlist",
+          method: "GET",
+          cache: false
+      }).then(function (result) {
+          //Success
+          deferred.resolve(result.data);
+      }, function (error) {
+          //Error
+          deferred.reject(error);
+      });
 
         return deferred.promise;
     }
 
-    var _setOrderId = function(id) {
+    var _setOrderId = function (id) {
         orderId = id;
     }
-      var _getOrderId = function(id) {
-      return orderId;
+    var _getOrderId = function (id) {
+        return orderId;
     }
 
     return {
@@ -237,13 +254,14 @@
         cancelOrder: _cancelOrder,
         editDateAndTime: _editDateAndTime,
         getOrderById: _getOrderById,
-        updateSelectedOrder:_updateSelectedOrder,
-        getPriceList:_getPriceList,
-        updateRow:updateSingleRow,
-        updateChangedRow:saveUpdatedlist,
-        getOrderList:_getOrderList,
-        setOrderId:_setOrderId,
-        getOrderId:_getOrderId
+        updateSelectedOrder: _updateSelectedOrder,
+        getPriceList: _getPriceList,
+        updateRow: updateSingleRow,
+        updateChangedRow: saveUpdatedlist,
+        getOrderList: _getOrderList,
+        setOrderId: _setOrderId,
+        getOrderId: _getOrderId,
+        getServiceCentre: _getServiceCentre
 
     }
 

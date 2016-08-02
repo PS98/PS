@@ -131,15 +131,23 @@ namespace PS.Controllers
         [AdminAuthorize]
         [HttpGet]
         [Route("list")]
-        public JsonResult ListAllOrders()
+        public JsonResult ListAllOrders(int? centreId)
         {
             try
             {
                 var orderList = _domainManager.GetAllOrders();
+                if(userDetails.CentreId != "0")
+                {
+                    orderList = orderList.FindAll(r => r.SelectedCentre.Id == userDetails.CentreId);
+                }
+                else if(centreId != null)
+                {
+                    orderList = orderList.FindAll(r => r.SelectedCentre.Id == centreId.ToString());
+                }
                 if (!orderList.Any())
                 {
                     Response.StatusCode = (int)HttpStatusCode.OK;
-                    return Json(new { Message = "We are unable to process your request.", Status = 1 });
+                    return Json(new { Message = "No Order Found", Status = 1 });
                 }
                 var pendingOrder = orderList.Where(x => x.Status.Equals("Pending")).ToList();
                 var cancelOrder = orderList.Where(x => x.Status.Equals("Cancelled")).ToList();
