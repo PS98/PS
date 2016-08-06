@@ -7,6 +7,7 @@
     $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = $localStorage.userData.car || {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
+    $scope.previousSelectedJob = $localStorage.userData.selectedServices || [];
     $scope.selectBrand = function (brandName) {
         $scope.showBrandName = false; $scope.showMakeYears = true; $scope.showModel = false; $scope.showVarient = false;
         if ($scope.selectedCar.brand !== brandName) {
@@ -196,6 +197,7 @@
                 $scope.services = data;
                 $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                 $scope.commonServices = $scope.services.serviceDetails[0];
+                $scope.setPreviousSelection();
                 $scope.car.services = [];
                 if ($scope.selectedCar.brand) {
                     getCarType($scope.selectedCar.brand).then(function() {
@@ -250,6 +252,9 @@
             psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
             psDataServices.setSelectedServiceName(jobName);
             psDataServices.setNextButtonStatus(true);
+            $localStorage.userData.selectedServices = $scope.selectedJob;
+            if ($scope.selectedJob.notes)
+            $localStorage.userData.noteToMach = $scope.selectedJob.notes;
             $state.go("service.centre");
 
         }
@@ -377,6 +382,27 @@
     $rootScope.$on("userLoginSuccessfull", function() {
         $state.go("service.centre");
     });
+
+    $scope.setPreviousSelection = function () {
+        if ($scope.previousSelectedJob.length > 0) {
+            $scope.previousSelectedJob.forEach(function (job, index) {
+               var selectedService = $scope.commonServices.find(function(data) {
+                    return data.name === job.name;
+               });
+                if (selectedService) {
+                    selectedService.selected = true;
+                    $scope.selectedJob.push(selectedService);
+                }
+                if (job.addText) {
+                    $scope.selectedJob.push(job);
+                }
+            });
+            if ($scope.selectedJob.length > 0 && $localStorage.userData.noteToMach) {
+                $scope.selectedJob.notes = $localStorage.userData.noteToMach;
+                $scope.serviceOpts.addingNotes = true;
+            }
+        }
+    }
 }]);
 
 
