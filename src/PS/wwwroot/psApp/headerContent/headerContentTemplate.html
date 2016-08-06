@@ -1,9 +1,12 @@
 ﻿ <!-- HEADER -->
-<div class="header">
-    <div class="header__inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6 col-sm-3 col-lg-4"><a href="/" class="logo"> <img class="logo__img img-responsive" src="/assets/img/logo.png" width="250" alt="MileMates Logo"> </a></div>
+<div id="this-top" class="layout-theme animated-css" data-header="sticky" data-header-top="50">
+    <div class="header">
+        <div class="header__inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3 col-lg-4">
+                        <a href="/" class="logo"> <img class="logo__img img-responsive" src="/assets/img/logo.png" width="250" alt="MileMates Logo"> </a>
+                    </div>
                     <div class="navbar yamm nav-bar-menu">
                         <div class="navbar-header hidden-md hidden-lg hidden-sm">
                             <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
@@ -20,19 +23,20 @@
                                 <li>
                                     <a href="/Service/" title="Book Appointment">Book Now</a>
                                 </li>
-                                <li  ng-if="!isLoggedIn">
+                                <li ng-if="!isLoggedIn">
                                     <a href="" ng-if="!isLoggedIn" ng-click="openloginModal()" title="MileMates Login">Login</a>
                                 </li>
-                                <li ps-user-profile  ng-if="isLoggedIn" ></li>
+                                <li ps-user-profile ng-if="isLoggedIn"></li>
                             </ul>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- end header -->
-<login-details></login-details>
-<modal-dialog width='750px' height='60%' informational="showInformation" message="authenticationError" overlay-id="sessionError">
+    <!-- end header -->
+    <login-details></login-details>
+    <modal-dialog width='750px' height='60%' informational="showInformation" message="authenticationError" overlay-id="sessionError">
 
-</modal-dialog>
+    </modal-dialog>

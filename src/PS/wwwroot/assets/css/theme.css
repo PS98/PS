@@ -384,8 +384,8 @@ img.pull-left {
 	background-image: url('/assets/media/bg/11.jpg');
 }
 .block-title__inner {
-	padding-top: 120px;
-	padding-bottom: 60px;
+	padding-top: 80px;
+	padding-bottom: 35px;
 }
 .block-title:before,
 .block-title:after {

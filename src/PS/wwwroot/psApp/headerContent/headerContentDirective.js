@@ -73,12 +73,12 @@ function makeSyickyHeader() {
 
                         $('.header').addClass("animated");
                         $('header').addClass("animation-done");
-                        $('.header').addClass("bounce");
+                        $('.header').addClass("flipInX");
                         $pageHeader.addClass('sticky');
 
                     } else {
 
-                        $('.header').removeClass("bounce");
+                        $('.header').removeClass("flipInX");
                         $('.header').removeClass("animated");
                         $('.header').removeClass("animation-done");
                         $pageHeader.removeClass('sticky');

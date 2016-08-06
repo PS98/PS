@@ -4,9 +4,6 @@
 /*///////////////////////////////////////////////////////////////////////////////////////////*/
 
 
-@media (min-width:1250px) and (max-width:1350px) {
-}
-
 @media(min-width: 1367px) {
     .custom-caption {
     display: inline-block;
@@ -22,8 +19,13 @@
 
 
 /* 768 x 1024 (Laptop) */
-
+ .breadcrumb-margin {
+    margin-left: 4%;
+}
 @media (min-width:992px) and (max-width:1199px) {
+    .breadcrumb-margin {
+    margin-left: 6%;
+}
     .feedback-section {
         padding: 0 55px;
     }
@@ -75,6 +77,9 @@
 /* 768 x 1024 (iPad - Portrait) */
 
 @media (max-width:991px) {
+     .breadcrumb-margin {
+    margin-left: 4%;
+}
     .iview-caption {
         top: 37vw;
         right: -60vw;
@@ -202,7 +207,11 @@
 
 /* end max-width:991px */
 @media (min-width: 991px) {
-    
+   
+.block-title__inner {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
 .ps-user-profile-small > a {
     padding: 40px 10px 23px !important
 }
@@ -220,6 +229,13 @@
     }
 }
 @media (max-width:991px) and (min-width:768px) {
+    .block-title__inner {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+      .breadcrumb-margin {
+    margin-left: 8%;
+}
     .ps-user-profile-small > a {
         padding: 35px 13px 0 0 !important;
 }
@@ -321,6 +337,13 @@
 /*480 x 640 (small tablet and iPhone)*/
 
 @media (max-width:767px) {
+    .block-title__inner {
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+    .breadcrumb-margin {
+    margin-left: 8%;
+}
     .header .logo {
         margin-top: 5px;
     }
