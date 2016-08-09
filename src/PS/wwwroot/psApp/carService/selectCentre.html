@@ -2,19 +2,10 @@
     <div class="arrow" style="left: 50%;"></div>
     <div class="popover-content"> Quotation will be shared after inspection of your car.</div>
 </div>
-<div class="centre-list mrgtop15">
+<div class="centre-list mrgtop15" ng-show="!car.centre_selected">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="padding-left: 10px">
             <div class="car-header" style="min-height: 280px">
-
-                <div class="header-text">
-                    Select Your Service Station
-                    <div class="b-step mrgtop15">
-                        3
-                    </div>
-                </div>
-                <button type="button" class="btn btn-primary btn-effect" ui-sref="service.car" ng-click="setCentreDetails()"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Back</button>
-
                 <div class="sorting">
                     <div class="sorting__inner">
                         <div class="sorting__item">
@@ -35,11 +26,11 @@
                     </div>
                     <div class="sorting__inner">
                         <div class="sorting__item" style="display: flex">
-                            <div class="sorting__title" style="min-width: 96px;font-size: 14px">
+                            <div class="sorting__title" style="min-width: 96px; font-size: 14px">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                                 Your Location
                             </div>
-                            <div ng-bind="centreDetails.userAddress.formattedAddress" style="font-family: 'Montserrat', sans-serif; padding-top: 3px;font-weight: 700">
+                            <div ng-bind="centreDetails.userAddress.formattedAddress" style="font-family: 'Montserrat', sans-serif; padding-top: 3px; font-weight: 700">
                             </div>
                         </div>
                     </div>
@@ -48,14 +39,14 @@
         </div>
         <div class="col-sm-6">
             <div class="row car-header map-holder">
-                <div id="mapholder" class="col-md-12" style="height: 250px"> 
+                <div id="mapholder" class="col-md-12" style="height: 250px">
                 </div>
             </div>
         </div>
 
     </div>
     <div class="row">
-        <div class="col-sm-6" ng-show="centreDetails.selectedCentre.name || noCentreMatch || noServiceMatch || noAreaLocated">
+        <div class="col-sm-6 " ng-show="centreDetails.selectedCentre.name || noCentreMatch || noServiceMatch || noAreaLocated" style="padding-left: 10px">
             <div class="car-header">
                 <centre-details ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'" centre="centreDetails.selectedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" class="active"></centre-details>
 
@@ -134,6 +125,41 @@
         </div>
     </div>
 
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div ng-if="car.centre_selected">
+            <div class="col-xs-12" ng-click="enable_step_3 && changeStep(3)" ng-class="{'clickable':enable_step_2}" style="border: 1px solid #e5e5e5">
+                <div class="row step-data">
+                        <div class="col-xs-12 col-sm-6" style="padding: 10px 0;">
+                            <div style="font-size: 20px" class="col-xs-12">
+                                <div>{{ centreDetails.selectedCentre.name }}</div>
+                                <i class="fa fa-phone"></i> &nbsp;&nbsp;{{ centreDetails.selectedCentre.phoneNo }}
+                            </div>
+                            <div class="col-xs-12">
+                                {{ centreDetails.selectedCentre.address.line1 }},<br />{{ centreDetails.selectedCentre.address.line2 }}
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6" style="padding: 10px 0;">
+                            <div class="col-lg-6 col-xs-6">
+                                <div ng-show="centreDetails.selectedCentre.isFreePickUp" style="font-size: 16px"> Free Pick-Up Available</div>
+                                <div ng-show="!centreDetails.selectedCentre.isFreePickUp"> Free Pick-Up Not Available</div>
+                            </div>
+                            <div class="col-lg-6 col-xs-6" style="font-size: 20px">
+                                <i class="fa fa-inr" style="padding-right: 3px;"></i>
+                                <span ng-if="centreDetails.selectedCentre.totalActualPrice === 0">
+                                    Pending Estimation
+                                </span>
+                                <span ng-if="centreDetails.selectedCentre.totalActualPrice !== 0">
+                                    {{ centreDetails.selectedCentre.totalMMPrice }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="addressOverlay" class="modal fade" role="dialog" style="z-index:2000">
     <div class="modal-dialog modal-lg">

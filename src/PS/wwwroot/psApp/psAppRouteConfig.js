@@ -51,7 +51,8 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                {
                    state: "service",
                    config: {
-                       url: "/Service",
+                       url: "/Service/",
+                       stickyHeader:true,
                        templateUrl: "/views/BookNow/bookNow.html"
                    }
                },
@@ -59,6 +60,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                    state: "service.car",
                    config: {
                        url: "/",
+                       stickyHeader:true,
                        template: "<select-car></select-car>"
                    }
                },
@@ -184,15 +186,24 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
 
     }]).run(["$rootScope", "$state", "psLoginService", function ($rootScope, $state, psLoginService) {
         $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
-            if (toState.requireLogin && !psLoginService.isAuthenticated()) {
-                // User isn’t authenticated
-                if (toState.name === "service.centre")
-                    $("#loginModal").modal("toggle");
-                else {
-                    $state.go("home");
-                }
-                event.preventDefault();
+            
+            if (!toState.stickyHeader) {
+                $rootScope.$broadcast("stickyHeader", { stickyHeader: false });
+                $rootScope.stickyHeader = false;
+            } else {
+                $rootScope.stickyHeader = true;
             }
+            
+            
+            //if (toState.requireLogin && !psLoginService.isAuthenticated()) {
+            //    // User isn’t authenticated
+            //    if (toState.name === "service.centre")
+            //        $("#loginModal").modal("toggle");
+            //    else {
+            //        $state.go("home");
+            //    }
+            //    event.preventDefault();
+            //}
         });
         //$rootScope.$on("$viewContentLoaded", function() {
         //    $rootScope.isViewLoaded = true;

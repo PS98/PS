@@ -253,6 +253,14 @@
         padding: 0 20px;
     }
    }
+@media(min-width: 768px) {
+    .step-data {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
 
 @media (max-width: 767px) {
     .map-holder {

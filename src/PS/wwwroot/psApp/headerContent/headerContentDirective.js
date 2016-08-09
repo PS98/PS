@@ -1,14 +1,20 @@
 ﻿"use strict";
 
-angular.module("psApp").directive("headerContent", function () {
+angular.module("psApp").directive("headerContent", function ($rootScope) {
     return {
         templateUrl: "psApp/headerContent/headerContentTemplate.html",
         controller:"headerContentController",
         link: function (scope, element, attrs, ctrl) {
-            makeSyickyHeader();
-
+            makeSyickyHeader($rootScope);
             scrollBackToTop();
-
+            $rootScope.$on("stickyHeader", function(event, data) {
+                if (data.stickyHeader) {
+                    $('.header').removeAttr("class").addClass("header sticky");
+                    $rootScope.stickyHeader = true;
+                } else {
+                    $('.header').removeAttr("class").addClass("header");
+                }
+            })
             $('a.back-to-top').click(function () {
                 $('html, body').animate({
                     scrollTop: 0
@@ -33,7 +39,7 @@ function scrollBackToTop() {
 
 
 
-function makeSyickyHeader() {
+function makeSyickyHeader($rootScope) {
     $(document).ready(function () {
 
         var windowHeight = $(window).height();
@@ -76,7 +82,7 @@ function makeSyickyHeader() {
                         $('.header').addClass("flipInX");
                         $pageHeader.addClass('sticky');
 
-                    } else {
+                    } else if(!$rootScope.stickyHeader) {
 
                         $('.header').removeClass("flipInX");
                         $('.header').removeClass("animated");

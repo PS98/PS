@@ -3,12 +3,6 @@
 angular.module("psApp").directive("bookAppointment", function () {
     return {
         templateUrl: "psApp/carService/bookAppointment/bookAppointment.html",
-        link: function () {
-            $("html, body").animate({
-                scrollTop: 50
-            }, 'slow');
-        },
-        scope: false,
         controller: ["$scope", "psDataServices", function ($scope, psDataServices) {
             $scope.centre = psDataServices.getSelectedCentre();
             var openingHours = amPmToHours($scope.centre.openingHours);
@@ -18,7 +12,6 @@ angular.module("psApp").directive("bookAppointment", function () {
             $scope.showPickUpCalendar = true;
             $scope.centreWorkingHours = [];
             $scope.availablePickUpTime = [];
-            $scope.userSelectedService = {};
                 setAvailableTime();
             var today = new Date();
             var currentTime = today.getHours();
@@ -220,9 +213,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                 $scope.showPickUpCalendar = false;
                 $scope.showDropCalendar = true;
                 psDataServices.setSelectedAppointment($scope.selectedDate, $scope.pickUp);
-                $scope.userSelectedService = psDataServices.getSelectedService();
                 setPickUpDetails();
-                $scope.mapUrl = "http://maps.googleapis.com/maps/api/staticmap?&zoom=15&scale=false&size=500x300&maptype=roadmap&format=png&visual_refresh=true&markers=" + $scope.userSelectedService.userAddress.lat + "," + $scope.userSelectedService.userAddress.lng;
             }
             $scope.selectDropTime = function (dateTime) {
                 $scope.selectedDate.dropOffDate.day = dateTime.day;

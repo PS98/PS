@@ -138,6 +138,20 @@
    var _isAuthenticated = function () {
        return isAuthenticated;
    }
+    var _isUserLoggedIn = function() {
+        var deferred = $q.defer();
+
+        $http.get("/api/Auth/isAuthenticatedUser").
+        then(function (result) {
+            //Success
+            deferred.resolve(result.data);
+        }, function (error) {
+            //Error
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+    }
    return {
        login: _login,
        register: _register,
@@ -150,6 +164,7 @@
        updateProfile: _updateProfile,
        setUserAuthenticated: _setUserAuthenticated,
        isAuthenticated: _isAuthenticated,
-       killSession: _killSession
+       killSession: _killSession,
+       isUserLoggedIn: _isUserLoggedIn
    };   
 }])

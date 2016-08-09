@@ -12,6 +12,24 @@
 .top-padding10 {
     padding-top: 10px;
 }
+.no-margin {
+    margin: 0 !important;
+}
+.no-top-margin {
+    margin-top: 0 !important;
+}
+.non-clickable {
+    cursor: default !important;
+}
+.no-left-margin {
+    margin-left: 0 !important;
+}
+.no-bottom-margin {
+    margin-bottom: 0 !important;
+}
+.no-right-margin {
+    margin-right: 0 !important;
+}
 .bottom-padding10 {
     padding-bottom: 10px;
 }
@@ -26,6 +44,31 @@
     font-size: 20px; position: absolute;margin-left: 15px;
     width: 20px;height: 20px;border-radius: 20px;
     background: no-repeat;
+}
+
+.booking-steps {
+    font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #363946;
+    line-height: 32px
+}
+
+.active-step {
+    border:1px solid #fb8903 !important
+}
+.active-step .header-text {
+  color: #fb8903 !important;
+}
+.active-step .b-step {
+  background-color: #fb8903 !important;
+  border:1.5px solid #fb8903 !important
+}
+.completed-step {
+    color: #fff;
+    background-color: #00bc8c !important;
+    border: 1.5px solid #00bc8c !important;
 }
 .popover {
     position: absolute;
@@ -458,20 +501,20 @@
     top: 0px;
 }
 .remove-icon{
-    color: red; font-size:12px; top: -10px; cursor:pointer;
+    color: red; font-size:14px; top: -10px; cursor:pointer;
 }
 .select-service-box .panel-collapse {
     border: 0; 
 }
 
 .select-service-box ul li .service-details {
-    font-size: 10px;
+    font-size: 14px;
     margin-top: 4px;
-    text-transform: uppercase;
     color: #6d7579;
-    letter-spacing: 0.09em;
     margin-right: 15px;
     cursor: pointer;
+    font-family: monospace;
+    text-transform: uppercase;
 }
 .abs-position {
     position: absolute;
@@ -499,16 +542,6 @@
     border-bottom-right-radius: 0;
 }
 
-.b-service {
-    padding: 12px 16px;
-    width: 100%;
-    height: 46px;
-    background: #fff;
-    border: 1px solid #E2E2E2;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    vertical-align: sub;
-}
 .b-service-option{
     display:inline-flex;
 }
@@ -539,12 +572,11 @@
 
 .b-service .details {
     cursor: pointer;
-    text-transform: uppercase;
     vertical-align: super;
-    font-size: 10px;
+    font-size: 14px;
     text-transform: uppercase;
+    font-family: monospace;
     color: #6d7579;
-    letter-spacing: 0.09em;
 }
 .b-service  p{
     display:inline-block;
@@ -575,7 +607,7 @@
 .b-service {
     padding: 12px 16px;
     width: 100%;
-    height: 46px;
+    min-height: 46px;
     background: #fff;
     border: 1px solid #E2E2E2;
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
@@ -975,6 +1007,31 @@ tbody td {
     border-bottom: 2px solid #eeeeee;
     border-top: 2px solid #eeeeee;
 }
+
+.note-pad {
+    min-height: 80px;
+    border: 1px solid #e5e5e5;
+    border-bottom: 0;
+    border-radius: 4px;
+    padding: 10px 15px 15px;
+}
+ .note-pad-border{
+  background: url('../../assets/img/bottomborder.png');
+    width: 100%;
+    height: 13px;
+    background-position: -1px,0;
+    margin-top: -5px;
+}
+ .note-pad .heading {
+    color: #858585;
+     text-align: center;
+     font-weight: 700;
+    margin-bottom: 10px;
+ }
+ .note-pad .text {
+     padding-bottom: 10px;
+ }
+
 @media(min-width: 640px) {
     .remove-icon-div {
         text-align: right;      

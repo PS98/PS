@@ -1,23 +1,10 @@
 ﻿<div class="book">
 
-    <div class="row">
+    <div class="row" ng-if="!car.appointment_booked">
         <div class="col-xs-12">
-            <div class="car-header car-selection-container white-container">
-                <div class="header-text">
-                    Book Your Appoinment
-                    <div class="b-step mrgtop15">
-                        4
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <button type="button" class="btn btn-primary btn-effect" ng-click="setUserJob()"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Back</button>
-                    </div>
-                    <div class="col-sm-8"></div>
-                </div>
-
+            <div class="car-selection-container">
                 <div class="row icon-space" style="margin-top: 15px; margin-bottom: 15px; font-size: 20px;">
-                    <div class="col-xs-6" >
+                    <div class="col-xs-6">
                         Do you want us to Pick-up & Drop-off your vehicle
                     </div>
                     <div class="col-xs-6">
@@ -31,13 +18,13 @@
                             <i class="fa fa-check-circle" ng-click="pickAndDrop(1)" ng-class="{selected :both}"></i> <span>Both</span>
                             <i class="fa fa-check-circle margin-left15" ng-click="pickAndDrop(2)" ng-class="{selected :onlyPickUP}"></i><span>Only Pick-Up</span>
                             <i class="fa fa-check-circle margin-left15" ng-click="pickAndDrop(3)" ng-class="{selected :onlyDropOff}"></i><span>Only Drop-Off</span>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="col-md-6 pull-right" style="padding-top: 20px;" ng-show="!centre.isFreePickUp && pickUp">
                         you will be charged <i class="fa fa-inr" ng-if="both">&nbsp;200</i> <i class="fa fa-inr" ng-if="onlyDropOff || onlyPickUP">&nbsp;100</i> extra for <span ng-if="both">both</span><span ng-if="onlyPickUP">only Pick-Up</span><span ng-if="onlyDropOff">only Drop-Off</span>.
                     </div>
                 </div>
-              
+
                 <div class="row" ng-if="selectedDate.pickUpDate.time">
                     <div class="col-xs-6 bottom-padding10 top-padding10">
                         <div class="pull-left">
@@ -48,8 +35,8 @@
                             <div class="car-option" ng-class="car-option-active" ng-click="editPickUpDate()">
                                 {{ selectedDate.pickUpDate.time}}
                             </div>
-                            </div>
                         </div>
+                    </div>
                     <div class="col-xs-6 bottom-padding10 top-padding10" ng-if="selectedDate.dropOffDate.time">
                         <div class="pull-right">
                             <div class="header-text"> {{ !pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
@@ -82,8 +69,8 @@
                 <div ng-show="!hideCalendar && (pickUp || noPickUp)">
                     <div class="row">
                         <div class="col-xs-12 pull-left">
-                                <button type="button" class="btn btn-primary pull-left" ng-class="!disablePrevBtn ? 'btn-effect' : ''" ng-click="nextDates('prev')" ng-disabled="disablePrevBtn"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left" style="padding-right:5px;"></i>Days</button>
-                                <button type="button" class="btn btn-primary btn-effect pull-right" ng-class="!disableNextBtn ? 'btn-effect' : ''" ng-click="nextDates('next')" ng-disabled="disableNextBtn">Days<i class="fa fa-chevron-right" style="padding-left:5px;"></i><i class="fa fa-chevron-right"></i></button>
+                            <button type="button" class="btn btn-primary pull-left" ng-class="!disablePrevBtn ? 'btn-effect' : ''" ng-click="nextDates('prev')" ng-disabled="disablePrevBtn"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Days</button>
+                            <button type="button" class="btn btn-primary btn-effect pull-right" ng-class="!disableNextBtn ? 'btn-effect' : ''" ng-click="nextDates('next')" ng-disabled="disableNextBtn">Days<i class="fa fa-chevron-right" style="padding-left: 5px;"></i><i class="fa fa-chevron-right"></i></button>
                         </div>
                     </div>
                     <div class="row" ng-show="showPickUpCalendar">
@@ -95,27 +82,56 @@
                         <calendar-directive data="availablePickUpTime" update="selectDropTime(selectedDateTime)"></calendar-directive>
                     </div>
                 </div>
+                <div class="row" ng-if="hideCalendar">
+                    <div class="col-sm-12 text-center">
+                        <button type="button" class="btn btn-primary btn-effect" ng-click="changeStep(5)">Book</button>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
-    <div class="row" id="slide-container" ng-show="hideCalendar" >
-        <div class="col-xs-12">
-            <div class="spacet-20">
-                <div class="white-container margin-bottom10">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="header-text">
-                                How Can We Reach You
-                                <div class="b-step">
-                                    5
+    <div class="row" ng-show="car.appointment_booked">
+        <div class="col-xs-12">
+            <div>
+                <div class="col-xs-12" ng-click="enable_step_4 && changeStep(4)" ng-class="{'clickable':enable_step_4}">
+                    <div class="row" style="text-align: center; border: 1px solid #e5e5e5">
+                        <div class="col-xs-12 col-sm-6" style="padding: 10px; font-size: 14px; font-weight: 700;">
+                            <div class="pull-left">
+                                <div>{{ pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
+                                <div class="car-option no-margin" ng-class="{'non-clickable':!enable_step_4}">
+                                    {{selectedDate.pickUpDate.day}}
+                                </div>
+                                <div class="car-option no-margin" ng-class="{'non-clickable':!enable_step_4}">
+                                    {{ selectedDate.pickUpDate.time}}
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <div> {{ !pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
+                                <div class="car-option no-margin" ng-class="{'non-clickable':!enable_step_4}">
+                                    {{selectedDate.dropOffDate.day}}
+                                </div>
+                                <div class="car-option no-margin" ng-class="{'non-clickable':!enable_step_4}">
+                                    {{ selectedDate.dropOffDate.time}}
                                 </div>
                             </div>
 
                         </div>
+                        <div class="col-xs-12 col-sm-6" style="padding: 10px 0; font-size: 14px;">
+                            <div class="col-lg-6 col-xs-6">
+                                <div style="margin-bottom: 15px;font-weight: 700;">Pick-up And Drop-Off Selected</div>
+                                <span ng-show="both">Both</span>
+                                <span ng-show="onlyPickUP">Only Pick-Up</span>
+                                <span ng-show="onlyDropOff">Only Drop-Off</span>
+                                <span ng-show="!pickUp">No</span>
+                            </div>
+                            <div class="col-lg-6 col-xs-6" ng-show="!centre.isFreePickUp && pickUp">
+                                <div style="margin-bottom: 15px">Charges</div>
+                                <i class="fa fa-inr" ng-if="both">&nbsp;200</i> <i class="fa fa-inr" ng-if="onlyDropOff || onlyPickUP">&nbsp;100</i>
+                            </div>
+                        </div>
                     </div>
-                        <select-address isPickup="pickUp"></select-address>
                 </div>
             </div>
         </div>

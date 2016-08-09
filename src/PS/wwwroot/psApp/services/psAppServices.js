@@ -57,7 +57,7 @@
         return userServiceData.selectedAppointment.pickUpDetails;
     }
     var _setPickUpDetails = function (pickUpDetails) {
-        return userServiceData.selectedAppointment.pickUpDetails = pickUpDetails;
+         userServiceData.selectedAppointment.pickUpDetails = pickUpDetails;
     }
     var _getAllCarCollection = function () {
      return  $http.get("/api/car");

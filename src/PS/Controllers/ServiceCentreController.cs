@@ -17,7 +17,6 @@ using Newtonsoft.Json;
 
 namespace PS.Controllers
 {
-    [MmAuthorize]
     [Route("api/[controller]")]
     public class ServiceCentreController : BaseController
     {

@@ -1,8 +1,8 @@
 ﻿<div id="wrapper">
     <div class="block-title">
-        <div class="block-title__inner section-bg section-bg_second">
+        <div class="block-title__inner section-bg section-bg_second no-padding">
             <div class="bg-inner">
-                <div class="decor-1-header center-block"></div>
+                <div class="decor-1-header center-block" style="display: none"></div>
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
                     <li class="active">Service</li>
@@ -15,8 +15,210 @@
 
     <!-- our nested state views will be injected here -->
     <div id="service-form">
-        <div id="form-views" ui-view class="container service"></div>
-        
+        <div id="form-views" class="container service">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="car-header"  ng-class="{'active-step': car.activeStep === 1}">
+                        <div class="header-text no-margin">
+                            Select your car
+                            <div class="b-step mrgtop15" ng-class="{'completed-step':enable_step_2}">
+                                1
+                            </div>
+                        </div>
+                        <div>
+                            <div class="popover fade top in" role="tooltip" ng-show="car.error">
+                                <div class="arrow" style="left: 50%;"></div>
+                                <h3 class="popover-title">This is required Information</h3>
+                                <div class="popover-content">{{errorMessage}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="car-selection-car-container">
+                                                <div class="car-option no-margin" ng-class="car-option-active" ng-click="editBrand()" ng-if="true" ng-show="selectedCar.brand">
+                                                    {{selectedCar.brand}}
+                                                </div>
+                                                <div class="car-option no-margin" ng-class="car-option-active" ng-click="editYear()" ng-if="true" ng-show="selectedCar.year">
+                                                    {{ selectedCar.year}}
+                                                </div>
+                                                <div class="car-option no-margin" ng-class="" ng-click="editModel()" ng-if="true" ng-show="selectedCar.model">
+                                                    {{selectedCar.model}}
+                                                </div>
+
+                                                <div class="car-option no-margin" ng-class="" ng-click="editVarient()" ng-if="true" ng-show="selectedCar.varient">
+                                                    {{ selectedCar.varient }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" ng-if="showBrandName">
+                                        <div class="col-xs-12 margin-top10">
+                                            <div class="car-selection-container">
+                                                <span class="car-selection-step-name">
+                                                    YOUR MAKE
+                                                </span>
+                                                <div class="row">
+                                                    <div class="col-sm-6 car-selection-flex-container">
+                                                        <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections | limitTo:2">
+                                                            <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
+                                                                <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
+                                                                <span ng-bind="carBrand" style="padding-left: 10px"></span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-6 car-selection-flex-container">
+                                                        <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections.slice(2,carList.carCollections.length)">
+                                                            <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
+                                                                <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
+                                                                <span ng-bind="carBrand" style="padding-left: 10px"></span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" ng-if="showMakeYears">
+                                        <div class="col-xs-12 margin-top10">
+                                            <div class="car-selection-container">
+                                                <span class="car-selection-step-name">
+                                                    YOUR CAR'S YEAR
+                                                </span>
+                                                <div class="row">
+                                                    <div class="col-sm-6 car-selection-flex-container">
+                                                        <!--<div class="btn-idk" ng-click="selectYear('')">
+                                        I don't know
+                                    </div>-->
+                                                        <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList | limitTo:2">
+                                                            <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-6 car-selection-flex-container ">
+                                                        <!--<div class="btn-idk" ng-click="selectYear('')">
+                                        I don't know
+                                    </div>-->
+                                                        <ul class="car-selection-flex-column" ng-repeat="years in carList.yearsList.slice(2,carList.yearsList.length)">
+                                                            <li ng-click="selectYear(year)" ng-model="selectedCar.year" ng-repeat="year in years" ng-bind="year"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" ng-if="showModel">
+                                        <div class="col-xs-12 margin-top10">
+                                            <div class="car-selection-container">
+                                                <span class="car-selection-step-name">
+                                                    YOUR MODEL
+                                                </span>
+                                                <div class="row">
+                                                    <!--<div class="btn-idk" ng-click="selectModel('')">
+                                    I don't know
+                                </div>-->
+                                                    <div class="col-sm-6 car-selection-flex-container">
+                                                        <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes | limitTo:2">
+                                                            <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-6 car-selection-flex-container">
+                                                        <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes.slice(2,carList.carTypes.length)">
+                                                            <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
+                                                        </ul>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" ng-if="showVarient && (carList.carVarientList ||[]).length >0">
+                                        <div class="col-xs-12 margin-top10">
+                                            <div class="car-selection-container">
+                                                <span class="car-selection-step-name">
+                                                    ENGINE TYPE
+                                                </span>
+                                                <div class="row">
+                                                    <div class="col-sm-6 car-selection-flex-container">
+                                                        <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList  | limitTo:2">
+                                                            <li ng-click="selectVarient(carVarient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-bind="carVarient"></li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="col-sm-6 car-selection-flex-container">
+                                                        <ul class="car-selection-flex-column" ng-repeat="carVarient in carList.carVarientList.slice(2,carList.carVarientList.length)">
+                                                            <li ng-click="selectVarient(carVarient)" ng-if="(varient.value!='*')" ng-model="car.varient" ng-bind="carVarient"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top10">
+                <div class="col-xs-12">
+                    <div class="car-header" ng-class="{'active-step': car.activeStep === 2}">
+                        <div class="header-text no-margin">
+                            Select your services
+                            <div class="b-step mrgtop15" ng-class="{'completed-step':enable_step_2}">
+                                2
+                            </div>
+                        </div>
+                        <select-car></select-car>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top10">
+                <div class="col-xs-12">
+                    <div class="car-header" ng-class="{'active-step': car.activeStep === 3}">
+                        <div class="header-text no-margin">
+                            Select Your Service Station
+                            <div class="b-step mrgtop15" ng-class="{'completed-step':enable_step_3}">
+                                3
+                            </div>
+                        </div>
+                        <select-centre ng-if="car.choose_centre"></select-centre>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top10">
+                <div class="col-xs-12">
+                    <div class="car-header"  ng-class="{'active-step': car.activeStep === 4}">
+                        <div class="header-text no-margin">
+                            Book Your Appointment
+                            <div class="b-step mrgtop15" ng-class="{'completed-step':enable_step_4}">
+                                4
+                            </div>
+                        </div>
+                        <book-appointment ng-if="car.book_appointment"></book-appointment>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top10">
+                <div class="col-xs-12">
+                    <div class="car-header"   ng-class="{'active-step': car.activeStep === 5}">
+                        <div class="header-text no-margin">
+                            How Can We Reach You
+                            <div class="b-step mrgtop15" ng-class="{'completed-step':enable_step_5}">
+                                5
+                            </div>
+                        </div>
+                        <select-address class="book" ng-if="car.user_address"></select-address>
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+
     </div>
 
     <div id="detailsModal" class="modal fade service" role="dialog" style="z-index:9999">

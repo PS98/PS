@@ -1,5 +1,6 @@
-﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "$timeout", "$localStorage", "$rootScope", "psDataServices", function ($scope, $state, $timeout, $localStorage, $rootScope, psDataServices) {
+﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "$timeout", "$localStorage", "$rootScope", "psDataServices","psLoginService", function ($scope, $state, $timeout, $localStorage, $rootScope, psDataServices,psLoginService) {
 
+    $rootScope.$broadcast("stickyHeader", { stickyHeader: true });
     $scope.center = {}; $localStorage.userData = $localStorage.userData || {};
     $scope.searchedText = {}; $scope.state = $state;
     var custRequest = { name: " Describe your problem here", type: [], addText: true };
@@ -7,6 +8,7 @@
     $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.selectedCar = $localStorage.userData.car || {};// $scope.selectedCar = { brandName: '', model: '', year:'',varient:'' };
     $scope.car = {}; $scope.serviceOpts = {}; $scope.selectedJob = [];
     $scope.carList = {};
+    $scope.car.service_selected = false;
     $scope.previousSelectedJob = $localStorage.userData.selectedServices || [];
     $scope.selectBrand = function (brandName) {
         $scope.showBrandName = false; $scope.showMakeYears = true; $scope.showModel = false; $scope.showVarient = false;
@@ -21,6 +23,7 @@
              }).error(function () {
              });
             psDataServices.setCentreDetails(undefined);
+            $scope.displayActiveStep();
         }
     }
     $scope.selectYear = function (year) {
@@ -34,6 +37,7 @@
             $scope.showModel = true;
         psDataServices.setSelectedCarAndService($scope.selectedCar);
         displayIncompleteModule();
+        $scope.displayActiveStep();
     }
     $scope.selectModel = function (model) {
         if ($scope.selectedCar.model !== model) {
@@ -56,6 +60,7 @@
         } else {
             $scope.showModel = false;
         }
+        $scope.displayActiveStep();
     }
     $scope.selectVarient = function (varient) {
         if ($scope.selectedCar.varient !== varient) {
@@ -70,7 +75,6 @@
 
             }
             $localStorage.userData.car = $scope.selectedCar;
-            $scope.car.choose_a_service = true;
             $scope.car.showServiceType = true;
             $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
             $scope.commonServices = $scope.services.serviceDetails[0];
@@ -80,24 +84,26 @@
         else {
             $scope.showVarient = false;
         }
+        $scope.displayActiveStep();
     }
     $scope.editBrand = function () {
         $scope.showBrandName = !$scope.showBrandName; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = false;
         displayIncompleteModule();
+        $scope.displayActiveStep();
     }
     $scope.editYear = function () {
         $scope.showBrandName = false; $scope.showMakeYears = !$scope.showMakeYears; $scope.showModel = false; $scope.showVarient = false;
         if (!$scope.showMakeYears) displayIncompleteModule();
-
+        $scope.displayActiveStep();
     }
     $scope.editModel = function () {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = !$scope.showModel; $scope.showVarient = false;
         if (!$scope.showModel) displayIncompleteModule();
-
+        $scope.displayActiveStep();
     }
     $scope.editVarient = function () {
         $scope.showBrandName = false; $scope.showMakeYears = false; $scope.showModel = false; $scope.showVarient = !$scope.showVarient;
-
+        $scope.displayActiveStep();
     }
 
 
@@ -126,16 +132,16 @@
 
         }
         selectedJob.selected = !selectedJob.selected;
-        if ($scope.selectedJob.indexOf(selectedJob)< 0) {
+        if ($scope.selectedJob.indexOf(selectedJob) < 0) {
             $scope.selectedJob.push(selectedJob);
             psDataServices.setCentreDetails(undefined);
         } else {
             $scope.selectedJob.splice($scope.selectedJob.indexOf(selectedJob), 1);
         }
         var pos = $("#searchBox").offset().top;
-       // pos = pos - 90;
-        if($scope.selectedJob.length >0)
-        $scope.scrollContent(pos);
+        // pos = pos - 90;
+        if ($scope.selectedJob.length > 0)
+            $scope.scrollContent(pos);
     }
     $scope.deleteSelectedJob = function (deletedJob) {
         if ($scope.selectedJob.indexOf(deletedJob) > -1)
@@ -183,11 +189,11 @@
            $scope.carList.carCollections = data.carList;
            $scope.carList.yearsList = data.yearsList;
            if (!$scope.selectedCar.brand)
-           fetchServiceDetails();
-            }).error(function () {
+               fetchServiceDetails();
+       }).error(function () {
        });
     }
-   
+
     function fetchServiceDetails() {
         psDataServices.getAllService().
             success(function (data) {
@@ -200,10 +206,9 @@
                 $scope.setPreviousSelection();
                 $scope.car.services = [];
                 if ($scope.selectedCar.brand) {
-                    getCarType($scope.selectedCar.brand).then(function() {
+                    getCarType($scope.selectedCar.brand).then(function () {
                         $scope.carList.carVarientList = ["Petrol", "Diesel"];
                         if ($scope.selectedCar.varient) {
-                            $scope.car.choose_a_service = true;
                             $scope.car.showServiceType = true;
                             $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
                             psDataServices.setSelectedCarAndService($scope.selectedCar);
@@ -221,20 +226,20 @@
                             $scope.car.services.push(value);
                         });
                     });
-                    var scroll = $scope.selectedCar.varient && $scope.selectedCar.varient !== "" ? 390 : 230;
-                    $scope.scrollContent(scroll);
+                    //var scroll = $scope.selectedCar.varient && $scope.selectedCar.varient !== "" ? 390 : 230;
+                  //  $scope.scrollContent(scroll);
                 }, 200);
             }).error(function () {
             });
     }
     $scope.scrollContent = function (position) {
 
-                var scroll = position ? position : 230;
-              //  document.body.scrollTop = scroll;
-                $("html, body").animate({
-                    scrollTop: scroll
-                }, 'slow');
-            }
+        var scroll = position ? position : 230;
+        //  document.body.scrollTop = scroll;
+        $("html, body").animate({
+            scrollTop: scroll
+        }, 'slow');
+    }
     $scope.showDetails = function (types) {
         $scope.overlayData = types;
         $("#detailsModal").modal();
@@ -244,26 +249,24 @@
         var jobName = [];
         if (validateUserData()) {
             $.each($scope.selectedJob, function (index, value) {
-                if(!value.addText)
-                jobName.push(value.name);
+                if (!value.addText)
+                    jobName.push(value.name);
             });
             if ($scope.selectedJob.notes)
                 $scope.selectedJob[0].notes = $scope.selectedJob.notes;
             psDataServices.setSelectedCarAndService($scope.selectedCar, $scope.selectedJob);
             psDataServices.setSelectedServiceName(jobName);
-            psDataServices.setNextButtonStatus(true);
             $localStorage.userData.selectedServices = $scope.selectedJob;
             if ($scope.selectedJob.notes)
-            $localStorage.userData.noteToMach = $scope.selectedJob.notes;
-            $state.go("service.centre");
-
+             $localStorage.userData.noteToMach = $scope.selectedJob.notes;
+            $scope.changeStep(3);
         }
         else {
-            $timeout(function() {
+            $timeout(function () {
                 $("html, body").animate({
                     scrollTop: 50
                 }, 'fast');
-            },100);
+            }, 100);
         }
 
     }
@@ -363,11 +366,11 @@
         var count = 0;
         $.each($scope.selectedJob, function (index, job) {
             if (job.questions)
-            $.each(job.questions, function (i, que) {
-                if (que.answer && que.answer.length === 0) {
-                    count++;
-                }
-            });
+                $.each(job.questions, function (i, que) {
+                    if (que.answer && que.answer.length === 0) {
+                        count++;
+                    }
+                });
             if (job.addText && (!job.request || job.request === "")) {
                 count++;
             }
@@ -376,19 +379,19 @@
             return false;
         }
         return true;
-        
+
     }
 
-    $rootScope.$on("userLoginSuccessfull", function() {
-        $state.go("service.centre");
+    $rootScope.$on("userLoginSuccessfull", function () {
+        $scope.changeStep(4);
     });
 
     $scope.setPreviousSelection = function () {
         if ($scope.previousSelectedJob.length > 0) {
-            $scope.previousSelectedJob.forEach(function (job, index) {
-               var selectedService = $scope.commonServices.find(function(data) {
+            $scope.previousSelectedJob.forEach(function(job, index) {
+                var selectedService = $scope.commonServices.find(function(data) {
                     return data.name === job.name;
-               });
+                });
                 if (selectedService) {
                     selectedService.selected = true;
                     $scope.selectedJob.push(selectedService);
@@ -401,9 +404,133 @@
                 $scope.selectedJob.notes = $localStorage.userData.noteToMach;
                 $scope.serviceOpts.addingNotes = true;
             }
+            if ($scope.selectedJob.length > 0) {
+                $scope.setUserJob();
+            } else {
+                $scope.changeStep(2);
+            }
+        } else {
+             $scope.car.activeStep = 1;
+              $scope.car.choose_a_service = false;
+        $scope.car.service_selected = false;
+        $scope.car.choose_centre = false;
+        $scope.car.centre_selected = false;
+        $scope.car.book_appointment = false;
+        $scope.car.user_address = false;
         }
     }
-}]);
+    $scope.changeSelectedService = function () {
+        if($scope.selectedJob.length === 0)
+        $scope.changeStep(2);
+    }
+    $scope.changeStep = function (step) {
 
+        $scope.car.choose_a_service = false;
+        $scope.car.service_selected = false;
+        $scope.car.choose_centre = false;
+        $scope.car.centre_selected = false;
+        $scope.car.book_appointment = false;
+        $scope.car.user_address = false;
+        if (step === 2) {
+            $scope.car.choose_a_service = true;
+            $scope.car.activeStep = 2;
+            $scope.scrollContent(136);
+        }
+        else if (step === 3) {
+            $scope.car.service_selected = true;
+            $scope.car.choose_centre = true;
+            $scope.car.activeStep = 3;
+            $scope.scrollContent(274);
+        }
+        else if (step === 4) {
+                $scope.car.choose_centre = true;
+                $scope.car.service_selected = true;
+                $scope.car.centre_selected = true;
+            if (psLoginService.isAuthenticated()) {
+                $scope.car.book_appointment = true;
+                $scope.car.appointment_booked = false;
+                $scope.car.activeStep = 4;
+                $scope.scrollContent(473);
+            } else {
+                $("#loginModal").modal("toggle");
+                psDataServices.setNextButtonStatus(true);
+            }
+        }
+        else if (step === 5) {
+            $scope.car.service_selected = true;
+            $scope.car.centre_selected = true;
+            $scope.car.book_appointment = true;
+            $scope.car.choose_centre = true;
+            $scope.car.appointment_booked = true;
+            $scope.car.user_address = true;
+            $scope.car.activeStep = 5;
+            $scope.scrollContent(626);
+        }
+        $scope.disableOtherStep(step);
+    }
+
+    $scope.displayActiveStep = function () {
+        $scope.car.book_appointment = false;
+        $scope.car.user_address = false;
+        $scope.car.appointment_booked = false;
+        $scope.car.choose_centre = false;
+        if ($scope.showBrandName || $scope.showMakeYears || $scope.showModel || $scope.showVarient) {
+            $scope.car.activeStep = 1;
+            $scope.car.choose_a_service = false;
+            if ($scope.selectedJob.length > 0)
+                $scope.car.service_selected = true;
+            $scope.scrollContent(1);
+        } else {
+            //if ($scope.selectedJob.length > 0) {
+            //    $scope.car.service_selected = true;
+            //    $scope.car.choose_a_service = false;
+            //    $scope.car.choose_centre = true;
+            //    $scope.car.activeStep = 3;
+            //} else {
+                $scope.car.activeStep = 2;
+                $scope.car.service_selected = false;
+                $scope.car.choose_a_service = true;
+            $scope.scrollContent(135);
+
+            //}
+        }
+        $scope.disableOtherStep($scope.car.activeStep);
+    }
+    $scope.disableOtherStep = function (currentStep) {
+
+        $scope.enable_step_2 = false;
+        $scope.enable_step_3 = false;
+        $scope.enable_step_4 = false;
+        $scope.enable_step_5 = false;
+        switch (currentStep) {
+            case 2:
+                $scope.enable_step_2 = true;
+                break;
+            case 3:
+                $scope.enable_step_2 = true;
+                $scope.enable_step_3 = true;
+                break;
+            case 4:
+                $scope.enable_step_2 = true;
+                $scope.enable_step_3 = true;
+                $scope.enable_step_4 = true;
+                break;
+            case 5:
+                $scope.enable_step_2 = true;
+                $scope.enable_step_3 = true;
+                $scope.enable_step_4 = true;
+                $scope.enable_step_5 = true;
+                break;
+        }
+    }
+    $scope.isValidUser = function() {
+        psLoginService.isUserLoggedIn().
+            then(function (data) {
+            
+        },function() {
+                
+            })
+    }
+}]);
 
 

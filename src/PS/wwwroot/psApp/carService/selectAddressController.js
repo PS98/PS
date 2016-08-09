@@ -9,7 +9,10 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
             $('.mobile_validation').hide();
         }
     }
-
+     $scope.userSelectedService = {};
+     $scope.userSelectedService = psDataServices.getSelectedService();
+     $scope.mapUrl = "http://maps.googleapis.com/maps/api/staticmap?&zoom=15&scale=false&size=500x300&maptype=roadmap&format=png&visual_refresh=true&markers=" + $scope.userSelectedService.userAddress.lat + "," + $scope.userSelectedService.userAddress.lng;
+    $scope.pickUp = psDataServices.getPickUpDetails() ? psDataServices.getPickUpDetails().isPickUp : false;
     $scope.orderProcessingTC = function (url, name) {
         window.open(url, name);
     }

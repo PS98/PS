@@ -91,6 +91,13 @@ namespace PS.Controllers
             return Json("Success");
         }
 
+        [MmAuthorize]
+        public JsonResult isAuthenticatedUser()
+        {
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Json(new { Status = 0, Result = res, Message = "success" });
+        }
+
         // POST api/auth/login
         [HttpPost]
         public JsonResult Login(LoginViewModel model)

@@ -17,7 +17,8 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             $scope.setWorkingHours($scope.centreDetails.selectedCentre);
         } else {
             psDataServices.setCentreDetails($scope.centreDetails);
-            $state.go("service.appointment");
+            //  $state.go("service.appointment");
+            $scope.changeStep(4);
         }
     }
     $scope.getCentreDetails = function (area) {
