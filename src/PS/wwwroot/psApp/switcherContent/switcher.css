@@ -19,11 +19,7 @@
      background-color : #dc2d13 ;
 }
 @media (max-width: 768px) {
-    .ct-newsletter .ct-newsletter-button {
-        width: 20%;
-    }
-
-    .book-icon i {
+   .book-icon i {
         color: #FFF;
         position: relative;
         line-height: 1;

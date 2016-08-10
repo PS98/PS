@@ -134,6 +134,7 @@
       text-align: left;
 }
 @media all and (max-width: 768px) {
-	
-}
+	.footer-img {
+	    display: none
+	}
 }
