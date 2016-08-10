@@ -227,16 +227,13 @@
                             $scope.car.services.push(value);
                         });
                     });
-                    //var scroll = $scope.selectedCar.varient && $scope.selectedCar.varient !== "" ? 390 : 230;
-                  //  $scope.scrollContent(scroll);
-                }, 200);
+                  }, 200);
             }).error(function () {
             });
     }
     $scope.scrollContent = function (position) {
 
         var scroll = position ? position : 230;
-        //  document.body.scrollTop = scroll;
         $("html, body").animate({
             scrollTop: scroll
         }, 'slow');
@@ -416,24 +413,17 @@
                 });
                 $scope.changeStep(2);
             }
+        } else if (!$scope.selectedCar.brand || !$scope.selectedCar.year || !$scope.selectedCar.model || !$scope.selectedCar.varient) {
+            $scope.changeStep(1);
         } else {
-            $scope.getScrollPosition(1).then(function(data) {
-                $scope.scrollContent(data);
-            });
-            $scope.car.activeStep = 1;
-            $scope.car.choose_a_service = false;
-            $scope.car.service_selected = false;
-            $scope.car.choose_centre = false;
-            $scope.car.centre_selected = false;
-            $scope.car.book_appointment = false;
-            $scope.car.user_address = false;
+            $scope.changeStep(2);
         }
     }
     $scope.changeSelectedService = function () {
         if($scope.selectedJob.length === 0)
         $scope.changeStep(2);
     }
-    $scope.changeStep = function (step) {
+    $scope.changeStep = function (step,e) {
 
         $scope.car.choose_a_service = false;
         $scope.car.service_selected = false;
@@ -441,7 +431,10 @@
         $scope.car.centre_selected = false;
         $scope.car.book_appointment = false;
         $scope.car.user_address = false;
-        if (step === 2) {
+        if (step === 1) {
+            $scope.car.activeStep = 1;
+        }
+        else if (step === 2) {
             $scope.car.choose_a_service = true;
             $scope.car.activeStep = 2;
             $scope.getScrollPosition(2).then(function (data) {
@@ -499,18 +492,7 @@
                 $scope.car.service_selected = true;
             $scope.scrollContent(1);
         } else {
-            //if ($scope.selectedJob.length > 0) {
-            //    $scope.car.service_selected = true;
-            //    $scope.car.choose_a_service = false;
-            //    $scope.car.choose_centre = true;
-            //    $scope.car.activeStep = 3;
-            //} else {
-                $scope.car.activeStep = 2;
-                $scope.car.service_selected = false;
-                $scope.car.choose_a_service = true;
-            $scope.scrollContent(135);
-
-            //}
+          $scope.changeStep(2);  
         }
         $scope.disableOtherStep($scope.car.activeStep);
     }
@@ -581,6 +563,10 @@
             return position ? position : 626;
         }
     }
+$scope.deleteNotes = function() {
+    $scope.serviceOpts.addingNotes = !$scope.serviceOpts.addingNotes;
+    $scope.selectedJob.notes = "";
+}
 }]);
 
 
