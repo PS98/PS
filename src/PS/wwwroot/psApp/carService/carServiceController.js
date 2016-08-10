@@ -211,6 +211,7 @@
                         if ($scope.selectedCar.varient) {
                             $scope.car.showServiceType = true;
                             $scope.serviceOpts.viewMode = $scope.services.serviceName[0];
+                            if($scope.car.activeStep <= 2)
                             psDataServices.setSelectedCarAndService($scope.selectedCar);
                         }
                     });
@@ -278,7 +279,7 @@
         }
         $scope.car.error = false;
         $scope.car.jobError = false;
-        $scope.$apply();
+       $scope.$apply();
     });
     $state.go("service.car");
     $scope.state = $state;
