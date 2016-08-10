@@ -1,4 +1,4 @@
-﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "$timeout", "$localStorage", "$rootScope", "psDataServices","psLoginService", function ($scope, $state, $timeout, $localStorage, $rootScope, psDataServices,psLoginService) {
+﻿angular.module("psApp").controller("carServiceController", ["$scope", "$state", "$timeout", "$localStorage", "$rootScope", "psDataServices", "psLoginService", "$q", function ($scope, $state, $timeout, $localStorage, $rootScope, psDataServices, psLoginService, $q) {
 
     $rootScope.$broadcast("stickyHeader", { stickyHeader: true });
     $scope.center = {}; $localStorage.userData = $localStorage.userData || {};
@@ -405,18 +405,27 @@
                 $scope.serviceOpts.addingNotes = true;
             }
             if ($scope.selectedJob.length > 0) {
+                $scope.getScrollPosition(3).then(function(data) {
+                    $scope.scrollContent(data);
+                });
                 $scope.setUserJob();
             } else {
+                $scope.getScrollPosition(2).then(function(data) {
+                    $scope.scrollContent(data);
+                });
                 $scope.changeStep(2);
             }
         } else {
-             $scope.car.activeStep = 1;
-              $scope.car.choose_a_service = false;
-        $scope.car.service_selected = false;
-        $scope.car.choose_centre = false;
-        $scope.car.centre_selected = false;
-        $scope.car.book_appointment = false;
-        $scope.car.user_address = false;
+            $scope.getScrollPosition(1).then(function(data) {
+                $scope.scrollContent(data);
+            });
+            $scope.car.activeStep = 1;
+            $scope.car.choose_a_service = false;
+            $scope.car.service_selected = false;
+            $scope.car.choose_centre = false;
+            $scope.car.centre_selected = false;
+            $scope.car.book_appointment = false;
+            $scope.car.user_address = false;
         }
     }
     $scope.changeSelectedService = function () {
@@ -434,13 +443,17 @@
         if (step === 2) {
             $scope.car.choose_a_service = true;
             $scope.car.activeStep = 2;
-            $scope.scrollContent(136);
+            $scope.getScrollPosition(2).then(function (data) {
+             $scope.scrollContent(data);
+            });
         }
         else if (step === 3) {
             $scope.car.service_selected = true;
             $scope.car.choose_centre = true;
             $scope.car.activeStep = 3;
-            $scope.scrollContent(274);
+            $scope.getScrollPosition(3).then(function (data) {
+             $scope.scrollContent(data);
+            });
         }
         else if (step === 4) {
                 $scope.car.choose_centre = true;
@@ -450,7 +463,9 @@
                 $scope.car.book_appointment = true;
                 $scope.car.appointment_booked = false;
                 $scope.car.activeStep = 4;
-                $scope.scrollContent(473);
+                $scope.getScrollPosition(4).then(function (data) {
+                $scope.scrollContent(data);
+                });
             } else {
                 $("#loginModal").modal("toggle");
                 psDataServices.setNextButtonStatus(true);
@@ -464,7 +479,9 @@
             $scope.car.appointment_booked = true;
             $scope.car.user_address = true;
             $scope.car.activeStep = 5;
-            $scope.scrollContent(626);
+            $scope.getScrollPosition(5).then(function (data) {
+             $scope.scrollContent(data);
+            });
         }
         $scope.disableOtherStep(step);
     }
@@ -530,6 +547,38 @@
         },function() {
                 
             })
+    }
+
+    $scope.getScrollPosition = function(step) {
+        var deferred = $q.defer();
+        $timeout(function() {
+         var scrollPosition =   getLatesPosition(step);
+         deferred.resolve(scrollPosition);
+        }, 300);
+        return deferred.promise;
+    }
+
+    function getLatesPosition(step) {
+        var position;
+        if (step === 1) {
+            return 1;
+        }
+        if (step === 2) {
+            position = $("#serviceContainer").position().top;
+            return position ? position : 136;
+        }
+        if (step === 3) {
+            position = $("#centreContainer").position().top;
+            return position ? position : 274;
+        }
+        if (step === 4) {
+            position = $("#bookingContainer").position().top;
+            return position ? position : 473;
+        }
+        if (step === 5) {
+            position = $("#addressContainer").position().top;
+            return position ? position : 626;
+        }
     }
 }]);
 

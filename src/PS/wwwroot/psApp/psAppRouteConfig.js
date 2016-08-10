@@ -59,7 +59,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                {
                    state: "service.car",
                    config: {
-                       url: "/",
+                       url: "",
                        stickyHeader:true,
                        template: "<select-car></select-car>"
                    }

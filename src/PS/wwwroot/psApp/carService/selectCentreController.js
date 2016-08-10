@@ -11,9 +11,9 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
             centre.activeCentre = true;
             $scope.centreDetails.selectedCentre = centre;
             myClick(centre.$$hashKey, $scope.centreDetails.centreList);
-            $("html, body").animate({
-                scrollTop: 50
-            }, 'slow');
+            $scope.getScrollPosition(3).then(function (data) {
+                $scope.scrollContent(data);
+            });
             $scope.setWorkingHours($scope.centreDetails.selectedCentre);
         } else {
             psDataServices.setCentreDetails($scope.centreDetails);
