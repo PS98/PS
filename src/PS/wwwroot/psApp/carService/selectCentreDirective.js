@@ -214,8 +214,11 @@ angular.module("psApp").directive("selectCentre", function () {
                     var address;
                     if (scope.area)
                         address = { 'address': scope.area + " " + scope.city };
-                    else {
+                    else if (scope.city) {
                         address = { 'address': scope.city };
+                    } else {
+                        address = { 'address': "India" };
+                        mapOptions.zoom = 5;
                     }
                         callGeoCoderApi(address).then(function (data) {
                             // userLocation.lat = data.result.geometry.location.lat();

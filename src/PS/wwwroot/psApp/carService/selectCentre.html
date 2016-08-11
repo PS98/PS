@@ -1,8 +1,4 @@
-﻿<div class="popover fade top in" role="tooltip" ng-show="style.top" ng-style="style">
-    <div class="arrow" style="left: 50%;"></div>
-    <div class="popover-content"> Quotation will be shared after inspection of your car.</div>
-</div>
-<div class="centre-list mrgtop15" ng-show="!car.centre_selected">
+﻿<div class="centre-list mrgtop15" ng-show="!car.centre_selected">
     <div class="row">
         <div class="col-sm-6" style="padding-left: 10px">
             <div class="car-header" style="min-height: 255px">
@@ -20,8 +16,8 @@
                             </div>
                         </div>
                         <div class="sorting__item">
-                            <a ng-show="!centreDetails.userAddress.formattedAddress" ng-click="changeArea()">Select Your Location</a>
-                            <a ng-show="centreDetails.userAddress.formattedAddress" ng-click="changeArea()">Change Your Location</a>
+                            <a ng-show="!centreDetails.userAddress.formattedAddress" style="font-size: 14px" ng-click="changeArea()">Select Your Location</a>
+                            <a ng-show="centreDetails.userAddress.formattedAddress" style="font-size: 14px" ng-click="changeArea()">Change Your Location</a>
                         </div>
                     </div>
                     <div class="sorting__inner">

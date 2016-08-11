@@ -506,7 +506,12 @@
 .select-service-box .panel-collapse {
     border: 0; 
 }
-
+a[data-toggle="popover"] {
+    color: black;
+}
+.popover {
+    width: 210px;
+}
 .select-service-box ul li .service-details {
     font-size: 14px;
     margin-top: 4px;

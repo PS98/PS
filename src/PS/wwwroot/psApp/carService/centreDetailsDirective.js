@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-angular.module("psApp").directive("centreDetails", function () {
+angular.module("psApp").directive("centreDetails", function ($timeout) {
     return {
         templateUrl: "psApp/carService/centerDetails.html",
         replace:true,
@@ -10,6 +10,11 @@ angular.module("psApp").directive("centreDetails", function () {
             serviceList: '=',
             openInfo:'&'
           
+        },
+        link:function() {
+            $timeout(function() {
+                $('[data-toggle="popover"]').popover();
+            }, 500);
         },
         controller: function ($scope) {
             // $scope.isActive = $scope.$parent.selectedCentre.Name == $scope.centre.Name;
@@ -27,7 +32,6 @@ angular.module("psApp").directive("centreDetails", function () {
            $scope.showInfo = function (event) {
                $scope.openInfo({ eventInfo: event });
             }
-
            
         }
 

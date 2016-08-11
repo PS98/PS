@@ -167,38 +167,6 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
     $scope.setCentreDetails = function () {
         psDataServices.setCentreDetails($scope.centreDetails);
     }
-    $scope.openInformationPopup = function (eventInfo) {
-        try {
-            var left = (parseInt(eventInfo.screenX) - 102) + "px";
-            //var top = (parseInt(eventInfo.currentTarget.offsetTop) + 100) + "px";
-            var top = (parseInt(eventInfo.pageY) - 330) + "px";
-            $scope.style =
-            {
-                'top': top,
-                'left': left,
-                'width': "210px"
-            }
-        } catch (ex) {
-            console.log(ex);
-        }
-    }
-    $("body").click(function (event) {
-        if (event.target)
-            var id = event.target.id;
-        if (id !== "informationPopup") {
-            $scope.style = {};
-            $scope.$apply();
-        }
-
-    });
-    //if ($localStorage.userData.area) {
-    //    $('.select.jelect').find('#cityDropDown').text($localStorage.userData.city);
-    //    $('.select.jelect').find('#areaDropDown').text($localStorage.userData.area);
-
-    //    $scope.centreDetails.city = $localStorage.userData.city;
-    //    $scope.getServiceCentreArea();
-    //   // $scope.getCentreDetails($localStorage.userData.area);
-    //}
     $scope.setWorkingHours = function (centre) {
         $scope.centreWorkingHours = [];
         var today = new Date();
