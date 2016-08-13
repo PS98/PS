@@ -87,7 +87,6 @@
 	line-height: 38px;
 	border: none;
 	border-radius: 100%;
-	background: #414141;
 	color: #fff;
 	margin: 0 4px;
 }
@@ -133,6 +132,22 @@
     overflow: hidden;
       text-align: left;
 }
+.footer-social-icons .fa-facebook {
+     background-color: #344e86;
+}
+.footer-social-icons .fa-twitter {
+     background-color: #3ea1ec;
+}
+ .footer-social-icons .fa-google-plus {
+          background-color: #900;
+     }
+ 
+  .footer-social-icons .fa-linkedin {
+     background-color: #007ab0;
+}
+.footer-landing .footer-social-icons  a:hover,.footer-landing .footer-social-icons a:focus {
+    text-decoration: none; 
+  }
 @media all and (max-width: 768px) {
 	.footer-img {
 	    display: none
