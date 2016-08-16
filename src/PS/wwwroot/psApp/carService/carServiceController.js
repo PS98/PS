@@ -423,7 +423,7 @@
         if($scope.selectedJob.length === 0)
         $scope.changeStep(2);
     }
-    $scope.changeStep = function (step,e) {
+    $scope.changeStep = function (step) {
 
         $scope.car.choose_a_service = false;
         $scope.car.service_selected = false;
@@ -513,6 +513,7 @@
             case 4:
                 $scope.enable_step_2 = true;
                 $scope.enable_step_3 = true;
+                if (psLoginService.isAuthenticated())
                 $scope.enable_step_4 = true;
                 break;
             case 5:
