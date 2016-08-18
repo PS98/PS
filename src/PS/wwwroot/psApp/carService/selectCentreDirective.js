@@ -18,24 +18,7 @@ angular.module("psApp").directive("selectCentre", function () {
             $(".jelect").jelect();
             var infowindow = google && google.maps ? new google.maps.InfoWindow() : "";
 
-            if (!scope.centreDetails.area) {
-                getUserscurrentLocation();
-            } else {
-                latLng = new google.maps.LatLng(scope.centreDetails.userAddress.lat, scope.centreDetails.userAddress.lng);
-                initialize(latLng);
-                setTimeout(function () {
-                    setMarkers(scope.centreDetails.map, scope.centreDetails.centreList, scope.markerClick);
-                    if (scope.centreDetails.cityList.indexOf(scope.centreDetails.city) > -1) {
-                        scope.city = scope.centreDetails.city;
-                        $('#cityDropDown').setJelect(scope.centreDetails.city);
-                    }
-                 //   if (scope.centreDetails.areaList.indexOf(scope.centreDetails.area) >-1) {
-                        scope.area = scope.centreDetails.area;
-                     //   $('#areaDropDown').setJelect(scope.centreDetails.area);
-                  //  }
-                }, 20);
-              
-            }
+          
 
             function getUserscurrentLocation() {
                 if (navigator.geolocation) {
@@ -241,19 +224,34 @@ angular.module("psApp").directive("selectCentre", function () {
                     getFullAddress(userLatLng);
                 }
             });
-            //$("#addressOverlay").on("hidden.bs.modal", function () {
-            //    if (!isSelectClick) {
-            //        var oldVal = $("#areaDropDown").siblings(".jelect-input").attr("data-old");
-            //        scope.area = oldVal;
-            //        $("#areaDropDown").setJelect(oldVal);
-            //    }
-            //});
+             if (!scope.centreDetails.area) {
+                if (!scope.userLastLocation.lat) {
+                    getUserscurrentLocation();
+                } else {
+                    userCurrentAddress = scope.userLastLocation;
+                    scope.userLastLocation = undefined;
+                    scope.selectUserLocation(true);
+                }
+            } else {
+                latLng = new google.maps.LatLng(scope.centreDetails.userAddress.lat, scope.centreDetails.userAddress.lng);
+                initialize(latLng);
+                setTimeout(function () {
+                    setMarkers(scope.centreDetails.map, scope.centreDetails.centreList, scope.markerClick);
+                    if (scope.centreDetails.cityList.indexOf(scope.centreDetails.city) > -1) {
+                        scope.city = scope.centreDetails.city;
+                        $('#cityDropDown').setJelect(scope.centreDetails.city);
+                    }
+                 //   if (scope.centreDetails.areaList.indexOf(scope.centreDetails.area) >-1) {
+                        scope.area = scope.centreDetails.area;
+                     //   $('#areaDropDown').setJelect(scope.centreDetails.area);
+                  //  }
+                }, 20);
+              
+            }
             scope.loadCity=function(city) {
                 loadMapForArea(city);
             }
-            $("html, body").animate({
-                scrollTop: 50
-            }, 'slow');
+            
         },
         controller: "selectCentreController"
     }

@@ -3,7 +3,11 @@
 angular.module("psApp").controller("selectCentreController", ["$scope", "psDataServices", "$state", "$localStorage", function ($scope, psDataServices, $state, $localStorage) {
     $scope.state = $state;
     $scope.centreDetails = psDataServices.getCentreDetails() ? psDataServices.getCentreDetails() : {};
-    //  $scope.selectedService = {};
+    if (!$scope.centreDetails.selectedCentre) {
+        $scope.userLastLocation = {};
+        $scope.userLastLocation.lat = $localStorage.userData.lat;
+        $scope.userLastLocation.lng = $localStorage.userData.lng;
+    }
     $scope.selectedService = psDataServices.getSelectedServiceName() || [];
     $scope.selectServiceCentre = function (centre) {
         if (!centre.activeCentre) {
