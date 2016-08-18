@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-angular.module("psApp").directive("bookAppointment", function () {
+angular.module("psApp").directive("bookAppointment", function ($timeout) {
     return {
         templateUrl: "psApp/carService/bookAppointment/bookAppointment.html",
         controller: ["$scope", "psDataServices", function ($scope, psDataServices) {
@@ -221,6 +221,7 @@ angular.module("psApp").directive("bookAppointment", function () {
                 $scope.showDropCalendar = false;
                 $scope.hideCalendar = true;
                 psDataServices.setSelectedAppointment($scope.selectedDate);
+                focusStep4();
             }
 
             $scope.nextDates = function (type) {
@@ -249,8 +250,10 @@ angular.module("psApp").directive("bookAppointment", function () {
                     $scope.hideCalendar = false;
                     $scope.showDropCalendar = false;
                     enableDisableButton($scope.centreWorkingHours);
+                    focusCalender();
                 } else {
                     $scope.hideCalendar = true;
+                    focusStep4();
                 }
                 //  $scope.hideDropCalendar = true;
             }
@@ -260,10 +263,24 @@ angular.module("psApp").directive("bookAppointment", function () {
                     $scope.hideCalendar = false;
                     $scope.showPickUpCalendar = false;
                     enableDisableButton($scope.availablePickUpTime, true);
+                    focusCalender();
                 }
                 else {
                     $scope.hideCalendar = true;
+                    focusStep4();
                 }
+            }
+            function focusStep4() {
+                 $scope.getScrollPosition(4).then(function (data) {
+                    $scope.scrollContent(data);
+                });
+            }
+            function focusCalender() {
+                $timeout(function() {
+                    var position = $("#calenderData").offset().top;
+                    $scope.scrollContent(position-100);
+                });
+
             }
         }
 
