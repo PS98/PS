@@ -54,7 +54,9 @@
     color: #363946;
     line-height: 32px
 }
-
+.pad-10 {
+    padding: 10px !important;
+}
 .active-step {
     border:1px solid #fb8903 !important
 }
@@ -756,6 +758,9 @@ pre                             { margin-bottom:20px; }
     border: 1px solid #DDD;
     margin: 0 10px 0 0;
 }
+  .car-flex-padding {
+    padding: 15px;
+}
 .centre-list-item .centre-list-item_heading {
     font-family: "proxima-nova",Avenir,"Helvetica-Neue","Helvetica","Arial",sans-serif;
     font-size: 14px;
@@ -1086,4 +1091,9 @@ tbody td {
     .notes {
         height: 56px !important;
     }
+}
+@media(max-width: 767px) {
+      .car-flex-padding {
+    padding: 0 !important;
+}
 }

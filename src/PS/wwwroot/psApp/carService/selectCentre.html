@@ -1,7 +1,7 @@
 ﻿<div class="centre-list mrgtop15" ng-show="!car.centre_selected">
     <div class="row">
-        <div class="col-sm-6" style="padding-left: 10px">
-            <div class="car-header" style="min-height: 255px">
+        <div class="col-sm-6">
+            <div class="car-header pad-10" style="min-height: 255px">
                 <div class="sorting">
                     <div class="sorting__inner">
                         <div class="sorting__item">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6" style="padding-right: 0">
+        <div class="col-sm-6">
             <div class="row car-header map-holder" style="padding: 0; border: 2px solid #e5e5e5">
                 <div id="mapholder" class="col-md-12" style="height: 250px">
                 </div>
@@ -42,8 +42,8 @@
 
     </div>
     <div class="row">
-        <div class="col-sm-6 " ng-show="centreDetails.selectedCentre.name || noCentreMatch || noServiceMatch || noAreaLocated" style="padding-left: 10px">
-            <div class="car-header">
+        <div class="col-sm-6 " ng-show="centreDetails.selectedCentre.name || noCentreMatch || noServiceMatch || noAreaLocated">
+            <div class="car-header pad-10">
                 <centre-details ng-if="centreDetails.selectedCentre.name" ng-show="area !='Select Area'" centre="centreDetails.selectedCentre" add="selectServiceCentre(dirCentre)" service-list="selectedService" open-info="openInformationPopup(eventInfo)" class="active"></centre-details>
 
                 <div class="alert alert-danger" role="alert" ng-if="noCentreMatch">
@@ -103,8 +103,8 @@
 
             </div>
         </div>
-        <div class="col-sm-6" ng-if="(centreDetails.centreList || [] ).length > 0" style="padding-right: 0">
-            <div class="row car-header map-holder" style="padding: 15px">
+        <div class="col-sm-6" ng-if="(centreDetails.centreList || [] ).length > 0">
+            <div class="row car-header pad-10 map-holder">
                 <div ng-if="centreDetails.recommendedCentre.name">
                     <h4 class="centre-list_first-title">Recommended Centre <i class="fa fa-star"></i></h4>
                     <div class="centre-list_first">

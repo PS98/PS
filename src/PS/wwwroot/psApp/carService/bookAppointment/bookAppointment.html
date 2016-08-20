@@ -78,7 +78,7 @@
                         <calendar-directive data="centreWorkingHours" update="selectpickUpTime(selectedDateTime)"></calendar-directive>
                     </div>
                     <div class="row" ng-show="showDropCalendar">
-                        <div class="calendar-header col-xs-12 col-xs-offset-4"> Please choose {{ !pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
+                        <div class="calendar-header col-xs-12 text-center"> Please choose {{ !pickUp ? 'Pick-Up' :'Drop-off' }} Time</div>
                         <calendar-directive data="availablePickUpTime" update="selectDropTime(selectedDateTime)"></calendar-directive>
                     </div>
                 </div>
