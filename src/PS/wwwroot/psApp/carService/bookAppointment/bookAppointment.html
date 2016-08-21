@@ -119,7 +119,7 @@
 
                         </div>
                         <div class="col-xs-12 col-sm-6" style="padding: 10px 0; font-size: 14px;">
-                            <div class="col-lg-6 col-xs-6">
+                            <div class="col-lg-6" ng-class="!centre.isFreePickUp && pickUp ? 'col-xs-6' : 'col-xs-12'">
                                 <div style="margin-bottom: 15px;font-weight: 700;">Pick-up And Drop-Off Selected</div>
                                 <span ng-show="both">Both</span>
                                 <span ng-show="onlyPickUP">Only Pick-Up</span>
