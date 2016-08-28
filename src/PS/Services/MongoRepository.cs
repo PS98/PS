@@ -215,7 +215,14 @@ namespace PS.Services
             var updateDic = new Dictionary<string, object> {{"Status", "Cancelled"}, {"CancellationDate", DateTime.Now}};
 
             UpdateDocumentWithFilter<OrderDetails>(filterDic, updateDic, collection);
-            return listOrder ? GetAllOrderWithStatus(email) : new List<List<OrderDetails>>();
+            var data = GetAllOrderWithStatus(email);
+            if (data[0].Any(r => r.InvoiceNo.Equals(invoiceNo))) {
+                var cancelOrder = data[0].Where(r => r.InvoiceNo.Equals(invoiceNo)).FirstOrDefault();
+                cancelOrder.Status = "Cancelled";
+                data[0].Remove(cancelOrder);
+                data[1].Add(cancelOrder);
+            }
+            return listOrder ? data : new List<List<OrderDetails>>();
         }
         public static string RandomNumber(int length)
         {
