@@ -43,7 +43,7 @@ angular.module("psApp").controller("editOrderController", [
             }
             $scope.editAppointment = function (order) {
                 var today = new Date();
-                    $scope.setFiveDay(today);
+                    $scope.setFiveDay(today,order);
                 $("#editAppointment").modal('toggle');
                 $scope.editOrder = order;
                 $scope.showPickUpCalendar = true;
