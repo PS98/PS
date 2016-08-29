@@ -28,8 +28,8 @@ angular.module("psApp").controller("editOrderController", [
             }
             $scope.updateOrder = function () {
 
-                console.log($scope.order);
-                psOrderDetailsService.updateSelectedOrder($scope.order).then(function (data) {
+                console.log($scope.activeOrder[0]);
+                psOrderDetailsService.updateSelectedOrder($scope.activeOrder[0]).then(function (data) {
                     alert("your order details updated successfully");
                     $scope.isEdit = false;
                     $scope.order = data.order;
