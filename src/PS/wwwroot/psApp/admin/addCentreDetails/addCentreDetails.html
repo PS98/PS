@@ -1,6 +1,6 @@
-﻿<div id="home1" class="tab-pane fade in active" ng-init="clearCustomerDetails()">
+﻿<div id="home1" class="tab-pane fade in active">
     <div class="row">
-        <div class="row margin-top10">
+        <div class="row margin-top10" ng-if="!showCentreData">
             <div class="form-group">
                 <div class="col-lg-6" ng-show="!newCentre">
                     <button type="button" class="btn btn-primary btn-effect" ng-click="newCentre = true; centreDetails.Id =''">Add New Centre</button>
@@ -16,28 +16,28 @@
         <div class="row margin-top10" ng-if="newCentre">
             <div class="form-group col-lg-6">
                 <label for="OwnerName" class="">Owner Name</label>
-                <input class="form-control" placeholder="OwnerName" id="OwnerName" ng-model="centreDetails.OwnerName" type="text" />
+                <input class="form-control" placeholder="OwnerName" id="OwnerName" ng-model="centreDetails.ownerName" type="text" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="FirstName"> Centre Name</label>
-                <input class="form-control" id="FirstName" name="firstName" placeholder="first name" type="text" ng-model="centreDetails.Name" />
+                <input class="form-control" id="FirstName" name="firstName" placeholder="first name" type="text" ng-model="centreDetails.name" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="LastName"> Address line 1</label>
-                <input class="form-control" id="LastName" name="lastName" placeholder="Address line 1" type="text" ng-model="centreDetails.Address.line1" />
+                <input class="form-control" id="LastName" name="lastName" placeholder="Address line 1" type="text" ng-model="centreDetails.address.line1" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="MobileNo"> Mobile No</label>
-                <input class="form-control" id="MobileNo" name="mobile" type="tel" ng-model="centreDetails.PhoneNo" placeholder="Mobile Number" />
+                <input class="form-control" id="MobileNo" name="mobile" type="tel" ng-model="centreDetails.phoneNo" placeholder="Mobile Number" />
             </div>
 
             <div class="form-group col-lg-6">
                 <label for="Email"> Address line 2</label>
-                <input class="form-control" id="Email" name="email" placeholder="Address line 1" type="text" ng-model="centreDetails.Address.line2" />
+                <input class="form-control" id="Email" name="email" placeholder="Address line 1" type="text" ng-model="centreDetails.address.line2" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="MobileNo"> Other Phone Nos</label>
-                <input class="form-control" id="AlternatePhoneNo" name="mobile" type="tel" ng-model="centreDetails.AlternatePhoneNo" placeholder="comma seprated" />
+                <input class="form-control" id="AlternatePhoneNo" name="mobile" type="tel" ng-model="centreDetails.alternatePhoneNo" placeholder="comma seprated" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="Email"> Review </label>
@@ -45,23 +45,23 @@
             </div>
             <div class="form-group col-lg-6">
                 <label for="Email"> Email Address </label>
-                <input class="form-control" id="email" name="email" placeholder="email Address" type="email" ng-model="centreDetails.Email" />
+                <input class="form-control" id="email" name="email" placeholder="email Address" type="email" ng-model="centreDetails.email" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="Email"> Opening Hours </label>
-                <input class="form-control" id="openingHours" name="openingHours" placeholder="Opening Hours  with AM/PM" type="text" ng-model="centreDetails.OpeningHours" />
+                <input class="form-control" id="openingHours" name="openingHours" placeholder="Opening Hours  with AM/PM" type="text" ng-model="centreDetails.openingHours" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="Email"> Closing Hours </label>
-                <input class="form-control" id="closingHours" name="closingHours" placeholder="Closing Hours with AM/PM" type="text" ng-model="centreDetails.ClosingHours" />
+                <input class="form-control" id="closingHours" name="closingHours" placeholder="Closing Hours with AM/PM" type="text" ng-model="centreDetails.closingHours" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="Email"> Holiday </label>
-                <input class="form-control" id="Holiday" name="Holiday" placeholder="Holiday" type="text" ng-model="centreDetails.Holiday" />
+                <input class="form-control" id="Holiday" name="Holiday" placeholder="Holiday" type="text" ng-model="centreDetails.holiday" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="Email"> Servicing Capacity / Day </label>
-                <input class="form-control" id="Capacity" name="Capacity" placeholder="Capacity" type="text" ng-model="centreDetails.Capacity" />
+                <input class="form-control" id="Capacity" name="Capacity" placeholder="Capacity" type="text" ng-model="centreDetails.capacity" />
             </div>
             <div class="form-group col-lg-6">
                 <label for="area" class="">Area</label>
@@ -69,9 +69,9 @@
             </div>
             <div class="form-group col-lg-6">
                 <div class="car-header">
-                    <span>Latitude:</span> <span>{{centreDetails.Latitude}}</span><br />
+                    <span>Latitude:</span> <span>{{centreDetails.latitude}}</span><br />
 
-                    <span>Longitude:</span> <span>{{centreDetails.Longitude}}</span>
+                    <span>Longitude:</span> <span>{{centreDetails.longitude}}</span>
                 </div>
 
 
@@ -90,7 +90,7 @@
                 <input class="form-control" placeholder="Centre ID" ng-model="centreDetails.CentreId" type="number" />
             </div>
         </div>
-        <div class="row">
+        <div class="row" ng-if="!showCentreData">
             <div class="row margin-top10">
                 <div class="form-group">
                     <div class="col-lg-6">
@@ -145,7 +145,7 @@
         </div>
 
 
-        <div class="row">
+        <div class="row" ng-if="!showCentreData">
             <div id="form-container" class="col-md-12">
                 <div class="car-selection-container" ng-show="showBrandName">
                     <span class="car-selection-step-name">
@@ -246,6 +246,14 @@
                 </div>
             </div>
 
+        </div>
+        <div class="row" ng-if="showCentreData">
+
+            <div class="form-group col-md-12 col-md-offset-2 pull-right">
+                <a class="main-slider__btn btn-effect" ng-click="updateCentreDetails()">
+                    <span class="main-slider__btn_inner common-button-structure-inner"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Update Details</span>
+                </a>
+            </div>
         </div>
 
 

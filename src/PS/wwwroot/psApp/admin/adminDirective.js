@@ -1,8 +1,15 @@
 ﻿"use strict";
-
-angular.module("psApp").directive("admin", function () {
+angular.module("psApp").directive("admin", function() {
     return {
         templateUrl: "psapp/admin/admin.html",
+        link: function(scope, element, attrs) {
+        },
+        controller: "adminController"
+    }
+});
+angular.module("psApp").directive("addCentreDetails", function () {
+    return {
+        templateUrl: "psapp/admin/addCentreDetails/addCentreDetails.html",
         link: function (scope, element, attrs) {
             $('.jelect').jelect();
             var centreLocation = {}, centreLatLng, defaultLatLong = new google.maps.LatLng("18.5204303", "73.85674369999992"), centreMap, marker, autocomplete,centreCityArea;
@@ -71,15 +78,43 @@ angular.module("psApp").directive("admin", function () {
                 scope.centreDetails.Area = centreCityArea.area;
             }
         },
-        controller: ["$scope", "$state", "psDataServices", "psOrderDetailsService", "psLoginService","$rootScope",
-        function ($scope, $state, psDataServices, psOrderDetailsService, psLoginService, $rootScope) {
-                $('.jelect').jelect();
+        controller: "addCentreDetailsController"
 
-            $scope.clearCustomerDetails = function () {
-                $scope.CentredDetails = "";
-            }
-            $scope.carList = {};
-            $scope.centreDetails = {};
+    };
+});
+
+angular.module("psApp").controller("adminController", [
+    "$scope", "$state", "psDataServices", "psOrderDetailsService", "psLoginService", "$rootScope",
+    function ($scope, $state, psDataServices, psOrderDetailsService, psLoginService, $rootScope) {
+        $scope.checkAccess = function () {
+            psDataServices.checkAccess().
+                success(function (data) {
+                    if (data.status == 2) {
+                        $("#loginModal").modal("toggle");
+                        $scope.$parent.isLoggedIn = false;
+                        psLoginService.setUserAuthenticated(false);
+                        delete window.localStorage.userDetails;
+                        //$state.reload();
+                        delete window.localStorage.token;
+                    } else if (data.status == 3) {
+                        $state.go("home");
+                    } else {
+                        $scope.status = data.status;
+                        $state.go("admin.centreDetails");
+                    }
+                })
+                .error(function () {
+                });
+        }
+    }
+]);
+angular.module("psApp").controller("addCentreDetailsController", [
+        "$scope", "$state", "psDataServices", "psOrderDetailsService", "psLoginService", "$rootScope",
+        function($scope, $state, psDataServices, psOrderDetailsService, psLoginService, $rootScope) {
+            $('.jelect').jelect();
+
+          $scope.carList = {};
+         $scope.centreDetails = {};
             $scope.showBrandName = true;
             var centreObject = {};
             var obj = function() {
@@ -105,7 +140,6 @@ angular.module("psApp").directive("admin", function () {
                 })
                 .error(function() {
                 });
-
 
             psDataServices.getAllCarColletion().
                 success(function(data) {
@@ -185,31 +219,11 @@ angular.module("psApp").directive("admin", function () {
                 $scope.showBrandName = !$scope.showBrandName;
                 $scope.showModel = !$scope.showModel;
             }
-            $rootScope.$on("updateStatus", function (event,data) {
+            $rootScope.$on("updateStatus", function(event, data) {
                 $scope.status = parseInt(data.status);
             });
 
-            $scope.checkAccess = function () {
-                psDataServices.checkAccess().
-                success(function (data) {
-                    if (data.status == 2) {
-                        $("#loginModal").modal("toggle");
-                        $scope.$parent.isLoggedIn = false;
-                        psLoginService.setUserAuthenticated(false);
-                        delete window.localStorage.userDetails;
-                        //$state.reload();
-                        delete window.localStorage.token;
-                    }
-                    else if (data.status == 3) {
-                        $state.go("home");
-                    }
-                    else {
-                        $scope.status = data.status;
-                    }
-                })
-                .error(function () {
-                });
-            }
+           
             $scope.openOverlay = function() {
                 $("#centreAddressOverlay").modal("toggle");
             }
@@ -225,8 +239,7 @@ angular.module("psApp").directive("admin", function () {
             $scope.serviceList = [
                 ["Denting & Painting", "Accidental Repair", "Interior Car Spa", "Regular Service", "Wheel Alignment & Balancing", "Pick & Drop", "Battery Services"], ["Exterior Car Spa", "Accidental Insurance", "A/c Repairing", "Spare Parts", "Complete Engine Scanning", "Cards Accepted", "Breakdown"]
             ];
-            
-        }]
 
-    };
-});
+        }
+    ]
+);

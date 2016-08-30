@@ -4,6 +4,11 @@ angular.module("psApp").controller("serviceCentreListController", [
     "$scope", "psDataServices", "$state", "psOrderDetailsService", "$timeout", function ($scope, psDataServices, $state, psOrderDetailsService, $timeout) {
         $scope.loadData = function (id) {
             psOrderDetailsService.getServiceCentre().then(function (data) {
+                if (data.length === 1) {
+                    $scope.centreDetails = data[0];
+                    $scope.Services = data[0].services;
+                    $scope.hide = true;
+                }
                 $scope.serviceCentreList = data;
             }, function () {
 
@@ -13,7 +18,7 @@ angular.module("psApp").controller("serviceCentreListController", [
         $scope.changeView = function (id,viewMode) {
             switch (viewMode) {
             case 0:
-                $scope.centreDetails(id);
+                $scope.showCentreDetails(id);
                 break;
             case 1:
                 $scope.getOrderList(id);
@@ -44,12 +49,19 @@ angular.module("psApp").controller("serviceCentreListController", [
             psOrderDetailsService.setCentreId(id);
             $state.go("admin.priceDetails");
         }
-        $scope.centreDetails = function(centre) {
-            $scope.centre = centre;
+        $scope.showCentreDetails = function (centre) {
+            $scope.hide = true;
+            $scope.newCentre = true;
+            $scope.showCentreData = true;
+            $scope.centreDetails = centre;
+            $scope.Services = centre.services;
         }
         $scope.toggleView = function () {
             $scope.displayOrderList = !$scope.displayOrderList;
         }
-
+        $scope.toggleCentreData = function() {
+            $scope.showCentreData = !$scope.showCentreData;
+            $scope.loadData();
+        }
     }
 ]);

@@ -13,21 +13,26 @@
         font-size: 14px;
         font-family: robotoRegular;
         text-align: center;
+      
     }
 
     .admin .centre-list-container {
          display: flex;
         align-items: center;
-       background: #f5f5f5;
-        width: 100%;
+        display: -ms-flexbox;
+        -ms-flex-pack: center;
+          background: #f5f5f5;
+      width: 100%;
         border-radius: 2px;
         box-shadow: 0 2px 4px 0 #fff;
-        padding:10px;
+        padding: 10px;
     }
 
         .admin .centre-list-container > div {
             display: flex;
         align-items: center;
+        display: -ms-flexbox;
+        -ms-flex-pack: center;
         }
 
     .admin .centre-list-text {
@@ -51,7 +56,7 @@
          color: #4378c0;
     }
 </style>
-<div ng-show="!displayOrderList">
+<div ng-show="!displayOrderList && !showCentreData">
     <div class="row centre-list-header">
         <div class="col-sm-11">
             <div class="col-lg-4 text-left">
@@ -75,10 +80,10 @@
     </div>
 
     <div>
-        <div class="row centre-list-result" ng-repeat="centre in serviceCentreList" >
+        <div class="row centre-list-result" ng-repeat="centre in serviceCentreList">
             <div>
                 <div class="centre-list-container">
-                    <div class="col-sm-11 no-padding-right clickable" ng-click="changeView(centre.centreId,0)">
+                    <div class="col-sm-11 no-padding-right clickable" ng-click="changeView(centre,0)">
                         <div class="col-lg-4 text-left">
                             <div class="centre-list-text ">{{centre.name}},</div>
                             <div class="centre-list-secondary-text">
@@ -110,7 +115,7 @@
                                 <div> Price List</div>
                             </div>
                         </div>
-                     
+
 
                     </div>
 
@@ -130,4 +135,12 @@
     </div>
 
     <order-list orders="orderDetails"></order-list>
+</div>
+<div class="tab-pane fade in active" ng-show="showCentreData">
+    <div class="row">
+        <div class="col-lg-5">
+            <button type="button" class="btn btn-primary btn-effect" ng-click="toggleCentreData()">Back</button>
+        </div>
+    </div>
+    <add-centre-details></add-centre-details>
 </div>
