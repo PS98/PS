@@ -51,7 +51,6 @@ namespace PS.Models
                 SelectedAppointment.PickUpDate != other.SelectedAppointment.PickUpDate ||
                 SelectedCentre.PhoneNo != other.SelectedCentre.PhoneNo ||
                 SelectedCentre.TotalActualPrice != other.SelectedCentre.TotalActualPrice ||
-                SelectedCentre.Address != other.SelectedCentre.Address ||
                 SelectedCar.Brand != other.SelectedCar.Brand ||
                 SelectedCar.Model != other.SelectedCar.Model ||
                 SelectedCar.Year != other.SelectedCar.Year ||

@@ -72,6 +72,13 @@ namespace PS.DTO
             if (updatedOrderDetails.QuotationRevision.Status != "Select")
             {
                 SmsSender.QuotationUpdates(updatedOrderDetails);
+                if (existingOrderDetails.QuotationRevision == null)
+                {
+                    existingOrderDetails.QuotationRevision = new QuotationRevision()
+                    {
+                        ServiceDetails = new List<Detalis>()
+                    };
+                }
                 existingOrderDetails.QuotationRevision.ServiceDetails.AddRange(existingOrderDetails.SelectedCentre.ServiceDetails);
             }
             existingOrderDetails.SelectedAppointment = updatedOrderDetails.SelectedAppointment;

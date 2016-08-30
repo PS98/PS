@@ -28,8 +28,8 @@ angular.module("psApp").controller("editOrderController", [
             }
             $scope.updateOrder = function () {
 
-                console.log($scope.order);
-                psOrderDetailsService.updateSelectedOrder($scope.order).then(function (data) {
+                console.log($scope.activeOrder[0]);
+                psOrderDetailsService.updateSelectedOrder($scope.activeOrder[0]).then(function (data) {
                     alert("your order details updated successfully");
                     $scope.isEdit = false;
                     $scope.order = data.order;
@@ -43,7 +43,7 @@ angular.module("psApp").controller("editOrderController", [
             }
             $scope.editAppointment = function (order) {
                 var today = new Date();
-                    $scope.setFiveDay(today);
+                    $scope.setFiveDay(today,order);
                 $("#editAppointment").modal('toggle');
                 $scope.editOrder = order;
                 $scope.showPickUpCalendar = true;

@@ -6,7 +6,7 @@
             </div>
             <div class="col-lg-6">
                 <a class="btn btn-primary btn-effect" ng-click="getOrderById(Id)">Serach</a>
-                <a ng-show="!isEdit && activeOrder" class="btn btn-primary btn-effect" ng-click="isEdit = !isEdit">EditOrder</a>
+                <a ng-show="!isEdit && activeOrder" class="btn btn-primary btn-effect" ng-click="isEdit = !isEdit">Edit Order</a>
                 <a ng-show="isEdit" class="btn btn-primary btn-effect" ng-click="isEdit = !isEdit">Cancel Edit</a>
             </div>
         </div>
@@ -15,7 +15,7 @@
     <div ng-if="error">{{error}}</div>
     <order-details orders="activeOrder" ng-hide="isEdit"></order-details>
 
-    <div class="row editOrderDetails" ng-show="isEdit">
+    <div class="row editOrderDetails" ng-repeat="order in activeOrder" ng-show="isEdit">
         <div class="col-sm-12">
             <div class="row row-fluid utilBoxDetails">
                 <div class="col-sm-12">
@@ -31,8 +31,8 @@
                         <span>Booking Date: &nbsp;</span>
                         <strong>{{order.bookingDate |date:'mediumDate'}}</strong>
                     </div>
-                    <div class="order-status col-sm-6" ng-show="order.status !=='Pending'">
-                        <span ng-show="order.status !=='Success'">Cancellation Date: &nbsp;</span> <span ng-show="order.status ==='Success'">Completed Date: &nbsp;</span>
+                    <div class="order-status col-sm-6" ng-show="order.status !=='Pending' || order.status !=='Accepted'">
+                        <span ng-show="order.status ==='Cancelled'">Cancellation Date: &nbsp;</span> <span ng-show="order.status ==='Success'">Completed Date: &nbsp;</span>
                         <span><strong>{{order.cancellationDate |date:'mediumDate'}}</strong></span>
                     </div>
                     <div class="order-status col-sm-6">

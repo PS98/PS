@@ -64,6 +64,9 @@ namespace PS.Services
                 case SmsType.BookingCancelled:
                     messageString = MessageProvider.SmsMessages.User.BookingCancelled;
                     break;
+                case SmsType.BookingStatusUpdate:
+                    messageString = MessageProvider.SmsMessages.User.BookingStatusUpdate;
+                    break;
                 case SmsType.DropOffInitiated:
                     messageString = MessageProvider.SmsMessages.User.DropOffInitiated;
                     break;
