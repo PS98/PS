@@ -16,7 +16,13 @@ function ($scope, $window, $state, $location, $localStorage, $sessionStorage, ps
     $scope.orderProcessingTC = function (url, name) {
         window.open(url, name);
     }
+    if ($scope.userSelectedService.userDetails) {
+        if ($scope.userSelectedService.userDetails.addressLine1)
+            $scope.isAddressLine1 = true;
+        if ($scope.userSelectedService.userDetails.addressLine2)
+            $scope.isAddressLine2 = true;
 
+    }
     $scope.orderProcess = function () {
         $("#ReviewOrder").modal("toggle");
         $timeout(function () {
