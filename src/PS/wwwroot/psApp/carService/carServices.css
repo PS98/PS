@@ -551,6 +551,7 @@ a[data-toggle="popover"] {
 
 .b-service-option{
     display:inline-flex;
+    display: -ms-inline-flexbox;
 }
 .b-service-adds .b-adds {
     padding: 20px;
@@ -655,7 +656,7 @@ a[data-toggle="popover"] {
 }
 .select-service-box ul .panel-heading {
     padding: 0px;   
-    margin-left: 10px 
+    margin-left: 5px 
 }
 /*.select-service-box .panel-heading {
     width: 88%;

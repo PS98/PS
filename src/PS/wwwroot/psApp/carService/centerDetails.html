@@ -30,10 +30,10 @@
                     <i class="fa fa-map-pin"></i><span class="pull-right" style="padding-right: 10px;" ng-show="centre.distance != 0">{{centre.distance}}KM</span>
                     <br />
                     <span class="pull-right" style="padding-right: 10px;">
-                        <span ng-if="centre.isFreePickUp && centre.distance != 0" style="padding-right:5px; color: green;">
+                        <span ng-if="centre.isFreePickUp && centre.distance != 0" style="color: green;">
                             <i class="fa fa-check"></i> Free Pick-up & Drop-off Available
                         </span>
-                        <span ng-if="!centre.isFreePickUp" style="padding-right:5px; color: red;">
+                        <span ng-if="!centre.isFreePickUp" style="color: red;">
                             <i class="fa fa-times"></i> Free Pick-up & Drop-off not Available
                         </span>
                     </span>

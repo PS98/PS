@@ -387,12 +387,14 @@
     $scope.setPreviousSelection = function () {
         if ($scope.previousSelectedJob.length > 0) {
             $scope.previousSelectedJob.forEach(function(job, index) {
-                var selectedService = $scope.commonServices.find(function(data) {
+                var selectedService = $scope.commonServices.filter(function(data) {
                     return data.name === job.name;
                 });
-                if (selectedService) {
-                    selectedService.selected = true;
-                    $scope.selectedJob.push(selectedService);
+                if ((selectedService || []).length > 0) {
+                    selectedService.forEach(function(job) {
+                        job.selected = true;
+                        $scope.selectedJob.push(job);
+                    });
                 }
                 if (job.addText) {
                     $scope.selectedJob.push(job);
