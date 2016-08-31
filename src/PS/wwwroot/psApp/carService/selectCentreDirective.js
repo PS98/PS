@@ -195,15 +195,17 @@ angular.module("psApp").directive("selectCentre", function () {
             scope.loadUserMap = function () {
                 if (!scope.area || scope.area !== userCurrentAddress.area) {
                     var address;
-                    if (scope.area)
+                    if (scope.area) {
                         address = { 'address': scope.area + " " + scope.city };
-                    else if (scope.city) {
+                        mapOptions.zoom = 14;
+                    } else if (scope.city && scope.city !== "Select City") {
                         address = { 'address': scope.city };
+                        mapOptions.zoom = 14;
                     } else {
                         address = { 'address': "India" };
                         mapOptions.zoom = 5;
                     }
-                        callGeoCoderApi(address).then(function (data) {
+                    callGeoCoderApi(address).then(function (data) {
                             // userLocation.lat = data.result.geometry.location.lat();
                             // userLocation.lng = data.result.geometry.location.lng();
                             userAddressComponent = data.result;

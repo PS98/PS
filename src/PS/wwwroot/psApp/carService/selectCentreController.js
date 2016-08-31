@@ -82,21 +82,23 @@ angular.module("psApp").controller("selectCentreController", ["$scope", "psDataS
         $scope.noServiceMatch = false;
         $localStorage.userData.city = $scope.city;
         if ($scope.city.toLowerCase() !== "select city") {
-            psDataServices.getServiceCentreArea($scope.city).success(function (data) {
+          //  psDataServices.getServiceCentreArea($scope.city).success(function (data) {
                 removemarker();
                 //  $scope.centreDetails.areaList = data;
                 if ($scope.googleMapArea && $scope.googleMapArea !== "") {
                     getNearerCentreList();
                 }
 
-            });
+           // });
         }
         else {
             //   $scope.centreDetails.areaList = {};
             removeCentreDetails();
-            //$('.select.jelect').find('#areaDropDown').text("Select Area");
-            //$scope.area = "Select Area";
-            // $('#areaDropDown').setJelect("");
+            var cityList = $scope.centreDetails.cityList;
+            $scope.centreDetails = {};
+            $scope.area = undefined;
+            $scope.centreDetails.cityList = cityList;
+            $scope.setCentreDetails();
         }
     }
     function getNearerCentreList() {
