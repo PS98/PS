@@ -89,6 +89,12 @@ angular.module("psApp").controller("editOrderController", [
                     });
 
             }
+            var orderId = psOrderDetailsService.getOrderId();
+            if (orderId) {
+                $scope.orderId = orderId;
+                $scope.getOrderById(orderId);
+                psOrderDetailsService.setOrderId(undefined);
+            }
 
         }
 ]

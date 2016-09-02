@@ -24,11 +24,33 @@ namespace PS.DTO
             _repo = new MongoRepository("orders");
         }
 
-        public List<OrderDetails> GetAllOrders()
+        public List<OrderDetails> GetAllOrders(int? centreId, UserSession userDetails)
         {
             try
             {
-                var orders = _repo.GetDocumentList<OrderDetails>("Invoice");
+                var id = centreId == null ? "" : centreId.ToString();
+                var orders = new List<OrderDetails>();
+
+                if (userDetails.CentreId == "0" && string.IsNullOrEmpty(id))
+                    // if super admin and no centre id then return all order
+                {
+                    orders = _repo.GetDocumentList<OrderDetails>("Invoice");
+                }
+               else if(userDetails.CentreId == "0" && !string.IsNullOrEmpty(id))   
+                    // if super admin and centre id not null then return centre specific order
+                {
+                    var filter = Builders<OrderDetails>.Filter.Where(x => x.SelectedCentre.Id == id);
+                    var collection = _repo.GetCollection<OrderDetails>("Invoice");
+                    orders = collection.Find(filter).ToListAsync().Result;
+                }
+                   
+               else if(!string.IsNullOrEmpty(userDetails.CentreId))   //user is admin then return all centre specific data
+                {
+                    var filter = Builders<OrderDetails>.Filter.Where(x => x.SelectedCentre.Id == userDetails.CentreId);
+                    var collection = _repo.GetCollection<OrderDetails>("Invoice");
+                    orders = collection.Find(filter).ToListAsync().Result;
+                }
+               
                 return orders;
             }
             catch (Exception ex)
@@ -38,10 +60,10 @@ namespace PS.DTO
             }
         }
 
-        public OrderDetails GetOrder(string id, string userId)
+        public OrderDetails GetOrder(string id, string centreId)
         {
-            var filter = userId != "0" ?
-                Builders<OrderDetails>.Filter.Where(x => x.InvoiceNo.Equals(id) && x.UserDetails.Email == userId) :
+            var filter = centreId != "0" ?
+                Builders<OrderDetails>.Filter.Where(x => x.InvoiceNo.Equals(id) && x.SelectedCentre.Id == centreId) :
                 Builders<OrderDetails>.Filter.Where(x => x.InvoiceNo.Equals(id));
             var collection = _repo.GetCollection<OrderDetails>("Invoice");
             var orderList = collection.Find(filter).ToListAsync().Result;

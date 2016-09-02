@@ -91,7 +91,14 @@
         font-size: 20px;
     }
 </style>
-<div ng-if="!editOrder">
+<div class="tab-pane fade in active">
+    <div class="row" ng-if="status == 0">
+        <div class="col-lg-12 form-group">
+            <div class="col-lg-6">
+                <a class="btn btn-primary btn-effect" ng-click="changeView()">Back</a>
+            </div>
+        </div>
+    </div>
     <div class="order-status-details">
         <div>
             <div class="status">
@@ -101,14 +108,24 @@
             </div>
             <div class="status">
                 <i class="fa fa-check-circle"></i>
-                <div class="results-count"> {{orders.successorderCount}}   </div>
+                <div class="results-count"> {{orders.successorderCount}} </div>
                 <div class="status-text">Completed</div>
             </div>
 
             <div class="status">
                 <i class="fa fa-remove"></i>
-                <div class="results-count"> {{orders.cancelOrderCount}}  </div>
+                <div class="results-count"> {{orders.cancelOrderCount}} </div>
                 <div class="status-text">Cancelled</div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-if="status == 0">
+        <div class="col-lg-12 form-group margin-top10">
+            <div class="col-lg-6">
+                <input class="form-control" id="centreId" name="centreId" placeholder="centreId" type="text" ng-model="centreId" />
+            </div>
+            <div class="col-lg-6">
+                <a class="btn btn-primary btn-effect" ng-click="getOrderList(centreId)">Serach</a>
             </div>
         </div>
     </div>
@@ -157,14 +174,6 @@
         </div>
     </div>
     <div ng-if="(orders.orderList ||[] ).length == 0">
-        <div class="no-results">   No Order Found</div>
+        <div class="no-results"> No Order Found</div>
     </div>
-</div>
-<div ng-if="editOrder">
-    <div class="row">
-        <div class="col-lg-5">
-            <button type="button" class="btn btn-primary btn-effect" ng-click="toggleView()">Back to order List</button>
-        </div>
-    </div>
-    <edit-order-details active-order="order"></edit-order-details>
 </div>

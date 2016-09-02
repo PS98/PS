@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.Mvc;
 using PS.Models;
@@ -135,16 +136,9 @@ namespace PS.Controllers
         {
             try
             {
-                var orderList = _domainManager.GetAllOrders();
-                if(userDetails.CentreId != "0")
-                {
-                    orderList = orderList.FindAll(r => r.SelectedCentre.Id == userDetails.CentreId);
-                }
-                else if(centreId != null)
-                {
-                    orderList = orderList.FindAll(r => r.SelectedCentre.Id == centreId.ToString());
-                }
-                if (!orderList.Any())
+                var orderList = _domainManager.GetAllOrders(centreId,userDetails);
+
+               if (!orderList.Any())
                 {
                     Response.StatusCode = (int)HttpStatusCode.OK;
                     return Json(new { Message = "No Order Found", Status = 1 });
@@ -179,7 +173,7 @@ namespace PS.Controllers
             {
                 if (!string.IsNullOrWhiteSpace(id))
                 {
-                    var order = _domainManager.GetOrder(id , userDetails.CentreId != "0" ? userDetails.UserId : "0");
+                    var order = _domainManager.GetOrder(id , userDetails.CentreId != "0" ? userDetails.CentreId : "0");
                     if(order == null)
                     {
                         Response.StatusCode = (int)HttpStatusCode.OK;

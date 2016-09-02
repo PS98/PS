@@ -158,13 +158,21 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                     }
                 },
                 {
-                    state: "admin.editOrder",
+                    state: "admin.orderList",
                     config: {
-                        url: "/editOrder",
-                        templateUrl: "psapp/admin/editOrder/editOrderDetails.html",
-                        controller: "editOrderController"
+                        url: "/orderList",
+                        templateUrl: "psapp/admin/orderList/orderList.html",
+                        controller: "orderListController"
                     }
                 },
+                 {
+                     state: "admin.editOrder",
+                     config: {
+                         url: "/editOrder",
+                         templateUrl: "psapp/admin/editOrder/editOrderDetails.html",
+                         controller: "editOrderController"
+                     }
+                 },
                  {
                      state: "admin.priceDetails",
                      config: {

@@ -12,7 +12,8 @@
     </div>
     <div class="container admin"  ng-if="status <= 1">
         <ul class="nav nav-tabs">
-          <li ui-sref-active="active"><a ui-sref="admin.centreDetails">Service Centre List </a></li>
+          <li ui-sref-active="active"><a ui-sref="admin.centreDetails" ng-bind="linkDisplayName"> </a></li>
+            <li ui-sref-active="active"><a ui-sref="admin.orderList">Order List </a></li>
             <li ui-sref-active="active"><a ui-sref="admin.editOrder">Edit Order </a></li>
             <li ui-sref-active="active" ng-if="status <= 1"><a ui-sref="admin.priceDetails">Price Details </a></li>
             <li ui-sref-active="active" ng-if="status == 0"><a ui-sref="admin.addCentre">Add New Centre</a></li>

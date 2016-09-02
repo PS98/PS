@@ -1,5 +1,5 @@
 ﻿angular.module("psApp").factory("psOrderDetailsService", ["$http", "$q", "$localStorage", "psDataServices", function ($http, $q, $localStorage, psDataServices) {
-    var orderDetails, submittedOrder, centreId;
+    var orderDetails, submittedOrder, centreId,orderId;
 
     var _validateOrder = function (payment_id, payment_request_id) {
         var data = { 'PaymentId': payment_id, 'PaymentRequestId': payment_request_id }
@@ -241,10 +241,15 @@
     var _setCentreId = function (id) {
         centreId = id;
     }
-    var _getCentreId = function (id) {
+    var _getCentreId = function () {
         return centreId;
     }
-
+    var _setOrderId = function (id) {
+        orderId = id;
+    }
+    var _getOrderId = function () {
+        return orderId;
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
@@ -261,7 +266,9 @@
         getOrderList: _getOrderList,
         setCentreId: _setCentreId,
         getCentreId: _getCentreId,
-        getServiceCentre: _getServiceCentre
+        getServiceCentre: _getServiceCentre,
+        setOrderId: _setOrderId,
+        getOrderId: _getOrderId
 
     }
 

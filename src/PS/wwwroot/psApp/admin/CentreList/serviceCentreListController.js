@@ -28,22 +28,9 @@ angular.module("psApp").controller("serviceCentreListController", [
                 break;
             }
         }
-        $scope.getOrderList = function(id) {
-            psOrderDetailsService.getOrderList(id).then(function (data) {
-                $scope.displayOrderList = true;
-                $scope.orderDetails = data.result;
-                if (!data.result) {
-                    $scope.orderDetails = {
-                        pendingOrderCount: 0,
-                        cancelOrderCount: 0,
-                        successorderCount: 0,
-                        orderList: 0
-                    }
-                }
-
-            }, function () {
-
-            });
+        $scope.getOrderList = function (id) {
+            psOrderDetailsService.setCentreId(id);
+            $state.go("admin.orderList");
         }
         $scope.getPriceList = function (id) {
             psOrderDetailsService.setCentreId(id);

@@ -101,6 +101,7 @@ angular.module("psApp").controller("adminController", [
                     } else {
                         $scope.status = data.status;
                         $state.go("admin.centreDetails");
+                        $scope.linkDisplayName = data.status === 0 ? "Service Centre List" : "Centre Details";
                     }
                 })
                 .error(function () {
