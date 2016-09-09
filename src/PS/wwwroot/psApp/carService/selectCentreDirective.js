@@ -227,7 +227,7 @@ angular.module("psApp").directive("selectCentre", function () {
                 }
             });
              if (!scope.centreDetails.area) {
-                 if (scope.userLastLocation && !scope.userLastLocation.lat) {
+                 if (!scope.userLastLocation || !scope.userLastLocation.lat) {
                     getUserscurrentLocation();
                 } else {
                     userCurrentAddress = scope.userLastLocation;
