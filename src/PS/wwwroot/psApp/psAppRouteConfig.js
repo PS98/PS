@@ -51,7 +51,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                {
                    state: "service",
                    config: {
-                       url: "/Service/",
+                       url: "/Service",
                        stickyHeader:true,
                        templateUrl: "/views/BookNow/bookNow.html"
                    }
@@ -145,7 +145,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                     state: "admin.addCentre",
                     config: {
                         url: "/AddCentre",
-                        templateUrl: "psapp/admin/addCentreDetails/addCentreDetails.html",
+                         templateUrl: "psapp/admin/addCentreDetails/addCentreDetails.html",
                         controller: "addCentreDetailsController"
                     }
                 },
