@@ -6,7 +6,7 @@ angular.module("psApp").controller("serviceCentreListController", [
             psOrderDetailsService.getServiceCentre().then(function (data) {
                 if (data.length === 1) {
                     $scope.centreDetails = data[0];
-                    $scope.Services = data[0].services;
+                    $scope.selectedServices = data[0].services;
                     $scope.hide = true;
                 }
                 $scope.serviceCentreList = data;
@@ -37,11 +37,11 @@ angular.module("psApp").controller("serviceCentreListController", [
             $state.go("admin.priceDetails");
         }
         $scope.showCentreDetails = function (centre) {
-            $scope.hide = true;
+            $scope.hideServiceList = true;
             $scope.newCentre = true;
             $scope.showCentreData = true;
             $scope.centreDetails = centre;
-            $scope.Services = centre.services;
+            $scope.selectedServices = centre.services;
         }
         $scope.toggleView = function () {
             $scope.displayOrderList = !$scope.displayOrderList;

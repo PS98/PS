@@ -1,261 +1,294 @@
 ﻿<div id="home1" class="tab-pane fade in active">
-    <div class="row">
-        <div class="row margin-top10" ng-if="!showCentreData">
-            <div class="form-group">
-                <div class="col-lg-6" ng-show="!newCentre">
-                    <button type="button" class="btn btn-primary btn-effect" ng-click="newCentre = true; centreDetails.Id =''">Add New Centre</button>
-                </div>
-                <div class="col-lg-6" ng-show="newCentre">
-                    <button type="button" class="btn btn-primary btn-effect" ng-click="newCentre = false">Add To existing Centre</button>
-                </div>
-                <div class="col-lg-6" ng-show="newCentre">
-                    <a type="button" class="btn btn-primary btn-effect" ng-click="openOverlay()">Click Here to Locate</a>
-                </div>
-            </div>
+<div class="row">
+<div class="row margin-top10" ng-if="!showCentreData">
+    <div class="form-group">
+        <div class="col-lg-6" ng-show="!newCentre">
+            <button type="button" class="btn btn-primary btn-effect" ng-click="toggleNewCentreView()">Add New Centre</button>
         </div>
-        <div class="row margin-top10" ng-if="newCentre">
-            <div class="form-group col-lg-6">
-                <label for="OwnerName" class="">Owner Name</label>
-                <input class="form-control" placeholder="OwnerName" id="OwnerName" ng-model="centreDetails.ownerName" type="text" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="FirstName"> Centre Name</label>
-                <input class="form-control" id="FirstName" name="firstName" placeholder="first name" type="text" ng-model="centreDetails.name" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="LastName"> Address line 1</label>
-                <input class="form-control" id="LastName" name="lastName" placeholder="Address line 1" type="text" ng-model="centreDetails.address.line1" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="MobileNo"> Mobile No</label>
-                <input class="form-control" id="MobileNo" name="mobile" type="tel" ng-model="centreDetails.phoneNo" placeholder="Mobile Number" />
-            </div>
+        <div class="col-lg-6" ng-show="newCentre">
+            <button type="button" class="btn btn-primary btn-effect" ng-click="toggleNewCentreView()">Add To existing Centre</button>
+        </div>
+        <div class="col-lg-6" ng-show="newCentre">
+            <a type="button" class="btn btn-primary btn-effect" ng-click="openOverlay()">Click Here to Locate</a>
+        </div>
+    </div>
+</div>
+<div class="row margin-top10" ng-show="newCentre">
+    <div class="form-group col-lg-6">
+        <label for="OwnerName" class="">Owner Name</label>
+        <input class="form-control" placeholder="OwnerName" id="OwnerName" ng-model="centreDetails.ownerName" type="text"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="FirstName"> Centre Name</label>
+        <input class="form-control" id="FirstName" name="firstName" placeholder="first name" type="text" ng-model="centreDetails.name"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="LastName"> Address line 1</label>
+        <input class="form-control" id="LastName" name="lastName" placeholder="Address line 1" type="text" ng-model="centreDetails.address.line1"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="MobileNo"> Mobile No</label>
+        <input class="form-control" id="MobileNo" name="mobile" type="tel" ng-model="centreDetails.phoneNo" placeholder="Mobile Number"/>
+    </div>
 
-            <div class="form-group col-lg-6">
-                <label for="Email"> Address line 2</label>
-                <input class="form-control" id="Email" name="email" placeholder="Address line 1" type="text" ng-model="centreDetails.address.line2" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="MobileNo"> Other Phone Nos</label>
-                <input class="form-control" id="AlternatePhoneNo" name="mobile" type="tel" ng-model="centreDetails.alternatePhoneNo" placeholder="comma seprated" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="Email"> Review </label>
-                <input class="form-control" id="Review" name="formattedAddress" placeholder="Review" type="text" ng-model="centreDetails.review" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="Email"> Email Address </label>
-                <input class="form-control" id="email" name="email" placeholder="email Address" type="email" ng-model="centreDetails.email" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="Email"> Opening Hours </label>
-                <input class="form-control" id="openingHours" name="openingHours" placeholder="Opening Hours  with AM/PM" type="text" ng-model="centreDetails.openingHours" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="Email"> Closing Hours </label>
-                <input class="form-control" id="closingHours" name="closingHours" placeholder="Closing Hours with AM/PM" type="text" ng-model="centreDetails.closingHours" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="Email"> Holiday </label>
-                <input class="form-control" id="Holiday" name="Holiday" placeholder="Holiday" type="text" ng-model="centreDetails.holiday" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="Email"> Servicing Capacity / Day </label>
-                <input class="form-control" id="Capacity" name="Capacity" placeholder="Capacity" type="text" ng-model="centreDetails.capacity" />
-            </div>
-            <div class="form-group col-lg-6">
-                <label for="area" class="">Area</label>
-                <input class="form-control" placeholder="Area" id="area" ng-model="centreDetails.Area" type="text" disabled="disabled" />
-            </div>
-            <div class="form-group col-lg-6">
-                <div class="car-header">
-                    <span>Latitude:</span> <span>{{centreDetails.latitude}}</span><br />
+    <div class="form-group col-lg-6">
+        <label for="Email"> Address line 2</label>
+        <input class="form-control" id="Email" name="email" placeholder="Address line 1" type="text" ng-model="centreDetails.address.line2"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="MobileNo"> Other Phone Nos</label>
+        <input class="form-control" id="AlternatePhoneNo" name="mobile" type="tel" ng-model="centreDetails.alternatePhoneNo" placeholder="comma seprated"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="Email"> Review </label>
+        <input class="form-control" id="Review" name="formattedAddress" placeholder="Review" type="text" ng-model="centreDetails.review"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="Email"> Email Address </label>
+        <input class="form-control" id="email" name="email" placeholder="email Address" type="email" ng-model="centreDetails.email"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="Email"> Opening Hours </label>
+        <input class="form-control" id="openingHours" name="openingHours" placeholder="Opening Hours  with AM/PM" type="text" ng-model="centreDetails.openingHours"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="Email"> Closing Hours </label>
+        <input class="form-control" id="closingHours" name="closingHours" placeholder="Closing Hours with AM/PM" type="text" ng-model="centreDetails.closingHours"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="Email"> Holiday </label>
+        <input class="form-control" id="Holiday" name="Holiday" placeholder="Holiday" type="text" ng-model="centreDetails.holiday"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="Email"> Servicing Capacity / Day </label>
+        <input class="form-control" id="Capacity" name="Capacity" placeholder="Capacity" type="text" ng-model="centreDetails.capacity"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <label for="area" class="">Area</label>
+        <input class="form-control" placeholder="Area" id="area" ng-model="centreDetails.area" type="text" disabled="disabled"/>
+    </div>
+    <div class="form-group col-lg-6">
+        <div class="car-header">
+            <span>Latitude:</span> <span>{{centreDetails.latitude}}</span><br/>
 
-                    <span>Longitude:</span> <span>{{centreDetails.longitude}}</span>
-                </div>
-
-
-            </div>
-
+            <span>Longitude:</span> <span>{{centreDetails.longitude}}</span>
         </div>
 
-        <div class="row margin-top10" ng-if="!newCentre">
-            <!--<div class="col-lg-6">
 
-                <label for="sublocality_level_2" class="">Area</label>
-                <input class="form-control" placeholder="Area" ng-model="centreDetails.Area" type="text"/>
-            </div>-->
+    </div>
+
+</div>
+
+<div class="row margin-top10" ng-show="!newCentre">
+    <!--<div class="col-lg-6">
+
+        <label for="sublocality_level_2" class="">Area</label>
+        <input class="form-control" placeholder="Area" ng-model="centreDetails.Area" type="text"/>
+    </div>-->
+    <div class="col-lg-6">
+        <label for="sublocality_level_1" class="">Centre ID</label>
+        <input class="form-control" placeholder="Centre ID" ng-model="centreDetails.CentreId" type="number"/>
+    </div>
+</div>
+<div class="row" ng-if="!showCentreData">
+    <div class="row margin-top10">
+        <div class="form-group">
             <div class="col-lg-6">
-                <label for="sublocality_level_1" class="">Centre ID</label>
-                <input class="form-control" placeholder="Centre ID" ng-model="centreDetails.CentreId" type="number" />
+                <button type="button" class="btn btn-primary btn-effect" ng-click="toggleServiceList()"> Show / Hide Service Section </button>
             </div>
         </div>
-        <div class="row" ng-if="!showCentreData">
-            <div class="row margin-top10">
-                <div class="form-group">
-                    <div class="col-lg-6">
-                        <button type="button" class="btn btn-primary btn-effect" ng-click="hide = !hide; Services =[]"> Show / Hide Service Section  </button>
+    </div>
+</div>
+<div class="row margin-top10" ng-show="hideServiceList">
+    <div class="form-group col-lg-6" style="padding: 0">
+        <div class="car-selection-container">
+            <label for="NearArea">Select Services </label>
+            <div class="car-selection-flex-container">
+                <ul class="car-selection-flex-column" ng-repeat="service in serviceList">
+                    <li ng-repeat="x in service" ng-click="addOrRemoveService(x);">
+                        {{ x }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-lg-6" style="padding: 0">
+        <div class="car-selection-container">
+            <div class="car-selection-flex-container">
+                <ul class="car-selection-flex-column">
+                    <li ng-repeat="x in selectedServices | limitTo:8" ng-click="addOrRemoveService(x);">
+                        {{ x }}
+                    </li>
+                </ul>
+                <ul class="car-selection-flex-column">
+                    <li ng-repeat="x in selectedServices.slice(8,selectedServices.length)" ng-click="addOrRemoveService(x);">
+                        {{ x }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row margin-top10">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="car-selection-car-container">
+
+                    <div class="car-option" ng-class="car-option-active" ng-click="editBrand()" ng-show="brand">
+                        {{brand}}
+                    </div>
+
+                    <div class="car-option" ng-class="" ng-show="centreDetails.model">
+                        {{centreDetails.model}}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row margin-top10" ng-show="hide">
-            <div class="form-group col-lg-6" style="padding: 0">
-                <div class="car-selection-container">
-                    <label for="NearArea">Select Services </label>
-                    <div class="car-selection-flex-container">
-                        <ul class="car-selection-flex-column" ng-repeat="service in serviceList">
-                            <li ng-repeat="x in service" ng-click="addArea(x);">
-                                {{ x }}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group col-lg-6" style="padding: 0">
-                <div class="car-selection-container">
-                    <div class="car-selection-flex-container">
-                        <ul ng-show="Services" class="car-selection-flex-column">
-                            <li ng-repeat="x in Services" ng-click="addArea(x);">
-                                {{ x }}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row margin-top10">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="car-selection-car-container">
-
-                            <div class="car-option" ng-class="car-option-active" ng-click="editBrand()" ng-show="brand">
-                                {{brand}}
-                            </div>
-
-                            <div class="car-option" ng-class="" ng-show="centreDetails.model">
-                                {{centreDetails.model}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+</div>
 
 
-        <div class="row" ng-if="!showCentreData">
-            <div id="form-container" class="col-md-12">
-                <div class="car-selection-container" ng-show="showBrandName">
-                    <span class="car-selection-step-name">
+<div class="row" ng-if="!showCentreData">
+    <div id="form-container" class="col-md-12">
+        <div class="car-selection-container" ng-show="showBrandName">
+            <span class="car-selection-step-name">
                         Select MAKE
                     </span>
-                    <div class="car-selection-flex-container">
-                        <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections">
-                            <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
-                                <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
-                                <span ng-bind="carBrand" style="padding-left: 10px"></span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row" ng-show="showModel">
-                    <div class="col-xs-6">
-                        <div class="car-selection-container">
-                            <span class="car-selection-step-name">
+            <div class="car-selection-flex-container">
+                <ul class="car-selection-flex-column" ng-repeat="carList in carList.carCollections">
+                    <li ng-click="selectBrand(carBrand)" ng-model="selectedCar.brand" ng-repeat="carBrand in carList">
+                        <img ng-src="psApp/carService/car_logos/{{carBrand | lowercase}}_img.png" alt="MileMates Car Logo" width="24" height="24">
+                        <span ng-bind="carBrand" style="padding-left: 10px"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" ng-show="showModel">
+            <div class="col-xs-6">
+                <div class="car-selection-container">
+                    <span class="car-selection-step-name">
                                 YOUR MODEL
                             </span>
-                            <div class="car-selection-flex-container">
-                                <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes">
-                                    <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
-                                </ul>
+                    <div class="car-selection-flex-container">
+                        <ul class="car-selection-flex-column" ng-repeat="typeList in carList.carTypes">
+                            <li ng-click="selectModel(type)" ng-model="car.type" ng-repeat="type in typeList">{{type}}</li>
+                        </ul>
 
-                            </div>
-                        </div>
-                        <div>
-                            <div class="sorting row">
-                                <div class="col-lg-6">
-                                    <div class="sorting__inner">
-                                        <div class="sorting__item col-lg-12">
-                                            <span class="sorting__title">Select Service</span><br />
-                                            <div class="select jelect">
-                                                <input ng-model="centreDetails.service" type="text" id="txtServiceName" class="jelect-input">
-                                                <div tabindex="0" role="button" class="jelect-current" id="serviceList">Select Service</div>
-                                                <ul class="jelect-options" id="dropDownServiceList">
-                                                    <li class="jelect-option jelect-option_state_active">Select Service</li>
-                                                    <li class="jelect-option">Lite Car Care</li>
-                                                    <li class="jelect-option">Essential Car Care</li>
-                                                    <li class="jelect-option">Comprehensive Car Care</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="sorting__item col-lg-12">
-                                            <span class="sorting__title">Select Type</span><br />
-                                            <div class="select jelect">
-                                                <input ng-model="centreDetails.type" type="text" id="txtType" class="jelect-input">
-                                                <div tabindex="0" role="button" class="jelect-current" id="varientList">Select Type</div>
-                                                <ul class="jelect-options" id="dropDownType">
-                                                    <li class="jelect-option jelect-option_state_active">Select Type</li>
-                                                    <li class="jelect-option">Petrol</li>
-                                                    <li class="jelect-option">Diesel</li>
-                                                    <li class="jelect-option">CNG</li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="sorting row">
+                        <div class="col-lg-6">
+                            <div class="sorting__inner">
+                                <div class="sorting__item col-lg-12">
+                                    <span class="sorting__title">Select Service</span><br/>
+                                    <div class="select jelect">
+                                        <input ng-model="centreDetails.service" type="text" id="txtServiceName" class="jelect-input">
+                                        <div tabindex="0" role="button" class="jelect-current" id="serviceList">Select Service</div>
+                                        <ul class="jelect-options" id="dropDownServiceList">
+                                            <li class="jelect-option jelect-option_state_active">Select Service</li>
+                                            <li class="jelect-option">Lite Car Care</li>
+                                            <li class="jelect-option">Essential Car Care</li>
+                                            <li class="jelect-option">Comprehensive Car Care</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <!--<div class="form-group col-lg-6">-->
-                                    <label for="price">Milemates Price </label>
-                                    <input class="form-control" id="price" name="price" type="text" ng-model="centreDetails.MilematePrice" />
-                                    <label for="ActualPrice"> Actual Price </label>
-                                    <input class="form-control" id="ActualPrice" name="ActualPrice" type="text" ng-model="centreDetails.ActualPrice" />
-                                    <label for="ServiceCentrePrice"> Service Centre Price </label>
-                                    <input class="form-control" id="ServiceCentrePrice" name="ServiceCentrePrice" type="text" ng-model="centreDetails.ServiceCentrePrice" />
-                                    <label for="Email"> Radius </label>
-                                    <input class="form-control" id="Radius" name="Radius" placeholder="Radius" type="text" ng-model="centreDetails.radius" />
-                                    <!--</div>-->
+                                <div class="sorting__item col-lg-12">
+                                    <span class="sorting__title">Select Type</span><br/>
+                                    <div class="select jelect">
+                                        <input ng-model="centreDetails.type" type="text" id="txtType" class="jelect-input">
+                                        <div tabindex="0" role="button" class="jelect-current" id="varientList">Select Type</div>
+                                        <ul class="jelect-options" id="dropDownType">
+                                            <li class="jelect-option jelect-option_state_active">Select Type</li>
+                                            <li class="jelect-option">Petrol</li>
+                                            <li class="jelect-option">Diesel</li>
+                                            <li class="jelect-option">CNG</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="car-selection-container">
-                            <span class="car-selection-step-name">
-                                YOUR have Selected MODEL
-                            </span>
-                            <div class="car-selection-flex">
-                                <ul class="car-selection-flex-column">
-                                    <li ng-click="selectModel(model)" ng-repeat="model in modelList">{{model}}</li>
-                                </ul>
-
-                            </div>
-
+                        <div class="col-lg-6">
+                            <!--<div class="form-group col-lg-6">-->
+                            <label for="price">Milemates Price </label>
+                            <input class="form-control" id="price" name="price" type="text" ng-model="centreDetails.MilematePrice"/>
+                            <label for="ActualPrice"> Actual Price </label>
+                            <input class="form-control" id="ActualPrice" name="ActualPrice" type="text" ng-model="centreDetails.ActualPrice"/>
+                            <label for="ServiceCentrePrice"> Service Centre Price </label>
+                            <input class="form-control" id="ServiceCentrePrice" name="ServiceCentrePrice" type="text" ng-model="centreDetails.ServiceCentrePrice"/>
+                            <label for="Email"> Radius </label>
+                            <input class="form-control" id="Radius" name="Radius" placeholder="Radius" type="text" ng-model="centreDetails.radius"/>
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>
-                <div class="row">
 
-                    <div class="form-group col-md-12 col-md-offset-2 pull-right">
-                        <a class="main-slider__btn btn-effect" ng-click="addCentreDetails()">
-                            <span class="main-slider__btn_inner common-button-structure-inner"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Add Details</span>
-                        </a>
+            </div>
+            <div class="col-xs-6">
+                <div class="car-selection-container">
+                    <span class="car-selection-step-name">
+                                YOUR have Selected MODEL
+                            </span>
+                    <div class="car-selection-flex">
+                        <ul class="car-selection-flex-column">
+                            <li ng-click="selectModel(model)" ng-repeat="model in modelList">{{model}}</li>
+                        </ul>
+
                     </div>
+
                 </div>
             </div>
-
         </div>
-        <div class="row" ng-if="showCentreData">
+        <div class="row">
 
             <div class="form-group col-md-12 col-md-offset-2 pull-right">
-                <a class="main-slider__btn btn-effect" ng-click="updateCentreDetails()">
-                    <span class="main-slider__btn_inner common-button-structure-inner"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Update Details</span>
+                <a class="main-slider__btn btn-effect" ng-click="addCentreDetails()">
+                    <span class="main-slider__btn_inner common-button-structure-inner"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Add Details</span>
                 </a>
             </div>
         </div>
+    </div>
+
+</div>
+<div class="row" ng-if="showCentreData">
+
+    <div class="form-group col-md-12 col-md-offset-2 pull-right">
+        <a class="main-slider__btn btn-effect" ng-click="updateCentreDetails()">
+            <span class="main-slider__btn_inner common-button-structure-inner"><i class="fa fa-chevron-left" style="padding-right: 5px;"></i>Update Details</span>
+        </a>
+    </div>
+</div>
 
 
+</div>
+    <div id="centreAddressOverlay" class="modal fade" role="dialog" style="z-index:2000">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Please select your address</h4>
+                </div>
+                <div class="modal-body collapse-content" id="container">
+                    <div style="position:absolute;z-index:1; width: 85%;">
+                        <i class="fa fa-search" style="position:absolute;padding:5px;top:5px"></i>
+                        <input class="form-control" style="padding:0 20px" id="centre_formatted_address" placeholder="Start typing your address" type="text" ng-model="centreDetails.formattedAddress" />
+                    </div>
+                    <div id="centreAddressMap" class="address-map" style="height:400px;"></div>
+                </div>
+                <div class="modal-footer" style="margin-top: 20px;">
+                    <div style="text-align: left; display: block;">
+                        <div style="display: inline-block; float: right;">
+                            <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal" ng-click="selectLocation();">Select </button>
+                            <button type="button" class="btn btn-primary btn-effect" data-dismiss="modal">cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>

@@ -145,8 +145,7 @@ angular.module("psApp").config(["$stateProvider", "$urlRouterProvider", "$locati
                     state: "admin.addCentre",
                     config: {
                         url: "/AddCentre",
-                         templateUrl: "psapp/admin/addCentreDetails/addCentreDetails.html",
-                        controller: "addCentreDetailsController"
+                        template: "<add-centre-details></add-centre-details>"
                     }
                 },
                 {
