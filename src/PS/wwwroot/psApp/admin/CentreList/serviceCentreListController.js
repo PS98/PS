@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 angular.module("psApp").controller("serviceCentreListController", [
-    "$scope", "psDataServices", "$state", "psOrderDetailsService", "$timeout", function ($scope, psDataServices, $state, psOrderDetailsService, $timeout) {
+    "$scope", "psDataServices", "$state", "psOrderDetailsService", "$timeout", "$rootScope", function ($scope, psDataServices, $state, psOrderDetailsService, $timeout, $rootScope) {
         $scope.loadData = function (id) {
             psOrderDetailsService.getServiceCentre().then(function (data) {
                 if (data.length === 1) {
@@ -49,6 +49,24 @@ angular.module("psApp").controller("serviceCentreListController", [
         $scope.toggleCentreData = function() {
             $scope.showCentreData = !$scope.showCentreData;
             $scope.loadData();
+        }
+        $scope.updateCentreData = function() {
+            psOrderDetailsService.updateCentreData($scope.centreDetails).then(function (data) {
+                $scope.showInformation = true;
+                if (data.status === 0) {
+                    $scope.overlayMessage = "Centre Details is updated Successfully";
+                } else {
+                    $scope.overlayMessage = "Error Occured while updating centre details. Please try after some time";
+                }
+            },function() {
+                $scope.overlayMessage = "Error Occured while updating centre details. Please try after some time";
+                $scope.showInformation = true;
+            }).finally(function() {
+                $rootScope.$broadcast("showOverlay", {
+                    showInformation: $scope.showInformation, overlayMessage: $scope.overlayMessage, callback: $scope.toggleCentreData
+                }
+                    );
+            });
         }
     }
 ]);

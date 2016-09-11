@@ -805,6 +805,35 @@ namespace PS.DTO
                 RemoveModelFromModelList(details, serviceName, GetVarientName(model), type);
             }
         }
+
+        public void updateCentreData(ServiceCentreGeo updateCentreDto)
+        {
+            var filter = Builders<ServiceCentreGeo>.Filter.Where(x => x.CentreId.Equals(updateCentreDto.CentreId));
+            var existingData = _repo.GetFilterList(filter, Collection);
+           var updateData = UpdateData(existingData.FirstOrDefault(), updateCentreDto);
+            var collection = _repo.GetCollection<ServiceCentreGeo>("Pune");
+            collection?.ReplaceOneAsync(filter, updateData);
+        }
+
+        public ServiceCentreGeo UpdateData(ServiceCentreGeo oldCentreData, ServiceCentreGeo updateCentreData)
+        {
+            oldCentreData.OwnerName = updateCentreData.OwnerName;
+            oldCentreData.Address = updateCentreData.Address;
+            oldCentreData.PhoneNo = updateCentreData.PhoneNo;
+            oldCentreData.AlternatePhoneNo = updateCentreData.AlternatePhoneNo;
+            oldCentreData.Area = updateCentreData.Area;
+            oldCentreData.Capacity = updateCentreData.Capacity;
+            oldCentreData.OpeningHours = updateCentreData.OpeningHours;
+            oldCentreData.ClosingHours = updateCentreData.ClosingHours;
+            oldCentreData.Email = updateCentreData.Email;
+            oldCentreData.Holiday = updateCentreData.Holiday;
+            oldCentreData.Name = updateCentreData.Name;
+            oldCentreData.Latitude = updateCentreData.Latitude;
+            oldCentreData.Longitude = updateCentreData.Longitude;
+            oldCentreData.Review = updateCentreData.Review;
+            oldCentreData.Services = updateCentreData.Services;
+            return oldCentreData;
+        }
         #endregion
     }
 }

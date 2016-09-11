@@ -250,6 +250,24 @@
     var _getOrderId = function () {
         return orderId;
     }
+    var _updateCentreData = function(centreData) {
+        var deferred = $q.defer();
+        $http(
+      {
+          url: "/api/ServiceCentre/update",
+          method: "Post",
+          cache: false,
+          data:centreData
+      }).then(function (result) {
+          //Success
+          deferred.resolve(result.data);
+      }, function (error) {
+          //Error
+          deferred.reject(error);
+      });
+
+        return deferred.promise; 
+    }
     return {
         payment: _payment,
         validateOrder: _validateOrder,
@@ -268,7 +286,8 @@
         getCentreId: _getCentreId,
         getServiceCentre: _getServiceCentre,
         setOrderId: _setOrderId,
-        getOrderId: _getOrderId
+        getOrderId: _getOrderId,
+        updateCentreData:_updateCentreData
 
     }
 

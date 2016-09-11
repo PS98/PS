@@ -38,6 +38,16 @@ angular.module("psApp").controller("adminController", [
             }
             $scope.linkDisplayName = data.status === 0 ? "Service Centre List" : "Centre Details";
         });
+        $rootScope.$on("showOverlay", function(event, data) {
+                $scope.showInformation = data.showInformation;
+                $scope.overlayMessage = data.overlayMessage; 
+                $("#modalOverlay").modal('toggle');
+            if (data.callback) {
+                $("#modalOverlay").on("hidden.bs.modal", function() {
+                    data.callback();
+                });
+            }
+        });
     }
 ]);
 

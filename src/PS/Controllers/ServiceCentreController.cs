@@ -402,6 +402,7 @@ namespace PS.Controllers
                     return Json(new { Message = "please select a service ", Status = 1 });
                 }
 
+
                 var message = _serviceCentreDto.SaveCentreDetails(serviceCentreObj);
                 Response.StatusCode = (int)HttpStatusCode.OK;
                 return Json(new { Message = message, Status = 0 });
@@ -495,6 +496,7 @@ namespace PS.Controllers
 
             }
         }
+        [AdminAuthorize]
         [HttpPost]
         [Route("price/savelist")]
         public JsonResult SaveUpdatedRow([FromBody] List<CarVerientPrice> updatedList)
@@ -512,6 +514,34 @@ namespace PS.Controllers
 
                 Response.StatusCode = (int)HttpStatusCode.OK;
                 return Json(new { Message = "success", Status = 0 });
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                return Json(new { ex.Message, Status = 2 });
+
+            }
+        }
+
+        [AdminAuthorize]
+        [HttpPost]
+        [Route("update")]
+        public JsonResult UpdateCentreData([FromBody] ServiceCentreGeo updateServiceCentreData)
+        {
+            try
+            {
+                if (updateServiceCentreData == null)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    return Json(new { message = "No Data found", Status = 2 });
+                }
+                else
+                {
+                    _serviceCentreDto.updateCentreData(updateServiceCentreData);
+                    Response.StatusCode = (int)HttpStatusCode.OK;
+                return Json(new { Message = "success", Status = 0 });
+                }
+                
             }
             catch (Exception ex)
             {

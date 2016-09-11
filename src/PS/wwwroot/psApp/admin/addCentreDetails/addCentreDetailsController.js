@@ -93,7 +93,6 @@
                         break;
                     }
                 }
-                console.log($scope.centreDetails);
                 if ($scope.centreDetails.CentreId || $scope.newCentre)
                     psDataServices.saveCentreDetails($scope.centreDetails).
                         success(function(data) {
