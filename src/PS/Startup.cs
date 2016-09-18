@@ -64,6 +64,11 @@ namespace PS
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                     name: "RouteSampleA",
+                     template: "admin",
+                     defaults: new { controller = "Admin", action = "Index" }
+                 );
+                routes.MapRoute(
                     name: "Application",
                     template: "{*template}",
                     defaults: new { controller = "Home", action = "Index" });

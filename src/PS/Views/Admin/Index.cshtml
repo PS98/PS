@@ -1,0 +1,85 @@
+﻿@section Scripts{
+
+    <environment names="Development">
+        <script src="~/psApp/psApp.js"></script>
+        <script src="~/psApp/psAppConfig.js"></script>
+        <script src="~/psApp/psAppRouteConfig.js"></script>
+
+        <script src="~/psapp/directives/psindexdirective.js"></script>
+        <script src="~/psapp/directives/psaboutus.js"></script>
+        <script src="~/psapp/directives/pscontactus.js"></script>
+        <script src="~/psapp/directives/psterms.js"></script>
+        <script src="~/psapp/directives/psprivacypolicy.js"></script>
+        <script src="~/psapp/directives/psdashboarddirective.js"></script>
+        <script src="~/psapp/directives/pspricing.js"></script>
+        <script src="~/psapp/dashboard/editorderdirective.js"></script>
+        <script src="~/psapp/directives/psorderprocessing.js"></script>
+
+        <script src="~/psApp/headerContent/headerContentDirective.js"></script>
+        <script src="~/psapp/headercontent/headercontentcontroller.js"></script>
+        <script src="~/psapp/headercontent/collapsabledirective.js"></script>
+
+        <script src="~/psapp/footerContent/footerContentdirective.js"></script>
+        <script src="~/psapp/switcherContent/switcherContentdirective.js"></script>
+        <script src="~/psapp/userprofile/userprofiledirective.js"></script>
+        <script src="~/psapp/logindetails/logindetailsdirective.js"></script>
+        <script src="~/psapp/logindetails/logindetailscontroller.js"></script>
+        <script src="~/psapp/admin/admindirective.js"></script>
+        <script src="~/psapp/admin/addcentredetails/addcentredetailscontroller.js"></script>
+        <script src="~/psapp/admin/addcentredetails/addcentredetailsdirective.js"></script>
+        <script src="~/psapp/admin/editorder/editordercontroller.js"></script>
+        <script src="~/psapp/admin/editorder/editorderdirective.js"></script>
+        <script src="~/psapp/admin/pricedetails/servicecentrepricedetailscontroller.js"></script>
+        <script src="~/psapp/admin/centrelist/servicecentrelistcontroller.js"></script>
+        <script src="~/psapp/admin/orderlist/orderlistdirective.js"></script>
+        <script src="~/psapp/admin/orderlist/orderlistcontroller.js"></script>
+        <script src="~/psapp/services/psAppServices.js"></script>
+        <script src="~/psapp/services/psapploginservice.js"></script>
+        <script src="~/psapp/services/orderdetailsservice.js"></script>
+        <script src="~/psapp/carservice/carServiceController.js"></script>
+        <script src="~/psapp/carservice/carServiceDirective.js"></script>
+        <script src="~/psapp/carservice/selectcardirective.js"></script>
+        <script src="~/psapp/carservice/carservicecategorydirective.js"></script>
+        <script src="~/psapp/carservice/selectcentredirective.js"></script>
+        <script src="~/psapp/carservice/selectcentrecontroller.js"></script>
+        <script src="~/psapp/carservice/selectaddressdirective.js"></script>
+        <script src="~/psapp/carservice/selectaddresscontroller.js"></script>
+        <script src="~/psapp/carservice/bookAppointment/bookappointmentdirective.js"></script>
+        <script src="~/psapp/carservice/bookappointment/calendardirective.js"></script>
+        <script src="~/psapp/carservice/centredetailsdirective.js"></script>
+        <script src="~/psapp/carservice/ordersummary/ordersummarydirective.js"></script>
+        <script src="~/psapp/carservice/revieworder/revieworderdirective.js"></script>
+        <script src="~/psapp/index/indexModule.js"></script>
+        <script src="~/psapp/index/indexDirective.js"></script>
+        <script src="~/psapp/index/indexcontroller.js"></script>
+        <script src="~/psapp/index/carouseldirective.js"></script>
+        <script src="~/psapp/index/realfactsdirective.js"></script>
+        <script src="~/psapp/index/aboutusdirective.js"></script>
+        <script src="~/psapp/index/contactusdirective.js"></script>
+        <script src="~/psapp/index/customerfeedbackdirective.js"></script>
+        <script src="~/psapp/index/ourbrandsdirective.js"></script>
+        <script src="~/psapp/index/highlightsdirective.js"></script>
+        <script src="~/psapp/index/termsdirective.js"></script>
+        <script src="~/psapp/index/privacypolicydirective.js"></script>
+        <script src="~/psapp/index/subscribeusdirective.js"></script>
+        <script src="~/psapp/dashboard/dashboarddirective.js"></script>
+        <script src="~/psapp/dashboard/dashboardcontroller.js"></script>
+        <script src="~/psapp/pricing/pricingdirective.js"></script>
+        <script src="~/psapp/dashboard/orderdetailsdirective.js"></script>
+        <script src="~/psapp/modaloverlay/modaloverlaydirective.js"></script>
+        <script src="~/psapp/index/orderprocessingtermsdirective.js"></script>
+        <script src="~/psapp/carservice/script.js"></script>
+    </environment>
+    <environment names="Production">
+        <script src="~/dist/mm.js"></script>
+    </environment>
+}
+
+<div id="page-preloader" ng-if="loading">
+    <img class="spinner" src="~/assets/img/cool-loading-animated.gif" alt="MileMates">
+</div>
+<switcher-content></switcher-content>
+<header-content></header-content>
+
+<admin></admin>
+<footer-content></footer-content>
